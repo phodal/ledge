@@ -1,0 +1,81 @@
+@import '../../variables';
+
+:host {
+    border: 2px solid $border-color;
+}
+
+$selected-color: #fff;
+
+.atom-container {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    height: 100%;
+    padding-left: 3px;
+
+    p {
+        margin: 0;
+        padding: 0;
+
+        &.atomic {
+            font-size: 0.7em;
+        }
+
+        &.symbol {
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        &.name,
+        &.weight {
+            font-size: 0.7em;
+        }
+    }
+
+    &.blurry {
+        opacity: 0.5;
+    }
+
+    .gas {
+        color: $gas-color;
+    }
+
+    .liquid {
+        color: $liquid-color;
+    }
+
+    .solid {
+        color: $solid-color;
+    }
+
+    .unknown {
+        color: $unknown-color;
+    }
+
+    &.solid-selected,
+    &.liquid-selected,
+    &.gas-selected,
+    &.unknown-selected {
+        color: $selected-color;
+    }
+
+    &.solid-selected {
+        background: $solid-background-color;
+    }
+
+    &.liquid-selected {
+        background: $liquid-background-color;
+    }
+
+    &.gas-selected {
+        background: $gas-background-color;
+    }
+
+    &.unknown-selected {
+        background: $unknown-background-color;
+    }
+
+    &.grayout {
+        background: $gray;
+    }
+}

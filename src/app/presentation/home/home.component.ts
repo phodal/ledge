@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GetAllElephantsUsecase } from '../../domain/elephant/usecases/get-all-elephants.usecase';
-import { ElephantModel } from '../../domain/elephant/model/elephant.model';
+import { HighlightState } from '../../features/shared';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -8,16 +8,21 @@ import { ElephantModel } from '../../domain/elephant/model/elephant.model';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  elephants: any[];
+  highlightState: HighlightState;
+  category: string;
 
-  constructor(private getAllElephants: GetAllElephantsUsecase) {
+  constructor(titleService: Title) {
+    titleService.setTitle('Periodic Table');
   }
 
-  ngOnInit() {
-    this.elephants = [];
-    this.getAllElephants.execute(null).subscribe((value: ElephantModel) => {
-      this.elephants.push(value);
-    });
+  highlightElement(highlightState: HighlightState) {
+    this.highlightState = highlightState;
   }
 
+  setCurrentAtomCategory(category: string) {
+    this.category = category;
+  }
+
+  ngOnInit(): void {
+  }
 }

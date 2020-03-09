@@ -1,3 +1,12 @@
-<ul>
-  <li *ngFor="let elephant of elephants">{{elephant.family}}  -  {{elephant.name}}</li>
-</ul>
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  <app-selection-bar
+          (highlightElement)="highlightElement($event)"
+          [currentAtomCategory]="category"
+  ></app-selection-bar>
+  <app-periodic-table
+          [selectedMetal]="highlightState"
+          (currentAtomCategory)="setCurrentAtomCategory($event)"
+  ></app-periodic-table>
+  <app-footer></app-footer>
+</div>

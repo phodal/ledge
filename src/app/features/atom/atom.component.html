@@ -1,0 +1,26 @@
+<div
+    class="atom-container {{ data.category }}"
+    [ngClass]="backgroundStyles"
+    (mouseenter)="debounceMouseEnter()"
+    (mouseleave)="debounceMouseLeave()"
+>
+    <p class="atomic">{{ data.number }}</p>
+    <p
+        class="symbol"
+        [class.solid]="data.phase === 'solid' && !backgroundStyles['solid-selected']"
+        [class.liquid]="data.phase === 'liquid' && !backgroundStyles['liquid-selected']"
+        [class.gas]="data.phase === 'gas' && !backgroundStyles['gas-selected']"
+        [class.unknown]="data.phase === 'unknown' && !backgroundStyles['unknown-selected']"
+        *ngIf="data.symbol; else blankSymbol"
+    >
+        {{ data.symbol }}
+    </p>
+    <p class="name" *ngIf="data.name; else blankName">{{ data.name }}</p>
+    <p class="weight" *ngIf="data.atomic_mass; else blankWeight">{{ data.atomic_mass }}</p>
+</div>
+
+<ng-template #blankSymbol> <p class="symbol">&nbsp;</p> </ng-template>
+
+<ng-template #blankName> <p class="name">&nbsp;</p> </ng-template>
+
+<ng-template #blankWeight> <p class="weight">&nbsp;</p> </ng-template>
