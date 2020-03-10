@@ -61,6 +61,25 @@ export class PeriodicTableComponent implements OnInit, OnChanges {
 
   wikiAtomName = '';
 
+  categories = [
+    { type: 'packageManage', displayName: '包管理'},
+    { type: 'scm', displayName: '源码管理'},
+    { type: 'deployment', displayName: '部署'},
+    { type: 'analytics', displayName: '分析'},
+    { type: 'database', displayName: '数据库自动化'},
+    { type: 'containers', displayName: '容器化'},
+    { type: 'monitoring', displayName: '监控'},
+    { type: 'ci', displayName: '持续集成'},
+    { type: 'releaseOrchestration', displayName: '发布编排'},
+    { type: 'security', displayName: '安全'},
+    { type: 'testing', displayName: '测试'},
+    { type: 'openCloud', displayName: '开源云'},
+    { type: 'publicCloud', displayName: '公有云'},
+    { type: 'collaboration', displayName: '协作'},
+    { type: 'config', displayName: '配置管理'},
+    { type: 'aiops', displayName: '智能运维'},
+  ];
+
   constructor(private http: HttpClient) {
     this.currentAtom = null;
     this.currentRowHeader = null;
@@ -97,16 +116,8 @@ export class PeriodicTableComponent implements OnInit, OnChanges {
   }
 
   showAtomDetails(atomNumber: number) {
-    console.log('hover detail');
     if (atomNumber) {
       this.currentAtom = this.atoms.find(a => a.number === atomNumber);
-      const { xpos, ypos } = this.currentAtom;
-      // if (ypos > MAX_ROW_INDEX) {
-      //   this.rowHeader[ypos - 2 - 1].selected = true;
-      // } else {
-      //   this.rowHeader[ypos - 1].selected = true;
-      //   this.colHeader[xpos - 1].selected = true;
-      // }
       this.currentAtomCategory.emit(get(this.currentAtom, 'category', null));
     }
   }

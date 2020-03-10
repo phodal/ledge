@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-phase',
-  template: `
-      <div class="{{ type }}"
-           (mouseenter)="enter.emit(type)"
+  selector: 'app-atom-category',
+  template: `<div
+          (mouseenter)="enter.emit(type)"
            (mouseleave)="enter.emit('')"
            [class.selected]="selected">
+            <div class="{{type}} item-block"></div>
           {{ symbol }}
       </div>
   `,

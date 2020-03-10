@@ -2,8 +2,13 @@
 
 :host {
   display: block;
+  width: auto;
+
+  line-height: 1em;
 }
 
-.scm {
-
+.item-block {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
 }

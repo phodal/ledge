@@ -1,13 +1,15 @@
 <div class="periodic-container">
-    <div class="periodic-grid">
-        <div class="phase-row-1 col-1">
-            <app-phase
-                    [type]="'scm'"
-                    [selected]="selectCategory === 'scm'"
-                    [symbol]="'源码管理'"
-                    (enter)="enterPhase($event)"></app-phase>
-        </div>
 
+    <div class="category-selector">
+        <app-atom-category *ngFor="let category of categories"
+                           class="category"
+                           [type]="category.type"
+                           [selected]="selectCategory === category.type"
+                           [symbol]="category.displayName"
+                           (enter)="enterPhase($event)"></app-atom-category>
+    </div>
+
+    <div class="periodic-grid">
         <app-atom-details
                 class="atom-details"
                 [class.show]="currentAtom !== null"
