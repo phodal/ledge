@@ -8,44 +8,11 @@
 body {
   min-height: 100vh;
   background: #fff;
+  font-size: 16px;
 }
 
-.alkali-metal {
-  background: #ffcc33;
-}
-
-.alkaline-earth-metal {
-  background: #ffff44;
-}
-
-.lanthanide {
-  background: #ffbb99;
-}
-
-.actinide {
-  background: #eebbdd;
-}
-
-.transition-metal {
-  background: #ddbbbb;
-}
-
-.post-transition-metal {
-  background: #99ddcc;
-}
-
-.metalloid {
-  background: #77dd88;
-}
-
-.nonmetal {
-  background: #22ff22;
-}
-
-.noble-gas {
-  background: #77ccff;
-}
-
-.unknown-metal {
-  background: #dddddd;
+@media screen and (min-width: 2501px) and (max-width: 4000px) {
+  body {
+    font-size: 20px;
+  }
 }

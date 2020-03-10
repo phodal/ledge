@@ -1,24 +1,9 @@
 [
   {
       "name": "GitHub",
-      "atomic_mass": 1.008,
-      "category": "nonmetal",
+      "category": "sourceControl",
       "number": 1,
-      "phase": "gas",
-      "source": "https://en.wikipedia.org/wiki/Hydrogen",
-      "spectral_img": "https://en.wikipedia.org/wiki/File:Hydrogen_Spectra.jpg",
-      "symbol": "Gh",
-      "xpos": 1,
-      "ypos": 1,
-      "shells": [
-           1
-       ]
-  }, {
-      "name": "GitHub",
-      "atomic_mass": 1.008,
-      "category": "nonmetal",
-      "number": 57,
-      "phase": "gas",
+      "pay": "Fm",
       "source": "https://en.wikipedia.org/wiki/Hydrogen",
       "spectral_img": "https://en.wikipedia.org/wiki/File:Hydrogen_Spectra.jpg",
       "symbol": "Gh",

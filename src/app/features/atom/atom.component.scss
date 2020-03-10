@@ -21,6 +21,7 @@ $selected-color: #fff;
   padding-left: 3px;
   width: 64px;
   height: 64px;
+  color: #fff;
 
   &:hover {
     transform: scale(2);
@@ -34,17 +35,29 @@ $selected-color: #fff;
 
     &.atomic {
       font-size: 0.7em;
+      top: 0.2em;
+    }
+
+    .pay-type {
+      float: right;
+      margin-right: 4px;
     }
 
     &.symbol {
+      margin-top: 0.2em;
       font-size: 1em;
       font-weight: bold;
     }
 
     &.name,
     &.weight {
-      font-size: 0.7em;
+      margin-top: 0.2em;
+      font-size: 0.8em;
     }
+  }
+
+  &.sourceControl {
+    background: #7f195e;
   }
 
   &.blurry {
