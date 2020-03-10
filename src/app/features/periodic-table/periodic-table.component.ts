@@ -62,22 +62,22 @@ export class PeriodicTableComponent implements OnInit, OnChanges {
   wikiAtomName = '';
 
   categories = [
-    { type: 'packageManage', displayName: '包管理'},
     { type: 'scm', displayName: '源码管理'},
-    { type: 'deployment', displayName: '部署'},
-    { type: 'analytics', displayName: '分析'},
+    { type: 'packageManage', displayName: '工件管理'},
     { type: 'database', displayName: '数据库自动化'},
-    { type: 'containers', displayName: '容器化'},
-    { type: 'monitoring', displayName: '监控'},
+    { type: 'testing', displayName: '测试'},
+    { type: 'deployment', displayName: '部署'},
     { type: 'ci', displayName: '持续集成'},
+    { type: 'containers', displayName: '容器化'},
     { type: 'releaseOrchestration', displayName: '发布编排'},
     { type: 'security', displayName: '安全'},
-    { type: 'testing', displayName: '测试'},
     { type: 'openCloud', displayName: '开源云'},
     { type: 'publicCloud', displayName: '公有云'},
-    { type: 'collaboration', displayName: '协作'},
+    { type: 'monitoring', displayName: '监控'},
+    { type: 'analytics', displayName: '分析'},
     { type: 'config', displayName: '配置管理'},
     { type: 'aiops', displayName: '智能运维'},
+    { type: 'collaboration', displayName: '协作'},
     { type: 'operation', displayName: '运营'},
   ];
 
