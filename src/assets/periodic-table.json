@@ -50,30 +50,45 @@
   },
 
   {
+    "name": "Liquibase",
+    "category": "database",
+    "number": 4,
+    "pay": "Os",
+    "symbol": "lq"
+  },
+  {
+    "name": "Flyway",
+    "category": "database",
+    "number": 12,
+    "pay": "Os",
+    "symbol": "Fl"
+  },
+
+  {
     "name": "Jenkins",
     "category": "ci",
-    "number": 4,
+    "number": 22,
     "pay": "Os",
     "symbol": "Jk"
   },
   {
     "name": "Bamboo",
     "category": "ci",
-    "number": 12,
+    "number": 40,
     "pay": "Pd",
     "symbol": "Jk"
   },
   {
     "name": "VSTS",
     "category": "ci",
-    "number": 20,
+    "number": 72,
     "pay": "Pd",
     "symbol": "Vs"
   },
   {
     "name": "GoCD",
     "category": "ci",
-    "number": 38,
+    "number": 104,
     "pay": "Os",
     "symbol": "Go"
   },
@@ -111,91 +126,91 @@
   {
     "name": "JUnit",
     "category": "testing",
-    "number": 30,
+    "number": 23,
     "pay": "Os",
     "symbol": "Ju"
   },
   {
     "name": "Selenium",
     "category": "testing",
-    "number": 29,
+    "number": 24,
     "pay": "Os",
     "symbol": "Se"
   },
   {
     "name": "Cucumber",
     "category": "testing",
-    "number": 48,
+    "number": 25,
     "pay": "Os",
     "symbol": "Cc"
   },
   {
     "name": "Robot Framework",
     "category": "testing",
-    "number": 80,
+    "number": 26,
     "pay": "Os",
     "symbol": "Rf"
   },
   {
     "name": "Gatling",
     "category": "testing",
-    "number": 112,
+    "number": 41,
     "pay": "Os",
     "symbol": "Gl"
   },
   {
     "name": "Gauge",
     "category": "testing",
-    "number": 47,
+    "number": 42,
     "pay": "Os",
     "symbol": "Gg"
   },
   {
     "name": "Mocha",
     "category": "testing",
-    "number": 79,
+    "number": 43,
     "pay": "Os",
     "symbol": "Mc"
   },
   {
     "name": "JMeter",
     "category": "testing",
-    "number": 111,
+    "number": 44,
     "pay": "Os",
     "symbol": "Jm"
   },
   {
     "name": "Jasmine",
     "category": "testing",
-    "number": 110,
+    "number": 73,
     "pay": "Os",
     "symbol": "Ja"
   },
   {
     "name": "Soap UI",
     "category": "testing",
-    "number": 78,
+    "number": 74,
     "pay": "Os",
     "symbol": "Su"
   },
   {
     "name": "PostMan",
     "category": "testing",
-    "number": 46,
+    "number": 75,
     "pay": "Os",
     "symbol": "Pm"
   },
   {
     "name": "TestNG",
     "category": "testing",
-    "number": 28,
+    "number": 76,
     "pay": "Os",
     "symbol": "Tn"
   },
   {
     "name": "Protractor",
     "category": "testing",
-    "number": 27,
+    "number": 105,
     "pay": "Os",
     "symbol": "Pt"
   },
