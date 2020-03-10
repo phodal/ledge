@@ -1,14 +1,19 @@
 # Ledge
 
 
+Todo:
+
+ - [ ] 敏捷流畅度
+ - [ ] DevOps Process
+
+# 敏捷流畅度
+
+http://agilefluency.org/
+
 License
 ---
 
 periodic based on [https://stackblitz.com/edit/ng-periodic-table](https://stackblitz.com/edit/ng-periodic-table)
-
-
-License
----
 
 [![Phodal's Idea](http://brand.phodal.com/shields/idea-small.svg)](http://ideas.phodal.com/)
 
