@@ -79,6 +79,76 @@
     "pay": "Os",
     "symbol": "Se"
   },
+  {
+    "name": "Cucumber",
+    "category": "testing",
+    "number": 48,
+    "pay": "Os",
+    "symbol": "Cc"
+  },
+  {
+    "name": "Robot Framework",
+    "category": "testing",
+    "number": 80,
+    "pay": "Os",
+    "symbol": "Rf"
+  },
+  {
+    "name": "Gatling",
+    "category": "testing",
+    "number": 112,
+    "pay": "Os",
+    "symbol": "Gl"
+  },
+  {
+    "name": "Gauge",
+    "category": "testing",
+    "number": 47,
+    "pay": "Os",
+    "symbol": "Gg"
+  },
+  {
+    "name": "Mocha",
+    "category": "testing",
+    "number": 79,
+    "pay": "Os",
+    "symbol": "Mc"
+  },
+  {
+    "name": "JMeter",
+    "category": "testing",
+    "number": 111,
+    "pay": "Os",
+    "symbol": "Jm"
+  },
+  {
+    "name": "Jasmine",
+    "category": "testing",
+    "number": 110,
+    "pay": "Os",
+    "symbol": "Ja"
+  },
+  {
+    "name": "Soap UI",
+    "category": "testing",
+    "number": 78,
+    "pay": "Os",
+    "symbol": "Su"
+  },
+  {
+    "name": "PostMan",
+    "category": "testing",
+    "number": 46,
+    "pay": "Os",
+    "symbol": "Pm"
+  },
+  {
+    "name": "TestNG",
+    "category": "testing",
+    "number": 28,
+    "pay": "Os",
+    "symbol": "Tn"
+  },
 
 
   {
