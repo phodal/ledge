@@ -115,6 +115,30 @@
     "pay": "Os",
     "symbol": "Na"
   },
+  {
+    "name": "Ganglia",
+    "category": "monitoring",
+    "number": 116,
+    "description": "Ganglia 是用于高性能计算系统，群集和网络的可伸缩的分布式监视工具。",
+    "pay": "Os",
+    "symbol": "Gl"
+  },
+  {
+    "name": "Sensu",
+    "category": "monitoring",
+    "number": 115,
+    "description": "Sensu 是由 Sonian 公司开发的一种监控框架，主要用于拥有大规模节点的云计算平台的检查与监控。",
+    "pay": "Os",
+    "symbol": "Ss"
+  },
+  {
+    "name": "Icinga",
+    "category": "monitoring",
+    "number": 114,
+    "description": "Sensu 是由 Sonian 公司开发的一种监控框架，主要用于拥有大规模节点的云计算平台的检查与监控。",
+    "pay": "Os",
+    "symbol": "Ic"
+  },
 
   {
     "name": "JUnit",
@@ -335,7 +359,7 @@
   {
     "name": "Pivotal PKS",
     "category": "containers",
-    "number": 82,
+    "number": 80,
     "pay": "Os",
     "symbol": "Pp"
   },
@@ -438,7 +462,7 @@
   {
     "name": "Tencent Cloud",
     "category": "publicCloud",
-    "number": 115,
+    "number": 82,
     "pay": "Pd",
     "symbol": "Tc"
   },
@@ -503,6 +527,28 @@
   },
 
   {
+    "name": "Tableau",
+    "category": "analytics",
+    "number": 36,
+    "pay": "Pd",
+    "symbol": "Tb"
+  },
+  {
+    "name": "Grafana",
+    "category": "analytics",
+    "number": 54,
+    "pay": "Os",
+    "symbol": "Gr"
+  },
+  {
+    "name": "Piwik",
+    "category": "analytics",
+    "number": 86,
+    "pay": "Os",
+    "symbol": "Pw"
+  },
+
+  {
     "name": "Jira",
     "category": "collaboration",
     "number": 89,
@@ -543,27 +589,5 @@
     "number": 94,
     "pay": "Pd",
     "symbol": "Wl"
-  },
-
-  {
-    "name": "Tableau",
-    "category": "operation",
-    "number": 57,
-    "pay": "Pd",
-    "symbol": "Tb"
-  },
-  {
-    "name": "Grafana",
-    "category": "operation",
-    "number": 58,
-    "pay": "Os",
-    "symbol": "Gr"
-  },
-  {
-    "name": "Piwik",
-    "category": "operation",
-    "number": 59,
-    "pay": "Os",
-    "symbol": "Pw"
   }
 ]
