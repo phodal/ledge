@@ -222,6 +222,35 @@
     "symbol": "Ns"
   },
 
+  {
+    "name": "Cloud Foundry",
+    "category": "cloud",
+    "number": 6,
+    "pay": "Os",
+    "symbol": "Cf"
+  },
+  {
+    "name": "OpenShift",
+    "category": "cloud",
+    "number": 7,
+    "pay": "Os",
+    "symbol": "Os"
+  },
+  {
+    "name": "OpenStack",
+    "category": "cloud",
+    "number": 8,
+    "pay": "Os",
+    "symbol": "Ot"
+  },
+  {
+    "name": "OpenWhisk",
+    "category": "cloud",
+    "number": 9,
+    "pay": "Os",
+    "symbol": "Ow"
+  },
+
 
   {
     "name": "Jira",

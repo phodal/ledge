@@ -17,26 +17,6 @@ $name-font-size: 0.75rem;
         height: 100%;
         padding: 5px;
 
-        .gas {
-            color: $gas-color;
-            font-size: $phase-font-size;
-        }
-
-        .solid {
-            color: $solid-color;
-            font-size: $phase-font-size;
-        }
-
-        .unknown {
-            color: $unknown-color;
-            font-size: $phase-font-size;
-        }
-
-        .liquid {
-            color: $liquid-color;
-            font-size: $phase-font-size;
-        }
-
         &-summary {
             @include listItemStyle();
             font-size: $default-font-size;

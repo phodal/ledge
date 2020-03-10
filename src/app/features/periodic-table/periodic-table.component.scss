@@ -50,31 +50,9 @@ $selected-color: #fff;
         font-weight: bold;
       }
 
-      .solid {
-        color: $solid-color;
-      }
-
-      .liquid {
-        color: $liquid-color;
-        margin-top: 5px;
-      }
-
       &.col-1 {
         grid-row: 3;
         grid-column: 7;
-
-        .solid,
-        .liquid {
-          width: 50%;
-          margin: 0 0 0 auto;
-          border: 1px solid #000;
-          text-align: center;
-          cursor: pointer;
-        }
-
-        .liquid {
-          margin-top: 5px;
-        }
       }
 
       &.col-2 {
@@ -91,10 +69,6 @@ $selected-color: #fff;
         font-weight: bold;
       }
 
-      .gas {
-        color: $gas-color;
-      }
-
       .unknown {
         color: $unknown-color;
         margin-top: 5px;
@@ -103,15 +77,6 @@ $selected-color: #fff;
       &.col-1 {
         grid-row: 4;
         grid-column: 7;
-
-        .gas,
-        .unknown {
-          width: 50%;
-          margin: 0 0 0 auto;
-          border: 1px solid #000;
-          text-align: center;
-          cursor: pointer;
-        }
 
         .unknown {
           margin-top: 5px;
