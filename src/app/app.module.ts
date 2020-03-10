@@ -15,6 +15,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './presentation/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomMaterialModule } from './shared/custom-material.module';
+import { CaseStudyComponent } from './presentation/case-study/case-study.component';
+import { PatternComponent } from './presentation/pattern/pattern.component';
+import { DesignComponent } from './presentation/design/design.component';
+import { PractiseComponent } from './presentation/practise/practise.component';
+import { ManualComponent } from './presentation/manual/manual.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +33,11 @@ import { CustomMaterialModule } from './shared/custom-material.module';
     FooterComponent,
     AppPhaseComponent,
     AppWikiComponent,
+    CaseStudyComponent,
+    PatternComponent,
+    DesignComponent,
+    PractiseComponent,
+    ManualComponent,
   ],
   imports: [
     SharedModule,
