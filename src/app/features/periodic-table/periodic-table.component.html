@@ -2,41 +2,10 @@
     <div class="periodic-grid">
         <div class="phase-row-1 col-1">
             <app-phase
-                    [type]="'solid'"
-                    [selected]="selectedPhase === 'solid'"
-                    [symbol]="'C'"
-                    (enter)="enterPhase($event)"
-            ></app-phase>
-            <app-phase
-                    class="gap"
-                    [type]="'liquid'"
-                    [selected]="selectedPhase === 'liquid'"
-                    [symbol]="'Hg'"
-                    (enter)="enterPhase($event)"
-            ></app-phase>
-        </div>
-        <div class="phase-row-1 col-2">
-            <div class="solid">Solid</div>
-            <div class="liquid">Liquid</div>
-        </div>
-        <div class="phase-row-2 col-1">
-            <app-phase
-                    [type]="'gas'"
-                    [selected]="selectedPhase === 'gas'"
-                    [symbol]="'H'"
-                    (enter)="enterPhase($event)"
-            ></app-phase>
-            <app-phase
-                    class="gap"
-                    [type]="'unknown'"
-                    [selected]="selectedPhase === 'unknown'"
-                    [symbol]="'Rf'"
-                    (enter)="enterPhase($event)"
-            ></app-phase>
-        </div>
-        <div class="phase-row-2 col-2">
-            <div class="gas">Gas</div>
-            <div class="unknown">Unknown</div>
+                    [type]="'sourceControl'"
+                    [selected]="selectCategory === 'sourceControl'"
+                    [symbol]="'Source Control'"
+                    (enter)="enterPhase($event)"></app-phase>
         </div>
 
         <ng-container *ngIf="(atoms$ | async) as atoms">
@@ -44,15 +13,13 @@
                     *ngFor="let atom of atoms"
                     class="periodic-atom-{{ atom.number }}"
                     [data]="atom"
-                    [selectedPhase]="selectedPhase"
+                    [selectedCategory]="selectCategory"
                     [metalSelected]="metalClass"
                     (hoverAtom)="showAtomDetails($event)"
                     (click)="open(atom.name)"
             ></app-atom>
         </ng-container>
         <app-atom class="description" [data]="description"></app-atom>
-<!--        <app-atom class="periodic-atom-57-71" [data]="lantAtomGroup"></app-atom>-->
-<!--        <app-atom class="periodic-atom-89-103" [data]="actinideAtomGroup"></app-atom>-->
     </div>
 
     <app-wiki *ngIf="wikiAtomName" [atomName]="wikiAtomName" (closeModal)="wikiAtomName = ''"></app-wiki>

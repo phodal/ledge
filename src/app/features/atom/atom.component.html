@@ -1,5 +1,5 @@
 <div class="atom-container {{ data.category }}"
-     [ngClass]="backgroundStyles"
+     [ngClass]="selectedCategory === data.category ? 'selected-category': 'unselect'"
      (mouseenter)="debounceMouseEnter()"
      (mouseleave)="debounceMouseLeave()">
 

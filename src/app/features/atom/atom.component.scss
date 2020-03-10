@@ -23,6 +23,10 @@ $selected-color: #fff;
   height: 64px;
   color: #fff;
 
+  &.unselect {
+    opacity: 0.8;
+  }
+
   &:hover {
     transform: scale(2);
     z-index: 100;
@@ -88,7 +92,7 @@ $selected-color: #fff;
   &.liquid-selected,
   &.gas-selected,
   &.unknown-selected {
-    color: $selected-color;
+    color: #000;
   }
 
   &.solid-selected {
