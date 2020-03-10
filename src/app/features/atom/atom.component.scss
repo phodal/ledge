@@ -1,83 +1,96 @@
 @import '../../variables';
 
 :host {
-    //border: 2px solid $border-color;
-    padding: 2px;
+  //border: 2px solid $border-color;
+  padding: 2px;
 }
 
 $selected-color: #fff;
 
+@media screen and (min-width: 2501px) and (max-width: 4000px) {
+  .atom-container {
+    width: 80px !important;
+    height: 80px !important;
+  }
+}
+
 .atom-container {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    padding-left: 3px;
-    width: 64px;
-    height: 64px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding-left: 3px;
+  width: 64px;
+  height: 64px;
 
-    p {
-        margin: 0;
-        padding: 0;
+  &:hover {
+    transform: scale(2);
+    z-index: 100;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
 
-        &.atomic {
-            font-size: 0.7em;
-        }
+  p {
+    margin: 0;
+    padding: 0;
 
-        &.symbol {
-            font-size: 1em;
-            font-weight: bold;
-        }
-
-        &.name,
-        &.weight {
-            font-size: 0.7em;
-        }
+    &.atomic {
+      font-size: 0.7em;
     }
 
-    &.blurry {
-        opacity: 0.5;
+    &.symbol {
+      font-size: 1em;
+      font-weight: bold;
     }
 
-    .gas {
-        color: $gas-color;
+    &.name,
+    &.weight {
+      font-size: 0.7em;
     }
+  }
 
-    .liquid {
-        color: $liquid-color;
-    }
+  &.blurry {
+    opacity: 0.5;
+  }
 
-    .solid {
-        color: $solid-color;
-    }
+  .gas {
+    color: $gas-color;
+  }
 
-    .unknown {
-        color: $unknown-color;
-    }
+  .liquid {
+    color: $liquid-color;
+  }
 
-    &.solid-selected,
-    &.liquid-selected,
-    &.gas-selected,
-    &.unknown-selected {
-        color: $selected-color;
-    }
+  .solid {
+    color: $solid-color;
+  }
 
-    &.solid-selected {
-        background: $solid-background-color;
-    }
+  .unknown {
+    color: $unknown-color;
+  }
 
-    &.liquid-selected {
-        background: $liquid-background-color;
-    }
+  &.solid-selected,
+  &.liquid-selected,
+  &.gas-selected,
+  &.unknown-selected {
+    color: $selected-color;
+  }
 
-    &.gas-selected {
-        background: $gas-background-color;
-    }
+  &.solid-selected {
+    background: $solid-background-color;
+  }
 
-    &.unknown-selected {
-        background: $unknown-background-color;
-    }
+  &.liquid-selected {
+    background: $liquid-background-color;
+  }
 
-    &.grayout {
-        background: $gray;
-    }
+  &.gas-selected {
+    background: $gas-background-color;
+  }
+
+  &.unknown-selected {
+    background: $unknown-background-color;
+  }
+
+  &.grayout {
+    background: $gray;
+  }
 }
