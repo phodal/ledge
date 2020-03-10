@@ -86,13 +86,6 @@
     "symbol": "Vs"
   },
   {
-    "name": "GoCD",
-    "category": "ci",
-    "number": 104,
-    "pay": "Os",
-    "symbol": "Go"
-  },
-  {
     "name": "TeamCity",
     "category": "ci",
     "number": 21,
@@ -235,6 +228,51 @@
     "number": 69,
     "pay": "Os",
     "symbol": "Ns"
+  },
+
+  {
+    "name": "Ansible",
+    "category": "config",
+    "number": 27,
+    "pay": "Os",
+    "symbol": "As"
+  },
+  {
+    "name": "Chef",
+    "category": "config",
+    "number": 45,
+    "pay": "Os",
+    "symbol": "Cf"
+  },
+  {
+    "name": "Puppet",
+    "category": "config",
+    "number": 77,
+    "pay": "Os",
+    "symbol": "Pu"
+  },
+  {
+    "name": "Salt",
+    "category": "config",
+    "number": 46,
+    "pay": "Os",
+    "symbol": "Sa"
+  },
+  {
+    "name": "Packer",
+    "category": "config",
+    "number": 28,
+    "pay": "Os",
+    "symbol": "Pk"
+  },
+
+
+  {
+    "name": "GoCD",
+    "category": "ci",
+    "number": 29,
+    "pay": "Os",
+    "symbol": "Go"
   },
 
   {
