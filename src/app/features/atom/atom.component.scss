@@ -1,7 +1,8 @@
 @import '../../variables';
 
 :host {
-    border: 2px solid $border-color;
+    //border: 2px solid $border-color;
+    padding: 2px;
 }
 
 $selected-color: #fff;
@@ -10,8 +11,9 @@ $selected-color: #fff;
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    height: 100%;
     padding-left: 3px;
+    width: 64px;
+    height: 64px;
 
     p {
         margin: 0;

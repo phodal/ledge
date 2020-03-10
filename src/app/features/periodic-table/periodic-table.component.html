@@ -1,45 +1,18 @@
 <div class="periodic-container">
     <div class="periodic-grid">
-        <div class="periodic-col-num">&nbsp;</div>
-        <div
-            class="periodic-col-num"
-            *ngFor="let o of colHeader"
-            (mouseenter)="updateColHeaderSelected(o.index, true)"
-            (mouseleave)="updateColHeaderSelected(o.index, false)"
-            [class.selected]="o.selected"
-        >
-            <span class="index">{{ o.index }}</span> <span class="description">{{ o.description }}</span>
-        </div>
-
-        <div
-            *ngFor="let o of rowHeader"
-            class="periodic-row-num {{ o.className }}"
-            (mouseenter)="updateRowHeaderSelected(o.index, true)"
-            (mouseleave)="updateRowHeaderSelected(o.index, false)"
-            [class.selected]="o.selected"
-        >
-            <span class="index">{{ o.index }}</span>
-        </div>
-
-        <app-atom-details
-            class="atom-details"
-            [class.show]="currentAtom !== null"
-            [data]="currentAtom"
-        ></app-atom-details>
-
         <div class="phase-row-1 col-1">
             <app-phase
-                [type]="'solid'"
-                [selected]="selectedPhase === 'solid'"
-                [symbol]="'C'"
-                (enter)="enterPhase($event)"
+                    [type]="'solid'"
+                    [selected]="selectedPhase === 'solid'"
+                    [symbol]="'C'"
+                    (enter)="enterPhase($event)"
             ></app-phase>
             <app-phase
-                class="gap"
-                [type]="'liquid'"
-                [selected]="selectedPhase === 'liquid'"
-                [symbol]="'Hg'"
-                (enter)="enterPhase($event)"
+                    class="gap"
+                    [type]="'liquid'"
+                    [selected]="selectedPhase === 'liquid'"
+                    [symbol]="'Hg'"
+                    (enter)="enterPhase($event)"
             ></app-phase>
         </div>
         <div class="phase-row-1 col-2">
@@ -48,17 +21,17 @@
         </div>
         <div class="phase-row-2 col-1">
             <app-phase
-                [type]="'gas'"
-                [selected]="selectedPhase === 'gas'"
-                [symbol]="'H'"
-                (enter)="enterPhase($event)"
+                    [type]="'gas'"
+                    [selected]="selectedPhase === 'gas'"
+                    [symbol]="'H'"
+                    (enter)="enterPhase($event)"
             ></app-phase>
             <app-phase
-                class="gap"
-                [type]="'unknown'"
-                [selected]="selectedPhase === 'unknown'"
-                [symbol]="'Rf'"
-                (enter)="enterPhase($event)"
+                    class="gap"
+                    [type]="'unknown'"
+                    [selected]="selectedPhase === 'unknown'"
+                    [symbol]="'Rf'"
+                    (enter)="enterPhase($event)"
             ></app-phase>
         </div>
         <div class="phase-row-2 col-2">
@@ -68,13 +41,13 @@
 
         <ng-container *ngIf="(atoms$ | async) as atoms">
             <app-atom
-                *ngFor="let atom of atoms"
-                class="periodic-atom-{{ atom.number }}"
-                [data]="atom"
-                [selectedPhase]="selectedPhase"
-                [metalSelected]="metalClass"
-                (hoverAtom)="showAtomDetails($event)"
-                (click)="open(atom.name)"
+                    *ngFor="let atom of atoms"
+                    class="periodic-atom-{{ atom.number }}"
+                    [data]="atom"
+                    [selectedPhase]="selectedPhase"
+                    [metalSelected]="metalClass"
+                    (hoverAtom)="showAtomDetails($event)"
+                    (click)="open(atom.name)"
             ></app-atom>
         </ng-container>
         <app-atom class="description" [data]="description"></app-atom>
