@@ -46,7 +46,7 @@
   {
     "name": "Nexus",
     "category": "packageManage",
-    "number": 55,
+    "number": 56,
     "pay": "Os",
     "symbol": "Nx"
   },
@@ -71,6 +71,13 @@
     "number": 12,
     "pay": "Os",
     "symbol": "Fl"
+  },
+  {
+    "name": "Redgate",
+    "category": "database",
+    "number": 20,
+    "pay": "Os",
+    "symbol": "Rg"
   },
 
   {
@@ -165,9 +172,16 @@
   {
     "name": "OpenNMS",
     "category": "monitoring",
-    "number": 63,
+    "number": 64,
     "pay": "Os",
     "symbol": "On"
+  },
+  {
+    "name": "Kafka",
+    "category": "monitoring",
+    "number": 65,
+    "pay": "Os",
+    "symbol": "Kk"
   },
 
   {
@@ -502,7 +516,7 @@
   {
     "name": "OpenMake",
     "category": "releaseOrchestration",
-    "number": 6,
+    "number": 32,
     "pay": "Pd",
     "symbol": "Om"
   },
@@ -516,7 +530,7 @@
   {
     "name": "Spinnaker",
     "category": "releaseOrchestration",
-    "number": 32,
+    "number": 6,
     "pay": "Os",
     "symbol": "Sp"
   },
@@ -526,6 +540,13 @@
     "number": 50,
     "pay": "Os",
     "symbol": "Pr"
+  },
+  {
+    "name": "XebiaLabs XL Deploy ",
+    "category": "releaseOrchestration",
+    "number": 82,
+    "pay": "Os",
+    "symbol": "Xl"
   },
 
 

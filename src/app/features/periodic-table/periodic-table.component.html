@@ -28,6 +28,8 @@
             ></app-atom>
         </ng-container>
         <app-atom class="description" [data]="description"></app-atom>
+        <app-atom class="periodic-atom-57-71 placeholder-atom" [data]="lantAtomGroup"></app-atom>
+        <app-atom class="periodic-atom-89-103 placeholder-atom" [data]="actinideAtomGroup"></app-atom>
     </div>
 
     <app-wiki *ngIf="wikiAtomName" [atomName]="wikiAtomName" (closeModal)="wikiAtomName = ''"></app-wiki>

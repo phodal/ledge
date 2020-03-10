@@ -32,6 +32,22 @@ interface HeaderInfo {
   inside: boolean;
 }
 
+
+const LANT_ATOM_GROUP = {
+  number: '57-71',
+  category: 'lanthanide',
+  symbol: '',
+  name: '',
+  atomic_mass: null,
+};
+const ACT_ATOM_GROUP = {
+  number: '89-103',
+  category: 'actinide',
+  symbol: '',
+  name: '',
+  atomic_mass: null,
+};
+
 @Component({
   selector: 'app-periodic-table',
   templateUrl: './periodic-table.component.html',
@@ -46,7 +62,8 @@ export class PeriodicTableComponent implements OnInit, OnChanges {
   currentAtomCategory: EventEmitter<string> = new EventEmitter<string>();
 
   description = DESCRIPTION;
-
+  lantAtomGroup = LANT_ATOM_GROUP;
+  actinideAtomGroup = ACT_ATOM_GROUP;
   unsubscribe$ = new Subject<void>();
   headerSub$ = new Subject<HeaderInfo>();
   headerMove$: Observable<HeaderInfo>;
