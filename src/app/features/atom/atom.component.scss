@@ -28,6 +28,7 @@ $selected-color: #fff;
   }
 
   &:hover {
+    opacity: 1;
     transform: scale(2);
     z-index: 100;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -60,58 +61,7 @@ $selected-color: #fff;
     }
   }
 
-  &.sourceControl {
-    background: #7f195e;
-  }
-
-  &.packageManage {
-    background: #666666;
-  }
-
   &.blurry {
     opacity: 0.5;
-  }
-
-  .gas {
-    color: $gas-color;
-  }
-
-  .liquid {
-    color: $liquid-color;
-  }
-
-  .solid {
-    color: $solid-color;
-  }
-
-  .unknown {
-    color: $unknown-color;
-  }
-
-  &.solid-selected,
-  &.liquid-selected,
-  &.gas-selected,
-  &.unknown-selected {
-    color: #000;
-  }
-
-  &.solid-selected {
-    background: $solid-background-color;
-  }
-
-  &.liquid-selected {
-    background: $liquid-background-color;
-  }
-
-  &.gas-selected {
-    background: $gas-background-color;
-  }
-
-  &.unknown-selected {
-    background: $unknown-background-color;
-  }
-
-  &.grayout {
-    background: $gray;
   }
 }

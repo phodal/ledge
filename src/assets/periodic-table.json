@@ -1,45 +1,126 @@
 [
   {
-      "name": "Gitlab",
-      "category": "sourceControl",
-      "number": 1,
-      "pay": "Os",
-      "symbol": "Gl"
-  },{
-      "name": "Gitee",
-      "category": "sourceControl",
-      "number": 3,
-      "pay": "Fm",
-      "symbol": "Ge"
-  },{
-      "name": "GitHub",
-      "category": "sourceControl",
-      "number": 11,
-      "pay": "Fm",
-      "symbol": "Gh"
-  },{
-      "name": "SubVersion",
-      "category": "sourceControl",
-      "number": 19,
-      "pay": "Os",
-      "symbol": "Sv"
-  },{
-      "name": "Artifactory",
-      "category": "packageManage",
-      "number": 37,
-      "pay": "Fm",
-      "symbol": "Af"
-  },{
-      "name": "Nexus",
-      "category": "packageManage",
-      "number": 55,
-      "pay": "Os",
-      "symbol": "Nx"
-  },{
-      "name": "NPM",
-      "category": "packageManage",
-      "number": 87,
-      "pay": "Os",
-      "symbol": "Np"
+    "name": "Gitlab",
+    "category": "scm",
+    "number": 1,
+    "pay": "Os",
+    "symbol": "Gl"
+  },
+  {
+    "name": "Gitee",
+    "category": "scm",
+    "number": 3,
+    "pay": "Fm",
+    "symbol": "Ge"
+  },
+  {
+    "name": "GitHub",
+    "category": "scm",
+    "number": 11,
+    "pay": "Fm",
+    "symbol": "Gh"
+  },
+  {
+    "name": "SubVersion",
+    "category": "scm",
+    "number": 19,
+    "pay": "Os",
+    "symbol": "Sv"
+  },
+  {
+    "name": "Artifactory",
+    "category": "packageManage",
+    "number": 37,
+    "pay": "Fm",
+    "symbol": "Af"
+  },
+  {
+    "name": "Nexus",
+    "category": "packageManage",
+    "number": 55,
+    "pay": "Os",
+    "symbol": "Nx"
+  },
+  {
+    "name": "NPM",
+    "category": "packageManage",
+    "number": 87,
+    "pay": "Os",
+    "symbol": "Np"
+  },
+
+
+  {
+    "name": "Zabbix",
+    "category": "monitoring",
+    "number": 118,
+    "pay": "Os",
+    "symbol": "Zb"
+  },
+  {
+    "name": "Nagios",
+    "category": "monitoring",
+    "number": 117,
+    "pay": "Os",
+    "symbol": "Na"
+  },
+
+  {
+    "name": "JUnit",
+    "category": "testing",
+    "number": 30,
+    "pay": "Os",
+    "symbol": "Ju"
+  },
+  {
+    "name": "Selenium",
+    "category": "testing",
+    "number": 29,
+    "pay": "Os",
+    "symbol": "Se"
+  },
+
+
+  {
+    "name": "Jira",
+    "category": "collaboration",
+    "number": 89,
+    "pay": "Pd",
+    "symbol": "Jr"
+  },
+  {
+    "name": "Mural",
+    "category": "collaboration",
+    "number": 90,
+    "pay": "Pd",
+    "symbol": "Mr"
+  },
+  {
+    "name": "Slack",
+    "category": "collaboration",
+    "number": 91,
+    "pay": "Pd",
+    "symbol": "Sl"
+  },
+  {
+    "name": "Enterprise Wechat",
+    "category": "collaboration",
+    "number": 92,
+    "pay": "Pd",
+    "symbol": "Ew"
+  },
+  {
+    "name": "Dingding",
+    "category": "collaboration",
+    "number": 93,
+    "pay": "Pd",
+    "symbol": "Dd"
+  },
+  {
+    "name": "Welink",
+    "category": "collaboration",
+    "number": 94,
+    "pay": "Pd",
+    "symbol": "Wl"
   }
 ]
