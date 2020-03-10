@@ -1,16 +1,45 @@
 [
   {
-      "name": "GitHub",
+      "name": "Gitlab",
       "category": "sourceControl",
       "number": 1,
+      "pay": "Os",
+      "symbol": "Gl"
+  },{
+      "name": "Gitee",
+      "category": "sourceControl",
+      "number": 3,
       "pay": "Fm",
-      "source": "https://en.wikipedia.org/wiki/Hydrogen",
-      "spectral_img": "https://en.wikipedia.org/wiki/File:Hydrogen_Spectra.jpg",
-      "symbol": "Gh",
-      "xpos": 1,
-      "ypos": 1,
-      "shells": [
-           1
-       ]
+      "symbol": "Ge"
+  },{
+      "name": "GitHub",
+      "category": "sourceControl",
+      "number": 11,
+      "pay": "Fm",
+      "symbol": "Gh"
+  },{
+      "name": "SubVersion",
+      "category": "sourceControl",
+      "number": 19,
+      "pay": "Os",
+      "symbol": "Sv"
+  },{
+      "name": "Artifactory",
+      "category": "packageManage",
+      "number": 37,
+      "pay": "Fm",
+      "symbol": "Af"
+  },{
+      "name": "Nexus",
+      "category": "packageManage",
+      "number": 55,
+      "pay": "Os",
+      "symbol": "Nx"
+  },{
+      "name": "NPM",
+      "category": "packageManage",
+      "number": 56,
+      "pay": "Os",
+      "symbol": "Np"
   }
 ]
