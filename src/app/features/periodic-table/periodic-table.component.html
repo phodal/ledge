@@ -27,10 +27,18 @@
                     (click)="open(atom.name)"
             ></app-atom>
         </ng-container>
-        <app-atom class="description" [data]="description"></app-atom>
-        <app-atom class="periodic-atom-57-71 placeholder-atom" [data]="lantAtomGroup"></app-atom>
-        <app-atom class="periodic-atom-89-103 placeholder-atom" [data]="actinideAtomGroup"></app-atom>
+        <app-atom class="periodic-atom-57-71 placeholder" [data]="lantAtomGroup"></app-atom>
+        <app-atom class="periodic-atom-89-103 placeholder" [data]="actinideAtomGroup"></app-atom>
     </div>
 
     <app-wiki *ngIf="wikiAtomName" [atomName]="wikiAtomName" (closeModal)="wikiAtomName = ''"></app-wiki>
+</div>
+
+<div class="inspired">
+    Periodic Table based on <a href="https://stackblitz.com/edit/ng-periodic-table">https://stackblitz.com/edit/ng-periodic-table</a>
+    <br>
+    and inspired by
+    <a href="https://xebialabs.com/periodic-table-of-devops-tools/">https://xebialabs.com/periodic-table-of-devops-tools/</a>
+    &&
+    <a href="https://www.nexthink.com/periodic-table/">https://www.nexthink.com/periodic-table/</a>
 </div>

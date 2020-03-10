@@ -7,7 +7,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output
            (mouseleave)="enter.emit('')"
            [class.selected]="selected">
             <div class="{{type}} item-block"></div>
-          {{ symbol }}
+          <span class="symbol">{{ symbol }}</span>
       </div>
   `,
   styleUrls: ['./app-phase.component.scss'],
