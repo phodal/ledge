@@ -508,5 +508,27 @@
     "number": 94,
     "pay": "Pd",
     "symbol": "Wl"
+  },
+
+  {
+    "name": "Tableau",
+    "category": "operation",
+    "number": 57,
+    "pay": "Pd",
+    "symbol": "Tb"
+  },
+  {
+    "name": "Grafana",
+    "category": "operation",
+    "number": 58,
+    "pay": "Os",
+    "symbol": "Gr"
+  },
+  {
+    "name": "Piwik",
+    "category": "operation",
+    "number": 59,
+    "pay": "Os",
+    "symbol": "Pw"
   }
 ]

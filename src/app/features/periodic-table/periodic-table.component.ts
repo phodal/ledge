@@ -78,6 +78,7 @@ export class PeriodicTableComponent implements OnInit, OnChanges {
     { type: 'collaboration', displayName: '协作'},
     { type: 'config', displayName: '配置管理'},
     { type: 'aiops', displayName: '智能运维'},
+    { type: 'operation', displayName: '运营'},
   ];
 
   constructor(private http: HttpClient) {
