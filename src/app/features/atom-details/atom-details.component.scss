@@ -12,6 +12,8 @@ $name-font-size: 0.75rem;
 }
 
 .atom {
+    background: #000;
+
     &-container {
         display: flex;
         height: 100%;
@@ -22,9 +24,14 @@ $name-font-size: 0.75rem;
             font-size: $default-font-size;
             flex: 1 0 auto;
 
-            .name,
-            .weight {
+            .name {
+                color: #fff;
+                font-size: $shell-font-size;
+            }
+
+            .description {
                 font-size: $name-font-size;
+                width: 128px;
             }
         }
 

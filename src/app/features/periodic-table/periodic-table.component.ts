@@ -47,8 +47,6 @@ export class PeriodicTableComponent implements OnInit, OnChanges {
 
   description = DESCRIPTION;
 
-  colHeader: { index: number; description: string; selected: boolean }[];
-  rowHeader: { index: number; className: string; selected: boolean }[];
   unsubscribe$ = new Subject<void>();
   headerSub$ = new Subject<HeaderInfo>();
   headerMove$: Observable<HeaderInfo>;
@@ -64,24 +62,6 @@ export class PeriodicTableComponent implements OnInit, OnChanges {
   wikiAtomName = '';
 
   constructor(private http: HttpClient) {
-    this.colHeader = Array(MAX_COL_INDEX)
-      .fill(1)
-      .map((v, i) => ({
-        index: i + 1,
-        description: i === 14 ? 'Pnictogens' : i === 15 ? 'Chalcogens' : i === 16 ? 'Halogens' : '',
-        selected: false,
-      }));
-
-    this.rowHeader = [
-      {index: 1, className: 'one', selected: false},
-      {index: 2, className: 'two', selected: false},
-      {index: 3, className: 'three', selected: false},
-      {index: 4, className: 'four', selected: false},
-      {index: 5, className: 'fifth', selected: false},
-      {index: 6, className: 'six', selected: false},
-      {index: 7, className: 'seven', selected: false},
-    ];
-
     this.currentAtom = null;
     this.currentRowHeader = null;
     this.currentColHeader = null;
@@ -118,6 +98,17 @@ export class PeriodicTableComponent implements OnInit, OnChanges {
 
   showAtomDetails(atomNumber: number) {
     console.log('hover detail');
+    if (atomNumber) {
+      this.currentAtom = this.atoms.find(a => a.number === atomNumber);
+      const { xpos, ypos } = this.currentAtom;
+      // if (ypos > MAX_ROW_INDEX) {
+      //   this.rowHeader[ypos - 2 - 1].selected = true;
+      // } else {
+      //   this.rowHeader[ypos - 1].selected = true;
+      //   this.colHeader[xpos - 1].selected = true;
+      // }
+      this.currentAtomCategory.emit(get(this.currentAtom, 'category', null));
+    }
   }
 
   enterPhase(type: string) {

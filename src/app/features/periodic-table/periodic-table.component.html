@@ -2,11 +2,17 @@
     <div class="periodic-grid">
         <div class="phase-row-1 col-1">
             <app-phase
-                    [type]="'sourceControl'"
-                    [selected]="selectCategory === 'sourceControl'"
-                    [symbol]="'Source Control'"
+                    [type]="'scm'"
+                    [selected]="selectCategory === 'scm'"
+                    [symbol]="'源码管理'"
                     (enter)="enterPhase($event)"></app-phase>
         </div>
+
+        <app-atom-details
+                class="atom-details"
+                [class.show]="currentAtom !== null"
+                [data]="currentAtom"
+        ></app-atom-details>
 
         <ng-container *ngIf="(atoms$ | async) as atoms">
             <app-atom
