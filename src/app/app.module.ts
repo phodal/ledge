@@ -13,6 +13,7 @@ import { AppPhaseComponent } from './features/app-phase/app-phase.component';
 import { AppWikiComponent } from './features/app-wiki/app-wiki.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './presentation/home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { HomeComponent } from './presentation/home/home.component';
     SharedModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [Title],
   bootstrap: [AppComponent]
