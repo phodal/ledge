@@ -458,6 +458,27 @@
     "pay": "Os",
     "symbol": "Sp"
   },
+  {
+    "name": "Logstash",
+    "category": "aiops",
+    "number":17,
+    "pay": "Os",
+    "symbol": "Ls"
+  },
+  {
+    "name": "Fluent",
+    "category": "aiops",
+    "number":35,
+    "pay": "Os",
+    "symbol": "Fe"
+  },
+  {
+    "name": "Prometheus",
+    "category": "aiops",
+    "number":53,
+    "pay": "Os",
+    "symbol": "Pt"
+  },
 
   {
     "name": "Kibana",
@@ -465,6 +486,20 @@
     "number": 2,
     "pay": "Os",
     "symbol": "Kb"
+  },
+  {
+    "name": "AppDynamics",
+    "category": "analytics",
+    "number": 10,
+    "pay": "Os",
+    "symbol": "Ad"
+  },
+  {
+    "name": "PinPoint",
+    "category": "analytics",
+    "number": 18,
+    "pay": "Os",
+    "symbol": "Pp"
   },
 
   {
