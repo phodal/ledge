@@ -42,11 +42,11 @@
     "symbol": "Nx"
   },
   {
-    "name": "NPM",
+    "name": "Archiva",
     "category": "packageManage",
     "number": 87,
     "pay": "Os",
-    "symbol": "Np"
+    "symbol": "Ah"
   },
 
   {
@@ -230,6 +230,34 @@
     "number": 105,
     "pay": "Os",
     "symbol": "Pt"
+  },
+  {
+    "name": "Karma",
+    "category": "testing",
+    "number": 106,
+    "pay": "Os",
+    "symbol": "Km"
+  },
+  {
+    "name": "Powermock",
+    "category": "testing",
+    "number": 107,
+    "pay": "Os",
+    "symbol": "Po"
+  },
+  {
+    "name": "Pact",
+    "category": "testing",
+    "number": 108,
+    "pay": "Os",
+    "symbol": "Pa"
+  },
+  {
+    "name": "Karate",
+    "category": "testing",
+    "number": 109,
+    "pay": "Os",
+    "symbol": "Ka"
   },
 
   {
