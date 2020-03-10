@@ -52,42 +52,42 @@
   {
     "name": "Jenkins",
     "category": "ci",
-    "number": 5,
+    "number": 4,
     "pay": "Os",
     "symbol": "Jk"
   },
   {
     "name": "Bamboo",
     "category": "ci",
-    "number": 13,
+    "number": 12,
     "pay": "Pd",
     "symbol": "Jk"
   },
   {
     "name": "VSTS",
     "category": "ci",
-    "number": 31,
+    "number": 20,
     "pay": "Pd",
     "symbol": "Vs"
   },
   {
     "name": "GoCD",
     "category": "ci",
-    "number": 49,
+    "number": 38,
     "pay": "Os",
     "symbol": "Go"
   },
   {
     "name": "TeamCity",
     "category": "ci",
-    "number": 81,
+    "number": 21,
     "pay": "Pd",
     "symbol": "Tc"
   },
   {
     "name": "Travis CI",
     "category": "ci",
-    "number": 113,
+    "number": 39,
     "pay": "Pd",
     "symbol": "Tr"
   },
@@ -224,31 +224,81 @@
 
   {
     "name": "Cloud Foundry",
-    "category": "cloud",
+    "category": "openCloud",
     "number": 6,
     "pay": "Os",
     "symbol": "Cf"
   },
   {
     "name": "OpenShift",
-    "category": "cloud",
+    "category": "openCloud",
     "number": 7,
     "pay": "Os",
     "symbol": "Os"
   },
   {
     "name": "OpenStack",
-    "category": "cloud",
+    "category": "openCloud",
     "number": 8,
     "pay": "Os",
     "symbol": "Ot"
   },
   {
     "name": "OpenWhisk",
-    "category": "cloud",
+    "category": "openCloud",
     "number": 9,
     "pay": "Os",
     "symbol": "Ow"
+  },
+
+  {
+    "name": "Azure",
+    "category": "publicCloud",
+    "number": 14,
+    "pay": "Pd",
+    "symbol": "Az"
+  },
+  {
+    "name": "AWS China",
+    "category": "publicCloud",
+    "number": 15,
+    "pay": "Pd",
+    "symbol": "Ac"
+  },
+  {
+    "name": "Google Cloud",
+    "category": "publicCloud",
+    "number": 16,
+    "pay": "Pd",
+    "symbol": "Gc"
+  },
+  {
+    "name": "IBM Cloud",
+    "category": "publicCloud",
+    "number": 32,
+    "pay": "Pd",
+    "symbol": "Ic"
+  },
+  {
+    "name": "Alibaba Cloud",
+    "category": "publicCloud",
+    "number": 33,
+    "pay": "Pd",
+    "symbol": "Al"
+  },
+  {
+    "name": "Tencent Cloud",
+    "category": "publicCloud",
+    "number": 50,
+    "pay": "Pd",
+    "symbol": "Tc"
+  },
+  {
+    "name": "Huawei Cloud",
+    "category": "publicCloud",
+    "number": 51,
+    "pay": "Pd",
+    "symbol": "Hc"
   },
 
 
