@@ -34,6 +34,13 @@
     "pay": "Os",
     "symbol": "Mc"
   },
+  {
+    "name": "Gerrit",
+    "category": "scm",
+    "number": 55,
+    "pay": "Os",
+    "symbol": "Ge"
+  },
 
   {
     "name": "Artifactory",
@@ -97,7 +104,7 @@
   {
     "name": "VSTS",
     "category": "ci",
-    "number": 72,
+    "number": 38,
     "pay": "Pd",
     "symbol": "Vs"
   },
@@ -248,6 +255,13 @@
     "symbol": "Ja"
   },
   {
+    "name": "Chaos Monkey",
+    "category": "testing",
+    "number": 72,
+    "pay": "Os",
+    "symbol": "Jm"
+  },
+  {
     "name": "Soap UI",
     "category": "testing",
     "number": 74,
@@ -267,6 +281,13 @@
     "number": 76,
     "pay": "Os",
     "symbol": "Tn"
+  },
+  {
+    "name": "Jacoco",
+    "category": "testing",
+    "number": 77,
+    "pay": "Os",
+    "symbol": "Jc"
   },
   {
     "name": "Protractor",
@@ -381,6 +402,13 @@
     "pay": "Os",
     "symbol": "Cs"
   },
+  {
+    "name": "Spacewalk",
+    "category": "security",
+    "number": 99,
+    "pay": "Os",
+    "symbol": "Sw"
+  },
 
   {
     "name": "Ansible",
@@ -399,7 +427,7 @@
   {
     "name": "Puppet",
     "category": "config",
-    "number": 77,
+    "number": 110,
     "pay": "Os",
     "symbol": "Pu"
   },
@@ -461,6 +489,13 @@
     "pay": "Pd",
     "symbol": "Od"
   },
+  {
+    "name": "AWS CodeDeploy",
+    "category": "deployment",
+    "number": 111,
+    "pay": "Pd",
+    "symbol": "Ad"
+  },
 
   {
     "name": "Docker",
@@ -510,6 +545,13 @@
     "number": 113,
     "pay": "Os",
     "symbol": "Cr"
+  },
+  {
+    "name": "K3s",
+    "category": "containers",
+    "number": 112,
+    "pay": "Os",
+    "symbol": "K3"
   },
 
 
@@ -577,6 +619,13 @@
     "number": 34,
     "pay": "Os",
     "symbol": "Ow"
+  },
+  {
+    "name": "OpenFaaS",
+    "category": "openCloud",
+    "number": 84,
+    "pay": "Os",
+    "symbol": "Of"
   },
 
   {
@@ -657,6 +706,13 @@
     "number":53,
     "pay": "Os",
     "symbol": "Pt"
+  },
+  {
+    "name": "Moogsoft",
+    "category": "aiops",
+    "number": 85,
+    "pay": "Pd",
+    "symbol": "Ms"
   },
 
   {
@@ -751,5 +807,19 @@
     "number": 95,
     "pay": "Fm",
     "symbol": "Rt"
+  },
+  {
+    "name": "Bugzilla",
+    "category": "collaboration",
+    "number": 96,
+    "pay": "Os",
+    "symbol": "Bz"
+  },
+  {
+    "name": "Redmine",
+    "category": "collaboration",
+    "number": 97,
+    "pay": "Os",
+    "symbol": "Rm"
   }
 ]

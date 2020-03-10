@@ -10,10 +10,16 @@ Todo:
 
 http://agilefluency.org/
 
+# Table
+
+
+periodic based on :
+
+ - [https://stackblitz.com/edit/ng-periodic-table](https://stackblitz.com/edit/ng-periodic-table)
+ - [https://www.nexthink.com/periodic-table/](https://www.nexthink.com/periodic-table/)
+
 License
 ---
-
-periodic based on [https://stackblitz.com/edit/ng-periodic-table](https://stackblitz.com/edit/ng-periodic-table)
 
 [![Phodal's Idea](http://brand.phodal.com/shields/idea-small.svg)](http://ideas.phodal.com/)
 
