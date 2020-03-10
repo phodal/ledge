@@ -298,16 +298,90 @@
   },
 
   {
+    "name": "Docker",
+    "category": "containers",
+    "number": 5,
+    "pay": "Os",
+    "symbol": "Dk"
+  },
+  {
+    "name": "Kubernetes",
+    "category": "containers",
+    "number": 13,
+    "pay": "Os",
+    "symbol": "K8"
+  },
+  {
+    "name": "Mesos",
+    "category": "containers",
+    "number": 31,
+    "pay": "Os",
+    "symbol": "Mo"
+  },
+  {
+    "name": "Rancher",
+    "category": "containers",
+    "number": 49,
+    "pay": "Os",
+    "symbol": "Rc"
+  },
+  {
+    "name": "Helm",
+    "category": "containers",
+    "number": 81,
+    "pay": "Os",
+    "symbol": "He"
+  },
+  {
+    "name": "Pivotal PKS",
+    "category": "containers",
+    "number": 82,
+    "pay": "Os",
+    "symbol": "Pp"
+  },
+
+  {
+    "name": "OpenMake",
+    "category": "releaseOrchestration",
+    "number": 6,
+    "pay": "Pd",
+    "symbol": "Om"
+  },
+  {
+    "name": "UrbanCode Release",
+    "category": "releaseOrchestration",
+    "number": 14,
+    "pay": "Pd",
+    "symbol": "Ur"
+  },
+  {
+    "name": "Spinnaker",
+    "category": "releaseOrchestration",
+    "number": 32,
+    "pay": "Os",
+    "symbol": "Sp"
+  },
+  {
+    "name": "Plutora Release",
+    "category": "releaseOrchestration",
+    "number": 50,
+    "pay": "Os",
+    "symbol": "Pr"
+  },
+
+
+
+  {
     "name": "Cloud Foundry",
     "category": "openCloud",
-    "number": 6,
+    "number": 16,
     "pay": "Os",
     "symbol": "Cf"
   },
   {
     "name": "OpenShift",
     "category": "openCloud",
-    "number": 7,
+    "number": 52,
     "pay": "Os",
     "symbol": "Os"
   },
@@ -321,7 +395,7 @@
   {
     "name": "OpenWhisk",
     "category": "openCloud",
-    "number": 9,
+    "number": 34,
     "pay": "Os",
     "symbol": "Ow"
   },
@@ -329,7 +403,7 @@
   {
     "name": "Azure",
     "category": "publicCloud",
-    "number": 14,
+    "number": 83,
     "pay": "Pd",
     "symbol": "Az"
   },
@@ -343,14 +417,14 @@
   {
     "name": "Google Cloud",
     "category": "publicCloud",
-    "number": 16,
+    "number": 7,
     "pay": "Pd",
     "symbol": "Gc"
   },
   {
     "name": "IBM Cloud",
     "category": "publicCloud",
-    "number": 32,
+    "number": 84,
     "pay": "Pd",
     "symbol": "Ic"
   },
@@ -364,7 +438,7 @@
   {
     "name": "Tencent Cloud",
     "category": "publicCloud",
-    "number": 50,
+    "number": 115,
     "pay": "Pd",
     "symbol": "Tc"
   },
@@ -376,6 +450,22 @@
     "symbol": "Hc"
   },
 
+
+  {
+    "name": "Splunk",
+    "category": "aiops",
+    "number": 9,
+    "pay": "Os",
+    "symbol": "Sp"
+  },
+
+  {
+    "name": "Kibana",
+    "category": "analytics",
+    "number": 2,
+    "pay": "Os",
+    "symbol": "Kb"
+  },
 
   {
     "name": "Jira",
