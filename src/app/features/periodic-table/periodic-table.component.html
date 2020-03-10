@@ -1,44 +1,44 @@
 <div class="periodic-container">
+  <div class="category-selector">
+    <app-atom-category *ngFor="let category of categories"
+                       class="category"
+                       [type]="category.type"
+                       [selected]="selectCategory === category.type"
+                       [symbol]="category.displayName"
+                       (enter)="enterPhase($event)"></app-atom-category>
+  </div>
 
-    <div class="category-selector">
-        <app-atom-category *ngFor="let category of categories"
-                           class="category"
-                           [type]="category.type"
-                           [selected]="selectCategory === category.type"
-                           [symbol]="category.displayName"
-                           (enter)="enterPhase($event)"></app-atom-category>
-    </div>
+  <div class="periodic-grid">
+    <app-atom-details
+      class="atom-details"
+      [class.show]="currentAtom !== null"
+      [data]="currentAtom"
+    ></app-atom-details>
 
-    <div class="periodic-grid">
-        <app-atom-details
-                class="atom-details"
-                [class.show]="currentAtom !== null"
-                [data]="currentAtom"
-        ></app-atom-details>
+    <ng-container *ngIf="(atoms$ | async) as atoms">
+      <app-atom
+        *ngFor="let atom of atoms"
+        class="periodic-atom-{{ atom.number }}"
+        [data]="atom"
+        [selectedCategory]="selectCategory"
+        [metalSelected]="metalClass"
+        (hoverAtom)="showAtomDetails($event)"
+        (click)="open(atom.name)"
+      ></app-atom>
+    </ng-container>
+    <app-atom class="periodic-atom-57-71 placeholder" [data]="lantAtomGroup"></app-atom>
+    <app-atom class="periodic-atom-89-103 placeholder" [data]="actinideAtomGroup"></app-atom>
+  </div>
 
-        <ng-container *ngIf="(atoms$ | async) as atoms">
-            <app-atom
-                    *ngFor="let atom of atoms"
-                    class="periodic-atom-{{ atom.number }}"
-                    [data]="atom"
-                    [selectedCategory]="selectCategory"
-                    [metalSelected]="metalClass"
-                    (hoverAtom)="showAtomDetails($event)"
-                    (click)="open(atom.name)"
-            ></app-atom>
-        </ng-container>
-        <app-atom class="periodic-atom-57-71 placeholder" [data]="lantAtomGroup"></app-atom>
-        <app-atom class="periodic-atom-89-103 placeholder" [data]="actinideAtomGroup"></app-atom>
-    </div>
-
-    <app-wiki *ngIf="wikiAtomName" [atomName]="wikiAtomName" (closeModal)="wikiAtomName = ''"></app-wiki>
+  <app-wiki *ngIf="wikiAtomName" [atomName]="wikiAtomName" (closeModal)="wikiAtomName = ''"></app-wiki>
 </div>
 
 <div class="inspired">
-    Periodic Table based on <a href="https://stackblitz.com/edit/ng-periodic-table">https://stackblitz.com/edit/ng-periodic-table</a>
-    <br>
-    and inspired by
-    <a href="https://xebialabs.com/periodic-table-of-devops-tools/">https://xebialabs.com/periodic-table-of-devops-tools/</a>
-    &&
-    <a href="https://www.nexthink.com/periodic-table/">https://www.nexthink.com/periodic-table/</a>
+  Periodic Table based on <a href="https://stackblitz.com/edit/ng-periodic-table">https://stackblitz.com/edit/ng-periodic-table</a>
+  <br>
+  and inspired by
+  <a
+    href="https://xebialabs.com/periodic-table-of-devops-tools/">https://xebialabs.com/periodic-table-of-devops-tools/</a>
+  &&
+  <a href="https://www.nexthink.com/periodic-table/">https://www.nexthink.com/periodic-table/</a>
 </div>
