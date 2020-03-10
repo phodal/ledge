@@ -268,11 +268,33 @@
 
 
   {
-    "name": "GoCD",
-    "category": "ci",
+    "name": "Terraform",
+    "category": "deployment",
     "number": 29,
+    "description": "Terraform 是一种安全有效地构建、更改和版本控制基础设施的工具(基础架构自动化的编排工具)。它的目标是 \"Write, Plan, and create Infrastructure as Code\", 基础架构即代码。",
+    "pay": "Os",
+    "symbol": "Tf"
+  },
+  {
+    "name": "GoCD",
+    "category": "deployment",
+    "number": 30,
     "pay": "Os",
     "symbol": "Go"
+  },
+  {
+    "name": "Pulumi",
+    "category": "deployment",
+    "number": 47,
+    "pay": "Os",
+    "symbol": "Pl"
+  },
+  {
+    "name": "Octopus Deploy",
+    "category": "deployment",
+    "number": 48,
+    "pay": "Pd",
+    "symbol": "Od"
   },
 
   {
