@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   category: string;
 
   constructor(titleService: Title) {
-    titleService.setTitle('Periodic Table');
+    titleService.setTitle('Ledge - Periodic Table');
   }
 
   highlightElement(highlightState: HighlightState) {

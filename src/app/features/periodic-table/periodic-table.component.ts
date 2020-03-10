@@ -22,20 +22,7 @@ const DESCRIPTION = {
   name: 'Name',
   atomic_mass: 'Weight',
 };
-const LANT_ATOM_GROUP = {
-  number: '57-71',
-  category: 'lanthanide',
-  symbol: '',
-  name: '',
-  atomic_mass: null,
-};
-const ACT_ATOM_GROUP = {
-  number: '89-103',
-  category: 'actinide',
-  symbol: '',
-  name: '',
-  atomic_mass: null,
-};
+
 // in milliseconds
 const STAY_AT_LEAST = 25;
 
@@ -59,8 +46,6 @@ export class PeriodicTableComponent implements OnInit, OnChanges {
   currentAtomCategory: EventEmitter<string> = new EventEmitter<string>();
 
   description = DESCRIPTION;
-  lantAtomGroup = LANT_ATOM_GROUP;
-  actinideAtomGroup = ACT_ATOM_GROUP;
 
   colHeader: { index: number; description: string; selected: boolean }[];
   rowHeader: { index: number; className: string; selected: boolean }[];
@@ -119,20 +104,6 @@ export class PeriodicTableComponent implements OnInit, OnChanges {
       this.headerMove$
     ).pipe(
       map(([atoms, headerMove]) => {
-        const {rowNum, colNum, inside} = headerMove;
-        if (rowNum >= 1) {
-          return atoms.map(atom =>
-            rowNum === atom.ypos || (rowNum === 6 && atom.ypos === 8) || (rowNum === 7 && atom.ypos === 9)
-              ? atom
-              : assign({}, atom, {blurry: inside})
-          );
-        } else if (colNum >= 1) {
-          return atoms.map(atom =>
-            colNum === atom.xpos && atom.ypos !== 8 && atom.ypos !== 9
-              ? atom
-              : assign({}, atom, {blurry: inside})
-          );
-        }
         return atoms;
       }),
       tap(atoms => (this.atoms = atoms)),
