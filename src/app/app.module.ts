@@ -14,6 +14,7 @@ import { AppWikiComponent } from './features/app-wiki/app-wiki.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './presentation/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CustomMaterialModule } from './shared/custom-material.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CustomMaterialModule,
   ],
   providers: [Title],
   bootstrap: [AppComponent]
