@@ -45,7 +45,6 @@ import { MarkdownModule } from 'ngx-markdown';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MarkdownModule.forRoot({ loader: HttpClient }),
     BrowserAnimationsModule,
     CustomMaterialModule,
   ],
