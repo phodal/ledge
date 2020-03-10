@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MarkdownService } from 'ngx-markdown';
 
 @Component({
   selector: 'app-pattern',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PatternComponent implements OnInit {
 
-  constructor() { }
+  constructor(private markdownService: MarkdownService) { }
 
   ngOnInit(): void {
   }
