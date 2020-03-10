@@ -7,7 +7,7 @@
     "symbol": "Gl"
   },
   {
-    "name": "Gitee",
+    "name": "Gitea",
     "category": "scm",
     "number": 3,
     "pay": "Fm",
@@ -28,12 +28,21 @@
     "symbol": "Sv"
   },
   {
+    "name": "Mercurial",
+    "category": "scm",
+    "number": 37,
+    "pay": "Os",
+    "symbol": "Mc"
+  },
+
+  {
     "name": "Artifactory",
     "category": "packageManage",
-    "number": 37,
+    "number": 88,
     "pay": "Fm",
     "symbol": "Af"
   },
+
   {
     "name": "Nexus",
     "category": "packageManage",
@@ -153,6 +162,13 @@
     "pay": "Os",
     "symbol": "Sd"
   },
+  {
+    "name": "OpenNMS",
+    "category": "monitoring",
+    "number": 63,
+    "pay": "Os",
+    "symbol": "On"
+  },
 
   {
     "name": "JUnit",
@@ -246,6 +262,13 @@
     "symbol": "Pt"
   },
   {
+    "name": "DBUnit",
+    "category": "testing",
+    "number": 104,
+    "pay": "Os",
+    "symbol": "Du"
+  },
+  {
     "name": "Karma",
     "category": "testing",
     "number": 106,
@@ -295,6 +318,55 @@
     "pay": "Os",
     "symbol": "Ns"
   },
+  {
+    "name": "OWASP",
+    "category": "security",
+    "number": 103,
+    "pay": "Os",
+    "symbol": "Ow"
+  },
+  {
+    "name": "Hashicorp Vault",
+    "category": "security",
+    "number": 102,
+    "pay": "Os",
+    "symbol": "Hv"
+  },
+  {
+    "name": "Veracode",
+    "category": "security",
+    "number": 101,
+    "pay": "Pd",
+    "symbol": "Vr"
+  },
+  {
+    "name": "PMD",
+    "category": "security",
+    "number": 100,
+    "pay": "Os",
+    "symbol": "Pd"
+  },
+  {
+    "name": "Ettercap",
+    "category": "security",
+    "number": 68,
+    "pay": "Pd",
+    "symbol": "Et"
+  },
+  {
+    "name": "Lynis",
+    "category": "security",
+    "number": 67,
+    "pay": "Os",
+    "symbol": "Ly"
+  },
+  {
+    "name": "Cuckoo sandbox",
+    "category": "security",
+    "number": 66,
+    "pay": "Os",
+    "symbol": "Cs"
+  },
 
   {
     "name": "Ansible",
@@ -318,7 +390,7 @@
     "symbol": "Pu"
   },
   {
-    "name": "Salt",
+    "name": "Saltstack Salt",
     "category": "config",
     "number": 46,
     "pay": "Os",
@@ -331,8 +403,21 @@
     "pay": "Os",
     "symbol": "Pk"
   },
+  {
+    "name": "CFEngine",
+    "category": "config",
+    "number": 78,
+    "pay": "Os",
+    "symbol": "Ce"
+  },
 
-
+  {
+    "name": "BOSH",
+    "category": "deployment",
+    "number": 79,
+    "pay": "Os",
+    "symbol": "Bo"
+  },
   {
     "name": "Terraform",
     "category": "deployment",
@@ -405,6 +490,14 @@
     "pay": "Os",
     "symbol": "Pp"
   },
+  {
+    "name": "CoreOS Rkt",
+    "category": "containers",
+    "number": 113,
+    "pay": "Os",
+    "symbol": "Cr"
+  },
+
 
   {
     "name": "OpenMake",
@@ -434,7 +527,6 @@
     "pay": "Os",
     "symbol": "Pr"
   },
-
 
 
   {
@@ -490,7 +582,7 @@
   {
     "name": "IBM Cloud",
     "category": "publicCloud",
-    "number": 84,
+    "number": 114,
     "pay": "Pd",
     "symbol": "Ic"
   },
@@ -504,7 +596,7 @@
   {
     "name": "Tencent Cloud",
     "category": "publicCloud",
-    "number": 82,
+    "number": 115,
     "pay": "Pd",
     "symbol": "Tc"
   },
@@ -605,11 +697,11 @@
     "symbol": "Mr"
   },
   {
-    "name": "Slack",
+    "name": "Rocket Chat",
     "category": "collaboration",
     "number": 91,
-    "pay": "Pd",
-    "symbol": "Sl"
+    "pay": "Os",
+    "symbol": "Rc"
   },
   {
     "name": "Teambition",
@@ -619,17 +711,24 @@
     "symbol": "Tb"
   },
   {
-    "name": "Dingding",
+    "name": "Confluence",
     "category": "collaboration",
     "number": 93,
     "pay": "Pd",
-    "symbol": "Dd"
+    "symbol": "Cf"
   },
   {
-    "name": "Welink",
+    "name": "Wekan",
     "category": "collaboration",
     "number": 94,
     "pay": "Pd",
-    "symbol": "Wl"
+    "symbol": "Wk"
+  },
+  {
+    "name": "RetroTool",
+    "category": "collaboration",
+    "number": 95,
+    "pay": "Fm",
+    "symbol": "Rt"
   }
 ]
