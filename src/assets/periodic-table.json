@@ -104,21 +104,21 @@
   {
     "name": "Zabbix",
     "category": "monitoring",
-    "number": 118,
+    "number": 57,
     "pay": "Os",
     "symbol": "Zb"
   },
   {
     "name": "Nagios",
     "category": "monitoring",
-    "number": 117,
+    "number": 58,
     "pay": "Os",
     "symbol": "Na"
   },
   {
     "name": "Ganglia",
     "category": "monitoring",
-    "number": 116,
+    "number": 59,
     "description": "Ganglia 是用于高性能计算系统，群集和网络的可伸缩的分布式监视工具。",
     "pay": "Os",
     "symbol": "Gl"
@@ -126,7 +126,7 @@
   {
     "name": "Sensu",
     "category": "monitoring",
-    "number": 115,
+    "number": 60,
     "description": "Sensu 是由 Sonian 公司开发的一种监控框架，主要用于拥有大规模节点的云计算平台的检查与监控。",
     "pay": "Os",
     "symbol": "Ss"
@@ -134,10 +134,24 @@
   {
     "name": "Icinga",
     "category": "monitoring",
-    "number": 114,
+    "number": 61,
     "description": "Sensu 是由 Sonian 公司开发的一种监控框架，主要用于拥有大规模节点的云计算平台的检查与监控。",
     "pay": "Os",
     "symbol": "Ic"
+  },
+  {
+    "name": "StatsD",
+    "category": "monitoring",
+    "number": 62,
+    "pay": "Os",
+    "symbol": "Sd"
+  },
+  {
+    "name": "Graphite",
+    "category": "monitoring",
+    "number": 63,
+    "pay": "Os",
+    "symbol": "Sd"
   },
 
   {
