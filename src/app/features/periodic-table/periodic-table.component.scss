@@ -26,6 +26,10 @@ $selected-color: #fff;
       grid-auto-rows: 80px !important;
     }
   }
+
+  .category-selector {
+    top: 160px !important;
+  }
 }
 
 .category-selector {
@@ -34,7 +38,8 @@ $selected-color: #fff;
   display: flex;
   flex: 0 auto;
   flex-wrap: wrap;
-  width: 400px;
+  width: 480px;
+  margin-top: 1em;
 
   .category {
     width: 120px;
