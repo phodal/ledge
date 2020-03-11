@@ -6,6 +6,7 @@ import { PatternComponent } from './presentation/pattern/pattern.component';
 import { DesignComponent } from './presentation/design/design.component';
 import { PractiseComponent } from './presentation/practise/practise.component';
 import { ManualComponent } from './presentation/manual/manual.component';
+import {MaturityComponent} from './maturity/maturity.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: '/home'},
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'manual',
     component: ManualComponent
+  },
+  {
+    path: 'maturity',
+    component: MaturityComponent
   }
 ];
 

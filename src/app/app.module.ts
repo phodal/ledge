@@ -23,6 +23,7 @@ import { ManualComponent } from './presentation/manual/manual.component';
 import { PathComponent } from './features/path/path.component';
 import { FormsModule } from '@angular/forms';
 import { DragulaModule } from 'ng2-dragula';
+import { MaturityComponent } from './maturity/maturity.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { DragulaModule } from 'ng2-dragula';
     PractiseComponent,
     ManualComponent,
     PathComponent,
+    MaturityComponent,
   ],
   imports: [
     SharedModule,
