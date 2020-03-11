@@ -55,9 +55,17 @@ div {
 }
 
 .header {
+  .flex-row {
+    &.type_0 {background: #F37C20;}
+    &.type_0:after {border-left: 23px solid #F37C20;}
+  }
+}
+
+.header {
   position: relative;
 
   .flex-row {
+    color: #fff;
     position: relative;
     height: 44px;
     line-height: 44px;

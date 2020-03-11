@@ -2,7 +2,8 @@
   <div class="flex-table header" role="rowgroup">
     <div class="flex-row"
          [ngStyle]="getHeaderColumn()"
-         *ngFor="let header of processTable.headers;let first = first" [ngClass]="first ? 'first' : ''">
+         *ngFor="let header of processTable.headers;let first = first;let index = index"
+         [ngClass]="getHeaderClass(index)">
       {{header}}
     </div>
   </div>

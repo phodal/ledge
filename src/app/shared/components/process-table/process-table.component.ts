@@ -64,4 +64,12 @@ export class ProcessTableComponent implements OnInit {
       width: `calc(100% / ${this.headerSize})`
     };
   }
+
+  getHeaderClass(index: number) {
+    if (index === 0) {
+      return `first type_${index}`;
+    } else {
+      return `type_${index}`;
+    }
+  }
 }
