@@ -27,13 +27,15 @@
         <div class='container'
              *ngFor="let pipe of pipeData;let i = index"
              id="{{i}}_pipe"
+             dragula="ITEMS"
+             [(dragulaModel)]="pipe.items"
              [ngStyle]="getContainerStyle(pipe)">
 
           <div
             class="editable"
             #itemElement
             id="pipe{{i}}_child{{j}}"
-            (click)="enableEdit(i, j)"
+            (dblclick)="enableEdit(i, j)"
             [ngStyle]="getEditableStyle()"
             (keydown.enter)="updateItem(i, j, $event)"
             ngDefaultControl

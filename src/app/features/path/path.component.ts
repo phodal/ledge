@@ -176,7 +176,7 @@ export class PathComponent implements OnInit {
     const filterElements = this.itemElements.filter((el) => {
       return el.nativeElement.id === elementId;
     });
-    if (filterElements.length > 0 ) {
+    if (filterElements.length > 0) {
       const element = filterElements[0];
       this.renderer.setProperty(element.nativeElement, 'contentEditable', true);
     }

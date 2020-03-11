@@ -11,7 +11,7 @@ import { AtomDetailsComponent } from './features/atom-details/atom-details.compo
 import { FooterComponent } from './features/footer/footer.component';
 import { AppPhaseComponent } from './features/app-phase/app-phase.component';
 import { AppWikiComponent } from './features/app-wiki/app-wiki.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './presentation/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomMaterialModule } from './shared/custom-material.module';
@@ -21,7 +21,8 @@ import { DesignComponent } from './presentation/design/design.component';
 import { PractiseComponent } from './presentation/practise/practise.component';
 import { ManualComponent } from './presentation/manual/manual.component';
 import { PathComponent } from './features/path/path.component';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { DragulaModule } from 'ng2-dragula';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import {FormsModule} from '@angular/forms';
     BrowserAnimationsModule,
     FormsModule,
     CustomMaterialModule,
+    DragulaModule.forRoot(),
   ],
   providers: [Title],
   bootstrap: [AppComponent]
