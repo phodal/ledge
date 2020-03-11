@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "styles/variables";
+
 @import "styles/markdown";
+@import "styles/dragula";
 
 * {
   box-sizing: border-box;
@@ -28,4 +30,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   img {
     width: 400px;
   }
+}
+
+.spacer {
+  flex: 1 1 auto;
 }

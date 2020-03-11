@@ -21,6 +21,7 @@ import { DesignComponent } from './presentation/design/design.component';
 import { PractiseComponent } from './presentation/practise/practise.component';
 import { ManualComponent } from './presentation/manual/manual.component';
 import { MarkdownModule } from 'ngx-markdown';
+import { PathComponent } from './features/path/path.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { MarkdownModule } from 'ngx-markdown';
     DesignComponent,
     PractiseComponent,
     ManualComponent,
+    PathComponent,
   ],
   imports: [
     SharedModule,
