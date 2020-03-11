@@ -22,7 +22,6 @@ div {
 .flex-table {
   display: flex;
   flex-flow: row wrap;
-  border-left: solid 1px $table-border;
   transition: 0.5s;
 
   &:first-of-type .flex-row {
