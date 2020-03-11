@@ -1,5 +1,5 @@
-$table-header: #1976D2;
-$table-header-border: #1565C0;
+$table-header: #3498db;
+$table-header-border: #3498db;
 $table-border: #d9d9d9;
 $row-bg: #f4f2f1;
 
@@ -11,7 +11,8 @@ div {
   display: block;
   margin: 2em auto;
   width: 90%;
-  max-width: 600px;
+  max-width: 1600px;
+  position: relative;
 }
 
 .flag-icon {
@@ -23,11 +24,6 @@ div {
   flex-flow: row wrap;
   border-left: solid 1px $table-border;
   transition: 0.5s;
-
-  &:first-of-type {
-    border-top: solid 1px $table-header-border;
-    border-left: solid 1px $table-header-border;
-  }
 
   &:first-of-type .flex-row {
     background: $table-header;
@@ -46,7 +42,7 @@ div {
 }
 
 .flex-row {
-  width: calc(100% / 4);
+  width: calc(100% / 4 - 24px);
   text-align: center;
   padding: 0.5em 0.5em;
   border-right: solid 1px $table-border;
@@ -58,6 +54,59 @@ div {
   flex-flow: row wrap;
   align-items: flex-start;
   justify-content: center;
+}
+
+.header {
+  position: relative;
+
+  .flex-row {
+    position: relative;
+    height: 44px;
+    line-height: 44px;
+    font-size: 1.5em;
+    float: left;
+    background: #3498db;
+    text-align: center;
+    padding: 0 23px 0 0;
+    margin: 0 10px 0 0;
+
+    &:after {
+      content: "";
+      border-top: 23px solid transparent;
+      border-bottom: 23px solid transparent;
+      border-left: 23px solid #3498db;
+      position: absolute;
+      right: -23px;
+      top: -1px;
+      z-index: 1;
+    }
+
+    &:before {
+      content: "";
+      border-top: 23px solid transparent;
+      border-bottom: 23px solid transparent;
+      border-left: 23px solid #fff;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    &:first-child {
+      border-top-left-radius: 10px; border-bottom-left-radius: 10px;
+    }
+    &:first-child:before {
+      display: none;
+    }
+
+    &:last-child {
+      padding-right: 80px;
+      border-top-right-radius: 10px; border-bottom-right-radius: 10px;
+    }
+
+    &:last-child:after {
+      display: none;
+    }
+  }
 }
 
 .column {
@@ -107,7 +156,6 @@ div {
 }
 
 @media all and (max-width: 430px) {
-
   .flex-table {
     .flex-row {
       border-bottom: 0;
