@@ -3,6 +3,7 @@ import marked from 'marked';
 import MarkdownHelper from '../shared/components/model/markdown.helper';
 import {MarkdownTaskItemService} from '../shared/components/markdown-radar-chart/markdown-task-item.service';
 import {MarkdownListModel} from '../shared/components/model/markdown.model';
+import {StorageMap} from '@ngx-pwa/local-storage';
 
 @Component({
   selector: 'app-maturity',
@@ -38,14 +39,18 @@ export class MaturityComponent implements OnInit {
   private taskIndex: number;
   private indexString: string;
 
-  constructor(private markdownTaskItemService: MarkdownTaskItemService) {
+  constructor(private markdownTaskItemService: MarkdownTaskItemService, private storage: StorageMap) {
 
   }
 
   ngOnInit(): void {
-    const tokens = marked.lexer(this.textValue);
-    this.tasks = MarkdownHelper.markdownToJSON(tokens, this.tasks);
-    this.markdownTaskItemService.setTasks(this.tasks);
+    this.storage.get('maturity.cd').subscribe((value: string) => {
+      if (!!value) {
+        this.textValue = value;
+      }
+
+      this.updateValue(this.textValue);
+    });
   }
 
   updateValue(value) {
@@ -53,6 +58,8 @@ export class MaturityComponent implements OnInit {
     const tokens = marked.lexer(this.textValue);
     this.tasks = MarkdownHelper.markdownToJSON(tokens, this.tasks);
     this.markdownTaskItemService.setTasks(this.tasks);
+
+    this.storage.set('maturity.cd', this.textValue).subscribe(() => {});
   }
 
   updateModel($event: any) {
