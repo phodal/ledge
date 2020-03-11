@@ -19,6 +19,7 @@ export class ProcessTableComponent implements OnInit {
     headers: [],
     cells: []
   };
+  headerSize = 0;
 
   constructor() {
   }
@@ -46,7 +47,21 @@ export class ProcessTableComponent implements OnInit {
       if (token.type === 'table') {
         this.processTable.headers = token.header;
         this.processTable.cells = token.cells;
+
+        this.headerSize = this.processTable.headers.length;
       }
     }
+  }
+
+  getHeaderColumn() {
+    return {
+      width: `calc(100% / ${this.headerSize} - 10px)`
+    };
+  }
+
+  getColumnStyle() {
+    return {
+      width: `calc(100% / ${this.headerSize})`
+    };
   }
 }

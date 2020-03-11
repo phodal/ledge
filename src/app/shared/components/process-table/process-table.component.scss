@@ -39,7 +39,6 @@ div {
 }
 
 .flex-row {
-  width: calc(100% / 6);
   text-align: center;
   padding: 0.5em 0.5em;
 }
@@ -55,7 +54,6 @@ div {
   position: relative;
 
   .flex-row {
-    width: calc(100% / 6 - 10px);
     position: relative;
     height: 44px;
     line-height: 44px;

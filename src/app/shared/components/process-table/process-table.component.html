@@ -1,11 +1,15 @@
 <div class="table-container" role="table" aria-label="Destinations">
   <div class="flex-table header" role="rowgroup">
-    <div class="flex-row" *ngFor="let header of processTable.headers;let first = first" [ngClass]="first ? 'first' : ''">
+    <div class="flex-row"
+         [ngStyle]="getHeaderColumn()"
+         *ngFor="let header of processTable.headers;let first = first" [ngClass]="first ? 'first' : ''">
       {{header}}
     </div>
   </div>
   <div class="flex-table row" role="rowgroup" *ngFor="let column of processTable.cells">
-    <div class="flex-row" *ngFor="let cell of column;let first = first"  [ngClass]="first ? 'first' : ''">
+    <div class="flex-row"
+         [ngStyle]="getColumnStyle()"
+         *ngFor="let cell of column;let first = first"  [ngClass]="first ? 'first' : ''">
       {{cell}}
     </div>
   </div>
