@@ -20,8 +20,8 @@ import { PatternComponent } from './presentation/pattern/pattern.component';
 import { DesignComponent } from './presentation/design/design.component';
 import { PractiseComponent } from './presentation/practise/practise.component';
 import { ManualComponent } from './presentation/manual/manual.component';
-import { MarkdownModule } from 'ngx-markdown';
 import { PathComponent } from './features/path/path.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -48,6 +48,7 @@ import { PathComponent } from './features/path/path.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule,
     CustomMaterialModule,
   ],
   providers: [Title],

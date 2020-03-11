@@ -18,7 +18,8 @@
   <div class="page">
     <div class="path">
       <div id="pipe-header">
-        <div class="pipe-header" *ngFor="let pipe of pipeData;let i = index" id="{{i}}_header" [ngStyle]="getHeaderHeight()">
+        <div class="pipe-header" *ngFor="let pipe of pipeData;let i = index" id="{{i}}_header"
+             [ngStyle]="getHeaderHeight()">
           <h2>{{pipe.title}}</h2>
         </div>
       </div>
@@ -27,7 +28,14 @@
              id="{{i}}_pipe"
              [ngStyle]="getContainerStyle(pipe)">
 
-          <div class="editable"  [ngStyle]="getEditableStyle()" *ngFor="let item of pipe.items;let j = index" id="{{i}}_pipe_child{{j}}">
+          <div
+            class="editable"
+            contenteditable="true"
+            [ngStyle]="getEditableStyle()"
+            (change)="changeItem()"
+            [ngModel]="pipeData[i][j]"
+            ngDefaultControl
+            *ngFor="let item of pipe.items;let j = index" id="{{i}}_pipe_child{{j}}">
             {{item}}
           </div>
         </div>

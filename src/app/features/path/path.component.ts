@@ -79,6 +79,32 @@ export class PathComponent implements OnInit {
 
   ngOnInit(): void {
     this.maxLength = this.getMaxLength(this.pipeData);
+    this.storage.get('ledge.path').subscribe((value: Item[]) => {
+      if (!!value) {
+        this.pipeData = value;
+        this.fillDefaultValue();
+      }
+    });
+
+    this.fillDefaultValue();
+  }
+
+  private fillDefaultValue() {
+    this.pipeData = this.fillArrayWithEmpty(this.pipeData);
+  }
+
+  fillArrayWithEmpty(items: Item[]) {
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < items.length; i++) {
+      const itemLength = items[i].items.length;
+      for (let j = 0; j <= this.maxLength; j++) {
+        if (j > itemLength) {
+          items[i].items[j - 1] = '';
+        }
+      }
+    }
+
+    return items;
   }
 
   addColumn() {
@@ -116,7 +142,6 @@ export class PathComponent implements OnInit {
     };
   }
 
-
   getHeaderHeight() {
     return {
       height: this.getContainerHeightWidth().itemWidth + 20 + 12 + 'px'
@@ -134,5 +159,10 @@ export class PathComponent implements OnInit {
     }
 
     return maxLength;
+  }
+
+  changeItem() {
+    this.storage.set('ledge.path', this.pipeData).subscribe(() => {
+    });
   }
 }
