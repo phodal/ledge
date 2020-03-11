@@ -80,13 +80,14 @@ export class PathComponent implements OnInit {
   ngOnInit(): void {
     this.maxLength = this.getMaxLength(this.pipeData);
     this.storage.get('ledge.path').subscribe((value: Item[]) => {
+      console.log(value);
       if (!!value) {
         this.pipeData = value;
         this.fillDefaultValue();
+      } else {
+        this.fillDefaultValue();
       }
     });
-
-    this.fillDefaultValue();
   }
 
   private fillDefaultValue() {
@@ -161,8 +162,11 @@ export class PathComponent implements OnInit {
     return maxLength;
   }
 
-  changeItem() {
+  updateItem(i: number, j: number, $event: Event) {
+    const value = ($event.target as any).innerHTML;
+    this.pipeData[i].items[j] = value;
     this.storage.set('ledge.path', this.pipeData).subscribe(() => {
+
     });
   }
 }

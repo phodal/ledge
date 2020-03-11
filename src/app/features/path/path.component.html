@@ -32,8 +32,7 @@
             class="editable"
             contenteditable="true"
             [ngStyle]="getEditableStyle()"
-            (change)="changeItem()"
-            [ngModel]="pipeData[i][j]"
+            (keydown.enter)="updateItem(i, j, $event)"
             ngDefaultControl
             *ngFor="let item of pipe.items;let j = index" id="{{i}}_pipe_child{{j}}">
             {{item}}
