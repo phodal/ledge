@@ -24,6 +24,7 @@ import { PathComponent } from './features/path/path.component';
 import { FormsModule } from '@angular/forms';
 import { DragulaModule } from 'ng2-dragula';
 import { MaturityComponent } from './maturity/maturity.component';
+import { ResourcesComponent } from './presentation/resources/resources.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { MaturityComponent } from './maturity/maturity.component';
     ManualComponent,
     PathComponent,
     MaturityComponent,
+    ResourcesComponent,
   ],
   imports: [
     SharedModule,
