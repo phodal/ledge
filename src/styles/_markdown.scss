@@ -473,6 +473,10 @@
     background: #fdfdfd
   }
 
+  table td {
+    min-width: 7rem;
+  }
+
   tbody tr:nth-child(even) {
     background: #fdfdfd
   }
@@ -484,7 +488,7 @@
   td, th {
     border-bottom: 0.1rem solid #d1d8df;
     padding: 1.2rem 1.5rem;
-    text-align: left
+    text-align: left;
   }
 
   u {
