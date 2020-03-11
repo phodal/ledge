@@ -1,1 +1,1 @@
-![Fluent Agency](assets/images/agile-fluency.png)
+![Fluent Agency](assets/images/agile-fluency.png "Fluent Agency")

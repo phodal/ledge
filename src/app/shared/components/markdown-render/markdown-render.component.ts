@@ -13,6 +13,21 @@ export class MarkdownRenderComponent implements OnInit {
   constructor(private markdownService: MarkdownService) { }
 
   ngOnInit(): void {
+    const markedOptions: any = this.markdownService.options;
+    this.markdownService.renderer.image = (href: string, title: string, text: string): string => {
+      if (href === null) {
+        return text;
+      }
+      let out = '<img src="' + href + '" alt="' + text + '"';
+      if (title) {
+        out += ' title="' + title + '"';
+      }
+
+      out += markedOptions.xhtml ? '/>' : '>';
+      out += `<figcaption>${title}</figcaption>`;
+      return `<figure>${out}</figure>`;
+    };
+
     // this.markdownService.renderer.table = (header: string, body: string) => {
     //   return '';
     // };
