@@ -1,10 +1,12 @@
-## Agile Fluency
+## 数字化流畅度模型
 
-![Agile Fluency](assets/images/agile-fluency.png "Agile Fluent")
+![数字化流畅度模型](assets/images/mdb-fluency.png "数字化流畅度模型")
 
-| Zone | Benefit | Investment | Learn From | Time to Fluency |
-| --- | --- | --- | --- | --- |
-| Focusing | Greater visibility into teams’ work; ability to redirect. | Team development and work process design. | Scrum, Kanban, non-technical XP | 2-6 months |
-| Delivering | Low defects and high productivity. | Lowered productivity during technical skill development. | Extreme Programming, DevOps movement | +3-24 months |
-| Optimizing | Higher-value deliveries and better product decisions. | Social capital expended on moving business decisions and expertise into team. | Lean Software Development, Lean Startup, Beyond Budgeting | +1-5 years |
-| Strengthening | Cross-team learning and better organizational decisions. | Time and risk in developing new approaches to managing the organization. | Organization design and complexity theories | unknown |
+based on: MDB & [https://martinfowler.com/articles/agileFluency.html](https://martinfowler.com/articles/agileFluency.html)
+
+| 区域 | 阶段 | 成效 | 典型投资  | 借鉴 | 时长 |
+| --- | --- | --- | --- | --- | --- |
+| 专注 | 引入改变 | 对团队工作更好的可见性；调整方向的能力 | 团队的发展，工作流程的设计 | Scrum, Kanban, 非技术的 XP 实践 | 3 - 6 个月 |
+| 执行 | 掌握实践 | 低缺陷和高生产率 | 技术技能学习期间的生产率变低 | XP, DevOps 运动 | 6 - 18 个月  |
+| 优化 | 消除约束 | 更高价值的交付，更好的产品决策 | 将业务决策与专业技能转移给团队所花费的社交资本. | 精益软件开发，精益创业，超越预算 | +1-3 年 |
+| 强化 | 强化整体 | 跨团队学习，更好的组织决策 | 发展组织管理的新方式的时间及风险 | 组织设计，复杂性理论 | 迭代改进，持续进行 |
