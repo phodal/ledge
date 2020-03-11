@@ -1,3 +1,10 @@
 #markdown-radar {
   display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.rating-list {
+  margin-top: 5em;
+  margin-left: 5em;
 }
