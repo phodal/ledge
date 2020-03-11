@@ -1,18 +1,12 @@
 <div class="table-container" role="table" aria-label="Destinations">
   <div class="flex-table header" role="rowgroup">
-    <div class="flex-row first" role="columnheader">Country</div>
-    <div class="flex-row" role="columnheader">Events</div>
-    <div class="flex-row" role="columnheader">Time</div>
-    <div class="flex-row" role="columnheader">Fees</div>
-    <div class="flex-row" role="columnheader">Fees</div>
-    <div class="flex-row" role="columnheader">Fees</div>
+    <div class="flex-row" *ngFor="let header of processTable.headers;let first = first" [ngClass]="first ? 'first' : ''">
+      {{header}}
+    </div>
   </div>
-  <div class="flex-table row" role="rowgroup">
-    <div class="flex-row first" role="cell"><span class="flag-icon flag-icon-gb"></span> United Kingdom</div>
-    <div class="flex-row" role="cell">Stonehenge, Windsor and Bath with Pub Lunch</div>
-    <div class="flex-row" role="cell">19 Sep, 1p.m.</div>
-    <div class="flex-row" role="cell">US$500</div>
-    <div class="flex-row" role="cell">US$500</div>
-    <div class="flex-row" role="cell">US$500</div>
+  <div class="flex-table row" role="rowgroup" *ngFor="let column of processTable.cells">
+    <div class="flex-row" *ngFor="let cell of column;let first = first"  [ngClass]="first ? 'first' : ''">
+      {{cell}}
+    </div>
   </div>
 </div>
