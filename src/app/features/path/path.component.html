@@ -18,16 +18,16 @@
   <div class="page">
     <div class="path">
       <div id="pipe-header">
-        <div class="pipe-header" *ngFor="let pipe of pipeData;let i = index" id="{{i}}_header">
+        <div class="pipe-header" *ngFor="let pipe of pipeData;let i = index" id="{{i}}_header" [ngStyle]="getHeaderHeight()">
           <h2>{{pipe.title}}</h2>
         </div>
       </div>
       <div class='wrapper' id="pipe">
         <div class='container' *ngFor="let pipe of pipeData;let i = index"
              id="{{i}}_pipe"
-             [ngStyle]="{'background': pipe.backgroundColor,'color': pipe.textColor}">
+             [ngStyle]="getContainerStyle(pipe)">
 
-          <div class="editable" *ngFor="let item of pipe.items;let j = index" id="{{i}}_pipe_child{{j}}">
+          <div class="editable"  [ngStyle]="getEditableStyle()" *ngFor="let item of pipe.items;let j = index" id="{{i}}_pipe_child{{j}}">
             {{item}}
           </div>
         </div>
