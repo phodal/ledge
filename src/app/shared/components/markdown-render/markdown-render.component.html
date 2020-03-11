@@ -1,1 +1,6 @@
-<markdown class="markdown" [src]="src"></markdown>
+<markdown
+  class="markdown"
+  [src]="src"
+  (load)="endLoading()"
+></markdown>
+<mat-spinner *ngIf="loading"></mat-spinner>

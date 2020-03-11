@@ -9,6 +9,7 @@ import { MarkdownService } from 'ngx-markdown';
 export class MarkdownRenderComponent implements OnInit {
   @Input()
   src: string;
+  loading = true;
 
   constructor(private markdownService: MarkdownService) { }
 
@@ -27,9 +28,10 @@ export class MarkdownRenderComponent implements OnInit {
       out += `<figcaption>${title}</figcaption>`;
       return `<figure>${out}</figure>`;
     };
-
-    // this.markdownService.renderer.table = (header: string, body: string) => {
-    //   return '';
-    // };
   }
+
+  endLoading() {
+    this.loading = false;
+  }
+
 }

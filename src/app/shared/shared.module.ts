@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MarkdownRenderComponent } from './components/markdown-render/markdown-render.component';
 import { MarkdownModule } from 'ngx-markdown';
+import { CustomMaterialModule } from './custom-material.module';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { MarkdownModule } from 'ngx-markdown';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    CustomMaterialModule,
     MarkdownModule.forRoot({ loader: HttpClient })
   ],
   declarations: [
