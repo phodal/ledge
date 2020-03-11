@@ -14,9 +14,13 @@
     [selectedMetal]="highlightState"
     (currentAtomCategory)="setCurrentAtomCategory($event)"></app-periodic-table>
 
-  <div class="intro markdown">
+  <div class="intro markdown second-header">
     <h5>DevOps 运动的主要特点是强烈倡导对构建软件的所有环节 (从集成、测试、发布到部署和基础架构管理) 进行全面的自动化和监控。</h5>
   </div>
 
-  <component-process-table [tableValue]="''"></component-process-table>
+  <component-process-table class="process-bar" [tableValue]="''"></component-process-table>
+
+  <div class="esp-insight">
+    <img src="/assets/images/esp.svg" alt="ESP Modeling">
+  </div>
 </div>

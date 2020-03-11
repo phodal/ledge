@@ -76,7 +76,7 @@ div {
 
     @each $i, $color in $themeColours {
       &.type_#{$i} {background: $color;}
-      &.type_#{$i}:after {border-left: 23px solid $color;}
+      &.type_#{$i}:after {border-left: 22px solid $color;}
     }
   }
 }
@@ -93,25 +93,25 @@ div {
     float: left;
     background: #3498db;
     text-align: center;
-    padding: 0 23px 0 0;
+    padding: 0 22px 0 0;
     margin: 0 10px 0 0;
 
     &:after {
       content: "";
-      border-top: 23px solid transparent;
-      border-bottom: 23px solid transparent;
-      border-left: 23px solid #3498db;
+      border-top: 22px solid transparent;
+      border-bottom: 22px solid transparent;
+      border-left: 22px solid #3498db;
       position: absolute;
-      right: -23px;
+      right: -22px;
       top: -1px;
       z-index: 1;
     }
 
     &:before {
       content: "";
-      border-top: 23px solid transparent;
-      border-bottom: 23px solid transparent;
-      border-left: 23px solid #fff;
+      border-top: 22px solid transparent;
+      border-bottom: 22px solid transparent;
+      border-left: 22px solid #fff;
       position: absolute;
       left: 0;
       top: 0;
