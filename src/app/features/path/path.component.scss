@@ -1,0 +1,183 @@
+#pipe {
+  position: relative;
+  float: right;
+  display: inline-block;
+  width: calc(100% - 138px);
+  max-width: 100%;
+  height: 180px;
+  padding-right: 32px;
+}
+
+.header {
+  margin-top: 1em;
+  h2 {
+    text-align: center;
+  }
+}
+
+.container {
+  padding: 0;
+  margin-right: 6px;
+  margin-top: 12px;
+
+  background-color: rgba(255, 255, 255, 0.2);
+  max-width: 100%;
+  width: 100%;
+  color: #fff;
+  line-height: 1.3em;
+  border: 1px dashed #fff;
+  border-radius: 6px;
+  font-weight: normal;
+
+  div {
+    height: 150px;
+    max-height: 150px;
+    width: 10%;
+    max-width: 10%;
+  }
+}
+
+.container:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/*
+ * note that styling gu-mirror directly is a bad practice because it's too generic.
+ * you're better off giving the draggable elements a unique class and styling that directly!
+ */
+.container > div,
+.gu-mirror {
+  margin: 10px;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 0.4s ease-in-out;
+}
+
+.container > div.empty {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.container > div {
+  display: inline-block;
+  overflow-y: auto;
+
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+.gu-mirror {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+
+#header {
+  height: 80px;
+  text-align: center;
+}
+
+#header h1 {
+  line-height: 80px;
+}
+
+#pipe-header {
+  position: absolute;
+  left: 20px;
+}
+
+.pipe-header h2 {
+  position: relative;
+  top: calc(50% - 1.6rem);
+}
+
+.add-item {
+  top: 3.0rem;
+  position: absolute;
+  right: 4rem;
+}
+
+.download {
+  top: 3.0rem;
+  position: absolute;
+  right: 35rem;
+}
+
+.remove-column {
+  top: 3.0rem;
+  position: absolute;
+  right: 18rem;
+}
+
+#color-green {
+  background-color: #00a300;
+}
+
+#color-greendark {
+  background-color: #1e7145;
+}
+
+#color-greenlight {
+  background-color: #99b433;
+}
+
+#color-magenta {
+  background-color: #ff0097;
+}
+
+#color-purplelight {
+  background-color: #9f00a7;
+}
+
+#color-purple {
+  background-color: #7e3878;
+}
+
+#color-purpledark {
+  background-color: #603cba;
+}
+
+#color-darken {
+  background-color: #1d1d1d;
+}
+
+#color-teal {
+  background-color: #00aba9;
+}
+
+#color-bluelight {
+  background-color: #eff4ff;
+}
+
+#color-blue {
+  background-color: #2d89ef;
+}
+
+#color-bluedark {
+  background-color: #2b5797;
+}
+
+#color-yellow {
+  background-color: #ffc40d;
+}
+
+#color-orange {
+  background-color: #e3a21a;
+}
+
+#color-orangedark {
+  background-color: #da532c;
+}
+
+#color-red {
+  background-color: #b91d47;
+}
+
+#color-redlight {
+  background-color: #ee1111;
+}
+
+#color-white {
+  background-color: #fff;
+}

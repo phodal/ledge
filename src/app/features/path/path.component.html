@@ -1,4 +1,8 @@
 <div class="path">
+  <div class="header markdown">
+    <h2>Path to Production</h2>
+  </div>
+
   <mat-toolbar>
     <mat-toolbar-row>
       <span></span>
@@ -10,15 +14,24 @@
       </div>
     </mat-toolbar-row>
   </mat-toolbar>
-  <div class="header">
-    Path to Production
-  </div>
-  <div class="path">
-    <div id="pipe-header">
 
-    </div>
-    <div class='wrapper' id="pipe">
+  <div class="page">
+    <div class="path">
+      <div id="pipe-header">
+        <div class="pipe-header" *ngFor="let pipe of pipeData;let i = index" id="{{i}}_header">
+          <h2>{{pipe.title}}</h2>
+        </div>
+      </div>
+      <div class='wrapper' id="pipe">
+        <div class='container' *ngFor="let pipe of pipeData;let i = index"
+             id="{{i}}_pipe"
+             [ngStyle]="{'background': pipe.backgroundColor,'color': pipe.textColor}">
 
+          <div class="editable" *ngFor="let item of pipe.items;let j = index" id="{{i}}_pipe_child{{j}}">
+            {{item}}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
