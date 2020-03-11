@@ -56,8 +56,28 @@ div {
 
 .header {
   .flex-row {
-    &.type_0 {background: #F37C20;}
-    &.type_0:after {border-left: 23px solid #F37C20;}
+    $themeColours: (
+      0: #F37C20,
+      1: #E9BD1E,
+      2: #00A2A1,
+      3: #0062CE,
+      4: #666666,
+      5: #DC5332,
+      6: #079948,
+      7: #999999,
+      8: #800080,
+      9: #003366,
+      10: #AA217E,
+      11: #55acee,
+      12: #444444,
+      13: #61bb46,
+      14: #007C78
+  );
+
+    @each $i, $color in $themeColours {
+      &.type_#{$i} {background: $color;}
+      &.type_#{$i}:after {border-left: 23px solid $color;}
+    }
   }
 }
 
