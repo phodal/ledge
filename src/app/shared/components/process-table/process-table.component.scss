@@ -10,7 +10,7 @@ div {
 .table-container {
   display: block;
   margin: 2em auto;
-  width: 90%;
+  width: 80%;
   max-width: 1600px;
   position: relative;
 }
@@ -27,8 +27,6 @@ div {
 
   &:first-of-type .flex-row {
     background: $table-header;
-    color: white;
-    border-color: $table-header-border;
   }
 
   &.row:nth-child(odd) .flex-row {
@@ -42,11 +40,9 @@ div {
 }
 
 .flex-row {
-  width: calc(100% / 4 - 24px);
+  width: calc(100% / 6);
   text-align: center;
   padding: 0.5em 0.5em;
-  border-right: solid 1px $table-border;
-  border-bottom: solid 1px $table-border;
 }
 
 .rowspan {
@@ -60,10 +56,11 @@ div {
   position: relative;
 
   .flex-row {
+    width: calc(100% / 6 - 10px);
     position: relative;
     height: 44px;
     line-height: 44px;
-    font-size: 1.5em;
+    font-size: 1em;
     float: left;
     background: #3498db;
     text-align: center;
@@ -121,7 +118,6 @@ div {
     width: 100%;
     padding: 0;
     border: 0;
-    border-bottom: solid 1px $table-border;
 
     &:hover {
       background: #F5F5F5;
@@ -134,9 +130,4 @@ div {
   width: calc(100% / 3); //1px = border right
   text-align: center;
   padding: 0.5em 0.5em;
-  border-right: solid 1px $table-border;
-  //flex: 1 1 33.3%;
-  &:last-child {
-    // border-right: 0;
-  }
 }
