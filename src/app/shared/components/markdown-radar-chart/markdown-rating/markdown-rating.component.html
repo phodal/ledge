@@ -6,12 +6,12 @@
       (itemChange)="changeForm($event, task.item)">
     </markdown-rating-item>
 
-    <span *ngIf="task.childrens">
+    <p *ngIf="task.childrens">
       <markdown-rating
         ngDefaultControl
         [(ngModel)]="task.childrens"
         (ngModelChange)="changeForm($event, task.item)">
       </markdown-rating>
-    </span>
+    </p>
   </li>
 </ul>
