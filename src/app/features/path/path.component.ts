@@ -110,7 +110,27 @@ export class PathComponent implements OnInit {
   }
 
   addColumn() {
+    this.maxLength++;
+    this.pipeData = this.fillArrayWithEmpty(this.pipeData);
+  }
 
+  removeColumn() {
+    const that = this;
+    function removeLastItem(items) {
+      // tslint:disable-next-line:prefer-for-of
+      for (let i = 0; i < items.length; i++) {
+        for (let j = 0; j <= that.maxLength; j++) {
+          if (j > that.maxLength - 1) {
+            items[i].items.splice(-1, 1);
+          }
+        }
+      }
+
+      return items;
+    }
+
+    this.maxLength--;
+    this.pipeData = removeLastItem(this.pipeData);
   }
 
   getContainerStyle(pipe: Item) {
