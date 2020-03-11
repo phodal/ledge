@@ -34,7 +34,8 @@ export class MaturityComponent implements OnInit {
    - [ ] 度量驱动改进
 
   `;
-  private tasks: any;
+
+  tasks: any;
   private tempValue: string;
   private taskIndex: number;
   private indexString: string;
