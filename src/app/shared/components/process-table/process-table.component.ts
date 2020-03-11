@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import marked from 'marked';
+import { zip } from 'lodash-es';
 
 interface ProcessTable {
   headers: string[];
@@ -46,11 +47,15 @@ export class ProcessTableComponent implements OnInit {
     for (const token of tokens) {
       if (token.type === 'table') {
         this.processTable.headers = token.header;
-        this.processTable.cells = token.cells;
+        this.processTable.cells = this.transpose(token.cells);
 
         this.headerSize = this.processTable.headers.length;
       }
     }
+  }
+
+  transpose(arr: any[][]) {
+    return zip.apply(this, arr);
   }
 
   getHeaderColumn() {
@@ -61,7 +66,7 @@ export class ProcessTableComponent implements OnInit {
 
   getColumnStyle() {
     return {
-      width: `calc(100% / ${this.headerSize})`
+      width: `calc(100% / ${this.headerSize} - 4px)`
     };
   }
 

@@ -8,11 +8,12 @@
     </div>
   </div>
   <div class="table-space"></div>
-  <div class="flex-table row table-row" role="rowgroup" *ngFor="let column of processTable.cells">
-    <div class="flex-row"
-         [ngStyle]="getColumnStyle()"
-         *ngFor="let cell of column;let first = first"  [ngClass]="first ? 'first' : ''">
-      {{cell}}
+  <div class="flex-table row">
+    <div class="table-column" [ngStyle]="getColumnStyle()" role="rowgroup" *ngFor="let column of processTable.cells">
+      <div class="cell"
+           *ngFor="let cell of column;let first = first"  [ngClass]="first ? 'first' : ''">
+        {{cell}}
+      </div>
     </div>
   </div>
 </div>
