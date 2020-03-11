@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MarkdownRenderComponent } from './components/markdown-render/markdown-render.component';
 import { MarkdownModule } from 'ngx-markdown';
+import {DragulaModule} from 'ng2-dragula';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { MarkdownModule } from 'ngx-markdown';
     HttpClientModule,
     ReactiveFormsModule,
     MarkdownModule.forRoot({ loader: HttpClient }),
+    DragulaModule.forRoot(),
   ],
   declarations: [
     MarkdownRenderComponent,
