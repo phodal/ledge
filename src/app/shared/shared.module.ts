@@ -27,6 +27,7 @@ import {DragulaModule} from 'ng2-dragula';
     FormsModule,
     ReactiveFormsModule,
     MarkdownRenderComponent,
+    DragulaModule
   ],
   entryComponents: []
 })

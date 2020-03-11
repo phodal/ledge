@@ -1,6 +1,6 @@
 <div class="path">
   <div class="header markdown">
-    <h2>Path to Production</h2>
+    <h3>Path to Production</h3>
   </div>
 
   <mat-toolbar>
@@ -24,17 +24,20 @@
         </div>
       </div>
       <div class='wrapper' id="pipe">
-        <div class='container' *ngFor="let pipe of pipeData;let i = index"
+        <div class='container'
+             *ngFor="let pipe of pipeData;let i = index"
              id="{{i}}_pipe"
              [ngStyle]="getContainerStyle(pipe)">
 
           <div
             class="editable"
-            contenteditable="true"
+            #itemElement
+            id="pipe{{i}}_child{{j}}"
+            (click)="enableEdit(i, j)"
             [ngStyle]="getEditableStyle()"
             (keydown.enter)="updateItem(i, j, $event)"
             ngDefaultControl
-            *ngFor="let item of pipe.items;let j = index" id="{{i}}_pipe_child{{j}}">
+            *ngFor="let item of pipe.items;let j = index">
             {{item}}
           </div>
         </div>

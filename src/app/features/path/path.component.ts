@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, QueryList, Renderer2, ViewChildren} from '@angular/core';
 import {StorageMap} from '@ngx-pwa/local-storage';
 
 interface Item {
@@ -15,6 +15,7 @@ interface Item {
   styleUrls: ['./path.component.scss']
 })
 export class PathComponent implements OnInit {
+  @ViewChildren('itemElement') itemElements: QueryList<ElementRef>;
   pipeData = [
     {
       id: 1,
@@ -74,7 +75,7 @@ export class PathComponent implements OnInit {
   ];
   private maxLength: number;
 
-  constructor(private storage: StorageMap) {
+  constructor(private storage: StorageMap, private renderer: Renderer2) {
   }
 
   ngOnInit(): void {
@@ -168,5 +169,16 @@ export class PathComponent implements OnInit {
     this.storage.set('ledge.path', this.pipeData).subscribe(() => {
 
     });
+  }
+
+  enableEdit(i: number, j: number) {
+    const elementId = `pipe${i}_child${j}`;
+    const filterElements = this.itemElements.filter((el) => {
+      return el.nativeElement.id === elementId;
+    });
+    if (filterElements.length > 0 ) {
+      const element = filterElements[0];
+      this.renderer.setProperty(element.nativeElement, 'contentEditable', true);
+    }
   }
 }
