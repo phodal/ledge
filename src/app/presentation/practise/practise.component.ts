@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-practise',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PractiseComponent implements OnInit {
 
-  constructor() { }
+  constructor(title: Title) {
+    title.setTitle('DevOps 学习平台 Ledge - 最佳实践');
+  }
 
   ngOnInit(): void {
   }

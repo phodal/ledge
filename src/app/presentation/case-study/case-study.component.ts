@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-case-study',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CaseStudyComponent implements OnInit {
 
-  constructor() { }
+  constructor(title: Title) {
+    title.setTitle('DevOps 学习平台 Ledge - 案例学习');
+  }
 
   ngOnInit(): void {
   }

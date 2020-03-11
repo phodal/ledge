@@ -11,12 +11,8 @@ export class HomeComponent implements OnInit {
   highlightState: HighlightState;
   category: string;
 
-  constructor(titleService: Title) {
-    titleService.setTitle('Ledge - Periodic Table');
-  }
-
-  highlightElement(highlightState: HighlightState) {
-    this.highlightState = highlightState;
+  constructor(title: Title) {
+    title.setTitle('DevOps 学习平台 Ledge - Periodic Table');
   }
 
   setCurrentAtomCategory(category: string) {
