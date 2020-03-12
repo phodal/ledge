@@ -23,7 +23,6 @@ export class MarkdownChartComponent implements OnInit, AfterViewInit {
     const myChart = echarts.init(this.reporter.nativeElement);
     const builderJson = this.data.chartData;
     const sortData = Object.keys(builderJson).map(key => builderJson[key]).sort((a, b) => a.value - b.value);
-    console.log(sortData)
     myChart.setOption({
       tooltip: {},
       title: [{
@@ -45,7 +44,14 @@ export class MarkdownChartComponent implements OnInit, AfterViewInit {
       series: [{
         type: 'bar',
         stack: 'chart',
-        data: sortData
+        data: sortData,
+        label: {
+          normal: {
+            show: true,
+            position: 'right',
+            formatter: data => data.value + '%'
+          }
+        }
       }]
     });
   }
