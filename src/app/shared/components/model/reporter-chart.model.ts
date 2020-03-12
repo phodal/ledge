@@ -3,5 +3,6 @@ export interface ReporterChartModel {
   chartData?: {
     name: string;
     value: number;
+    itemStyle: any;
   }[];
 }

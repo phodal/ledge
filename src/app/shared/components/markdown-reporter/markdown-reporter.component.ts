@@ -1,6 +1,7 @@
 import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import marked from 'marked';
 import {ReporterChartModel} from '../model/reporter-chart.model';
+import d3 from 'd3';
 
 @Component({
   selector: 'component-markdown-reporter',
@@ -28,6 +29,16 @@ export class MarkdownReporterComponent implements OnInit, AfterViewInit {
     this.buildData(tokens);
   }
 
+  private getColorByIndex(i: number) {
+    const length = 20;
+    // tslint: disable-next-line
+    const color = d3.scale.linear().domain([1, length])
+      .interpolate(d3.interpolateHcl as any)
+      .range([d3.rgb('#007AFF'), d3.rgb('#FFF500')]);
+
+    return color(i);
+  }
+
   private buildData(tokens: marked.Token[]) {
     for (const token of tokens) {
       if (token.type === 'table') {
@@ -36,10 +47,13 @@ export class MarkdownReporterComponent implements OnInit, AfterViewInit {
             title: token.header[0],
             chartData: []
           };
-          for (const cell of token.cells) {
+          // tslint:disable-next-line:prefer-for-of
+          for (let i = 0; i < token.cells.length; i++) {
+            const cell = token.cells[i];
             chart.chartData.push({
               name: cell[0],
-              value: parseFloat(cell[1])
+              value: parseFloat(cell[1]),
+              itemStyle: {color: this.getColorByIndex(i)}
             });
           }
           this.charts.push(chart);
