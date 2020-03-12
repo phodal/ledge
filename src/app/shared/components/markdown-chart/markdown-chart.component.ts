@@ -13,67 +13,40 @@ export class MarkdownChartComponent implements OnInit, AfterViewInit {
 
   @ViewChild('reporter', {}) reporter: ElementRef;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
   ngAfterViewInit(): void {
-    console.log(this.data.chartData)
     const myChart = echarts.init(this.reporter.nativeElement);
+    const builderJson = this.data.chartData;
+    const sortData = Object.keys(builderJson).map(key => builderJson[key]).sort((a, b) => a.value - b.value);
+    console.log(sortData)
     myChart.setOption({
-      backgroundColor: '#2c343c',
-
-      title: {
+      tooltip: {},
+      title: [{
         text: this.data.title,
-        left: 'center',
-        top: 20,
-        textStyle: {
-          color: '#ccc'
-        }
-      },
-
-      tooltip: {
-        trigger: 'item',
-        formatter: '{a} <br/>{b} : {c} ({d}%)'
-      },
-      visualMap: {
-        show: false,
-        min: 80,
-        max: 600,
-        inRange: {
-          colorLightness: [0, 1]
-        }
-      },
-      series: [
-        {
-          type: 'pie',
-          radius: '55%',
-          center: ['50%', '50%'],
-          data: this.data.chartData.sort((a, b) => a.value - b.value),
-          roseType: 'radius',
-          label: {
-            color: 'rgba(255, 255, 255, 0.3)'
-          },
-          labelLine: {
-            lineStyle: {
-              color: 'rgba(255, 255, 255, 0.3)'
-            },
-            smooth: 0.2,
-            length: 10,
-            length2: 20
-          },
-          itemStyle: {
-            color: '#c23531',
-            shadowBlur: 200,
-            shadowColor: 'rgba(0, 0, 0, 0.5)'
-          },
-
-          animationType: 'scale',
-          animationEasing: 'elasticOut',
-          animationDelay: idx => Math.random() * 200
-        }
-      ]
+        left: '25%',
+        textAlign: 'center'
+      }],
+      grid: [{
+        left: 10,
+        containLabel: true
+      }],
+      xAxis: [{
+        show: false
+      }],
+      yAxis: [{
+        type: 'category',
+        data: sortData.map(data => data.name)
+      }],
+      series: [{
+        type: 'bar',
+        stack: 'chart',
+        data: sortData
+      }]
     });
   }
 

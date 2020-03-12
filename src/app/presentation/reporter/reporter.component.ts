@@ -43,7 +43,7 @@ export class ReporterComponent implements OnInit {
 | 自动构建 | 38.85%  |
 | 持续集成 | 45.89%  |
 | 单元测试 | 55.39  |
-| 编码规范 | %59.48%  |
+| 编码规范 | 59.48%  |
   `;
 
   constructor() { }
