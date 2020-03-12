@@ -10,7 +10,7 @@
 
   .table-container {
     display: block;
-    margin: 2em auto;
+    margin: 2em auto 1em;
     max-width: 1600px;
     position: relative;
   }
@@ -20,6 +20,7 @@
   }
 
   .flex-table {
+    max-width: 1600px;
     display: flex;
     flex-flow: row wrap;
     transition: 0.5s;
@@ -175,5 +176,13 @@
     padding: 0.5em 0.5em;
     min-width: 4em;
     flex: 1;
+  }
+}
+
+.markdown-table {
+  margin: 3em auto;
+
+  .table-space {
+    margin-top: 0.5em;
   }
 }

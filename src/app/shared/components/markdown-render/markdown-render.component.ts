@@ -113,7 +113,7 @@ export class MarkdownRenderComponent implements OnInit {
       items += this.buildProcessHeaderItem(index, str);
     }
 
-    return `<div class="process-table">` + this.buildProcessHeader(items) + `</div>`;
+    return `<div class="process-table markdown-table">` + this.buildProcessHeader(items) + `</div>`;
   }
 
   private buildProcessHeaderItem(index: number, str: string) {
@@ -149,7 +149,7 @@ export class MarkdownRenderComponent implements OnInit {
 
     resultStr += `<div class="table-space"></div><div class="flex-table row">${bodyResult}</div>`;
 
-    return `<div class="process-table">` + resultStr + '</div>';
+    return `<div class="process-table markdown-table">` + resultStr + '</div>';
   }
 
   private buildTableBody(cells: any[]) {
