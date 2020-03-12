@@ -1,6 +1,6 @@
 ## DaoCloud
 
-来源：《[持续交付演化之路:从 DevOps 到 DevSecOps](www.idcquan.com/Special/2019trucs/ppt/wangtianqing.pdf)》
+来源：《[持续交付演化之路:从 DevOps 到 DevSecOps](http://www.idcquan.com/Special/2019trucs/ppt/wangtianqing.pdf)》
 
 ### DevOps 典型工具链
 
