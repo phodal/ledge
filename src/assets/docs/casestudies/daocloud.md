@@ -1,5 +1,7 @@
 ## DaoCloud
 
+来源：《[持续交付演化之路:从 DevOps 到 DevSecOps](www.idcquan.com/Special/2019trucs/ppt/wangtianqing.pdf)》
+
 | 项目管理 | 持续集成 | 持续部署 | 发布 | 质量 | 测试 |  运维 | 协作 |   
 |---|---|---|---|---|---|---|---|
 | 任务管理：Jira | 源码：GitHub 企业版 | 发布：DCS | 制品仓库：Nexus| 代码质量管理：SonarQube | 单元测试：JUnit | 应用监控： APM | 知识库：Confluence |  
