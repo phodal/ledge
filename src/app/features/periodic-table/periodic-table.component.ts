@@ -81,19 +81,19 @@ export class PeriodicTableComponent implements OnInit, OnChanges {
     { type: 'packageManage', displayName: '制品管理'},
     { type: 'database', displayName: '数据库自动化'},
     { type: 'testing', displayName: '测试'},
-    { type: 'deployment', displayName: '部署'},
+    { type: 'config', displayName: '配置管理'},
     { type: 'ci', displayName: '持续集成'},
+    { type: 'deployment', displayName: '部署'},
+    { type: 'security', displayName: '安全'},
     { type: 'containers', displayName: '容器化'},
     { type: 'releaseOrchestration', displayName: '发布编排'},
-    { type: 'security', displayName: '安全'},
     { type: 'openCloud', displayName: '开源云'},
     { type: 'publicCloud', displayName: '公有云'},
     { type: 'monitoring', displayName: '监控'},
     { type: 'analytics', displayName: '分析'},
-    { type: 'config', displayName: '配置管理'},
     { type: 'aiops', displayName: '智能运维'},
     { type: 'collaboration', displayName: '协作'},
-    { type: 'operation', displayName: '运营'},
+    // { type: 'operation', displayName: '运营'},
   ];
 
   constructor(private http: HttpClient) {
