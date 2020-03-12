@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Title} from '@angular/platform-browser';
 
 @Component({
@@ -7,6 +7,12 @@ import {Title} from '@angular/platform-browser';
   styleUrls: ['./case-study.component.scss']
 })
 export class CaseStudyComponent implements OnInit {
+  cases = [
+    {displayName: 'DaoCloud', source: 'daocloud'},
+    {displayName: '美团外卖', source: 'meituan'},
+    {displayName: '招商银行', source: 'cmb'},
+  ];
+  src = `assets/docs/casestudies/meituan.md`;
 
   constructor(title: Title) {
     title.setTitle('DevOps 学习平台 Ledge - 案例学习');
@@ -15,4 +21,7 @@ export class CaseStudyComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  clickCase(source: string) {
+    this.src = `assets/docs/casestudies/${source}.md`;
+  }
 }

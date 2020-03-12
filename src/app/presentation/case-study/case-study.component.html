@@ -1,6 +1,11 @@
-<div class="markdown title center">
-  <h1>案例学习</h1>
-</div>
-
-<component-markdown-render [src]="'assets/docs/casestudies/daocloud.md'"></component-markdown-render>
-<component-markdown-render [src]="'assets/docs/casestudies/cmb.md'"></component-markdown-render>
+<mat-drawer-container class="case-study">
+  <mat-drawer mode="side" opened class="left-drawer">
+    <h2>案例（源自互联网收集）</h2>
+    <ul>
+      <li *ngFor="let case of cases" (click)="clickCase(case.source)">{{case.displayName}}</li>
+    </ul>
+  </mat-drawer>
+  <mat-drawer-content>
+    <component-markdown-render [src]="src"></component-markdown-render>
+  </mat-drawer-content>
+</mat-drawer-container>
