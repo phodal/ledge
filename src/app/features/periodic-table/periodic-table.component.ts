@@ -78,7 +78,7 @@ export class PeriodicTableComponent implements OnInit, OnChanges {
 
   categories = [
     { type: 'scm', displayName: '源码管理'},
-    { type: 'packageManage', displayName: '工件管理'},
+    { type: 'packageManage', displayName: '制品管理'},
     { type: 'database', displayName: '数据库自动化'},
     { type: 'testing', displayName: '测试'},
     { type: 'deployment', displayName: '部署'},
