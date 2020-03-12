@@ -50,8 +50,7 @@ const ACT_ATOM_GROUP = {
 
 @Component({
   selector: 'app-periodic-table',
-  templateUrl: './periodic-table.comp' +
-    'onent.html',
+  templateUrl: './periodic-table.component.html',
   styleUrls: ['./periodic-table.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
