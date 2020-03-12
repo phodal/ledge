@@ -15,7 +15,11 @@ export class MarkdownRenderComponent implements OnInit {
 
   ngOnInit(): void {
     const markedOptions: any = this.markdownService.options;
-    this.markdownService.renderer.image = (href: string, title: string, text: string): string => {
+    this.markdownService.renderer.image = this.renderImage(markedOptions).bind(this);
+  }
+
+  private renderImage(markedOptions: any) {
+    return (href: string, title: string, text: string): string => {
       if (href === null) {
         return text;
       }
