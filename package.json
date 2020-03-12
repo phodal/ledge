@@ -24,6 +24,7 @@
     "@angular/router": "~9.0.3",
     "@ngx-pwa/local-storage": "^9.0.2",
     "d3": "^3.5.17",
+    "echarts": "^4.6.0",
     "lodash-es": "^4.17.15",
     "marked": "^0.8.0",
     "ng2-dragula": "^2.1.1",

@@ -6,8 +6,9 @@ import { PatternComponent } from './presentation/pattern/pattern.component';
 import { DesignComponent } from './presentation/design/design.component';
 import { PractiseComponent } from './presentation/practise/practise.component';
 import { ManualComponent } from './presentation/manual/manual.component';
-import {MaturityComponent} from './maturity/maturity.component';
+import {MaturityComponent} from './presentation/maturity/maturity.component';
 import {ResourcesComponent} from './presentation/resources/resources.component';
+import {ReporterComponent} from './presentation/reporter/reporter.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: '/home'},
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: 'resources',
     component: ResourcesComponent
+  },
+  {
+    path: 'report',
+    component: ReporterComponent
   }
 ];
 

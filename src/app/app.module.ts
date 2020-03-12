@@ -23,8 +23,9 @@ import { ManualComponent } from './presentation/manual/manual.component';
 import { PathComponent } from './features/path/path.component';
 import { FormsModule } from '@angular/forms';
 import { DragulaModule } from 'ng2-dragula';
-import { MaturityComponent } from './maturity/maturity.component';
+import { MaturityComponent } from './presentation/maturity/maturity.component';
 import { ResourcesComponent } from './presentation/resources/resources.component';
+import { ReporterComponent } from './presentation/reporter/reporter.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { ResourcesComponent } from './presentation/resources/resources.component
     PathComponent,
     MaturityComponent,
     ResourcesComponent,
+    ReporterComponent
   ],
   imports: [
     SharedModule,

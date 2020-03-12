@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import marked from 'marked';
-import MarkdownHelper from '../shared/components/model/markdown.helper';
-import {MarkdownTaskItemService} from '../shared/components/markdown-radar-chart/markdown-task-item.service';
-import {MarkdownListModel} from '../shared/components/model/markdown.model';
+import MarkdownHelper from '../../shared/components/model/markdown.helper';
+import {MarkdownTaskItemService} from '../../shared/components/markdown-radar-chart/markdown-task-item.service';
+import {MarkdownListModel} from '../../shared/components/model/markdown.model';
 import {StorageMap} from '@ngx-pwa/local-storage';
 
 @Component({
