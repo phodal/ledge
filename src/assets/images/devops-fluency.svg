@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="937px" height="400px" viewBox="0 0 937 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#7F8A33" offset="0%"></stop>
+            <stop stop-color="#A4A916" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="143.13437%" y1="51.7872493%" x2="0%" y2="50%" id="linearGradient-2">
+            <stop stop-color="#7F8A33" offset="0%"></stop>
+            <stop stop-color="#A4A916" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="58.3589649%" y1="50.402339%" x2="0%" y2="50%" id="linearGradient-3">
+            <stop stop-color="#2E4B65" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#7F8A33" offset="0%"></stop>
+            <stop stop-color="#A4A916" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-3" transform="translate(-2.000000, -5.000000)">
+            <g id="Group-2" transform="translate(48.000000, 41.000000)" stroke-linecap="square" stroke-width="5">
+                <line x1="0.5" y1="0.5" x2="0.5" y2="19.5" id="Line" stroke="url(#linearGradient-1)"></line>
+                <line x1="351.75" y1="149.25" x2="297.25" y2="148.75" id="Line" stroke="url(#linearGradient-2)"></line>
+                <line x1="516.75" y1="149.25" x2="462.25" y2="148.75" id="Line" stroke="#7F8A33"></line>
+                <line x1="516.75" y1="287.25" x2="462.25" y2="286.75" id="Line" stroke="#586C4D"></line>
+                <line x1="351.75" y1="288.25" x2="297.25" y2="287.75" id="Line" stroke="#2E4B65"></line>
+                <line x1="64.75" y1="288.25" x2="10.25" y2="287.75" id="Line" stroke="url(#linearGradient-3)"></line>
+                <path d="M1.13686838e-13,105 L0.596231604,131.367412 C0.529764274,138.004709 1.94718202,142.535395 4.84848485,144.959472 C7.74978767,147.383548 12.9215048,148.358169 20.3636364,147.883335 L64,147.883335" id="Line" stroke="url(#linearGradient-4)"></path>
+                <path d="M750.482519,148.988308 L750.965039,169.976616 C751.129545,172.878996 753.342443,175.175793 757.603731,176.867009 C761.86502,178.558225 769.46098,179.238194 780.39161,178.906914 L844.482519,178.906914" id="Line" stroke="#7F8A33" transform="translate(797.482519, 163.988308) rotate(-180.000000) translate(-797.482519, -163.988308) "></path>
+                <path d="M750,258 L750.482519,278.988308 C750.647026,281.890688 752.859924,284.187485 757.121212,285.878701 C761.382501,287.569917 768.97846,288.249885 779.909091,287.918606 L844,287.918606" id="Line" stroke="#586C4D" transform="translate(797.000000, 273.000000) scale(1, -1) rotate(-180.000000) translate(-797.000000, -273.000000) "></path>
+            </g>
+            <text id="启动前" font-family="PingFangSC-Regular, PingFang SC" font-size="24" font-weight="normal" fill="#000000">
+                <tspan x="12" y="25">启动前</tspan>
+            </text>
+            <text id="转变-团队文化" font-family="PingFangSC-Semibold, PingFang SC" font-size="24" font-weight="500" fill="#000000">
+                <tspan x="24" y="90">转变</tspan>
+                <tspan x="0" y="123" font-family="PingFangSC-Regular, PingFang SC" font-weight="normal">团队文化</tspan>
+            </text>
+            <text id="转变-组织架构" font-family="PingFangSC-Semibold, PingFang SC" font-size="24" font-weight="500" fill="#000000">
+                <tspan x="868" y="250">转变</tspan>
+                <tspan x="844" y="283" font-family="PingFangSC-Regular, PingFang SC" font-weight="normal">组织架构</tspan>
+            </text>
+            <text id="转变-团队技能" font-family="PingFangSC-Semibold, PingFang SC" font-size="24" font-weight="500" fill="#000000">
+                <tspan x="431" y="177">转变</tspan>
+                <tspan x="407" y="210" font-family="PingFangSC-Regular, PingFang SC" font-weight="normal">团队技能</tspan>
+            </text>
+            <text id="转变-组织文化" font-family="PingFangSC-Semibold, PingFang SC" font-size="24" font-weight="500" fill="#000000">
+                <tspan x="431" y="321">转变</tspan>
+                <tspan x="407" y="354" font-family="PingFangSC-Regular, PingFang SC" font-weight="normal">组织文化</tspan>
+            </text>
+            <rect id="Rectangle" fill="#A4A916" x="114" y="152" width="229" height="75"></rect>
+            <rect id="Rectangle" fill="#A4A916" x="114" y="152" width="229" height="75"></rect>
+            <text id="专注" font-family="PingFangSC-Regular, PingFang SC" font-size="24" font-weight="normal" fill="#FFFFFF">
+                <tspan x="205" y="198">专注</tspan>
+            </text>
+            <polygon id="Triangle" fill="#FFFFFF" transform="translate(120.000000, 189.000000) rotate(90.000000) translate(-120.000000, -189.000000) " points="120 183 129 195 111 195"></polygon>
+            <g id="Group" transform="translate(567.000000, 152.000000)">
+                <rect id="Rectangle" fill="#7F8A33" x="0" y="0" width="229" height="75"></rect>
+                <text id="专注" font-family="PingFangSC-Regular, PingFang SC" font-size="24" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="91" y="46">专注</tspan>
+                </text>
+                <polygon id="Triangle" fill="#FFFFFF" transform="translate(6.000000, 38.000000) rotate(90.000000) translate(-6.000000, -38.000000) " points="6 32 15 44 -3 44"></polygon>
+            </g>
+            <g id="Group" transform="translate(567.000000, 291.000000)">
+                <rect id="Rectangle" fill="#586C4D" transform="translate(114.500000, 37.500000) scale(-1, 1) translate(-114.500000, -37.500000) " x="0" y="0" width="229" height="75"></rect>
+                <text id="优化" font-family="PingFangSC-Regular, PingFang SC" font-size="24" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="91" y="46">优化</tspan>
+                </text>
+                <polygon id="Triangle" fill="#FFFFFF" transform="translate(223.000000, 38.000000) scale(-1, 1) rotate(90.000000) translate(-223.000000, -38.000000) " points="223 32 232 44 214 44"></polygon>
+            </g>
+            <rect id="Rectangle" fill="#2E4B65" transform="translate(228.500000, 328.500000) scale(-1, 1) translate(-228.500000, -328.500000) " x="114" y="291" width="229" height="75"></rect>
+            <text id="优化" font-family="PingFangSC-Regular, PingFang SC" font-size="24" font-weight="normal" fill="#FFFFFF">
+                <tspan x="205" y="337">优化</tspan>
+            </text>
+            <polygon id="Triangle" fill="#FFFFFF" transform="translate(337.000000, 329.000000) scale(-1, 1) rotate(90.000000) translate(-337.000000, -329.000000) " points="337 323 346 335 328 335"></polygon>
+            <text id="版权：www.agilefluency." font-family="PingFangSC-Semibold, PingFang SC" font-size="12" font-weight="500" fill="#000000">
+                <tspan x="735.01" y="398">版权：www.agilefluency.org</tspan>
+            </text>
+            <text id="©-Copyright-2016–201" font-family="PingFangSC-Semibold, PingFang SC" font-size="12" font-weight="500" fill="#000000">
+                <tspan x="12.442" y="402">© Copyright 2016–2019 Agile Fluency Project, LLC. All rights reserved.</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

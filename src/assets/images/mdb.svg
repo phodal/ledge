@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="773px" height="581px" viewBox="0 0 773 581" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(-1.000000, -5.000000)">
+            <polyline id="Line" stroke="#EF5BA1" stroke-width="3" stroke-linecap="square" points="339 51 506.246094 51 506.5 168.5 466.5 168.5"></polyline>
+            <polyline id="Line" stroke="#EF5BA1" stroke-width="3" stroke-linecap="square" points="339 305 506.246094 305 506.5 422.5 466.5 422.5"></polyline>
+            <polyline id="Line" stroke="#00BCCD" stroke-width="3" stroke-linecap="square" transform="translate(205.000000, 237.750000) scale(-1, 1) translate(-205.000000, -237.750000) " points="121 179 288.745336 179 289 296.5 248.880597 296.5"></polyline>
+            <polyline id="Line" stroke="#00BCCD" stroke-width="3" stroke-linecap="square" transform="translate(205.000000, 491.750000) scale(-1, 1) translate(-205.000000, -491.750000) " points="121 433 288.745336 433 289 550.5 248.880597 550.5"></polyline>
+            <line x1="461" y1="553" x2="772.5" y2="552.5" id="Line-2" stroke="#00BCCD" stroke-width="3" stroke-linecap="square"></line>
+            <text id="启动前" font-family="PingFangSC-Regular, PingFang SC" font-size="24" font-weight="normal" fill="#000000">
+                <tspan x="303" y="25">启动前</tspan>
+            </text>
+            <text id="转变-组织文化" font-family="PingFangSC-Semibold, PingFang SC" font-size="24" font-weight="500" fill="#000000">
+                <tspan x="533" y="102">转变</tspan>
+                <tspan x="533" y="135" font-family="PingFangSC-Regular, PingFang SC" font-weight="normal">组织文化</tspan>
+            </text>
+            <text id="转变-组织架构" font-family="PingFangSC-Semibold, PingFang SC" font-size="24" font-weight="500" fill="#000000">
+                <tspan x="533" y="359">转变</tspan>
+                <tspan x="533" y="392" font-family="PingFangSC-Regular, PingFang SC" font-weight="normal">组织架构</tspan>
+            </text>
+            <text id="转变-组织职能" font-family="PingFangSC-Semibold, PingFang SC" font-size="24" font-weight="500" fill="#000000">
+                <tspan x="48" y="230">转变</tspan>
+                <tspan x="0" y="263" font-family="PingFangSC-Regular, PingFang SC" font-weight="normal">组织职能</tspan>
+            </text>
+            <text id="转变-组织节奏" font-family="PingFangSC-Semibold, PingFang SC" font-size="24" font-weight="500" fill="#000000">
+                <tspan x="48" y="494">转变</tspan>
+                <tspan x="0" y="527" font-family="PingFangSC-Regular, PingFang SC" font-weight="normal">组织节奏</tspan>
+            </text>
+            <rect id="Rectangle" stroke="#EE5BA0" stroke-width="3" fill="#0078BF" x="163" y="136" width="303" height="64" rx="32"></rect>
+            <rect id="Rectangle" stroke="#00BCCD" stroke-width="3" fill="#0078BF" x="163" y="264" width="303" height="64" rx="32"></rect>
+            <rect id="Rectangle" stroke="#EE5BA0" stroke-width="3" fill="#0078BF" x="163" y="392" width="303" height="64" rx="32"></rect>
+            <rect id="Rectangle" stroke="#00BCCD" stroke-width="3" fill="#0078BF" x="163" y="520" width="303" height="64" rx="32"></rect>
+            <circle id="Oval" fill="#EF5BA1" cx="339" cy="51" r="5"></circle>
+            <text id="专注" font-family="PingFangSC-Regular, PingFang SC" font-size="24" font-weight="normal" fill="#FFFFFF">
+                <tspan x="296" y="177">专注</tspan>
+            </text>
+            <text id="执行" font-family="PingFangSC-Regular, PingFang SC" font-size="24" font-weight="normal" fill="#FFFFFF">
+                <tspan x="296" y="304">执行</tspan>
+            </text>
+            <text id="优化" font-family="PingFangSC-Regular, PingFang SC" font-size="24" font-weight="normal" fill="#FFFFFF">
+                <tspan x="296" y="433">优化</tspan>
+            </text>
+            <text id="强化" font-family="PingFangSC-Regular, PingFang SC" font-size="24" font-weight="normal" fill="#FFFFFF">
+                <tspan x="296" y="559">强化</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
