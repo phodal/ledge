@@ -34,7 +34,7 @@ export class MarkdownReporterComponent implements OnInit, AfterViewInit {
     // tslint: disable-next-line
     const color = d3.scale.linear().domain([1, length])
       .interpolate(d3.interpolateHcl as any)
-      .range([d3.rgb('#007AFF'), d3.rgb('#FFF500')]);
+      .range([d3.rgb('#007AFF'), d3.rgb('#FFF500')] as any);
 
     return color(i);
   }
