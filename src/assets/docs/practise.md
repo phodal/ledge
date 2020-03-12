@@ -21,8 +21,17 @@ Dashing: http://dashing.io/
 
 #### Git Hooks 
 
+示例：
+
+```process
+"commit scripts" -> "preCommit" -> "lint" -> "prePush" -> "testing"
+```
+
 ## 持续实验文化
 
 ### 持续学习
 
 
+参考：
+
+ - 《DevOps 实践指南》
