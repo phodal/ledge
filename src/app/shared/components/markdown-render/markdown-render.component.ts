@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MarkdownService} from 'ngx-markdown';
 import marked from 'marked';
-import { zip } from 'lodash-es';
+import {zip} from 'lodash-es';
 
 @Component({
   selector: 'component-markdown-render',
@@ -145,14 +145,32 @@ export class MarkdownRenderComponent implements OnInit {
       }
     }
     resultStr += this.buildProcessHeader(this.buildHeaderItem(headers));
+    const bodyResult = this.buildTableBody(cells);
+
+    resultStr += `<div class="table-space"></div><div class="flex-table row">${bodyResult}</div>`;
 
     return `<div class="process-table">` + resultStr + '</div>';
   }
 
+  private buildTableBody(cells: any[]) {
+    let bodyResult = '';
+    // tslint:disable-next-line:prefer-for-of
+    for (let index = 0; index < cells.length; index++) {
+      const column = cells[index];
+      let columnStr = '';
+      // tslint:disable-next-line:prefer-for-of
+      for (let j = 0; j < column.length; j++) {
+        columnStr += `<div class="cell">${column[j]}</div>`;
+      }
+
+      bodyResult += `<div class="table-column">${columnStr}</div>`;
+    }
+    return bodyResult;
+  }
+
   private buildHeaderItem(headers: any[]) {
     let headerStr = '';
-    const length = headers.length;
-    for (let index = 0; index < length; index++) {
+    for (let index = 0; index < headers.length; index++) {
       const header = headers[index];
       headerStr += this.buildProcessHeaderItem(index, header);
     }

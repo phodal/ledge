@@ -14,9 +14,10 @@
 
 ### DevSecOps 典型工具链
 
-
+```process-table
 | 源码管理 | 制品管理 | 分析（运行时） |
 |--------|---------|----------|
 | 代码质量分析：SonarQube | 依赖包分析：jFrog Xray * | 流量可观测性：SkyWalking | 
 | 代码安全扫描：CheckMarx* | 镜像安全扫描：Calir | 流量安全控制：Istio |
 | | | TwistLock * |
+```
