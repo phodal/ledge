@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MarkdownService} from 'ngx-markdown';
+import marked from 'marked';
+import { zip } from 'lodash-es';
 
 @Component({
   selector: 'component-markdown-render',
@@ -59,6 +61,8 @@ export class MarkdownRenderComponent implements OnInit {
 
       if (lang === 'process') {
         return this.buildCodeProcess(code);
+      } else if (lang === 'process-table') {
+        return this.buildTableProcess(code);
       }
 
       if (options.highlight) {
@@ -106,21 +110,59 @@ export class MarkdownRenderComponent implements OnInit {
     for (let index = 0; index < length; index++) {
       let str = splitCode[index];
       str = str.substr(1, str.length - 2);
-      items += `
+      items += this.buildProcessHeaderItem(index, str);
+    }
+
+    return this.buildProcessHeader(items);
+  }
+
+  private buildProcessHeaderItem(index: number, str: string) {
+    return `
       <div class="flex-row cell type_${index}">
         ${str}
       </div>
       `;
-    }
+  }
 
-    return `
-      <div class="process-table">
+  private buildProcessHeader(items: string) {
+    return `<div class="process-table">
   <div class="table-container" role="table" aria-label="Destinations">
     <div class="flex-table header" role="rowgroup">
       ${items}
     </div>
     </div>
-  </div>
-      `;
+  </div>`;
+  }
+
+  private buildTableProcess(code: any) {
+    let resultStr = '';
+    let headers = [];
+    let cells = [];
+
+    const tokens = marked.lexer(code);
+    for (const token of tokens) {
+      if (token.type === 'table') {
+        headers = token.header;
+        cells = this.transpose(token.cells);
+      }
+    }
+    resultStr += this.buildProcessHeader(this.buildHeaderItem(headers));
+
+    return resultStr;
+  }
+
+  private buildHeaderItem(headers: any[]) {
+    let headerStr = '';
+    const length = headers.length;
+    for (let index = 0; index < length; index++) {
+      const header = headers[index];
+      headerStr += this.buildProcessHeaderItem(index, header);
+    }
+
+    return headerStr;
+  }
+
+  transpose(arr: any[][]) {
+    return zip.apply(this, arr);
   }
 }
