@@ -93,7 +93,7 @@ div {
     float: left;
     background: #3498db;
     text-align: center;
-    padding: 0 22px 0 0;
+    padding: 0 8px 0 0;
     margin: 0 10px 0 0;
 
     &:after {
@@ -125,7 +125,7 @@ div {
     }
 
     &:last-child {
-      padding-right: 80px;
+      padding-right: 10px;
       border-top-right-radius: 10px; border-bottom-right-radius: 10px;
     }
 

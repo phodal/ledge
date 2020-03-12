@@ -77,8 +77,6 @@ export class PeriodicTableComponent implements OnInit, OnChanges {
   currentColHeader: number;
   selectCategory: string;
 
-  wikiAtomName = '';
-
   categories = [
     { type: 'scm', displayName: '源码管理'},
     { type: 'packageManage', displayName: '工件管理'},
