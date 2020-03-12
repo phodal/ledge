@@ -21,10 +21,16 @@ Dashing: http://dashing.io/
 
 #### Git Hooks 
 
-示例：
+Commit Hook 示例：
 
 ```process
-"commit scripts" -> "preCommit" -> "lint" -> "prePush" -> "testing"
+"执行提交脚本" -> "执行 preCommit" -> "执行预置的 lint" -> "提交代码"
+```
+
+Push Hook 示例：
+
+```process
+"git push" -> "执行 prePush" -> "执行 lint" -> "执行 testing" -> "提交"
 ```
 
 ## 持续实验文化
