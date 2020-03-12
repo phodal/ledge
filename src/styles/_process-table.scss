@@ -1,0 +1,175 @@
+.process-table {
+  $table-header: #3498db;
+  $table-header-border: #3498db;
+  $table-border: #d9d9d9;
+  $row-bg: #f4f2f1;
+
+  div {
+    box-sizing: border-box;
+  }
+
+  .table-container {
+    display: block;
+    margin: 2em auto;
+    width: 80%;
+    max-width: 1600px;
+    position: relative;
+  }
+
+  .flag-icon {
+    margin-right: 0.1em;
+  }
+
+  .flex-table {
+    display: flex;
+    flex-flow: row wrap;
+    transition: 0.5s;
+
+    &:first-of-type .flex-row {
+      background: $table-header;
+    }
+
+    &.row:nth-child(odd) .flex-row {
+      background: $row-bg;
+    }
+
+    &:hover {
+      background: #F5F5F5;
+      transition: 500ms;
+    }
+  }
+
+  .flex-row {
+    text-align: center;
+    padding: 0.5em 0.5em;
+  }
+
+  .rowspan {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .table-space {
+    margin-top: 1em;
+  }
+
+  .header {
+    .flex-row {
+      $themeColours: (
+        0: #F37C20,
+        1: #E9BD1E,
+        2: #00A2A1,
+        3: #0062CE,
+        4: #666666,
+        5: #DC5332,
+        6: #079948,
+        7: #999999,
+        8: #800080,
+        9: #003366,
+        10: #AA217E,
+        11: #55acee,
+        12: #444444,
+        13: #61bb46,
+        14: #007C78
+      );
+
+      @each $i, $color in $themeColours {
+        &.type_#{$i} {background: $color;}
+        &.type_#{$i}:after {border-left: 22px solid $color;}
+      }
+    }
+  }
+
+  .header {
+    position: relative;
+
+    .flex-row {
+      color: #fff;
+      position: relative;
+      height: 44px;
+      line-height: 44px;
+      font-size: 1em;
+      float: left;
+      background: #3498db;
+      text-align: center;
+      padding: 0 8px 0 0;
+      margin: 0 10px 0 0;
+
+      &:after {
+        content: "";
+        border-top: 22px solid transparent;
+        border-bottom: 22px solid transparent;
+        border-left: 22px solid #3498db;
+        position: absolute;
+        right: -22px;
+        top: -1px;
+        z-index: 1;
+      }
+
+      &:before {
+        content: "";
+        border-top: 22px solid transparent;
+        border-bottom: 22px solid transparent;
+        border-left: 22px solid #fff;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      &:first-child {
+        border-top-left-radius: 10px; border-bottom-left-radius: 10px;
+      }
+      &:first-child:before {
+        display: none;
+      }
+
+      &:last-child {
+        padding-right: 10px;
+        border-top-right-radius: 10px; border-bottom-right-radius: 10px;
+      }
+
+      &:last-child:after {
+        display: none;
+      }
+    }
+  }
+
+  .column {
+    display: flex;
+    flex-flow: column wrap;
+    width: 75%;
+    padding: 0;
+
+    .flex-row {
+      display: flex;
+      flex-flow: row wrap;
+      width: 100%;
+      padding: 0;
+      border: 0;
+
+      &:hover {
+        background: #F5F5F5;
+        transition: 500ms;
+      }
+    }
+  }
+
+  .flex-cell {
+    width: calc(100% / 3); //1px = border right
+    text-align: center;
+    padding: 0.5em 0.5em;
+  }
+
+  .table-column {
+    border: 1px solid #000;
+    margin: 0 2px;
+  }
+
+  .cell {
+    text-align: center;
+    padding: 0.5em 0.5em;
+  }
+
+}
