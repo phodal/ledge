@@ -11,7 +11,6 @@
   .table-container {
     display: block;
     margin: 2em auto;
-    width: 80%;
     max-width: 1600px;
     position: relative;
   }
@@ -170,6 +169,7 @@
   .cell {
     text-align: center;
     padding: 0.5em 0.5em;
+    min-width: 4em;
+    flex: auto;
   }
-
 }

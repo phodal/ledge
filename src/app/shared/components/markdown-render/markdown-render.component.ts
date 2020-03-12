@@ -57,6 +57,10 @@ export class MarkdownRenderComponent implements OnInit {
     return (code: any, infoStr: any, escaped: any) => {
       const lang = (infoStr || '').match(/\S*/)[0];
 
+      if (lang === 'process') {
+        return this.buildCodeProcess(code);
+      }
+
       if (options.highlight) {
         const out = options.highlight(code, lang);
         if (out != null && out !== code) {
@@ -93,4 +97,30 @@ export class MarkdownRenderComponent implements OnInit {
     return html;
   }
 
+  private buildCodeProcess(code: string) {
+    const splitCode = code.split(' -> ');
+    let items = '';
+
+    // tslint:disable-next-line:prefer-for-of
+    const length = splitCode.length;
+    for (let index = 0; index < length; index++) {
+      let str = splitCode[index];
+      str = str.substr(1, str.length - 2);
+      items += `
+      <div class="flex-row cell type_${index}">
+        ${str}
+      </div>
+      `;
+    }
+
+    return `
+      <div class="process-table">
+  <div class="table-container" role="table" aria-label="Destinations">
+    <div class="flex-table header" role="rowgroup">
+      ${items}
+    </div>
+    </div>
+  </div>
+      `;
+  }
 }
