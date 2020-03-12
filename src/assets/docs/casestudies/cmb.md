@@ -1,7 +1,3 @@
-# 案例学习
-
----
-
 ## 招商银行
 
 来源：《[陈展文：招行的 DevOps 和精益研发之路](http://www.idcquan.com/Special/2019trucs/ppt/chenzhanwen.pdf)》
