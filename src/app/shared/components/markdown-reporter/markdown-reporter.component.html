@@ -1,1 +1,3 @@
-<component-markdown-chart></component-markdown-chart>
+<div *ngFor="let chart of charts;">
+  <component-markdown-chart [data]="chart"></component-markdown-chart>
+</div>

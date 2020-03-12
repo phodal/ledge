@@ -1,5 +1,6 @@
-import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import * as echarts from 'echarts';
+import {ReporterChartModel} from '../model/reporter-chart.model';
 
 @Component({
   selector: 'component-markdown-chart',
@@ -7,6 +8,9 @@ import * as echarts from 'echarts';
   styleUrls: ['./markdown-chart.component.scss']
 })
 export class MarkdownChartComponent implements OnInit, AfterViewInit {
+  @Input()
+  data: ReporterChartModel;
+
   @ViewChild('reporter', {}) reporter: ElementRef;
 
   constructor() { }
@@ -15,12 +19,13 @@ export class MarkdownChartComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    console.log(this.data.chartData)
     const myChart = echarts.init(this.reporter.nativeElement);
     myChart.setOption({
       backgroundColor: '#2c343c',
 
       title: {
-        text: 'Customized Pie',
+        text: this.data.title,
         left: 'center',
         top: 20,
         textStyle: {
@@ -42,17 +47,10 @@ export class MarkdownChartComponent implements OnInit, AfterViewInit {
       },
       series: [
         {
-          name: '访问来源',
           type: 'pie',
           radius: '55%',
           center: ['50%', '50%'],
-          data: [
-            {value: 335, name: '直接访问'},
-            {value: 310, name: '邮件营销'},
-            {value: 274, name: '联盟广告'},
-            {value: 235, name: '视频广告'},
-            {value: 400, name: '搜索引擎'}
-          ].sort((a, b) => a.value - b.value),
+          data: this.data.chartData.sort((a, b) => a.value - b.value),
           roseType: 'radius',
           label: {
             color: 'rgba(255, 255, 255, 0.3)'
