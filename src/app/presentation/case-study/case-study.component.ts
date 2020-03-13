@@ -14,6 +14,7 @@ export class CaseStudyComponent implements OnInit {
     {displayName: 'HP', source: 'hp'},
   ];
   src = `assets/docs/casestudies/meituan.md`;
+  currentSource = 'meituan';
 
   constructor(title: Title) {
     title.setTitle('DevOps 学习平台 Ledge - 案例学习');
@@ -24,5 +25,6 @@ export class CaseStudyComponent implements OnInit {
 
   clickCase(source: string) {
     this.src = `assets/docs/casestudies/${source}.md`;
+    this.currentSource = source;
   }
 }
