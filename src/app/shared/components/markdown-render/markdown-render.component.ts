@@ -231,10 +231,10 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
         return;
       }
       const chartEl = elements[0];
-      const mychart = echarts.init(chartEl);
+      const mychart = echarts.init(chartEl as any);
       if (chartInfo.type === 'mindmap') {
         const newData = this.toTreeData(chartInfo.data);
-        mychart.setOption(ChartOptions.buildTreeOption(newData));
+        mychart.setOption(ChartOptions.buildTreeOption(newData) as any);
       } else if (chartInfo.type === 'radarchart') {
         const newData = this.toTreeData(chartInfo.data);
         mychart.setOption(ChartOptions.buildRadarChartOption(newData));
