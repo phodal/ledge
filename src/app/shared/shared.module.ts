@@ -12,6 +12,7 @@ import { MarkdownRatingItemComponent } from './components/markdown-radar-chart/m
 import { ProcessTableComponent } from './components/process-table/process-table.component';
 import {MarkdownReporterComponent} from './components/markdown-reporter/markdown-reporter.component';
 import {MarkdownChartComponent} from './components/markdown-chart/markdown-chart.component';
+import {MarkdownTreeComponent} from './components/markdown-tree/markdown-tree.component';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import {MarkdownChartComponent} from './components/markdown-chart/markdown-chart
     ProcessTableComponent,
     MarkdownReporterComponent,
     MarkdownChartComponent,
+    MarkdownTreeComponent,
   ],
   providers: [
   ],
@@ -42,6 +44,7 @@ import {MarkdownChartComponent} from './components/markdown-chart/markdown-chart
     ProcessTableComponent,
     MarkdownReporterComponent,
     MarkdownChartComponent,
+    MarkdownTreeComponent,
   ],
   entryComponents: []
 })
