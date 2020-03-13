@@ -13,7 +13,7 @@ function buildTreeOption(data) {
         top: '12%',
         left: '20%',
         bottom: '12%',
-        right: '20%',
+        right: '40%',
 
         symbolSize: 12,
 
