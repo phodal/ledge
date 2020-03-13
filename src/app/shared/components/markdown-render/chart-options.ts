@@ -10,12 +10,12 @@ function buildTreeOption(data) {
         id: 0,
         name: 'tree1',
         data: [data],
-        top: '10%',
-        left: '8%',
-        bottom: '22%',
+        top: '12%',
+        left: '20%',
+        bottom: '12%',
         right: '20%',
 
-        symbolSize: 10,
+        symbolSize: 12,
 
         edgeShape: 'polyline',
         edgeForkPosition: '63%',

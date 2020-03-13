@@ -219,6 +219,15 @@ export class MarkdownRenderComponent implements OnInit {
   }
 
   private toTreeData(data: any) {
+    if (data.length === 1) {
+      // tslint:disable-next-line:no-shadowed-variable
+      const childrenInfo = this.transformTreeData(data[0].childrens);
+      return {
+        name: data[0].item.text,
+        children: childrenInfo
+      };
+    }
+
     const treeInfo = this.transformTreeData(data);
     return {
       name: '',
