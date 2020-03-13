@@ -28,3 +28,5 @@ based on: MDB & [https://martinfowler.com/articles/agileFluency.html](https://ma
 ## 架构适应度函数
 
 
+**依赖漂移适应度函数**是一项引入了特定的演进式架构适应度函数的技术，它能随着时间推移追踪这些依赖，从而能够指出可能需要的工作，以及某个潜在问题是在好转还是恶化。
+
