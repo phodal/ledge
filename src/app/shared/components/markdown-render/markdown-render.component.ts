@@ -2,6 +2,9 @@ import {Component, Input, OnInit} from '@angular/core';
 import {MarkdownService} from 'ngx-markdown';
 import marked from 'marked';
 import {zip} from 'lodash-es';
+import MarkdownHelper from '../model/markdown.helper';
+import * as echarts from 'echarts';
+import ChartOptions from './chart-options';
 
 @Component({
   selector: 'component-markdown-render',
@@ -25,6 +28,8 @@ export class MarkdownRenderComponent implements OnInit {
     '"': '&quot;',
     '\'': '&#39;'
   };
+  private mindmapIndex = 0;
+  private chartInfos = [];
 
   constructor(private markdownService: MarkdownService) {
   }
@@ -37,6 +42,7 @@ export class MarkdownRenderComponent implements OnInit {
 
   endLoading() {
     this.loading = false;
+    setTimeout(() => this.renderChat(), 100);
   }
 
   private renderImage(markedOptions: any) {
@@ -63,6 +69,8 @@ export class MarkdownRenderComponent implements OnInit {
         return this.buildCodeProcess(code);
       } else if (lang === 'process-table') {
         return this.buildTableProcess(code);
+      } else if (lang === 'mindmap') {
+        return this.buildMindmap(code);
       }
 
       if (options.highlight) {
@@ -180,5 +188,39 @@ export class MarkdownRenderComponent implements OnInit {
 
   transpose(arr: any[][]) {
     return zip.apply(this, arr);
+  }
+
+  private buildMindmap(code: any) {
+    const tokens = marked.lexer(code);
+    let items = [];
+    items = MarkdownHelper.markdownToJSON(tokens, items);
+    const currentMap = {
+      id: 'mindmap-' + this.mindmapIndex,
+      type: 'mindmap',
+      data: items
+    };
+
+    this.chartInfos.push(currentMap);
+    this.mindmapIndex++;
+    return `<div class="markdown-mindmap ${currentMap.id}">mindmap</div>`;
+  }
+
+  private renderChat() {
+    if (this.chartInfos.length === 0) {
+      return;
+    }
+
+    for (const chartInfo of this.chartInfos) {
+      const chartEl = document.getElementsByClassName(chartInfo.id)[0];
+      const mychart = echarts.init(chartEl);
+      mychart.setOption(ChartOptions.buildTreeOption(this.toTreeData(chartInfo.data)));
+    }
+  }
+
+  private toTreeData(data: any) {
+    return {
+      name: 'start',
+      children: data
+    };
   }
 }
