@@ -232,7 +232,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
 
     for (const chartInfo of this.chartInfos) {
       const elements = document.getElementsByClassName(chartInfo.id);
-      if (!elements) {
+      if (elements.length < 1) {
         return;
       }
       const chartEl = elements[0];
