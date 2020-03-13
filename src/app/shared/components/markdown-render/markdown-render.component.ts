@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {MarkdownService} from 'ngx-markdown';
 import marked from 'marked';
 import {zip} from 'lodash-es';
@@ -11,7 +11,7 @@ import ChartOptions from './chart-options';
   templateUrl: './markdown-render.component.html',
   styleUrls: ['./markdown-render.component.scss']
 })
-export class MarkdownRenderComponent implements OnInit {
+export class MarkdownRenderComponent implements OnInit, OnChanges {
   @Input()
   src: string;
   loading = true;
@@ -44,6 +44,13 @@ export class MarkdownRenderComponent implements OnInit {
   endLoading() {
     this.loading = false;
     setTimeout(() => this.renderChat(), 100);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.src) {
+      this.mindmapIndex = 0;
+      this.radarChartIndex = 0;
+    }
   }
 
   private renderImage(markedOptions: any) {
@@ -219,14 +226,17 @@ export class MarkdownRenderComponent implements OnInit {
     }
 
     for (const chartInfo of this.chartInfos) {
-      const chartEl = document.getElementsByClassName(chartInfo.id)[0];
+      const elements = document.getElementsByClassName(chartInfo.id);
+      if (!elements) {
+        return;
+      }
+      const chartEl = elements[0];
       const mychart = echarts.init(chartEl);
       if (chartInfo.type === 'mindmap') {
         const newData = this.toTreeData(chartInfo.data);
         mychart.setOption(ChartOptions.buildTreeOption(newData));
       } else if (chartInfo.type === 'radarchart') {
         const newData = this.toTreeData(chartInfo.data);
-        console.log(newData)
         mychart.setOption(ChartOptions.buildRadarChartOption(newData));
       }
     }
