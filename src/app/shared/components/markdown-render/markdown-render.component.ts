@@ -213,14 +213,29 @@ export class MarkdownRenderComponent implements OnInit {
     for (const chartInfo of this.chartInfos) {
       const chartEl = document.getElementsByClassName(chartInfo.id)[0];
       const mychart = echarts.init(chartEl);
-      mychart.setOption(ChartOptions.buildTreeOption(this.toTreeData(chartInfo.data)));
+      const newData = this.toTreeData(chartInfo.data);
+      mychart.setOption(ChartOptions.buildTreeOption(newData));
     }
   }
 
   private toTreeData(data: any) {
+    const treeInfo = this.transformTreeData(data);
     return {
-      name: 'start',
-      children: data
+      name: '',
+      children: treeInfo
     };
+  }
+
+  private transformTreeData(data: any) {
+    const nodes = [];
+    for (const item of data) {
+      const node: any = {};
+      node.name = item.item.text;
+      if (item.childrens && item.childrens.length > 0) {
+        node.children = this.transformTreeData(item.childrens);
+      }
+      nodes.push(node);
+    }
+    return nodes;
   }
 }

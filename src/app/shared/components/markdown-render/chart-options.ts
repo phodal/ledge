@@ -15,7 +15,7 @@ function buildTreeOption(data) {
         bottom: '22%',
         right: '20%',
 
-        symbolSize: 7,
+        symbolSize: 10,
 
         edgeShape: 'polyline',
         edgeForkPosition: '63%',
@@ -29,7 +29,8 @@ function buildTreeOption(data) {
           backgroundColor: '#fff',
           position: 'left',
           verticalAlign: 'middle',
-          align: 'right'
+          align: 'right',
+          fontSize: 14
         },
 
         leaves: {
