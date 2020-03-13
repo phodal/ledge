@@ -11,6 +11,7 @@ export class CaseStudyComponent implements OnInit {
     {displayName: 'DaoCloud', source: 'daocloud'},
     {displayName: '美团外卖', source: 'meituan'},
     {displayName: '招商银行', source: 'cmb'},
+    {displayName: 'HP', source: 'hp'},
   ];
   src = `assets/docs/casestudies/meituan.md`;
 
