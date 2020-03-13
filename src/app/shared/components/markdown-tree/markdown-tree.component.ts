@@ -121,6 +121,6 @@ export class MarkdownTreeComponent implements OnInit, AfterViewInit {
       ]
     };
 
-    myChart.setOption(options);
+    myChart.setOption(options as any);
   }
 }
