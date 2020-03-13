@@ -41,10 +41,25 @@ Dashing: http://dashing.io/
 
 #### Git Hooks 
 
+
+Git 钩子列表：
+
+```bash
+applypatch-msg     post-merge         pre-auto-gc        prepare-commit-msg
+commit-msg         post-receive       pre-commit         push-to-checkout
+post-applypatch    post-rewrite       pre-push           update
+post-checkout      post-update        pre-rebase
+post-commit        pre-applypatch     pre-receive
+```
+
 Commit Hook 示例：
 
-```process
-"执行提交脚本" -> "执行 preCommit" -> "执行预置的 lint" -> "提交代码"
+```process-table
+| 执行提交脚本 | 执行 pre-commit  | 执行 Checkstyle| 执行预置的 lint | 提交代码 |
+|-|-|-|-|
+| git-cz | husky | checkstyle | lint-staged | git commit |
+| conventional-changelog| commitlint |  | | 
+|   |  | | |
 ```
 
 Push Hook 示例：
@@ -52,6 +67,19 @@ Push Hook 示例：
 ```process
 "git push" -> "执行 prePush" -> "执行 lint" -> "执行 testing" -> "提交"
 ```
+
+提交信息规范：
+
+ - build: 影响构建系统或外部依赖关系的更改（示例范围：gulp，broccoli，npm）
+ - ci: 更改我们的持续集成文件和脚本（示例范围：Travis，Circle，BrowserStack，SauceLabs）
+ - docs: 仅文档更改
+ - feat: 一个新功能
+ - fix: 修复错误
+ - perf: 改进性能的代码更改
+ - refactor: 代码更改，既不修复错误也不添加功能
+ - style: 不影响代码含义的变化（空白，格式化，缺少分号等）
+ - test: 添加缺失测试或更正现有测试
+
 
 ## 持续实验文化
 
