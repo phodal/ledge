@@ -1,11 +1,13 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {MarkdownService} from 'ngx-markdown';
 import marked from 'marked';
-import {zip} from 'lodash-es';
-import MarkdownHelper from '../model/markdown.helper';
+import {zip, maxBy} from 'lodash-es';
 import * as echarts from 'echarts';
 import ChartOptions from './chart-options';
 import ECharts = echarts.ECharts;
+
+import MarkdownHelper from '../model/markdown.helper';
+
 
 @Component({
   selector: 'component-markdown-render',
@@ -83,6 +85,8 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
           return this.buildCodeProcess(code);
         case 'process-table':
           return this.buildTableProcess(code);
+        case 'process-step':
+          return this.buildTableStep(code);
         case 'mindmap':
           return this.buildMindmap(code);
         case 'radar':
@@ -292,5 +296,32 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
 
     this.radarChartIndex++;
     return `<div class="markdown-radarchart ${currentMap.id}"></div>`;
+  }
+
+  private buildTableStep(code: any) {
+    const tokens = marked.lexer(code);
+    let items = [];
+    items = MarkdownHelper.markdownToJSON(tokens, items);
+
+    const maxItem = maxBy(items, (d) => d.childrens.length);
+    const maxLength = maxItem.childrens.length;
+
+    let cols = '';
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < items.length; i++) {
+      let itemsStr = '';
+      const title = items[i].item.text;
+      for (let j = 0; j < maxLength; j++) {
+        let text = '';
+        if (items[i].childrens[j]) {
+          text = items[i].childrens[j].item.text;
+        }
+        itemsStr += `<div class="process-step-item">${text}</div>`;
+      }
+
+      cols += `<div class="process-step-column"><div class="process-title">${title}</div><div class="process-body">${itemsStr}</div></div>`;
+    }
+
+    return `<div class="process-step">${cols}</div>`;
   }
 }
