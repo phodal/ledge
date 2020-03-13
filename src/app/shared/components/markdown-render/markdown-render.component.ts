@@ -30,6 +30,7 @@ export class MarkdownRenderComponent implements OnInit {
   };
   private mindmapIndex = 0;
   private chartInfos = [];
+  private radarChartIndex = 0;
 
   constructor(private markdownService: MarkdownService) {
   }
@@ -65,14 +66,17 @@ export class MarkdownRenderComponent implements OnInit {
     return (code: any, infoStr: any, escaped: any) => {
       const lang = (infoStr || '').match(/\S*/)[0];
 
-      if (lang === 'process') {
-        return this.buildCodeProcess(code);
-      } else if (lang === 'process-table') {
-        return this.buildTableProcess(code);
-      } else if (lang === 'mindmap') {
-        return this.buildMindmap(code);
-      } else {
-        return this.renderNormalCode(options, code, lang, escaped);
+      switch (lang) {
+        case 'process':
+          return this.buildCodeProcess(code);
+        case 'process-table':
+          return this.buildTableProcess(code);
+        case 'mindmap':
+          return this.buildMindmap(code);
+        case 'radar':
+          return this.buildRadarChart(code);
+        default:
+          return this.renderNormalCode(options, code, lang, escaped);
       }
     };
   }
@@ -217,8 +221,14 @@ export class MarkdownRenderComponent implements OnInit {
     for (const chartInfo of this.chartInfos) {
       const chartEl = document.getElementsByClassName(chartInfo.id)[0];
       const mychart = echarts.init(chartEl);
-      const newData = this.toTreeData(chartInfo.data);
-      mychart.setOption(ChartOptions.buildTreeOption(newData));
+      if (chartInfo.type === 'mindmap') {
+        const newData = this.toTreeData(chartInfo.data);
+        mychart.setOption(ChartOptions.buildTreeOption(newData));
+      } else if (chartInfo.type === 'radarchart') {
+        const newData = this.toTreeData(chartInfo.data);
+        console.log(newData)
+        mychart.setOption(ChartOptions.buildRadarChartOption(newData));
+      }
     }
   }
 
@@ -250,5 +260,21 @@ export class MarkdownRenderComponent implements OnInit {
       nodes.push(node);
     }
     return nodes;
+  }
+
+  private buildRadarChart(code: any) {
+    const tokens = marked.lexer(code);
+    let items = [];
+    items = MarkdownHelper.markdownToJSON(tokens, items);
+    const currentMap = {
+      id: 'radarchart-' + this.radarChartIndex,
+      type: 'radarchart',
+      data: items
+    };
+
+    this.chartInfos.push(currentMap);
+
+    this.radarChartIndex++;
+    return `<div class="markdown-radarchart ${currentMap.id}">radarchart</div>`;
   }
 }

@@ -49,8 +49,38 @@ function buildTreeOption(data) {
   };
 }
 
+function buildRadarChartOption(data) {
+  return {
+    tooltip: {},
+    legend: {
+      data: [data.name]
+    },
+    radar: {
+      name: {
+        textStyle: {
+          color: '#000',
+          borderRadius: 3,
+          padding: [3, 5],
+          fontSize: 14,
+        }
+      },
+      indicator: data.children
+    },
+    series: [{
+      type: 'radar',
+      data: [
+        {
+          value: [],
+          name: data.name
+        }
+      ]
+    }]
+  };
+}
+
 const ChartOptions = {
-  buildTreeOption
+  buildTreeOption,
+  buildRadarChartOption,
 };
 
 export default ChartOptions;
