@@ -1,6 +1,6 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {MarkdownService} from 'ngx-markdown';
-import marked from 'marked';
+import marked, {Slugger} from 'marked';
 import {zip, maxBy} from 'lodash-es';
 import * as echarts from 'echarts';
 import ChartOptions from './chart-options';
@@ -43,6 +43,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
     const markedOptions: any = this.markdownService.options;
     this.markdownService.renderer.image = this.renderImage(markedOptions).bind(this);
     this.markdownService.renderer.code = this.renderCode(markedOptions).bind(this);
+    this.markdownService.renderer.heading = this.renderHeading(markedOptions).bind(this);
   }
 
   endLoading() {
@@ -73,6 +74,17 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
       out += markedOptions.xhtml ? '/>' : '>';
       out += `<figcaption>${title}</figcaption>`;
       return `<figure>${out}</figure>`;
+    };
+  }
+
+
+  private renderHeading(options: any) {
+    return (text: string, level: number, raw: string, slugger: Slugger) => {
+      if (options.headerIds) {
+        return '<h' + level + ' id="' + options.headerPrefix + slugger.slug(raw) + '">' + text + '</h' + level + '>\n';
+      }
+
+      return '<h' + level + '>' + text + '</h' + level + '>\n';
     };
   }
 
