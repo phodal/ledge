@@ -608,6 +608,8 @@
       font-size: 1.2em;
       line-height: 1.5em;
       margin-top: 1em;
+
+      background: url("/assets/resources/images/arrow-right-thin.svg") no-repeat center right 10px;
     }
 
     .process-body {
@@ -616,7 +618,7 @@
 
     .process-step-item {
       margin-top: 0.4em;
-      padding: 0.5em 1em;
+      padding: 0.5em 0.2em;
       border-left: 1px solid #222;
       border-right: 1px solid #222;
       border-top: 1px solid #222;

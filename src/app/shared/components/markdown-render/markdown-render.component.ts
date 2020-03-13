@@ -321,7 +321,9 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
         }
       }
 
-      cols += `<div class="process-step-column"><div class="process-title">${title}</div><div class="process-body">${itemsStr}</div></div>`;
+      cols += `<div class="process-step-column">
+  <div class="process-title">${title}</div><div class="process-body">${itemsStr}</div>
+</div>`;
     }
 
     return `<div class="markdown-process-step">${cols}</div>`;
