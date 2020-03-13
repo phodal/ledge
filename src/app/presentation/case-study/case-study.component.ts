@@ -13,6 +13,7 @@ export class CaseStudyComponent implements OnInit {
     {displayName: '美团外卖', source: 'meituan'},
     {displayName: '招商银行', source: 'cmb'},
     {displayName: 'HP', source: 'hp'},
+    {displayName: 'Etsy', source: 'etsy'},
   ];
   currentSource = 'meituan';
   src = this.buildSrc(this.currentSource);
