@@ -71,24 +71,28 @@ export class MarkdownRenderComponent implements OnInit {
         return this.buildTableProcess(code);
       } else if (lang === 'mindmap') {
         return this.buildMindmap(code);
+      } else {
+        return this.renderNormalCode(options, code, lang, escaped);
       }
+    };
+  }
 
-      if (options.highlight) {
-        const out = options.highlight(code, lang);
-        if (out != null && out !== code) {
-          escaped = true;
-          code = out;
-        }
+  private renderNormalCode(options: any, code: any, lang: string, escaped: any) {
+    if (options.highlight) {
+      const out = options.highlight(code, lang);
+      if (out != null && out !== code) {
+        escaped = true;
+        code = out;
       }
+    }
 
-      if (!lang) {
-        return '<pre><code>' + (escaped ? code : this.escape(code, true)) + '</code></pre>';
-      }
+    if (!lang) {
+      return '<pre><code>' + (escaped ? code : this.escape(code, true)) + '</code></pre>';
+    }
 
-      return `<pre>
+    return `<pre>
     <code class="${options.langPrefix}${this.escape(lang, true)}">${escaped ? code : this.escape(code, true)}</code>
 </pre>`;
-    };
   }
 
   getEscapeReplacement(ch) {
