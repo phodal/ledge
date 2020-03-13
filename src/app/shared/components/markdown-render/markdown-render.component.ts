@@ -7,6 +7,7 @@ import ChartOptions from './chart-options';
 import ECharts = echarts.ECharts;
 
 import MarkdownHelper from '../model/markdown.helper';
+import Tocify, {TocItem} from './tocify';
 
 
 @Component({
@@ -35,8 +36,9 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
   private chartInfos = [];
   private radarChartIndex = 0;
   private chartInstances: ECharts[] = [];
+  private toc = [];
 
-  constructor(private markdownService: MarkdownService) {
+  constructor(private markdownService: MarkdownService, private tocify: Tocify) {
   }
 
   ngOnInit(): void {
@@ -52,6 +54,9 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
       chartInstance.clear();
     }
     setTimeout(() => this.renderChat(), 50);
+    const items = this.tocify.tocItems;
+    let tocStr = this.renderToc(items);
+    console.log(tocStr);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -59,6 +64,14 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
       this.mindmapIndex = 0;
       this.radarChartIndex = 0;
     }
+  }
+
+  private renderToc(items: TocItem[]) {
+    return items.map(item => {
+      return `<a href="#${item.anchor}" title={item.text}>
+       ${item}
+</a>`;
+    });
   }
 
   private renderImage(markedOptions: any) {
@@ -77,13 +90,12 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
     };
   }
 
-
   private renderHeading(options: any) {
     return (text: string, level: number, raw: string, slugger: Slugger) => {
+      this.tocify.add(text, level);
       if (options.headerIds) {
         return '<h' + level + ' id="' + options.headerPrefix + slugger.slug(raw) + '">' + text + '</h' + level + '>\n';
       }
-
       return '<h' + level + '>' + text + '</h' + level + '>\n';
     };
   }
