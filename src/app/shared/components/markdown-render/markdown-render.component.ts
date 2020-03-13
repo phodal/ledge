@@ -1,10 +1,11 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {MarkdownService} from 'ngx-markdown';
 import marked, {Slugger} from 'marked';
 import {zip, maxBy} from 'lodash-es';
 import * as echarts from 'echarts';
 import ChartOptions from './chart-options';
 import ECharts = echarts.ECharts;
+import { Location } from '@angular/common';
 
 import MarkdownHelper from '../model/markdown.helper';
 import Tocify, {TocItem} from './tocify';
@@ -18,6 +19,9 @@ import Tocify, {TocItem} from './tocify';
 export class MarkdownRenderComponent implements OnInit, OnChanges {
   @Input()
   src: string;
+
+  @ViewChild('toc') tocEl: ElementRef;
+
   loading = true;
 
   // marked
@@ -37,8 +41,9 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
   private radarChartIndex = 0;
   private chartInstances: ECharts[] = [];
   private toc = [];
+  tocStr = '';
 
-  constructor(private markdownService: MarkdownService, private tocify: Tocify) {
+  constructor(private markdownService: MarkdownService, private tocify: Tocify, private location: Location) {
   }
 
   ngOnInit(): void {
@@ -55,8 +60,9 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
     }
     setTimeout(() => this.renderChat(), 50);
     const items = this.tocify.tocItems;
-    let tocStr = this.renderToc(items);
-    console.log(tocStr);
+    this.tocStr = this.renderToc(items).toString();
+    this.tocEl.nativeElement.innerHTML = this.tocStr;
+    this.tocify.reset();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -68,9 +74,12 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
 
   private renderToc(items: TocItem[]) {
     return items.map(item => {
-      return `<a href="#${item.anchor}" title={item.text}>
-       ${item}
-</a>`;
+      if (item.children) {
+        const value = this.renderToc(item.children);
+        return `<a class="level_${item.level}" href="${this.location.path()}#${item.anchor}" title=${item.text}>${value}</a>`;
+      } else {
+        return `<a class="level_${item.level}" href="${this.location.path()}#${item.anchor}" title=${item.text}>${item.text}</a>`;
+      }
     });
   }
 
@@ -92,7 +101,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
 
   private renderHeading(options: any) {
     return (text: string, level: number, raw: string, slugger: Slugger) => {
-      this.tocify.add(text, level);
+      this.tocify.add(text, level, '', slugger.slug(raw));
       if (options.headerIds) {
         return '<h' + level + ' id="' + options.headerPrefix + slugger.slug(raw) + '">' + text + '</h' + level + '>\n';
       }

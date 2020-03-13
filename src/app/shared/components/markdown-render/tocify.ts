@@ -18,10 +18,10 @@ export default class Tocify {
     this.tocItems = [];
   }
 
-  add(text: string, level: number, id: string = '') {
+  add(text: string, level: number, id: string = '', anchor: string) {
     // tslint:disable-next-line:no-shadowed-variable
-    const count = this.anchors.filter(anchor => anchor === text).length;
-    const anchor = id || (count ? `${text}${count}` : text);
+    // const count = this.anchors.filter(anchor => anchor === text).length;
+    // const anchor = id || (count ? `${text}${count}` : text);
     this.anchors.push(anchor);
     const item = {anchor, level, text};
     const items = this.tocItems;
