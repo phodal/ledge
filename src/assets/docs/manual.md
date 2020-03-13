@@ -10,3 +10,11 @@
 ```process
 "个人实践" -> "记录流程" -> "形成统一语言" -> "抽象原则与模式" -> "标准化流程（工具）"
 ```
+
+### BDD 工具选型
+
+> Behavior Driven Development，行为驱动开发是一种敏捷软件开发的技术，它鼓励软件项目中的开发者、QA 和非技术人员或商业参与者之间的协作。
+
+《[BDD 框架对比: Cucumber.js vs Robot Framework vs Gauge.js](https://github.com/phodal/bdd-frameworks-compare)》
+
+![Workflow](/assets/docs/images/bdd_process.jpg 'BDD Workflow')
