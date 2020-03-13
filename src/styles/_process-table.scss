@@ -1,3 +1,5 @@
+@import './behavior';
+
 .process-table {
   $table-header: #3498db;
   $table-header-border: #3498db;
@@ -84,6 +86,7 @@
 
   .header {
     position: relative;
+    @extend .noselect;
 
     .flex-row {
       color: #fff;
@@ -184,5 +187,62 @@
 
   .table-space {
     margin-top: 0.5em;
+  }
+}
+
+
+.markdown-mindmap {
+  width: 100%;
+  height: auto;
+
+  max-width: 800px;
+  min-width: 800px;
+  min-height: 600px;
+}
+
+.markdown-radarchart {
+  max-width: 600px;
+  min-width: 600px;
+  min-height: 600px;
+}
+
+.markdown-process-step {
+  display: flex;
+  justify-content: space-between;
+  flex: 1 1 0;
+  margin: 2em auto;
+
+
+  .process-step-column {
+    border-radius: 20px;
+    border: 2px dashed #222;
+    text-align: center;
+    flex: 1;
+    margin-left: 2em;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    .process-title {
+      font-size: 1.2em;
+      line-height: 1.5em;
+      margin-top: 1em;
+
+      background: url("/assets/resources/images/arrow-right-thin.svg") no-repeat center right 10px;
+    }
+
+    .process-body {
+      padding: 1em;
+    }
+
+    .process-step-item {
+      margin-top: 0.4em;
+      padding: 0.5em 0.2em;
+      border-left: 1px solid #222;
+      border-right: 1px solid #222;
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
+    }
   }
 }
