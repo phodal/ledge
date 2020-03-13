@@ -596,6 +596,12 @@
     border-radius: 20px;
     border: 2px dashed #222;
     text-align: center;
+    flex: 1;
+    margin-left: 2em;
+
+    &:first-child {
+      margin-left: 0;
+    }
 
     .process-title {
       font-size: 1.2em;
