@@ -30,3 +30,31 @@ based on: MDB & [https://martinfowler.com/articles/agileFluency.html](https://ma
 
 **依赖漂移适应度函数**是一项引入了特定的演进式架构适应度函数的技术，它能随着时间推移追踪这些依赖，从而能够指出可能需要的工作，以及某个潜在问题是在好转还是恶化。
 
+### 适应度函数驱动编程
+
+来源：[Fitness function-driven development](https://www.thoughtworks.com/insights/articles/fitness-function-driven-development)
+
+```mindmap
+ - 代码质量
+   - 可修改性
+   - 可管理性
+   - 可适应性
+ - 弹性
+   - 稳定性
+   - 弹性
+   - 可用性
+ - 可观察性
+   - 可调试性
+   - 可审计性
+ - 性能
+   - 可缩放性
+   - 稳定性
+ - 合规
+   - 可审计性
+ - 安全
+   - 安全性
+ - 可操作性
+   - 可管理性
+   - 可操作性
+   - 可恢复性
+```
