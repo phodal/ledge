@@ -5,6 +5,7 @@ import {zip} from 'lodash-es';
 import MarkdownHelper from '../model/markdown.helper';
 import * as echarts from 'echarts';
 import ChartOptions from './chart-options';
+import ECharts = echarts.ECharts;
 
 @Component({
   selector: 'component-markdown-render',
@@ -31,6 +32,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
   private mindmapIndex = 0;
   private chartInfos = [];
   private radarChartIndex = 0;
+  private chartInstances: ECharts[] = [];
 
   constructor(private markdownService: MarkdownService) {
   }
@@ -43,7 +45,10 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
 
   endLoading() {
     this.loading = false;
-    setTimeout(() => this.renderChat(), 100);
+    for (const chartInstance of this.chartInstances) {
+      chartInstance.clear();
+    }
+    setTimeout(() => this.renderChat(), 50);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -217,7 +222,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
 
     this.chartInfos.push(currentMap);
     this.mindmapIndex++;
-    return `<div class="markdown-mindmap ${currentMap.id}">mindmap</div>`;
+    return `<div class="markdown-mindmap ${currentMap.id}"></div>`;
   }
 
   private renderChat() {
@@ -232,6 +237,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
       }
       const chartEl = elements[0];
       const mychart = echarts.init(chartEl as any);
+      this.chartInstances.push(mychart);
       if (chartInfo.type === 'mindmap') {
         const newData = this.toTreeData(chartInfo.data);
         mychart.setOption(ChartOptions.buildTreeOption(newData) as any);
@@ -285,6 +291,6 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
     this.chartInfos.push(currentMap);
 
     this.radarChartIndex++;
-    return `<div class="markdown-radarchart ${currentMap.id}">radarchart</div>`;
+    return `<div class="markdown-radarchart ${currentMap.id}"></div>`;
   }
 }
