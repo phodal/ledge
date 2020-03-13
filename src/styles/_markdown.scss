@@ -586,3 +586,34 @@
   min-width: 600px;
   min-height: 600px;
 }
+
+.markdown-process-step {
+  display: flex;
+  justify-content: space-between;
+  flex: 1 1 0;
+
+  .process-step-column {
+    border-radius: 20px;
+    border: 2px dashed #222;
+    text-align: center;
+
+    .process-title {
+      font-size: 1.2em;
+      line-height: 1.5em;
+      margin-top: 1em;
+    }
+
+    .process-body {
+      padding: 1em;
+    }
+
+    .process-step-item {
+      margin-top: 0.4em;
+      padding: 0.5em 1em;
+      border-left: 1px solid #222;
+      border-right: 1px solid #222;
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
+    }
+  }
+}

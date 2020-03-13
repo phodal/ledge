@@ -316,12 +316,14 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
         if (items[i].childrens[j]) {
           text = items[i].childrens[j].item.text;
         }
-        itemsStr += `<div class="process-step-item">${text}</div>`;
+        if (text !== '') {
+          itemsStr += `<div class="process-step-item">${text}</div>`;
+        }
       }
 
       cols += `<div class="process-step-column"><div class="process-title">${title}</div><div class="process-body">${itemsStr}</div></div>`;
     }
 
-    return `<div class="process-step">${cols}</div>`;
+    return `<div class="markdown-process-step">${cols}</div>`;
   }
 }
