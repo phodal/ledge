@@ -101,9 +101,10 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
 
   private renderHeading(options: any) {
     return (text: string, level: number, raw: string, slugger: Slugger) => {
-      this.tocify.add(text, level, '', slugger.slug(raw));
+      const anchor = slugger.slug(raw);
+      this.tocify.add(text, level, '', anchor);
       if (options.headerIds) {
-        return '<h' + level + ' id="' + options.headerPrefix + slugger.slug(raw) + '">' + text + '</h' + level + '>\n';
+        return '<h' + level + ' id="' + options.headerPrefix + anchor + '">' + text + '</h' + level + '>\n';
       }
       return '<h' + level + '>' + text + '</h' + level + '>\n';
     };
