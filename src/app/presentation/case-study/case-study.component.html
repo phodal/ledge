@@ -2,10 +2,10 @@
   <mat-drawer mode="side" opened class="left-drawer">
     <h2>案例（出处见来源）</h2>
     <ul>
-      <li *ngFor="let case of cases"
-          (click)="clickCase(case.source)"
-          [ngClass]="case.source === currentSource ? 'active' : '' ">
-        <span>{{case.displayName}}</span>
+      <li *ngFor="let casestudy of cases"
+          (click)="clickCase(casestudy.source)"
+          [ngClass]="casestudy.source === currentSource ? 'active' : '' ">
+        <span>{{casestudy.displayName}}</span>
       </li>
     </ul>
   </mat-drawer>
