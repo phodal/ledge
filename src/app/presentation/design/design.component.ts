@@ -9,7 +9,7 @@ import {Title} from '@angular/platform-browser';
 export class DesignComponent implements OnInit {
 
   constructor(title: Title) {
-    title.setTitle('DevOps 学习平台 Ledge - 设计 Devops');
+    title.setTitle('DevOps 知识平台 Ledge - 设计 Devops');
   }
 
   ngOnInit(): void {

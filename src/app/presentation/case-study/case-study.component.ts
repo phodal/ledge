@@ -19,7 +19,7 @@ export class CaseStudyComponent implements OnInit {
   src = this.buildSrc(this.currentSource);
 
   constructor(title: Title, private storage: StorageMap) {
-    title.setTitle('DevOps 学习平台 Ledge - 案例学习');
+    title.setTitle('DevOps 知识平台 Ledge - 案例学习');
     this.storage.get('casestudy.last').subscribe((value: string) => {
       if (!!value) {
         this.currentSource = value;

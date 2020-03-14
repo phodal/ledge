@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
   `;
 
   constructor(title: Title) {
-    title.setTitle('DevOps 学习平台 Ledge - Periodic Table');
+    title.setTitle('DevOps 知识平台 Ledge - Periodic Table');
   }
 
   setCurrentAtomCategory(category: string) {

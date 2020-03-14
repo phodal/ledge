@@ -9,7 +9,7 @@ import {Title} from '@angular/platform-browser';
 export class PatternComponent implements OnInit {
 
   constructor(title: Title) {
-    title.setTitle('DevOps 学习平台 Ledge - 原则与模式');
+    title.setTitle('DevOps 知识平台 Ledge - 原则与模式');
   }
 
   ngOnInit(): void {
