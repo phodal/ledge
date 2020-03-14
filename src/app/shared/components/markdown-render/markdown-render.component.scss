@@ -1,6 +1,15 @@
 :host {
-  width: 90%;
   display: block;
   max-width: 2000px;
-  margin: 2em auto 0;
+}
+
+.markdown-toc {
+  min-height: 600px;
+  height: 100%;
+
+  .left-drawer {
+    width: 10%;
+    min-width: 120px;
+    min-height: 100vh;
+  }
 }

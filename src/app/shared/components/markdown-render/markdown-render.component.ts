@@ -1,14 +1,14 @@
-import {Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {MarkdownService} from 'ngx-markdown';
 import marked, {Slugger} from 'marked';
-import {zip, maxBy} from 'lodash-es';
+import {maxBy, zip} from 'lodash-es';
 import * as echarts from 'echarts';
 import ChartOptions from './chart-options';
-import ECharts = echarts.ECharts;
-import { Location } from '@angular/common';
+import {Location} from '@angular/common';
 
 import MarkdownHelper from '../model/markdown.helper';
 import Tocify, {TocItem} from './tocify';
+import ECharts = echarts.ECharts;
 
 
 @Component({
@@ -16,11 +16,14 @@ import Tocify, {TocItem} from './tocify';
   templateUrl: './markdown-render.component.html',
   styleUrls: ['./markdown-render.component.scss']
 })
-export class MarkdownRenderComponent implements OnInit, OnChanges {
+export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit {
   @Input()
   src: string;
 
-  @ViewChild('toc') tocEl: ElementRef;
+  @Input()
+  showToc = false;
+
+  @ViewChild('toc', { static: false }) tocEl: ElementRef;
 
   loading = true;
 
@@ -43,7 +46,11 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
   private toc = [];
   tocStr = '';
 
-  constructor(private markdownService: MarkdownService, private tocify: Tocify, private location: Location) {
+  constructor(private markdownService: MarkdownService, private tocify: Tocify, private location: Location,
+              private changeDetectorRef: ChangeDetectorRef) {
+  }
+
+  ngAfterViewInit(): void {
   }
 
   ngOnInit(): void {
@@ -60,8 +67,10 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
     }
     setTimeout(() => this.renderChat(), 50);
     const items = this.tocify.tocItems;
-    this.tocStr = this.renderToc(items).toString();
-    this.tocEl.nativeElement.innerHTML = this.tocStr;
+    this.tocStr = this.renderToc(items).join('');
+    if (this.tocEl && this.tocEl.nativeElement) {
+      this.tocEl.nativeElement.innerHTML = this.tocStr;
+    }
     this.tocify.reset();
   }
 
@@ -76,9 +85,12 @@ export class MarkdownRenderComponent implements OnInit, OnChanges {
     return items.map(item => {
       if (item.children) {
         const value = this.renderToc(item.children);
-        return `<a class="level_${item.level}" href="${this.location.path()}#${item.anchor}" title=${item.text}>${value}</a>`;
+        return `<li>
+   <a class="level_${item.level}" href="${this.location.path()}#${item.anchor}" title=${item.text}>${item.text}</a>
+   <ul>${value}</ul>
+</li>`;
       } else {
-        return `<a class="level_${item.level}" href="${this.location.path()}#${item.anchor}" title=${item.text}>${item.text}</a>`;
+        return `<li><a class="level_${item.level}" href="${this.location.path()}#${item.anchor}" title=${item.text}>${item.text}</a></li>`;
       }
     });
   }

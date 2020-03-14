@@ -1,7 +1,20 @@
-<div class="架构" #toc></div>
-<markdown
-  class="markdown"
-  [src]="src"
-  (load)="endLoading()"
-></markdown>
-<mat-spinner *ngIf="loading" class="loading" color="accent"></mat-spinner>
+<div *ngIf="showToc">
+  <mat-drawer-container class="markdown-toc">
+    <mat-drawer mode="side" opened class="left-drawer">
+      <ul class="toc" #toc></ul>
+    </mat-drawer>
+    <mat-drawer-content>
+      <markdown class="markdown" [src]="src" (load)="endLoading()"></markdown>
+      <mat-spinner *ngIf="loading" class="loading" color="accent"></mat-spinner>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>
+
+<div *ngIf="!showToc">
+  <markdown
+    class="markdown"
+    [src]="src"
+    (load)="endLoading()"
+  ></markdown>
+  <mat-spinner *ngIf="loading" class="loading" color="accent"></mat-spinner>
+</div>
