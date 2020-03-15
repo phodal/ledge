@@ -78,9 +78,66 @@ function buildRadarChartOption(data) {
   };
 }
 
+function buildPyramidChartOption(data) {
+  return {
+    tooltip: {
+      trigger: 'item',
+      formatter: '{a} <br/>{b} : {c}%'
+    },
+    toolbox: {
+      feature: {
+        dataView: {readOnly: false},
+        restore: {},
+        saveAsImage: {}
+      }
+    },
+
+    series: [
+      {
+        name: '漏斗图',
+        type: 'funnel',
+        left: '10%',
+        top: 60,
+        bottom: 60,
+        width: '80%',
+        minSize: '0%',
+        maxSize: '100%',
+        sort: 'ascending',
+        gap: 2,
+        label: {
+          show: true,
+          position: 'inside'
+        },
+        labelLine: {
+          length: 10,
+          lineStyle: {
+            width: 1,
+            type: 'solid'
+          }
+        },
+        itemStyle: {
+          borderColor: '#fff',
+          borderWidth: 1
+        },
+        emphasis: {
+          label: {
+            fontSize: 20
+          }
+        },
+        data: [
+          {value: 60, name: '访问'},
+          {value: 40, name: '咨询'},
+          {value: 20, name: '订单'},
+        ]
+      }
+    ]
+  };
+}
+
 const ChartOptions = {
   buildTreeOption,
   buildRadarChartOption,
+  buildPyramidChartOption
 };
 
 export default ChartOptions;

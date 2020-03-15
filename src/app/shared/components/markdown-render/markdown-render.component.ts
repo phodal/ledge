@@ -158,9 +158,11 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
         case 'process-step':
           return this.buildTableStep(code);
         case 'mindmap':
-          return this.buildMindmap(code);
+          return this.buildMindmapData(code);
         case 'radar':
-          return this.buildRadarChart(code);
+          return this.buildRadarChartData(code);
+        case 'pyramid':
+          return this.buildPyramidChartData(code);
         default:
           return this.renderNormalCode(options, code, lang, escaped);
       }
@@ -284,7 +286,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     return zip.apply(this, arr);
   }
 
-  private buildMindmap(code: any) {
+  private buildMindmapData(code: any) {
     const tokens = marked.lexer(code);
     let items = [];
     items = MarkdownHelper.markdownToJSON(tokens, items);
@@ -318,6 +320,9 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       } else if (chartInfo.type === 'radarchart') {
         const newData = this.toTreeData(chartInfo.data);
         mychart.setOption(ChartOptions.buildRadarChartOption(newData));
+      } else if (chartInfo.type === 'pyramid') {
+        const newData = this.toTreeData(chartInfo.data);
+        mychart.setOption(ChartOptions.buildPyramidChartOption(newData) as any);
       }
     }
   }
@@ -352,7 +357,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     return nodes;
   }
 
-  private buildRadarChart(code: any) {
+  private buildRadarChartData(code: any) {
     const tokens = marked.lexer(code);
     let items = [];
     items = MarkdownHelper.markdownToJSON(tokens, items);
@@ -364,6 +369,21 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
 
     this.chartInfos.push(currentMap);
 
+    this.radarChartIndex++;
+    return `<div class="markdown-radarchart ${currentMap.id}"></div>`;
+  }
+
+  private buildPyramidChartData(code: any) {
+    const tokens = marked.lexer(code);
+    let items = [];
+    items = MarkdownHelper.markdownToJSON(tokens, items);
+    const currentMap = {
+      id: 'pyramid-' + this.radarChartIndex,
+      type: 'pyramid',
+      data: items
+    };
+
+    this.chartInfos.push(currentMap);
     this.radarChartIndex++;
     return `<div class="markdown-radarchart ${currentMap.id}"></div>`;
   }
