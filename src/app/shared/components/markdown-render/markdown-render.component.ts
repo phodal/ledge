@@ -87,7 +87,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
         const value = this.renderToc(item.children);
         return `<li>
    <a class="level_${item.level}" href="${this.location.path()}#${item.anchor}" title=${item.text}>${item.text}</a>
-   <ul>${value}</ul>
+   <ul>${value.join('')}</ul>
 </li>`;
       } else {
         return `<li><a class="level_${item.level}" href="${this.location.path()}#${item.anchor}" title=${item.text}>${item.text}</a></li>`;
