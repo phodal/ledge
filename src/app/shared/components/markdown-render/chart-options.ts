@@ -97,12 +97,12 @@ function buildPyramidChartOption(data) {
     toolbox,
     series: [
       {
-        name: '漏斗图',
+        name: data.name,
         type: 'funnel',
         left: '10%',
         top: 60,
         bottom: 60,
-        width: '80%',
+        width: '90%',
         minSize: '0%',
         maxSize: '100%',
         sort: 'ascending',
@@ -124,14 +124,10 @@ function buildPyramidChartOption(data) {
         },
         emphasis: {
           label: {
-            fontSize: 20
+            fontSize: 24
           }
         },
-        data: [
-          {value: 60, name: '访问'},
-          {value: 40, name: '咨询'},
-          {value: 20, name: '订单'},
-        ]
+        data: data.children
       }
     ]
   };

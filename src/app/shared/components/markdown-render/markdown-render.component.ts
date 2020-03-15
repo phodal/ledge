@@ -322,6 +322,12 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
         mychart.setOption(ChartOptions.buildRadarChartOption(newData));
       } else if (chartInfo.type === 'pyramid') {
         const newData = this.toTreeData(chartInfo.data);
+        const pyramidLength = newData.children.length;
+        const CHART_MAX_VALUE = 100;
+        for (let i = 0; i < pyramidLength; i++) {
+          newData.children[i].value = CHART_MAX_VALUE / pyramidLength * (i + 1);
+        }
+
         mychart.setOption(ChartOptions.buildPyramidChartOption(newData) as any);
       }
     }
