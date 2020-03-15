@@ -1,5 +1,14 @@
+const toolbox = {
+  feature: {
+    dataView: {readOnly: false},
+    restore: {},
+    saveAsImage: {}
+  }
+};
+
 function buildTreeOption(data) {
   return {
+    toolbox,
     tooltip: {
       trigger: 'item',
       triggerOn: 'mousemove'
@@ -51,6 +60,7 @@ function buildTreeOption(data) {
 
 function buildRadarChartOption(data) {
   return {
+    toolbox,
     tooltip: {},
     legend: {
       data: [data.name]
@@ -84,14 +94,7 @@ function buildPyramidChartOption(data) {
       trigger: 'item',
       formatter: '{a} <br/>{b} : {c}%'
     },
-    toolbox: {
-      feature: {
-        dataView: {readOnly: false},
-        restore: {},
-        saveAsImage: {}
-      }
-    },
-
+    toolbox,
     series: [
       {
         name: '漏斗图',
