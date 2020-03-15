@@ -55,9 +55,9 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   private radarChartIndex = 0;
   private chartInstances: ECharts[] = [];
   private toc = [];
-  tocStr = '';
   private tocPosition = 0;
-  private sticky: boolean = false;
+  tocStr = '';
+  sticky = false;
 
   constructor(private markdownService: MarkdownService, private tocify: Tocify, private location: Location) {
   }
