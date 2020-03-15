@@ -92,7 +92,7 @@ function buildPyramidChartOption(data) {
   return {
     tooltip: {
       trigger: 'item',
-      formatter: '{a} <br/>{b} : {c}%'
+      formatter: '{b}'
     },
     toolbox,
     series: [
