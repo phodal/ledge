@@ -1,7 +1,7 @@
 <div *ngIf="showToc">
   <mat-drawer-container class="markdown-toc">
     <mat-drawer mode="side" opened class="left-drawer">
-      <ul class="toc" #toc></ul>
+      <ul class="toc" #toc [class.sticky]="sticky"></ul>
     </mat-drawer>
     <mat-drawer-content class="right-content">
       <markdown class="markdown" [src]="src" (load)="endLoading()"></markdown>

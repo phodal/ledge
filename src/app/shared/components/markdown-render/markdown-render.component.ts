@@ -1,4 +1,15 @@
-import {AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  HostListener,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+  ViewChild
+} from '@angular/core';
 import {MarkdownService} from 'ngx-markdown';
 import marked, {Slugger} from 'marked';
 import {maxBy, zip} from 'lodash-es';
@@ -23,7 +34,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   @Input()
   showToc = false;
 
-  @ViewChild('toc', { static: false }) tocEl: ElementRef;
+  @ViewChild('toc', {static: false}) tocEl: ElementRef;
 
   loading = true;
 
@@ -45,12 +56,25 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   private chartInstances: ECharts[] = [];
   private toc = [];
   tocStr = '';
+  private tocPosition = 0;
+  private sticky: boolean = false;
 
-  constructor(private markdownService: MarkdownService, private tocify: Tocify, private location: Location,
-              private changeDetectorRef: ChangeDetectorRef) {
+  constructor(private markdownService: MarkdownService, private tocify: Tocify, private location: Location) {
   }
 
   ngAfterViewInit(): void {
+    // this.tocPosition = this.tocEl.nativeElement.offsetTop;
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  handleScroll() {
+    const windowScroll = window.pageYOffset;
+    const headerHeight = 64;
+    if (windowScroll >= headerHeight) {
+      this.sticky = true;
+    } else {
+      this.sticky = false;
+    }
   }
 
   ngOnInit(): void {
