@@ -3,7 +3,7 @@
     <mat-drawer mode="side" opened class="left-drawer">
       <ul class="toc" #toc></ul>
     </mat-drawer>
-    <mat-drawer-content>
+    <mat-drawer-content class="right-content">
       <markdown class="markdown" [src]="src" (load)="endLoading()"></markdown>
       <mat-spinner *ngIf="loading" class="loading" color="accent"></mat-spinner>
     </mat-drawer-content>

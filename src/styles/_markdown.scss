@@ -573,3 +573,26 @@
     float: right
   }
 }
+
+.markdown-toc {
+  margin-top: 1em;
+  font-size: 1.2em;
+  ul {
+    margin-left: 8px;
+    padding: 4px;
+    li {
+      padding: 4px;
+      list-style: none;
+      text-indent: 1em;
+
+      a {
+        color: #000;
+        text-decoration: none;
+
+        &:visited {
+         color: #000;
+       }
+      }
+    }
+  }
+}

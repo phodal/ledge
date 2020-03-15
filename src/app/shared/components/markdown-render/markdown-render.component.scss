@@ -8,8 +8,12 @@
   height: 100%;
 
   .left-drawer {
-    width: 10%;
+    width: 15%;
     min-width: 120px;
     min-height: 100vh;
+  }
+
+  .right-content {
+    padding-left: 1em;
   }
 }
