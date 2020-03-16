@@ -89,20 +89,14 @@ function buildRadarChartOption(data) {
 }
 
 function buildPyramidChartOption(data) {
-  let seriesData = {
+  const seriesData = {
     name: data.name,
     type: 'funnel',
-    left: '10%',
-    top: 60,
-    bottom: 60,
-    width: '90%',
-    minSize: '0%',
-    maxSize: '100%',
     sort: 'ascending',
-    gap: 2,
     label: {
       show: true,
-      position: 'inside'
+      position: 'inside',
+      fontSize: 14
     },
     labelLine: {
       length: 10,
@@ -122,9 +116,36 @@ function buildPyramidChartOption(data) {
     },
     data: data.children
   };
-  const series = [
-    seriesData
-  ];
+  const series = [];
+  const split = data.children[0].name.split('、');
+  if (split.length === 2) {
+    series.push(seriesData);
+    const leftSeries = JSON.parse(JSON.stringify(seriesData));
+    leftSeries.label.position = 'left';
+    series.push(leftSeries);
+    const rightSeries = JSON.parse(JSON.stringify(seriesData));
+    rightSeries.label.position = 'right';
+    series.push(rightSeries);
+
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < data.children.length; i++) {
+      const item = data.children[i];
+      const center = item.name.split('：')[0];
+      const othersSplit = item.name.split('：')[1].split('、');
+
+      series[0].data[i].name = center;
+      series[1].data[i].name = othersSplit[0];
+      series[2].data[i].name = othersSplit[1];
+    }
+
+    // todo: remove hard code
+    series[0].width = 'auto';
+    series[1].width = 'auto';
+    series[2].width = 'auto';
+
+  } else {
+    series.push(seriesData);
+  }
 
   return {
     tooltip: {
