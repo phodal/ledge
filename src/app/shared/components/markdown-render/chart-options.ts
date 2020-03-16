@@ -89,47 +89,50 @@ function buildRadarChartOption(data) {
 }
 
 function buildPyramidChartOption(data) {
+  let seriesData = {
+    name: data.name,
+    type: 'funnel',
+    left: '10%',
+    top: 60,
+    bottom: 60,
+    width: '90%',
+    minSize: '0%',
+    maxSize: '100%',
+    sort: 'ascending',
+    gap: 2,
+    label: {
+      show: true,
+      position: 'inside'
+    },
+    labelLine: {
+      length: 10,
+      lineStyle: {
+        width: 1,
+        type: 'solid'
+      }
+    },
+    itemStyle: {
+      borderColor: '#fff',
+      borderWidth: 1
+    },
+    emphasis: {
+      label: {
+        fontSize: 24
+      }
+    },
+    data: data.children
+  };
+  const series = [
+    seriesData
+  ];
+
   return {
     tooltip: {
       trigger: 'item',
       formatter: '{b}'
     },
     toolbox,
-    series: [
-      {
-        name: data.name,
-        type: 'funnel',
-        left: '10%',
-        top: 60,
-        bottom: 60,
-        width: '90%',
-        minSize: '0%',
-        maxSize: '100%',
-        sort: 'ascending',
-        gap: 2,
-        label: {
-          show: true,
-          position: 'inside'
-        },
-        labelLine: {
-          length: 10,
-          lineStyle: {
-            width: 1,
-            type: 'solid'
-          }
-        },
-        itemStyle: {
-          borderColor: '#fff',
-          borderWidth: 1
-        },
-        emphasis: {
-          label: {
-            fontSize: 24
-          }
-        },
-        data: data.children
-      }
-    ]
+    series
   };
 }
 
