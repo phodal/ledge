@@ -15,6 +15,7 @@ export class CaseStudyComponent implements OnInit {
     {displayName: '招商银行', source: 'cmb'},
     {displayName: 'HP', source: 'hp'},
     {displayName: 'Etsy', source: 'etsy'},
+    {displayName: '中国银行', source: 'china-bank'},
     {displayName: '携程', source: 'xuecheng'},
     {displayName: '农业银行', source: 'nonghang'},
     {displayName: '华为', source: 'huawei'},
