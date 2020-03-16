@@ -109,10 +109,10 @@ Commit Hook 示例：
 
 ```process-table
 | 执行提交脚本 | 执行 pre-commit  | 执行 Checkstyle| 执行预置的 lint | 提交代码 |
-|-|-|-|-|
+|-|-|-|-|-|
 | git-cz | husky | checkstyle | lint-staged | git commit |
-| conventional-changelog| commitlint |  | | 
-|   |  | | |
+| conventional-changelog| commitlint |  | | | 
+| |  | | | |
 ```
 
 Push Hook 示例：
@@ -123,15 +123,15 @@ Push Hook 示例：
 
 提交信息规范（《[如何好一个 Git 提交信息及几种不同的规范](https://www.phodal.com/blog/how-to-write-a-better-git-commit-message/)》）：
 
- - build: 影响构建系统或外部依赖关系的更改（示例范围：gulp，broccoli，npm）
- - ci: 更改我们的持续集成文件和脚本（示例范围：Travis，Circle，BrowserStack，SauceLabs）
- - docs: 仅文档更改
- - feat: 一个新功能
- - fix: 修复错误
- - perf: 改进性能的代码更改
- - refactor: 代码更改，既不修复错误也不添加功能
- - style: 不影响代码含义的变化（空白，格式化，缺少分号等）
- - test: 添加缺失测试或更正现有测试
+ - **build**: 影响构建系统或外部依赖关系的更改（示例范围：gulp，broccoli，npm）
+ - **ci**: 更改我们的持续集成文件和脚本（示例范围：Travis，Circle，BrowserStack，SauceLabs）
+ - **docs**: 仅文档更改
+ - **feat**: 一个新功能
+ - **fix**: 修复错误
+ - **perf**: 改进性能的代码更改
+ - **refactor**: 代码更改，既不修复错误也不添加功能
+ - **style**: 不影响代码含义的变化（空白，格式化，缺少分号等）
+ - **test**: 添加缺失测试或更正现有测试
 
 
 ## 持续实验文化
