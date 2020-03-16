@@ -89,7 +89,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     for (const chartInstance of this.chartInstances) {
       chartInstance.clear();
     }
-    setTimeout(() => this.renderChat(), 50);
+    setTimeout(() => this.renderChart(), 50);
     const items = this.tocify.tocItems;
     this.tocStr = this.renderToc(items).join('');
     if (this.tocEl && this.tocEl.nativeElement) {
@@ -301,7 +301,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     return `<div class="markdown-mindmap ${currentMap.id}"></div>`;
   }
 
-  private renderChat() {
+  private renderChart() {
     if (this.chartInfos.length === 0) {
       return;
     }
