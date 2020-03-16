@@ -6,22 +6,21 @@
     <h6>DevOps 的目标是缩短开发周期，提高部署频率和更可靠地发布，与业务目标保持一致。</h6>
   </div>
 
-  <div class="period-title markdown">
-    <h2 class="title intro">DevOps 元素周期表 —— 搭配您的 DevOps 要素</h2>
+  <div class="intro markdown second-header">
+    <h5>DevOps 运动的主要特点是强烈倡导对构建软件的所有环节 (从集成、测试、发布到部署和基础架构管理) 进行全面的自动化和监控。</h5>
   </div>
+  <component-process-table class="process-bar" [tableValue]="processTemplate"></component-process-table>
 
+  <div class="period-title markdown">
+    <h2 class="title intro">DevOps 元素周期表 —— 选择您的 DevOps 工具</h2>
+  </div>
   <app-periodic-table
     [selectedMetal]="highlightState"
     (currentAtomCategory)="setCurrentAtomCategory($event)"></app-periodic-table>
 
-  <div class="intro markdown second-header">
-    <h5>DevOps 运动的主要特点是强烈倡导对构建软件的所有环节 (从集成、测试、发布到部署和基础架构管理) 进行全面的自动化和监控。</h5>
-  </div>
-
   <div class="process-bar">
-    <component-process-table class="process-bar" [tableValue]="processTemplate"></component-process-table>
     <div class="markdown center">
-      <h3>根据不同的企业情况，设计出专属的流水线</h3>
+      <h3>根据不同的企业情况，搭建出专属的 DevOps 流水线</h3>
     </div>
     <component-process-table class="process-bar" [tableValue]="devOpsExample"></component-process-table>
   </div>
@@ -29,6 +28,7 @@
   <div class="esp-insight">
     <div class="markdown">
       <h2 class="center">Ledge DevOps 知识平台</h2>
+      <h3 class="center">向您提供全程的 DevOps 数据化变革策略规划与咨询</h3>
     </div>
     <img src="/assets/images/esp.svg" alt="ESP Modeling">
   </div>
