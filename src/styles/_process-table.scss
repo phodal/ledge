@@ -232,6 +232,16 @@
 
     .process-body {
       padding: 1em;
+
+      &.process-long-body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex-flow: row wrap;
+        align-content: flex-end;
+      }
     }
 
     .process-step-item {
@@ -241,6 +251,10 @@
       border-right: 1px solid #222;
       border-top: 1px solid #222;
       border-bottom: 1px solid #222;
+
+      &.process-step-max {
+        width: 50%;
+      }
     }
   }
 }

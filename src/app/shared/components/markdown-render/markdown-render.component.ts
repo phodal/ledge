@@ -402,6 +402,12 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     const maxItem = maxBy(items, (d) => d.childrens.length);
     const maxLength = maxItem.childrens.length;
 
+    let maxWidthClass = '';
+    const MAX_ONE_COLUMN = 10;
+    if (maxLength > MAX_ONE_COLUMN) {
+      maxWidthClass = 'process-step-max';
+    }
+
     let cols = '';
     // tslint:disable-next-line:prefer-for-of
     for (let i = 0; i < items.length; i++) {
@@ -413,12 +419,12 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
           text = items[i].childrens[j].item.text;
         }
         if (text !== '') {
-          itemsStr += `<div class="process-step-item">${text}</div>`;
+          itemsStr += `<div class="process-step-item ${maxWidthClass}">${text}</div>`;
         }
       }
 
       cols += `<div class="process-step-column">
-  <div class="process-title">${title}</div><div class="process-body">${itemsStr}</div>
+  <div class="process-title">${title}</div><div class="process-body ${maxWidthClass === '' ? '' : 'process-long-body' }">${itemsStr}</div>
 </div>`;
     }
 
