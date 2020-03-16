@@ -9,8 +9,9 @@ import {StorageMap} from '@ngx-pwa/local-storage';
 })
 export class CaseStudyComponent implements OnInit {
   cases = [
-    {displayName: 'DaoCloud', source: 'daocloud'},
     {displayName: '美团外卖', source: 'meituan'},
+    {displayName: '大型银行转型', source: 'tw-banks'},
+    {displayName: 'DaoCloud', source: 'daocloud'},
     {displayName: '招商银行', source: 'cmb'},
     {displayName: 'HP', source: 'hp'},
     {displayName: 'Etsy', source: 'etsy'},
