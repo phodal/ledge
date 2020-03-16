@@ -26,6 +26,7 @@ import { DragulaModule } from 'ng2-dragula';
 import { MaturityComponent } from './presentation/maturity/maturity.component';
 import { ResourcesComponent } from './presentation/resources/resources.component';
 import { ReporterComponent } from './presentation/reporter/reporter.component';
+import { AwesomeToolComponent } from './presentation/awesome-tool/awesome-tool.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ReporterComponent } from './presentation/reporter/reporter.component';
     PathComponent,
     MaturityComponent,
     ResourcesComponent,
-    ReporterComponent
+    ReporterComponent,
+    AwesomeToolComponent
   ],
   imports: [
     SharedModule,

@@ -9,6 +9,7 @@ import { ManualComponent } from './presentation/manual/manual.component';
 import {MaturityComponent} from './presentation/maturity/maturity.component';
 import {ResourcesComponent} from './presentation/resources/resources.component';
 import {ReporterComponent} from './presentation/reporter/reporter.component';
+import {AwesomeToolComponent} from './presentation/awesome-tool/awesome-tool.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: '/home'},
@@ -47,6 +48,10 @@ const routes: Routes = [
   {
     path: 'report',
     component: ReporterComponent
+  },
+  {
+    path: 'tool',
+    component: AwesomeToolComponent
   }
 ];
 
