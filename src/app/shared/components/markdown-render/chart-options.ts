@@ -1,4 +1,5 @@
 import * as echarts from 'echarts';
+import graphic = echarts.graphic;
 
 const toolbox = {
   feature: {
@@ -159,6 +160,47 @@ function buildPyramidChartOption(data) {
   };
 }
 
+// tslint:disable-next-line:no-shadowed-variable
+function buildConfig(data, graphic: any[]) {
+  if (data.config && data.config.left) {
+    const keys = Object.keys(data.config);
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < keys.length; i++) {
+      const key = keys[i];
+      const graphConfig: any = {
+        type: 'group',
+        bounding: 'all',
+        children: [{
+          type: 'text',
+          style: {fill: '#000', text: ''}
+        }]
+      };
+
+      switch (key) {
+        case 'left':
+          graphConfig.top = 'middle';
+          graphConfig.left = 30;
+          break;
+        case 'right':
+          graphConfig.top = 'middle';
+          graphConfig.right = 30;
+          break;
+        case 'bottom':
+          graphConfig.left = 'center';
+          graphConfig.bottom =  30;
+          break;
+        case 'top':
+          graphConfig.left = 'center';
+          graphConfig.top =  30;
+          break;
+      }
+
+      graphConfig.children[0].style.text = data.config[key];
+      graphic.push(graphConfig);
+    }
+  }
+}
+
 function buildQuadrantChartOption(data) {
   if (!data.children) {
     return;
@@ -181,25 +223,20 @@ function buildQuadrantChartOption(data) {
       data.children[2],
       data.children[3]
     ]
-  },
-  ];
+  }];
+
+  // tslint:disable-next-line:no-shadowed-variable
+  const graphic = [];
+  buildConfig(data, graphic);
+
+  console.log(graphic);
+
   return {
     title: {
       text: data.name,
       left: 'center'
     },
-    // graphic: [{
-    //   type: 'group',
-    //   left: 'center',
-    //   bottom: 30,
-    //   width: 100,
-    //   bounding: 'raw',
-    //   children: [{
-    //     type: 'text',
-    //     style: {fill: '#26B99A', text: 'Total:'},
-    //     left: 0
-    //   }]
-    // }],
+    graphic,
     series: [{
       label: {
         normal: {
