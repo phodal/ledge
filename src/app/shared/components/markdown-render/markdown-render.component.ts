@@ -346,14 +346,16 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       const childrenInfo = this.transformTreeData(data[0].childrens);
       return {
         name: data[0].item.text,
-        children: childrenInfo
+        children: childrenInfo,
+        config: data.config
       };
     }
 
     const treeInfo = this.transformTreeData(data);
     return {
       name: '',
-      children: treeInfo
+      children: treeInfo,
+      config: data.config
     };
   }
 

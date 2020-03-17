@@ -60,7 +60,7 @@ Dashing: http://dashing.io/
        - 辅助功能测试
        - ……
 
-{config: {left: '支持团队', right: '评价产品', bottom: '面向技术', top: '面向业务'}
+config: {"left": "支持团队", "right": "评价产品", "bottom": "面向技术", "top": "面向业务"}
 ```
 
 #### 测试金字塔

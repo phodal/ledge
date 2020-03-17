@@ -1,7 +1,7 @@
 // tslint:disable-next-line:max-line-length
 // REFS: https://github.com/todotxt/todo.txt-android/blob/614e0b5eb688cae8236f33c64d7e791d1030cf3c/app/src/main/java/com/todotxt/todotxttouch/task/TextSplitter.java
 import shortid from 'shortid';
-import { MarkdownListModel } from './markdown.model';
+import {MarkdownListModel} from './markdown.model';
 
 const COMPLETED_PATTERN = /(\[[x|X]] )(.*)/;
 const COMPLETED_PREPENDED_DATES_PATTERN = /(\d{4}-\d{2}-\d{2}) (\d{4}-\d{2}-\d{2}) (.*)/;
@@ -90,6 +90,7 @@ const MarkdownHelper = {
     let tasks;
     let result = '{';
     let checkString = '';
+    let config = '';
 
     for (const token of tokens) {
       if (token.type !== 'text') {
@@ -124,6 +125,13 @@ const MarkdownHelper = {
           result += ']';
           break;
         }
+        case 'paragraph': {
+          if (token.text.startsWith('config:')) {
+            const configText = token.text.split('config:')[1];
+            config = JSON.parse(configText);
+          }
+          break;
+        }
         default: {
           console.log(token);
         }
@@ -139,6 +147,7 @@ const MarkdownHelper = {
       tasks = originTasks;
     }
 
+    tasks.config = config;
     return tasks;
   },
 
