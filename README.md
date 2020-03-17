@@ -3,8 +3,9 @@
 
 Todo:
 
- - [ ] 敏捷流畅度
- - [ ] DevOps Process
+ - [x] 敏捷流畅度
+ - [x] DevOps Process
+ - [ ] Infinity Infographic [CSS examples](https://css-tricks.com/1-element-css-rainbow-gradient-infinity/)
 
 # 敏捷流畅度
 
