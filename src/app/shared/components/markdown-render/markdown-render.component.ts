@@ -52,7 +52,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   };
   private mindmapIndex = 0;
   private chartInfos = [];
-  private radarChartIndex = 0;
+  private chartIndex = 0;
   private chartInstances: ECharts[] = [];
   private toc = [];
   private tocPosition = 0;
@@ -101,7 +101,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.src) {
       this.mindmapIndex = 0;
-      this.radarChartIndex = 0;
+      this.chartIndex = 0;
     }
   }
 
@@ -163,13 +163,15 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
           return this.buildRadarChartData(code);
         case 'pyramid':
           return this.buildPyramidChartData(code);
+        case 'quadrant':
+          return this.buildQuadrantChartData(code);
         default:
-          return this.renderNormalCode(options, code, lang, escaped);
+          return this.buildNormalCode(options, code, lang, escaped);
       }
     };
   }
 
-  private renderNormalCode(options: any, code: any, lang: string, escaped: any) {
+  private buildNormalCode(options: any, code: any, lang: string, escaped: any) {
     if (options.highlight) {
       const out = options.highlight(code, lang);
       if (out != null && out !== code) {
@@ -323,6 +325,9 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
         case 'radarchart':
           mychart.setOption(ChartOptions.buildRadarChartOption(newData));
           break;
+        case 'quadrant':
+          mychart.setOption(ChartOptions.buildQuadrantChartOption(newData));
+          break;
         case 'pyramid':
           const pyramidLength = newData.children.length;
           const CHART_MAX_VALUE = 100;
@@ -371,15 +376,30 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     let items = [];
     items = MarkdownHelper.markdownToJSON(tokens, items);
     const currentMap = {
-      id: 'radarchart-' + this.radarChartIndex,
+      id: 'radarchart-' + this.chartIndex,
       type: 'radarchart',
       data: items
     };
 
     this.chartInfos.push(currentMap);
 
-    this.radarChartIndex++;
+    this.chartIndex++;
     return `<div class="markdown-radarchart ${currentMap.id}"></div>`;
+  }
+
+  private buildQuadrantChartData(code: any) {
+    const tokens = marked.lexer(code);
+    let items = [];
+    items = MarkdownHelper.markdownToJSON(tokens, items);
+    const currentMap = {
+      id: 'quadrant-' + this.chartIndex,
+      type: 'quadrant',
+      data: items
+    };
+
+    this.chartInfos.push(currentMap);
+    this.chartIndex++;
+    return `<div class="markdown-quadrant ${currentMap.id}"></div>`;
   }
 
   private buildPyramidChartData(code: any) {
@@ -387,13 +407,13 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     let items = [];
     items = MarkdownHelper.markdownToJSON(tokens, items);
     const currentMap = {
-      id: 'pyramid-' + this.radarChartIndex,
+      id: 'pyramid-' + this.chartIndex,
       type: 'pyramid',
       data: items
     };
 
     this.chartInfos.push(currentMap);
-    this.radarChartIndex++;
+    this.chartIndex++;
     return `<div class="markdown-pyramid ${currentMap.id}"></div>`;
   }
 

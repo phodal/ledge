@@ -157,10 +157,59 @@ function buildPyramidChartOption(data) {
   };
 }
 
+function buildQuadrantChartOption(data) {
+  return {
+    series: [{
+      type: 'treemap',
+      visualMin: 0,
+      visualMax: 100,
+      visualDimension: 3,
+      levels: [
+        {
+          itemStyle: {
+            borderWidth: 3,
+            borderColor: '#333',
+            gapWidth: 3
+          }
+        },
+        {
+          color: ['#942e38', '#aaa', '#269f3c', '#DDD'],
+          colorMappingBy: 'id',
+          itemStyle: {
+            gapWidth: 1
+          }
+        }
+      ],
+      data: [{
+        name: 'nodeA',            // First tree
+        value: 10,
+        children: [{
+          name: 'nodeAa',       // First leaf of first tree
+          value: 5
+        }, {
+          name: 'nodeAb',       // Second leaf of first tree
+          value: 5
+        }]
+      }, {
+        name: 'nodeB',            // Second tree
+        value: 10,
+        children: [{
+          name: 'nodeBa',       // Son of first tree
+          value: 5
+        }, {
+          name: 'nodeBa',       // Son of first tree
+          value: 5
+        }]
+      }]
+    }]
+  };
+}
+
 const ChartOptions = {
   buildTreeOption,
   buildRadarChartOption,
-  buildPyramidChartOption
+  buildPyramidChartOption,
+  buildQuadrantChartOption
 };
 
 export default ChartOptions;
