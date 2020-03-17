@@ -38,3 +38,26 @@
 《[BDD 框架对比: Cucumber.js vs Robot Framework vs Gauge.js](https://github.com/phodal/bdd-frameworks-compare)》
 
 ![Workflow](/assets/docs/images/bdd_process.jpg 'BDD Workflow')
+
+## 人
+
+来源：Scott Prugh 《[Continuous Delivery](https://www.scaledagileframework.com/guidance-continuous-delivery/)》
+
+```process-step
+ - I 型（专家）
+   - 精通某个领域
+   - 其它领域的技能或经验很少
+   - 很快遇到瓶颈
+   - 对下游的浪费和影响不敏感
+   - 抵制灵活或者可变的计划
+ - T 型（通才）
+   - 精通某个领域
+   - 拥有很多领域的技能
+   - 能突破瓶颈
+   - 帮助制订灵活和可变的计划
+ - E 型
+   - 精通某几个领域
+   - 有多个领域的实践经验，执行能力强，能持续创新
+   - 潜力无限
+```
+
