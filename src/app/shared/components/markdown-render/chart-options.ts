@@ -188,6 +188,21 @@ function buildQuadrantChartOption(data) {
       text: data.name,
       left: 'center'
     },
+    graphic: [{
+      type: 'group',
+      left: 'center',
+      bottom: 30,
+      width: 100,
+      bounding: 'raw',
+      children: [{
+        type: 'text',
+        style: {fill: '#26B99A', text: 'Total:'},
+        left: 0
+      }]
+    }],
+    legend: {
+      show: false,
+    },
     series: [{
       label: {
         normal: {
