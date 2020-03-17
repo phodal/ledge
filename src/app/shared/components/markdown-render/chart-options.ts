@@ -188,21 +188,18 @@ function buildQuadrantChartOption(data) {
       text: data.name,
       left: 'center'
     },
-    graphic: [{
-      type: 'group',
-      left: 'center',
-      bottom: 30,
-      width: 100,
-      bounding: 'raw',
-      children: [{
-        type: 'text',
-        style: {fill: '#26B99A', text: 'Total:'},
-        left: 0
-      }]
-    }],
-    legend: {
-      show: false,
-    },
+    // graphic: [{
+    //   type: 'group',
+    //   left: 'center',
+    //   bottom: 30,
+    //   width: 100,
+    //   bounding: 'raw',
+    //   children: [{
+    //     type: 'text',
+    //     style: {fill: '#26B99A', text: 'Total:'},
+    //     left: 0
+    //   }]
+    // }],
     series: [{
       label: {
         normal: {
@@ -243,6 +240,9 @@ function buildQuadrantChartOption(data) {
         }
       },
       type: 'treemap',
+      breadcrumb: {
+        show: false
+      },
       visualMin: 0,
       visualMax: 100,
       visualDimension: 3,
