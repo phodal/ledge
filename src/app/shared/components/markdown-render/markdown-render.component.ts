@@ -314,21 +314,24 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       const chartEl = elements[0];
       const mychart = echarts.init(chartEl as any);
       this.chartInstances.push(mychart);
-      if (chartInfo.type === 'mindmap') {
-        const newData = this.toTreeData(chartInfo.data);
-        mychart.setOption(ChartOptions.buildTreeOption(newData) as any);
-      } else if (chartInfo.type === 'radarchart') {
-        const newData = this.toTreeData(chartInfo.data);
-        mychart.setOption(ChartOptions.buildRadarChartOption(newData));
-      } else if (chartInfo.type === 'pyramid') {
-        const newData = this.toTreeData(chartInfo.data);
-        const pyramidLength = newData.children.length;
-        const CHART_MAX_VALUE = 100;
-        for (let i = 0; i < pyramidLength; i++) {
-          newData.children[i].value = CHART_MAX_VALUE / pyramidLength * (i + 1);
-        }
 
-        mychart.setOption(ChartOptions.buildPyramidChartOption(newData) as any);
+      const newData = this.toTreeData(chartInfo.data);
+      switch (chartInfo.type) {
+        case 'mindmap':
+          mychart.setOption(ChartOptions.buildTreeOption(newData) as any);
+          break;
+        case 'radarchart':
+          mychart.setOption(ChartOptions.buildRadarChartOption(newData));
+          break;
+        case 'pyramid':
+          const pyramidLength = newData.children.length;
+          const CHART_MAX_VALUE = 100;
+          for (let i = 0; i < pyramidLength; i++) {
+            newData.children[i].value = CHART_MAX_VALUE / pyramidLength * (i + 1);
+          }
+
+          mychart.setOption(ChartOptions.buildPyramidChartOption(newData) as any);
+          break;
       }
     }
   }
