@@ -236,6 +236,7 @@ function buildQuadrantChartOption(data) {
           }
         },
         {
+          color: ['#666666', '#7f195e', '#09c95e', '#008988'],
           colorMappingBy: 'id',
           itemStyle: {
             gapWidth: 1
