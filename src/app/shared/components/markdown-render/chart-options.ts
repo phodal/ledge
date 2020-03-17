@@ -184,6 +184,10 @@ function buildQuadrantChartOption(data) {
   },
   ];
   return {
+    title: {
+      text: data.name,
+      left: 'center'
+    },
     series: [{
       label: {
         normal: {
