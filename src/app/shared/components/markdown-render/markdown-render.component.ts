@@ -319,7 +319,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       const newData = this.toTreeData(chartInfo.data);
       switch (chartInfo.type) {
         case 'mindmap':
-          mychart.setOption(ChartOptions.buildTreeOption(newData) as any);
+          mychart.setOption(ChartOptions.buidMindmapOption(newData) as any);
           break;
         case 'radarchart':
           mychart.setOption(ChartOptions.buildRadarChartOption(newData));

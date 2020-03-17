@@ -8,7 +8,7 @@ const toolbox = {
   }
 };
 
-function buildTreeOption(data) {
+function buidMindmapOption(data) {
   return {
     toolbox,
     tooltip: {
@@ -322,7 +322,7 @@ function buildQuadrantChartOption(data) {
 }
 
 const ChartOptions = {
-  buildTreeOption,
+  buidMindmapOption,
   buildRadarChartOption,
   buildPyramidChartOption,
   buildQuadrantChartOption
