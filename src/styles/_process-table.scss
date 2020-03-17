@@ -207,10 +207,14 @@
 .markdown-quadrant,
 .markdown-pyramid,
 .markdown-radarchart {
-  max-width: 1200px;
+  max-width: 800px;
   min-width: 600px;
   min-height: 600px;
 }
+.markdown-radarchart {
+  max-width: 1200px;
+}
+
 
 .markdown-process-step {
   display: flex;
