@@ -168,9 +168,36 @@ based on: MDB & [https://martinfowler.com/articles/agileFluency.html](https://ma
        - 把培训和辅导活动延伸到之外
 ```
 
+ThoughtWorks Tech Lead 模型
+
+示例见：[https://phodal.github.io/tla/](https://phodal.github.io/tla/)
+
+```radar
+ - Tech Lead Assessment
+   - Emotional Intelligence
+   - Influencing
+   - Actively develops others
+   - Uses effective facilitation
+   - Actively builds team
+   - Active risk management
+   - Open communication
+   - Good coding skills
+   - Experience in full stack
+   - Pattern aware
+   - Current knowledge of codebase
+   - Continuous improvement
+   - Clarity of problem
+   - Business value focused
+   - Communication bridge
+   - Architectural vision
+   - Focus on principles
+   - Systems, not software
+   - Champions Cross-Functional Requirements
+   - Future thinking"
+```
+
+
 ### 团队技能图谱
-
-
 
 ```radar
  - 团队技能图谱示例
@@ -185,3 +212,4 @@ based on: MDB & [https://martinfowler.com/articles/agileFluency.html](https://ma
   - Jenkins: 3
   - Chef: 3
 ```
+
