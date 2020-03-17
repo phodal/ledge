@@ -176,15 +176,24 @@ function buildConfig(data, graphic: any[]) {
         }]
       };
 
+      const textValue = data.config[key];
+      graphConfig.children[0].style.text = textValue;
       switch (key) {
         case 'left':
           graphConfig.top = 'middle';
           graphConfig.left = 30;
-          graphConfig. textVerticalAlign = 'middle';
+          graphConfig.children[0].style.text = '';
+          for (const textValueKey of textValue) {
+            graphConfig.children[0].style.text += textValueKey + '\n';
+          }
           break;
         case 'right':
           graphConfig.top = 'middle';
           graphConfig.right = 30;
+          graphConfig.children[0].style.text = '';
+          for (const textValueKey of textValue) {
+            graphConfig.children[0].style.text += textValueKey + '\n';
+          }
           break;
         case 'bottom':
           graphConfig.left = 'center';
@@ -196,7 +205,6 @@ function buildConfig(data, graphic: any[]) {
           break;
       }
 
-      graphConfig.children[0].style.text = data.config[key];
       graphic.push(graphConfig);
     }
   }
