@@ -172,7 +172,7 @@ function buildConfig(data, graphic: any[]) {
         bounding: 'all',
         children: [{
           type: 'text',
-          style: {fill: '#000', text: ''}
+          style: {fill: '#000', text: '', fontSize: 14}
         }]
       };
 
@@ -180,6 +180,7 @@ function buildConfig(data, graphic: any[]) {
         case 'left':
           graphConfig.top = 'middle';
           graphConfig.left = 30;
+          graphConfig. textVerticalAlign = 'middle';
           break;
         case 'right':
           graphConfig.top = 'middle';
