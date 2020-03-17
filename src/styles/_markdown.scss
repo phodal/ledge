@@ -558,16 +558,24 @@
   pre[class*="language-"] {
     margin: 1em 0;
   }
+
   p {
     line-height: 1.5em;
     margin-bottom: 0;
   }
-  ul {
-    margin-top: 0.5em;
+
+  ul, ol {
+    margin-top: 0.8em;
+
+    li {
+      font-weight: bold;
+    }
   }
+
   h1 {
     margin-top: 1.2em;
   }
+
   h2, h3, h4, h5 {
     margin-top: 1em;
   }
@@ -580,6 +588,7 @@
   ul {
     margin-left: 8px;
     padding: 4px;
+
     li {
       padding: 4px;
       list-style: none;
@@ -590,8 +599,8 @@
         text-decoration: none;
 
         &:visited {
-         color: #000;
-       }
+          color: #000;
+        }
       }
     }
   }
