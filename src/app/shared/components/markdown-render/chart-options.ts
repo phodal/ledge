@@ -21,10 +21,10 @@ function buidMindmapOption(data) {
         id: 0,
         name: 'tree1',
         data: [data],
-        top: '12%',
-        left: '20%',
-        bottom: '12%',
-        right: '40%',
+        top: '8%',
+        left: '10%',
+        bottom: '8%',
+        right: '20%',
 
         symbolSize: 12,
 
