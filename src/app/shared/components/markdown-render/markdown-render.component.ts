@@ -391,7 +391,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
 
     this.chartInfos.push(currentMap);
     this.radarChartIndex++;
-    return `<div class="markdown-radarchart ${currentMap.id}"></div>`;
+    return `<div class="markdown-pyramid ${currentMap.id}"></div>`;
   }
 
   private buildTableStep(code: any) {
