@@ -1,3 +1,5 @@
+import * as echarts from 'echarts';
+
 const toolbox = {
   feature: {
     dataView: {readOnly: false},
@@ -158,8 +160,69 @@ function buildPyramidChartOption(data) {
 }
 
 function buildQuadrantChartOption(data) {
+  if (!data.children) {
+    return;
+  }
+  // tslint:disable-next-line:prefer-for-of
+  for (let i = 0; i < data.children.length; i++) {
+    data.children[i].value = 25;
+  }
+  const quadData = [{
+    name: 'left',
+    value: 50,
+    children: [
+      data.children[0],
+      data.children[1]
+    ]
+  }, {
+    name: 'right',
+    value: 50,
+    children: [
+      data.children[2],
+      data.children[3]
+    ]
+  },
+  ];
   return {
     series: [{
+      label: {
+        normal: {
+          position: 'insideTopLeft',
+          formatter: params => {
+            const children: any[] = params.data.children;
+            const arr = [
+              '{name|' + params.name + '}',
+              '{hr|}',
+            ];
+
+            for (const child of children) {
+              arr.push(`{child|` + child.name + '}');
+            }
+
+            return arr.join('\n');
+          },
+          rich: {
+            child: {
+              fontSize: 16,
+              lineHeight: 30,
+              align: 'left',
+              color: 'white'
+            },
+            name: {
+              fontSize: 20,
+              align: 'center',
+              color: '#fff'
+            },
+            hr: {
+              width: '100%',
+              borderColor: 'rgba(255,255,255,0.2)',
+              borderWidth: 0.5,
+              height: 0,
+              lineHeight: 10
+            }
+          }
+        }
+      },
       type: 'treemap',
       visualMin: 0,
       visualMax: 100,
@@ -173,34 +236,13 @@ function buildQuadrantChartOption(data) {
           }
         },
         {
-          color: ['#942e38', '#aaa', '#269f3c', '#DDD'],
           colorMappingBy: 'id',
           itemStyle: {
             gapWidth: 1
           }
         }
       ],
-      data: [{
-        name: 'nodeA',            // First tree
-        value: 10,
-        children: [{
-          name: 'nodeAa',       // First leaf of first tree
-          value: 5
-        }, {
-          name: 'nodeAb',       // Second leaf of first tree
-          value: 5
-        }]
-      }, {
-        name: 'nodeB',            // Second tree
-        value: 10,
-        children: [{
-          name: 'nodeBa',       // Son of first tree
-          value: 5
-        }, {
-          name: 'nodeBa',       // Son of first tree
-          value: 5
-        }]
-      }]
+      data: quadData,
     }]
   };
 }
