@@ -174,15 +174,14 @@ based on: MDB & [https://martinfowler.com/articles/agileFluency.html](https://ma
 
 ```radar
  - 团队技能图谱示例
-  - Ruby
-  - Rake
-  - Gem/Bundler
-  - Java
-  - Git
-  - Redis
-  - Splunk
-  - GNU/Linux OS
-  - Jenkins
-  - Chef
-  - ……
+  - Ruby: 3
+  - Rake: 2
+  - Gem/Bundler: 1
+  - Java: 3
+  - Git: 4
+  - Redis: 2
+  - Splunk: 5
+  - GNU/Linux OS: 1
+  - Jenkins: 3
+  - Chef: 3
 ```

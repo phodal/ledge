@@ -1,5 +1,4 @@
 import * as echarts from 'echarts';
-import graphic = echarts.graphic;
 
 const toolbox = {
   feature: {
@@ -62,6 +61,23 @@ function buildTreeOption(data) {
 }
 
 function buildRadarChartOption(data) {
+  const value = [];
+  let indicator: any[] = data.children;
+  const firstName = data.children[0].name;
+  if (firstName.includes(': ') || firstName.includes('： ')) {
+    indicator = [];
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < data.children.length; i++) {
+      const child = data.children[i];
+      const split = child.name.split(': ');
+      indicator.push({
+        name: split[0],
+        max: 5
+      });
+      value.push(parseInt(split[1], 10));
+    }
+  }
+
   return {
     toolbox,
     tooltip: {},
@@ -77,17 +93,9 @@ function buildRadarChartOption(data) {
           fontSize: 14,
         }
       },
-      indicator: data.children
+      indicator
     },
-    series: [{
-      type: 'radar',
-      data: [
-        {
-          value: [],
-          name: data.name
-        }
-      ]
-    }]
+    series: [{type: 'radar', data: [{value, name: data.name}]}]
   };
 }
 
@@ -197,11 +205,11 @@ function buildConfig(data, graphic: any[]) {
           break;
         case 'bottom':
           graphConfig.left = 'center';
-          graphConfig.bottom =  30;
+          graphConfig.bottom = 30;
           break;
         case 'top':
           graphConfig.left = 'center';
-          graphConfig.top =  30;
+          graphConfig.top = 30;
           break;
       }
 
