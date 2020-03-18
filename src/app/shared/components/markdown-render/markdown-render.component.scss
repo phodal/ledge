@@ -1,7 +1,4 @@
 :host {
-  display: block;
-  max-width: 2000px;
-
   ::-webkit-scrollbar {
     width: 2px;
     background: #ddd;
@@ -22,8 +19,6 @@
     min-width: 120px;
     min-height: calc(100vh - 64px);
     height: 100%;
-    //max-width: calc(100vh - 640px);
-
     overflow-y: scroll;
   }
 
