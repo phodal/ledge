@@ -27,9 +27,13 @@ $selected-color: #fff;
     //opacity: 0.8;
   }
 
+  &.selected-category {
+    background: #000;
+  }
+
   &:hover {
     opacity: 1;
-    transform: scale(2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    transform: scale(1.5);
     z-index: 1111;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
