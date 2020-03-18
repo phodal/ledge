@@ -10,7 +10,7 @@
 
 #### 度量工具
 
-代码覆盖率：
+##### 代码覆盖率
 
   - Java
     - [Cobertura](http://cobertura.github.io/cobertura/) 
@@ -21,11 +21,11 @@
     - [Jest](https://jestjs.io/)
   - Go
 
-自动化性能测试：
+##### 自动化性能测试
 
    - JMeter
 
-代码质量分析工具
+##### 代码质量分析工具
 
  - Java
    - CheckStyle
@@ -37,6 +37,11 @@
    - ESLint
  - 通用
     - Sonar
+
+##### 自动修复工具
+
+ - Prettier 是一个代码风格统一工具。
+ - Angular Lint。``ng lint --fix``
 
 ### 多团队探索
 
