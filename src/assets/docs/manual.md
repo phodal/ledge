@@ -6,6 +6,38 @@
 
 ## 探索：可行方案
 
+### 持续集成
+
+#### 度量工具
+
+代码覆盖率：
+
+  - Java
+    - [Cobertura](http://cobertura.github.io/cobertura/) 
+    - [Jacoco](https://www.eclemma.org/jacoco/)
+    - [Atlassian Clover](https://www.atlassian.com/software/clover)
+  - JavaScript
+    - [Istanbul](https://istanbul.js.org/)
+    - [Jest](https://jestjs.io/)
+  - Go
+
+自动化性能测试：
+
+   - JMeter
+
+代码质量分析工具
+
+ - Java
+   - CheckStyle
+   - PMD/CPD
+   - FindBugs
+   - CodeNarc
+ - JavaScript / TypeScript
+   - Codelyzer
+   - ESLint
+ - 通用
+    - Sonar
+
 ### 多团队探索
 
 如《架构师修炼之道》的『方法 15：分而治之』所建议的探索案例：
