@@ -57,7 +57,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   private tocPosition = 0;
   tocStr = '';
   sticky = false;
-  private windowScrolled = false;
+  windowScrolled = false;
 
   constructor(private markdownService: MarkdownService, private tocify: Tocify, private location: Location) {
   }
