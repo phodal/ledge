@@ -5,6 +5,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
 
 const modules = [
   MatToolbarModule,
@@ -12,7 +13,8 @@ const modules = [
   MatMenuModule,
   MatProgressSpinnerModule,
   MatSliderModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatIconModule
 ];
 
 @NgModule({

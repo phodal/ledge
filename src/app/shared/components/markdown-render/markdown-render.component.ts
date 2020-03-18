@@ -57,6 +57,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   private tocPosition = 0;
   tocStr = '';
   sticky = false;
+  private windowScrolled = false;
 
   constructor(private markdownService: MarkdownService, private tocify: Tocify, private location: Location) {
   }
@@ -74,6 +75,23 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     } else {
       this.sticky = false;
     }
+
+    if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 100) {
+      this.windowScrolled = true;
+    }
+    else if (this.windowScrolled && window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop < 10) {
+      this.windowScrolled = false;
+    }
+  }
+
+  scrollToTop() {
+    (function smoothscroll() {
+      const currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      if (currentScroll > 0) {
+        window.requestAnimationFrame(smoothscroll);
+        window.scrollTo(0, currentScroll - (currentScroll / 8));
+      }
+    })();
   }
 
   ngOnInit(): void {
@@ -173,7 +191,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   }
 
   private buildClassCode(code: any) {
-      return `<div class="${code}"></div>`;
+    return `<div class="${code}"></div>`;
   }
 
   private buildNormalCode(options: any, code: any, lang: string, escaped: any) {
@@ -454,7 +472,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       }
 
       cols += `<div class="process-step-column">
-  <div class="process-title">${title}</div><div class="process-body ${maxWidthClass === '' ? '' : 'process-long-body' }">${itemsStr}</div>
+  <div class="process-title">${title}</div><div class="process-body ${maxWidthClass === '' ? '' : 'process-long-body'}">${itemsStr}</div>
 </div>`;
     }
 

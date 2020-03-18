@@ -18,3 +18,10 @@
   ></markdown>
   <mat-spinner *ngIf="loading" class="loading" color="accent"></mat-spinner>
 </div>
+
+<!--Scroll to top-->
+<div class="scroll-to-top" [ngClass]="{'show-scrollTop': windowScrolled}">
+  <button mat-fab aria-label="home" (click)="scrollToTop()">
+    <mat-icon>arrow_upward</mat-icon>
+  </button>
+</div>
