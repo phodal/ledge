@@ -169,6 +169,18 @@ config: {"left": "支持团队", "right": "评价产品", "bottom": "面向技�
    - 单元测试
 ```
 
+ - **单元测试**。
+ - **集成测试**。
+ - **系统测试**。
+
+##### 生产测试
+
+又被称之为黑盒测试，包含了：
+
+ - 黑盒测试
+ - 压力测试
+ - 金丝雀测试
+
 #### 测试驱动开发
 
 依据 J.Timothy King 所总结的《[测试先行的12个好处](http://sd.jtimothyking.com/2006/07/11/twelve-benefits-of-writing-unit-tests-first/)》：
