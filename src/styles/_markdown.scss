@@ -583,11 +583,18 @@
   table {
     margin-top: 1em;
   }
+
+  td {
+    padding: 1rem 1rem;
+  }
 }
 
 .markdown-toc {
-  font-size: 1.4em;
   padding-top: 1em;
+
+  .left-drawer {
+    font-size: 1.2em;
+  }
 
   ul {
     margin-left: 8px;
