@@ -1,0 +1,72 @@
+.infinity-loop {
+  svg {
+    opacity: 0;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 90vh;
+  }
+
+  .side-block rect {
+    stroke: #cbcbca;
+    stroke-width: 0.4;
+    fill: #f6f6f5;
+  }
+
+  .block-text {
+    font-size: 8px;
+  }
+
+  .block-text .header {
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .block-text .last-line {
+    font-weight: bold;
+  }
+
+  .side-block-left .last-line {
+    fill: #0099F7;
+  }
+
+  .side-block-right .last-line {
+    fill: #F11712;
+  }
+
+  .corner-text-back {
+    fill: #fff;
+    opacity: 0;
+    filter: url(#blur-filter);
+  }
+
+  .corner-text {
+    font-size: 10px;
+    opacity: 0;
+  }
+
+  .line-gray {
+    stroke: #CDCDCC;
+    stroke-width: 10;
+    fill: none;
+  }
+
+  .line-animated {
+    stroke: url(#line-gradient);
+    stroke-width: 10;
+    fill: none;
+    stroke-linecap: round;
+    stroke-dasharray: 1100;
+    stroke-dashoffset: 3300;
+  }
+
+
+  /*Gradient colors*/
+  .left-color {
+    stop-color: #0099F7;
+  }
+
+  .right-color {
+    stop-color: #F11712;
+  }
+}

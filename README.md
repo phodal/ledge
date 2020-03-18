@@ -19,6 +19,10 @@ periodic based on :
  - [https://stackblitz.com/edit/ng-periodic-table](https://stackblitz.com/edit/ng-periodic-table)
  - [https://www.nexthink.com/periodic-table/](https://www.nexthink.com/periodic-table/)
 
+## Refs
+
+[20+ CSS Infographic Examples Snippet](https://onaircode.com/html-css-infographic-examples/)
+
 License
 ---
 
