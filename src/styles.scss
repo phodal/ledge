@@ -18,10 +18,12 @@ html, body { height: 100%; }
 html {
   overflow: scroll;
   overflow-x: hidden;
+
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
-  width: 0px;  /* Remove scrollbar space */
+  width: 0;  /* Remove scrollbar space */
   background: transparent;  /* Optional: just make scrollbar invisible */
 }
 
