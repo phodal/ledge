@@ -22,7 +22,7 @@ $selected-color: #fff;
 
   .periodic {
     &-grid {
-      grid-template-columns: 20px repeat(18, 80px) !important;
+      grid-template-columns: 0 repeat(18, 80px) !important;
       grid-auto-rows: 80px !important;
     }
   }
@@ -61,7 +61,7 @@ $selected-color: #fff;
   &-grid {
     display: grid;
     grid-gap: $grid-gap;
-    grid-template-columns: 20px repeat(18, $square);
+    grid-template-columns: 0 repeat(18, $square);
     grid-auto-rows: $square;
 
     app-atom-category.gap {
