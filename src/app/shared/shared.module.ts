@@ -34,6 +34,7 @@ import Tocify from './components/markdown-render/tocify';
           pedantic: false,
           smartLists: true,
           smartypants: false,
+          langPrefix: '',
           headerPrefix: '',
           headerIds: true,
         },
