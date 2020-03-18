@@ -604,6 +604,17 @@
 
   .left-drawer {
     font-size: 1.2em;
+
+    ul {
+      padding-right: 0;
+
+      ul {
+        margin-right: 0;
+      }
+    }
+    li {
+      list-style: none;
+    }
   }
 
   ul {
@@ -616,7 +627,7 @@
 
     li {
       padding: 4px;
-      list-style: none;
+      //list-style: none;
       text-indent: 1em;
       font-size: 0.90em;
       margin-bottom: 0;
