@@ -18,8 +18,8 @@ $selected-color: #fff;
   flex-direction: column;
   cursor: pointer;
   padding-left: 3px;
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
   color: #fff;
   transition: transform .2s; /* Animation */
 
@@ -58,6 +58,7 @@ $selected-color: #fff;
     &.weight {
       margin-top: 0.1em;
       font-size: 0.8em;
+      line-height: 1.6em;
     }
   }
 
