@@ -10,7 +10,20 @@
   .left-drawer {
     width: 15%;
     min-width: 120px;
-    min-height: 100vh;
+    min-height: calc(100vh - 64px);
+    height: calc(100vh - 640px);
+
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 2px;
+      background: #ddd;
+    }
+
+    /* Optional: show position indicator in red */
+    ::-webkit-scrollbar-thumb {
+      background: #FF0000;
+    }
   }
 
   .right-content {
