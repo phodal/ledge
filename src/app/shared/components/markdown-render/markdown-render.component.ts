@@ -164,10 +164,16 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
           return this.buildPyramidChartData(code);
         case 'quadrant':
           return this.buildQuadrantChartData(code);
+        case 'class':
+          return this.buildClassCode(code);
         default:
           return this.buildNormalCode(options, code, lang, escaped);
       }
     };
+  }
+
+  private buildClassCode(code: any) {
+      return `<div class="${code}"></div>`;
   }
 
   private buildNormalCode(options: any, code: any, lang: string, escaped: any) {
