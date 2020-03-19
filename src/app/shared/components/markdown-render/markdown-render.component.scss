@@ -1,6 +1,6 @@
 :host {
   ::-webkit-scrollbar {
-    width: 2px;
+    width: 0;
     background: #ddd;
   }
 
@@ -12,14 +12,15 @@
 
 .markdown-toc {
   min-height: 600px;
-  height: 100%;
+  height: calc(100vh - 64px);
+  overflow-y: hidden;
 
   .left-drawer {
     width: 15%;
     min-width: 120px;
-    min-height: calc(100vh - 64px);
-    height: 100%;
-    overflow-y: scroll;
+    //min-height: calc(100vh - 64px);
+    //height: 100%;
+    //overflow-y: scroll;
   }
 
   .right-content {
