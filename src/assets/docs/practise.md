@@ -116,7 +116,7 @@ Jenkinsfile 最佳实践（来源：《[Pipeline Best Practices](https://jenkins
 
 示例（来源《[流水线即代码](https://insights.thoughtworks.cn/pipeline-as-code/)》：
 
-```
+```groovy
 node('master') {
    stage('Checkout') {…}
    stage('Code Analysis') {…}
