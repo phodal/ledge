@@ -30,6 +30,7 @@ jobs:
       run: |
         npm install -g @angular/cli
         npm install
+        ng test
         ng build --prod
     - name: Build and Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
