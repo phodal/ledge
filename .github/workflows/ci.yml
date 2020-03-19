@@ -31,11 +31,9 @@ jobs:
         npm install -g @angular/cli
         npm install
     - name: Testing
-      run: |
-        ng test
+      run: npm test --configuration=ci
     - name: Build
-      run: |
-        ng build --prod
+      run: ng build --prod
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
