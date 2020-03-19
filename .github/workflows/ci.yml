@@ -18,22 +18,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1 #this installs node and npm for us
-        with:
-          node-version: '10.x'
-
-      - uses: actions/cache@v1 # this allows for re-using node_modules caching, makfing builds a bit faster.
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - run: npm install
-      - run: npm install -g @angular/cli > /dev/null
-      - name: deploy
-        with:
-          GITHUB_TOKEN: ${{ secrets.SuperSecret }}
-
-        run: ng deploy
+    - name: Checkout
+      uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+      with:
+        persist-credentials: false
+    - name: Use Node.js 10.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - name: Build
+      run: |
+        npm install -g @angular/cli
+        npm install
+        ng build --prod
+    - name: Deploy
+    - name: Build and Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        ACCESS_TOKEN: ${{ secrets.SuperSecret }}
+        BRANCH: gh-pages # The branch the action should deploy to.
+        FOLDER: dist/ledge
+        REPOSITORY_NAME: "phodal/do",
