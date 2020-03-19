@@ -22,18 +22,18 @@ html {
 
   scroll-behavior: smooth;
   // for firefox
-  scrollbar-color: #e91e63 #fff;
+  scrollbar-color: #ff4081 #fff;
   scrollbar-width: none;
 }
 
 ::-webkit-scrollbar {
-  width: 5px;  /* Remove scrollbar space */
+  width: 8px;  /* Remove scrollbar space */
   background: transparent;  /* Optional: just make scrollbar invisible */
 }
 
 /* Optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
-  background: #e91e63;
+  background: #ff4081;
 }
 
 ::-webkit-scrollbar-track {
