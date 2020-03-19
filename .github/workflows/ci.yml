@@ -1,6 +1,10 @@
 # This is a basic workflow to help you get started with Actions
 
 name: CI
+  with: # Set the secret as an input
+    super_secret: ${{ secrets.GH_TOKEN }}
+  env: # Or as an environment variable
+    super_secret: ${{ secrets.GH_TOKEN }}
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -22,9 +26,6 @@ jobs:
       - uses: actions/setup-node@v1 #this installs node and npm for us
         with:
           node-version: '10.x'
-      - uses: actions/labeler@v2
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/cache@v1 # this allows for re-using node_modules caching, making builds a bit faster.
         with:
