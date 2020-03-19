@@ -34,8 +34,8 @@ Ledge 知识平台是基于我们在 ThoughtWorks 进行的一系列 DevOps 实�
 
 背景知识：
 
- - **[文档代码化](Docs like Code](https://devops.phodal.com/practise#docs-like-code)**。我们采用了 Markdown like code 的理念，来生成一系列的内容和图表等。
- - **持续部署**。基于 GitHub Pages 和  GitHub Actions，我们构建了一套自动化部署系统，提交即部署。
+ - [文档代码化](Docs like Code](https://devops.phodal.com/practise#docs-like-code)。我们采用了 Markdown like code 的理念，来生成一系列的内容和图表等。
+ - 持续部署。基于 GitHub Pages 和  GitHub Actions，我们构建了一套自动化部署系统，提交即部署。
 
 ### Setup
 
