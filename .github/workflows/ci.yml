@@ -19,10 +19,10 @@ jobs:
 
     steps:
       - name: config
-        with: # Set the secret as an input
-          super_secret: ${{ secrets.GH_TOKEN }}
+#        with: # Set the secret as an input
+#          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         env: # Or as an environment variable
-          super_secret: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
         echo "config"
 
