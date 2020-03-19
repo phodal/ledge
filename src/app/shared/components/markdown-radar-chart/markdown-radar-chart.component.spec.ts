@@ -2,7 +2,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MarkdownRadarChartComponent } from './markdown-radar-chart.component';
 import { SharedModule } from '../../shared.module';
-import { FeaturesModule } from '../../../features/features.module';
 import { MarkdownModule } from 'ngx-markdown';
 
 describe('MarkdownRadarChartComponent', () => {
@@ -11,7 +10,7 @@ describe('MarkdownRadarChartComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [SharedModule, FeaturesModule, MarkdownModule],
+      imports: [SharedModule, SharedModule, MarkdownModule],
       declarations: [ MarkdownRadarChartComponent ]
     })
     .compileComponents();
