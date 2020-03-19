@@ -16,6 +16,41 @@ Ledge 知识平台是基于我们在 ThoughtWorks 进行的一系列 DevOps 实�
 
 ## Contribution
 
+从互联网的海量知识提炼内容，并不是一件简单的事情。取其精华，去其糟粕，是我们一直在做的事情。
+
+欢迎您在这个项目的 Issue 中留下您的宝贵意见，以帮助其他/她人更好地学习 DevOps 相关的知识。它可以是：
+
+ - 修改手误的文本
+ - 针对不合时宜内容的评论
+ - 更好地 DevOps 实践
+ - 缺失的内容引用
+ - 相关的工具推荐
+ - 成熟的 DevOps 平台
+ - ……
+
+您可以从这里修改内容：[src/assets/docs](src/assets/docs) 。
+
+## Development
+
+背景知识：
+
+ - **[文档代码化](Docs like Code](https://devops.phodal.com/practise#docs-like-code)**。我们采用了 Markdown like code 的理念，来生成一系列的内容和图表等。
+ - **持续部署**。基于 GitHub Pages 和 Travis CI，我们构建了一套自动化部署系统，提交即部署。
+
+### Setup
+
+1. install
+
+```
+yarn install
+```
+
+2. run
+
+```
+yarn start
+```
+
 ## Inspired by
 
 Fluency
