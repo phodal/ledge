@@ -18,15 +18,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v1
       - name: config
-#        with: # Set the secret as an input
-#          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        with: # Set the secret as an input
+          GITHUB_TOKEN: ${{ secrets.SuperSecret }}
         env: # Or as an environment variable
           GITHUB_TOKEN: ${{ secrets.SuperSecret }}
       run: |
         echo "config"
-
-      - uses: actions/checkout@v1
       - uses: actions/setup-node@v1 #this installs node and npm for us
         with:
           node-version: '10.x'
