@@ -91,9 +91,9 @@ aka Deployment process as code
 
 #### Docs like Code
 
- - ADR
+ - [ADR](https://www.phodal.com/blog/documenting-architecture-decisions/)（Architecture Decision Records，即架构决策记录）。是一个类似于亚历山大模式（即：设计模式）的短文本文件。（虽然决策本身不一定是模式，但它们分享着力量的特征平衡。）每个记录都描述了一组力量和一个响应这些力量的决策。请注意，决策是这里的核心部分，所以特定的力量可能出现在多个 ADR（架构决策记录） 中。
 
-特征（[软件技术文档代码化现象](https://zhuanlan.zhihu.com/p/33045831)
+特征（《[软件技术文档代码化现象](https://zhuanlan.zhihu.com/p/33045831)》）
 
  1. **开发方式一致**。软件代码在开发的时候，基本流程是：写代码、审查代码和部署代码，文档在开发时候，也会采用和代码开发相同或类似的方式。
  2. **集成在开发流程中**。文档开发作为软件开发的一部分，也是最终产品的一部分，其开发过程是嵌入在整个软件开发过程中的。
@@ -101,7 +101,11 @@ aka Deployment process as code
  4. **使用标记语言**。一般使用轻量级标记语言如 Markdown, reStructuredText 或 ASCii 等，或更复杂的 XML 等标记语言。
  5. **文档和代码共同存储**。例如使用 Github，代码和文档会在同一个 repo 下，开发人员和文档工程师都可以访问。
  6. **版本控制**。一般使用 git 或 svn 这类工具进行版本管理。
- 7. **网站发布自动化**。内容写作完成后，一拉 webhook 就能自动发布为帮助页面。
+ 7. **网站发布自动化**。内容写作完成后，一拉 Web Hook 就能自动发布为帮助页面。
+
+相关的实践有：
+
+ - 《[【架构拾集】基于 Markdown 文档展示系统设计](https://www.phodal.com/blog/architecture-in-realworld-markdown-based-document-system-design/)》
 
 ### DevOps 生命周期
 
