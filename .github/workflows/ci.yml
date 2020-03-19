@@ -2,7 +2,7 @@
 
 name: CI
 
-# Controls when the action will run. Triggers the workflow on push or pull request 
+# Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
   push:
@@ -22,6 +22,9 @@ jobs:
       - uses: actions/setup-node@v1 #this installs node and npm for us
         with:
           node-version: '10.x'
+      - uses: actions/labeler@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/cache@v1 # this allows for re-using node_modules caching, making builds a bit faster.
         with:
@@ -33,4 +36,4 @@ jobs:
       - run: npm install
       - run: npm install -g @angular/cli > /dev/null
       - run: ng deploy
- 
+
