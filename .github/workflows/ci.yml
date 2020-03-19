@@ -23,6 +23,8 @@ jobs:
           super_secret: ${{ secrets.GH_TOKEN }}
         env: # Or as an environment variable
           super_secret: ${{ secrets.GH_TOKEN }}
+      run: |
+        echo "config"
 
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1 #this installs node and npm for us
