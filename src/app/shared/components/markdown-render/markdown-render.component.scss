@@ -1,26 +1,11 @@
-:host {
-  ::-webkit-scrollbar {
-    width: 0;
-    background: #ddd;
-  }
-
-  /* Optional: show position indicator in red */
-  ::-webkit-scrollbar-thumb {
-    background: #FF0000;
-  }
-}
-
 .markdown-toc {
   min-height: 600px;
-  height: calc(100vh - 64px);
+  height: calc(100vh - 66px);
   overflow-y: hidden;
 
   .left-drawer {
     width: 15%;
     min-width: 120px;
-    //min-height: calc(100vh - 64px);
-    //height: 100%;
-    //overflow-y: scroll;
   }
 
   .right-content {

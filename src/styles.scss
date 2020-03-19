@@ -21,17 +21,29 @@ html {
   overflow-x: hidden;
 
   scroll-behavior: smooth;
-  //overscroll-behavior-y: contain;
+  // for firefox
+  scrollbar-color: #e91e63 #fff;
+  scrollbar-width: none;
 }
 
 ::-webkit-scrollbar {
-  width: 0;  /* Remove scrollbar space */
+  width: 5px;  /* Remove scrollbar space */
   background: transparent;  /* Optional: just make scrollbar invisible */
 }
 
 /* Optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
-  background: #FF0000;
+  background: #e91e63;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.1);
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.1);
 }
 
 body {
