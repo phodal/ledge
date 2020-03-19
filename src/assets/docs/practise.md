@@ -79,9 +79,46 @@ Dashing: http://dashing.io/
 
 ### 4. 代码化
 
-#### Pipeline as Code
+#### 流水线即代码
+
+> 流水线即代码 (Pipeline as Code) 通过编码而非配置持续集成 / 持续交付 (CI/CD) 运行工具的方式定义部署流水线。
 
  - Jenkinsfile
+
+Jenkinsfile 最佳实践（来源：《[Pipeline Best Practices](https://jenkins.io/doc/book/pipeline/pipeline-best-practices/)》
+
+ 1. 确保 Groovy 代码在流水线中只作为胶水。
+ 2. 避免流水线中的 Groovy 代码过于复杂
+ 3. 减少重复相似流水线的步骤
+ 4. 避免调用 ``Jenkins.getInstance``
+
+使用共享库：
+
+ 1. 不要覆写内建的流水线步骤
+ 2. 避免巨大的全局变量声明文件
+ 3. 避免非常大的共享库
+
+示例（来源《[流水线即代码](https://insights.thoughtworks.cn/pipeline-as-code/)》：
+
+```
+node('master') {
+   stage('Checkout') {…}
+   stage('Code Analysis') {…}
+   stage('Unit Test') {…}
+   stage('Packing') {…}
+   stage('Archive') {…}
+   stage('DEV') {…}
+}
+stage('SIT') {
+   timeout(time:4, unit:'HOURS') {
+       input "Deploy to SIT?"
+   }
+   node('master') {…}
+}
+stage('Acceptance Test') {
+   node('slave') {…}
+}
+```
 
 #### Deploy as Code
 
