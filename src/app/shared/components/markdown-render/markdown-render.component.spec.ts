@@ -18,6 +18,7 @@ describe('MarkdownRenderComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(MarkdownRenderComponent);
     component = fixture.componentInstance;
+    component.src = '/assets/docs/manual.md';
     fixture.detectChanges();
   });
 

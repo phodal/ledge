@@ -16,6 +16,10 @@ describe('MarkdownChartComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(MarkdownChartComponent);
     component = fixture.componentInstance;
+    component.data = {
+      title: 'hello',
+      chartData: []
+    };
     fixture.detectChanges();
   });
 

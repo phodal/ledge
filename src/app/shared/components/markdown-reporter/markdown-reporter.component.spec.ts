@@ -16,6 +16,7 @@ describe('MarkdownReporterComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(MarkdownReporterComponent);
     component = fixture.componentInstance;
+    component.content = ``;
     fixture.detectChanges();
   });
 

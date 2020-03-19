@@ -16,6 +16,7 @@ describe('AtomComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(AtomComponent);
     component = fixture.componentInstance;
+    component.data = '';
     fixture.detectChanges();
   });
 

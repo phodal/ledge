@@ -16,6 +16,9 @@ describe('ProcessTableComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ProcessTableComponent);
     component = fixture.componentInstance;
+    component.tableValue = `
+
+    `;
     fixture.detectChanges();
   });
 
