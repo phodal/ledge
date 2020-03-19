@@ -41,8 +41,8 @@ jobs:
       run: |
         npm install -g @angular/cli
         npm install
-    - name: Testing
-      run: npm test --configuration=ci
+#    - name: Testing
+#      run: npm test --configuration=ci
     - name: Build
       run: ng build --prod
     - name: Deploy 🚀
