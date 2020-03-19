@@ -19,11 +19,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: config
-        with:
-          GITHUB_TOKEN: ${{ secrets.SuperSecret }}
+      - name: Hello world action
+#        with:
+#          GITHUB_TOKEN: ${{ secrets.SuperSecret }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.SuperSecret }}
       run: |
         echo "config"
       - uses: actions/setup-node@v1 #this installs node and npm for us
