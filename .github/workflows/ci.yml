@@ -26,13 +26,17 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-    - name: Build
+    - name: Install
       run: |
         npm install -g @angular/cli
         npm install
+    - name: Testing
+      run: |
         ng test
+    - name: Build
+      run: |
         ng build --prod
-    - name: Build and Deploy 🚀
+    - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         ACCESS_TOKEN: ${{ secrets.SuperSecret }}
