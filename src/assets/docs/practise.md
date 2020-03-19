@@ -91,9 +91,9 @@ aka Deployment process as code
 
 #### Docs like Code
 
- - [ADR](https://www.phodal.com/blog/documenting-architecture-decisions/)（Architecture Decision Records，即架构决策记录）。是一个类似于亚历山大模式（即：设计模式）的短文本文件。（虽然决策本身不一定是模式，但它们分享着力量的特征平衡。）每个记录都描述了一组力量和一个响应这些力量的决策。请注意，决策是这里的核心部分，所以特定的力量可能出现在多个 ADR（架构决策记录） 中。
+> Docs like Code（文档代码化），是指采用开发软件的方式来开发文档，最后表现出文档和代码类似的现象。
 
-特征（《[软件技术文档代码化现象](https://zhuanlan.zhihu.com/p/33045831)》）
+它具备以下一些特征（《[软件技术文档代码化现象](https://zhuanlan.zhihu.com/p/33045831)》）
 
  1. **开发方式一致**。软件代码在开发的时候，基本流程是：写代码、审查代码和部署代码，文档在开发时候，也会采用和代码开发相同或类似的方式。
  2. **集成在开发流程中**。文档开发作为软件开发的一部分，也是最终产品的一部分，其开发过程是嵌入在整个软件开发过程中的。
@@ -103,7 +103,11 @@ aka Deployment process as code
  6. **版本控制**。一般使用 git 或 svn 这类工具进行版本管理。
  7. **网站发布自动化**。内容写作完成后，一拉 Web Hook 就能自动发布为帮助页面。
 
-相关的实践有：
+常见的实践有：
+
+ - [ADR](https://www.phodal.com/blog/documenting-architecture-decisions/)（Architecture Decision Records，即架构决策记录）。是一个类似于亚历山大模式（即：设计模式）的短文本文件。（虽然决策本身不一定是模式，但它们分享着力量的特征平衡。）每个记录都描述了一组力量和一个响应这些力量的决策。请注意，决策是这里的核心部分，所以特定的力量可能出现在多个 ADR（架构决策记录） 中。
+
+对应的系统实践：
 
  - 《[【架构拾集】基于 Markdown 文档展示系统设计](https://www.phodal.com/blog/architecture-in-realworld-markdown-based-document-system-design/)》
 
