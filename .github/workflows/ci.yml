@@ -32,6 +32,8 @@ jobs:
 
       - run: npm install
       - run: npm install -g @angular/cli > /dev/null
-      - run: ng deploy
+      - name: deploy
         with:
           GITHUB_TOKEN: ${{ secrets.SuperSecret }}
+
+        run: ng deploy
