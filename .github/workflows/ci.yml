@@ -22,7 +22,7 @@ jobs:
 #        with: # Set the secret as an input
 #          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         env: # Or as an environment variable
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SuperSecret }}
       run: |
         echo "config"
 
