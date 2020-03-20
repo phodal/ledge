@@ -245,6 +245,8 @@ aka Deployment process as code
 
  - 《[【架构拾集】基于 Markdown 文档展示系统设计](https://www.phodal.com/blog/architecture-in-realworld-markdown-based-document-system-design/)》
 
+## 4. 实例化需求
+
 # 缩短反馈
 
 ## 1. 测试
@@ -377,6 +379,51 @@ Dashing: http://dashing.io/
 
 ## 持续学习
 
+### 技术打磨
+
+#### 练习入门
+
+出自《[演进：在工作的前三年里快速成长（练习篇）](https://www.phodal.com/blog/evolution-how-to-practise/)》
+
+
+
+#### 练习的进阶
+
+诀窍（《[练习技术的诀窍](https://www.phodal.com/blog/how-to-make-practise-works/)》 
+
+ - 可持续性：寻求量变
+   - 让自己保持稳定的作息
+   - 稳定的输出
+   - 有充分的练习内容
+ - 可度量
+   - SMART
+ - 可视化：产生仪式感
+ - 小步前进
+ - 里程碑：成就感
+
+建议:
+
+ - 从模仿开始
+ - 时间限制的练习
+ - 日常积累灵感
+ - 用专业的工具
+
+#### 高产
+
+> 精通 one，学习 another，关注 next。 —— justjavac
+
+高产策略（《[如何高产](https://www.phodal.com/blog/how-to-be-high-performance/)》
+
+ - 制定时间、目标和产出策略
+   - 长期目标，一个小目标
+   - 时间投入收益比对
+   - 知识沉淀：输出优于输入
+   - 不造轮子，再造轮子
+   - 技能图谱：寻找、练习、升华
+ - 练习所需要的技能
+ - 寻找合适的工具，并打磨工具和手艺
+ - 练习速度、质量
+ - 通过休息来提出产出
 
 ## 持续部署
 
