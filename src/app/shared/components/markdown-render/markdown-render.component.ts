@@ -19,6 +19,7 @@ import {Location} from '@angular/common';
 import MarkdownHelper from '../model/markdown.helper';
 import Tocify, {TocItem} from './tocify';
 import ECharts = echarts.ECharts;
+import {ActivatedRoute} from '@angular/router';
 
 
 @Component({
@@ -59,7 +60,8 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   sticky = false;
   windowScrolled = false;
 
-  constructor(private markdownService: MarkdownService, private tocify: Tocify, private location: Location) {
+  constructor(private markdownService: MarkdownService, private tocify: Tocify, private location: Location, private route: ActivatedRoute,
+              private myElement: ElementRef) {
   }
 
   ngAfterViewInit(): void {
@@ -99,13 +101,27 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     for (const chartInstance of this.chartInstances) {
       chartInstance.clear();
     }
-    setTimeout(() => this.renderChart(), 50);
+    setTimeout(() => {
+      this.renderChart();
+      this.gotoHeading();
+    }, 50);
     const items = this.tocify.tocItems;
     this.tocStr = this.renderToc(items).join('');
     if (this.tocEl && this.tocEl.nativeElement) {
       this.tocEl.nativeElement.innerHTML = this.tocStr;
     }
     this.tocify.reset();
+  }
+
+  private gotoHeading() {
+    this.route.fragment.subscribe((fragment: string) => {
+      if (!!fragment) {
+        const element = this.myElement.nativeElement.querySelector('#' + fragment);
+        if (!!element) {
+          element.scrollIntoView();
+        }
+      }
+    });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -190,7 +206,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   private buildNormalCode(options: any, code: any, lang: string, escaped: any) {
     if (options.highlight) {
       const out = options.highlight(code, lang);
-      if (out != null && out != code) {
+      if (out != null && out !== code) {
         escaped = true;
         code = out;
       }
