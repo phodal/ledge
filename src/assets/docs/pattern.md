@@ -1,4 +1,4 @@
-## 核心：价值驱动
+# 核心：价值驱动
 
 数字化技术（信息技术）的本质目的是创造价值，它的载体是软件，提供价值的是功能特性。越早发布功能特性，便能越快创造价值。采用逐渐增加功能特定的增量式开发方法，能让我们在最等时间内开发出最小可用（MVP）产品。
 
@@ -17,7 +17,7 @@
 
 源自 Ron Jeffries 的《软件开发本质论》
 
-### 度量框架
+## 度量框架
 
 度量是什么？
 
@@ -83,7 +83,7 @@
  2. 质量内嵌
  3. 学习型组织
 
-## 模式：流畅度模型
+# 模式：流畅度模型
 
 ![数字化流畅度模型](assets/images/mdb.svg "数字化流畅度模型")
 
@@ -91,7 +91,7 @@ based on: MDB & [https://martinfowler.com/articles/agileFluency.html](https://ma
 
 ![DevOps流畅度模型](assets/images/devops-fluency.svg "DevOps 流畅度模型")
 
-#### 敏捷实例化
+### 敏捷实例化
 
 来自（《深入核心的敏捷开发》）
 
@@ -113,7 +113,7 @@ based on: MDB & [https://martinfowler.com/articles/agileFluency.html](https://ma
 | 优化 | 消除约束 | 更高价值的交付，更好的产品决策 | 将业务决策与专业技能转移给团队所花费的社交资本. | 精益软件开发，精益创业，超越预算 | +1-3 年 |
 | 强化 | 强化整体 | 跨团队学习，更好的组织决策 | 发展组织管理的新方式的时间及风险 | 组织设计，复杂性理论 | 迭代改进，持续进行 |
 
-#### MDB
+### MDB
 
 
 | 区域 | 阶段 | 组织转变 | 转变  | 成效   | 典型投资（示例） | 时长 |
@@ -123,9 +123,9 @@ based on: MDB & [https://martinfowler.com/articles/agileFluency.html](https://ma
 | 优化 | 消除约束 | 组织结构 | 关键业务能力投放在最需要的地方，模糊性和自主性影响领导力风格。 | 价值交付的速度和技术采用的简便性带来了更高的回报，高价值的新业务模式逐步浮现。 | 适应性领导力、产品专业知识、适应性架构、开发者体验 | +1-3 年 |
 | 强化 | 强化整体 | 组织节奏 | 新的工作方式变得制度化，但组织的迭代和持续演进成为新常态。规划通过数据自动流转、测试和验证。 |  创新和产品卓越重塑市场，形成独特的收入模式。组织在各个方面的高响应力成为其核心能力，创造出亲密的客户互动。 | 平台商业模式、实验文化、智能生态 | 迭代改进，持续进行 |
 
-## 持续改进：适应度
+# 持续改进：适应度
 
-### 演进式架构
+## 演进式架构
 
 源自《演进式架构》
 
@@ -142,7 +142,7 @@ based on: MDB & [https://martinfowler.com/articles/agileFluency.html](https://ma
  - 安全。定义安全策略、指导方针和指定工具来帮助发布缺陷。
  - 运维与系统。关注架构如何映射到现有的物理或虚拟的技术设施中，包括服务器、机器集群、交换机、云等。
 
-#### 适应度函数
+### 适应度函数
 
 > 适应度函数是一种特定类型的目标函数，用于总结作为单个品质因数的给定设计解决方案与实现设定目标的接近程度。适应度函数用于遗传编程和遗传算法，以指导模拟向最优设计解决方案。 —— 维基百科
 
@@ -164,7 +164,7 @@ based on: MDB & [https://martinfowler.com/articles/agileFluency.html](https://ma
 
  - **依赖漂移适应度函数**是一项引入了特定的演进式架构适应度函数的技术，它能随着时间推移追踪这些依赖，从而能够指出可能需要的工作，以及某个潜在问题是在好转还是恶化。
 
-#### 适应度函数驱动编程
+### 适应度函数驱动编程
 
 来源：[Fitness function-driven development](https://www.thoughtworks.com/insights/articles/fitness-function-driven-development)
 
@@ -194,9 +194,9 @@ based on: MDB & [https://martinfowler.com/articles/agileFluency.html](https://ma
        - 可恢复性
 ```
 
-## 能力：学习型组织 
+# 能力：学习型组织 
 
-### DLOQ 模型
+## DLOQ 模型
 
 ```process-step
  - 个人层面
@@ -213,7 +213,7 @@ based on: MDB & [https://martinfowler.com/articles/agileFluency.html](https://ma
    - 提升组织的财务业绩 
 ```
 
-### 个人能力
+## 个人能力
 
 源自张松的《精益软件度量：实践者的观察与思考》
 
@@ -268,7 +268,7 @@ ThoughtWorks Tech Lead 模型
 ```
 
 
-### 团队技能图谱
+## 团队技能图谱
 
 ```radar
  - 团队技能图谱示例
@@ -284,13 +284,13 @@ ThoughtWorks Tech Lead 模型
   - Chef: 3
 ```
 
-## 度量模型
+# 度量模型
 
 [成熟度模型](https://martinfowler.com/bliki/MaturityModel.html) 是一种工具，可以帮助人们评估行为、实践和流程在**产生预期结果**方面的有效性。该模型定义了一系列的结构化级别，这些级别可以让组织沿着更系统地组织和成熟的流程的道路前进。
 
 成熟度模型所针对的都不是简单的问题和行动，而是一系列复杂的流程与行为。
 
-### 成熟度模型
+## 成熟度模型
 
 1. 初始（Initial）（混乱，临时，个人英雄） —— 开始使用一个新的或无记录的重复过程。
 2. 可重复（Repeatable） —— 至少充分记录了该过程，以便可以尝试重复相同的步骤。
@@ -306,7 +306,7 @@ GitHub 解释版：
  * 度量（Measured）—— 对过程进行定量管理。成功取决于根据业务目标衡量指标。
  * 已优化（Optimized）—— 通过增量和创新更改，该过程正在持续可靠地得到改善。 成功取决于减少变革的风险。
  
-### 技能模型
+## 技能模型
 
 出自：[Dreyfus 技能模型](https://en.wikipedia.org/wiki/Dreyfus_model_of_skill_acquisition)
 
@@ -316,11 +316,9 @@ GitHub 解释版：
 *   Proficient（精通）
 *   Expert（专家）：凭直觉做事
 
-## DevOps 的未来
+# 云研发
 
 未来的软件开发模型（《[云研发：研发即代码](https://github.com/phodal/cloud-dev)》）
-
-### 云研发
 
 ```process-step
  - 需求
