@@ -6,6 +6,7 @@
   .left-drawer {
     width: 15%;
     min-width: 120px;
+    position: absolute;
   }
 
   .right-content {
@@ -16,11 +17,11 @@
 .no-toc-markdown {
   width: 95%;
   margin: 1em auto 0;
+  height: calc(100vh - 66px);
 }
 
 .sticky {
   position: fixed;
-  top: 0;
   overflow: hidden;
   z-index: 10;
 }
