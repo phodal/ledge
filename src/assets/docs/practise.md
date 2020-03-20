@@ -24,7 +24,13 @@
  - **规模化**。规模化强调的是组织在整个生命周期中，所采用的过程和关键点。
 
 
-# 价值流驱动 
+# 价值流驱动
+
+## 实例化需求
+
+##
+
+# 转型
 
 ## 人
 
@@ -51,6 +57,19 @@
 ## 团队变革
 
 ## 组织变革
+
+### 打造学习文化
+
+在 ThoughtWorks 拥有这么一系列的培训（《[在ThoughtWorks我们如何做内部培训？](https://insights.thoughtworks.cn/how-we-do-training-in-thoughtworks/)》
+
+ - ThoughtWorks 内部培训
+   - ThoughtWorks University，面向毕业生
+   - ThoughtWorks Immersion，面向社招
+   - Session（分享，一个小时以内）
+   - WorkShop（动手），如 OO BootCamp、Ruby BootCamp
+   - ThoughtWorks 内训（原郑大晔校）
+   - 组内培训
+   - 社区
 
 ### 康威定律
 
