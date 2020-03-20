@@ -3,8 +3,9 @@
     <mat-drawer mode="side" opened class="left-drawer">
       <ul class="toc" #toc [class.sticky]="sticky"></ul>
     </mat-drawer>
-    <mat-drawer-content class="right-content">
-      <markdown class="markdown" [src]="src" (load)="endLoading()"></markdown>
+    <mat-drawer-content class="right-content" #drawerContent (scroll)="handleScroll()">
+      <markdown class="markdown" [src]="src"
+                (load)="endLoading()"></markdown>
       <mat-spinner *ngIf="loading" class="loading" color="accent"></mat-spinner>
     </mat-drawer-content>
   </mat-drawer-container>
@@ -12,6 +13,7 @@
 
 <div *ngIf="!showToc" class="no-toc-markdown">
   <markdown
+    (scroll)="handleScroll()"
     class="markdown"
     [src]="src"
     (load)="endLoading()"

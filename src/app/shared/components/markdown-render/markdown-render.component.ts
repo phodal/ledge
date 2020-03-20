@@ -20,6 +20,7 @@ import MarkdownHelper from '../model/markdown.helper';
 import Tocify, {TocItem} from './tocify';
 import ECharts = echarts.ECharts;
 import {ActivatedRoute} from '@angular/router';
+import {MatDrawerContainer} from '@angular/material/sidenav';
 
 
 @Component({
@@ -35,6 +36,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   showToc = false;
 
   @ViewChild('toc', {static: false}) tocEl: ElementRef;
+  @ViewChild('drawerContent', {static: false}) drawerEl: any;
 
   loading = true;
 
@@ -90,15 +92,24 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       this.sticky = false;
     }
 
-    if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 64) {
+    let top = 0;
+    if (this.drawerEl) {
+      top = this.drawerEl.elementRef.nativeElement.scrollTop;
+      console.log(top);
+    }
+
+    if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || top > 64) {
       this.windowScrolled = true;
-    } else if (this.windowScrolled && window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop < 10) {
+    } else if (this.windowScrolled && window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || top < 10) {
       this.windowScrolled = false;
     }
   }
 
   scrollToTop() {
     window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    if (this.drawerEl) {
+      this.drawerEl.elementRef.nativeElement.scrollTop = 0;
+    }
   }
 
   endLoading() {
