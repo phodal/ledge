@@ -81,7 +81,6 @@ export class PathComponent implements OnInit {
   ngOnInit(): void {
     this.maxLength = this.getMaxLength(this.pipeData);
     this.storage.get('ledge.path').subscribe((value: Item[]) => {
-      console.log(value);
       if (!!value) {
         this.pipeData = value;
         this.fillDefaultValue();

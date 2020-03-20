@@ -246,8 +246,6 @@ function buildQuadrantChartOption(data) {
   const graphic = [];
   buildConfig(data, graphic);
 
-  console.log(graphic);
-
   return {
     title: {
       text: data.name,
