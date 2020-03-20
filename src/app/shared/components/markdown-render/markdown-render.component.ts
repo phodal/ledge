@@ -117,22 +117,23 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     for (const chartInstance of this.chartInstances) {
       chartInstance.clear();
     }
-    setTimeout(() => {
-      this.renderChart();
-      this.gotoHeading();
-    }, 50);
+
     const items = this.tocify.tocItems;
     this.tocStr = this.renderToc(items).join('');
     if (this.tocEl && this.tocEl.nativeElement) {
       this.tocEl.nativeElement.innerHTML = this.tocStr;
     }
     this.tocify.reset();
+
+    setTimeout(() => this.renderChart(), 50);
+    setTimeout(() => this.gotoHeading(), 500);
   }
 
   private gotoHeading() {
     this.route.fragment.subscribe((fragment: string) => {
       if (!!fragment) {
         const element = this.myElement.nativeElement.querySelector('#' + fragment);
+        console.log(element);
         if (!!element) {
           element.scrollIntoView();
         }
