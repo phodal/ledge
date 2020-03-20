@@ -55,7 +55,6 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   private chartIndex = 0;
   private chartInstances: ECharts[] = [];
   private toc = [];
-  private tocPosition = 0;
   tocStr = '';
   sticky = false;
   windowScrolled = false;
@@ -64,8 +63,21 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
               private myElement: ElementRef) {
   }
 
+  ngOnInit(): void {
+    const markedOptions: any = this.markdownService.options;
+    this.markdownService.renderer.image = this.renderImage(markedOptions).bind(this);
+    this.markdownService.renderer.code = this.renderCode(markedOptions).bind(this);
+    this.markdownService.renderer.heading = this.renderHeading(markedOptions).bind(this);
+  }
+
   ngAfterViewInit(): void {
-    // this.tocPosition = this.tocEl.nativeElement.offsetTop;
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.src) {
+      this.mindmapIndex = 0;
+      this.chartIndex = 0;
+    }
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -78,7 +90,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       this.sticky = false;
     }
 
-    if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 100) {
+    if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 64) {
       this.windowScrolled = true;
     } else if (this.windowScrolled && window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop < 10) {
       this.windowScrolled = false;
@@ -87,13 +99,6 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
 
   scrollToTop() {
     window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-  }
-
-  ngOnInit(): void {
-    const markedOptions: any = this.markdownService.options;
-    this.markdownService.renderer.image = this.renderImage(markedOptions).bind(this);
-    this.markdownService.renderer.code = this.renderCode(markedOptions).bind(this);
-    this.markdownService.renderer.heading = this.renderHeading(markedOptions).bind(this);
   }
 
   endLoading() {
@@ -122,13 +127,6 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
         }
       }
     });
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes.src) {
-      this.mindmapIndex = 0;
-      this.chartIndex = 0;
-    }
   }
 
   private renderToc(items: TocItem[]) {

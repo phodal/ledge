@@ -17,13 +17,14 @@ html, body { height: 100%; }
 }
 
 html {
-  overflow: scroll;
-  overflow-x: hidden;
-
   scroll-behavior: smooth;
   // for firefox
   scrollbar-color: #ff4081 #fff;
   scrollbar-width: none;
+}
+
+body {
+  max-width: 100%; max-height: 100%;
 }
 
 ::-webkit-scrollbar {
