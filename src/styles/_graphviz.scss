@@ -1,7 +1,10 @@
 .graphviz {
   svg {
     border: 1px solid #999;
-    overflow: hidden;
+    overflow: visible;
+
+    width: 1200px;
+    height: 600px;
   }
 
   .node {
