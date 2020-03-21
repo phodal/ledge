@@ -545,7 +545,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       theme: 'default',
       gantt: {
         titleTopMargin: 25,
-        barHeight: 20,
+        barHeight: 48,
         barGap: 4,
         topPadding: 50,
         leftPadding: 75,

@@ -1,9 +1,5 @@
 ## 相关资源
 
-```graphviz
-digraph {a -> b}
-```
-
 ```mermaid
 gantt
 	title A Gantt Diagram
