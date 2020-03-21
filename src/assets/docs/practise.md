@@ -152,6 +152,25 @@ Bill Wake提出了一个好用户故事的验收标准——[INVEST模型](http:
 2. 每个分支都应该在使用后删除。
 3. 主干分支的提交都应该保证持续可用。
 
+```mermaid
+gitGraph:
+options
+{
+    "nodeSpacing": 150,
+    "nodeRadius": 10
+}
+end
+commit
+branch newbranch
+checkout newbranch
+commit
+commit
+checkout master
+commit
+commit
+merge newbranch
+```
+
 ## 2. 自动化
 
 ### 自动化演进路径

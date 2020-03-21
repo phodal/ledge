@@ -24,6 +24,7 @@ import {ActivatedRoute} from '@angular/router';
 import * as d3 from 'd3';
 import * as dagreD3 from 'dagre-d3';
 import * as graphlibDot from 'graphlib-dot';
+import * as mermaid from 'mermaid';
 
 @Component({
   selector: 'component-markdown-render',
@@ -64,6 +65,8 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   windowScrolled = false;
   private graphvizData = [];
   private graphvizIndex = 0;
+  private mermaidIndex = 0;
+  private mermaidData = [];
 
   constructor(private markdownService: MarkdownService, private tocify: Tocify, private location: Location, private route: ActivatedRoute,
               private myElement: ElementRef) {
@@ -130,6 +133,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
 
     setTimeout(() => this.renderChart(), 50);
     setTimeout(() => this.renderGraphviz(), 50);
+    setTimeout(() => this.renderMermaid(), 50);
     setTimeout(() => this.gotoHeading(), 500);
   }
 
@@ -208,6 +212,8 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
           return this.buildClassCode(code);
         case 'graphviz':
           return this.buildGraphvizData(code);
+        case 'mermaid':
+          return this.buildMermaidData(code);
         default:
           return this.buildNormalCode(options, code, lang, escaped);
       }
@@ -447,6 +453,15 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     return `<div class="graphviz"><svg id="graphviz-${this.graphvizIndex}"></svg></div>`;
   }
 
+  private renderGraphviz() {
+    for (const graph of this.graphvizData) {
+      const render = dagreD3.render();
+      const g = graphlibDot.read(graph.code);
+
+      d3.select('#graphviz-' + graph.id).call(render, g);
+    }
+  }
+
   private buildQuadrantChartData(code: any) {
     const tokens = marked.lexer(code);
     let items = [];
@@ -514,12 +529,40 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     return `<div class="markdown-process-step">${cols}</div>`;
   }
 
-  private renderGraphviz() {
-    for (const graph of this.graphvizData) {
-      const render = dagreD3.render();
-      const g = graphlibDot.read(graph.code);
+  private buildMermaidData(code: any) {
+    this.mermaidIndex++;
 
-      d3.select('#graphviz-' + graph.id).call(render, g);
+    this.mermaidData = [{
+      id: this.mermaidIndex,
+      code
+    }];
+
+    return `<div class="mermaid-graph" id="mermaid-${this.mermaidIndex}"></div>`;
+  }
+
+  private renderMermaid() {
+    mermaid.initialize({
+      theme: 'default',
+      gantt: {
+        titleTopMargin: 25,
+        barHeight: 20,
+        barGap: 4,
+        topPadding: 50,
+        leftPadding: 75,
+        gridLineStartPadding: 35,
+        fontSize: 18,
+        fontFamily: '"Open-Sans", "sans-serif"',
+        numberSectionStyles: 4,
+        axisFormat: '%Y-%m-%d',
+      }
+    });
+    for (const graph of this.mermaidData) {
+      const element: any = document.getElementById('mermaid-' + graph.id);
+      const graphDefinition = graph.code;
+      mermaid.render(`graphDiv${graph.id}`, graphDefinition, (svgCode, bindFunctions) => {
+        console.log(element);
+        element.innerHTML = svgCode;
+      });
     }
   }
 }

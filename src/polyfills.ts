@@ -62,3 +62,13 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
  * APPLICATION IMPORTS
  */
 (window as any).global = window;
+
+
+(window as any).global = window; // gets rid of the first error
+// @ts-ignore
+global.Buffer = global.Buffer || require('buffer').Buffer; // which leads to buffer being required
+(window as any).process = { // which leads to window.process.version needing to be parsed
+  env: { DEBUG: undefined }, // https://github.com/nodejs/readable-stream/issues/313
+  version: 'v0.9.'
+};
+(window as any).setImmediate = window.setTimeout; // which leads to setImmediate being required

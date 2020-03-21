@@ -32,6 +32,7 @@
     "graphlib-dot": "^0.6.4",
     "lodash-es": "^4.17.15",
     "marked": "^0.8.0",
+    "mermaid": "^8.4.8",
     "ng2-dragula": "^2.1.1",
     "ngx-markdown": "^9.0.0",
     "rxjs": "~6.5.4",
@@ -64,5 +65,8 @@
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
     "typescript": "~3.7.5"
+  },
+  "browser": {
+    "crypto": false
   }
 }
