@@ -13,7 +13,7 @@ import {MarkdownService} from 'ngx-markdown';
 import marked, {Slugger} from 'marked';
 import {maxBy, zip} from 'lodash-es';
 import * as echarts from 'echarts';
-import ChartOptions from './chart-options';
+import ChartOptions from '../../support/chart-options';
 import {Location} from '@angular/common';
 
 import MarkdownHelper from '../model/markdown.helper';
