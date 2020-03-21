@@ -30,10 +30,13 @@ export class MarkdownReporterComponent implements OnInit, AfterViewInit {
   }
 
   private getColorByIndex(i: number) {
-    const colors = d3.scaleQuantize()
-      .domain([0, 50])
-      // @ts-ignore
-      .range(['#5E4FA2', '#3288BD', '#66C2A5', '#ABDDA4', '#E6F598', '#FFFFBF', '#FEE08B', '#FDAE61', '#F46D43', '#D53E4F', '#9E0142']);
+    d3.scaleLinear()
+      .domain([0, 10])
+      .range([0, 600]);
+
+    const colors = d3.scaleLinear()
+      .domain([0, 20])
+      .range([d3.rgb('#ff4081'), d3.rgb('#66C2A5')] as any);
 
     return colors(i);
   }
