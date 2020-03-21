@@ -1,5 +1,9 @@
 ## 相关资源
 
+```graphviz
+digraph {a -> b}
+```
+
 ### 文章
 
  - 《[大型银行敏捷 & DevOps 转型之快速启动](https://insights.thoughtworks.cn/quick-start-agile-devops-transformation/)》

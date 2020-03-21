@@ -20,8 +20,10 @@ import MarkdownHelper from '../model/markdown.helper';
 import Tocify, {TocItem} from './tocify';
 import ECharts = echarts.ECharts;
 import {ActivatedRoute} from '@angular/router';
-import {MatDrawerContainer} from '@angular/material/sidenav';
 
+import * as d3 from 'd3';
+import * as dagreD3 from 'dagre-d3';
+import * as graphlibDot from 'graphlib-dot';
 
 @Component({
   selector: 'component-markdown-render',
@@ -60,6 +62,8 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   tocStr = '';
   sticky = false;
   windowScrolled = false;
+  private graphvizData = [];
+  private graphvizIndex = 0;
 
   constructor(private markdownService: MarkdownService, private tocify: Tocify, private location: Location, private route: ActivatedRoute,
               private myElement: ElementRef) {
@@ -125,6 +129,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     this.tocify.reset();
 
     setTimeout(() => this.renderChart(), 50);
+    setTimeout(() => this.renderGraphviz(), 50);
     setTimeout(() => this.gotoHeading(), 500);
   }
 
@@ -201,6 +206,8 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
           return this.buildQuadrantChartData(code);
         case 'class':
           return this.buildClassCode(code);
+        case 'graphviz':
+          return this.buildGraphvizData(code);
         default:
           return this.buildNormalCode(options, code, lang, escaped);
       }
@@ -429,6 +436,17 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     return `<div class="markdown-radarchart ${currentMap.id}"></div>`;
   }
 
+  private buildGraphvizData(code: any) {
+    this.graphvizIndex++;
+
+    this.graphvizData = [{
+      id: this.graphvizIndex,
+      code
+    }];
+
+    return `<div class="graphviz"><svg id="graphviz-${this.graphvizIndex}"></svg></div>`;
+  }
+
   private buildQuadrantChartData(code: any) {
     const tokens = marked.lexer(code);
     let items = [];
@@ -494,5 +512,14 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     }
 
     return `<div class="markdown-process-step">${cols}</div>`;
+  }
+
+  private renderGraphviz() {
+    for (const graph of this.graphvizData) {
+      const render = dagreD3.render();
+      const g = graphlibDot.read(graph.code);
+
+      d3.select('#graphviz-' + graph.id).call(render, g);
+    }
   }
 }
