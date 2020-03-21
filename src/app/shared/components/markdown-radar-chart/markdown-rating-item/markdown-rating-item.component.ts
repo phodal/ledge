@@ -47,9 +47,6 @@ export class MarkdownRatingItemComponent implements OnInit {
   writeValue(obj: any): void {
     if (obj !== null && obj !== undefined) {
       this.item = obj;
-      if (this.item && !this.item.completed) {
-        this.item.completed = false;
-      }
     }
   }
 

@@ -195,18 +195,13 @@ const MarkdownHelper = {
     let text = item.text;
     let value = 3;
 
-    const execArray = /(.*)\:\s*(\d),?\s*(\d)?/.exec(text);
+    const execArray = /(.*):\s*(\d)/.exec(text);
     if (execArray && execArray.length >= 3) {
       text = execArray[1];
       value = parseInt(execArray[2], 10);
 
       item.chartText = text;
       item.chartValue = value;
-      item.chartFutureValue = value;
-
-      if (execArray.length === 4 && execArray[3]) {
-        item.chartFutureValue = parseInt(execArray[3], 10);
-      }
     }
 
     return item;
@@ -216,13 +211,9 @@ const MarkdownHelper = {
     const execArray = /(.*)\:\s*(\d)/.exec(item.text);
     if (execArray && execArray.length >= 3) {
       const text = execArray[1];
-      item.text = text + ':' + item.chartValue;
+      item.text = text + ': ' + item.chartValue;
     } else {
-      item.text = item.text + ':' + item.chartValue;
-    }
-
-    if (!!item.chartFutureValue) {
-      item.text = item.text + ',' + item.chartFutureValue;
+      item.text = item.text + ': ' + item.chartValue;
     }
 
     return item;

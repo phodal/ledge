@@ -1,7 +1,9 @@
 import { AfterViewInit, Component, ElementRef, forwardRef, OnInit, ViewChild } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import MarkdownHelper from '../model/markdown.helper';
 import { MarkdownListModel } from '../model/markdown.model';
+import * as echarts from "echarts";
+import ChartOptions from '../../support/chart-options';
+import MarkdownHelper from '../model/markdown.helper';
 
 @Component({
   selector: 'component-markdown-radar-chart',
@@ -17,6 +19,8 @@ import { MarkdownListModel } from '../model/markdown.model';
 })
 export class MarkdownRadarChartComponent implements OnInit, AfterViewInit, ControlValueAccessor {
   @ViewChild('baseElement', {}) baseElement: ElementRef;
+  @ViewChild('chart', {}) chartEl: ElementRef;
+
   items: any[];
   data: any[] = [];
   value: any;
@@ -67,24 +71,26 @@ export class MarkdownRadarChartComponent implements OnInit, AfterViewInit, Contr
 
   private taskToData() {
     const current: any[] = [];
-    const future: any[] = [];
     for (const task of this.items) {
       const item: MarkdownListModel = task.item;
       MarkdownHelper.buildRatingValue(item);
 
-      current.push({axis: item.chartText, value: item.chartValue});
-      future.push({axis: item.chartText, value: item.chartFutureValue});
+      current.push({name: item.text});
     }
 
-    return [current, future];
+    return current;
   }
 
-  /* tslint:disable */
   render() {
     if (!this.items) {
       return;
     }
     this.data = this.taskToData();
-
+    const myChart = echarts.init(this.chartEl.nativeElement);
+    let option = ChartOptions.buildRadarChartOption({
+      name: '',
+      children: this.data
+    });
+    myChart.setOption(option)
   }
 }

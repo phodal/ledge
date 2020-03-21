@@ -95,7 +95,6 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     let top = 0;
     if (this.drawerEl) {
       top = this.drawerEl.elementRef.nativeElement.scrollTop;
-      console.log(top);
     }
 
     if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || top > 64) {
@@ -133,7 +132,6 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     this.route.fragment.subscribe((fragment: string) => {
       if (!!fragment) {
         const element = this.myElement.nativeElement.querySelector('#' + fragment);
-        console.log(element);
         if (!!element) {
           element.scrollIntoView();
         }
