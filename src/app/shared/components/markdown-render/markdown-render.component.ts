@@ -560,7 +560,6 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       const element: any = document.getElementById('mermaid-' + graph.id);
       const graphDefinition = graph.code;
       mermaid.render(`graphDiv${graph.id}`, graphDefinition, (svgCode, bindFunctions) => {
-        console.log(element);
         element.innerHTML = svgCode;
       });
     }
