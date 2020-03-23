@@ -8,7 +8,7 @@ const toolbox = {
   }
 };
 
-function buidMindmapOption(data) {
+function buildMindmapOption(data) {
   return {
     toolbox,
     tooltip: {
@@ -180,7 +180,7 @@ function buildConfig(data, graphic: any[]) {
         bounding: 'all',
         children: [{
           type: 'text',
-          style: {fill: '#000', text: '', fontSize: 14}
+          style: {fill: '#000', text: '', fontSize: 18}
         }]
       };
 
@@ -296,18 +296,18 @@ function buildQuadrantChartOption(data) {
         show: false
       },
       visualMin: 0,
-      visualMax: 100,
-      visualDimension: 3,
+      visualMax: 1,
+      visualDimension: 1,
       levels: [
         {
           itemStyle: {
-            borderWidth: 3,
+            borderWidth: 2,
             borderColor: '#333',
-            gapWidth: 3
+            gapWidth: 2
           }
         },
         {
-          color: ['#666666', '#7f195e', '#09c95e', '#008988'],
+          color: ['#09c95e', '#7f195e', '#666666', '#008988'],
           colorMappingBy: 'id',
           itemStyle: {
             gapWidth: 1
@@ -320,7 +320,7 @@ function buildQuadrantChartOption(data) {
 }
 
 const ChartOptions = {
-  buidMindmapOption,
+  buildMindmapOption,
   buildRadarChartOption,
   buildPyramidChartOption,
   buildQuadrantChartOption
