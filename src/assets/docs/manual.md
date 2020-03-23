@@ -117,7 +117,7 @@ Path to Production，来源于精益，旨在通过可视化的方式来展示�
 
 服务级别热力图
 
-![技术债热力图](/assets/docs/images/heat-map-services.jpg)
+![技术债热力图](/assets/docs/images/heat-map-services.jpg "技术债热力图")
 
 代码热力图？
 
