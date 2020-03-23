@@ -243,7 +243,10 @@ merge newbranch
 
 > 流水线即代码 (Pipeline as Code) 通过编码而非配置持续集成 / 持续交付 (CI/CD) 运行工具的方式定义部署流水线。
 
- - Jenkinsfile
+1. 构建步骤脚本化
+2. 添加脚本到持续集成
+3. 集成自动化验证
+4. 分支策略
 
 Jenkinsfile 最佳实践（来源：《[Pipeline Best Practices](https://jenkins.io/doc/book/pipeline/pipeline-best-practices/)》
 
