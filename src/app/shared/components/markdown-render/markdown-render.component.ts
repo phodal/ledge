@@ -86,6 +86,9 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     if (changes.src) {
       this.mindmapIndex = 0;
       this.chartIndex = 0;
+      this.chartInfos = [];
+      this.mermaidData = [];
+      this.graphvizData = [];
     }
   }
 
