@@ -115,6 +115,31 @@ Path to Production，来源于精益，旨在通过可视化的方式来展示�
 
 #### 技术债热力图
 
+服务级别热力图
+
+![技术债热力图](/assets/docs/images/heat-map-services.jpg)
+
+代码热力图？
+
+```echarts
+{
+"series": [
+    {
+        "type": "treemap",
+        "breadcrumb": {"show": false},
+        "data": [{
+            "name": "nodeA","value": 10,
+            "children": [
+              {"name": "HealthController.java", "value": 4 },
+              {"name": "HealthService.java", "value": 6}
+            ]},
+            {"name": "HealthModel.java", "value": 20}
+        ]
+    }
+]
+}
+```
+
 #### 技术债墙
 
 ```quadrant

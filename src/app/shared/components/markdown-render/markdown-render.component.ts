@@ -67,6 +67,8 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   private graphvizIndex = 0;
   private mermaidIndex = 0;
   private mermaidData = [];
+  private echartsIndex = 0;
+  private echartsData = [];
 
   constructor(private markdownService: MarkdownService, private tocify: Tocify, private location: Location, private route: ActivatedRoute,
               private myElement: ElementRef) {
@@ -137,6 +139,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     setTimeout(() => this.renderChart(), 50);
     setTimeout(() => this.renderGraphviz(), 50);
     setTimeout(() => this.renderMermaid(), 50);
+    setTimeout(() => this.renderEcharts(), 50);
     setTimeout(() => this.gotoHeading(), 500);
   }
 
@@ -217,6 +220,8 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
           return this.buildGraphvizData(code);
         case 'mermaid':
           return this.buildMermaidData(code);
+        case 'echarts':
+          return this.buildEchartsData(code);
         default:
           return this.buildNormalCode(options, code, lang, escaped);
       }
@@ -565,6 +570,27 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       mermaid.render(`graphDiv${graph.id}`, graphDefinition, (svgCode, bindFunctions) => {
         element.innerHTML = svgCode;
       });
+    }
+  }
+
+  private buildEchartsData(code: any) {
+    this.echartsIndex++;
+
+    const chartId = 'echarts-' + this.echartsIndex;
+    this.echartsData = [{
+      id: chartId,
+      data: code
+    }];
+
+    return `<div class="normal-echarts" id="${chartId}"></div>`;
+  }
+
+  private renderEcharts() {
+    for (const chartInfo of this.echartsData) {
+      const chartEl = document.getElementById(chartInfo.id);
+      const mychart = echarts.init(chartEl as any);
+      this.chartInstances.push(mychart);
+      mychart.setOption(JSON.parse(chartInfo.data));
     }
   }
 }
