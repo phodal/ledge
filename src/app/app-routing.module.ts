@@ -10,6 +10,7 @@ import {MaturityComponent} from './presentation/maturity/maturity.component';
 import {ResourcesComponent} from './presentation/resources/resources.component';
 import {ReporterComponent} from './presentation/reporter/reporter.component';
 import {AwesomeToolComponent} from './presentation/awesome-tool/awesome-tool.component';
+import {MobileComponent} from './presentation/mobile/mobile.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: '/home'},
@@ -52,6 +53,10 @@ const routes: Routes = [
   {
     path: 'tool',
     component: AwesomeToolComponent
+  },
+  {
+    path: 'mobile',
+    component: MobileComponent
   }
 ];
 

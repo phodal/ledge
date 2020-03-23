@@ -27,6 +27,7 @@ import { MaturityComponent } from './presentation/maturity/maturity.component';
 import { ResourcesComponent } from './presentation/resources/resources.component';
 import { ReporterComponent } from './presentation/reporter/reporter.component';
 import { AwesomeToolComponent } from './presentation/awesome-tool/awesome-tool.component';
+import { MobileComponent } from './presentation/mobile/mobile.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { AwesomeToolComponent } from './presentation/awesome-tool/awesome-tool.c
     MaturityComponent,
     ResourcesComponent,
     ReporterComponent,
-    AwesomeToolComponent
+    AwesomeToolComponent,
+    MobileComponent
   ],
   imports: [
     SharedModule,
