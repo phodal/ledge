@@ -39,8 +39,6 @@ Path to Production，来源于精益，旨在通过可视化的方式来展示�
 
 # 度量
 
-1. 技术债务评估
-
 ## 度量团队和组织 
 
 ## 度量系统
@@ -96,6 +94,21 @@ Path to Production，来源于精益，旨在通过可视化的方式来展示�
 ![Tech Debt LandScape](/assets/docs/images/tech-debt-landscape.png)
 
 技术债对于软件的影响：可维护性（Maintainability）、可演进性（Evolvability），而这些技术债对于非技术人员来说都是不可见的。它们源于生活，藏于黑暗中。
+
+### 可视化
+
+#### 技术债看板
+
+```process-step
+ - todo
+   - ""
+ - doing 
+   - ""
+ - done
+   - ""
+```
+
+#### 技术债热力图
 
 ### 技术债四象限
 
