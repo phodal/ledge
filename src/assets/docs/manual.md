@@ -280,7 +280,49 @@ Bruck Tuckman 团队发展模型：
  - Prettier 是一个代码风格统一工具。
  - Angular Lint。``ng lint --fix``
 
-# 第一次 Showcase
+# MVP
+
+## DevOps 流程
+
+### 测试
+
+#### 后端测试体系
+
+#### 前端测试体系
+
+#### Android 测试体系
+
+官方指南：《[Build effective unit tests](https://developer.android.com/training/testing/unit-testing)》
+
+类型：
+
+ - 本地测试
+   - JUnit
+   - Mockito
+   - Powermock
+   - [Robolectric](http://robolectric.org/)
+ - 插桩测试
+   - hamcrest
+   - espresso
+   - uiautomator
+ - E2E
+   - [Calabash](https://calaba.sh)
+   - Robot Framework
+   - Appium
+
+相关资源：
+
+ - 《[移动客户端 /UI 开源测试框架梳理和大比拼](https://testerhome.com/topics/18308)》
+
+#### iOS 测试体系
+
+ - UiAutomation
+ - XCTest
+ - Frank
+ - KIF
+ - Kiwi
+
+## 第一次 Showcase
 
 # 实施方案
 
