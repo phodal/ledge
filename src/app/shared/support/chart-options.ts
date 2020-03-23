@@ -253,6 +253,7 @@ function buildQuadrantChartOption(data) {
     },
     graphic,
     series: [{
+      roam: false,
       label: {
         normal: {
           position: 'insideTopLeft',
