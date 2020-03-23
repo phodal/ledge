@@ -94,6 +94,13 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     }
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    for (const chartInstance of this.chartInstances) {
+      chartInstance.resize();
+    }
+  }
+
   @HostListener('window:scroll', ['$event'])
   handleScroll() {
     const windowScroll = window.pageYOffset;
