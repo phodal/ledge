@@ -1,5 +1,30 @@
 # 建立远景与方向
 
+## DevOps 
+
+DevOps 流程
+
+![DevOps 流程](/assets/docs/images/devops.png "DevOps 流程")
+
+ - 规划
+ - 编码
+ - 构建 
+ - 测试
+ - 发布
+ - 部署
+ - 运维
+ - 监控
+
+DevOps 框架
+
+![DevOps 框架](/assets/docs/images/devops-framework.jpg "DevOps 框架")
+
+ - DevOps 持续测试。
+ - DevOps 敏捷开发。
+ - DevOps 持续集成。
+ - DevOps 持续交付。
+ - DevOps 持续监控。
+ - DevOps 敏捷流程。
 
 ## 可视化现状和未来
 
