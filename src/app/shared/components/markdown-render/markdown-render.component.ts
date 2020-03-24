@@ -94,9 +94,11 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     if (changes.src) {
       this.mindmapIndex = 0;
       this.chartIndex = 0;
+      this.webComponentsIndex = 0;
       this.chartInfos = [];
       this.mermaidData = [];
       this.graphvizData = [];
+      this.webComponentsData = [];
     }
   }
 
@@ -155,7 +157,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     setTimeout(() => this.renderEcharts(), 50);
     setTimeout(() => this.gotoHeading(), 500);
 
-    setTimeout(() => this.loadWebComponents(), 100);
+    setTimeout(() => this.loadWebComponents(), 50);
   }
 
   private gotoHeading() {
@@ -622,7 +624,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       data
     });
 
-    return `<${data.name} class="webcomponents-plugins"></${data.name}>`;
+    return `<div class="webcomponents-plugins"><${data.name} id="${id}"></${data.name}></div>`;
   }
 
   private loadWebComponents() {
