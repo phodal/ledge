@@ -1005,9 +1005,24 @@ Mock 和 Stub 就是常见的两种方式：
 "个人实践" -> "记录流程" -> "形成统一语言" -> "抽象原则与模式" -> "标准化流程（工具）"
 ```
 
-# 异常管理
+# 监控
 
-## 异常分类
+## APM
+
+> APM 即应用性能管理，主要指对企业的关键业务应用进行监测、优化，提高企业应用的可靠性和质量，保证用户得到良好的服务，降低IT总拥有成本(TCO)。
+
+### 开源 APM
+
+ - [PinPoint](https://github.com/naver/pinpoint) 韩国开源的一个功能完备的 APM 系统，支持 JVM 性能数据采集、服务 Trace、告警等功能。它具有应用程序无侵入的应用特性。
+ - [ZipKin](https://zipkin.io/) 是 Twitter 开源的 Trace 工具，通过 Java 程序中引入客户端，可隐式拦截 Http、Thrift 等形式服务调用。
+ - [SkyWalking](https://skywalking.apache.org/zh/) 是一个开源 APM 系统，为微服务架构和云原生架构系统设计。它通过探针自动收集所需的指标，并进行分布式追踪。
+ - [Prometheus](https://prometheus.io/) 是一个开源的系统监控和报警工具。
+ - [CAT](https://github.com/dianping/cat) 是基于 Java 开发的实时应用监控平台，为美团点评提供了全面的实时监控告警服务。
+ - [Hawkular](https://www.hawkular.org/) 一个功能完备的 APM 系统，应用程序中嵌入 Hawkular 客户端，主动将采集数据通过 Http 或者 Kafka 传递给 Hawkular。
+
+## 异常管理
+
+### 异常分类
 
  - 规划
    - 针对于所有的主题（Themes 大故事）和史诗故事（Epics）
