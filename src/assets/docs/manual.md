@@ -17,6 +17,8 @@ DevOps 流程
 
 DevOps 框架
 
+ —— 出自《DevOps 最佳实践》 
+ 
 ![DevOps 框架](/assets/docs/images/devops-framework.jpg "DevOps 框架")
 
  - DevOps 持续测试。
