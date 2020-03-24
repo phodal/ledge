@@ -1045,10 +1045,21 @@ Mock 和 Stub 就是常见的两种方式：
 | | Python -> AVRO 格式 |  MongoDB / ElasticSearch  |  Pig / Wonderdog | MongoDB / ElasticSearch | Flask |> Boostrap + D3.js / Echarts / NVD3.js |
 ```
 
-#### 数据展示形式
+## 数据可视化
+
+### 可视化流程
+
+```process-table
+| 获取 | 分析 | 过滤 | 挖掘 | 表述 | 修饰 | 交互 |
+|-|-|-|-|-|-|-|
+```
+
+
+### 数据展示形式
 
 参见：[https://visual.phodal.com/](https://visual.phodal.com/)
 
+## 数据驱动设计
 
 # 闭环
 
