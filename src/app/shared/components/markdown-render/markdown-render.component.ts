@@ -622,7 +622,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       data
     });
 
-    return `<${data.name}></${data.name}>`;
+    return `<${data.name} class="webcomponents-plugins"></${data.name}>`;
   }
 
   private loadWebComponents() {
