@@ -428,6 +428,17 @@ ElasticSearch + Logstash + Kibana
 
 ## 输出
 
+# 规模化
+
+## DevOps 能力中心
+
+## DevOps 平台
+
+### 工具标准化
+
+### 流程标准化
+
+#### 提交信息门禁
 
 # 附录 1：移动应用的自动化测试
 
