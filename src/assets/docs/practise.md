@@ -1083,6 +1083,51 @@ Apdex 定义了应用响应时间的最优门槛为 **T**，另外根据应用�
 
 ## 大数据处理
 
+```process-table
+| 数据源 | 数据集成 | 数据存储 | 数据分析 | 数据可视化 |
+|-|-|-|-|-|
+| 结构化数据 | 数据收集 | 对象存储 | 机器学习 | 报表 |
+| 非结化数据 | 数据清理 | 文件存储 | 深度学习 | 图表 |
+|          | 数据清理 | 数据库   |        | 仪表盘 |
+|          | 数据处理 |         |        |       |
+```
+
+大数据工具
+
+```process-step
+ - 数据源
+    - CSV
+    - TXT
+    - 音频、视频
+    - 图片
+    - 数据库 
+ - 数据集成
+    - Spark
+    - Flink
+    - NiFi
+    - Kafka
+    - RabitMQ
+    - Pentaho 
+ - 数据存储
+    - HDFS
+    - MINIO
+    - Neo4j
+    - PostgreSQL
+    - MongoDB
+    - MariaDB
+    - Hbase
+ - 数据分析
+    - Scikit Learn
+    - Keras
+    - Numpy + Pandas
+    - Tensorflow
+ - 数据可视化
+    - Dashing
+    - D3.js
+    - Leaflet
+    - Echarts
+```
+
 ### 数据-价值金字塔
 
 ```pyramid
