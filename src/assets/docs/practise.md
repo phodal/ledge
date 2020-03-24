@@ -1036,3 +1036,24 @@ Mock 和 Stub 就是常见的两种方式：
  - 分布式文件仓库。是用文档格式存储数据的结点集群。
  - Web 应用服务器。能以最小开销将数据转换为 JSON，以便于客户端可视化。
  - 浏览器。
+
+示例：
+
+```process-table
+| 事件日志 | 采集器 | 海量存储 | 批量处理 | 分布式文件仓库 | 应用服务器 | 浏览器 |
+|-|-|-|-|-|-|-|
+| | Python -> AVRO 格式 |  MongoDB / ElasticSearch  |  Pig / Wonderdog | MongoDB / ElasticSearch | Flask |> Boostrap + D3.js / Echarts / NVD3.js |
+```
+
+#### 数据展示形式
+
+参见：[https://visual.phodal.com/](https://visual.phodal.com/)
+
+
+# 闭环
+
+## 回到故事的开始
+
+## 新项目检查清单
+
+[New Project Checklist](https://phodal.github.io/new-project-checklist/)
