@@ -164,7 +164,6 @@ Path to Production，来源于精益，旨在通过可视化的方式来展示�
 config: {"left": "简单", "right": "困难", "bottom": "不重要", "top": "重要"}
 ```
 
-
 ### 技术债务评估
 
 相关文章：
@@ -322,6 +321,12 @@ Bruck Tuckman 团队发展模型：
 
 ## 代码化构建流
 
+## 代码化配置
+
+### 数据库自动化
+
+#### 引入  Flyway
+
 ## 实施自动化测试
 
 #### 后端测试体系
@@ -370,13 +375,25 @@ Bruck Tuckman 团队发展模型：
 
 ## 自动化部署应用
 
+### K8S + Dockerfile
+
+### 非镜像的自动化方案
+
 ## 引入监控
+
+### ELK
+
+ElasticSearch + Logstash + Kibana
+
+### Kafka + Flink
 
 ## 追踪问题
 
 ## 第一次 Showcase
 
 # 实施方案
+
+## 主干开发
 
 # 实施之后
  
