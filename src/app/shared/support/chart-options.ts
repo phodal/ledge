@@ -9,6 +9,12 @@ const toolbox = {
 };
 
 function buildMindmapOption(data) {
+  let height = '600px';
+  const dataStr = JSON.stringify(data);
+  if (dataStr.length > 500) {
+    height = '800px';
+  }
+
   return {
     toolbox,
     tooltip: {
@@ -17,6 +23,7 @@ function buildMindmapOption(data) {
     },
     series: [
       {
+        height,
         type: 'tree',
         id: 0,
         name: 'tree1',
@@ -25,13 +32,10 @@ function buildMindmapOption(data) {
         left: '18%',
         bottom: '12%',
         right: '40%',
-
         symbolSize: 12,
-
         edgeShape: 'polyline',
         edgeForkPosition: '63%',
         initialTreeDepth: 3,
-
         lineStyle: {
           width: 2
         },

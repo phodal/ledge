@@ -197,11 +197,12 @@
 
 .markdown-mindmap {
   width: 100%;
-  height: auto;
+  height: 100%;
 
   max-width: 1200px;
   min-width: 800px;
   min-height: 800px;
+  max-height: 1200px;
 }
 
 .markdown-quadrant,
