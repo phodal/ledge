@@ -392,7 +392,6 @@ digraph {
  - 频繁验证
  - 演进出一个文档系统
 
-
 ### 整洁的测试
 
 ### FIRST 原则
@@ -775,6 +774,18 @@ config: {"left": "支持团队", "right": "评价产品", "bottom": "面向技�
 | | | | | 集成测试 | | | 
 | | | | | 端到端测试 | | |  
 ```
+
+### 契约测试
+
+#### 消费者驱动的契约测试
+
+> 消费者驱动契约测试（Consumer-Driven Contracts Testing）背后的理念是定义每个服务消费者与提供者之间的契约，然后根据该契约对消费者和提供者进行独立测试，以验证他们是否符合契约约定的事项。
+
+ - [Moco](https://github.com/dreamhead/moco) + [Moscow](https://github.com/macdao/moscow)
+ - [Spring Cloud Contract](https://spring.io/projects/spring-cloud-contract)
+ - [Pact](https://docs.pact.io)
+
+Resources: [Qixi's presentations](https://github.com/macdao/presentations)
 
 ## 自动化测试
 
