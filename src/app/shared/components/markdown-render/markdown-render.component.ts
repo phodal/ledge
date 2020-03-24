@@ -2,10 +2,10 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
-  HostListener,
+  HostListener, Inject,
   Input,
   OnChanges,
-  OnInit,
+  OnInit, Renderer2,
   SimpleChanges,
   ViewChild
 } from '@angular/core';
@@ -14,7 +14,7 @@ import marked, {Slugger} from 'marked';
 import {maxBy, zip} from 'lodash-es';
 import * as echarts from 'echarts';
 import ChartOptions from '../../support/chart-options';
-import {Location} from '@angular/common';
+import {DOCUMENT, Location} from '@angular/common';
 
 import MarkdownHelper from '../model/markdown.helper';
 import Tocify, {TocItem} from './tocify';
@@ -67,10 +67,16 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   private graphvizIndex = 0;
   private mermaidIndex = 0;
   private mermaidData = [];
+
   private echartsIndex = 0;
   private echartsData = [];
 
+  private webComponentsIndex = 0;
+  private webComponentsData = [];
+
   constructor(private markdownService: MarkdownService, private tocify: Tocify, private location: Location, private route: ActivatedRoute,
+              private renderer2: Renderer2,
+              @Inject(DOCUMENT) private document: Document,
               private myElement: ElementRef) {
   }
 
@@ -148,6 +154,8 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     setTimeout(() => this.renderMermaid(), 50);
     setTimeout(() => this.renderEcharts(), 50);
     setTimeout(() => this.gotoHeading(), 500);
+
+    setTimeout(() => this.loadWebComponents(), 100);
   }
 
   private gotoHeading() {
@@ -229,6 +237,8 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
           return this.buildMermaidData(code);
         case 'echarts':
           return this.buildEchartsData(code);
+        case 'webcomponents':
+          return this.buildWebComponents(code);
         default:
           return this.buildNormalCode(options, code, lang, escaped);
       }
@@ -547,10 +557,10 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   private buildMermaidData(code: any) {
     this.mermaidIndex++;
 
-    this.mermaidData = [{
+    this.mermaidData.push({
       id: this.mermaidIndex,
       code
-    }];
+    });
 
     return `<div class="mermaid-graph" id="mermaid-${this.mermaidIndex}"></div>`;
   }
@@ -584,10 +594,10 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     this.echartsIndex++;
 
     const chartId = 'echarts-' + this.echartsIndex;
-    this.echartsData = [{
+    this.echartsData.push({
       id: chartId,
       data: code
-    }];
+    });
 
     return `<div class="normal-echarts" id="${chartId}"></div>`;
   }
@@ -598,6 +608,29 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       const mychart = echarts.init(chartEl as any);
       this.chartInstances.push(mychart);
       mychart.setOption(JSON.parse(chartInfo.data));
+    }
+  }
+
+  private buildWebComponents(code: any) {
+    this.webComponentsIndex++;
+
+    // todo: add security check
+    const id = 'webcomponents-' + this.webComponentsIndex;
+    const data = JSON.parse(code);
+    this.webComponentsData.push({
+      id,
+      data
+    });
+
+    return `<${data.name}></${data.name}>`;
+  }
+
+  private loadWebComponents() {
+    for (const wc of this.webComponentsData) {
+      const data = wc.data;
+      const script = this.renderer2.createElement('script');
+      script.src = data.src;
+      this.renderer2.appendChild(this.document.body, script);
     }
   }
 }
