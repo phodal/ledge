@@ -1,6 +1,8 @@
 # 建立远景与方向
 
-## DevOps 
+## 识别目标和现状
+
+## 明确 DevOps 
 
 DevOps 流程
 
@@ -431,6 +433,8 @@ ElasticSearch + Logstash + Kibana
 # 规模化
 
 ## DevOps 能力中心
+
+### DevOps 内部教练
 
 ## DevOps 平台
 
