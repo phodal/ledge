@@ -38,6 +38,8 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
 
   @Input()
   showToc = false;
+  @Input()
+  showScroll = true;
 
   @ViewChild('toc', {static: false}) tocEl: ElementRef;
   @ViewChild('drawerContent', {static: false}) drawerEl: any;

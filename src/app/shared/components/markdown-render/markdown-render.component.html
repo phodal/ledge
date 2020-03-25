@@ -22,7 +22,7 @@
 </div>
 
 <!--Scroll to top-->
-<div class="scroll-to-top" [ngClass]="{'show-scrollTop': windowScrolled}">
+<div class="scroll-to-top" [ngClass]="{'show-scrollTop': windowScrolled}" *ngIf="showScroll">
   <button mat-fab aria-label="home" (click)="scrollToTop()">
     <mat-icon>arrow_upward</mat-icon>
   </button>
