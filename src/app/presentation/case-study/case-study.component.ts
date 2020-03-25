@@ -23,6 +23,7 @@ export class CaseStudyComponent implements OnInit {
     {displayName: '百度', source: 'baidu'},
     {displayName: '腾讯', source: 'tencent'},
     {displayName: '博云', source: 'bocloud'},
+    {displayName: '阿里巴巴', source: 'alibaba'},
   ];
   currentSource = 'meituan';
   src = this.buildSrc(this.currentSource);
