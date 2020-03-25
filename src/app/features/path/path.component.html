@@ -3,17 +3,17 @@
     <h3>Path to Production</h3>
   </div>
 
-  <div>
-    <div>
+  <mat-toolbar>
+    <mat-toolbar-row>
       <span></span>
       <span class="spacer"></span>
       <div class="right">
-        <button class="button" (click)="addColumn()">Add</button>
+        <button color="primary" mat-raised-button (click)="addColumn()">Add</button>
         <span class="spacer">&nbsp;</span>
-        <button class="button" (click)="removeColumn()">Remove</button>
+        <button color="accent" mat-raised-button (click)="removeColumn()">Remove</button>
       </div>
-    </div>
-  </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
 
   <div class="page">
     <div class="path">
