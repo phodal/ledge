@@ -472,10 +472,10 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   private buildGraphvizData(code: any) {
     this.graphvizIndex++;
 
-    this.graphvizData = [{
+    this.graphvizData.push({
       id: this.graphvizIndex,
       code
-    }];
+    });
 
     return `<div class="graphviz"><svg id="graphviz-${this.graphvizIndex}"></svg></div>`;
   }

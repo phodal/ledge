@@ -1,11 +1,18 @@
 .graphviz {
+  width: 100%;
+
+  padding: 1em;
+
   svg {
     border: 1px solid #999;
-    overflow: visible;
 
-    display: flex;
     width: 100%;
+    min-height: 400px;
+  }
+
+  .output {
     height: 100%;
+    display: block;
   }
 
   .node {

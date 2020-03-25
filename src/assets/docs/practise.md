@@ -1093,7 +1093,35 @@ Apdex 定义了应用响应时间的最优门槛为 **T**，另外根据应用�
 | Storm | Storm 为流式计算而生，但是无法满足我们需要状态管理的场景，需要引入 外部存储。另外？ | 支持 | 支持 | 无状态 | 毫秒级 | Ruby, Python, Perl, JavaScript | 整合一级 | | 
 | Flink  | 流计算方面综合了上面两者的优点，且基于 pipeline 模式要优于 Spark 的 Stage 模式 | 支持 | 支持 | 有状态，自己管理内容 | 毫秒级 | Java, Scala, Python | 整合非常好 | Pipelined | 
 
+#### OneAPM 架构
 
+CEP 1.0：
+
+```graphviz
+digraph {
+  rankdir=LR;  
+  Events -> Kafka -> Flink -> Redis
+  Flink -> Cassandra
+}
+```
+
+CEP 2：
+
+解析计算引擎 -> 处理队列引擎 -> 分布式管理平台 -> 操作接口 
+
+SQL DSL -> Antlr -> AST Tree -> Process Model -> Event Process Result
+
+```graphviz
+digraph {
+  rankdir=LR;
+  "REST API" -> Kafka;
+  "Metric Stream" -> Kafka;
+  Kafka -> Akka;
+  Akka -> MySQL; 
+  Akka -> Cassandra; 
+  Akka -> Druid; 
+}
+```
 
 # 分析
 
