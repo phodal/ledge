@@ -16,8 +16,8 @@ $selected-color: #fff;
   }
 }
 
-@media screen and (min-width: 2501px) and (max-width: 4000px) {
-  $square: 80px;
+@media screen and (min-width: 1600px) and (max-width: 4000px) {
+  $periodic-square: 80px;
 
   .periodic {
     &-grid {
