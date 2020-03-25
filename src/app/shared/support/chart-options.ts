@@ -1,5 +1,3 @@
-import * as echarts from 'echarts';
-
 const toolbox = {
   feature: {
     dataView: {readOnly: false},
@@ -25,6 +23,7 @@ function buildMindmapOption(data) {
       {
         height,
         type: 'tree',
+        roam: true,
         id: 0,
         name: 'tree1',
         data: [data],
