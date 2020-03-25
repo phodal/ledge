@@ -1,6 +1,6 @@
-# Ledge —— DevOps 知识平台
+# Ledge 知识平台
 
-Ledge 知识平台是基于我们在 ThoughtWorks 进行的一系列 DevOps 实践、敏捷实践、精益实践提炼出来的 DevOps 知识体系。
+Ledge （from Know-Ledge，意指承载物）知识平台是基于我们在 ThoughtWorks 进行的一系列 DevOps 实践、敏捷实践、精益实践提炼出来的知识体系。
 
 您可以在这个平台上看到：
 
@@ -32,12 +32,12 @@ Ledge 知识平台是基于我们在 ThoughtWorks 进行的一系列 DevOps 实�
 
 ## Development
 
-背景知识：
+架构：
 
- - [文档代码化](Docs like Code](https://devops.phodal.com/practise#docs-like-code)。我们采用了 Markdown like code 的理念，来生成一系列的内容和图表等。
+ - [文档代码化](https://devops.phodal.com/practise#docs-like-code)。我们采用了 Markdown like code 的理念，来生成一系列的内容和图表等。
  - 持续部署。基于 GitHub Pages 和  GitHub Actions，我们构建了一套自动化部署系统，提交即部署。
- - 微前端
- - MicroFrontends
+ - 微前端。我们通过 Web Components 来构建项目的微前端体系
+ - WebComponents
 
 ### Setup
 
