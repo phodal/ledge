@@ -77,5 +77,34 @@
 }
 
 .footer {
-  padding-top: 8em;
+  background: #ff4081;
+  display: flex;
+  color: #fff;
+
+  margin-top: 4em;
+  padding-top: 4em;
+  padding-bottom: 4em;
+
+  .columns {
+    width: 960px;
+    margin: 0 auto;
+
+    .rows {
+      line-height: 1.6em;
+      .cell-title {
+        font-size: 1.2em;
+        font-weight: bold;
+        line-height: 1.6em;
+      }
+      .cell {
+        color: #fff;
+
+        a {
+          padding: 0;
+          color: #fff;
+          line-height: 1.6em;
+        }
+      }
+    }
+  }
 }
