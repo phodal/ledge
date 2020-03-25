@@ -5,11 +5,3 @@
   "props": []
 }
 ```
-
-```webcomponents
-{
-  "name": "wc-devops-periodic",
-  "src": "https://phodal.github.io/devops-periodic/elements.js",
-  "props": []
-}
-```

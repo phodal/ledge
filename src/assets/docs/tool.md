@@ -1,6 +1,16 @@
 # 工具
 
-DevOps 工具功能
+## DevOps 元素周期表
+
+```webcomponents
+{
+  "name": "wc-devops-periodic",
+  "src": "https://phodal.github.io/devops-periodic/elements.js",
+  "props": []
+}
+```
+
+## DevOps 工具功能
 
 ```process-step
  - 规划
