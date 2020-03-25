@@ -9,22 +9,23 @@ import {
   SimpleChanges,
   ViewChild
 } from '@angular/core';
+import {DOCUMENT, Location} from '@angular/common';
+import {ActivatedRoute} from '@angular/router';
+
 import {MarkdownService} from 'ngx-markdown';
 import marked, {Slugger} from 'marked';
 import {maxBy, zip} from 'lodash-es';
 import * as echarts from 'echarts';
-import ChartOptions from '../../support/chart-options';
-import {DOCUMENT, Location} from '@angular/common';
-
-import MarkdownHelper from '../model/markdown.helper';
-import Tocify, {TocItem} from './tocify';
 import ECharts = echarts.ECharts;
-import {ActivatedRoute} from '@angular/router';
 
 import * as d3 from 'd3';
 import * as dagreD3 from 'dagre-d3';
 import * as graphlibDot from 'graphlib-dot';
 import * as mermaid from 'mermaid';
+
+import ChartOptions from '../../support/chart-options';
+import MarkdownHelper from '../model/markdown.helper';
+import Tocify, {TocItem} from './tocify';
 
 @Component({
   selector: 'component-markdown-render',
@@ -74,7 +75,10 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   private webComponentsIndex = 0;
   private webComponentsData = [];
 
-  constructor(private markdownService: MarkdownService, private tocify: Tocify, private location: Location, private route: ActivatedRoute,
+  constructor(private markdownService: MarkdownService,
+              private tocify: Tocify,
+              private location: Location,
+              private route: ActivatedRoute,
               private renderer2: Renderer2,
               @Inject(DOCUMENT) private document: Document,
               private myElement: ElementRef) {
@@ -291,7 +295,6 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     const splitCode = code.split(' -> ');
     let items = '';
 
-    // tslint:disable-next-line:prefer-for-of
     const length = splitCode.length;
     for (let index = 0; index < length; index++) {
       let str = splitCode[index];
@@ -340,11 +343,9 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
 
   private buildTableBody(cells: any[]) {
     let bodyResult = '';
-    // tslint:disable-next-line:prefer-for-of
     for (let index = 0; index < cells.length; index++) {
       const column = cells[index];
       let columnStr = '';
-      // tslint:disable-next-line:prefer-for-of
       for (let j = 0; j < column.length; j++) {
         columnStr += `<div class="cell">${column[j]}</div>`;
       }
@@ -423,7 +424,6 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
 
   private toTreeData(data: any) {
     if (data.length === 1) {
-      // tslint:disable-next-line:no-shadowed-variable
       const childrenInfo = this.transformTreeData(data[0].childrens);
       return {
         name: data[0].item.text,
