@@ -56,7 +56,32 @@ yarn start
 ### Plugins 
 
  - https://github.com/phodal/devops-path
- - https://github.com/phodal/devops-periodic/
+ - https://github.com/phodal/devops-periodic
+ 
+### Markdown 扩展语法
+
+通过语法高亮参数来扩展能力，如 
+
+```
+```process-step
+ - 第一阶段闭环：开发测试融合
+   - 看板 
+   - 站会 
+\`\`\`
+```
+
+ - echarts。直接渲染 Echarts 图表
+ - mindmap。Markdown List 转为思维导图
+ - radar。Markdown List 转为雷达图
+ - process。流程
+ - process-table。带流程的图表
+ - process-step。带流程的图表 2
+ - pyramid。金字塔图形
+ - quadrant。四象限图
+ - class。直接调用 CSS 的 class
+ - graphviz。使用 Dot 渲染图片
+ - mermaid。使用 mermaid 可视化
+ - webcomponents。调用 WebComponents 组件
 
 ## Inspired by
 
