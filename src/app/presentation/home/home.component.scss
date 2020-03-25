@@ -42,10 +42,11 @@
 
 .contributors {
   display: flex;
+  height: auto;
 
   .contributor {
     width: 128px;
-    height: 160px;
+    min-height: 160px;
     text-align: center;
     margin: auto;
 

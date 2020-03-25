@@ -33,12 +33,20 @@ export class HomeComponent implements OnInit {
 |源码管理|制品管理|配置管理|数据库自动化|测试|持续集成|监控|分析|智能运维| 协作|
 |---|---|---|---|---|---|---|---|---|---|
   `;
-  contributors: Contributor[] = [{
-    name: 'Phodal',
-    link: 'https://www.phodal.com',
-    work: 'Founder',
-    avatar: 'https://avatars3.githubusercontent.com/u/472311?s=460&u=3d7d46bf34e32449b1439178ae7652cf06d130f1&v=4'
-  }];
+  contributors: Contributor[] = [
+    {
+      name: 'Phodal',
+      link: 'https://www.phodal.com',
+      work: 'Founder',
+      avatar: 'https://avatars3.githubusercontent.com/u/472311?s=460&u=3d7d46bf34e32449b1439178ae7652cf06d130f1&v=4'
+    },
+    {
+      name: 'Will be You',
+      link: '',
+      work: 'Help us, testing in production, give feedback',
+      avatar: '/assets/resources/images/avatar.svg'
+    }
+  ];
 
   constructor(title: Title) {
     title.setTitle('DevOps 知识平台 Ledge - Periodic Table');
