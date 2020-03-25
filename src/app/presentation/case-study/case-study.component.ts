@@ -25,6 +25,7 @@ export class CaseStudyComponent implements OnInit {
     {displayName: '博云', source: 'bocloud'},
     {displayName: '阿里巴巴', source: 'alibaba'},
     {displayName: 'Atlassian', source: 'atlassian'},
+    {displayName: '政采云', source: 'zhengcaiyun'}
   ];
   currentSource = 'meituan';
   src = this.buildSrc(this.currentSource);
