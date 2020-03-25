@@ -533,6 +533,8 @@ Bruck Tuckman 团队发展模型：
 
 ## 引入监控
 
+> 监控，观察并记录系统状态变化和数据流的过程。
+
 ### ELK
 
 ElasticSearch + Logstash + Kibana
