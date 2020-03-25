@@ -6,6 +6,7 @@ interface Contributor {
   name: string;
   link: string;
   work: string;
+  title: string;
   avatar: string;
 }
 
@@ -38,11 +39,13 @@ export class HomeComponent implements OnInit {
       name: 'Phodal',
       link: 'https://www.phodal.com',
       work: 'Founder',
+      title: 'ThoughtWorks 高级咨询师',
       avatar: 'https://avatars3.githubusercontent.com/u/472311?s=460&u=3d7d46bf34e32449b1439178ae7652cf06d130f1&v=4'
     },
     {
-      name: 'Will be You',
+      name: 'You',
       link: '',
+      title: '',
       work: 'Help us, testing in production, give feedback',
       avatar: '/assets/resources/images/avatar.svg'
     }
