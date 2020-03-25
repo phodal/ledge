@@ -39,3 +39,42 @@
   margin-top: 8em;
   text-align: center;
 }
+
+.contributors {
+  display: flex;
+
+  .contributor {
+    width: 128px;
+    height: 160px;
+    text-align: center;
+    margin: auto;
+
+    a {
+      text-decoration: none;
+
+      &:visited {
+        color: black;
+      }
+    }
+
+    .name {
+      font-size: 1.4em;
+      color: black;
+    }
+
+    .work {
+      font-size: 1.0em;
+    }
+
+    img {
+      height: 128px;
+      width: 128px;
+      border-radius: 128px;
+    }
+  }
+
+}
+
+.placeholder {
+  padding-top: 8em;
+}
