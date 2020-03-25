@@ -18,8 +18,8 @@ $selected-color: #fff;
   flex-direction: column;
   cursor: pointer;
   padding-left: 3px;
-  width: 80px;
-  height: 80px;
+  width: $periodic-square;
+  height: $periodic-square;
   color: #fff;
   transition: transform .2s; /* Animation */
 
@@ -44,7 +44,6 @@ $selected-color: #fff;
 
     &.atomic {
       font-size: 0.7em;
-      top: 0.1em;
     }
 
     .pay-type {
@@ -53,16 +52,14 @@ $selected-color: #fff;
     }
 
     &.symbol {
-      margin-top: 0.1em;
       font-size: 1em;
       font-weight: bold;
     }
 
     &.name,
     &.weight {
-      margin-top: 0.1em;
       font-size: 0.8em;
-      line-height: 1.6em;
+      line-height: 1em;
     }
   }
 

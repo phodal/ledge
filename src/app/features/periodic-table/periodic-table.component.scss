@@ -5,7 +5,6 @@
 
 @import '../../../styles/variables';
 
-$square: 80px;
 $heading-color: #000088;
 $grid-gap: 4px;
 $selected-color: #fff;
@@ -34,7 +33,7 @@ $selected-color: #fff;
 
 .category-selector {
   position: absolute;
-  top: $square * 2;
+  top: $periodic-square * 2;
   display: flex;
   flex: 0 auto;
   flex-wrap: wrap;
@@ -61,8 +60,8 @@ $selected-color: #fff;
   &-grid {
     display: grid;
     grid-gap: $grid-gap;
-    grid-template-columns: 0 repeat(18, $square);
-    grid-auto-rows: $square;
+    grid-template-columns: 0 repeat(18, $periodic-square);
+    grid-auto-rows: $periodic-square;
 
     app-atom-category.gap {
       margin-top: 5px;
