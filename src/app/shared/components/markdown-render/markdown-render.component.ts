@@ -155,13 +155,15 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     }
     this.tocify.reset();
 
-    setTimeout(() => this.renderChart(), 50);
-    setTimeout(() => this.renderGraphviz(), 50);
-    setTimeout(() => this.renderMermaid(), 50);
-    setTimeout(() => this.renderEcharts(), 50);
-    setTimeout(() => this.gotoHeading(), 500);
+    setTimeout(() => {
+      this.renderChart();
+      this.renderGraphviz();
+      this.renderMermaid();
+      this.renderEcharts();
+      this.loadWebComponents();
+    }, 50);
 
-    setTimeout(() => this.loadWebComponents(), 50);
+    setTimeout(() => this.gotoHeading(), 500);
   }
 
   private gotoHeading() {
