@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
     {
       name: 'Phodal',
       link: 'https://www.phodal.com',
-      work: 'Founder',
+      work: '发起人、主要维护者',
       title: 'ThoughtWorks 高级咨询师',
       avatar: 'https://avatars3.githubusercontent.com/u/472311?s=460&u=3d7d46bf34e32449b1439178ae7652cf06d130f1&v=4'
     },
