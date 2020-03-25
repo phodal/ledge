@@ -2,6 +2,8 @@
 
 Ledge （from Know-Ledge，意指承载物）知识平台是基于我们在 ThoughtWorks 进行的一系列 DevOps 实践、敏捷实践、精益实践提炼出来的知识体系。
 
+![Screenshots](docs/images/ledge-ss.png "Ledge 首页截图")
+
 您可以在这个平台上看到：
 
  - **工具元素周期表**。帮助您进行数字化时代的 DevOps 工具选型。
