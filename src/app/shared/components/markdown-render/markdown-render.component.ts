@@ -80,6 +80,9 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   private webComponentsIndex = 0;
   private webComponentsData = [];
 
+  private toolsetId = 0;
+  toolsets: ToolsetOption[] = [];
+
   constructor(private markdownService: MarkdownService,
               private tocify: Tocify,
               private location: Location,
@@ -108,11 +111,13 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       this.chartIndex = 0;
       this.webComponentsIndex = 0;
       this.mermaidIndex = 0;
+      this.toolsetId = 0;
 
       this.chartInfos = [];
       this.mermaidData = [];
       this.graphvizData = [];
       this.webComponentsData = [];
+      this.toolsets = [];
     }
   }
 
@@ -257,6 +262,8 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
           return this.buildEchartsData(code);
         case 'webcomponents':
           return this.buildWebComponents(code);
+        case 'toolset':
+          return this.buildToolsets(code);
         default:
           return this.buildNormalCode(options, code, lang, escaped);
       }
@@ -652,5 +659,22 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       script.src = data.src;
       this.renderer2.appendChild(this.document.body, script);
     }
+  }
+
+  private buildToolsets(code: any) {
+    this.toolsetId++;
+
+    const id = 'toolset-' + this.webComponentsIndex;
+    const tokens = marked.lexer(code);
+    let items: any;
+    items = MarkdownHelper.markdownToJSON(tokens, items);
+
+    this.toolsets.push({
+      id,
+      data: items,
+      type: items.config.type
+    });
+
+    return `<div class="toolset-placeholder" id="${id}"></div>`;
   }
 }

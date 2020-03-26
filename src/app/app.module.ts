@@ -48,8 +48,7 @@ import { ToolsetComponent } from './shared/toolset/toolset.component';
     ResourcesComponent,
     ReporterComponent,
     AwesomeToolComponent,
-    MobileComponent,
-    ToolsetComponent
+    MobileComponent
   ],
   imports: [
     SharedModule,
@@ -62,6 +61,7 @@ import { ToolsetComponent } from './shared/toolset/toolset.component';
     DragulaModule.forRoot(),
   ],
   providers: [Title],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

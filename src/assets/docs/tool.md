@@ -1,5 +1,13 @@
 # 工具
 
+```toolset
+ - hello
+ - world
+ - a
+
+config: {"type": "slider"}
+```
+
 ## 架构
 
 ### 权衡滑块

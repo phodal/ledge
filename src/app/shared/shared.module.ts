@@ -14,6 +14,8 @@ import { MarkdownReporterComponent } from './components/markdown-reporter/markdo
 import { MarkdownChartComponent } from './components/markdown-chart/markdown-chart.component';
 import { MarkdownTreeComponent } from './components/markdown-tree/markdown-tree.component';
 import Tocify from './components/markdown-render/tocify';
+import { MobileComponent } from '../presentation/mobile/mobile.component';
+import { ToolsetComponent } from './toolset/toolset.component';
 
 @NgModule({
   imports: [
@@ -50,6 +52,8 @@ import Tocify from './components/markdown-render/tocify';
     MarkdownReporterComponent,
     MarkdownChartComponent,
     MarkdownTreeComponent,
+
+    ToolsetComponent
   ],
   providers: [
     Tocify,
@@ -63,6 +67,8 @@ import Tocify from './components/markdown-render/tocify';
     MarkdownReporterComponent,
     MarkdownChartComponent,
     MarkdownTreeComponent,
+
+    ToolsetComponent
   ],
   entryComponents: []
 })
