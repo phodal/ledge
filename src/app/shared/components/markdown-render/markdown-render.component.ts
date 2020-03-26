@@ -41,10 +41,13 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   @Input()
   showScroll = true;
 
+  @Input()
+  data = '';
+
   @ViewChild('toc', {static: false}) tocEl: ElementRef;
   @ViewChild('drawerContent', {static: false}) drawerEl: any;
 
-  loading = true;
+  loading = this.data !== '';
 
   // marked
   escapeTest = /[&<>"']/;
@@ -94,6 +97,9 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   }
 
   ngAfterViewInit(): void {
+    if (this.data !== '') {
+      this.endLoading();
+    }
   }
 
   ngOnChanges(changes: SimpleChanges): void {

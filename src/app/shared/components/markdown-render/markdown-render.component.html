@@ -4,8 +4,10 @@
       <ul class="toc" #toc [class.sticky]="sticky"></ul>
     </mat-drawer>
     <mat-drawer-content class="right-content" #drawerContent (scroll)="handleScroll()">
-      <markdown class="markdown" [src]="src"
+      <markdown class="markdown" [src]="src" *ngIf="src"
                 (load)="endLoading()"></markdown>
+
+      <markdown class="markdown" [data]="data" *ngIf="data"></markdown>
       <mat-spinner *ngIf="loading" class="loading" color="accent"></mat-spinner>
     </mat-drawer-content>
   </mat-drawer-container>
