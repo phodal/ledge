@@ -91,7 +91,6 @@
     margin: 0 auto;
 
     .rows {
-      line-height: 1.6em;
       .cell-title {
         font-size: 1.2em;
         font-weight: bold;
@@ -99,6 +98,7 @@
       }
       .cell {
         color: #fff;
+        font-size: 1.1em;
 
         a {
           padding: 0;
