@@ -9,12 +9,12 @@ import {
   SimpleChanges,
   ViewChild
 } from '@angular/core';
-import {DOCUMENT, Location} from '@angular/common';
-import {ActivatedRoute} from '@angular/router';
+import { DOCUMENT, Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
-import {MarkdownService} from 'ngx-markdown';
-import marked, {Slugger} from 'marked';
-import {maxBy, zip} from 'lodash-es';
+import { MarkdownService } from 'ngx-markdown';
+import marked, { Slugger } from 'marked';
+import { maxBy, zip } from 'lodash-es';
 import * as echarts from 'echarts';
 import ECharts = echarts.ECharts;
 
@@ -25,7 +25,7 @@ import * as mermaid from 'mermaid';
 
 import ChartOptions from '../../support/chart-options';
 import MarkdownHelper from '../model/markdown.helper';
-import Tocify, {TocItem} from './tocify';
+import Tocify, { TocItem } from './tocify';
 
 @Component({
   selector: 'component-markdown-render',
@@ -355,9 +355,11 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
 
   private buildTableBody(cells: any[]) {
     let bodyResult = '';
+    // tslint:disable-next-line:prefer-for-of
     for (let index = 0; index < cells.length; index++) {
       const column = cells[index];
       let columnStr = '';
+      // tslint:disable-next-line:prefer-for-of
       for (let j = 0; j < column.length; j++) {
         columnStr += `<div class="cell">${column[j]}</div>`;
       }

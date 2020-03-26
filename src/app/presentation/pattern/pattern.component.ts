@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Title} from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
 import * as mdData from 'raw-loader!../../../assets/docs/pattern.md';
 
 @Component({

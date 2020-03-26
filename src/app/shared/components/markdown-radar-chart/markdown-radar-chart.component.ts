@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, forwardRef, OnInit, ViewChild } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { MarkdownListModel } from '../model/markdown.model';
-import * as echarts from "echarts";
+import * as echarts from 'echarts';
 import ChartOptions from '../../support/chart-options';
 import MarkdownHelper from '../model/markdown.helper';
 
@@ -87,10 +87,10 @@ export class MarkdownRadarChartComponent implements OnInit, AfterViewInit, Contr
     }
     this.data = this.taskToData();
     const myChart = echarts.init(this.chartEl.nativeElement);
-    let option = ChartOptions.buildRadarChartOption({
+    const option = ChartOptions.buildRadarChartOption({
       name: '',
       children: this.data
     });
-    myChart.setOption(option)
+    myChart.setOption(option);
   }
 }
