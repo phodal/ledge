@@ -1371,3 +1371,11 @@ digraph {
 ## 新项目检查清单
 
 [New Project Checklist](https://phodal.github.io/new-project-checklist/)
+
+# 远程工作实践
+
+## 工具选型
+
+[How to do effective video calls](https://martinfowler.com/articles/effective-video-calls.html)
+
+### 工具示例
