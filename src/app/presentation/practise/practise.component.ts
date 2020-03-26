@@ -8,7 +8,7 @@ import * as mdData from 'raw-loader!../../../assets/docs/practise.md';
   styleUrls: ['./practise.component.scss']
 })
 export class PractiseComponent implements OnInit {
-  private data = mdData.default;
+  data = mdData.default;
 
   constructor(title: Title) {
     title.setTitle('DevOps 知识平台 Ledge - 最佳实践');
