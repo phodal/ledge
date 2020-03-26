@@ -574,23 +574,27 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   }
 
   private renderMermaid() {
-    mermaid.initialize({
-      theme: 'default',
-      gantt: {
-        titleTopMargin: 25,
-        barHeight: 48,
-        barGap: 4,
-        topPadding: 50,
-        leftPadding: 75,
-        gridLineStartPadding: 35,
-        fontSize: 18,
-        fontFamily: '"Open-Sans", "sans-serif"',
-        numberSectionStyles: 4,
-        axisFormat: '%Y-%m-%d',
-      }
-    });
     for (const graph of this.mermaidData) {
+      mermaid.initialize({
+        theme: 'default',
+        gantt: {
+          titleTopMargin: 25,
+          barHeight: 48,
+          barGap: 4,
+          topPadding: 50,
+          leftPadding: 75,
+          gridLineStartPadding: 35,
+          fontSize: 18,
+          fontFamily: '"Open-Sans", "sans-serif"',
+          numberSectionStyles: 4,
+          axisFormat: '%Y-%m-%d',
+        }
+      });
+
       const element: any = document.getElementById('mermaid-' + graph.id);
+      if (element == null) {
+        return;
+      }
       const graphDefinition = graph.code;
       mermaid.render(`graphDiv${graph.id}`, graphDefinition, (svgCode, bindFunctions) => {
         element.innerHTML = svgCode;
