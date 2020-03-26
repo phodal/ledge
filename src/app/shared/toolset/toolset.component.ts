@@ -1,22 +1,15 @@
-import { AfterViewInit, Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-toolset',
-  template: `
-    <ng-container #dynamicTemplate></ng-container>
-  `,
+  templateUrl: './toolset.component.html',
   styleUrls: ['./toolset.component.scss']
 })
-export class ToolsetComponent implements AfterViewInit, OnInit {
-  @ViewChild('dynamicTemplate', {read: ViewContainerRef}) dynamicTemplate;
+export class ToolsetComponent implements OnInit {
 
-  constructor() {
-  }
-
-  ngAfterViewInit() {
-
-  }
+  constructor() { }
 
   ngOnInit(): void {
   }
+
 }
