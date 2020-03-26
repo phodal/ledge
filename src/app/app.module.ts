@@ -26,6 +26,7 @@ import { ResourcesComponent } from './presentation/resources/resources.component
 import { ReporterComponent } from './presentation/reporter/reporter.component';
 import { AwesomeToolComponent } from './presentation/awesome-tool/awesome-tool.component';
 import { MobileComponent } from './presentation/mobile/mobile.component';
+import { ToolsetComponent } from './shared/toolset/toolset.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { MobileComponent } from './presentation/mobile/mobile.component';
     ResourcesComponent,
     ReporterComponent,
     AwesomeToolComponent,
-    MobileComponent
+    MobileComponent,
+    ToolsetComponent
   ],
   imports: [
     SharedModule,
