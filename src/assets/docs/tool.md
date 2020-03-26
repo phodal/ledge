@@ -2,7 +2,7 @@
 
 ## DevOps 元素周期表
 
-```webcomponents
+```webcomponents-test
 {
   "name": "wc-devops-periodic",
   "src": "https://phodal.github.io/devops-periodic/elements.js",
