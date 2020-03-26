@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-toolset',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./toolset.component.scss']
 })
 export class ToolsetComponent implements OnInit {
+
+  @Input()
+  option: ToolsetOption;
 
   constructor() { }
 

@@ -1,1 +1,8 @@
-<p>toolset works!</p>
+<div *ngIf="option" [ngSwitch]="option.type">
+  <div *ngSwitchCase>
+
+  </div>
+  <div *ngSwitchDefault>
+    it works
+  </div>
+</div>
