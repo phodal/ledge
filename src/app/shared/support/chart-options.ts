@@ -233,15 +233,15 @@ function buildQuadrantChartOption(data) {
     name: 'left',
     value: 50,
     children: [
-      data.children[0],
-      data.children[1]
+      data.children[3],
+      data.children[2]
     ]
   }, {
     name: 'right',
     value: 50,
     children: [
-      data.children[2],
-      data.children[3]
+      data.children[1],
+      data.children[0]
     ]
   }];
 

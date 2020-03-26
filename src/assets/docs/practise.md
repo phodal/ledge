@@ -98,6 +98,12 @@ Note
    - 潜力无限
 ```
 
+### 开发人员移情图
+
+```
+
+```
+
 ## 团队变革
 
 ## 组织变革
@@ -316,7 +322,9 @@ aka Deployment process as code
 
  - Dockerfile
 
-### Docs like Code
+### 文档代码化
+
+#### 文档代码化
 
 > Docs like Code（文档代码化），是指采用开发软件的方式来开发文档，最后表现出文档和代码类似的现象。
 
@@ -337,6 +345,23 @@ aka Deployment process as code
 对应的系统实践：
 
  - 《[【架构拾集】基于 Markdown 文档展示系统设计](https://www.phodal.com/blog/architecture-in-realworld-markdown-based-document-system-design/)》
+
+
+#### 架构文档化
+
+```quadrant
+ - 选择架构描述方法
+   - 正式
+     - 能不到这里就不到
+   - 徒劳
+     - 回避这里
+   - 社区
+     - 演进到这里
+   - 部落
+     - 从这里开始
+
+config: {"left": "易于分享", "right": "难以分享", "bottom": "难以变更", "top": "易于变更"}
+```
 
 ## 4. 实例化需求
 
