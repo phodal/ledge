@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { SelectionBarComponent } from './features/selection-bar/selection-bar.component';
 import { PeriodicTableComponent } from './features/periodic-table/periodic-table.component';
 import { AtomComponent } from './features/atom/atom.component';
 import { AtomDetailsComponent } from './features/atom-details/atom-details.component';
@@ -20,7 +19,7 @@ import { PatternComponent } from './presentation/pattern/pattern.component';
 import { DesignComponent } from './presentation/design/design.component';
 import { PractiseComponent } from './presentation/practise/practise.component';
 import { ManualComponent } from './presentation/manual/manual.component';
-import { PathComponent } from './features/path/path.component';
+import { PathComponent } from './presentation/design/path/path.component';
 import { FormsModule } from '@angular/forms';
 import { DragulaModule } from 'ng2-dragula';
 import { MaturityComponent } from './presentation/maturity/maturity.component';
@@ -34,7 +33,6 @@ import { MobileComponent } from './presentation/mobile/mobile.component';
     AppComponent,
     HomeComponent,
 
-    SelectionBarComponent,
     PeriodicTableComponent,
     AtomComponent,
     AtomDetailsComponent,
