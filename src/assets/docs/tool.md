@@ -67,6 +67,30 @@ En: Ways of Working
 
 [武汉敏捷 PM Open Day 学习小记](https://www.jianshu.com/p/afac945a1d27)
 
+### Path to Production
+
+Path to Production，来源于精益，旨在通过可视化的方式来展示项目的上线流程，并优化过程中的瓶颈问题。它类似于我们使用 CI（持续集成）时的 Pipeline。传统的 Pipeline 的 gate 可以通过代码定义一些标准，由测试不能挂，测试覆盖率不能低于多少，打包不能失败等等。而这些 Pipeline 则是分别由开发人员、测试人员、运维人员、项目负责人等等来负责把控的。
+
+对应的，在这个过程中：流程（Process）、人（People）、工具（Tooling）、产物（Artifacts） 都是我们的关注点：
+
+ - Process，即上线需要多少流程。从提交代码开始，运行持续集成，部署到 Dev 环境等等。
+ - People，即过程中需要哪些人来参与。如需要开发人员提交代码，需要测试人员进行 QA 环境部署，需要项目经理等高级领导进行上线审批等。
+ - Tooling，即需要使用哪些工具来完成上线。如托管代码的 Git 服务器，运行构建的持续集成工具，提交上线申请的相关工具等等。
+ - Artifacts，即过程中产出的产物。如生成的应用包，QA 生成的测试报告等等。
+
+随后，我们从相关的流程中，梳理出每个部分（流程）的持续时间、痛点，来查找优化空间。
+
+《[如何优化上线流程——Path to Production](https://www.phodal.com/blog/tech-lead-tools-path-to-production/)》
+
+示例：
+
+| 活动  | stage 1 |stage 1 |stage 1 |stage 1 |stage 1 |stage 1 |stage 1 |stage 1 |stage 1 |
+|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+| 流程 |  提交代码 | 运行 CI | 部署到  Dev 环境 | 运行 E2E 测试 | 手动测试 | 部署到 ST/UAT | 手动测试 | 上线申请 | 上线    |
+| 人 |  Dev | Dev | Dev | Dev | Dev |  项目 QA | 业务 QA | 业务  QA |  PM | Dev | 
+| 工具 | Git & GitHub | Jenkins |  Jenkins |  Jenkins |  - | Jenkins | - | 邮件  | - | 
+| 制品 |  代码  | 持续集成结果 | -  |  测试报告  |  测试报告  |  - | 邮件结果  |  -| | 
+
 ## DevOps
 
 ### DevOps 元素周期表
