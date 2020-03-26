@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'toolset',
@@ -6,6 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./toolset.component.scss']
 })
 export class ToolsetComponent implements OnInit {
+  @ViewChild('tool', {}) toolEl: ElementRef;
+
   @Input()
   option: ToolsetOption;
 
@@ -15,10 +17,14 @@ export class ToolsetComponent implements OnInit {
     console.log(this.option);
   }
 
-  buildStyle(option: ToolsetOption) {
+  setToolsetStyle(option: ToolsetOption) {
     const element = document.getElementById(option.id);
     if (element == null) {
       return;
+    }
+
+    if (this.toolEl && this.toolEl.nativeElement) {
+      element.setAttribute('style', `height: ${this.toolEl.nativeElement.clientHeight}px`);
     }
 
     return {

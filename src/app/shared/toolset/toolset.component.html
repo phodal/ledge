@@ -1,13 +1,13 @@
-<div *ngIf="option">
-  <div [ngSwitch]="true" [ngStyle]="buildStyle(option)">
-    <div *ngSwitchCase="option.type === 'slider'" >
-      <div *ngFor="let item of option.data" class="slider">
-        <div class="name">{{item.item.text}}</div>
-        <div class="slide"><mat-slider step="5"></mat-slider></div>
+<div [ngSwitch]="true" [ngStyle]="setToolsetStyle(option)" #tool>
+  <div *ngSwitchCase="option.type === 'slider'">
+    <div *ngFor="let item of option.data" class="slider">
+      <div class="name">{{item.item.text}}</div>
+      <div class="slide">
+        <mat-slider step="5" class="slide-element"></mat-slider>
       </div>
     </div>
-    <div *ngSwitchDefault>
-      <h1>it works</h1>
-    </div>
+  </div>
+  <div *ngSwitchDefault>
+    <h1>it works</h1>
   </div>
 </div>

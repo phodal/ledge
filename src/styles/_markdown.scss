@@ -655,5 +655,9 @@
 .toolset-placeholder {
   width: auto;
   display: block;
-  height: 600px;
+  height: auto;
+
+  .slide-element {
+    width: 300px;
+  }
 }

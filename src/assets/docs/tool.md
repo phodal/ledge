@@ -1,12 +1,5 @@
 # 工具
 
-```toolset
- - hello
- - world
- - a
-
-config: {"type": "slider"}
-```
 
 ## 架构
 
@@ -36,6 +29,18 @@ EN：Trade-off Sliders，又名二选一（Choose One Thing）
 | 成本 vs 上市时间 | 上市时间，务必在规定时间实现系统功能，哪怕是要背负技术债务 |
 | 可用性 vs 安全性 | 安全性，这是最重要的质量属性 |
 | 可用性 vs 成本   | 可用性，为了实现高可用性，对方愿意出资购买冗余设备 | 
+
+#### 工具
+
+```toolset
+ - 用户体验
+ - 时间
+ - 成本
+ - 安全
+ - 范围
+
+config: {"type": "slider"}
+```
 
 示例：
 
@@ -176,13 +181,6 @@ Path to Production，来源于精益，旨在通过可视化的方式来展示�
 
 ### DevOps 元素周期表
 
-```webcomponents-test
-{
-  "name": "wc-devops-periodic",
-  "src": "https://phodal.github.io/devops-periodic/elements.js",
-  "props": []
-}
-```
 
 ### DevOps 工具功能
 
