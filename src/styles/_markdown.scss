@@ -656,8 +656,7 @@
   width: auto;
   display: block;
   height: auto;
-
-  .slide-element {
-    width: 300px;
-  }
+  border-radius: 2px;
+  border: 2px solid #222;
+  margin: 2em auto;
 }
