@@ -1,3 +1,4 @@
+import '@angular/platform-browser-dynamic';
 import { AfterViewInit, Compiler, Component, Injector, NgModule, NgModuleRef, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 
 @Component({
