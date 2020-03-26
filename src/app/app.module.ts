@@ -7,7 +7,6 @@ import { SharedModule } from './shared/shared.module';
 import { PeriodicTableComponent } from './features/periodic-table/periodic-table.component';
 import { AtomComponent } from './features/atom/atom.component';
 import { AtomDetailsComponent } from './features/atom-details/atom-details.component';
-import { FooterComponent } from './features/footer/footer.component';
 import { AppPhaseComponent } from './features/app-phase/app-phase.component';
 import { AppWikiComponent } from './features/app-wiki/app-wiki.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -36,7 +35,6 @@ import { MobileComponent } from './presentation/mobile/mobile.component';
     PeriodicTableComponent,
     AtomComponent,
     AtomDetailsComponent,
-    FooterComponent,
     AppPhaseComponent,
     AppWikiComponent,
     CaseStudyComponent,
