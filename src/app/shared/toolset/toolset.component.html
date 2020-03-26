@@ -1,7 +1,10 @@
 <div *ngIf="option">
   <div [ngSwitch]="true" [ngStyle]="buildStyle(option)">
     <div *ngSwitchCase="option.type === 'slider'" >
-      <mat-slider step="4" tickInterval="3"></mat-slider>
+      <div *ngFor="let item of option.data" class="slider">
+        <div class="name">{{item.item.text}}</div>
+        <div class="slide"><mat-slider step="5"></mat-slider></div>
+      </div>
     </div>
     <div *ngSwitchDefault>
       <h1>it works</h1>
