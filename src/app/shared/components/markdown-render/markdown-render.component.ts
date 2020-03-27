@@ -194,7 +194,8 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
 
   private renderToc(items: TocItem[]) {
     return items.map(item => {
-      const link = `<a class="level_${item.level}" href="${this.location.path()}#${item.anchor}" title=${item.text}>${item.text}</a>`;
+      const href = `${this.location.path()}#${item.anchor}`;
+      const link = `<a class="level_${item.level}" id="menu-${item.anchor}" href="${href}" title=${item.text}>${item.text}</a>`;
       if (item.children) {
         const childrenItems = this.renderToc(item.children);
         return `<li>${link}<ul>${childrenItems.join('')}</ul></li>`;
