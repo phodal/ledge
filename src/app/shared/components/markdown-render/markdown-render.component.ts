@@ -168,7 +168,9 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
         const lastElement = document.getElementById('menu-' + this.lastTocId);
         lastElement.classList.remove('active');
       }
+
       tocLink.classList.add('active');
+      tocLink.scrollIntoView();
       this.lastTocId = headingId;
     }
   }
