@@ -88,7 +88,7 @@ yarn start
    - slider。权衡滑块
 
 
-#### 示例
+#### 权衡滑块示例
 
 ```
 ```toolset
