@@ -210,9 +210,9 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       if (href === null) {
         return text;
       }
-      let out = '<img src="' + href + '" alt="' + text + '"';
+      let out = `<img src="${href}" alt="${text}"`;
       if (title) {
-        out += ' title="' + title + '"';
+        out += ` title="${title}"`;
       }
 
       out += markedOptions.xhtml ? '/>' : '>';
@@ -226,11 +226,9 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       const anchor = slugger.slug(raw);
       this.tocify.add(text, level, '', anchor);
       if (options.headerIds) {
-        return `<h${level} id="${options.headerPrefix}${anchor}">${text}</h${level}>
-`;
+        return `<h${level} id="${options.headerPrefix}${anchor}">${text}</h${level}>`;
       }
-      return `<h${level}>${text}</h${level}>
-`;
+      return `<h${level}>${text}</h${level}>`;
     };
   }
 
