@@ -686,14 +686,13 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     this.toolsetId++;
 
     const id = 'toolset-' + this.webComponentsIndex;
-    const tokens = marked.lexer(code);
-    let items: any;
-    items = MarkdownHelper.markdownToJSON(tokens, items);
+    const json = LedgeMarkdownConverter.buildMarkdownTableJson(code);
 
+    console.log(json);
     this.toolsets.push({
       id,
-      data: items,
-      type: items.config.type
+      data: json.lists[0].childrens,
+      type: json.config.type
     });
 
     return `<div class="toolset-placeholder" id="${id}"></div>`;

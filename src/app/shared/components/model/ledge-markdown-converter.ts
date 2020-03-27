@@ -20,11 +20,11 @@ const LedgeMarkdownConverter = {
           break;
         }
         case 'list_item_start': {
-          result += '{ "item": ';
+          result += '{';
           break;
         }
         case 'text': {
-          result += `{"name": "${token.text}"}`;
+          result += `"name": "${token.text}"`;
           break;
         }
         case 'list_item_end': {
