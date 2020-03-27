@@ -12,7 +12,7 @@ describe('LedgeMarkdownConverter', () => {
     expect(json.tables.length).toEqual(1);
     expect(json.tables[0].headers.length).toEqual(3);
     expect(json.tables[0].cells.length).toEqual(3);
-    expect(json.tables[0].cells[0].length).toEqual(2r);
+    expect(json.tables[0].cells[0].length).toEqual(2);
   });
 
   it('should get config', () => {
