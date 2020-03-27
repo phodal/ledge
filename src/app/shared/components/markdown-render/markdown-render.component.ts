@@ -227,9 +227,11 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       const anchor = slugger.slug(raw);
       this.tocify.add(text, level, '', anchor);
       if (options.headerIds) {
-        return '<h' + level + ' id="' + options.headerPrefix + anchor + '">' + text + '</h' + level + '>\n';
+        return `<h${level} id="${options.headerPrefix}${anchor}">${text}</h${level}>
+`;
       }
-      return '<h' + level + '>' + text + '</h' + level + '>\n';
+      return `<h${level}>${text}</h${level}>
+`;
     };
   }
 
