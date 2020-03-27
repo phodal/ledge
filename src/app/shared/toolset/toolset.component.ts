@@ -39,7 +39,9 @@ export class ToolsetComponent implements OnInit, AfterViewInit {
       this.renderLineChart(this.option.data);
     }
 
-    this.setToolsetStyle(this.option);
+    setTimeout(() => {
+      this.setToolsetStyle(this.option);
+    }, 500);
   }
 
   private renderLineChart(data) {

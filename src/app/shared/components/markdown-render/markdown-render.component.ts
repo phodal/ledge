@@ -685,7 +685,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   private buildToolsets(code: any) {
     this.toolsetId++;
 
-    const id = 'toolset-' + this.webComponentsIndex;
+    const id = 'toolset-' + this.toolsetId;
     const json = LedgeMarkdownConverter.toJson(code);
 
     const toolType = json.config.type;
