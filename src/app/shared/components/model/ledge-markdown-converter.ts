@@ -2,7 +2,6 @@ import marked from 'marked';
 import { zip } from 'lodash-es';
 
 const LedgeMarkdownConverter = {
-
   transpose(arr: any[][]) {
     return zip.apply(this, arr);
   },
@@ -10,10 +9,23 @@ const LedgeMarkdownConverter = {
   buildMarkdownTableJson(code: any) {
     let config = {};
     const tables = [];
+    const lists = [];
 
     const tokens: marked.Token[] = marked.lexer(code);
     for (const token of tokens) {
       switch (token.type) {
+        case 'list_start': {
+          break;
+        }
+        case 'list_item_start': {
+          break;
+        }
+        case 'list_item_end': {
+          break;
+        }
+        case 'list_end': {
+          break;
+        }
         case 'table' : {
           const headers = token.header;
           const cells = this.transpose(token.cells);
@@ -39,4 +51,4 @@ const LedgeMarkdownConverter = {
   }
 };
 
-export default LedgeMarkdownConverter
+export default LedgeMarkdownConverter;
