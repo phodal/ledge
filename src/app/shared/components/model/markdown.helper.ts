@@ -151,46 +151,6 @@ const MarkdownHelper = {
     return tasks;
   },
 
-  toMindMapData(markdownJson: any) {
-    if (!markdownJson) {
-      return [];
-    }
-    const results = {
-      name: '',
-      children: []
-    };
-    for (const taskItem of markdownJson) {
-      const item = {
-        name: (taskItem as any).item.text,
-        item: (taskItem as any).item,
-        children: []
-      };
-      if (taskItem.childrens) {
-        item.children = MarkdownHelper.convertMindMapChildren(taskItem.childrens, item.children);
-      }
-
-      results.children.push(item);
-    }
-    return results;
-  },
-
-  convertMindMapChildren(childrens: any[], results) {
-    for (const taskItem of childrens) {
-      const item = {
-        name: (taskItem as any).item.text,
-        item: (taskItem as any).item,
-        children: []
-      };
-      if (taskItem.childrens) {
-        item.children = MarkdownHelper.convertMindMapChildren(taskItem.childrens, item.children);
-      }
-
-      results.push(item);
-    }
-
-    return results;
-  },
-
   buildRatingValue(item: MarkdownListModel) {
     let text = item.text;
     let value = 3;
