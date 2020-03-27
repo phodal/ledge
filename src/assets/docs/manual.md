@@ -503,7 +503,7 @@ Bruck Tuckman 团队发展模型：
 官方指南：《[Build effective unit tests](https://developer.android.com/training/testing/unit-testing)》
 
 | 分类 | 框架 | 覆盖范围 | 是否依赖设备 | 执行速度 |
-|-|-|-|-|
+|-|-|-|-|-|
 | 大型测试 | Appium, UIAutomator* | 用户通过界面操作的流程（涉及多应用和系统 UI 交互） | 是 | 慢，分钟级（一般在 1 ~ 5 分钟内，依测试场景复杂度而定） |
 | 中型测试 | JUnit，Instrumentation |  功能测试：用户通过界面操作的流程(只能在单个应用内操作)；集成测试：Java方法(依赖Android框架、数据库、第三方能力实现) | 是 | 较慢，涉及界面操作的在分钟级(一般在0.5~3分钟，和同样操作步骤的界面测试相比，单个测试用例执行时间要少40%)；较快，不涉及界面操作的Java方法的测试在秒级(一般在1秒内，依被测方法的执行时间而定) |
 | 小型测试 | JUnit，Mockito，Robolectric | “纯”Java方法(不依赖Android框架、数据库、第三方能力，或这些依赖可以很方便的Mock，对代码可测试性要求较高)　 | 否 | 快，毫秒级 |
