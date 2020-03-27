@@ -10,20 +10,29 @@ const LedgeMarkdownConverter = {
     let config: any = {};
     const tables = [];
     const lists = [];
+    let result = '{';
 
     const tokens: marked.Token[] = marked.lexer(code);
     for (const token of tokens) {
       switch (token.type) {
         case 'list_start': {
+          result += '"childrens": [';
           break;
         }
         case 'list_item_start': {
+          result += '{ "item": ';
+          break;
+        }
+        case 'text': {
+          result += `{"name": "${token.text}"}`;
           break;
         }
         case 'list_item_end': {
+          result += '},';
           break;
         }
         case 'list_end': {
+          result += ']';
           break;
         }
         case 'table' : {
@@ -47,7 +56,18 @@ const LedgeMarkdownConverter = {
         }
       }
     }
-    return {tables, config};
+
+    result = result.replace(/,]/g, ']').replace(/},}/g, '}}');
+    result += '}';
+    try {
+      const list = JSON.parse(result);
+      lists.push(list);
+    } catch (e) {
+      console.log(result);
+      console.error(e);
+    }
+
+    return {tables, config, lists};
   }
 };
 

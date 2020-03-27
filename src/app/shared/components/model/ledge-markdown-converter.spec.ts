@@ -23,4 +23,14 @@ config: {"type": "line-model"}
     const json = LedgeMarkdownConverter.buildMarkdownTableJson(code);
     expect(json.config.type).toEqual('line-model');
   });
+
+  it('should build list', () => {
+    const code = `
+ - a
+ - b
+ - c
+`;
+    const json = LedgeMarkdownConverter.buildMarkdownTableJson(code);
+    expect(json.lists.length).toEqual(1);
+  });
 });
