@@ -1,10 +1,13 @@
 :host {
-  padding: 2em;
+  padding: 4em;
 }
 
 .slider {
   width: 100%;
   padding-left: 2em;
+  padding-top: 2em;
+  display: flex;
+  flex-direction: column;
 
   div {
     display: inline-block;

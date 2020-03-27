@@ -24,7 +24,7 @@ export class ToolsetComponent implements OnInit {
     }
 
     if (this.toolEl && this.toolEl.nativeElement) {
-      element.setAttribute('style', `height: ${this.toolEl.nativeElement.clientHeight}px`);
+      element.setAttribute('style', `height: calc(${this.toolEl.nativeElement.clientHeight}px + 2em)`);
     }
 
     return {
