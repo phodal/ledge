@@ -376,7 +376,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
 
   private buildTableProcess(code: any) {
     let resultStr = '';
-    const {headers, cells} = LedgeMarkdownConverter.buildMarkdownTableJson(code).tables[0];
+    const {headers, cells} = LedgeMarkdownConverter.toJson(code).tables[0];
     resultStr += this.buildProcessHeader(this.buildHeaderItem(headers));
     const bodyResult = this.buildTableBody(cells);
 
@@ -686,15 +686,26 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     this.toolsetId++;
 
     const id = 'toolset-' + this.webComponentsIndex;
-    const json = LedgeMarkdownConverter.buildMarkdownTableJson(code);
+    const json = LedgeMarkdownConverter.toJson(code);
 
-    console.log(json);
+    const toolType = json.config.type;
     this.toolsets.push({
       id,
-      data: json.lists[0].childrens,
-      type: json.config.type
+      data: this.getDataByType(json, toolType),
+      type: toolType
     });
 
     return `<div class="toolset-placeholder" id="${id}"></div>`;
+  }
+
+  private getDataByType(json: { tables: any[]; lists: any[]; config: any }, type: any) {
+    switch (type) {
+      case 'slider':
+        return json.lists[0].childrens;
+      case 'line-chart':
+        return json.tables[0];
+      default:
+        return json;
+    }
   }
 }

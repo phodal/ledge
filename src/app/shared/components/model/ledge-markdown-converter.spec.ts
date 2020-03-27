@@ -8,7 +8,7 @@ describe('LedgeMarkdownConverter', () => {
 | low  |      | boredom |
 | high | anxiety | flow |
 `;
-    const json = LedgeMarkdownConverter.buildMarkdownTableJson(code);
+    const json = LedgeMarkdownConverter.toJson(code);
     expect(json.tables.length).toEqual(1);
     expect(json.tables[0].headers.length).toEqual(3);
     expect(json.tables[0].cells.length).toEqual(3);
@@ -20,7 +20,7 @@ describe('LedgeMarkdownConverter', () => {
 
 config: {"type": "line-model"}
 `;
-    const json = LedgeMarkdownConverter.buildMarkdownTableJson(code);
+    const json = LedgeMarkdownConverter.toJson(code);
     expect(json.config.type).toEqual('line-model');
   });
 
@@ -30,7 +30,7 @@ config: {"type": "line-model"}
  - b
  - c
 `;
-    const json = LedgeMarkdownConverter.buildMarkdownTableJson(code);
+    const json = LedgeMarkdownConverter.toJson(code);
     expect(json.lists.length).toEqual(1);
   });
 });

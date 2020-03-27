@@ -6,7 +6,7 @@ const LedgeMarkdownConverter = {
     return zip.apply(this, arr);
   },
 
-  buildMarkdownTableJson(code: any) {
+  toJson(code: any) {
     let config: any = {};
     const tables = [];
     const lists = [];
