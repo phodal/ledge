@@ -146,6 +146,10 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       this.windowScrolled = false;
     }
 
+    this.handleForMenuSync(top);
+  }
+
+  private handleForMenuSync(top: number) {
     let currentElement: Element;
     for (const element of this.scrollItems) {
       if (element.offsetTop > top - 64) {
@@ -153,17 +157,19 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
         break;
       }
     }
-    if (!!currentElement) {
-      const headingId = currentElement.getAttribute('id');
-      const tocLink = document.getElementById('menu-' + headingId);
-      if (!!tocLink) {
-        if (!!this.lastTocId) {
-          const lastElement = document.getElementById('menu-' + this.lastTocId);
-          lastElement.classList.remove('active');
-        }
-        tocLink.classList.add('active');
-        this.lastTocId = headingId;
+    if (!currentElement) {
+      return;
+    }
+
+    const headingId = currentElement.getAttribute('id');
+    const tocLink = document.getElementById('menu-' + headingId);
+    if (!!tocLink) {
+      if (!!this.lastTocId) {
+        const lastElement = document.getElementById('menu-' + this.lastTocId);
+        lastElement.classList.remove('active');
       }
+      tocLink.classList.add('active');
+      this.lastTocId = headingId;
     }
   }
 
