@@ -7,7 +7,7 @@ const LedgeMarkdownConverter = {
   },
 
   buildMarkdownTableJson(code: any) {
-    let config = {};
+    let config: any = {};
     const tables = [];
     const lists = [];
 
