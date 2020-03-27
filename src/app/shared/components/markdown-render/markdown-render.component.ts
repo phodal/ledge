@@ -16,7 +16,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { MarkdownService } from 'ngx-markdown';
 import marked, { Slugger } from 'marked';
-import { maxBy, zip } from 'lodash-es';
+import { maxBy } from 'lodash-es';
 import * as echarts from 'echarts';
 
 import * as d3 from 'd3';
@@ -28,6 +28,7 @@ import ChartOptions from '../../support/chart-options';
 import MarkdownHelper from '../model/markdown.helper';
 import Tocify, { TocItem } from './tocify';
 import ECharts = echarts.ECharts;
+import LedgeMarkdownConverter from '../model/ledge-markdown-converter';
 
 @Component({
   selector: 'component-markdown-render',
@@ -375,44 +376,13 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
 
   private buildTableProcess(code: any) {
     let resultStr = '';
-    const {headers, cells} = this.buildMarkdownTableJson(code).tables[0];
+    const {headers, cells} = LedgeMarkdownConverter.buildMarkdownTableJson(code).tables[0];
     resultStr += this.buildProcessHeader(this.buildHeaderItem(headers));
     const bodyResult = this.buildTableBody(cells);
 
     resultStr += `<div class="table-space"></div><div class="flex-table row">${bodyResult}</div>`;
 
     return `<div class="process-table markdown-table">` + resultStr + '</div>';
-  }
-
-  private buildMarkdownTableJson(code: any) {
-    let config = {};
-    const tables = [];
-
-    const tokens: marked.Token[] = marked.lexer(code);
-    for (const token of tokens) {
-      switch (token.type) {
-        case 'table' : {
-          const headers = token.header;
-          const cells = this.transpose(token.cells);
-          tables.push({
-            headers,
-            cells
-          });
-          break;
-        }
-        case 'paragraph': {
-          if (token.text.startsWith('config:')) {
-            const configText = token.text.split('config:')[1];
-            config = JSON.parse(configText);
-          }
-          break;
-        }
-        default: {
-          console.log(token);
-        }
-      }
-    }
-    return {tables, config};
   }
 
   private buildTableBody(cells: any[]) {
@@ -439,10 +409,6 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     }
 
     return headerStr;
-  }
-
-  transpose(arr: any[][]) {
-    return zip.apply(this, arr);
   }
 
   private buildMindmapData(code: any) {
