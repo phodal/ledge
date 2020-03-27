@@ -84,6 +84,23 @@ yarn start
  - graphviz。使用 Dot 渲染图片
  - mermaid。使用 mermaid 可视化
  - webcomponents。调用 WebComponents 组件
+ - toolset。调用 Toolset 相关的组件
+   - slider。权衡滑块
+
+
+#### 示例
+
+```
+```toolset
+ - 用户体验
+ - 时间
+ - 成本
+ - 安全
+ - 范围
+
+config: {"type": "slider"}
+\`\`\`
+```
 
 ## Inspired by
 
