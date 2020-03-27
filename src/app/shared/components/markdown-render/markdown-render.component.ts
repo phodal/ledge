@@ -203,7 +203,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       this.renderGraphviz();
       this.renderMermaid();
       this.renderEcharts();
-      this.loadWebComponents();
+      // this.loadWebComponents();
     }, 50);
 
     setTimeout(() => this.gotoHeading(), 500);

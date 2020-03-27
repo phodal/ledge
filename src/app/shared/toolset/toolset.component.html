@@ -1,5 +1,5 @@
-<div [ngSwitch]="true" [ngStyle]="setToolsetStyle(option)" #tool>
-  <div *ngSwitchCase="option.type === 'slider'" class="slider">
+<div #tool>
+  <div *ngIf="option.type === 'slider'" class="slider">
     <div *ngFor="let item of option.data">
       <div class="name">{{item.name}}</div>
       <div class="slide">
@@ -7,10 +7,7 @@
       </div>
     </div>
   </div>
-  <div *ngSwitchCase="option.type === 'line-chart'" class="line-chart">
+  <div *ngIf="option.type === 'line-chart'" class="line-chart">
 
-  </div>
-  <div *ngSwitchDefault>
-    <h1>it works</h1>
   </div>
 </div>

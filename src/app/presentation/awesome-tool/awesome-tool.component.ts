@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as mdData from 'raw-loader!../../../assets/docs/tool.md';
 
 @Component({
   selector: 'app-awesome-tool',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./awesome-tool.component.scss']
 })
 export class AwesomeToolComponent implements OnInit {
+  data = mdData.default;
 
   constructor() { }
 
