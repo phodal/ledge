@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import * as echarts from 'echarts';
 
 @Component({
   selector: 'toolset',
@@ -7,6 +8,7 @@ import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '
 })
 export class ToolsetComponent implements OnInit, AfterViewInit {
   @ViewChild('tool', {}) toolEl: ElementRef;
+  @ViewChild('lineChart', {}) lineChartEl: ElementRef;
 
   @Input()
   option: ToolsetOption;
@@ -33,6 +35,44 @@ export class ToolsetComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    if (this.option.type === 'line-chart') {
+      this.renderLineChart(this.option.data);
+    }
+
     this.setToolsetStyle(this.option);
+  }
+
+  private renderLineChart(data) {
+    const myChart = echarts.init(this.lineChartEl.nativeElement);
+    const option = {
+      xAxis: {
+        type: 'category',
+        data: ['Low', 'Middle', 'High'],
+        axisLine: {
+          symbol: ['none', 'arrow'],
+          symbolSize: [10, 20]
+        },
+        axisTick: {
+          show: false
+        }
+      },
+      yAxis: {
+        type: 'value',
+        axisLine: {
+          symbol: ['none', 'arrow'],
+          symbolSize: [10, 20]
+        },
+        axisTick: {
+          show: false
+        }
+      },
+      series: [{
+        data: ['Low', 'Middle', 'High'],
+        type: 'line',
+        smooth: true
+      }]
+    };
+
+    myChart.setOption(option as any);
   }
 }
