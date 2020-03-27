@@ -375,22 +375,44 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
 
   private buildTableProcess(code: any) {
     let resultStr = '';
-    let headers = [];
-    let cells = [];
-
-    const tokens = marked.lexer(code);
-    for (const token of tokens) {
-      if (token.type === 'table') {
-        headers = token.header;
-        cells = this.transpose(token.cells);
-      }
-    }
+    const {headers, cells} = this.buildMarkdownTableJson(code).tables[0];
     resultStr += this.buildProcessHeader(this.buildHeaderItem(headers));
     const bodyResult = this.buildTableBody(cells);
 
     resultStr += `<div class="table-space"></div><div class="flex-table row">${bodyResult}</div>`;
 
     return `<div class="process-table markdown-table">` + resultStr + '</div>';
+  }
+
+  private buildMarkdownTableJson(code: any) {
+    let config = {};
+    const tables = [];
+
+    const tokens: marked.Token[] = marked.lexer(code);
+    for (const token of tokens) {
+      switch (token.type) {
+        case 'table' : {
+          const headers = token.header;
+          const cells = this.transpose(token.cells);
+          tables.push({
+            headers,
+            cells
+          });
+          break;
+        }
+        case 'paragraph': {
+          if (token.text.startsWith('config:')) {
+            const configText = token.text.split('config:')[1];
+            config = JSON.parse(configText);
+          }
+          break;
+        }
+        default: {
+          console.log(token);
+        }
+      }
+    }
+    return {tables, config};
   }
 
   private buildTableBody(cells: any[]) {
