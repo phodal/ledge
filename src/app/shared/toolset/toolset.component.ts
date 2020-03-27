@@ -47,9 +47,11 @@ export class ToolsetComponent implements OnInit, AfterViewInit {
   private renderLineChart(data) {
     const myChart = echarts.init(this.lineChartEl.nativeElement);
     const option = {
+      width: 500,
+      height: 500,
       xAxis: {
         type: 'category',
-        data: ['Low', 'Middle', 'High'],
+        data: ['Low', '挑战', 'High'],
         axisLine: {
           symbol: ['none', 'arrow'],
           symbolSize: [10, 20]
@@ -59,7 +61,8 @@ export class ToolsetComponent implements OnInit, AfterViewInit {
         }
       },
       yAxis: {
-        type: 'value',
+        type: 'category',
+        data: ['Low', '能力', 'High'],
         axisLine: {
           symbol: ['none', 'arrow'],
           symbolSize: [10, 20]
@@ -69,7 +72,7 @@ export class ToolsetComponent implements OnInit, AfterViewInit {
         }
       },
       series: [{
-        data: ['Low', 'Middle', 'High'],
+        data: [],
         type: 'line',
         smooth: true
       }]

@@ -183,6 +183,11 @@ Path to Production，来源于精益，旨在通过可视化的方式来展示�
 
 ### 心流模型
 
+|  挑战 / 能力   | low | high |
+|-|-|-|    
+| low  |      | boredom |
+| high | anxiety | flow |
+
 ```toolset
 |  Challenge;Skill/Ability   | low | high |
 |-|-|-|    
