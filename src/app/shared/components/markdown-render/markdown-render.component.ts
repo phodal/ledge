@@ -2,10 +2,12 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
-  HostListener, Inject,
+  HostListener,
+  Inject,
   Input,
   OnChanges,
-  OnInit, Renderer2,
+  OnInit,
+  Renderer2,
   SimpleChanges,
   ViewChild
 } from '@angular/core';
@@ -16,7 +18,6 @@ import { MarkdownService } from 'ngx-markdown';
 import marked, { Slugger } from 'marked';
 import { maxBy, zip } from 'lodash-es';
 import * as echarts from 'echarts';
-import ECharts = echarts.ECharts;
 
 import * as d3 from 'd3';
 import * as dagreD3 from 'dagre-d3';
@@ -26,6 +27,7 @@ import * as mermaid from 'mermaid';
 import ChartOptions from '../../support/chart-options';
 import MarkdownHelper from '../model/markdown.helper';
 import Tocify, { TocItem } from './tocify';
+import ECharts = echarts.ECharts;
 
 @Component({
   selector: 'component-markdown-render',
@@ -83,6 +85,9 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   private toolsetId = 0;
   toolsets: ToolsetOption[] = [];
 
+  private lastTocId: string;
+  private scrollItems: any[] = [];
+
   constructor(private markdownService: MarkdownService,
               private tocify: Tocify,
               private location: Location,
@@ -130,14 +135,6 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
 
   @HostListener('window:scroll', ['$event'])
   handleScroll() {
-    const windowScroll = window.pageYOffset;
-    const headerHeight = 64;
-    if (windowScroll >= headerHeight) {
-      this.sticky = true;
-    } else {
-      this.sticky = false;
-    }
-
     let top = 0;
     if (this.drawerEl) {
       top = this.drawerEl.elementRef.nativeElement.scrollTop;
@@ -147,6 +144,26 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       this.windowScrolled = true;
     } else if (this.windowScrolled && window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || top < 10) {
       this.windowScrolled = false;
+    }
+
+    let currentElement: Element;
+    for (const element of this.scrollItems) {
+      if (element.offsetTop > top - 64) {
+        currentElement = element;
+        break;
+      }
+    }
+    if (!!currentElement) {
+      const headingId = currentElement.getAttribute('id');
+      const tocLink = document.getElementById('menu-' + headingId);
+      if (!!tocLink) {
+        if (!!this.lastTocId) {
+          const lastElement = document.getElementById('menu-' + this.lastTocId);
+          lastElement.classList.remove('active');
+        }
+        tocLink.classList.add('active');
+        this.lastTocId = headingId;
+      }
     }
   }
 
@@ -170,6 +187,8 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     }
     this.tocify.reset();
 
+    this.startSyncMenu();
+
     setTimeout(() => {
       this.renderChart();
       this.renderGraphviz();
@@ -179,6 +198,13 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     }, 50);
 
     setTimeout(() => this.gotoHeading(), 500);
+  }
+
+  private startSyncMenu() {
+    const elements = document.getElementsByClassName('ledge-heading');
+    Array.from(elements).forEach((el) => {
+      this.scrollItems.push(el);
+    });
   }
 
   private gotoHeading() {
@@ -226,9 +252,9 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       const anchor = slugger.slug(raw);
       this.tocify.add(text, level, '', anchor);
       if (options.headerIds) {
-        return `<h${level} id="${options.headerPrefix}${anchor}">${text}</h${level}>`;
+        return `<h${level} class="ledge-heading" id="${options.headerPrefix}${anchor}">${text}</h${level}>`;
       }
-      return `<h${level}>${text}</h${level}>`;
+      return `<h${level} class="ledge-heading" id="${options.headerPrefix}${anchor}">${text}</h${level}>`;
     };
   }
 

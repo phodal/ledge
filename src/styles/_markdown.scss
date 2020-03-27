@@ -616,6 +616,10 @@
       list-style: none;
       a {
         color: #000;
+
+        &.active {
+          color: #ff4081;
+        }
       }
     }
   }
