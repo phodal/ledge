@@ -87,7 +87,7 @@ yarn start
  - webcomponents。调用 WebComponents 组件
  - toolset。调用 Toolset 相关的组件
    - slider。权衡滑块
-
+   - line-chart。表图
 
 #### 权衡滑块示例
 
@@ -102,6 +102,19 @@ yarn start
 config: {"type": "slider"}
 \`\`\`
 ```
+
+## Todo
+
+ - [ ] 更多的度量内容
+   - [ ] 监控等
+ - [ ] 更多的 DevOps 报告
+ - [ ] 重构 markdown render
+ - [ ] 单元测试
+   - [ ] 考虑一下 E2E 测试方案  
+   - [ ] 补充 markdown render 旧的单元测试
+ - [ ] 完善 toolset
+   - [x] slider
+   - [x] line-chart 
 
 ## Inspired by
 
