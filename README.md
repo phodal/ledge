@@ -115,7 +115,8 @@ config: {"type": "slider"}
  - [ ] 完善 toolset
    - [x] slider
    - [x] line-chart 
-
+ - [ ] 提取 markdown 文档化系统
+ 
 ## Inspired by
 
 Fluency
