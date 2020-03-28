@@ -197,6 +197,16 @@ Path to Production，来源于精益，旨在通过可视化的方式来展示�
 config: {"type": "line-chart"}
 ```
 
+### 新项目检查清单
+
+![新项目检查清单](https://raw.githubusercontent.com/phodal/techlead/master/assets/new-project-checklist.jpg "新项目检查清单")
+
+见：[https://phodal.github.io/new-project-checklist/](https://phodal.github.io/new-project-checklist/)
+
+### Tech Lead 工具集
+
+见：[https://github.com/phodal/techlead](https://github.com/phodal/techlead)
+
 ## DevOps
 
 ### DevOps 元素周期表
