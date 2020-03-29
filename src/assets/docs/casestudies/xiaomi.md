@@ -1,0 +1,160 @@
+# 小米
+
+来源：《[CNUTCon全球运维技术大会 ](https://cnutcon.infoq.cn/2018/shanghai/presentation/910)》&《[CNUTCon全球运维技术大会稿件 ](https://myslide.cn/slides/10493#)》
+
+<style>
+	#xiaomi-background{
+		width:100%;
+	 	height:250px;
+	}
+	
+	#xiaomi-background div{
+		width: 200px; 
+		height: 120px; 
+		border-radius: 9em; 
+		padding-top:80px; 
+		text-align:center; 
+		font-size:22px; 
+		color: #FFF; 
+		float:left;
+		margin-left:30px;
+	}
+	
+	#xiaomi-background div.bg1{
+		background: #A1763A; 
+	}
+	
+	#xiaomi-background div.bg2{
+		background: #1c4c78; 
+	}
+	
+	#xiaomi-background div.bg3{
+		background: #994538; 
+	}
+	
+	
+	#xiaomi-business-experience {
+		width:100%;
+		height:200px; 
+		text-align:center;
+	}
+	
+	#xiaomi-business-experience div{
+		width:40%; 
+		height: 130px; 
+		padding-top:50px; 
+		color:#FFF;
+		float:left;
+	}
+	
+	#xiaomi-business-experience div span{
+		font-size: 16px;
+		font-weight: bold;
+	}
+	
+	#xiaomi-business-experience div.item1{
+		background:#AF8039; 
+	}
+
+	#xiaomi-business-experience div.item2{
+		background:#2f6299; 
+		margin-left:20px;
+	}
+	
+</style>
+## 背景介绍
+
+小米研发效能领域的三个阶段
+<div id="xiaomi-background">
+	<div class="bg1">开源工具采用</div>
+	<div class="bg2">商业采购 </div>
+	<div class="bg3">自研研发交通平台 </div>
+</div>
+
+
+## 开源工具采用
+- 代码质量工具
+	- Phabricator
+		- Facebook出品，小米早期员工引入
+		- 更人性化的代码Diff功能
+		- 代码检查集成：Sonar、JsLint等
+	- SonarQube
+		- 开源代码质量管理平台
+		- 支持Java、C\C++、C#等语言
+		- SonarLint\Mvn+Jacoco+Jenkins
+- 二进制存储与管理
+	- Nexus 
+		- 优秀的Maven仓库管理器
+		- 强大的仓库管理与搜索功能
+- 持续集成持续交付引擎
+	- Jenkins
+		- 扫描、发布类需求
+		- 监控、测试类需求
+	- Jenkins on K8S
+		- 资源：物理理机做Slave资源利利⽤用率低
+		- 隔离：基于Docker提供更更好的隔离性
+
+## 商业采购
+### 进行商业采购的诉求
+<div id="xiaomi-business-experience" >
+	<div class="item1">
+		<span>基于开源的⽅方案遇到困难</span><br/>
+		性能瓶颈<br>
+		业务需求⽇日益多元化但团队规模有限
+	</div>
+	<div class="item2">
+		<span>基于开源的⽅方案遇到困难</span><br/>
+		性能瓶颈<br>
+		业务需求⽇日益多元化但团队规模有限
+	</div>
+</div>
+
+### 采购经验总结
+* 货比三家，一定要多试用比较
+* 售后服务与咨询很重要
+* 采购可整合性更好的产品
+* 尽量离线部署以防止数据泄露
+
+
+## 自研研发效能平台
+
+* 自研研发效能平台的目标：标准化整合各⼯具，⽽非⾃研每⼀个独⽴工具
+	* 理清组织结构、项目结构（符合某特征的必须审计的项目有哪些？没人能清楚）
+	* 降低接入成本（N个平台M个场景J个团队，经常做重复接入、遇到同样的问题）
+	* 标准化打通各个系统整合工具，赋能研发（如果打通部署？如果集成诸如压测等其它系统）
+	
+
+架构分析:
+```process-step
+ - 平台层
+   - 运维平台
+   - 小米私有云
+   - 小米生态云 
+ - 能力层
+   - 团队注册
+   - 一键接入 
+   - 检测扫描工具集成
+   - 发布部署
+   - 标准化工具接入
+ - 工具层
+   - Gitlab
+   - Phabricator 
+   -Jenkis on K8s
+   - 代码质量扫描
+   - 安全/法律合规扫描
+   - 二进制&产出物存储
+   - 二进制安全扫描
+   - 二进制法务审计扫描
+   - 部署服务
+ - 数据层
+   - 数据智能应用
+   - 研发效能数据仓库 
+```
+
+核心实现：Jenkins无状态优化
+
+* Job数据无状态化
+	* Job的参数配置、Jenkinsfile等均由平台管理
+	* 每次Build时依次选集群、新建或更新Job、执行
+	* 执行结果通过插件同步导入ES	
+* 集群信息无状态化
