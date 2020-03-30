@@ -32,5 +32,16 @@ config: {"type": "line-model"}
 `;
     const json = LedgeMarkdownConverter.toJson(code);
     expect(json.lists.length).toEqual(1);
+    expect(json.lists[0].childrens.length).toEqual(3);
+  });
+
+  it('should build list with childrens', () => {
+    const code = `
+ - a
+   - b
+`;
+    const json = LedgeMarkdownConverter.toJson(code);
+    expect(json.lists.length).toEqual(1);
+    expect(json.lists[0].childrens[0].childrens.length).toEqual(1);
   });
 });

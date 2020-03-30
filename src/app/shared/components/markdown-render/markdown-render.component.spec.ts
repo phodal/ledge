@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MarkdownRenderComponent } from './markdown-render.component';
 import { SharedModule } from '../../shared.module';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('MarkdownRenderComponent', () => {
   let component: MarkdownRenderComponent;
@@ -9,7 +10,7 @@ describe('MarkdownRenderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [SharedModule],
+      imports: [SharedModule, RouterTestingModule],
       declarations: [ MarkdownRenderComponent ]
     })
     .compileComponents();
