@@ -25,6 +25,7 @@
     "@angular/platform-browser-dynamic": "^9.1.0",
     "@angular/router": "~9.0.3",
     "@ngx-pwa/local-storage": "^9.0.2",
+    "core-js": "^3.6.4",
     "d3": "^5.15.0",
     "d3-graphviz": "^3.0.4",
     "dagre-d3": "^0.6.4",

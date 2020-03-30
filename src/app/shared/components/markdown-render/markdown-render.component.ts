@@ -15,7 +15,7 @@ import {DOCUMENT, Location} from '@angular/common';
 import {ActivatedRoute} from '@angular/router';
 
 import {MarkdownService} from 'ngx-markdown';
-import marked, {Slugger} from 'marked';
+import marked, {Slugger} from 'marked/lib/marked';
 import {maxBy} from 'lodash-es';
 import * as echarts from 'echarts';
 

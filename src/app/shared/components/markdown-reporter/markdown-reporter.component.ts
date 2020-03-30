@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
-import marked from 'marked';
+import marked from 'marked/lib/marked';
 import {ReporterChartModel} from '../model/reporter-chart.model';
 import * as d3 from 'd3';
 

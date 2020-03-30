@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import marked from 'marked';
+import marked from 'marked/lib/marked';
 import { zip } from 'lodash-es';
 
 interface ProcessTable {
