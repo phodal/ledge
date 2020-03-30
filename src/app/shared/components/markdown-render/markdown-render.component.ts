@@ -290,8 +290,8 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
           return this.buildClassCode(code);
         case 'graphviz':
           return this.buildGraphvizData(code);
-        case 'mermaid':
-          return this.buildMermaidData(code);
+        // case 'mermaid':
+        //   return this.buildMermaidData(code);
         case 'echarts':
           return this.buildEchartsData(code);
         case 'webcomponents':
@@ -638,8 +638,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       code
     });
 
-    // return `<div class="mermaid-graph" id="mermaid-${this.mermaidIndex}"></div>`;
-    return `<div class="mermaid-graph" id="mermaid-${this.mermaidIndex}">${code}</div>`;
+    return `<div class="mermaid-graph" id="mermaid-${this.mermaidIndex}"></div>`;
   }
 
   // https://github.com/mermaid-js/mermaid/issues/1175
