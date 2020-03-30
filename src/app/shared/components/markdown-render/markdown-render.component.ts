@@ -22,7 +22,7 @@ import * as echarts from 'echarts';
 import * as d3 from 'd3';
 import * as dagreD3 from 'dagre-d3';
 import * as graphlibDot from 'graphlib-dot';
-import * as mermaid from 'mermaid';
+// import * as mermaid from 'mermaid';
 
 import ChartOptions from '../../support/chart-options';
 import MarkdownHelper from '../model/markdown.helper';
@@ -201,7 +201,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     setTimeout(() => {
       this.renderChart();
       this.renderGraphviz();
-      this.renderMermaid();
+      // this.renderMermaid();
       this.renderEcharts();
       // this.loadWebComponents();
     }, 50);
@@ -638,36 +638,38 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       code
     });
 
-    return `<div class="mermaid-graph" id="mermaid-${this.mermaidIndex}"></div>`;
+    // return `<div class="mermaid-graph" id="mermaid-${this.mermaidIndex}"></div>`;
+    return `<div class="mermaid-graph" id="mermaid-${this.mermaidIndex}">${code}</div>`;
   }
 
+  // https://github.com/mermaid-js/mermaid/issues/1175
   private renderMermaid() {
-    for (const graph of this.mermaidData) {
-      mermaid.initialize({
-        theme: 'default',
-        gantt: {
-          titleTopMargin: 25,
-          barHeight: 48,
-          barGap: 4,
-          topPadding: 50,
-          leftPadding: 75,
-          gridLineStartPadding: 35,
-          fontSize: 18,
-          fontFamily: '"Open-Sans", "sans-serif"',
-          numberSectionStyles: 4,
-          axisFormat: '%Y-%m-%d',
-        }
-      });
-
-      const element: any = document.getElementById('mermaid-' + graph.id);
-      if (element == null) {
-        return;
-      }
-      const graphDefinition = graph.code;
-      mermaid.render(`graphDiv${graph.id}`, graphDefinition, (svgCode, bindFunctions) => {
-        element.innerHTML = svgCode;
-      });
-    }
+    // for (const graph of this.mermaidData) {
+    //   mermaid.initialize({
+    //     theme: 'default',
+    //     gantt: {
+    //       titleTopMargin: 25,
+    //       barHeight: 48,
+    //       barGap: 4,
+    //       topPadding: 50,
+    //       leftPadding: 75,
+    //       gridLineStartPadding: 35,
+    //       fontSize: 18,
+    //       fontFamily: '"Open-Sans", "sans-serif"',
+    //       numberSectionStyles: 4,
+    //       axisFormat: '%Y-%m-%d',
+    //     }
+    //   });
+    //
+    //   const element: any = document.getElementById('mermaid-' + graph.id);
+    //   if (element == null) {
+    //     return;
+    //   }
+    //   const graphDefinition = graph.code;
+    //   mermaid.render(`graphDiv${graph.id}`, graphDefinition, (svgCode, bindFunctions) => {
+    //     element.innerHTML = svgCode;
+    //   });
+    // }
   }
 
   private buildEchartsData(code: any) {
