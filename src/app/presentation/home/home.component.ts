@@ -50,6 +50,13 @@ export class HomeComponent implements OnInit {
       avatar: 'https://avatars0.githubusercontent.com/u/14286374?s=460&u=1933f64247e26812c67ca1c41aa0b7ba23b069f6&v=4'
     },
     {
+      name: '吴辰保',
+      link: 'https://github.com/chen02xw',
+      work: '丰富学习案例',
+      title: 'ThoughtWorks 高级咨询师',
+      avatar: 'https://avatars3.githubusercontent.com/u/57704189?s=460&v=4'
+    },
+    {
       name: 'You',
       link: '',
       title: '',
