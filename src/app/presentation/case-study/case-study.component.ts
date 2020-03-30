@@ -29,8 +29,8 @@ export class CaseStudyComponent implements OnInit {
     {displayName: '大搜车', source: 'dasouche'},
     {displayName: '小米', source: 'xiaomi'}
   ];
-  currentSource = 'meituan';
-  src = this.buildSrc(this.currentSource);
+  currentSource: string;
+  src: string;
 
   constructor(title: Title, private storage: StorageMap, private activatedRoute: ActivatedRoute, private router: Router) {
     title.setTitle('DevOps 知识平台 Ledge - 案例学习');
@@ -40,17 +40,26 @@ export class CaseStudyComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(params => {
       const source = params.source;
       if (source) {
-        this.currentSource = source;
-        this.src = this.buildSrc(this.currentSource);
+        this.configSource(source);
       } else {
-        this.storage.get('casestudy.last').subscribe((value: string) => {
-          if (!!value) {
-            this.currentSource = value;
-            this.src = this.buildSrc(this.currentSource);
-          }
-        });
+        this.getSourceFromLocalStorage();
       }
     });
+  }
+
+  private getSourceFromLocalStorage() {
+    this.storage.get('casestudy.last').subscribe((value: string) => {
+      if (!!value) {
+        this.configSource(value);
+      } else {
+        this.configSource('meituan');
+      }
+    });
+  }
+
+  private configSource(value: string) {
+    this.currentSource = value;
+    this.src = this.buildSrc(this.currentSource);
   }
 
   clickCase(source: string) {
