@@ -27,8 +27,8 @@ import * as mermaid from 'mermaid';
 import ChartOptions from '../../support/chart-options';
 import MarkdownHelper from '../model/markdown.helper';
 import Tocify, { TocItem } from './tocify';
-import ECharts = echarts.ECharts;
 import LedgeMarkdownConverter from '../model/ledge-markdown-converter';
+import ECharts = echarts.ECharts;
 
 @Component({
   selector: 'component-markdown-render',
@@ -298,6 +298,8 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
           return this.buildWebComponents(code);
         case 'toolset':
           return this.buildToolsets(code);
+        case 'list-style':
+          return this.buildListStyle(code);
         default:
           return this.buildNormalCode(options, code, lang, escaped);
       }
@@ -306,6 +308,22 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
 
   private buildClassCode(code: any) {
     return `<div class="${code}"></div>`;
+  }
+
+  private buildListStyle(code: any) {
+    const toJson = LedgeMarkdownConverter.toJson(code);
+    const list = toJson.lists[0];
+    let childStr = '';
+    let index = 0;
+    for (const children of (list.childrens as any[])) {
+      index++;
+      childStr += `<div class="list-style-item item-${index}">${children.name}</div>`;
+    }
+
+    const type = toJson.config.type;
+    const cssClz = `list-style list-style-${type}`;
+
+    return `<div class="${cssClz}">${childStr}</div>`;
   }
 
   private buildNormalCode(options: any, code: any, lang: string, escaped: any) {

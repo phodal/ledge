@@ -3,36 +3,6 @@
 来源：《[CNUTCon全球运维技术大会 ](https://cnutcon.infoq.cn/2018/shanghai/presentation/910)》&《[CNUTCon全球运维技术大会稿件 ](https://myslide.cn/slides/10493#)》
 
 <style>
-	#xiaomi-background{
-		width:100%;
-	 	height:250px;
-	}
-	
-	#xiaomi-background div{
-		width: 200px; 
-		height: 120px; 
-		border-radius: 9em; 
-		padding-top:80px; 
-		text-align:center; 
-		font-size:22px; 
-		color: #FFF; 
-		float:left;
-		margin-left:30px;
-	}
-	
-	#xiaomi-background div.bg1{
-		background: #A1763A; 
-	}
-	
-	#xiaomi-background div.bg2{
-		background: #1c4c78; 
-	}
-	
-	#xiaomi-background div.bg3{
-		background: #994538; 
-	}
-	
-	
 	#xiaomi-business-experience {
 		width:100%;
 		height:200px; 
@@ -65,11 +35,14 @@
 ## 背景介绍
 
 小米研发效能领域的三个阶段
-<div id="xiaomi-background">
-	<div class="bg1">开源工具采用</div>
-	<div class="bg2">商业采购 </div>
-	<div class="bg3">自研研发交通平台 </div>
-</div>
+
+```list-style
+ - 开源工具采用
+ - 商业采购
+ - 自研研发交通平台
+
+config: {"type": "circle"}
+```
 
 
 ## 开源工具采用

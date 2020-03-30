@@ -1,0 +1,20 @@
+.list-style {
+  margin: 20px;
+  &.list-style-circle {
+    display: flex;
+
+    .list-style-item {
+      &.item-1 {background: #A1763A;}
+      &.item-2 {background: #1c4c78;}
+      &.item-3 {background: #994538;}
+
+      width: 200px;
+      height: 200px;
+      border-radius: 200px;
+      text-align: center;
+      line-height: 200px;
+      color: #fff;
+      margin-left: 20px;
+    }
+  }
+}
