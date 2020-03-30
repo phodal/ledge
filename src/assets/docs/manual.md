@@ -602,9 +602,7 @@ ElasticSearch + Logstash + Kibana
 
 ## DevOps 能力中心
 
-### DevOps 内部教练
-
-#### 建设框架
+### 建设框架
 
 ```process-step
  - 招募种子
@@ -622,8 +620,11 @@ ElasticSearch + Logstash + Kibana
     - 离
  - 答辩评估
     - 能力认证
- - 认证通过  
+ - 认证通过
+    - ""
 ```
+
+### DevOps 内部教练
 
 ## DevOps 平台
 
