@@ -1,4 +1,4 @@
-# Mobile Android DevOps
+# Mobile Android
 
 ## 移动中台
 
