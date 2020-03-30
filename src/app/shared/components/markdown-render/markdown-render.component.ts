@@ -11,12 +11,12 @@ import {
   SimpleChanges,
   ViewChild
 } from '@angular/core';
-import { DOCUMENT, Location } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import {DOCUMENT, Location} from '@angular/common';
+import {ActivatedRoute} from '@angular/router';
 
-import { MarkdownService } from 'ngx-markdown';
-import marked, { Slugger } from 'marked';
-import { maxBy } from 'lodash-es';
+import {MarkdownService} from 'ngx-markdown';
+import marked, {Slugger} from 'marked';
+import {maxBy} from 'lodash-es';
 import * as echarts from 'echarts';
 
 import * as d3 from 'd3';
@@ -26,7 +26,7 @@ import * as mermaid from 'mermaid';
 
 import ChartOptions from '../../support/chart-options';
 import MarkdownHelper from '../model/markdown.helper';
-import Tocify, { TocItem } from './tocify';
+import Tocify, {TocItem} from './tocify';
 import LedgeMarkdownConverter from '../model/ledge-markdown-converter';
 import ECharts = echarts.ECharts;
 
@@ -313,17 +313,31 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   private buildListStyle(code: any) {
     const toJson = LedgeMarkdownConverter.toJson(code);
     const list = toJson.lists[0];
+    console.log(list);
     let childStr = '';
-    let index = 0;
-    for (const children of (list.childrens as any[])) {
-      index++;
-      childStr += `<div class="list-style-item item-${index}">${children.name}</div>`;
-    }
+    childStr = this.buildListStyleChildren(list, childStr);
 
     const type = toJson.config.type;
     const cssClz = `list-style list-style-${type}`;
 
     return `<div class="${cssClz}">${childStr}</div>`;
+  }
+
+  private buildListStyleChildren(list, childStr: string) {
+    let index = 0;
+    for (const children of (list.childrens as any[])) {
+      let subChildStr = '';
+      let subChildClass = '';
+      if (children.childrens && children.childrens.length > 0) {
+        subChildStr = this.buildListStyleChildren(children, subChildStr);
+        subChildClass = 'sub-item';
+      }
+
+      index++;
+      childStr += `<div class="list-style-item item-${index} ${subChildClass}">${children.name}${subChildStr}</div>`;
+    }
+
+    return childStr;
   }
 
   private buildNormalCode(options: any, code: any, lang: string, escaped: any) {

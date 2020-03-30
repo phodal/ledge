@@ -24,7 +24,7 @@ const LedgeMarkdownConverter = {
           break;
         }
         case 'text': {
-          result += `"name": "${token.text}"`;
+          result += `"name": "${token.text}",`;
           break;
         }
         case 'list_item_end': {
@@ -57,7 +57,11 @@ const LedgeMarkdownConverter = {
       }
     }
 
-    result = result.replace(/,]/g, ']').replace(/},}/g, '}}');
+    result = result
+      .replace(/,]/g, ']')
+      .replace(/,}/g, '}')
+      .replace(/},}/g, '}}');
+
     result += '}';
     try {
       const list = JSON.parse(result);
