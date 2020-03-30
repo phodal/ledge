@@ -57,7 +57,7 @@
  */
 import 'zone.js/dist/zone';  // Included with Angular CLI.
 
-
+(window as any).__Zone_enable_cross_context_check = true; // patch for IE
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
