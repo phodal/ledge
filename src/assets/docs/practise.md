@@ -18,10 +18,6 @@
 |-|-|-|-|
 ```
 
-```class
-∞ 
-```
-
 ## DevOps 四大支柱
 
 来源：（《Effective DevOps》）
