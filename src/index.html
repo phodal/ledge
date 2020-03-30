@@ -15,79 +15,13 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body class="mat-typography">
-  <app-root id="app"></app-root>
-
-  <div id="unsupported-browser" class="unsupported-browser layout-container" style="display: none;">
-    <h3 class="title">抱歉，您的浏览器版本过低，请先升级到 <a href="https://www.microsoft.com/en-us/edge">Microsoft Edge</a></h3>
+  <!--[if IE]>
+  <div id="browser-warning" style="display: none;">
+    <h2 class="title">抱歉，您的浏览器版本过低，请先升级到 <a href="https://www.microsoft.com/en-us/edge">Microsoft Edge</a></h2>
+    <p>欢迎帮助我们修复这个 <a href="https://github.com/phodal/ledge/">Issue</a></p>
   </div>
+  <![endif]-->
 
-  <script id="detector-script">
-    (function () {
-      // from is.js
-      var userAgent = 'navigator' in window && 'userAgent' in navigator && navigator.userAgent.toLowerCase() || '';
-      function isIE(version) {
-        if (!version) {
-          return /msie/i.test(userAgent) || 'ActiveXObject' in window;
-        }
-        if (version >= 11) {
-          return 'ActiveXObject' in window;
-        }
-        return new RegExp('msie ' + version).test(userAgent);
-      }
-
-      function removeEvent() {
-        if (document.addEventListener) {
-          document.removeEventListener('DOMContentLoaded', completed);
-          window.removeEventListener('load', completed);
-        } else {
-          document.detachEvent('onreadystatechange', completed);
-          window.detachEvent('onload', completed);
-        }
-      }
-
-      function addEvent() {
-        if (document.addEventListener) {
-          document.addEventListener('DOMContentLoaded', completed);
-          window.addEventListener('load', completed);
-        } else {
-          document.attachEvent('onreadystatechange', completed);
-          window.attachEvent('onload', completed);
-        }
-      }
-
-      function completed() {
-        showUnsupported();
-        removeEvent();
-      }
-
-      function showApp() {
-        var unsupportedElement = document.getElementById('unsupported-browser');
-        unsupportedElement.parentNode.removeChild(unsupportedElement);
-        deleteDetectorScript();
-      }
-
-      function showUnsupported() {
-        var app = document.getElementById('app');
-        app.parentNode.removeChild(app);
-        document.getElementById('unsupported-browser').style.display = 'block';
-        deleteDetectorScript();
-      }
-
-      function deleteDetectorScript() {
-        var detectorElement = document.getElementById('detector-script');
-        detectorElement.parentNode.removeChild(detectorElement);
-      }
-
-      function detectorUnsupportedIE() {
-        if (isIE(11) || isIE(10) || isIE(9) || isIE(8) || isIE(7) || isIE(6)) {
-          addEvent();
-          return;
-        }
-        showApp();
-      }
-
-      detectorUnsupportedIE();
-    }());
-  </script>
+  <app-root id="app"></app-root>
 </body>
 </html>
