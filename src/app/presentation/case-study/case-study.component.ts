@@ -27,7 +27,8 @@ export class CaseStudyComponent implements OnInit {
     {displayName: 'Atlassian', source: 'atlassian'},
     {displayName: '政采云', source: 'zhengcaiyun'},
     {displayName: '大搜车', source: 'dasouche'},
-    {displayName: '小米', source: 'xiaomi'}
+    {displayName: '小米', source: 'xiaomi'},
+    {displayName: '微博', source: 'weibo'}
   ];
   currentSource: string;
   src: string;
