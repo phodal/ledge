@@ -16,5 +16,78 @@
 </head>
 <body class="mat-typography">
   <app-root></app-root>
+
+  <div id="unsupported-browser" class="unsupported-browser layout-container" style="display: none;">
+    <h3 class="title">抱歉，您的浏览器版本过低，请先升级到 <a href="https://www.microsoft.com/en-us/edge">Microsoft Edge</a></h3>
+  </div>
+
+  <script id="detector-script">
+    (function () {
+      // from is.js
+      var userAgent = 'navigator' in window && 'userAgent' in navigator && navigator.userAgent.toLowerCase() || '';
+      function isIE(version) {
+        if (!version) {
+          return /msie/i.test(userAgent) || 'ActiveXObject' in window;
+        }
+        if (version >= 11) {
+          return 'ActiveXObject' in window;
+        }
+        return new RegExp('msie ' + version).test(userAgent);
+      }
+
+      function removeEvent() {
+        if (document.addEventListener) {
+          document.removeEventListener('DOMContentLoaded', completed);
+          window.removeEventListener('load', completed);
+        } else {
+          document.detachEvent('onreadystatechange', completed);
+          window.detachEvent('onload', completed);
+        }
+      }
+
+      function addEvent() {
+        if (document.addEventListener) {
+          document.addEventListener('DOMContentLoaded', completed);
+          window.addEventListener('load', completed);
+        } else {
+          document.attachEvent('onreadystatechange', completed);
+          window.attachEvent('onload', completed);
+        }
+      }
+
+      function completed() {
+        showUnsupported();
+        removeEvent();
+      }
+
+      function showApp() {
+        var unsupportedElement = document.getElementById('unsupported-browser');
+        unsupportedElement.parentNode.removeChild(unsupportedElement);
+        deleteDetectorScript();
+      }
+
+      function showUnsupported() {
+        var app = document.getElementById('app');
+        app.parentNode.removeChild(app);
+        document.getElementById('unsupported-browser').style.display = 'block';
+        deleteDetectorScript();
+      }
+
+      function deleteDetectorScript() {
+        var detectorElement = document.getElementById('detector-script');
+        detectorElement.parentNode.removeChild(detectorElement);
+      }
+
+      function detectorUnsupportedIE() {
+        if (isIE(11) || isIE(10) || isIE(9) || isIE(8) || isIE(7) || isIE(6)) {
+          addEvent();
+          return;
+        }
+        showApp();
+      }
+
+      detectorUnsupportedIE();
+    }());
+  </script>
 </body>
 </html>
