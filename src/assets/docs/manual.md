@@ -81,6 +81,32 @@ Path to Production，来源于精益，旨在通过可视化的方式来展示�
 
 # 度量
 
+《持续交付 2.0》中提到了一种不错的软件产品的交付效能度量方式：
+
+``` mindmap
+ - 软件产品的交付效能
+   - 速度
+     - 需求响应能力
+        - Feature Lead Time（业务需求前置周期）
+        - User Story Delivery Time（用户故事交付周期）
+     - 持续发布能力
+        - Integration Testing Time（集成测试周期）
+        - Release Frequency Time（发布频率）
+        - MTT（X)（X 的平时时长，X = 发布 | 升级 | 缓解 | 解决）
+   - 质量
+     - 发布前质量
+        - Remain Bugs（单位周期的遗留缺陷数）
+        - Bugs/User Story（单个用户故事发现的缺陷数）
+     - 发布后质量
+        - Change Failure Rate（变更失败率）
+        - Issues（单位时间内的生产环境故障数） 
+   - 价值
+     - 需求吞吐量
+        - Total Features（单位时间内交付的业务需求数）
+     - 交付有效性
+        - Success Rate（业务需求的成功率）
+```
+
 ## 度量团队和组织 
 
 ## 度量系统

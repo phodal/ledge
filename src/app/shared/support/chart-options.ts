@@ -10,7 +10,7 @@ function buildMindmapOption(data) {
   let height = '600px';
   const dataStr = JSON.stringify(data);
   if (dataStr.length > 500) {
-    height = '800px';
+    height = '720px';
   }
 
   return {
