@@ -45,10 +45,10 @@ jobs:
 #      run: npm test --configuration=ci
     - name: Build
       run: ng build --prod
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        ACCESS_TOKEN: ${{ secrets.SuperSecret }}
-        BRANCH: gh-pages # The branch the action should deploy to.
-        REPOSITORY_NAME: "phodal/do"
-        FOLDER: dist/ledge
+#     - name: Deploy 🚀
+#       uses: JamesIves/github-pages-deploy-action@releases/v3
+#       with:
+#         ACCESS_TOKEN: ${{ secrets.SuperSecret }}
+#         BRANCH: gh-pages # The branch the action should deploy to.
+#         REPOSITORY_NAME: "phodal/do"
+#         FOLDER: dist/ledge
