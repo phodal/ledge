@@ -57,6 +57,7 @@ export class MarkdownReporterComponent implements OnInit, AfterViewInit {
           }
           break;
         default:
+          console.log(token);
           this.markdownData.push(token);
           break;
       }

@@ -5,6 +5,11 @@
     </div>
   </div>
   <div *ngIf="token.type === 'paragraph'">
+    <div class="language-{{token.lang}}">
+      {{token.text}}
+    </div>
+  </div>
+  <div *ngIf="token.type === 'code'">
     <p>{{token.text}}</p>
   </div>
 </div>
