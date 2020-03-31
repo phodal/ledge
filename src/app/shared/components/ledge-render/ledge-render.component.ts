@@ -87,12 +87,19 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit {
     };
 
     chart.barChart.xData = token.cells[0];
-    for (let i = 1; i < token.cells.length; i++) {
+    const tableColumnLength = token.cells.length;
+    for (let i = 1; i < tableColumnLength; i++) {
       const row = [];
-      for (const cell of token.cells[i]) {
+      const originRow = token.cells[i];
+
+      for (let j = 0; j < originRow.length; j++) {
+        let color = this.getColorByIndex(i);
+        if (tableColumnLength === 2) {
+          color = this.getColorByIndex(j);
+        }
         row.push({
-          value: cell,
-          itemStyle: {color: this.getColorByIndex(i)}
+          value: originRow[j],
+          itemStyle: {color}
         });
       }
       chart.barChart.yData.push(row);
