@@ -7,10 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "deploy": "ng deploy --repo=https://github.com/phodal/do.git --cname=devops.phodal.com",
-    "README-postinstall": "The chromedriver version must support the chrome version installed via puppeteer. Chromedriver 76.0.3809.68 supports Chrome 76. See https://chromedriver.chromium.org/downloads for version matching.",
-    "postinstall": "webdriver-manager update --standalone false --gecko false --versions.chrome 76.0.3809.68"
+    "deploy": "ng deploy --repo=https://github.com/phodal/do.git --cname=devops.phodal.com"
   },
   "private": true,
   "dependencies": {
@@ -58,12 +55,9 @@
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.3.0",
-    "karma-chrome-launcher": "~3.1.0",
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
-    "protractor": "~5.4.3",
-    "puppeteer": "chrome-76",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
     "typescript": "~3.7.5"
