@@ -51,9 +51,11 @@ export class MarkdownReporterComponent implements OnInit, AfterViewInit {
             const chartInfo = this.buildMarkdownChart(token);
             this.charts.push(chartInfo);
             this.markdownData.push({
-              type: 'table',
+              type: 'chart',
               data: chartInfo
             });
+          } else {
+            this.markdownData.push(token);
           }
           break;
         default:
@@ -79,5 +81,9 @@ export class MarkdownReporterComponent implements OnInit, AfterViewInit {
       });
     }
     return chart;
+  }
+
+  stringify(str: any) {
+    return JSON.stringify(str);
   }
 }
