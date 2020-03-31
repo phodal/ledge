@@ -42,25 +42,30 @@ export class MarkdownReporterComponent implements OnInit, AfterViewInit {
   }
 
   private buildData(tokens: marked.Token[]) {
+    const markdownData = [];
     for (const token of tokens) {
       if (token.type === 'table') {
         if (token.cells[0].length === 2) {
-          const chart: ReporterChartModel = {
-            title: token.header[0],
-            chartData: []
-          };
-          // tslint:disable-next-line:prefer-for-of
-          for (let i = 0; i < token.cells.length; i++) {
-            const cell = token.cells[i];
-            chart.chartData.push({
-              name: cell[0],
-              value: parseFloat(cell[1]),
-              itemStyle: {color: this.getColorByIndex(i)}
-            });
-          }
-          this.charts.push(chart);
+          this.charts.push(this.buildMarkdownChart(token));
         }
       }
     }
+  }
+
+  private buildMarkdownChart(token: marked.Token) {
+    const chart: ReporterChartModel = {
+      title: token.header[0],
+      chartData: []
+    };
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < token.cells.length; i++) {
+      const cell = token.cells[i];
+      chart.chartData.push({
+        name: cell[0],
+        value: parseFloat(cell[1]),
+        itemStyle: {color: this.getColorByIndex(i)}
+      });
+    }
+    return chart;
   }
 }
