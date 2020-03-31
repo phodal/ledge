@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MarkdownReporterComponent } from './markdown-reporter.component';
+import { LedgeRenderComponent } from './ledge-render.component';
 
 describe('MarkdownReporterComponent', () => {
-  let component: MarkdownReporterComponent;
-  let fixture: ComponentFixture<MarkdownReporterComponent>;
+  let component: LedgeRenderComponent;
+  let fixture: ComponentFixture<LedgeRenderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MarkdownReporterComponent ]
+      declarations: [ LedgeRenderComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MarkdownReporterComponent);
+    fixture = TestBed.createComponent(LedgeRenderComponent);
     component = fixture.componentInstance;
     component.content = ``;
     fixture.detectChanges();

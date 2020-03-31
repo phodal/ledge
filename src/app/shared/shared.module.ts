@@ -10,7 +10,7 @@ import { MarkdownRadarChartComponent } from './components/markdown-radar-chart/m
 import { MarkdownRatingComponent } from './components/markdown-radar-chart/markdown-rating/markdown-rating.component';
 import { MarkdownRatingItemComponent } from './components/markdown-radar-chart/markdown-rating-item/markdown-rating-item.component';
 import { ProcessTableComponent } from './components/process-table/process-table.component';
-import { MarkdownReporterComponent } from './components/markdown-reporter/markdown-reporter.component';
+import { LedgeRenderComponent } from './components/ledge-render/ledge-render.component';
 import { MarkdownChartComponent } from './components/markdown-chart/markdown-chart.component';
 import { MarkdownTreeComponent } from './components/markdown-tree/markdown-tree.component';
 import Tocify from './components/markdown-render/tocify';
@@ -49,7 +49,7 @@ import { ToolsetComponent } from './toolset/toolset.component';
     MarkdownRatingItemComponent,
     MarkdownRadarChartComponent,
     ProcessTableComponent,
-    MarkdownReporterComponent,
+    LedgeRenderComponent,
     MarkdownChartComponent,
     MarkdownTreeComponent,
 
@@ -64,7 +64,7 @@ import { ToolsetComponent } from './toolset/toolset.component';
     MarkdownRatingItemComponent,
     MarkdownRadarChartComponent,
     ProcessTableComponent,
-    MarkdownReporterComponent,
+    LedgeRenderComponent,
     MarkdownChartComponent,
     MarkdownTreeComponent,
 

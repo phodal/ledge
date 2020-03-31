@@ -6,11 +6,11 @@ import { Tokens } from 'marked';
 import LedgeMarkdownConverter from '../model/ledge-markdown-converter';
 
 @Component({
-  selector: 'component-markdown-reporter',
-  templateUrl: './markdown-reporter.component.html',
-  styleUrls: ['./markdown-reporter.component.scss']
+  selector: 'ledge-render',
+  templateUrl: './ledge-render.component.html',
+  styleUrls: ['./ledge-render.component.scss']
 })
-export class MarkdownReporterComponent implements OnInit, AfterViewInit {
+export class LedgeRenderComponent implements OnInit, AfterViewInit {
   @Input()
   content: string;
   charts: ReporterChartModel[] = [];
