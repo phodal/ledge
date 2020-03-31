@@ -1,3 +1,10 @@
-<div *ngFor="let chart of charts;" class="charts">
-  <component-markdown-chart [data]="chart"></component-markdown-chart>
+<div *ngFor="let token of markdownData" class="markdown-reporter">
+  <div *ngIf="token.type === 'table'">
+    <div class="charts">
+      <component-markdown-chart [data]="token.data"></component-markdown-chart>
+    </div>
+  </div>
+  <div *ngIf="token.type === 'paragraph'">
+    <p>{{token.text}}</p>
+  </div>
 </div>

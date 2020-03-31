@@ -13,5 +13,4 @@ export class ReporterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

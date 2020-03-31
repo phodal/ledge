@@ -12,6 +12,7 @@ export class MarkdownReporterComponent implements OnInit, AfterViewInit {
   @Input()
   content: string;
   charts: ReporterChartModel[] = [];
+  markdownData: any[] = [];
 
   constructor() {
   }
@@ -26,6 +27,7 @@ export class MarkdownReporterComponent implements OnInit, AfterViewInit {
 
   private buildChartData(content: string) {
     const tokens = marked.lexer(content);
+    console.log(tokens);
     this.buildData(tokens);
   }
 
@@ -42,12 +44,21 @@ export class MarkdownReporterComponent implements OnInit, AfterViewInit {
   }
 
   private buildData(tokens: marked.Token[]) {
-    const markdownData = [];
     for (const token of tokens) {
-      if (token.type === 'table') {
-        if (token.cells[0].length === 2) {
-          this.charts.push(this.buildMarkdownChart(token));
-        }
+      switch (token.type) {
+        case 'table':
+          if (token.cells[0].length === 2) {
+            const chartInfo = this.buildMarkdownChart(token);
+            this.charts.push(chartInfo);
+            this.markdownData.push({
+              type: 'table',
+              data: chartInfo
+            });
+          }
+          break;
+        default:
+          this.markdownData.push(token);
+          break;
       }
     }
   }

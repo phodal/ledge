@@ -1,3 +1,5 @@
+来源：[http://www.idcquan.com/Special/2019trucs/](http://www.idcquan.com/Special/2019trucs/)
+
 | 敏捷开发技术 | 占比 |
 |-------------|---------|
 | 每日站会     | 50.93% |
