@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as mdData from 'raw-loader!../../../assets/docs/reporter.md';
 
 @Component({
   selector: 'app-reporter',
@@ -6,45 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reporter.component.scss']
 })
 export class ReporterComponent implements OnInit {
-  content = `
-| 敏捷开发技术 | 占比 |
-|-------------|---------|
-| 每日站会     | 50.93% |
-| Sprint/迭代计划会议 | 40.15% |
-| 发布计划 | 38.29% |
-| 任务板 | 36.43% |
-| Sprint / 迭代评审会议 | 33.46% |
-| Sprint / 短迭代（1-4周）| 31.78% |
-| Sprint / 迭代回顾会议 | 30.30% |
-| 产品路线图 | 16.73% |
-| 燃尽图 | 16.73% |
-| 用户故事 | 15.61% |
-| 产品负责人 | 15.43% |
-| 计划扑克 | 12.08% |
-| 全功能团队 | 10.41% |
-| 完成定义（DoD）| 7.99% |
-| 用户故事地图 | 5.76% |
-| 精益用户体验设计 | 3.72% |
-| 速率 | 3.72% |
-| 其他 | 0.74% |
-
-| 敏捷工程实践 | 占比 |
-|-------------|-----|
-| 其他 | 0.19%  |
-| 演进式设计 | 2.79%  |
-| 实例化需求 | 3.53%  |
-| 探索性测试 | 6.51%  |
-| 代码集体拥有权 | 7.99%  |
-| 结对编程 | 9.48%  |
-| 测试驱动开发 | 10.97%  |
-| 自动化验收测试 | 11.52%  |
-| 重构 | 30.67%  |
-| 持续部署 | 37.46%  |
-| 自动构建 | 38.85%  |
-| 持续集成 | 45.89%  |
-| 单元测试 | 55.39  |
-| 编码规范 | 59.48%  |
-  `;
+  content = mdData.default;
 
   constructor() { }
 
