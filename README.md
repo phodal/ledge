@@ -66,6 +66,8 @@ yarn start
 
 ### Plugins 
 
+todo: fix Angular elements bug
+
  - https://github.com/phodal/devops-path
  - https://github.com/phodal/devops-periodic
  
@@ -127,11 +129,11 @@ config: {"type": "slider"}
  
 ## Inspired by
 
-Fluency
+Fluency model:
 
- - http://agilefluency.org/
+ - [http://agilefluency.org/](http://agilefluency.org/)
 
-Periodic
+Periodic based on:
 
  - [https://stackblitz.com/edit/ng-periodic-table](https://stackblitz.com/edit/ng-periodic-table)
  - [https://www.nexthink.com/periodic-table/](https://www.nexthink.com/periodic-table/)
