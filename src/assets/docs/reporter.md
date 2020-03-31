@@ -40,6 +40,36 @@
 | 单元测试 | 55.39  |
 | 编码规范 | 59.48%  |
 
+## DevOps 2019 报告
+
+来源：[https://services.google.com/fh/files/misc/state-of-devops-2019.pdf](https://services.google.com/fh/files/misc/state-of-devops-2019.pdf)
+
+### 采用 DevOps 的行业
+
+| Industry | 占比 |
+|-|-|
+| 技术 | 38% |
+| 金融服务 | 12% |
+| 零售/消费/电子商务 | 9% |
+| 其它 | 9% |
+| 医疗保健和制药 | 5％ |
+| 政府 | 5% |
+| 媒体/娱乐 | 4% |
+| 保险 | 4% |
+| 教育 | 4% |
+| 工业和制造业 | 4% |
+| 电信 | 3% |
+| 能源 | 3% |
+| 非营利 | 1% |
+
+
+## Test
+
 ```javascript
 console.log('hello, world');
 ```
+
+| | normal | table |
+|-|-|-|
+| | | |
+| | | |
