@@ -21,17 +21,9 @@ export class MarkdownChartComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     const myChart = echarts.init(this.reporter.nativeElement);
-    console.log(this.data);
     const builderJson = this.data.barChart;
-    // const sortData = this.sort(builderJson);
-    console.log(builderJson);
     myChart.setOption(this.buildBarChartOption(builderJson) as any);
   }
-
-  //
-  // private sort(builderJson: { xData: ChartData[]; yData: ChartData[][] }) {
-  //   return Object.keys(builderJson).map(key => builderJson[key]).sort((a, b) => a.value - b.value);
-  // }
 
   private buildBarChartOption(sortData: any) {
     return {
