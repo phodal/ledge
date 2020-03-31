@@ -18,7 +18,7 @@ describe('MarkdownChartComponent', () => {
     component = fixture.componentInstance;
     component.data = {
       title: 'hello',
-      chartData: []
+      barChart: []
     };
     fixture.detectChanges();
   });

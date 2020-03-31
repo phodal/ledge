@@ -33,12 +33,8 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit {
   }
 
   private getColorByIndex(i: number) {
-    d3.scaleLinear()
-      .domain([0, 10])
-      .range([0, 600]);
-
     const colors = d3.scaleLinear()
-      .domain([0, 20])
+      .domain([0, 8])
       .range([d3.rgb('#ff4081'), d3.rgb('#66C2A5')] as any);
 
     return colors(i);
@@ -63,20 +59,18 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit {
           const codeBlock = token as Tokens.Code;
           if (codeBlock.lang === 'chart') {
             const chartData = LedgeMarkdownConverter.toJson(codeBlock.text);
-            if (chartData.config.multiset) {
-              console.log(chartData.tables[0])
-
-              this.markdownData.push({
-                type: 'chart',
-                data: this.buildBarChartData(chartData.tables[0])
-              });
-            }
+            this.markdownData.push({
+              type: 'chart',
+              data: this.buildBarChartData(chartData.tables[0])
+            });
           } else {
             this.markdownData.push(token);
           }
           break;
+        case 'space':
+          break;
         default:
-          console.log(token);
+          // console.log(token);
           this.markdownData.push(token);
           break;
       }
@@ -86,16 +80,22 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit {
   private buildBarChartData(token: marked.Table) {
     const chart: ReporterChartModel = {
       title: token.header[0],
-      chartData: []
+      barChart: {
+        xData: [],
+        yData: []
+      }
     };
-    // tslint:disable-next-line:prefer-for-of
-    for (let i = 0; i < token.cells.length; i++) {
-      const cell = token.cells[i];
-      chart.chartData.push({
-        name: cell[0],
-        value: parseFloat(cell[1]),
-        itemStyle: {color: this.getColorByIndex(i)}
-      });
+
+    chart.barChart.xData = token.cells[0];
+    for (let i = 1; i < token.cells.length; i++) {
+      const row = [];
+      for (const cell of token.cells[i]) {
+        row.push({
+          value: cell,
+          itemStyle: {color: this.getColorByIndex(i)}
+        });
+      }
+      chart.barChart.yData.push(row);
     }
     return chart;
   }

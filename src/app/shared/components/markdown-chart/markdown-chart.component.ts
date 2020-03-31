@@ -1,6 +1,6 @@
-import {AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import * as echarts from 'echarts';
-import {ReporterChartModel} from '../model/reporter-chart.model';
+import { ChartData, ReporterChartModel } from '../model/reporter-chart.model';
 
 @Component({
   selector: 'component-markdown-chart',
@@ -22,10 +22,16 @@ export class MarkdownChartComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     const myChart = echarts.init(this.reporter.nativeElement);
     console.log(this.data);
-    const builderJson = this.data.chartData;
-    const sortData = Object.keys(builderJson).map(key => builderJson[key]).sort((a, b) => a.value - b.value);
-    myChart.setOption(this.buildBarChartOption(sortData) as any);
+    const builderJson = this.data.barChart;
+    // const sortData = this.sort(builderJson);
+    console.log(builderJson);
+    myChart.setOption(this.buildBarChartOption(builderJson) as any);
   }
+
+  //
+  // private sort(builderJson: { xData: ChartData[]; yData: ChartData[][] }) {
+  //   return Object.keys(builderJson).map(key => builderJson[key]).sort((a, b) => a.value - b.value);
+  // }
 
   private buildBarChartOption(sortData: any) {
     return {
@@ -44,12 +50,25 @@ export class MarkdownChartComponent implements OnInit, AfterViewInit {
       }],
       yAxis: [{
         type: 'category',
-        data: sortData.map(data => data.name)
+        data: sortData.xData
       }],
-      series: [{
+      series: this.buildSeries(sortData.yData)
+    };
+  }
+
+  private buildSeries(sortData: ChartData[][]) {
+    const barSeries = [];
+
+    for (const y of sortData) {
+      if (typeof y[0].value === 'string') {
+        y.map((item) => {
+          item.value = parseFloat(item.value as string);
+        });
+      }
+
+      barSeries.push({
         type: 'bar',
-        stack: 'chart',
-        data: sortData,
+        data: y,
         label: {
           normal: {
             show: true,
@@ -57,7 +76,9 @@ export class MarkdownChartComponent implements OnInit, AfterViewInit {
             formatter: data => data.value + '%'
           }
         }
-      }]
-    };
+      });
+    }
+
+    return barSeries;
   }
 }
