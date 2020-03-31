@@ -23,6 +23,7 @@ $name-font-size: 0.75rem;
             @include listItemStyle();
             font-size: $default-font-size;
             flex: 1 0 auto;
+            overflow: auto;
 
             .name {
                 color: #fff;
