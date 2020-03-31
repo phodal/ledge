@@ -16,7 +16,7 @@ export class ProcessTableComponent implements OnInit {
   @Input()
   tableValue: string;
   processTable: ProcessTable = {
-    headers: [],
+    header: [],
     cells: []
   };
   headerSize = 0;
@@ -35,7 +35,7 @@ export class ProcessTableComponent implements OnInit {
         this.processTable.headers = token.header;
         this.processTable.cells = this.transpose(token.cells);
 
-        this.headerSize = this.processTable.headers.length;
+        this.headerSize = this.processTable.header.length;
       }
     }
   }

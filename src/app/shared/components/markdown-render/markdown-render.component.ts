@@ -408,8 +408,8 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
 
   private buildTableProcess(code: any) {
     let resultStr = '';
-    const {headers, cells} = LedgeMarkdownConverter.toJson(code).tables[0];
-    resultStr += this.buildProcessHeader(this.buildHeaderItem(headers));
+    const {header, cells} = LedgeMarkdownConverter.toJson(code).tables[0];
+    resultStr += this.buildProcessHeader(this.buildHeaderItem(header));
     const bodyResult = this.buildTableBody(cells);
 
     resultStr += `<div class="table-space"></div><div class="flex-table row">${bodyResult}</div>`;
@@ -433,11 +433,11 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     return bodyResult;
   }
 
-  private buildHeaderItem(headers: any[]) {
+  private buildHeaderItem(header: any[]) {
     let headerStr = '';
-    for (let index = 0; index < headers.length; index++) {
-      const header = headers[index];
-      headerStr += this.buildProcessHeaderItem(index, header);
+    for (let index = 0; index < header.length; index++) {
+      const head = header[index];
+      headerStr += this.buildProcessHeaderItem(index, head);
     }
 
     return headerStr;

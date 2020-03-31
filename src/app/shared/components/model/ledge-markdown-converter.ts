@@ -36,10 +36,9 @@ const LedgeMarkdownConverter = {
           break;
         }
         case 'table' : {
-          const headers = token.header;
           const cells = this.transpose(token.cells);
           tables.push({
-            headers,
+            header: token.header,
             cells
           });
           break;

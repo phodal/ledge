@@ -2,6 +2,8 @@ import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import marked from 'marked/lib/marked';
 import { ReporterChartModel } from '../model/reporter-chart.model';
 import * as d3 from 'd3';
+import { Tokens } from 'marked';
+import LedgeMarkdownConverter from '../model/ledge-markdown-converter';
 
 @Component({
   selector: 'component-markdown-reporter',
@@ -27,7 +29,6 @@ export class MarkdownReporterComponent implements OnInit, AfterViewInit {
 
   private buildChartData(content: string) {
     const tokens = marked.lexer(content);
-    console.log(tokens);
     this.buildData(tokens);
   }
 
@@ -48,12 +49,28 @@ export class MarkdownReporterComponent implements OnInit, AfterViewInit {
       switch (token.type) {
         case 'table':
           if (token.cells[0].length === 2) {
-            const chartInfo = this.buildMarkdownChart(token);
+            const chartInfo = this.buildBarChartData(token);
             this.charts.push(chartInfo);
             this.markdownData.push({
               type: 'chart',
               data: chartInfo
             });
+          } else {
+            this.markdownData.push(token);
+          }
+          break;
+        case 'code':
+          const codeBlock = token as Tokens.Code;
+          if (codeBlock.lang === 'chart') {
+            const chartData = LedgeMarkdownConverter.toJson(codeBlock.text);
+            if (chartData.config.multiset) {
+              console.log(chartData.tables[0])
+
+              this.markdownData.push({
+                type: 'chart',
+                data: this.buildBarChartData(chartData.tables[0])
+              });
+            }
           } else {
             this.markdownData.push(token);
           }
@@ -66,7 +83,7 @@ export class MarkdownReporterComponent implements OnInit, AfterViewInit {
     }
   }
 
-  private buildMarkdownChart(token: marked.Token) {
+  private buildBarChartData(token: marked.Table) {
     const chart: ReporterChartModel = {
       title: token.header[0],
       chartData: []
