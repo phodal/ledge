@@ -81,12 +81,18 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit {
     const chart: ReporterChartModel = {
       title: token.header[0],
       barChart: {
-        xData: [],
-        yData: []
+        xAxis: [],
+        yAxis: []
       }
     };
 
-    chart.barChart.xData = token.cells[0];
+    chart.barChart.xAxis = token.cells[0];
+
+    this.buildYAxis(token, chart);
+    return chart;
+  }
+
+  private buildYAxis(token: marked.Table, chart: ReporterChartModel) {
     const tableColumnLength = token.cells.length;
     for (let i = 1; i < tableColumnLength; i++) {
       const row = [];
@@ -102,9 +108,9 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit {
           itemStyle: {color}
         });
       }
-      chart.barChart.yData.push(row);
+
+      chart.barChart.yAxis.push(row);
     }
-    return chart;
   }
 
   stringify(str: any) {

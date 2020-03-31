@@ -4,10 +4,12 @@ export interface ChartData {
   itemStyle: any;
 }
 
+export interface BarChart {
+  xAxis: ChartData[];
+  yAxis: ChartData[][];
+}
+
 export interface ReporterChartModel {
   title: string;
-  barChart?: {
-    xData: ChartData[],
-    yData: ChartData[][]
-  };
+  barChart?: BarChart;
 }

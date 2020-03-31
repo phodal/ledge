@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import * as echarts from 'echarts';
-import { ChartData, ReporterChartModel } from '../model/reporter-chart.model';
+import { BarChart, ChartData, ReporterChartModel } from '../model/reporter-chart.model';
 
 @Component({
   selector: 'component-markdown-chart',
@@ -25,7 +25,7 @@ export class MarkdownChartComponent implements OnInit, AfterViewInit {
     myChart.setOption(this.buildBarChartOption(builderJson) as any);
   }
 
-  private buildBarChartOption(sortData: any) {
+  private buildBarChartOption(sortData: BarChart) {
     return {
       tooltip: {},
       title: [{
@@ -42,9 +42,9 @@ export class MarkdownChartComponent implements OnInit, AfterViewInit {
       }],
       yAxis: [{
         type: 'category',
-        data: sortData.xData
+        data: sortData.xAxis
       }],
-      series: this.buildSeries(sortData.yData)
+      series: this.buildSeries(sortData.yAxis)
     };
   }
 
