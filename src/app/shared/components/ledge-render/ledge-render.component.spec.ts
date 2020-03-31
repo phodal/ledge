@@ -1,16 +1,18 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LedgeRenderComponent } from './ledge-render.component';
+import { SharedModule } from '../../shared.module';
 
-describe('MarkdownReporterComponent', () => {
+describe('LedgeRender', () => {
   let component: LedgeRenderComponent;
   let fixture: ComponentFixture<LedgeRenderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LedgeRenderComponent ]
+      imports: [SharedModule],
+      declarations: [LedgeRenderComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

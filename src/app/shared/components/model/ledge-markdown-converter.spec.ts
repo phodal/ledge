@@ -10,7 +10,7 @@ describe('LedgeMarkdownConverter', () => {
 `;
     const json = LedgeMarkdownConverter.toJson(code);
     expect(json.tables.length).toEqual(1);
-    expect(json.tables[0].headers.length).toEqual(3);
+    expect(json.tables[0].header.length).toEqual(3);
     expect(json.tables[0].cells.length).toEqual(3);
     expect(json.tables[0].cells[0].length).toEqual(2);
   });
