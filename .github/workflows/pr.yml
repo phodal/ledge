@@ -5,7 +5,7 @@ name: CI
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
-  push:
+  pull_request:
     branches: [master]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -28,14 +28,7 @@ jobs:
         run: |
           npm install -g @angular/cli
           npm install
-      #    - name: Testing
-      #      run: npm test --configuration=ci
       - name: Build
         run: ng build --prod
-     - name: Deploy 🚀
-       uses: JamesIves/github-pages-deploy-action@releases/v3
-       with:
-         ACCESS_TOKEN: ${{ secrets.SuperSecret }}
-         BRANCH: gh-pages # The branch the action should deploy to.
-         REPOSITORY_NAME: "phodal/do"
-         FOLDER: dist/ledge
+      - name: Testing
+        run: ng test
