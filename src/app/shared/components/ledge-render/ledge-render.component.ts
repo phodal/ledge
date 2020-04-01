@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import marked from 'marked/lib/marked';
-import { ReporterChartModel } from '../model/reporter-chart.model';
+import { LedgeChartModel } from '../model/ledge-chart.model';
 import { Tokens, TokensList } from 'marked';
 import LedgeMarkdownConverter from '../model/ledge-markdown-converter';
 
@@ -13,7 +13,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
   @Input()
   content: string;
 
-  charts: ReporterChartModel[] = [];
+  charts: LedgeChartModel[] = [];
   markdownData: any[] = [];
 
   constructor() {

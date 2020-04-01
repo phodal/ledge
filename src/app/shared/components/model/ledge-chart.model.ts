@@ -9,7 +9,7 @@ export interface BarChart {
   yAxis: ChartData[][];
 }
 
-export interface ReporterChartModel {
+export interface LedgeChartModel {
   title: string;
   barChart?: BarChart;
 }

@@ -1,8 +1,7 @@
 import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import * as echarts from 'echarts';
-import { BarChart, ChartData, LedgeTable, ReporterChartModel } from '../../../model/reporter-chart.model';
+import { ChartData, LedgeTable, LedgeChartModel } from '../../../model/ledge-chart.model';
 import * as d3 from 'd3';
-import marked from 'marked';
 
 @Component({
   selector: 'ledge-bar-chart',
@@ -35,8 +34,8 @@ export class LedgeBarChartComponent implements OnInit, AfterViewInit {
     return colors(i);
   }
 
-  private buildBarChartData(token: LedgeTable): ReporterChartModel {
-    const chart: ReporterChartModel = {
+  private buildBarChartData(token: LedgeTable): LedgeChartModel {
+    const chart: LedgeChartModel = {
       title: token.header[0],
       barChart: {
         xAxis: [],
@@ -50,7 +49,7 @@ export class LedgeBarChartComponent implements OnInit, AfterViewInit {
     return chart;
   }
 
-  private buildYAxis(token: LedgeTable, chart: ReporterChartModel) {
+  private buildYAxis(token: LedgeTable, chart: LedgeChartModel) {
     const tableColumnLength = token.cells.length;
     for (let i = 1; i < tableColumnLength; i++) {
       const row = [];
@@ -71,7 +70,7 @@ export class LedgeBarChartComponent implements OnInit, AfterViewInit {
     }
   }
 
-  private buildBarChartOption(sortData: ReporterChartModel) {
+  private buildBarChartOption(sortData: LedgeChartModel) {
     return {
       tooltip: {},
       title: [{
