@@ -52,35 +52,13 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
     for (const token of tokens) {
       switch (token.type) {
         case 'table':
-          if (token.cells[0].length === 2) {
-            const chartInfo = this.buildBarChartData(token);
-            this.charts.push(chartInfo);
-            this.markdownData.push({
-              type: 'chart',
-              data: chartInfo
-            });
-          } else {
-            this.markdownData.push(token);
-          }
+          this.handleTable(token);
           break;
         case 'code':
-          const codeBlock = token as Tokens.Code;
-          if (codeBlock.lang === 'chart') {
-            const chartData = LedgeMarkdownConverter.toJson(codeBlock.text);
-            this.markdownData.push({
-              type: 'chart',
-              data: this.buildBarChartData(chartData.tables[0])
-            });
-          } else {
-            this.markdownData.push(token);
-          }
+          this.handleCode(token);
           break;
         case 'paragraph':
-          const inline = marked.inlineLexer(token.text, tokens.links);
-          this.markdownData.push({
-            type: 'paragraph',
-            data: inline
-          })
+          this.handleParaGraph(token, tokens);
           break;
         case 'space':
           break;
@@ -88,6 +66,40 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
           this.markdownData.push(token);
           break;
       }
+    }
+  }
+
+  private handleParaGraph(token: marked.Tokens.Paragraph, tokens: TokensList) {
+    const inline = marked.inlineLexer(token.text, tokens.links);
+    this.markdownData.push({
+      type: 'paragraph',
+      data: inline
+    });
+  }
+
+  private handleCode(token: marked.Tokens.Code) {
+    const codeBlock = token as Tokens.Code;
+    if (codeBlock.lang === 'chart') {
+      const chartData = LedgeMarkdownConverter.toJson(codeBlock.text);
+      this.markdownData.push({
+        type: 'chart',
+        data: this.buildBarChartData(chartData.tables[0])
+      });
+    } else {
+      this.markdownData.push(token);
+    }
+  }
+
+  private handleTable(token: marked.Tokens.Table) {
+    if (token.cells[0].length === 2) {
+      const chartInfo = this.buildBarChartData(token);
+      this.charts.push(chartInfo);
+      this.markdownData.push({
+        type: 'chart',
+        data: chartInfo
+      });
+    } else {
+      this.markdownData.push(token);
     }
   }
 
