@@ -14,7 +14,7 @@
       <button mat-button routerLink="/think-tank" routerLinkActive="active">智库</button>
       <mat-menu #appMenu="matMenu">
         <button mat-menu-item routerLink="/design" routerLinkActive="active">设计 DevOps</button>
-        <button mat-button routerLink="/report" routerLinkActive="active">年度报告</button>
+        <button mat-menu-item routerLink="/report" routerLinkActive="active">年度报告</button>
       </mat-menu>
 
       <button mat-button [matMenuTriggerFor]="appMenu">
