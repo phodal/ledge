@@ -33,7 +33,7 @@ jobs:
           yarn install
 
       - name: Build
-        run: ng build --prod
+        run: yarn build:ci
 
       - name: Testing
         run: yarn test:ci

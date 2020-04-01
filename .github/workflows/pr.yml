@@ -32,4 +32,4 @@ jobs:
       - name: Testing
         run: yarn test:ci
       - name: Build
-        run: ng build --prod
+        run: yarn build:ci
