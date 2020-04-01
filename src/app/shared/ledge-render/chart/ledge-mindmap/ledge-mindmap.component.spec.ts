@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { LedgeMindmapComponent } from './ledge-mindmap.component';
 
-describe('LedgeMindmapComponent', () => {
+
+xdescribe('LedgeMindmapComponent', () => {
   let component: LedgeMindmapComponent;
   let fixture: ComponentFixture<LedgeMindmapComponent>;
 
