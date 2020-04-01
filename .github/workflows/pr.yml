@@ -30,5 +30,5 @@ jobs:
           npm install
       - name: Build
         run: ng build --prod
-      - name: Testing
-        run: ng test
+#      - name: Testing
+#        run: ng test
