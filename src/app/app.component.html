@@ -4,17 +4,18 @@
     <span class="spacer"></span>
     <div class="right">
       <button mat-button routerLink="/home" routerLinkActive="active">首页</button>
-      <button mat-button routerLink="/casestudy" routerLinkActive="active">案例学习</button>
+      <button mat-button routerLink="/case-study" routerLinkActive="active">案例学习</button>
       <button mat-button routerLink="/pattern" routerLinkActive="active">模式与原则</button>
       <button mat-button routerLink="/practise" routerLinkActive="active">最佳实践</button>
       <button mat-button routerLink="/manual" routerLinkActive="active">操作手册</button>
       <button mat-button routerLink="/tool" routerLinkActive="active">工具</button>
       <button mat-button routerLink="/mobile" routerLinkActive="active">移动端</button>
       <button mat-button routerLink="/maturity" routerLinkActive="active">度量</button>
+      <button mat-button routerLink="/report" routerLinkActive="active">年度报告</button>
       <button mat-button routerLink="/think-tank" routerLinkActive="active">智库</button>
       <mat-menu #appMenu="matMenu">
         <button mat-menu-item routerLink="/design" routerLinkActive="active">设计 DevOps</button>
-        <button mat-menu-item routerLink="/report" routerLinkActive="active">年度报告</button>
+        <button mat-menu-item routerLink="/resources" routerLinkActive="active">相关资源</button>
       </mat-menu>
 
       <button mat-button [matMenuTriggerFor]="appMenu">
