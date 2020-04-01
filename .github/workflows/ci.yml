@@ -28,14 +28,15 @@ jobs:
 
       - name: Install
         run: |
-          npm install -g @angular/cli
-          npm install
+          npm install -g yarn
+          yarn global add @angular/cli
+          yarn install
 
       - name: Build
-        run: ng build --prod
-#
-#      - name: Testing
-#        run: ng test
+        run: yarn build:ci
+
+      - name: Testing
+        run: yarn test:ci
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3

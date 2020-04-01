@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { LedgeBarChartComponent } from './ledge-bar-chart.component';
+
 
 describe('MarkdownChartComponent', () => {
   let component: LedgeBarChartComponent;
@@ -17,11 +17,8 @@ describe('MarkdownChartComponent', () => {
     fixture = TestBed.createComponent(LedgeBarChartComponent);
     component = fixture.componentInstance;
     component.data = {
-      title: 'hello',
-      barChart: {
-        xAxis: [],
-        yAxis: []
-      }
+      header: [],
+      cells: [[]]
     };
     fixture.detectChanges();
   });

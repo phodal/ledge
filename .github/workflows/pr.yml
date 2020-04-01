@@ -26,9 +26,10 @@ jobs:
           node-version: "10.x"
       - name: Install
         run: |
-          npm install -g @angular/cli
-          npm install
+          npm install -g yarn
+          yarn global add @angular/cli
+          yarn install
+      - name: Testing
+        run: yarn test:ci
       - name: Build
-        run: ng build --prod
-#      - name: Testing
-#        run: ng test
+        run: yarn build:ci
