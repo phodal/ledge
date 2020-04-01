@@ -77,6 +77,10 @@ todo: fix Angular elements bug
  - https://github.com/phodal/devops-path
  - https://github.com/phodal/devops-periodic
  
+## 编写案例
+
+测试语法：[http://devops.phodal.com/helper](http://devops.phodal.com/helper)
+ 
 ### Markdown 扩展语法
 
 通过语法高亮参数来扩展能力，如 
@@ -105,7 +109,7 @@ todo: fix Angular elements bug
    - slider。权衡滑块
    - line-chart。表图
 
-#### 权衡滑块示例
+### 权衡滑块示例
 
 ```
 ```toolset
