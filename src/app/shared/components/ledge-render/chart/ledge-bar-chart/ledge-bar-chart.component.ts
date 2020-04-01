@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import * as echarts from 'echarts';
-import { BarChart, ChartData, ReporterChartModel } from '../../../model/reporter-chart.model';
+import { BarChart, ChartData, LedgeTable, ReporterChartModel } from '../../../model/reporter-chart.model';
+import * as d3 from 'd3';
+import marked from 'marked';
 
 @Component({
   selector: 'ledge-bar-chart',
@@ -9,7 +11,7 @@ import { BarChart, ChartData, ReporterChartModel } from '../../../model/reporter
 })
 export class LedgeBarChartComponent implements OnInit, AfterViewInit {
   @Input()
-  data: ReporterChartModel;
+  data: LedgeTable;
 
   @ViewChild('reporter', {}) reporter: ElementRef;
 
@@ -21,15 +23,59 @@ export class LedgeBarChartComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     const myChart = echarts.init(this.reporter.nativeElement);
-    const builderJson = this.data.barChart;
+    const builderJson = this.buildBarChartData(this.data);
     myChart.setOption(this.buildBarChartOption(builderJson) as any);
   }
 
-  private buildBarChartOption(sortData: BarChart) {
+  private getColorByIndex(i: number) {
+    const colors = d3.scaleLinear()
+      .domain([0, 8])
+      .range([d3.rgb('#ff4081'), d3.rgb('#66C2A5')] as any);
+
+    return colors(i);
+  }
+
+  private buildBarChartData(token: LedgeTable): ReporterChartModel {
+    const chart: ReporterChartModel = {
+      title: token.header[0],
+      barChart: {
+        xAxis: [],
+        yAxis: []
+      }
+    };
+
+    chart.barChart.xAxis = token.cells[0];
+
+    this.buildYAxis(token, chart);
+    return chart;
+  }
+
+  private buildYAxis(token: LedgeTable, chart: ReporterChartModel) {
+    const tableColumnLength = token.cells.length;
+    for (let i = 1; i < tableColumnLength; i++) {
+      const row = [];
+      const originRow = token.cells[i];
+
+      for (let j = 0; j < originRow.length; j++) {
+        let color = this.getColorByIndex(i);
+        if (tableColumnLength === 2) {
+          color = this.getColorByIndex(j);
+        }
+        row.push({
+          value: originRow[j],
+          itemStyle: {color}
+        });
+      }
+
+      chart.barChart.yAxis.push(row);
+    }
+  }
+
+  private buildBarChartOption(sortData: ReporterChartModel) {
     return {
       tooltip: {},
       title: [{
-        text: this.data.title,
+        text: sortData.title,
         left: '25%',
         textAlign: 'center'
       }],
@@ -42,9 +88,9 @@ export class LedgeBarChartComponent implements OnInit, AfterViewInit {
       }],
       yAxis: [{
         type: 'category',
-        data: sortData.xAxis
+        data: sortData.barChart.xAxis
       }],
-      series: this.buildSeries(sortData.yAxis)
+      series: this.buildSeries(sortData.barChart.yAxis)
     };
   }
 

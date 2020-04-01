@@ -13,3 +13,8 @@ export interface ReporterChartModel {
   title: string;
   barChart?: BarChart;
 }
+
+export interface LedgeTable {
+  header: any[];
+  cells: any[][];
+}
