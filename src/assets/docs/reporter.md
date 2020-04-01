@@ -93,7 +93,7 @@
 config: {"type": "bar", "multiset": true}
 ```
 
-## Test
+# Syntax Test
 
 ```javascript
 console.log('hello, world');

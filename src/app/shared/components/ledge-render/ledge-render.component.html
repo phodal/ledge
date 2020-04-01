@@ -4,6 +4,7 @@
       <component-markdown-chart [data]="token.data"></component-markdown-chart>
     </div>
   </div>
+
   <div *ngIf="token.type === 'table'">
     <table>
       <thead>
@@ -18,11 +19,11 @@
       </tbody>
     </table>
   </div>
+
   <div *ngIf="token.type === 'paragraph'">
-    <div class="language-{{token.lang}}">
-      {{token.text}}
-    </div>
+    <div [innerHTML]="token.data"></div>
   </div>
+
   <div *ngIf="token.type === 'heading'">
     <h1 *ngIf="token.depth === 1">{{token.text}}</h1>
     <h2 *ngIf="token.depth === 2">{{token.text}}</h2>

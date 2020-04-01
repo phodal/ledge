@@ -2,7 +2,7 @@ import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import marked from 'marked/lib/marked';
 import { ReporterChartModel } from '../model/reporter-chart.model';
 import * as d3 from 'd3';
-import { Tokens } from 'marked';
+import { Tokens, TokensList } from 'marked';
 import LedgeMarkdownConverter from '../model/ledge-markdown-converter';
 
 @Component({
@@ -40,7 +40,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit {
     return colors(i);
   }
 
-  private buildData(tokens: marked.Token[]) {
+  private buildData(tokens: TokensList) {
     for (const token of tokens) {
       switch (token.type) {
         case 'table':
@@ -67,10 +67,16 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit {
             this.markdownData.push(token);
           }
           break;
+        case 'paragraph':
+          const inline = marked.inlineLexer(token.text, tokens.links);
+          this.markdownData.push({
+            type: 'paragraph',
+            data: inline
+          })
+          break;
         case 'space':
           break;
         default:
-          // console.log(token);
           this.markdownData.push(token);
           break;
       }
