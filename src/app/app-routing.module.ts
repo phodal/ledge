@@ -13,6 +13,7 @@ import {AwesomeToolComponent} from './presentation/awesome-tool/awesome-tool.com
 import {MobileComponent} from './presentation/mobile/mobile.component';
 import { ToolsetComponent } from './shared/toolset/toolset.component';
 import { LedgeHelperComponent } from './presentation/ledge-helper/ledge-helper.component';
+import { ThinkTankComponent } from './presentation/think-tank/think-tank.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: '/home'},
@@ -63,6 +64,10 @@ const routes: Routes = [
   {
     path: 'toolset',
     component: ToolsetComponent
+  },
+  {
+    path: 'think-tank',
+    component: ThinkTankComponent
   },
   {
     path: 'helper',

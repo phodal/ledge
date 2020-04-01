@@ -28,6 +28,7 @@ import { AwesomeToolComponent } from './presentation/awesome-tool/awesome-tool.c
 import { MobileComponent } from './presentation/mobile/mobile.component';
 import { ToolsetComponent } from './shared/toolset/toolset.component';
 import { LedgeHelperComponent } from './presentation/ledge-helper/ledge-helper.component';
+import { ThinkTankComponent } from './presentation/think-tank/think-tank.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { LedgeHelperComponent } from './presentation/ledge-helper/ledge-helper.c
     ReporterComponent,
     AwesomeToolComponent,
     MobileComponent,
-    LedgeHelperComponent
+    LedgeHelperComponent,
+    ThinkTankComponent
   ],
   imports: [
     SharedModule,
