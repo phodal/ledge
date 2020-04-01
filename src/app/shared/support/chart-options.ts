@@ -1,7 +1,5 @@
 const toolbox = {
   feature: {
-    dataView: {readOnly: false},
-    restore: {},
     saveAsImage: {}
   }
 };
