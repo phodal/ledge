@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import marked from 'marked/lib/marked';
 import { ReporterChartModel } from '../model/reporter-chart.model';
 import * as d3 from 'd3';
@@ -10,7 +10,7 @@ import LedgeMarkdownConverter from '../model/ledge-markdown-converter';
   templateUrl: './ledge-render.component.html',
   styleUrls: ['./ledge-render.component.scss']
 })
-export class LedgeRenderComponent implements OnInit, AfterViewInit {
+export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
   @Input()
   content: string;
 
@@ -21,14 +21,21 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.buildChartData(this.content);
+    this.renderContent(this.content);
   }
 
   ngAfterViewInit(): void {
 
   }
 
-  private buildChartData(content: string) {
+  ngOnChanges(changes: SimpleChanges): void {
+    const { content } = changes;
+    this.content = content.currentValue;
+    this.renderContent(this.content);
+  }
+
+  private renderContent(content: string) {
+    this.markdownData = [];
     const tokens = marked.lexer(content);
     this.buildData(tokens);
   }
