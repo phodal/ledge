@@ -1,8 +1,8 @@
-<div *ngFor="let token of markdownData" class="markdown-reporter markdown">
-  <div [ngSwitch]="token.type">
+<div *ngFor="let item of markdownData" class="markdown-reporter markdown">
+  <div [ngSwitch]="item.type">
     <div *ngSwitchCase="'chart'">
       <div class="charts">
-        <component-markdown-chart [data]="token.data"></component-markdown-chart>
+        <component-markdown-chart [data]="item.data"></component-markdown-chart>
       </div>
     </div>
 
@@ -10,11 +10,11 @@
       <table>
         <thead>
         <tr>
-          <th *ngFor="let h of token.header">{{h}}</th>
+          <th *ngFor="let h of item.header">{{h}}</th>
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let row of token.cells">
+        <tr *ngFor="let row of item.cells">
           <th *ngFor="let cell of row">{{cell}}</th>
         </tr>
         </tbody>
@@ -22,26 +22,45 @@
     </div>
 
     <div *ngSwitchCase="'paragraph'">
-      <div [innerHTML]="token.data"></div>
+      <div [innerHTML]="item.data"></div>
+    </div>
+
+    <div *ngSwitchCase="'process-table'">
+      <div class="process-table markdown-table">
+        {{stringify(item.data)}}
+        <div class="table-container" role="table" aria-label="Destinations">
+          <div class="flex-table header" role="rowgroup">
+            <div class="flex-row cell type_{{index}}" *ngFor="let header of item.data.header;let index = index;">
+              {{header}}
+            </div>
+          </div>
+        </div>
+        <div class="table-space"></div>
+        <div class="flex-table row">
+          <div class="table-column" *ngFor="let row of item.data.cells;">
+            <div class="cell" *ngFor="let cell of row">{{cell}}</div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div *ngSwitchCase="'heading'">
-      <h1 *ngIf="token.depth === 1">{{token.text}}</h1>
-      <h2 *ngIf="token.depth === 2">{{token.text}}</h2>
-      <h3 *ngIf="token.depth === 3">{{token.text}}</h3>
-      <h4 *ngIf="token.depth === 4">{{token.text}}</h4>
-      <h5 *ngIf="token.depth === 5">{{token.text}}</h5>
-      <h6 *ngIf="token.depth === 6">{{token.text}}</h6>
+      <h1 *ngIf="item.depth === 1">{{item.text}}</h1>
+      <h2 *ngIf="item.depth === 2">{{item.text}}</h2>
+      <h3 *ngIf="item.depth === 3">{{item.text}}</h3>
+      <h4 *ngIf="item.depth === 4">{{item.text}}</h4>
+      <h5 *ngIf="item.depth === 5">{{item.text}}</h5>
+      <h6 *ngIf="item.depth === 6">{{item.text}}</h6>
     </div>
 
     <div *ngSwitchCase="'code'">
-      <pre class="language-{{token.lang}}">
-        <code class="language-{{token.lang}}">{{token.text}}</code>
+      <pre class="language-{{item.lang}}">
+        <code class="language-{{item.lang}}">{{item.text}}</code>
       </pre>
     </div>
 
     <div *ngSwitchDefault>
-      {{stringify(token)}}
+      {{stringify(item)}}
     </div>
   </div>
 </div>
