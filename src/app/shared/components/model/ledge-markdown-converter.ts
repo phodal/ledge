@@ -16,7 +16,7 @@ const LedgeMarkdownConverter = {
     for (const token of tokens) {
       switch (token.type) {
         case 'list_start': {
-          result += '"childrens": [';
+          result += '"children": [';
           break;
         }
         case 'list_item_start': {

@@ -98,7 +98,7 @@ const MarkdownHelper = {
       }
       switch (token.type) {
         case 'list_start': {
-          result += '"childrens": [';
+          result += '"children": [';
           break;
         }
         case 'list_item_start': {
@@ -142,7 +142,7 @@ const MarkdownHelper = {
     result += '}';
 
     try {
-      tasks = JSON.parse(result).childrens;
+      tasks = JSON.parse(result).children;
     } catch (e) {
       tasks = originTasks;
     }

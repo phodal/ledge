@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LedgeRenderComponent } from './ledge-render.component';
-import { SharedModule } from '../../shared.module';
+import { SharedModule } from '../shared.module';
 
 describe('LedgeRender', () => {
   let component: LedgeRenderComponent;

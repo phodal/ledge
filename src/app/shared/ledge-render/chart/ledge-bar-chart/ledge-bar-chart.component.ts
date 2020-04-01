@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import * as echarts from 'echarts';
-import { ChartData, LedgeTable, LedgeChartModel } from '../../../model/ledge-chart.model';
+import { ChartData, LedgeTable, LedgeChartModel } from '../../../components/model/ledge-chart.model';
 import * as d3 from 'd3';
 
 @Component({

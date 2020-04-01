@@ -18,3 +18,12 @@ export interface LedgeTable {
   header: any[];
   cells: any[][];
 }
+
+export interface LedgeListItem {
+  children: LedgeListItem;
+  name: string;
+}
+
+export interface LedgeList {
+  children: LedgeListItem[];
+}

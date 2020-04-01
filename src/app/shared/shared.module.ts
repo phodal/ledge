@@ -10,12 +10,14 @@ import { MarkdownRadarChartComponent } from './components/markdown-radar-chart/m
 import { MarkdownRatingComponent } from './components/markdown-radar-chart/markdown-rating/markdown-rating.component';
 import { MarkdownRatingItemComponent } from './components/markdown-radar-chart/markdown-rating-item/markdown-rating-item.component';
 import { ProcessTableComponent } from './components/process-table/process-table.component';
-import { LedgeRenderComponent } from './components/ledge-render/ledge-render.component';
-import { LedgeBarChartComponent } from './components/ledge-render/chart/ledge-bar-chart/ledge-bar-chart.component';
+import { LedgeRenderComponent } from './ledge-render/ledge-render.component';
+import { LedgeBarChartComponent } from './ledge-render/chart/ledge-bar-chart/ledge-bar-chart.component';
 import { MarkdownTreeComponent } from './components/markdown-tree/markdown-tree.component';
-import Tocify from './components/markdown-render/tocify';
-import { MobileComponent } from '../presentation/mobile/mobile.component';
 import { ToolsetComponent } from './toolset/toolset.component';
+
+import Tocify from './components/markdown-render/tocify';
+import { LedgeMindmapComponent } from './ledge-render/chart/ledge-mindmap/ledge-mindmap.component';
+
 
 @NgModule({
   imports: [
@@ -52,6 +54,7 @@ import { ToolsetComponent } from './toolset/toolset.component';
     LedgeRenderComponent,
     LedgeBarChartComponent,
     MarkdownTreeComponent,
+    LedgeMindmapComponent,
 
     ToolsetComponent
   ],
@@ -67,6 +70,7 @@ import { ToolsetComponent } from './toolset/toolset.component';
     LedgeRenderComponent,
     LedgeBarChartComponent,
     MarkdownTreeComponent,
+    LedgeMindmapComponent,
 
     ToolsetComponent
   ],

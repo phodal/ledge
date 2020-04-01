@@ -26,7 +26,6 @@ import { ResourcesComponent } from './presentation/resources/resources.component
 import { ReporterComponent } from './presentation/reporter/reporter.component';
 import { AwesomeToolComponent } from './presentation/awesome-tool/awesome-tool.component';
 import { MobileComponent } from './presentation/mobile/mobile.component';
-import { ToolsetComponent } from './shared/toolset/toolset.component';
 import { LedgeHelperComponent } from './presentation/ledge-helper/ledge-helper.component';
 import { ThinkTankComponent } from './presentation/think-tank/think-tank.component';
 
@@ -65,7 +64,6 @@ import { ThinkTankComponent } from './presentation/think-tank/think-tank.compone
     DragulaModule.forRoot(),
   ],
   providers: [Title],
-  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

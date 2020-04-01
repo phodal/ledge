@@ -50,8 +50,8 @@ export class MarkdownTaskItemService {
         return tasks;
       }
 
-      if (task.childrens) {
-        task = this.deleteTaskByItem(task.childrens, item);
+      if (task.children) {
+        task = this.deleteTaskByItem(task.children, item);
       }
     }
 
@@ -80,16 +80,16 @@ export class MarkdownTaskItemService {
           }
         };
 
-        if (task.childrens) {
-          task.childrens.push(newItem);
+        if (task.children) {
+          task.children.push(newItem);
         } else {
-          task.childrens = [newItem];
+          task.children = [newItem];
         }
         return tasks;
       }
 
-      if (task.childrens) {
-        this.addTaskByItem(task.childrens, item, name);
+      if (task.children) {
+        this.addTaskByItem(task.children, item, name);
       }
     }
 
@@ -103,8 +103,8 @@ export class MarkdownTaskItemService {
         return tasks;
       }
 
-      if (task.childrens) {
-        this.updateTaskByItem(task.childrens, item);
+      if (task.children) {
+        this.updateTaskByItem(task.children, item);
       }
     }
 

@@ -115,8 +115,8 @@ export class MaturityComponent implements OnInit {
         this.indexString = '';
       }
 
-      if (task.childrens) {
-        this.taskToMarkdownList(task.childrens, hasChildren);
+      if (task.children) {
+        this.taskToMarkdownList(task.children, hasChildren);
       }
     }
 

@@ -305,7 +305,6 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   private buildListStyle(code: any) {
     const toJson = LedgeMarkdownConverter.toJson(code);
     const list = toJson.lists[0];
-    console.log(list);
     let childStr = '';
     childStr = this.buildListStyleChildren(list, childStr);
 
@@ -317,16 +316,16 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
 
   private buildListStyleChildren(list, childStr: string) {
     let index = 0;
-    for (const children of (list.childrens as any[])) {
+    for (const item of (list.children as any[])) {
       let subChildStr = '';
       let subChildClass = '';
-      if (children.childrens && children.childrens.length > 0) {
-        subChildStr = this.buildListStyleChildren(children, subChildStr);
+      if (item.children && item.children.length > 0) {
+        subChildStr = this.buildListStyleChildren(item, subChildStr);
         subChildClass = 'sub-item';
       }
 
       index++;
-      childStr += `<div class="list-style-item item-${index} ${subChildClass}">${children.name}${subChildStr}</div>`;
+      childStr += `<div class="list-style-item item-${index} ${subChildClass}">${item.name}${subChildStr}</div>`;
     }
 
     return childStr;
@@ -476,7 +475,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
 
   private toTreeData(data: any) {
     if (data.length === 1) {
-      const childrenInfo = this.transformTreeData(data[0].childrens);
+      const childrenInfo = this.transformTreeData(data[0].children);
       return {
         name: data[0].item.text,
         children: childrenInfo,
@@ -497,8 +496,8 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     for (const item of data) {
       const node: any = {};
       node.name = item.item.text;
-      if (item.childrens && item.childrens.length > 0) {
-        node.children = this.transformTreeData(item.childrens);
+      if (item.children && item.children.length > 0) {
+        node.children = this.transformTreeData(item.children);
       }
       nodes.push(node);
     }
@@ -576,8 +575,8 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     let items = [];
     items = MarkdownHelper.markdownToJSON(tokens, items);
 
-    const maxItem = maxBy(items, (d) => d.childrens.length);
-    const maxLength = maxItem.childrens.length;
+    const maxItem = maxBy(items, (d) => d.children.length);
+    const maxLength = maxItem.children.length;
 
     let maxWidthClass = '';
     const MAX_ONE_COLUMN = 10;
@@ -592,8 +591,8 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       const title = items[i].item.text;
       for (let j = 0; j < maxLength; j++) {
         let text = '';
-        if (items[i].childrens[j]) {
-          text = items[i].childrens[j].item.text;
+        if (items[i].children[j]) {
+          text = items[i].children[j].item.text;
         }
         if (text !== '') {
           itemsStr += `<div class="process-step-item ${maxWidthClass}">${text}</div>`;
@@ -649,7 +648,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   private getDataByType(json: { tables: any[]; lists: any[]; config: any }, type: any) {
     switch (type) {
       case 'slider':
-        return json.lists[0].childrens;
+        return json.lists[0].children;
       case 'line-chart':
         return json.tables[0];
       default:
