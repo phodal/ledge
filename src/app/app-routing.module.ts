@@ -12,6 +12,7 @@ import {ReporterComponent} from './presentation/reporter/reporter.component';
 import {AwesomeToolComponent} from './presentation/awesome-tool/awesome-tool.component';
 import {MobileComponent} from './presentation/mobile/mobile.component';
 import { ToolsetComponent } from './shared/toolset/toolset.component';
+import { LedgeHelperComponent } from './presentation/ledge-helper/ledge-helper.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: '/home'},
@@ -62,6 +63,10 @@ const routes: Routes = [
   {
     path: 'toolset',
     component: ToolsetComponent
+  },
+  {
+    path: 'helper',
+    component: LedgeHelperComponent
   }
 ];
 

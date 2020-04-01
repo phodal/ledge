@@ -27,6 +27,7 @@ import { ReporterComponent } from './presentation/reporter/reporter.component';
 import { AwesomeToolComponent } from './presentation/awesome-tool/awesome-tool.component';
 import { MobileComponent } from './presentation/mobile/mobile.component';
 import { ToolsetComponent } from './shared/toolset/toolset.component';
+import { LedgeHelperComponent } from './presentation/ledge-helper/ledge-helper.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ToolsetComponent } from './shared/toolset/toolset.component';
     ResourcesComponent,
     ReporterComponent,
     AwesomeToolComponent,
-    MobileComponent
+    MobileComponent,
+    LedgeHelperComponent
   ],
   imports: [
     SharedModule,
