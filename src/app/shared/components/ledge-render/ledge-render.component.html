@@ -33,9 +33,11 @@
       <h5 *ngIf="token.depth === 5">{{token.text}}</h5>
       <h6 *ngIf="token.depth === 6">{{token.text}}</h6>
     </div>
+
     <div *ngSwitchCase="'code'">
       <p>{{token.text}}</p>
     </div>
+
     <div *ngSwitchDefault>
       {{stringify(token)}}
     </div>

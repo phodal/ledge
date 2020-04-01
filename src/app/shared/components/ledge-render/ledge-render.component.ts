@@ -52,7 +52,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
     for (const token of tokens) {
       switch (token.type) {
         case 'table':
-          this.handleTable(token);
+          this.markdownData.push(token);
           break;
         case 'code':
           this.handleCode(token);
@@ -79,27 +79,17 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
 
   private handleCode(token: marked.Tokens.Code) {
     const codeBlock = token as Tokens.Code;
-    if (codeBlock.lang === 'chart') {
-      const chartData = LedgeMarkdownConverter.toJson(codeBlock.text);
-      this.markdownData.push({
-        type: 'chart',
-        data: this.buildBarChartData(chartData.tables[0])
-      });
-    } else {
-      this.markdownData.push(token);
-    }
-  }
-
-  private handleTable(token: marked.Tokens.Table) {
-    if (token.cells[0].length === 2) {
-      const chartInfo = this.buildBarChartData(token);
-      this.charts.push(chartInfo);
-      this.markdownData.push({
-        type: 'chart',
-        data: chartInfo
-      });
-    } else {
-      this.markdownData.push(token);
+    switch (codeBlock.lang) {
+      case 'chart':
+        const chartData = LedgeMarkdownConverter.toJson(codeBlock.text);
+        this.markdownData.push({
+          type: 'chart',
+          data: this.buildBarChartData(chartData.tables[0])
+        });
+        break;
+      default:
+        this.markdownData.push(token);
+        break;
     }
   }
 
