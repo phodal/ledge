@@ -6,10 +6,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ledge-helper.component.scss']
 })
 export class LedgeHelperComponent implements OnInit {
+  content = `
+# Syntax Test
+
+\`\`\`javascript
+console.log('hello, world');
+\`\`\`
+
+| | normal | table |
+|-|-|-|
+| | | |
+| | | |
+
+`;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  changeContent($event: any) {
+    this.content = $event;
+  }
 }

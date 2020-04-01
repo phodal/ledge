@@ -92,14 +92,3 @@
 
 config: {"type": "bar", "multiset": true}
 ```
-
-# Syntax Test
-
-```javascript
-console.log('hello, world');
-```
-
-| | normal | table |
-|-|-|-|
-| | | |
-| | | |

@@ -1,1 +1,5 @@
-<p>ledge-helper works!</p>
+<div class="helper">
+  <textarea class="source" cols="25" [ngModel]="content" (ngModelChange)="changeContent($event)">
+  </textarea>
+  <ledge-render class="sample" [content]="content"></ledge-render>
+</div>

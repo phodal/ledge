@@ -13,6 +13,7 @@ import LedgeMarkdownConverter from '../model/ledge-markdown-converter';
 export class LedgeRenderComponent implements OnInit, AfterViewInit {
   @Input()
   content: string;
+
   charts: ReporterChartModel[] = [];
   markdownData: any[] = [];
 

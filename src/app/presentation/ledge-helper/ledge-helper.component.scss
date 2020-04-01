@@ -1,0 +1,12 @@
+.helper {
+  display: flex;
+  flex-grow: 1;
+
+  height: calc(100vh - 68px);
+  overflow-y: scroll;
+  padding: 0 0.2em;
+}
+
+.source {
+  flex: 1;
+}
