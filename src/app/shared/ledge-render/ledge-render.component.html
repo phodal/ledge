@@ -1,15 +1,11 @@
 <div *ngFor="let item of markdownData" class="markdown-reporter markdown">
   <div [ngSwitch]="item.type">
     <div *ngSwitchCase="'chart'">
-      <div class="charts">
-        <ledge-bar-chart [data]="item.data"></ledge-bar-chart>
-      </div>
+      <ledge-bar-chart [data]="item.data"></ledge-bar-chart>
     </div>
 
     <div *ngSwitchCase="'mindmap'">
-      <div class="charts">
-        <ledge-mindmap [data]="item.data"></ledge-mindmap>
-      </div>
+      <ledge-mindmap [data]="item.data"></ledge-mindmap>
     </div>
 
     <div *ngSwitchCase="'table'">
