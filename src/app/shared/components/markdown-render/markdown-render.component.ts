@@ -201,9 +201,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     setTimeout(() => {
       this.renderChart();
       this.renderGraphviz();
-      // this.renderMermaid();
       this.renderEcharts();
-      // this.loadWebComponents();
     }, 50);
 
     setTimeout(() => this.gotoHeading(), 500);
@@ -272,8 +270,6 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       const lang = (infoStr || '').match(/\S*/)[0];
 
       switch (lang) {
-        case 'process':
-          return this.buildCodeProcess(code);
         case 'process-table':
           return this.buildTableProcess(code);
         case 'process-step':
@@ -290,12 +286,8 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
           return this.buildClassCode(code);
         case 'graphviz':
           return this.buildGraphvizData(code);
-        // case 'mermaid':
-        //   return this.buildMermaidData(code);
         case 'echarts':
           return this.buildEchartsData(code);
-        case 'webcomponents':
-          return this.buildWebComponents(code);
         case 'toolset':
           return this.buildToolsets(code);
         case 'list-style':
@@ -374,20 +366,6 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     }
 
     return html;
-  }
-
-  private buildCodeProcess(code: string) {
-    const splitCode = code.split(' -> ');
-    let items = '';
-
-    const length = splitCode.length;
-    for (let index = 0; index < length; index++) {
-      let str = splitCode[index];
-      str = str.substr(1, str.length - 2);
-      items += this.buildProcessHeaderItem(index, str);
-    }
-
-    return `<div class="process-table markdown-table">` + this.buildProcessHeader(items) + `</div>`;
   }
 
   private buildProcessHeaderItem(index: number, str: string) {
@@ -630,46 +608,6 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     return `<div class="markdown-process-step">${cols}</div>`;
   }
 
-  private buildMermaidData(code: any) {
-    this.mermaidIndex++;
-
-    this.mermaidData.push({
-      id: this.mermaidIndex,
-      code
-    });
-
-    return `<div class="mermaid-graph" id="mermaid-${this.mermaidIndex}"></div>`;
-  }
-
-  // https://github.com/mermaid-js/mermaid/issues/1175
-  private renderMermaid() {
-    // for (const graph of this.mermaidData) {
-    //   mermaid.initialize({
-    //     theme: 'default',
-    //     gantt: {
-    //       titleTopMargin: 25,
-    //       barHeight: 48,
-    //       barGap: 4,
-    //       topPadding: 50,
-    //       leftPadding: 75,
-    //       gridLineStartPadding: 35,
-    //       fontSize: 18,
-    //       fontFamily: '"Open-Sans", "sans-serif"',
-    //       numberSectionStyles: 4,
-    //       axisFormat: '%Y-%m-%d',
-    //     }
-    //   });
-    //
-    //   const element: any = document.getElementById('mermaid-' + graph.id);
-    //   if (element == null) {
-    //     return;
-    //   }
-    //   const graphDefinition = graph.code;
-    //   mermaid.render(`graphDiv${graph.id}`, graphDefinition, (svgCode, bindFunctions) => {
-    //     element.innerHTML = svgCode;
-    //   });
-    // }
-  }
 
   private buildEchartsData(code: any) {
     this.echartsIndex++;
@@ -689,29 +627,6 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       const mychart = echarts.init(chartEl as any);
       this.chartInstances.push(mychart);
       mychart.setOption(JSON.parse(chartInfo.data));
-    }
-  }
-
-  private buildWebComponents(code: any) {
-    this.webComponentsIndex++;
-
-    // todo: add security check
-    const id = 'webcomponents-' + this.webComponentsIndex;
-    const data = JSON.parse(code);
-    this.webComponentsData.push({
-      id,
-      data
-    });
-
-    return `<div class="webcomponents-plugins"><${data.name} id="${id}"></${data.name}></div>`;
-  }
-
-  private loadWebComponents() {
-    for (const wc of this.webComponentsData) {
-      const data = wc.data;
-      const script = this.renderer2.createElement('script');
-      script.src = data.src;
-      this.renderer2.appendChild(this.document.body, script);
     }
   }
 

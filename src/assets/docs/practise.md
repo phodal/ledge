@@ -376,9 +376,9 @@ or 强化反馈环
 ```graphviz
 digraph { 
   rankdir=LR;
-  "红" -> "绿"[label="写一个失败的测试"];
-  "绿" -> "重构"[label="让代码可以工作"];
-  "重构" -> "红"[dir="back" label="重构"];
+  "红 | 绿"[label="写一个失败的测试"];
+  "绿 | 重构"[label="让代码可以工作"];
+  "重构 | 红"[dir="back" label="重构"];
 } 
 ``` 
 
@@ -523,8 +523,9 @@ Commit Hook 示例：
 
 Push Hook 示例：
 
-```process
-"git push" -> "执行 prePush" -> "执行 lint" -> "执行 testing" -> "提交"
+```process-table
+| git push | 执行 prePush | 执行 lint | 执行 testing | 提交 |
+|-|-|-|-|-|
 ```
 
 提交信息规范（《[如何好一个 Git 提交信息及几种不同的规范](https://www.phodal.com/blog/how-to-write-a-better-git-commit-message/)》）：
@@ -1126,8 +1127,9 @@ Lionheart 项目的场景属性场景：
 
 ## 制造工具
 
-```process
-"个人实践" -> "记录流程" -> "形成统一语言" -> "抽象原则与模式" -> "标准化流程（工具）"
+```process-table
+| 个人实践 | 记录流程 | 形成统一语言 | 抽象原则与模式 | 标准化流程（工具） |
+|-|-|-|-|-|
 ```
 
 # 监控
