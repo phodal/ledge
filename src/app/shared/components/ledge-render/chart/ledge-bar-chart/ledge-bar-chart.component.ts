@@ -1,13 +1,13 @@
 import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import * as echarts from 'echarts';
-import { BarChart, ChartData, ReporterChartModel } from '../model/reporter-chart.model';
+import { BarChart, ChartData, ReporterChartModel } from '../../../model/reporter-chart.model';
 
 @Component({
-  selector: 'component-markdown-chart',
-  templateUrl: './markdown-chart.component.html',
-  styleUrls: ['./markdown-chart.component.scss']
+  selector: 'ledge-bar-chart',
+  templateUrl: './ledge-bar-chart.component.html',
+  styleUrls: ['./ledge-bar-chart.component.scss']
 })
-export class MarkdownChartComponent implements OnInit, AfterViewInit {
+export class LedgeBarChartComponent implements OnInit, AfterViewInit {
   @Input()
   data: ReporterChartModel;
 

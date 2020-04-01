@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MarkdownChartComponent } from './markdown-chart.component';
+import { LedgeBarChartComponent } from './ledge-bar-chart.component';
 
 describe('MarkdownChartComponent', () => {
-  let component: MarkdownChartComponent;
-  let fixture: ComponentFixture<MarkdownChartComponent>;
+  let component: LedgeBarChartComponent;
+  let fixture: ComponentFixture<LedgeBarChartComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MarkdownChartComponent ]
+      declarations: [ LedgeBarChartComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MarkdownChartComponent);
+    fixture = TestBed.createComponent(LedgeBarChartComponent);
     component = fixture.componentInstance;
     component.data = {
       title: 'hello',

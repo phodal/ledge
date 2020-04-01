@@ -2,7 +2,7 @@
   <div [ngSwitch]="item.type">
     <div *ngSwitchCase="'chart'">
       <div class="charts">
-        <component-markdown-chart [data]="item.data"></component-markdown-chart>
+        <ledge-bar-chart [data]="item.data"></ledge-bar-chart>
       </div>
     </div>
 
