@@ -11,6 +11,7 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 export class CaseStudyComponent implements OnInit {
   cases = [
     {displayName: '美团', source: 'meituan'},
+    {displayName: 'Ledge', source: 'ledge'},
     {displayName: '大型银行转型', source: 'tw-banks'},
     {displayName: 'DaoCloud', source: 'daocloud'},
     {displayName: '招商银行', source: 'cmb'},
