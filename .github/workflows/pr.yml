@@ -24,9 +24,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "10.x"
-        run: npm install -g yarn
       - name: Install
         run: |
+          npm install -g yarn
           yarn global add @angular/cli
           yarn install
       - name: Testing
