@@ -25,9 +25,19 @@
       <div [innerHTML]="item.data"></div>
     </div>
 
+    <div *ngSwitchCase="'process-step'">
+      <div class="markdown-process-step">
+        <div class="process-step-column" *ngFor="let row of item.data.childrens">
+          <div class="process-title">{{row.name}}</div>
+          <div class="process-body">
+            <div class="process-step-item" *ngFor="let cell of row.childrens">{{cell.name}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div *ngSwitchCase="'process-table'">
       <div class="process-table markdown-table">
-        {{stringify(item.data)}}
         <div class="table-container" role="table" aria-label="Destinations">
           <div class="flex-table header" role="rowgroup">
             <div class="flex-row cell type_{{index}}" *ngFor="let header of item.data.header;let index = index;">

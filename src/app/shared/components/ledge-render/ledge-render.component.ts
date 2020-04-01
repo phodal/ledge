@@ -87,6 +87,13 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
           data: this.buildBarChartData(chartData.tables[0])
         });
         break;
+      case 'process-step':
+        const stepData = LedgeMarkdownConverter.toJson(codeBlock.text);
+        this.markdownData.push({
+          type: 'process-step',
+          data: stepData.lists[0]
+        });
+        break;
       case 'process-table':
         const tableData = LedgeMarkdownConverter.toJson(codeBlock.text);
         this.markdownData.push({

@@ -74,6 +74,7 @@ config: {"type": "group-square"}
 	
 
 架构分析:
+
 ```process-step
  - 平台层
    - 运维平台
@@ -88,7 +89,7 @@ config: {"type": "group-square"}
  - 工具层
    - Gitlab
    - Phabricator 
-   -Jenkis on K8s
+   - Jenkins on K8s
    - 代码质量扫描
    - 安全/法律合规扫描
    - 二进制&产出物存储
