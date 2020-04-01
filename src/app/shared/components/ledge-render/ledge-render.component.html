@@ -35,7 +35,9 @@
     </div>
 
     <div *ngSwitchCase="'code'">
-      <p>{{token.text}}</p>
+      <pre class="language-{{token.lang}}">
+        <code class="language-{{token.lang}}">{{token.text}}</code>
+      </pre>
     </div>
 
     <div *ngSwitchDefault>
