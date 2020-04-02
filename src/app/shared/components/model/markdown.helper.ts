@@ -143,11 +143,11 @@ const MarkdownHelper = {
 
     try {
       tasks = JSON.parse(result).children;
+      tasks.config = config;
     } catch (e) {
       tasks = originTasks;
     }
 
-    tasks.config = config;
     return tasks;
   },
 
