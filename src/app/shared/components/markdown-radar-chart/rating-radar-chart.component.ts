@@ -1,4 +1,11 @@
-import { AfterViewInit, Component, ElementRef, forwardRef, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  forwardRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { MarkdownListModel } from '../model/markdown.model';
 import * as echarts from 'echarts';
@@ -6,18 +13,19 @@ import ChartOptions from '../../support/chart-options';
 import MarkdownHelper from '../model/markdown.helper';
 
 @Component({
-  selector: 'component-markdown-radar-chart',
-  templateUrl: './markdown-radar-chart.component.html',
-  styleUrls: ['./markdown-radar-chart.component.scss'],
+  selector: 'rating-radar-chart',
+  templateUrl: './rating-radar-chart.component.html',
+  styleUrls: ['./rating-radar-chart.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => MarkdownRadarChartComponent),
-      multi: true
-    }
-  ]
+      useExisting: forwardRef(() => RatingRadarChartComponent),
+      multi: true,
+    },
+  ],
 })
-export class MarkdownRadarChartComponent implements OnInit, AfterViewInit, ControlValueAccessor {
+export class RatingRadarChartComponent
+  implements OnInit, AfterViewInit, ControlValueAccessor {
   @ViewChild('baseElement', {}) baseElement: ElementRef;
   @ViewChild('chart', {}) chartEl: ElementRef;
 
@@ -26,18 +34,13 @@ export class MarkdownRadarChartComponent implements OnInit, AfterViewInit, Contr
   value: any;
   private disabled: boolean;
 
-  constructor() {
-  }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  onChange(value: any) {
+  onChange(value: any) {}
 
-  }
-
-  onTouched() {
-  }
+  onTouched() {}
 
   registerOnChange(fn: any): void {
     this.onChange = fn;
@@ -61,9 +64,7 @@ export class MarkdownRadarChartComponent implements OnInit, AfterViewInit, Contr
     this.render();
   }
 
-  ngAfterViewInit(): void {
-
-  }
+  ngAfterViewInit(): void {}
 
   updateModel($event: any) {
     this.onChange($event);
@@ -75,7 +76,7 @@ export class MarkdownRadarChartComponent implements OnInit, AfterViewInit, Contr
       const item: MarkdownListModel = task.item;
       MarkdownHelper.buildRatingValue(item);
 
-      current.push({name: item.text});
+      current.push({ name: item.text });
     }
 
     return current;
@@ -89,7 +90,7 @@ export class MarkdownRadarChartComponent implements OnInit, AfterViewInit, Contr
     const myChart = echarts.init(this.chartEl.nativeElement);
     const option = ChartOptions.buildRadarChartOption({
       name: '',
-      children: this.data
+      children: this.data,
     });
     myChart.setOption(option);
   }

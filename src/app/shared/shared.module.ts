@@ -6,7 +6,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MarkdownRenderComponent } from './components/markdown-render/markdown-render.component';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 import { CustomMaterialModule } from './custom-material.module';
-import { MarkdownRadarChartComponent } from './components/markdown-radar-chart/markdown-radar-chart.component';
+import { RatingRadarChartComponent } from './components/markdown-radar-chart/rating-radar-chart.component';
 import { MarkdownRatingComponent } from './components/markdown-radar-chart/markdown-rating/markdown-rating.component';
 import { MarkdownRatingItemComponent } from './components/markdown-radar-chart/markdown-rating-item/markdown-rating-item.component';
 import { ProcessTableComponent } from './components/process-table/process-table.component';
@@ -52,7 +52,7 @@ import { LedgeQuadrantComponent } from './ledge-render/chart/ledge-quadrant/ledg
     MarkdownRenderComponent,
     MarkdownRatingComponent,
     MarkdownRatingItemComponent,
-    MarkdownRadarChartComponent,
+    RatingRadarChartComponent,
     ProcessTableComponent,
     MarkdownTreeComponent,
 
@@ -70,7 +70,7 @@ import { LedgeQuadrantComponent } from './ledge-render/chart/ledge-quadrant/ledg
     MarkdownRenderComponent,
     MarkdownRatingComponent,
     MarkdownRatingItemComponent,
-    MarkdownRadarChartComponent,
+    RatingRadarChartComponent,
     ProcessTableComponent,
     MarkdownTreeComponent,
 
