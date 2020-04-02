@@ -1,4 +1,11 @@
-import { AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import marked from 'marked/lib/marked';
 import { LedgeChartModel } from '../components/model/ledge-chart.model';
 import { Tokens, TokensList } from 'marked';
@@ -7,7 +14,7 @@ import LedgeMarkdownConverter from '../components/model/ledge-markdown-converter
 @Component({
   selector: 'ledge-render',
   templateUrl: './ledge-render.component.html',
-  styleUrls: ['./ledge-render.component.scss']
+  styleUrls: ['./ledge-render.component.scss'],
 })
 export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
   @Input()
@@ -16,19 +23,16 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
   charts: LedgeChartModel[] = [];
   markdownData: any[] = [];
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit(): void {
     this.renderContent(this.content);
   }
 
-  ngAfterViewInit(): void {
-
-  }
+  ngAfterViewInit(): void {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    const {content} = changes;
+    const { content } = changes;
     this.content = content.currentValue;
     this.renderContent(this.content);
   }
@@ -64,7 +68,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
     const inline = marked.inlineLexer(token.text, tokens.links);
     this.markdownData.push({
       type: 'paragraph',
-      data: inline
+      data: inline,
     });
   }
 
@@ -73,19 +77,29 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
     switch (codeBlock.lang) {
       case 'chart':
         const chartData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({type: 'chart', data: chartData.tables[0]});
+        this.markdownData.push({ type: 'chart', data: chartData.tables[0] });
         break;
       case 'process-step':
         const stepData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({type: 'process-step', data: stepData.lists[0]});
+        this.markdownData.push({
+          type: 'process-step',
+          data: stepData.lists[0],
+        });
         break;
       case 'process-table':
         const tableData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({type: 'process-table', data: tableData.tables[0]});
+        this.markdownData.push({
+          type: 'process-table',
+          data: tableData.tables[0],
+        });
         break;
       case 'mindmap':
         const mindmapData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({type: 'mindmap', data: mindmapData.lists[0]});
+        this.markdownData.push({ type: 'mindmap', data: mindmapData.lists[0] });
+        break;
+      case 'pyramid':
+        const pyramidData = LedgeMarkdownConverter.toJson(codeBlock.text);
+        this.markdownData.push({ type: 'pyramid', data: pyramidData.lists[0] });
         break;
       default:
         this.markdownData.push(token);

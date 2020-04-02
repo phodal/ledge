@@ -3,11 +3,22 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-ledge-helper',
   templateUrl: './ledge-helper.component.html',
-  styleUrls: ['./ledge-helper.component.scss']
+  styleUrls: ['./ledge-helper.component.scss'],
 })
 export class LedgeHelperComponent implements OnInit {
   content = `
 # Syntax Test
+
+\`\`\`pyramid
+ - 寻找价值
+   - 价值：、
+   - 质量：零缺陷、设计良好
+   - 划分：小、完整
+   - 构建：价值优先、逐渐完善产品
+   - 计划：持续、接下来做什么？
+   - 组织：团队、人员与技能
+   - 指导：何物、何时
+\`\`\`
 
 \`\`\`mindmap
  - CI 建设
@@ -80,10 +91,9 @@ console.log('hello, world');
 \`\`\`
 `;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   changeContent($event: any) {
     this.content = $event;

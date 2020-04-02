@@ -1,4 +1,4 @@
-import {NgModule, SecurityContext} from '@angular/core';
+import { NgModule, SecurityContext } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -17,7 +17,7 @@ import { ToolsetComponent } from './toolset/toolset.component';
 
 import Tocify from './components/markdown-render/tocify';
 import { LedgeMindmapComponent } from './ledge-render/chart/ledge-mindmap/ledge-mindmap.component';
-
+import { LedgePyramidComponent } from './ledge-render/chart/ledge-pyramid/ledge-pyramid.component';
 
 @NgModule({
   imports: [
@@ -42,8 +42,8 @@ import { LedgeMindmapComponent } from './ledge-render/chart/ledge-mindmap/ledge-
           headerPrefix: '',
           headerIds: true,
         },
-      }
-    })
+      },
+    }),
   ],
   declarations: [
     MarkdownRenderComponent,
@@ -51,30 +51,31 @@ import { LedgeMindmapComponent } from './ledge-render/chart/ledge-mindmap/ledge-
     MarkdownRatingItemComponent,
     MarkdownRadarChartComponent,
     ProcessTableComponent,
+    MarkdownTreeComponent,
+
     LedgeRenderComponent,
     LedgeBarChartComponent,
-    MarkdownTreeComponent,
     LedgeMindmapComponent,
+    LedgePyramidComponent,
 
-    ToolsetComponent
+    ToolsetComponent,
   ],
-  providers: [
-    Tocify,
-  ],
+  providers: [Tocify],
   exports: [
     MarkdownRenderComponent,
     MarkdownRatingComponent,
     MarkdownRatingItemComponent,
     MarkdownRadarChartComponent,
     ProcessTableComponent,
+    MarkdownTreeComponent,
+
     LedgeRenderComponent,
     LedgeBarChartComponent,
-    MarkdownTreeComponent,
     LedgeMindmapComponent,
+    LedgePyramidComponent,
 
-    ToolsetComponent
+    ToolsetComponent,
   ],
-  entryComponents: []
+  entryComponents: [],
 })
-export class SharedModule {
-}
+export class SharedModule {}

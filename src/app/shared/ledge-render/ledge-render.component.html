@@ -8,6 +8,10 @@
       <ledge-mindmap [data]="item.data"></ledge-mindmap>
     </div>
 
+    <div *ngSwitchCase="'pyramid'">
+      <ledge-pyramid [data]="item.data"></ledge-pyramid>
+    </div>
+
     <div *ngSwitchCase="'table'">
       <table>
         <thead>

@@ -1,20 +1,26 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Input,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { LedgeList } from '../../../components/model/ledge-chart.model';
 import * as echarts from 'echarts';
 
 @Component({
   selector: 'ledge-mindmap',
   templateUrl: './ledge-mindmap.component.html',
-  styleUrls: ['./ledge-mindmap.component.scss']
+  styleUrls: ['./ledge-mindmap.component.scss'],
 })
 export class LedgeMindmapComponent implements OnInit, AfterViewInit {
   @Input()
   data: LedgeList;
 
-  @ViewChild('reporter', {}) reporter: ElementRef;
+  @ViewChild('chart', {}) reporter: ElementRef;
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit(): void {
     console.log(this.data);
@@ -28,7 +34,6 @@ export class LedgeMindmapComponent implements OnInit, AfterViewInit {
     myChart.setOption(option as any);
   }
 
-
   private toTreeData(data: any) {
     if (data.length === 1) {
       const anies = this.transformTreeData(data);
@@ -39,7 +44,7 @@ export class LedgeMindmapComponent implements OnInit, AfterViewInit {
     return {
       name: '',
       children: treeInfo,
-      config: data.config
+      config: data.config,
     };
   }
 
@@ -65,11 +70,11 @@ export class LedgeMindmapComponent implements OnInit, AfterViewInit {
 
     return {
       feature: {
-        saveAsImage: {}
+        saveAsImage: {},
       },
       tooltip: {
         trigger: 'item',
-        triggerOn: 'mousemove'
+        triggerOn: 'mousemove',
       },
       series: [
         {
@@ -88,7 +93,7 @@ export class LedgeMindmapComponent implements OnInit, AfterViewInit {
           edgeForkPosition: '63%',
           initialTreeDepth: 3,
           lineStyle: {
-            width: 2
+            width: 2,
           },
 
           label: {
@@ -96,23 +101,22 @@ export class LedgeMindmapComponent implements OnInit, AfterViewInit {
             position: 'left',
             verticalAlign: 'middle',
             align: 'right',
-            fontSize: 14
+            fontSize: 14,
           },
 
           leaves: {
             label: {
               position: 'right',
               verticalAlign: 'middle',
-              align: 'left'
-            }
+              align: 'left',
+            },
           },
 
           expandAndCollapse: true,
           animationDuration: 550,
-          animationDurationUpdate: 750
-        }
-      ]
+          animationDurationUpdate: 750,
+        },
+      ],
     };
   }
-
 }
