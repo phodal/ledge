@@ -12,6 +12,8 @@ import {
 import { Subject } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
 import { HighlightState } from '../shared';
+import { MatDialog } from '@angular/material/dialog';
+import { AtomDialogComponent } from '../atom-dialog/atom-dialog.component';
 
 // in milliseconds
 const STAY_AT_LEAST = 250;
@@ -41,7 +43,7 @@ export class AtomComponent implements OnInit, OnChanges, OnDestroy {
   mouseLeaveSubject = new Subject<number>();
   private unsubscribe$ = new Subject<void>();
 
-  constructor() {
+  constructor(public dialog: MatDialog) {
     this.backgroundStyles = {
       blurry: false,
       'solid-selected': false,
@@ -54,23 +56,21 @@ export class AtomComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnInit() {
     this.mouseEnterSubject
-      .pipe(
-        debounceTime(STAY_AT_LEAST),
-        takeUntil(this.unsubscribe$)
-      )
-      .subscribe((value: number) => this.hoverAtom.emit(value), err => console.error(err));
+      .pipe(debounceTime(STAY_AT_LEAST), takeUntil(this.unsubscribe$))
+      .subscribe(
+        (value: number) => this.hoverAtom.emit(value),
+        (err) => console.error(err)
+      );
 
     this.mouseLeaveSubject
-      .pipe(
-        debounceTime(STAY_AT_LEAST),
-        takeUntil(this.unsubscribe$)
-      )
-      .subscribe(() => this.hoverAtom.emit(null), err => console.error(err));
+      .pipe(debounceTime(STAY_AT_LEAST), takeUntil(this.unsubscribe$))
+      .subscribe(
+        () => this.hoverAtom.emit(null),
+        (err) => console.error(err)
+      );
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-
-  }
+  ngOnChanges(changes: SimpleChanges) {}
 
   ngOnDestroy() {
     if (this.unsubscribe$) {
@@ -85,5 +85,16 @@ export class AtomComponent implements OnInit, OnChanges, OnDestroy {
 
   debounceMouseLeave() {
     this.mouseLeaveSubject.next(this.data.number);
+  }
+
+  clickAtom() {
+    const dialogRef = this.dialog.open(AtomDialogComponent, {
+      width: '250px',
+      data: this.data,
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      // console.log('The dialog was closed');
+    });
   }
 }

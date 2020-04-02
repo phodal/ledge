@@ -29,6 +29,7 @@ import { MobileComponent } from './presentation/mobile/mobile.component';
 import { LedgeHelperComponent } from './presentation/ledge-helper/ledge-helper.component';
 import { ThinkTankComponent } from './presentation/think-tank/think-tank.component';
 import { SolutionComponent } from './presentation/solution/solution.component';
+import { AtomDialogComponent } from './features/atom-dialog/atom-dialog.component';
 
 @NgModule({
   declarations: [
@@ -38,8 +39,10 @@ import { SolutionComponent } from './presentation/solution/solution.component';
     PeriodicTableComponent,
     AtomComponent,
     AtomDetailsComponent,
+    AtomDialogComponent,
     AppPhaseComponent,
     AppWikiComponent,
+
     CaseStudyComponent,
     PatternComponent,
     DesignComponent,

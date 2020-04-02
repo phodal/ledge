@@ -1,5 +1,6 @@
 <div class="atom-container {{ data.category }}"
      [ngClass]="selectedCategory === data.category ? 'selected-category': 'unselect'"
+     (click)="clickAtom()"
      (mouseenter)="debounceMouseEnter()"
      (mouseleave)="debounceMouseLeave()">
 

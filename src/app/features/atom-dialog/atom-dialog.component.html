@@ -1,0 +1,5 @@
+<h2 mat-dialog-title>{{data.name}}</h2>
+<mat-dialog-content class="mat-typography">
+  <p *ngIf="data.homepage">首页：<a href="{{data.homepage}}" target="_blank">{{data.homepage}}</a></p>
+  {{data.description}}
+</mat-dialog-content>
