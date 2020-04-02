@@ -21,7 +21,7 @@ import { ManualComponent } from './presentation/manual/manual.component';
 import { PathComponent } from './presentation/design/path/path.component';
 import { FormsModule } from '@angular/forms';
 import { DragulaModule } from 'ng2-dragula';
-import { MaturityComponent } from './presentation/maturity/maturity.component';
+import { MaturityItemComponent } from './presentation/maturity/maturity-item/maturity-item.component';
 import { ResourcesComponent } from './presentation/resources/resources.component';
 import { ReporterComponent } from './presentation/reporter/reporter.component';
 import { AwesomeToolComponent } from './presentation/awesome-tool/awesome-tool.component';
@@ -30,6 +30,7 @@ import { LedgeHelperComponent } from './presentation/ledge-helper/ledge-helper.c
 import { ThinkTankComponent } from './presentation/think-tank/think-tank.component';
 import { SolutionComponent } from './presentation/solution/solution.component';
 import { AtomDialogComponent } from './features/atom-dialog/atom-dialog.component';
+import { MaturityComponent } from './presentation/maturity/maturity.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,6 @@ import { AtomDialogComponent } from './features/atom-dialog/atom-dialog.componen
     PractiseComponent,
     ManualComponent,
     PathComponent,
-    MaturityComponent,
     ResourcesComponent,
     ReporterComponent,
     AwesomeToolComponent,
@@ -57,6 +57,9 @@ import { AtomDialogComponent } from './features/atom-dialog/atom-dialog.componen
     LedgeHelperComponent,
     ThinkTankComponent,
     SolutionComponent,
+
+    MaturityComponent,
+    MaturityItemComponent,
   ],
   imports: [
     SharedModule,

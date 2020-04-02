@@ -6,7 +6,6 @@ import { PatternComponent } from './presentation/pattern/pattern.component';
 import { DesignComponent } from './presentation/design/design.component';
 import { PractiseComponent } from './presentation/practise/practise.component';
 import { ManualComponent } from './presentation/manual/manual.component';
-import { MaturityComponent } from './presentation/maturity/maturity.component';
 import { ReporterComponent } from './presentation/reporter/reporter.component';
 import { AwesomeToolComponent } from './presentation/awesome-tool/awesome-tool.component';
 import { MobileComponent } from './presentation/mobile/mobile.component';
@@ -15,74 +14,74 @@ import { LedgeHelperComponent } from './presentation/ledge-helper/ledge-helper.c
 import { ThinkTankComponent } from './presentation/think-tank/think-tank.component';
 import { ResourcesComponent } from './presentation/resources/resources.component';
 import { SolutionComponent } from './presentation/solution/solution.component';
+import { MaturityComponent } from './presentation/maturity/maturity.component';
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: '/home'},
+  { path: '', pathMatch: 'full', redirectTo: '/home' },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
     path: 'case-study',
-    component: CaseStudyComponent
+    component: CaseStudyComponent,
   },
   {
     path: 'pattern',
-    component: PatternComponent
+    component: PatternComponent,
   },
   {
     path: 'design',
-    component: DesignComponent
+    component: DesignComponent,
   },
   {
     path: 'practise',
-    component: PractiseComponent
+    component: PractiseComponent,
   },
   {
     path: 'manual',
-    component: ManualComponent
+    component: ManualComponent,
   },
   {
     path: 'maturity',
-    component: MaturityComponent
+    component: MaturityComponent,
   },
   {
     path: 'resources',
-    component: ResourcesComponent
+    component: ResourcesComponent,
   },
   {
     path: 'report',
-    component: ReporterComponent
+    component: ReporterComponent,
   },
   {
     path: 'tool',
-    component: AwesomeToolComponent
+    component: AwesomeToolComponent,
   },
   {
     path: 'mobile',
-    component: MobileComponent
+    component: MobileComponent,
   },
   {
     path: 'toolset',
-    component: ToolsetComponent
+    component: ToolsetComponent,
   },
   {
     path: 'think-tank',
-    component: ThinkTankComponent
+    component: ThinkTankComponent,
   },
   {
     path: 'solution',
-    component: SolutionComponent
+    component: SolutionComponent,
   },
   {
     path: 'helper',
-    component: LedgeHelperComponent
-  }
+    component: LedgeHelperComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}
