@@ -2,15 +2,15 @@
   "name": "ledge",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "build:ci": "ng build --prod",
-    "test": "ng test",
-    "test:ci": "ng test --watch=false --progress=false --browsers=ChromeHeadlessCI",
-    "lint": "ng lint",
+    "ng": "./node_modules/.bin/ng",
+    "start": "yarn ng serve",
+    "build": "yarn ng build",
+    "build:ci": "yarn ng build --prod",
+    "test": "yarn ng test",
+    "test:ci": "yarn ng test --watch=false --progress=false --browsers=ChromeHeadlessCI",
+    "lint": "yarn ng lint",
     "commit": "git-cz",
-    "deploy": "ng deploy --repo=https://github.com/phodal/do.git --cname=devops.phodal.com"
+    "deploy": "yarn ng deploy --repo=https://github.com/phodal/do.git --cname=devops.phodal.com"
   },
   "private": true,
   "dependencies": {
@@ -79,7 +79,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "ng test && ng build --prod --aot"
+      "pre-push": "yarn ng test && yarn ng build --prod --aot"
     }
   },
   "lint-staged": {
