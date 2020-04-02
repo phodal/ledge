@@ -14,6 +14,7 @@ import { ToolsetComponent } from './shared/toolset/toolset.component';
 import { LedgeHelperComponent } from './presentation/ledge-helper/ledge-helper.component';
 import { ThinkTankComponent } from './presentation/think-tank/think-tank.component';
 import { ResourcesComponent } from './presentation/resources/resources.component';
+import { SolutionComponent } from './presentation/solution/solution.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: '/home'},
@@ -68,6 +69,10 @@ const routes: Routes = [
   {
     path: 'think-tank',
     component: ThinkTankComponent
+  },
+  {
+    path: 'solution',
+    component: SolutionComponent
   },
   {
     path: 'helper',
