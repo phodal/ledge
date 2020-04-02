@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { LedgeList } from '../../../components/model/ledge-chart.model';
 import * as echarts from 'echarts';
+import LedgeChartConverter from '../../../components/model/ledge-chart-converter';
 
 @Component({
   selector: 'ledge-mindmap',
@@ -22,43 +23,13 @@ export class LedgeMindmapComponent implements OnInit, AfterViewInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    console.log(this.data);
-  }
+  ngOnInit(): void {}
 
   ngAfterViewInit(): void {
     const myChart = echarts.init(this.reporter.nativeElement);
-    const treeData = this.toTreeData(this.data.children);
+    const treeData = LedgeChartConverter.toTreeData(this.data.children);
     const option = this.buildMindmapOption(treeData);
-    console.log(option);
     myChart.setOption(option as any);
-  }
-
-  private toTreeData(data: any) {
-    if (data.length === 1) {
-      const anies = this.transformTreeData(data);
-      return anies[0];
-    }
-
-    const treeInfo = this.transformTreeData(data);
-    return {
-      name: '',
-      children: treeInfo,
-      config: data.config,
-    };
-  }
-
-  private transformTreeData(data: any) {
-    const nodes = [];
-    for (const item of data) {
-      const node: any = {};
-      node.name = item.name;
-      if (item.children && item.children.length > 0) {
-        node.children = this.transformTreeData(item.children);
-      }
-      nodes.push(node);
-    }
-    return nodes;
   }
 
   buildMindmapOption(data) {
