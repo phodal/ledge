@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit {
     {
       name: '刘宇',
       link: 'https://github.com/LiuuY',
-      work: '丰富学习案例',
+      work: '核心开发、丰富学习案例',
       title: 'ThoughtWorks 高级咨询师',
       avatar: 'https://avatars0.githubusercontent.com/u/14286374?s=460&u=1933f64247e26812c67ca1c41aa0b7ba23b069f6&v=4'
     },
@@ -62,6 +62,13 @@ export class HomeComponent implements OnInit {
       work: '丰富移动端 DevOps 内容',
       title: 'ThoughtWorks 高级咨询师',
       avatar: 'https://avatars1.githubusercontent.com/u/20431947?s=400&u=3bb25fac4f0dec4555577f89093729c643e8eb08&v=4'
+    },
+    {
+      name: '于晓南',
+      link: 'https://github.com/ConnieYXN',
+      work: '项目 QA，创建、维护测试智库',
+      title: 'ThoughtWorks 高级咨询师',
+      avatar: 'https://avatars0.githubusercontent.com/u/22843012?s=460&u=6197636e584b6bec7982eccaf220b7bed42ddf0d&v=4'
     },
     {
       name: 'You',
