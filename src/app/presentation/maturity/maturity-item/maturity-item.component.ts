@@ -88,30 +88,8 @@ export class MaturityItemComponent implements OnInit {
           this.tempValue += ` $${item.id}`;
         }
 
-        if (item.completed) {
-          this.tempValue += ' [x]';
-        } else {
-          this.tempValue += ' [ ]';
-        }
-
-        if (item.priority) {
-          this.tempValue += ` (${item.priority})`;
-        }
-        if (item.startDate) {
-          this.tempValue += ` ${item.startDate}`;
-        }
-        if (item.endDate) {
-          this.tempValue += ` ${item.endDate}`;
-        }
         this.tempValue += ` ${item.text}`;
-        if (item.tag) {
-          for (const tag of item.tag) {
-            this.tempValue += ` +${tag}`;
-          }
-        }
-        if (item.context) {
-          this.tempValue += ` @${item.context}`;
-        }
+
         this.tempValue += `\n`;
         this.indexString = '';
       }
