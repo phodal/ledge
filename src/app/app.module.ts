@@ -29,7 +29,6 @@ import { MobileComponent } from './presentation/mobile/mobile.component';
 import { LedgeHelperComponent } from './presentation/ledge-helper/ledge-helper.component';
 import { ThinkTankComponent } from './presentation/think-tank/think-tank.component';
 import { SolutionComponent } from './presentation/solution/solution.component';
-import { LedgeRadarComponent } from './shared/ledge-render/chart/ledge-radar/ledge-radar.component';
 
 @NgModule({
   declarations: [

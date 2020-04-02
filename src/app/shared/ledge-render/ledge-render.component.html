@@ -16,6 +16,10 @@
       <ledge-radar [data]="item.data"></ledge-radar>
     </div>
 
+    <div *ngSwitchCase="'quadrant'">
+      <ledge-quadrant [data]="item.data"></ledge-quadrant>
+    </div>
+
     <div *ngSwitchCase="'table'">
       <table>
         <thead>

@@ -20,6 +20,7 @@ import { LedgeMindmapComponent } from './ledge-render/chart/ledge-mindmap/ledge-
 import { LedgePyramidComponent } from './ledge-render/chart/ledge-pyramid/ledge-pyramid.component';
 import { SolutionComponent } from '../presentation/solution/solution.component';
 import { LedgeRadarComponent } from './ledge-render/chart/ledge-radar/ledge-radar.component';
+import { LedgeQuadrantComponent } from './ledge-render/chart/ledge-quadrant/ledge-quadrant.component';
 
 @NgModule({
   imports: [
@@ -60,6 +61,7 @@ import { LedgeRadarComponent } from './ledge-render/chart/ledge-radar/ledge-rada
     LedgeMindmapComponent,
     LedgePyramidComponent,
     LedgeRadarComponent,
+    LedgeQuadrantComponent,
 
     ToolsetComponent,
   ],
@@ -77,6 +79,7 @@ import { LedgeRadarComponent } from './ledge-render/chart/ledge-radar/ledge-rada
     LedgeMindmapComponent,
     LedgePyramidComponent,
     LedgeRadarComponent,
+    LedgeQuadrantComponent,
 
     ToolsetComponent,
   ],
