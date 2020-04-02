@@ -10,6 +10,12 @@ export interface HighlightState {
   nobleGas: boolean;
 }
 
+export interface AtomResources {
+  name?: string;
+  link?: string;
+  description?: string;
+}
+
 export interface Atom {
   name: string;
   homepage: string;
@@ -18,4 +24,5 @@ export interface Atom {
   number: number;
   symbol: string;
   pd: string;
+  resources?: AtomResources[];
 }

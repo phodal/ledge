@@ -89,7 +89,7 @@ export class AtomComponent implements OnInit, OnChanges, OnDestroy {
 
   clickAtom() {
     const dialogRef = this.dialog.open(AtomDialogComponent, {
-      width: '250px',
+      width: '480px',
       data: this.data,
     });
 

@@ -8,9 +8,7 @@ import { Atom } from '../shared';
   styleUrls: ['./atom-dialog.component.scss'],
 })
 export class AtomDialogComponent implements OnInit {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: Atom) {
-    console.log(this.data);
-  }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: Atom) {}
 
   ngOnInit(): void {}
 }

@@ -471,9 +471,15 @@
   {
     "name": "GoCD",
     "category": "deployment",
+    "description": "GoCD is an open-source tool which is used in software development to help teams and organizations automate the continuous delivery (CD) of software.",
     "number": 30,
     "pay": "Os",
-    "symbol": "Go"
+    "symbol": "Go",
+    "resources": [{
+      "name": "GitHub",
+      "link": "https://github.com/gocd/gocd",
+      "description": "This is the main repository for GoCD - a continuous delivery server. GoCD helps you automate and streamline the build-test-release cycle for worry-free, continuous delivery of your product."
+    }]
   },
   {
     "name": "Pulumi",

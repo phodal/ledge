@@ -2,4 +2,10 @@
 <mat-dialog-content class="mat-typography">
   <p *ngIf="data.homepage">首页：<a href="{{data.homepage}}" target="_blank">{{data.homepage}}</a></p>
   {{data.description}}
+  <div *ngIf="data.resources" class="resources">
+    <p>相关资源：</p>
+    <div *ngFor="let resource of data.resources">
+      <a href="{{resource.link}}">{{resource.name}}</a> &nbsp;&nbsp; {{resource.description}}
+    </div>
+  </div>
 </mat-dialog-content>
