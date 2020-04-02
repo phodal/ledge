@@ -3,6 +3,7 @@ import {
   Component,
   ElementRef,
   forwardRef,
+  Input,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -28,6 +29,9 @@ export class RatingRadarChartComponent
   implements OnInit, AfterViewInit, ControlValueAccessor {
   @ViewChild('baseElement', {}) baseElement: ElementRef;
   @ViewChild('chart', {}) chartEl: ElementRef;
+
+  @Input()
+  instanceKey: string;
 
   items: any[];
   data: any[] = [];

@@ -1,6 +1,6 @@
 import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import {MarkdownTaskItemService} from '../markdown-task-item.service';
+import { MarkdownTaskItemService } from '../markdown-task-item.service';
 import MarkdownHelper from '../../model/markdown.helper';
 
 @Component({
@@ -11,28 +11,24 @@ import MarkdownHelper from '../../model/markdown.helper';
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => MarkdownRatingComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class MarkdownRatingComponent implements OnInit, ControlValueAccessor {
   @Input() list: [];
   @Input() isParent = false;
+  @Input() instanceKey: string;
 
   private disabled = false;
 
-  onChange(_) {
-  }
+  onChange(_) {}
 
-  onTouched(_) {
-  }
+  onTouched(_) {}
 
-  constructor(private markdownTaskItemService: MarkdownTaskItemService) {
+  constructor(private markdownTaskItemService: MarkdownTaskItemService) {}
 
-  }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   registerOnChange(fn: any): void {
     this.onChange = fn;
@@ -61,7 +57,11 @@ export class MarkdownRatingComponent implements OnInit, ControlValueAccessor {
       item.originText = item.originText + ': ' + item.value;
     }
 
-    const list = this.markdownTaskItemService.updateTask(null, item);
+    const list = this.markdownTaskItemService.updateTask(
+      null,
+      this.instanceKey,
+      item
+    );
     this.onChange(list);
   }
 }

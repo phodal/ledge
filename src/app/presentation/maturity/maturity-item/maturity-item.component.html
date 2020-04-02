@@ -4,6 +4,7 @@
   </div>
   <rating-radar-chart
     [(ngModel)]="tasks"
+    [instanceKey]="data.key"
     (ngModelChange)="updateModel($event)">
   </rating-radar-chart>
 </div>

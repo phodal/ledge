@@ -44,7 +44,7 @@ export class MaturityItemComponent implements OnInit {
     this.data.value = value;
     const tokens = marked.lexer(this.data.value);
     this.tasks = MarkdownHelper.markdownToJSON(tokens, this.tasks);
-    this.markdownTaskItemService.setTasks(this.tasks);
+    this.markdownTaskItemService.setTasks(this.data.key, this.tasks);
 
     this.storage
       .set('maturity-item.' + this.data.key, this.data.value)

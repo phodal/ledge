@@ -5,6 +5,7 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class MarkdownTaskItemService {
+  private taskList = [];
   private tasks: any;
   private subject = new Subject<any>();
 
@@ -16,16 +17,16 @@ export class MarkdownTaskItemService {
     return this.subject.asObservable();
   }
 
-  setTasks(tasks: any) {
-    this.tasks = tasks;
+  setTasks(key, tasks: any) {
+    this.taskList[key] = tasks;
   }
 
-  updateTask($event: any, item) {
+  updateTask($event: any, instanceKey, item) {
     if (!item.id) {
       return;
     }
 
-    const tasks = this.updateTaskByItem(this.tasks, item);
+    const tasks = this.updateTaskByItem(this.taskList[instanceKey], item);
     this.update(tasks);
 
     return tasks;
