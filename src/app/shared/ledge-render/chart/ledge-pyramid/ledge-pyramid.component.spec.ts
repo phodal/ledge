@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { LedgePyramidComponent } from './ledge-pyramid.component';
+import { SharedModule } from '../../../shared.module';
 
 describe('LedgePyramidComponent', () => {
   let component: LedgePyramidComponent;
@@ -8,6 +8,7 @@ describe('LedgePyramidComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [SharedModule],
       declarations: [LedgePyramidComponent],
     }).compileComponents();
   }));
@@ -15,6 +16,19 @@ describe('LedgePyramidComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(LedgePyramidComponent);
     component = fixture.componentInstance;
+    component.data = {
+      children: [
+        {
+          children: [
+            {
+              children: [],
+              name: '',
+            },
+          ],
+          name: '',
+        },
+      ],
+    };
     fixture.detectChanges();
   });
 

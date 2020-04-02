@@ -1,16 +1,16 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { LedgeBarChartComponent } from './ledge-bar-chart.component';
+import { SharedModule } from '../../../shared.module';
 
-
-describe('MarkdownChartComponent', () => {
+describe('LedgeBarChart', () => {
   let component: LedgeBarChartComponent;
   let fixture: ComponentFixture<LedgeBarChartComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LedgeBarChartComponent ]
-    })
-    .compileComponents();
+      imports: [SharedModule],
+      declarations: [LedgeBarChartComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -18,7 +18,7 @@ describe('MarkdownChartComponent', () => {
     component = fixture.componentInstance;
     component.data = {
       header: [],
-      cells: [[]]
+      cells: [[]],
     };
     fixture.detectChanges();
   });

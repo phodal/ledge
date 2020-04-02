@@ -1,24 +1,33 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Input,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import * as echarts from 'echarts';
-import { ChartData, LedgeTable, LedgeChartModel } from '../../../components/model/ledge-chart.model';
+import {
+  ChartData,
+  LedgeTable,
+  LedgeChartModel,
+} from '../../../components/model/ledge-chart.model';
 import * as d3 from 'd3';
 
 @Component({
   selector: 'ledge-bar-chart',
   templateUrl: './ledge-bar-chart.component.html',
-  styleUrls: ['./ledge-bar-chart.component.scss']
+  styleUrls: ['./ledge-bar-chart.component.scss'],
 })
 export class LedgeBarChartComponent implements OnInit, AfterViewInit {
   @Input()
   data: LedgeTable;
 
-  @ViewChild('reporter', {}) reporter: ElementRef;
+  @ViewChild('chart', {}) reporter: ElementRef;
 
-  constructor() {
-  }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   ngAfterViewInit(): void {
     const myChart = echarts.init(this.reporter.nativeElement);
@@ -27,7 +36,8 @@ export class LedgeBarChartComponent implements OnInit, AfterViewInit {
   }
 
   private getColorByIndex(i: number) {
-    const colors = d3.scaleLinear()
+    const colors = d3
+      .scaleLinear()
       .domain([0, 8])
       .range([d3.rgb('#ff4081'), d3.rgb('#66C2A5')] as any);
 
@@ -39,8 +49,8 @@ export class LedgeBarChartComponent implements OnInit, AfterViewInit {
       title: token.header[0],
       barChart: {
         xAxis: [],
-        yAxis: []
-      }
+        yAxis: [],
+      },
     };
 
     chart.barChart.xAxis = token.cells[0];
@@ -62,7 +72,7 @@ export class LedgeBarChartComponent implements OnInit, AfterViewInit {
         }
         row.push({
           value: originRow[j],
-          itemStyle: {color}
+          itemStyle: { color },
         });
       }
 
@@ -73,23 +83,31 @@ export class LedgeBarChartComponent implements OnInit, AfterViewInit {
   private buildBarChartOption(sortData: LedgeChartModel) {
     return {
       tooltip: {},
-      title: [{
-        text: sortData.title,
-        left: '25%',
-        textAlign: 'center'
-      }],
-      grid: [{
-        left: 10,
-        containLabel: true
-      }],
-      xAxis: [{
-        show: false
-      }],
-      yAxis: [{
-        type: 'category',
-        data: sortData.barChart.xAxis
-      }],
-      series: this.buildSeries(sortData.barChart.yAxis)
+      title: [
+        {
+          text: sortData.title,
+          left: '25%',
+          textAlign: 'center',
+        },
+      ],
+      grid: [
+        {
+          left: 10,
+          containLabel: true,
+        },
+      ],
+      xAxis: [
+        {
+          show: false,
+        },
+      ],
+      yAxis: [
+        {
+          type: 'category',
+          data: sortData.barChart.xAxis,
+        },
+      ],
+      series: this.buildSeries(sortData.barChart.yAxis),
     };
   }
 
@@ -110,9 +128,9 @@ export class LedgeBarChartComponent implements OnInit, AfterViewInit {
           normal: {
             show: true,
             position: 'right',
-            formatter: data => data.value + '%'
-          }
-        }
+            formatter: (data) => data.value + '%',
+          },
+        },
       });
     }
 

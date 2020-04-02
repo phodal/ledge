@@ -20,8 +20,8 @@ export interface LedgeTable {
 }
 
 export interface LedgeListItem {
-  children: LedgeListItem;
-  name: string;
+  children?: LedgeListItem[];
+  name?: string;
 }
 
 export interface LedgeList {
