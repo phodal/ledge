@@ -281,6 +281,17 @@ Bruck Tuckman 团队发展模型：
 
 ### 遗留系统问题
 
+9 种遗留系统现代化的技术 
+
+| 发生变化的方面 | Retain | Retire | Encapsulation | Rehost | Replatform | Refactor | Rearchitecture | Rebuild | Repuchase |
+|-------------|-|-|-|-|-|-|-|-|-|
+| 产品功能     | No | No |  No  |  No |  No | Yes |  No | Yes | Yes |
+| 架构        | No | No  | Yes | No  | Yes | No  | Yes  | Yes | Yes  |
+| 基础设施     | No | No  | No  | Yes | Yes  | No  |Yes  | Yes | Yes  |
+| 代码        | No  | No | No  | No  | Yes  | No  | Yes | Yes | Yes  |
+
+出处：《[Legacy System Modernization: How to Transform the Enterprise for Digital Future](https://www.altexsoft.com/whitepapers/legacy-system-modernization-how-to-transform-the-enterprise-for-digital-future/)》
+
 ## 可测试
 
 选择测试框架并不是算太困难，只是我们需要知道是否需要：测试即文档。
