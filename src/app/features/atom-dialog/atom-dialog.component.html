@@ -5,7 +5,7 @@
   <div *ngIf="data.resources" class="resources">
     <p>相关资源：</p>
     <div *ngFor="let resource of data.resources">
-      <a href="{{resource.link}}">{{resource.name}}</a> &nbsp;&nbsp; {{resource.description}}
+      <a href="{{resource.link}}" target="_blank">{{resource.name}}</a> &nbsp;&nbsp; {{resource.description}}
     </div>
   </div>
 </mat-dialog-content>
