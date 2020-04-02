@@ -1,1 +1,3 @@
-<app-maturity-item></app-maturity-item>
+<div *ngFor="let item of list">
+  <app-maturity-item [data]="item"></app-maturity-item>
+</div>

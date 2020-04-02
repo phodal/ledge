@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import marked from 'marked/lib/marked';
 import MarkdownHelper from '../../../shared/components/model/markdown.helper';
 import { MarkdownTaskItemService } from '../../../shared/components/markdown-radar-chart/markdown-task-item.service';
@@ -11,29 +11,12 @@ import { StorageMap } from '@ngx-pwa/local-storage';
   styleUrls: ['./maturity-item.component.scss'],
 })
 export class MaturityItemComponent implements OnInit {
-  private textValue = `
- -  [ ] 配置管理: 3
-   - [ ] 版本控制
-   - [ ] 变更管理
- -  [ ] 持续与持续集成: 3
-   - [ ] 构建实践
-   - [ ] 持续集成
- -  [ ] 测试管理: 3
-   - [ ] 测试分层策略
-   - [ ] 代码质量管理
-   - [ ] 自动化测试
- -  [ ] 部署与发布管理: 3
-   - [ ] 部署与发布管理
-   - [ ] 部署流水线
- -  [ ] 环境管理: 3
- -  [ ] 数据管理: 3
-   - [ ] 测试数据管理
-   - [ ] 数据变更管理
- -  [ ] 度量与反馈: 3
-   - [ ] 度量指标
-   - [ ] 度量驱动改进
-
-  `;
+  @Input()
+  data: any = {
+    name: '',
+    key: '',
+    value: '',
+  };
 
   tasks: any;
   private tempValue: string;
@@ -46,22 +29,26 @@ export class MaturityItemComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.storage.get('maturity-item.cd').subscribe((value: string) => {
-      if (!!value) {
-        this.textValue = value;
-      }
+    this.storage
+      .get('maturity-item.' + this.data.key)
+      .subscribe((value: string) => {
+        if (!!value) {
+          this.data.value = value;
+        }
 
-      this.updateValue(this.textValue);
-    });
+        this.updateValue(this.data.value);
+      });
   }
 
   updateValue(value) {
-    this.textValue = value;
-    const tokens = marked.lexer(this.textValue);
+    this.data.value = value;
+    const tokens = marked.lexer(this.data.value);
     this.tasks = MarkdownHelper.markdownToJSON(tokens, this.tasks);
     this.markdownTaskItemService.setTasks(this.tasks);
 
-    this.storage.set('maturity-item.cd', this.textValue).subscribe(() => {});
+    this.storage
+      .set('maturity-item.' + this.data.key, this.data.value)
+      .subscribe(() => {});
   }
 
   updateModel($event: any) {
