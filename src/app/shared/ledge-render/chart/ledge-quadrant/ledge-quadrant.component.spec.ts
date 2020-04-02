@@ -20,13 +20,13 @@ describe('LedgeQuadrantComponent', () => {
     component.data = {
       children: [
         {
+          name: 'parent',
           children: [
-            {
-              children: [],
-              name: '',
-            },
+            { name: 'child', children: [{ name: '' }] },
+            { name: 'child', children: [{ name: '' }] },
+            { name: 'child', children: [{ name: '' }] },
+            { name: 'child', children: [{ name: '' }] },
           ],
-          name: '',
         },
       ],
     };
