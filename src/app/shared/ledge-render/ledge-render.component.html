@@ -1,4 +1,4 @@
-<div *ngFor="let item of markdownData" class="markdown-reporter markdown">
+<div *ngFor="let item of markdownData" class="ledge-render markdown">
   <div [ngSwitch]="item.type">
     <div *ngSwitchCase="'chart'">
       <ledge-bar-chart [data]="item.data"></ledge-bar-chart>

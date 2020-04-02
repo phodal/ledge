@@ -121,6 +121,52 @@ console.log('hello, world');
 | Git | TSLint | Git (history) | Jasmine | GitHub Action | GitHub Traffic | GitHub Projects |
 | GitHub | Code Climate | |  Jest | | Google Analysis |  |
 \`\`\`
+
+
+### 采用 DevOps 的行业
+
+\`\`\`chart
+| 行业 | 占比 |
+|-|-|
+| 技术 | 38% |
+| 金融服务 | 12% |
+| 零售/消费/电子商务 | 9% |
+| 其它 | 9% |
+| 医疗保健和制药 | 5％ |
+| 政府 | 5% |
+| 媒体/娱乐 | 4% |
+| 保险 | 4% |
+| 教育 | 4% |
+| 工业和制造业 | 4% |
+| 电信 | 3% |
+| 能源 | 3% |
+| 非营利 | 1% |
+\`\`\`
+
+## 组织所使用的操作系统
+
+\`\`\`chart
+| 操作系统  |  2018 | 2019 |
+|-|-|-|
+| Windows 2003/2003R2 | 12% | 6% |
+| Windows 2008/2008R2 | 33% | 26% |
+| Windows 2012/2012R2 | 56% | 52% |
+| Other Windows      | 22% | 25% |
+| Linux Debian/Ubuntu variants  | 36% | 43% |
+| Linux Enterprise variants (RHEL, Oracle, CentOS) | 48% | 49% |
+| Linux Fedora        | 5% | 4% |
+| SUSE Linux Enterprise Server  | 8% | 5% |
+| Linux OpenSUSE | 4% | 4% |
+| Linux Arch    | 2% | 2% |
+| Other Linux  |  13% | 11% |
+| Other UNIX  | 8% | 4% |
+| FreeBSD/NetBSD/OpenBSD   | 3% | 3% |
+| AIX                | 10% | 7% |
+| Solaris OS         | 12% | 5% |
+| Other              | 12% | 8% |
+
+config: {"type": "bar", "multiset": true}
+\`\`\`
 `;
 
   constructor() {}
