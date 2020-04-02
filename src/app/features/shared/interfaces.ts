@@ -18,8 +18,8 @@ export interface AtomResources {
 
 export interface Atom {
   name: string;
-  homepage: string;
-  description: string;
+  homepage?: string;
+  description?: string;
   category: string;
   number: number;
   symbol: string;
