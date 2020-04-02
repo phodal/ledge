@@ -9,6 +9,16 @@ export class LedgeHelperComponent implements OnInit {
   content = `
 # Syntax Test
 
+\`\`\`radar
+ - 质量属性网络
+   - 可靠性
+   - 可修改性
+   - 安全性
+   - 可测试性
+   - 性能
+   - 可用性
+\`\`\`
+
 \`\`\`pyramid
  - 寻找价值
    - 价值：、

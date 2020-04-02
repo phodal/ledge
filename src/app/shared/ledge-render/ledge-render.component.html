@@ -12,6 +12,10 @@
       <ledge-pyramid [data]="item.data"></ledge-pyramid>
     </div>
 
+    <div *ngSwitchCase="'radar'">
+      <ledge-radar [data]="item.data"></ledge-radar>
+    </div>
+
     <div *ngSwitchCase="'table'">
       <table>
         <thead>

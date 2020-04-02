@@ -18,6 +18,8 @@ import { ToolsetComponent } from './toolset/toolset.component';
 import Tocify from './components/markdown-render/tocify';
 import { LedgeMindmapComponent } from './ledge-render/chart/ledge-mindmap/ledge-mindmap.component';
 import { LedgePyramidComponent } from './ledge-render/chart/ledge-pyramid/ledge-pyramid.component';
+import { SolutionComponent } from '../presentation/solution/solution.component';
+import { LedgeRadarComponent } from './ledge-render/chart/ledge-radar/ledge-radar.component';
 
 @NgModule({
   imports: [
@@ -57,6 +59,7 @@ import { LedgePyramidComponent } from './ledge-render/chart/ledge-pyramid/ledge-
     LedgeBarChartComponent,
     LedgeMindmapComponent,
     LedgePyramidComponent,
+    LedgeRadarComponent,
 
     ToolsetComponent,
   ],
@@ -73,6 +76,7 @@ import { LedgePyramidComponent } from './ledge-render/chart/ledge-pyramid/ledge-
     LedgeBarChartComponent,
     LedgeMindmapComponent,
     LedgePyramidComponent,
+    LedgeRadarComponent,
 
     ToolsetComponent,
   ],
