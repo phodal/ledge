@@ -85,12 +85,10 @@
   "lint-staged": {
     "src/app/*.{css,scss}": [
       "stylelint --syntax=scss",
-      "prettier --parser --write",
-      "git add"
+      "prettier --parser --write"
     ],
     "{src,test}/**/*.ts": [
-      "prettier --write --single-quote",
-      "git add"
+      "prettier --write --single-quote"
     ],
     "*.{js,css,md}": "prettier --write"
   },
