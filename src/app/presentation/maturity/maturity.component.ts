@@ -8,6 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class MaturityComponent implements OnInit {
   list = [
     {
+      name: '第二部分：敏捷开发管理',
+      key: 'agile',
+      value: `
+ - [ ] 需求管理
+ - [ ] 过程管理
+ - [ ] 组织模型
+`,
+    },
+    {
       name: '第三部分：持续交付',
       key: 'cd',
       value: `
@@ -32,6 +41,20 @@ export class MaturityComponent implements OnInit {
    - [ ] 度量指标
    - [ ] 度量驱动改进
   `,
+    },
+    {
+      name: '第四部分：技术运营',
+      key: 'techops',
+      value: `
+ - [ ] 监控管理
+ - [ ] 事件管理
+ - [ ] 变更管理
+ - [ ] 容量和性能管理
+ - [ ] 成本管理
+ - [ ] 连续性管理
+ - [ ] 用户体验管理
+ - [ ] 运营一体化平台
+      `,
     },
   ];
   constructor() {}
