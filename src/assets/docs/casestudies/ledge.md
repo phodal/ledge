@@ -9,7 +9,7 @@
 | GitHub | Code Climate | |  Jest | | Google Analysis |  | 
 ```
 
-## Test
+## 测试策略
 
 ``` mindmap
  - Ledge测试策略
