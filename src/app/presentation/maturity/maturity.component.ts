@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-maturity',
@@ -57,7 +58,10 @@ export class MaturityComponent implements OnInit {
       `,
     },
   ];
-  constructor() {}
+
+  constructor(title: Title) {
+    title.setTitle('DevOps 知识平台 Ledge - 成熟度');
+  }
 
   ngOnInit(): void {}
 }
