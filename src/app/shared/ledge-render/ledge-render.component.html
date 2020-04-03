@@ -1,4 +1,4 @@
-<cdk-virtual-scroll-viewport [itemSize]="markdownData.length" class="ledge-render">
+<cdk-virtual-scroll-viewport [itemSize]="markdownData.length" class="ledge-render" autosize>
   <div *cdkVirtualFor="let item of markdownData" class="markdown render-item">
     <div [ngSwitch]="item.type">
       <div *ngSwitchCase="'chart'">
@@ -84,7 +84,7 @@
       <div *ngSwitchCase="'list-style'">
         <div class="list-style list-style-{{item.config.type}}">
           <div *ngFor="let listItem of item.data;let index = index;" class="list-style-item item-{{index}}">
-            {{listItem.name}}
+            <div [innerHTML]="listItem.name"></div>
 
             <ng-template #recursiveList let-list>
               <div *ngFor="let item of list" class="sub-item">
@@ -124,8 +124,7 @@
 
       <div *ngSwitchCase="'list'">
         <ng-template #recursiveList let-list>
-          <li *ngFor="let item of list" class="sub-item">
-            {{item.body.name}}
+          <li *ngFor="let item of list" class="sub-item" [innerHTML]="item.body.name">
             <ul *ngIf="item.body.children.children && item.body.children.children.length > 0">
               <ng-container
                 *ngTemplateOutlet="recursiveList; context:{ $implicit: item.body.children.children }"></ng-container>
@@ -143,4 +142,4 @@
       </div>
     </div>
   </div>
-<cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+</cdk-virtual-scroll-viewport>

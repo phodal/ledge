@@ -1,10 +1,12 @@
 .ledge-render  {
-  min-width: 960px;
   width: 100%;
-  margin: 4em auto 0;
-  height: calc(100% - 64px);
+  height: 100vh;
 }
 
 .render-item {
-  height: auto;
+  height: 100%;
+}
+
+.chart {
+  height: 500px;
 }

@@ -113,7 +113,6 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
 
         this.listQueue.pop();
         if (this.listQueue.length === 0) {
-          console.log(listBody);
           this.markdownData.push({ type: 'list', data: listBody, ordered });
         }
 
@@ -146,7 +145,10 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
 
         while (this.next().type !== 'list_item_end') {
           if (!loose && this.token.type === 'text') {
-            itemBody.name += this.parseText();
+            itemBody.name += marked.inlineLexer(
+              this.parseText(),
+              this.tokens.links
+            );
           } else {
             itemBody.children = this.tok();
           }
