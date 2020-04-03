@@ -23,7 +23,7 @@ export class ToolsetComponent implements OnInit, AfterViewInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.option);
+    // console.log(this.option);
   }
 
   setToolsetStyle(option: ToolsetOption) {

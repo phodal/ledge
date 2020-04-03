@@ -27,7 +27,6 @@ export class LedgeQuadrantComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     const myChart = echarts.init(this.reporter.nativeElement);
-    console.log(this.data);
     const treeData = LedgeChartConverter.toTreeData(this.data.children);
     const option = this.buildOption(treeData);
     myChart.setOption(option as any);

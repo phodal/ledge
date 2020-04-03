@@ -21,6 +21,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
   markdownData: any[] = [];
   token = null;
   tokens: TokensList | any = [];
+  listQueue = [];
 
   constructor() {}
 
@@ -99,9 +100,16 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
         const listBody = [];
         const ordered = this.token.ordered;
         const start = this.token.start;
+        this.listQueue.push(1);
 
         while (this.next().type !== 'list_end') {
           listBody.push(this.tok());
+        }
+
+        this.listQueue.pop();
+
+        if (this.listQueue.length === 0) {
+          console.log(listBody);
         }
 
         return { body: listBody, ordered, start };
@@ -139,7 +147,6 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
           }
         }
 
-        // return this.renderer.listitem(body, task, checked);
         return { body: itemBody, name: itemBody.name, task, checked };
       }
       case 'hr':
