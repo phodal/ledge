@@ -192,7 +192,7 @@ export class PathComponent implements OnInit {
   }
 
   updateItem(i: number, j: number, $event: Event) {
-    const value = ($event.target as any).innerHTML;
+    const value = ($event.target as any).innerText;
     this.pipeData[i].items[j] = value;
     this.storage.set('ledge.path', this.pipeData).subscribe(() => {});
   }
