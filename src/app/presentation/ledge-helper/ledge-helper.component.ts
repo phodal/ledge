@@ -9,6 +9,16 @@ export class LedgeHelperComponent implements OnInit {
   content = `
 # Syntax Test
 
+\`\`\`toolset
+ - 用户体验
+ - 时间
+ - 成本
+ - 安全
+ - 范围
+
+config: {"type": "slider"}
+\`\`\`
+
 \`\`\`quadrant
  - 技术债墙
      - 快速解决

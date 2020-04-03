@@ -83,6 +83,10 @@
       </pre>
     </div>
 
+    <div *ngSwitchCase="'toolset'">
+      <toolset [option]="item.data"></toolset>
+    </div>
+
     <div *ngSwitchDefault>
       {{stringify(item)}}
     </div>

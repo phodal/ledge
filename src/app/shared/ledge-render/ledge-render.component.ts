@@ -112,9 +112,31 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
           data: quadrantData.lists[0],
         });
         break;
+      case 'toolset':
+        const json = LedgeMarkdownConverter.toJson(codeBlock.text);
+        const toolType = json.config.type;
+        this.markdownData.push({
+          type: 'toolset',
+          data: { type: toolType, data: this.getDataByType(json, toolType) },
+        });
+        break;
       default:
         this.markdownData.push(token);
         break;
+    }
+  }
+
+  private getDataByType(
+    json: { tables: any[]; lists: any[]; config: any },
+    type: any
+  ) {
+    switch (type) {
+      case 'slider':
+        return json.lists[0].children;
+      case 'line-chart':
+        return json.tables[0];
+      default:
+        return json;
     }
   }
 

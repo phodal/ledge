@@ -1,10 +1,17 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Input,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import * as echarts from 'echarts';
 
 @Component({
   selector: 'toolset',
   templateUrl: './toolset.component.html',
-  styleUrls: ['./toolset.component.scss']
+  styleUrls: ['./toolset.component.scss'],
 })
 export class ToolsetComponent implements OnInit, AfterViewInit {
   @ViewChild('tool', {}) toolEl: ElementRef;
@@ -13,11 +20,10 @@ export class ToolsetComponent implements OnInit, AfterViewInit {
   @Input()
   option: ToolsetOption;
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit(): void {
-    // console.log(this.option);
+    console.log(this.option);
   }
 
   setToolsetStyle(option: ToolsetOption) {
@@ -27,9 +33,15 @@ export class ToolsetComponent implements OnInit, AfterViewInit {
     }
 
     if (this.toolEl && this.toolEl.nativeElement) {
-      this.toolEl.nativeElement.setAttribute('style', `z-index: 999; top: ${element.offsetTop}px;position:absolute`);
+      this.toolEl.nativeElement.setAttribute(
+        'style',
+        `z-index: 999; top: ${element.offsetTop}px;position:absolute`
+      );
       if (this.toolEl.nativeElement.clientHeight !== 0) {
-        element.setAttribute('style', `height: calc(${this.toolEl.nativeElement.clientHeight}px + 2em)`);
+        element.setAttribute(
+          'style',
+          `height: calc(${this.toolEl.nativeElement.clientHeight}px + 2em)`
+        );
       }
     }
   }
@@ -54,28 +66,30 @@ export class ToolsetComponent implements OnInit, AfterViewInit {
         data: ['Low', '挑战', 'High'],
         axisLine: {
           symbol: ['none', 'arrow'],
-          symbolSize: [10, 20]
+          symbolSize: [10, 20],
         },
         axisTick: {
-          show: false
-        }
+          show: false,
+        },
       },
       yAxis: {
         type: 'category',
         data: ['Low', '能力', 'High'],
         axisLine: {
           symbol: ['none', 'arrow'],
-          symbolSize: [10, 20]
+          symbolSize: [10, 20],
         },
         axisTick: {
-          show: false
-        }
+          show: false,
+        },
       },
-      series: [{
-        data: [],
-        type: 'line',
-        smooth: true
-      }]
+      series: [
+        {
+          data: [],
+          type: 'line',
+          smooth: true,
+        },
+      ],
     };
 
     myChart.setOption(option as any);
