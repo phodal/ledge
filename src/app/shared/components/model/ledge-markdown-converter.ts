@@ -2,8 +2,44 @@ import marked from 'marked/lib/marked';
 import { zip } from 'lodash-es';
 
 const LedgeMarkdownConverter = {
+  // marked
+  escapeTest: /[&<>"']/,
+  escapeReplace: /[&<>"']/g,
+  escapeTestNoEncode: /[<>"']|&(?!#?\w+;)/,
+  escapeReplaceNoEncode: /[<>"']|&(?!#?\w+;)/g,
+  escapeReplacements: {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+  },
   transpose(arr: any[][]) {
     return zip.apply(this, arr);
+  },
+
+  getEscapeReplacement(ch) {
+    return this.escapeReplacements[ch];
+  },
+
+  escape(html: string, encode: boolean) {
+    if (encode) {
+      if (this.escapeTest.test(html)) {
+        return html.replace(
+          this.escapeReplace,
+          this.getEscapeReplacement.bind(this)
+        );
+      }
+    } else {
+      if (this.escapeTestNoEncode.test(html)) {
+        return html.replace(
+          this.escapeReplaceNoEncode,
+          this.getEscapeReplacement.bind(this)
+        );
+      }
+    }
+
+    return html;
   },
 
   toJson(code: any) {
@@ -24,7 +60,7 @@ const LedgeMarkdownConverter = {
           break;
         }
         case 'text': {
-          result += `"name": "${token.text}",`;
+          result += `"name": "${this.escape(token.text)}",`;
           break;
         }
         case 'list_item_end': {
