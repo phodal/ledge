@@ -11,7 +11,7 @@ export class ManualComponent implements OnInit {
   data = mdData.default;
 
   constructor(title: Title) {
-    title.setTitle('DevOps 知识平台 Ledge - 操作手册');
+    title.setTitle('Ledge DevOps 知识平台 - 操作手册');
   }
 
   ngOnInit(): void {}

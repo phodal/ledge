@@ -60,7 +60,7 @@ export class MaturityComponent implements OnInit {
   ];
 
   constructor(title: Title) {
-    title.setTitle('DevOps 知识平台 Ledge - 成熟度');
+    title.setTitle('Ledge DevOps 知识平台 - 成熟度');
   }
 
   ngOnInit(): void {}

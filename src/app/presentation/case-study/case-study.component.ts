@@ -43,7 +43,7 @@ export class CaseStudyComponent implements OnInit {
     private router: Router,
     private http: HttpClient
   ) {
-    title.setTitle('DevOps 知识平台 Ledge - 案例学习');
+    title.setTitle('Ledge DevOps 知识平台 - 案例学习');
   }
 
   ngOnInit(): void {

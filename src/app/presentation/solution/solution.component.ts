@@ -22,7 +22,7 @@ export class SolutionComponent implements OnInit {
     private router: Router,
     private http: HttpClient
   ) {
-    title.setTitle('DevOps 知识平台 Ledge - 解决方案');
+    title.setTitle('Ledge DevOps 知识平台 - 解决方案');
   }
 
   ngOnInit(): void {

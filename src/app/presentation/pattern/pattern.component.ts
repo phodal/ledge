@@ -5,16 +5,14 @@ import * as mdData from 'raw-loader!../../../assets/docs/pattern.md';
 @Component({
   selector: 'app-pattern',
   templateUrl: './pattern.component.html',
-  styleUrls: ['./pattern.component.scss']
+  styleUrls: ['./pattern.component.scss'],
 })
 export class PatternComponent implements OnInit {
   data = mdData.default;
 
   constructor(title: Title) {
-    title.setTitle('DevOps 知识平台 Ledge - 原则与模式');
+    title.setTitle('Ledge DevOps 知识平台 - 原则与模式');
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

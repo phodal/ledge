@@ -11,7 +11,7 @@ export class ResourcesComponent implements OnInit {
   data = mdData.default;
 
   constructor(title: Title) {
-    title.setTitle('DevOps 知识平台 Ledge - 相关资源');
+    title.setTitle('Ledge DevOps 知识平台 - 相关资源');
   }
 
   ngOnInit(): void {}
