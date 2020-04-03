@@ -8,9 +8,11 @@
       <span></span>
       <span class="spacer"></span>
       <div class="right">
-        <button color="primary" mat-raised-button (click)="addColumn()">Add</button>
+        <button color="warn" mat-raised-button (click)="resetAll()">Reset</button>
         <span class="spacer">&nbsp;</span>
         <button color="accent" mat-raised-button (click)="removeColumn()" [disabled]="maxLength === 0">Remove</button>
+        <span class="spacer">&nbsp;</span>
+        <button color="primary" mat-raised-button (click)="addColumn()">Add</button>
       </div>
     </mat-toolbar-row>
   </mat-toolbar>
