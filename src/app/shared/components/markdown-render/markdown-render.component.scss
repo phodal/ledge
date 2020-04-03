@@ -6,10 +6,10 @@
   .left-drawer {
     width: 15%;
     min-width: 120px;
+    min-height: 100vh;
   }
 
   .right-content {
-    height: calc(100vh - 68px);
   }
 }
 
@@ -20,8 +20,9 @@
 
 .sticky {
   position: fixed;
-  overflow: hidden;
+  overflow: scroll;
   z-index: 10;
+  height: calc(100vh - 66px);
 }
 
 .scroll-to-top {

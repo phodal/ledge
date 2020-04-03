@@ -33,7 +33,7 @@ export class MarkdownRenderComponent
   data = '';
 
   @ViewChild('toc', { static: false }) tocEl: ElementRef;
-  @ViewChild('drawerContent', { static: false }) drawerEl: any;
+  @ViewChild('drawerContent', { static: false }) drawerEl: ElementRef;
 
   loading = this.data !== '';
 
@@ -76,8 +76,8 @@ export class MarkdownRenderComponent
   @HostListener('window:scroll', ['$event'])
   handleScroll() {
     let top = 0;
-    if (this.drawerEl) {
-      top = this.drawerEl.elementRef.nativeElement.scrollTop;
+    if (this.drawerEl && this.drawerEl.nativeElement) {
+      top = this.drawerEl.nativeElement.scrollTop;
     }
 
     const windowScroll = window.pageYOffset;
@@ -135,8 +135,8 @@ export class MarkdownRenderComponent
 
   scrollToTop() {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-    if (this.drawerEl) {
-      this.drawerEl.elementRef.nativeElement.scrollTop = 0;
+    if (this.drawerEl && this.drawerEl.nativeElement) {
+      this.drawerEl.nativeElement.scrollTop = 0;
     }
   }
 
