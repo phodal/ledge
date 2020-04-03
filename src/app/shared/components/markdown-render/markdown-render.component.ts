@@ -26,9 +26,6 @@ import Tocify, { TocItem } from './tocify';
 export class MarkdownRenderComponent
   implements OnInit, OnChanges, AfterViewInit {
   @Input()
-  src: string;
-
-  @Input()
   showToc = false;
   @Input()
   showScroll = true;

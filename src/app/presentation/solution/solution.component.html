@@ -3,13 +3,13 @@
     <h2>解决方案</h2>
     <ul>
       <li *ngFor="let casestudy of solutions"
-          (click)="clickCase(casestudy.source)"
+          (click)="getCase(casestudy.source)"
           [ngClass]="casestudy.source === currentSource ? 'active' : '' ">
         <span>{{casestudy.displayName}}</span>
       </li>
     </ul>
   </mat-drawer>
   <mat-drawer-content>
-    <component-markdown-render [src]="src"></component-markdown-render>
+    <component-markdown-render [data]="content"></component-markdown-render>
   </mat-drawer-content>
 </mat-drawer-container>

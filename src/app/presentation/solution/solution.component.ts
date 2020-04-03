@@ -2,25 +2,31 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { StorageMap } from '@ngx-pwa/local-storage';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-solution',
   templateUrl: './solution.component.html',
-  styleUrls: ['./solution.component.scss']
+  styleUrls: ['./solution.component.scss'],
 })
 export class SolutionComponent implements OnInit {
-  solutions = [
-    {displayName: 'Coding', source: 'coding'},
-  ];
+  solutions = [{ displayName: 'Coding', source: 'coding' }];
   currentSource: string;
   src: string;
+  content: string;
 
-  constructor(title: Title, private storage: StorageMap, private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(
+    title: Title,
+    private storage: StorageMap,
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private http: HttpClient
+  ) {
     title.setTitle('DevOps 知识平台 Ledge - 解决方案');
   }
 
   ngOnInit(): void {
-    this.activatedRoute.queryParams.subscribe(params => {
+    this.activatedRoute.queryParams.subscribe((params) => {
       const source = params.source;
       if (source) {
         this.configSource(source);
@@ -41,23 +47,29 @@ export class SolutionComponent implements OnInit {
   }
 
   private configSource(value: string) {
-    this.currentSource = value;
-    this.src = this.buildSrc(this.currentSource);
+    this.getCase(value);
   }
 
-  clickCase(source: string) {
+  getCase(source: string) {
     this.src = this.buildSrc(source);
     this.currentSource = source;
 
-    this.storage.set('solution.last', source).subscribe();
+    const headers = new HttpHeaders().set(
+      'Content-Type',
+      'text/plain; charset=utf-8'
+    );
+    this.http
+      .get(this.src, { headers, responseType: 'text' })
+      .subscribe((response) => {
+        const queryParams: Params = { source };
+        this.storage.set('solution.last', source).subscribe();
+        this.content = response;
 
-    const queryParams: Params = { source };
-    this.router.navigate(
-      [],
-      {
-        relativeTo: this.activatedRoute,
-        queryParams,
-        queryParamsHandling: 'merge', // remove to replace all query params by provided
+        this.router.navigate([], {
+          relativeTo: this.activatedRoute,
+          queryParams,
+          queryParamsHandling: 'merge', // remove to replace all query params by provided
+        });
       });
   }
 
