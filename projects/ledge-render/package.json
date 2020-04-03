@@ -1,0 +1,20 @@
+{
+  "name": "ledge-render",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/cdk": "^9.1.1",
+    "@angular/common": "^9.0.5",
+    "@angular/core": "^9.0.5",
+    "@angular/forms": "^9.0.5",
+    "@angular/material": "^9.1.1",
+    "tslib": "^1.10.0",
+    "d3": "^5.15.0",
+    "d3-graphviz": "^3.0.4",
+    "dagre-d3": "^0.6.4",
+    "echarts": "^4.7.0",
+    "graphlib-dot": "^0.6.4",
+    "lodash-es": "^4.17.15",
+    "marked": "^0.8.2",
+    "shortid": "^2.2.15"
+  }
+}

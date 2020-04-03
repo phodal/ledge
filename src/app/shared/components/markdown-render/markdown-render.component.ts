@@ -1,3 +1,4 @@
+import { DOCUMENT, Location } from '@angular/common';
 import {
   AfterViewInit,
   Component,
@@ -11,11 +12,10 @@ import {
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
-import { DOCUMENT, Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-
-import { MarkdownService } from 'ngx-markdown';
+import { ToolsetOption } from 'ledge-render';
 import { Slugger } from 'marked/lib/marked';
+import { MarkdownService } from 'ngx-markdown';
 import Tocify, { TocItem } from './tocify';
 
 @Component({

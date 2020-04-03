@@ -44,6 +44,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.900.4",
+    "@angular-devkit/build-ng-packagr": "~0.900.5",
     "@angular/cli": "~9.0.4",
     "@angular/compiler-cli": "~9.0.3",
     "@angular/language-service": "~9.0.3",
@@ -67,6 +68,7 @@
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
     "lint-staged": ">=10",
+    "ng-packagr": "^9.0.0",
     "prettier": "^2.0.2",
     "puppeteer": "^2.1.1",
     "ts-node": "~8.3.0",
