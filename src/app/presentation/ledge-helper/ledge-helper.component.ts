@@ -9,6 +9,15 @@ export class LedgeHelperComponent implements OnInit {
   content = `
 # Syntax Test
 
+\`\`\`graphviz
+digraph {
+  rankdir=LR;
+  "红" -> "绿"[label="写一个失败的测试"];
+  "绿" -> "重构"[label="让代码可以工作"];
+  "重构" -> "红"[dir="back" label="重构"];
+}
+\`\`\`
+
 \`\`\`toolset
  - 用户体验
  - 时间

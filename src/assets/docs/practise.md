@@ -374,9 +374,9 @@ or 强化反馈环
 ```graphviz
 digraph {
   rankdir=LR;
-  "红 | 绿"[label="写一个失败的测试"];
-  "绿 | 重构"[label="让代码可以工作"];
-  "重构 | 红"[dir="back" label="重构"];
+  "红" -> "绿"[label="写一个失败的测试"];
+  "绿" -> "重构"[label="让代码可以工作"];
+  "重构" -> "红"[dir="back" label="重构"];
 }
 ```
 

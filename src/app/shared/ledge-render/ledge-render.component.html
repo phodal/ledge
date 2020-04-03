@@ -20,6 +20,14 @@
       <ledge-quadrant [data]="item.data"></ledge-quadrant>
     </div>
 
+    <div *ngSwitchCase="'toolset'">
+      <toolset [option]="item.data"></toolset>
+    </div>
+
+    <div *ngSwitchCase="'graphviz'">
+      <ledge-graphviz [data]="item.data"></ledge-graphviz>
+    </div>
+
     <div *ngSwitchCase="'table'">
       <table>
         <thead>
@@ -81,10 +89,6 @@
       <pre class="language-{{item.lang}}">
         <code class="language-{{item.lang}}">{{item.text}}</code>
       </pre>
-    </div>
-
-    <div *ngSwitchCase="'toolset'">
-      <toolset [option]="item.data"></toolset>
     </div>
 
     <div *ngSwitchDefault>
