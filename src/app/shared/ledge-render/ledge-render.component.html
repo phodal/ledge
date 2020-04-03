@@ -28,6 +28,10 @@
       <ledge-graphviz [data]="item.data"></ledge-graphviz>
     </div>
 
+    <div *ngSwitchCase="'echarts'">
+      <ledge-pure-echarts [data]="item.data"></ledge-pure-echarts>
+    </div>
+
     <div *ngSwitchCase="'table'">
       <table>
         <thead>

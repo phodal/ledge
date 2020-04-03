@@ -9,6 +9,26 @@ export class LedgeHelperComponent implements OnInit {
   content = `
 # Syntax Test
 
+\`\`\`echarts
+{
+"series": [
+    {
+        "type": "treemap",
+        "breadcrumb": {"show": false},
+        "roam": "move",
+        "data": [{
+            "name": "nodeA","value": 10,
+            "children": [
+              {"name": "HealthController.java", "value": 4 },
+              {"name": "HealthService.java", "value": 6}
+            ]},
+            {"name": "HealthModel.java", "value": 20}
+        ]
+    }
+]
+}
+\`\`\`
+
 \`\`\`graphviz
 digraph {
   rankdir=LR;

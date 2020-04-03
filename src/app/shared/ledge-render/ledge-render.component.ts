@@ -123,6 +123,9 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
       case 'graphviz':
         this.markdownData.push({ type: 'graphviz', data: codeBlock.text });
         break;
+      case 'echarts':
+        this.markdownData.push({ type: 'echarts', data: codeBlock.text });
+        break;
       default:
         this.markdownData.push(token);
         break;

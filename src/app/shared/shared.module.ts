@@ -21,6 +21,7 @@ import { LedgePyramidComponent } from './ledge-render/chart/ledge-pyramid/ledge-
 import { LedgeRadarComponent } from './ledge-render/chart/ledge-radar/ledge-radar.component';
 import { LedgeQuadrantComponent } from './ledge-render/chart/ledge-quadrant/ledge-quadrant.component';
 import { LedgeGraphvizComponent } from './ledge-render/chart/ledge-graphviz/ledge-graphviz.component';
+import { LedgePureEchartsComponent } from './ledge-render/chart/ledge-pure-echarts/ledge-pure-echarts.component';
 
 const LedgeComponents = [
   LedgeRenderComponent,
@@ -30,6 +31,7 @@ const LedgeComponents = [
   LedgeRadarComponent,
   LedgeQuadrantComponent,
   LedgeGraphvizComponent,
+  LedgePureEchartsComponent,
 
   ToolsetComponent,
 ];
