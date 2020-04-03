@@ -16,6 +16,7 @@ import LedgeMarkdownConverter from '../components/model/ledge-markdown-converter
   styleUrls: ['./ledge-render.component.scss'],
 })
 export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
+  constructor() {}
   @Input()
   content: string;
   markdownData: any[] = [];
@@ -23,7 +24,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
   tokens: TokensList | any = [];
   listQueue = [];
 
-  constructor() {}
+  isPureParagraph = true;
 
   ngOnInit(): void {
     this.renderContent(this.content);
@@ -79,9 +80,11 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
         return '';
       case 'blockquote_start':
         let body = '';
+        this.isPureParagraph = false;
         while (this.next().type !== 'blockquote_end') {
           body += this.tok();
         }
+        this.isPureParagraph = true;
         this.markdownData.push({ type: 'blockquote', text: body });
         break;
       case 'paragraph':
@@ -162,10 +165,12 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
 
   private handleParaGraph(token: marked.Tokens.Paragraph) {
     const inline = marked.inlineLexer(token.text, this.tokens.links);
-    this.markdownData.push({
-      type: 'paragraph',
-      data: inline,
-    });
+    if (this.isPureParagraph) {
+      this.markdownData.push({
+        type: 'paragraph',
+        data: inline,
+      });
+    }
 
     return inline;
   }
