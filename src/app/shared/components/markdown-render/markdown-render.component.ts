@@ -9,14 +9,14 @@ import {
   OnInit,
   Renderer2,
   SimpleChanges,
-  ViewChild
+  ViewChild,
 } from '@angular/core';
-import {DOCUMENT, Location} from '@angular/common';
-import {ActivatedRoute} from '@angular/router';
+import { DOCUMENT, Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
-import {MarkdownService} from 'ngx-markdown';
-import marked, {Slugger} from 'marked/lib/marked';
-import {maxBy} from 'lodash-es';
+import { MarkdownService } from 'ngx-markdown';
+import marked, { Slugger } from 'marked/lib/marked';
+import { maxBy } from 'lodash-es';
 import * as echarts from 'echarts';
 
 import * as d3 from 'd3';
@@ -26,16 +26,17 @@ import * as graphlibDot from 'graphlib-dot';
 
 import ChartOptions from '../../support/chart-options';
 import MarkdownHelper from '../model/markdown.helper';
-import Tocify, {TocItem} from './tocify';
+import Tocify, { TocItem } from './tocify';
 import LedgeMarkdownConverter from '../model/ledge-markdown-converter';
 import ECharts = echarts.ECharts;
 
 @Component({
   selector: 'component-markdown-render',
   templateUrl: './markdown-render.component.html',
-  styleUrls: ['./markdown-render.component.scss']
+  styleUrls: ['./markdown-render.component.scss'],
 })
-export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit {
+export class MarkdownRenderComponent
+  implements OnInit, OnChanges, AfterViewInit {
   @Input()
   src: string;
 
@@ -47,8 +48,8 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   @Input()
   data = '';
 
-  @ViewChild('toc', {static: false}) tocEl: ElementRef;
-  @ViewChild('drawerContent', {static: false}) drawerEl: any;
+  @ViewChild('toc', { static: false }) tocEl: ElementRef;
+  @ViewChild('drawerContent', { static: false }) drawerEl: any;
 
   loading = this.data !== '';
 
@@ -62,7 +63,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     '<': '&lt;',
     '>': '&gt;',
     '"': '&quot;',
-    '\'': '&#39;'
+    "'": '&#39;',
   };
   private mindmapIndex = 0;
   private chartInfos = [];
@@ -89,20 +90,27 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   private lastTocId: string;
   private scrollItems: any[] = [];
 
-  constructor(private markdownService: MarkdownService,
-              private tocify: Tocify,
-              private location: Location,
-              private route: ActivatedRoute,
-              private renderer2: Renderer2,
-              @Inject(DOCUMENT) private document: Document,
-              private myElement: ElementRef) {
-  }
+  constructor(
+    private markdownService: MarkdownService,
+    private tocify: Tocify,
+    private location: Location,
+    private route: ActivatedRoute,
+    private renderer2: Renderer2,
+    @Inject(DOCUMENT) private document: Document,
+    private myElement: ElementRef
+  ) {}
 
   ngOnInit(): void {
     const markedOptions: any = this.markdownService.options;
-    this.markdownService.renderer.image = this.renderImage(markedOptions).bind(this);
-    this.markdownService.renderer.code = this.renderCode(markedOptions).bind(this);
-    this.markdownService.renderer.heading = this.renderHeading(markedOptions).bind(this);
+    this.markdownService.renderer.image = this.renderImage(markedOptions).bind(
+      this
+    );
+    this.markdownService.renderer.code = this.renderCode(markedOptions).bind(
+      this
+    );
+    this.markdownService.renderer.heading = this.renderHeading(
+      markedOptions
+    ).bind(this);
   }
 
   ngAfterViewInit(): void {
@@ -141,9 +149,19 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       top = this.drawerEl.elementRef.nativeElement.scrollTop;
     }
 
-    if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || top > 64) {
+    if (
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      top > 64
+    ) {
       this.windowScrolled = true;
-    } else if (this.windowScrolled && window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || top < 10) {
+    } else if (
+      (this.windowScrolled && window.pageYOffset) ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      top < 10
+    ) {
       this.windowScrolled = false;
     }
 
@@ -177,7 +195,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   }
 
   scrollToTop() {
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     if (this.drawerEl) {
       this.drawerEl.elementRef.nativeElement.scrollTop = 0;
     }
@@ -217,7 +235,9 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   private gotoHeading() {
     this.route.fragment.subscribe((fragment: string) => {
       if (!!fragment) {
-        const element = this.myElement.nativeElement.querySelector('#' + fragment);
+        const element = this.myElement.nativeElement.querySelector(
+          '#' + fragment
+        );
         if (!!element) {
           element.scrollIntoView();
         }
@@ -226,7 +246,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   }
 
   private renderToc(items: TocItem[]) {
-    return items.map(item => {
+    return items.map((item) => {
       const href = `${this.location.path()}#${item.anchor}`;
       const link = `<a class="level_${item.level}" id="menu-${item.anchor}" href="${href}" title=${item.text}>${item.text}</a>`;
       if (item.children) {
@@ -282,8 +302,6 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
           return this.buildPyramidChartData(code);
         case 'quadrant':
           return this.buildQuadrantChartData(code);
-        case 'class':
-          return this.buildClassCode(code);
         case 'graphviz':
           return this.buildGraphvizData(code);
         case 'echarts':
@@ -296,10 +314,6 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
           return this.buildNormalCode(options, code, lang, escaped);
       }
     };
-  }
-
-  private buildClassCode(code: any) {
-    return `<div class="${code}"></div>`;
   }
 
   private buildListStyle(code: any) {
@@ -316,7 +330,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
 
   private buildListStyleChildren(list, childStr: string) {
     let index = 0;
-    for (const item of (list.children as any[])) {
+    for (const item of list.children as any[]) {
       let subChildStr = '';
       let subChildClass = '';
       if (item.children && item.children.length > 0) {
@@ -341,11 +355,17 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     }
 
     if (!lang) {
-      return '<pre><code>' + (escaped ? code : this.escape(code, true)) + '</code></pre>';
+      return (
+        '<pre><code>' +
+        (escaped ? code : this.escape(code, true)) +
+        '</code></pre>'
+      );
     }
 
     return `<pre>
-    <code class="${options.langPrefix}${this.escape(lang, true)}">${escaped ? code : this.escape(code, true)}</code>
+    <code class="${options.langPrefix}${this.escape(lang, true)}">${
+      escaped ? code : this.escape(code, true)
+    }</code>
 </pre>`;
   }
 
@@ -356,11 +376,17 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
   escape(html: string, encode: boolean) {
     if (encode) {
       if (this.escapeTest.test(html)) {
-        return html.replace(this.escapeReplace, this.getEscapeReplacement.bind(this));
+        return html.replace(
+          this.escapeReplace,
+          this.getEscapeReplacement.bind(this)
+        );
       }
     } else {
       if (this.escapeTestNoEncode.test(html)) {
-        return html.replace(this.escapeReplaceNoEncode, this.getEscapeReplacement.bind(this));
+        return html.replace(
+          this.escapeReplaceNoEncode,
+          this.getEscapeReplacement.bind(this)
+        );
       }
     }
 
@@ -385,7 +411,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
 
   private buildTableProcess(code: any) {
     let resultStr = '';
-    const {header, cells} = LedgeMarkdownConverter.toJson(code).tables[0];
+    const { header, cells } = LedgeMarkdownConverter.toJson(code).tables[0];
     resultStr += this.buildProcessHeader(this.buildHeaderItem(header));
     const bodyResult = this.buildTableBody(cells);
 
@@ -427,7 +453,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     const currentMap = {
       id: 'mindmap-' + this.mindmapIndex,
       type: 'mindmap',
-      data: items
+      data: items,
     };
 
     this.chartInfos.push(currentMap);
@@ -464,10 +490,13 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
           const pyramidLength = newData.children.length;
           const CHART_MAX_VALUE = 100;
           for (let i = 0; i < pyramidLength; i++) {
-            newData.children[i].value = CHART_MAX_VALUE / pyramidLength * (i + 1);
+            newData.children[i].value =
+              (CHART_MAX_VALUE / pyramidLength) * (i + 1);
           }
 
-          mychart.setOption(ChartOptions.buildPyramidChartOption(newData) as any);
+          mychart.setOption(
+            ChartOptions.buildPyramidChartOption(newData) as any
+          );
           break;
       }
     }
@@ -479,7 +508,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       return {
         name: data[0].item.text,
         children: childrenInfo,
-        config: data.config
+        config: data.config,
       };
     }
 
@@ -487,7 +516,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     return {
       name: '',
       children: treeInfo,
-      config: data.config
+      config: data.config,
     };
   }
 
@@ -511,7 +540,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     const currentMap = {
       id: 'radarchart-' + this.chartIndex,
       type: 'radarchart',
-      data: items
+      data: items,
     };
 
     this.chartInfos.push(currentMap);
@@ -525,7 +554,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
 
     this.graphvizData.push({
       id: this.graphvizIndex,
-      code
+      code,
     });
 
     return `<div class="graphviz"><svg id="graphviz-${this.graphvizIndex}"></svg></div>`;
@@ -547,7 +576,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     const currentMap = {
       id: 'quadrant-' + this.chartIndex,
       type: 'quadrant',
-      data: items
+      data: items,
     };
 
     this.chartInfos.push(currentMap);
@@ -562,7 +591,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     const currentMap = {
       id: 'pyramid-' + this.chartIndex,
       type: 'pyramid',
-      data: items
+      data: items,
     };
 
     this.chartInfos.push(currentMap);
@@ -600,13 +629,14 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
       }
 
       cols += `<div class="process-step-column">
-  <div class="process-title">${title}</div><div class="process-body ${maxWidthClass === '' ? '' : 'process-long-body'}">${itemsStr}</div>
+  <div class="process-title">${title}</div><div class="process-body ${
+        maxWidthClass === '' ? '' : 'process-long-body'
+      }">${itemsStr}</div>
 </div>`;
     }
 
     return `<div class="markdown-process-step">${cols}</div>`;
   }
-
 
   private buildEchartsData(code: any) {
     this.echartsIndex++;
@@ -614,7 +644,7 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     const chartId = 'echarts-' + this.echartsIndex;
     this.echartsData.push({
       id: chartId,
-      data: code
+      data: code,
     });
 
     return `<div class="normal-echarts" id="${chartId}"></div>`;
@@ -639,13 +669,16 @@ export class MarkdownRenderComponent implements OnInit, OnChanges, AfterViewInit
     this.toolsets.push({
       id,
       data: this.getDataByType(json, toolType),
-      type: toolType
+      type: toolType,
     });
 
     return `<div class="toolset-placeholder" id="${id}"></div>`;
   }
 
-  private getDataByType(json: { tables: any[]; lists: any[]; config: any }, type: any) {
+  private getDataByType(
+    json: { tables: any[]; lists: any[]; config: any },
+    type: any
+  ) {
     switch (type) {
       case 'slider':
         return json.lists[0].children;
