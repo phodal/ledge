@@ -19,7 +19,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
   @Input()
   content: string;
   markdownData: any[] = [];
-  token: null;
+  token = null;
   tokens: TokensList | any = [];
 
   constructor() {}
@@ -55,6 +55,16 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
     return this.tokens[this.tokens.length - 1] || 0;
   }
 
+  parseText() {
+    let body = this.token.text;
+
+    while (this.peek().type === 'text') {
+      body += '\n' + (this.next() as any).text;
+    }
+
+    return body;
+  }
+
   private tok() {
     const token: Token = this.token;
     switch (token.type) {
@@ -65,7 +75,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
         this.handleCode(token);
         break;
       case 'space':
-        break;
+        return '';
       case 'blockquote_start':
         let body = '';
         while (this.next().type !== 'blockquote_end') {
@@ -85,6 +95,53 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
           text: inline,
         });
         break;
+      case 'list_start': {
+        const listBody = [];
+        const ordered = this.token.ordered;
+        const start = this.token.start;
+
+        while (this.next().type !== 'list_end') {
+          listBody.push(this.tok());
+        }
+
+        return { body: listBody, ordered, start };
+      }
+      case 'list_item_start': {
+        const itemBody = {
+          name: '',
+          children: [],
+        };
+        const loose = this.token.loose;
+        const checked = this.token.checked;
+        const task = this.token.task;
+        //
+        // if (this.token.task) {
+        //   if (loose) {
+        //     if (this.peek().type === 'text') {
+        //       const nextToken = this.peek();
+        //       nextToken.text = this.renderer.checkbox(checked) + ' ' + nextToken.text;
+        //     } else {
+        //       this.tokens.push({
+        //         type: 'text',
+        //         text: this.renderer.checkbox(checked)
+        //       });
+        //     }
+        //   } else {
+        //     body += this.renderer.checkbox(checked);
+        //   }
+        // }
+
+        while (this.next().type !== 'list_item_end') {
+          if (!loose && this.token.type === 'text') {
+            itemBody.name += this.parseText();
+          } else {
+            itemBody.children = this.tok();
+          }
+        }
+
+        // return this.renderer.listitem(body, task, checked);
+        return { body: itemBody, name: itemBody.name, task, checked };
+      }
       case 'hr':
         this.markdownData.push(token);
         break;

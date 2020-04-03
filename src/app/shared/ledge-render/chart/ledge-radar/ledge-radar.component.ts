@@ -34,7 +34,6 @@ export class LedgeRadarComponent implements OnInit, AfterViewInit {
   }
 
   private buildOption(data) {
-    console.log(data);
     let indicator: any[] = data.children;
 
     let legend: any[] = [data.name];
