@@ -12,7 +12,6 @@ import { MarkdownRatingItemComponent } from './components/markdown-radar-chart/m
 import { ProcessTableComponent } from './components/process-table/process-table.component';
 import { LedgeRenderComponent } from './ledge-render/ledge-render.component';
 import { LedgeBarChartComponent } from './ledge-render/chart/ledge-bar-chart/ledge-bar-chart.component';
-import { MarkdownTreeComponent } from './components/markdown-tree/markdown-tree.component';
 import { ToolsetComponent } from './toolset/toolset.component';
 
 import Tocify from './components/markdown-render/tocify';
@@ -68,7 +67,6 @@ const LedgeComponents = [
     MarkdownRatingItemComponent,
     RatingRadarChartComponent,
     ProcessTableComponent,
-    MarkdownTreeComponent,
 
     ...LedgeComponents,
   ],
@@ -79,7 +77,6 @@ const LedgeComponents = [
     MarkdownRatingItemComponent,
     RatingRadarChartComponent,
     ProcessTableComponent,
-    MarkdownTreeComponent,
 
     ...LedgeComponents,
   ],
