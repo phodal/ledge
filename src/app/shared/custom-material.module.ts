@@ -10,6 +10,7 @@ import {
   MAT_DIALOG_DEFAULT_OPTIONS,
   MatDialogModule,
 } from '@angular/material/dialog';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 const modules = [
   MatToolbarModule,
@@ -20,6 +21,8 @@ const modules = [
   MatSidenavModule,
   MatIconModule,
   MatDialogModule,
+
+  ScrollingModule,
 ];
 
 @NgModule({

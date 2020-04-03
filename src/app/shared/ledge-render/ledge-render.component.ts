@@ -1,5 +1,6 @@
 import {
   AfterViewInit,
+  ChangeDetectionStrategy,
   Component,
   Input,
   OnChanges,
@@ -14,6 +15,7 @@ import LedgeMarkdownConverter from '../components/model/ledge-markdown-converter
   selector: 'ledge-render',
   templateUrl: './ledge-render.component.html',
   styleUrls: ['./ledge-render.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
   constructor() {}
