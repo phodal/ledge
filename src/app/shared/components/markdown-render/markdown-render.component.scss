@@ -3,24 +3,19 @@
 }
 
 .markdown-toc {
-  min-height: 600px;
-  height: calc(100vh - 66px);
-  overflow-y: hidden;
-
   .left-drawer {
     width: 15%;
     min-width: 120px;
-    position: absolute;
   }
 
   .right-content {
+    height: calc(100vh - 68px);
   }
 }
 
 .no-toc-markdown {
   width: 95%;
   margin: 1em auto 0;
-  height: calc(100vh - 66px);
 }
 
 .sticky {

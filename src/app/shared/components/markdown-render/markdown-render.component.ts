@@ -80,6 +80,14 @@ export class MarkdownRenderComponent
       top = this.drawerEl.elementRef.nativeElement.scrollTop;
     }
 
+    const windowScroll = window.pageYOffset;
+    const headerHeight = 64;
+    if (windowScroll >= headerHeight) {
+      this.sticky = true;
+    } else {
+      this.sticky = false;
+    }
+
     if (
       window.pageYOffset ||
       document.documentElement.scrollTop ||
