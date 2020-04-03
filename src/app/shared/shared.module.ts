@@ -18,9 +18,21 @@ import { ToolsetComponent } from './toolset/toolset.component';
 import Tocify from './components/markdown-render/tocify';
 import { LedgeMindmapComponent } from './ledge-render/chart/ledge-mindmap/ledge-mindmap.component';
 import { LedgePyramidComponent } from './ledge-render/chart/ledge-pyramid/ledge-pyramid.component';
-import { SolutionComponent } from '../presentation/solution/solution.component';
 import { LedgeRadarComponent } from './ledge-render/chart/ledge-radar/ledge-radar.component';
 import { LedgeQuadrantComponent } from './ledge-render/chart/ledge-quadrant/ledge-quadrant.component';
+import { LedgeGraphvizComponent } from './ledge-render/chart/ledge-graphviz/ledge-graphviz.component';
+
+const LedgeComponents = [
+  LedgeRenderComponent,
+  LedgeBarChartComponent,
+  LedgeMindmapComponent,
+  LedgePyramidComponent,
+  LedgeRadarComponent,
+  LedgeQuadrantComponent,
+  LedgeGraphvizComponent,
+
+  ToolsetComponent,
+];
 
 @NgModule({
   imports: [
@@ -56,14 +68,7 @@ import { LedgeQuadrantComponent } from './ledge-render/chart/ledge-quadrant/ledg
     ProcessTableComponent,
     MarkdownTreeComponent,
 
-    LedgeRenderComponent,
-    LedgeBarChartComponent,
-    LedgeMindmapComponent,
-    LedgePyramidComponent,
-    LedgeRadarComponent,
-    LedgeQuadrantComponent,
-
-    ToolsetComponent,
+    ...LedgeComponents,
   ],
   providers: [Tocify],
   exports: [
@@ -74,14 +79,7 @@ import { LedgeQuadrantComponent } from './ledge-render/chart/ledge-quadrant/ledg
     ProcessTableComponent,
     MarkdownTreeComponent,
 
-    LedgeRenderComponent,
-    LedgeBarChartComponent,
-    LedgeMindmapComponent,
-    LedgePyramidComponent,
-    LedgeRadarComponent,
-    LedgeQuadrantComponent,
-
-    ToolsetComponent,
+    ...LedgeComponents,
   ],
   entryComponents: [],
 })
