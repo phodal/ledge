@@ -128,7 +128,6 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
         break;
       case 'list-style':
         const listData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        console.log(listData.lists);
         this.markdownData.push({
           type: 'list-style',
           data: listData.lists[0].children,

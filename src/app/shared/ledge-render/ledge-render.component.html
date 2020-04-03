@@ -84,6 +84,16 @@
       <div class="list-style list-style-{{item.config.type}}">
         <div *ngFor="let listItem of item.data;let index = index;" class="list-style-item item-{{index}}">
           {{listItem.name}}
+
+          <ng-template #recursiveList let-list>
+            <div *ngFor="let item of list" class="sub-item">
+              <div class="list-style-item">{{item.name}}</div>
+              <div *ngIf="item.children && item.children.length > 0">
+                <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.children }"></ng-container>
+              </div>
+            </div>
+          </ng-template>
+          <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: listItem.children }"></ng-container>
         </div>
       </div>
     </div>
