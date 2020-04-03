@@ -86,7 +86,7 @@ export class HomeComponent implements OnInit {
   homemd = mdData.default;
 
   constructor(title: Title) {
-    title.setTitle('Ledge DevOps 知识平台 - Periodic Table');
+    title.setTitle('Ledge DevOps 知识平台 - DevOps 工具元素周期表');
   }
 
   setCurrentAtomCategory(category: string) {
