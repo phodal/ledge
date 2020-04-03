@@ -133,7 +133,11 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
         break;
       case 'radar':
         const radarData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({ type: 'radar', data: radarData.lists[0] });
+        this.markdownData.push({
+          type: 'radar',
+          data: radarData.lists[0],
+          config: radarData.config,
+        });
         break;
       case 'quadrant':
         const quadrantData = LedgeMarkdownConverter.toJson(codeBlock.text);

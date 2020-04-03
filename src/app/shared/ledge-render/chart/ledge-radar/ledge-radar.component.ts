@@ -19,6 +19,9 @@ export class LedgeRadarComponent implements OnInit, AfterViewInit {
   @Input()
   data: LedgeList;
 
+  @Input()
+  config: any;
+
   @ViewChild('chart', {}) reporter: ElementRef;
 
   ngOnInit(): void {}
@@ -31,27 +34,50 @@ export class LedgeRadarComponent implements OnInit, AfterViewInit {
   }
 
   private buildOption(data) {
-    const value = [];
+    console.log(data);
     let indicator: any[] = data.children;
+
+    let legend: any[] = [data.name];
+    if (this.config && this.config.legend) {
+      legend = this.config.legend;
+    }
+    const seriesData = [];
+
     const firstName = data.children[0].name;
-    if (firstName.includes(': ') || firstName.includes('： ')) {
+    const hasValue = firstName.includes(': ') || firstName.includes('： ');
+    if (hasValue) {
       indicator = [];
       // tslint:disable-next-line:prefer-for-of
       for (let i = 0; i < data.children.length; i++) {
         const child = data.children[i];
-        const split = child.name.split(': ');
+        const nameValuesSplit = child.name.split(': ');
         indicator.push({
-          name: split[0],
+          name: nameValuesSplit[0],
           max: 5,
         });
-        value.push(parseInt(split[1], 10));
+        const values = nameValuesSplit[1];
+        const valuesSplit = values.split(' -> ');
+        // tslint:disable-next-line:prefer-for-of
+        for (let j = 0; j < legend.length; j++) {
+          if (!seriesData[j]) {
+            seriesData[j] = {
+              name: '',
+              value: [],
+            };
+          }
+
+          seriesData[j].name = legend[j];
+          if (valuesSplit[j]) {
+            seriesData[j].value.push(valuesSplit[j]);
+          }
+        }
       }
     }
 
     return {
       tooltip: {},
       legend: {
-        data: [data.name],
+        data: legend,
       },
       radar: {
         name: {
@@ -64,7 +90,7 @@ export class LedgeRadarComponent implements OnInit, AfterViewInit {
         },
         indicator,
       },
-      series: [{ type: 'radar', data: [{ value, name: data.name }] }],
+      series: [{ type: 'radar', data: seriesData }],
     };
   }
 }

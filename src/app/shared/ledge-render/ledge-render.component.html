@@ -13,7 +13,7 @@
     </div>
 
     <div *ngSwitchCase="'radar'">
-      <ledge-radar [data]="item.data"></ledge-radar>
+      <ledge-radar [data]="item.data" [config]="item.config"></ledge-radar>
     </div>
 
     <div *ngSwitchCase="'quadrant'">
