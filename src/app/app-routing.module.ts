@@ -19,10 +19,6 @@ import { MaturityComponent } from './presentation/maturity/maturity.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   {
-    path: 'home',
-    component: HomeComponent,
-  },
-  {
     path: 'case-study',
     component: CaseStudyComponent,
   },
@@ -74,6 +70,11 @@ const routes: Routes = [
     path: 'design',
     loadChildren: () =>
       import('./presentation/design/design.module').then((m) => m.DesignModule),
+  },
+  {
+    path: 'home',
+    loadChildren: () =>
+      import('./presentation/home/home.module').then((m) => m.HomeModule),
   },
   {
     path: 'helper',
