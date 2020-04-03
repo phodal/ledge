@@ -121,6 +121,21 @@
       <hr>
     </div>
 
+    <div *ngSwitchCase="'list'">
+      <ng-template #recursiveList let-list>
+        <li *ngFor="let item of list" class="sub-item">
+          {{item.body.name}}
+          <ul *ngIf="item.body.children.children && item.body.children.children.length > 0">
+            <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.body.children.children }"></ng-container>
+          </ul>
+        </li>
+      </ng-template>
+      <ul>
+        <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.data }"></ng-container>
+      </ul>
+    </div>
+
+
     <div *ngSwitchDefault>
       {{stringify(item)}}
     </div>

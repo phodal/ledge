@@ -27,7 +27,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
   isPureParagraph = true;
 
   ngOnInit(): void {
-    this.renderContent(this.content);
+    // this.renderContent(this.content);
   }
 
   ngAfterViewInit(): void {}
@@ -110,12 +110,12 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
         }
 
         this.listQueue.pop();
-
         if (this.listQueue.length === 0) {
           console.log(listBody);
+          this.markdownData.push({ type: 'list', data: listBody, ordered });
         }
 
-        return { body: listBody, ordered, start };
+        return { children: listBody, ordered, start };
       }
       case 'list_item_start': {
         const itemBody = {
@@ -150,7 +150,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
           }
         }
 
-        return { body: itemBody, name: itemBody.name, task, checked };
+        return { body: itemBody, task, checked };
       }
       case 'hr':
         this.markdownData.push(token);
