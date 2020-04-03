@@ -11,15 +11,14 @@ describe('MarkdownRenderComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [SharedModule, RouterTestingModule],
-      declarations: [ MarkdownRenderComponent ]
-    })
-    .compileComponents();
+      declarations: [MarkdownRenderComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(MarkdownRenderComponent);
     component = fixture.componentInstance;
-    component.src = '/assets/docs/manual.md';
+    component.data = '/assets/docs/manual.md';
     fixture.detectChanges();
   });
 

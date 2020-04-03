@@ -29,7 +29,6 @@ export class MarkdownRenderComponent
   showToc = false;
   @Input()
   showScroll = true;
-
   @Input()
   data = '';
 
