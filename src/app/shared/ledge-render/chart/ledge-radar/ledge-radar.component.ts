@@ -55,7 +55,7 @@ export class LedgeRadarComponent implements OnInit, AfterViewInit {
           max: 5,
         });
         const values = nameValuesSplit[1];
-        const valuesSplit = values.split(' -> ');
+        const valuesSplit = values.split(' -&gt; ');
         // tslint:disable-next-line:prefer-for-of
         for (let j = 0; j < legend.length; j++) {
           if (!seriesData[j]) {
@@ -67,7 +67,7 @@ export class LedgeRadarComponent implements OnInit, AfterViewInit {
 
           seriesData[j].name = legend[j];
           if (valuesSplit[j]) {
-            seriesData[j].value.push(valuesSplit[j]);
+            seriesData[j].value.push(parseInt(valuesSplit[j], 10));
           }
         }
       }
