@@ -113,6 +113,10 @@
       </pre>
     </div>
 
+    <div *ngSwitchCase="'blockquote'">
+      <blockquote>{{item.text}}</blockquote>
+    </div>
+
     <div *ngSwitchDefault>
       {{stringify(item)}}
     </div>

@@ -7,7 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LedgeHelperComponent implements OnInit {
   content = `
-# Syntax Test
+# Ledge 语法帮助
+
+ - list
+ - item
+ + a
+   + a
+
+> blockquote
+
+分割线
+
+----
 
 \`\`\`list-style
  - 开源工具采用

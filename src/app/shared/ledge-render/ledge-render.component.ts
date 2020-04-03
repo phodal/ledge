@@ -7,8 +7,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import marked from 'marked/lib/marked';
-import { LedgeChartModel } from '../components/model/ledge-chart.model';
-import { Tokens, TokensList } from 'marked';
+import { Token, Tokens, TokensList } from 'marked';
 import LedgeMarkdownConverter from '../components/model/ledge-markdown-converter';
 
 @Component({
@@ -19,9 +18,9 @@ import LedgeMarkdownConverter from '../components/model/ledge-markdown-converter
 export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
   @Input()
   content: string;
-
-  charts: LedgeChartModel[] = [];
   markdownData: any[] = [];
+  token: null;
+  tokens: TokensList | any = [];
 
   constructor() {}
 
@@ -40,36 +39,59 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
   private renderContent(content: string) {
     this.markdownData = [];
     const tokens = marked.lexer(content);
-    this.buildData(tokens);
-  }
+    this.tokens = tokens.reverse();
 
-  private buildData(tokens: TokensList) {
-    for (const token of tokens) {
-      switch (token.type) {
-        case 'table':
-          this.markdownData.push(token);
-          break;
-        case 'code':
-          this.handleCode(token);
-          break;
-        case 'paragraph':
-          this.handleParaGraph(token, tokens);
-          break;
-        case 'space':
-          break;
-        default:
-          this.markdownData.push(token);
-          break;
-      }
+    while (this.next()) {
+      this.tok();
     }
   }
 
-  private handleParaGraph(token: marked.Tokens.Paragraph, tokens: TokensList) {
-    const inline = marked.inlineLexer(token.text, tokens.links);
+  next(): Token {
+    this.token = this.tokens.pop();
+    return this.token;
+  }
+
+  peek() {
+    return this.tokens[this.tokens.length - 1] || 0;
+  }
+
+  private tok() {
+    const token: Token = this.token;
+    switch (token.type) {
+      case 'table':
+        this.markdownData.push(token);
+        break;
+      case 'code':
+        this.handleCode(token);
+        break;
+      case 'space':
+        break;
+      case 'blockquote_start':
+        let body = '';
+        while (this.next().type !== 'blockquote_end') {
+          body += this.tok();
+        }
+        this.markdownData.push({ type: 'blockquote', text: body });
+        break;
+      case 'paragraph':
+        return this.handleParaGraph(token);
+      case 'text':
+        return token.text;
+      default:
+        console.log(token);
+        this.markdownData.push(token);
+        break;
+    }
+  }
+
+  private handleParaGraph(token: marked.Tokens.Paragraph) {
+    const inline = marked.inlineLexer(token.text, this.tokens.links);
     this.markdownData.push({
       type: 'paragraph',
       data: inline,
     });
+
+    return inline;
   }
 
   private handleCode(token: marked.Tokens.Code) {

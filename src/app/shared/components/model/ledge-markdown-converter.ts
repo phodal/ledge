@@ -35,11 +35,11 @@ const LedgeMarkdownConverter = {
           result += ']';
           break;
         }
-        case 'table' : {
+        case 'table': {
           const cells = this.transpose(token.cells);
           tables.push({
             header: token.header,
-            cells
+            cells,
           });
           break;
         }
@@ -50,6 +50,8 @@ const LedgeMarkdownConverter = {
           }
           break;
         }
+        case 'space':
+          break;
         default: {
           console.log(token);
         }
@@ -70,8 +72,8 @@ const LedgeMarkdownConverter = {
       console.error(e);
     }
 
-    return {tables, config, lists};
-  }
+    return { tables, config, lists };
+  },
 };
 
 export default LedgeMarkdownConverter;
