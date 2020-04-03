@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {HighlightState} from '../../features/shared';
-import {Title} from '@angular/platform-browser';
+import { Component, OnInit } from '@angular/core';
+import { HighlightState } from '../../features/shared';
+import { Title } from '@angular/platform-browser';
+import * as mdData from 'raw-loader!../../../assets/docs/home.md';
 
 interface Contributor {
   name: string;
@@ -13,7 +14,7 @@ interface Contributor {
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
   highlightState: HighlightState;
@@ -40,44 +41,49 @@ export class HomeComponent implements OnInit {
       link: 'https://www.phodal.com',
       work: '发起人、主要维护者',
       title: 'ThoughtWorks 高级咨询师',
-      avatar: 'https://avatars3.githubusercontent.com/u/472311?s=460&u=3d7d46bf34e32449b1439178ae7652cf06d130f1&v=4'
+      avatar:
+        'https://avatars3.githubusercontent.com/u/472311?s=460&u=3d7d46bf34e32449b1439178ae7652cf06d130f1&v=4',
     },
     {
       name: '刘宇',
       link: 'https://github.com/LiuuY',
       work: '核心开发、丰富学习案例',
       title: 'ThoughtWorks 高级咨询师',
-      avatar: 'https://avatars0.githubusercontent.com/u/14286374?s=460&u=1933f64247e26812c67ca1c41aa0b7ba23b069f6&v=4'
+      avatar:
+        'https://avatars0.githubusercontent.com/u/14286374?s=460&u=1933f64247e26812c67ca1c41aa0b7ba23b069f6&v=4',
     },
     {
       name: '吴辰保',
       link: 'https://github.com/chen02xw',
       work: '丰富学习案例',
       title: 'ThoughtWorks 高级咨询师',
-      avatar: 'https://avatars3.githubusercontent.com/u/57704189?s=460&v=4'
+      avatar: 'https://avatars3.githubusercontent.com/u/57704189?s=460&v=4',
     },
     {
       name: '毛俊',
       link: 'https://github.com/komamj',
       work: '丰富移动端 DevOps 内容',
       title: 'ThoughtWorks 高级咨询师',
-      avatar: 'https://avatars1.githubusercontent.com/u/20431947?s=400&u=3bb25fac4f0dec4555577f89093729c643e8eb08&v=4'
+      avatar:
+        'https://avatars1.githubusercontent.com/u/20431947?s=400&u=3bb25fac4f0dec4555577f89093729c643e8eb08&v=4',
     },
     {
       name: '于晓南',
       link: 'https://github.com/ConnieYXN',
       work: '项目 QA，创建、维护测试智库',
       title: 'ThoughtWorks 高级咨询师',
-      avatar: 'https://avatars0.githubusercontent.com/u/22843012?s=460&u=6197636e584b6bec7982eccaf220b7bed42ddf0d&v=4'
+      avatar:
+        'https://avatars0.githubusercontent.com/u/22843012?s=460&u=6197636e584b6bec7982eccaf220b7bed42ddf0d&v=4',
     },
     {
       name: 'You',
       link: '',
       title: '',
       work: 'Help us, testing in production, give feedback',
-      avatar: '/assets/resources/images/avatar.svg'
-    }
+      avatar: '/assets/resources/images/avatar.svg',
+    },
   ];
+  homemd = mdData.default;
 
   constructor(title: Title) {
     title.setTitle('DevOps 知识平台 Ledge - Periodic Table');
@@ -87,6 +93,5 @@ export class HomeComponent implements OnInit {
     this.category = category;
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }
