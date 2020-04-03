@@ -85,8 +85,12 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
           text: inline,
         });
         break;
+      case 'hr':
+        this.markdownData.push(token);
+        break;
+      case 'html':
+        return token.text;
       default:
-        console.log(token);
         this.markdownData.push(token);
         break;
     }

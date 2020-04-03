@@ -18,6 +18,8 @@ export class LedgeHelperComponent implements OnInit {
 
 ## [Link in Heading](https://devops.phodal.com/design)
 
+<a href="https://www.phodal.com/">phodal.com</a>
+
 ----
 
 \`\`\`list-style
