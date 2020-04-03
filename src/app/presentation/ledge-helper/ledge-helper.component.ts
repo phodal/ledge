@@ -19,6 +19,15 @@ export class LedgeHelperComponent implements OnInit {
 config: {"type": "slider"}
 \`\`\`
 
+\`\`\`toolset
+|  Challenge;Skill/Ability   | low | high |
+|-|-|-|
+| low  |      | boredom |
+| high | anxiety | flow |
+
+config: {"type": "line-chart"}
+\`\`\`
+
 \`\`\`quadrant
  - 技术债墙
      - 快速解决
