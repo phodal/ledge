@@ -4,10 +4,7 @@
       <ul class="toc" #toc [class.sticky]="sticky"></ul>
     </mat-drawer>
     <mat-drawer-content class="right-content" #drawerContent (scroll)="handleScroll()">
-      <markdown class="markdown" [src]="src" *ngIf="src"
-                (load)="endLoading()"></markdown>
-
-      <markdown class="markdown" [data]="data" *ngIf="data"></markdown>
+      <ledge-render [content]="data" *ngIf="data"></ledge-render>
       <mat-spinner *ngIf="loading" class="loading" color="accent"></mat-spinner>
 
       <div *ngFor="let tool of toolsets">
@@ -19,12 +16,7 @@
 </div>
 
 <div *ngIf="!showToc" class="no-toc-markdown">
-  <markdown
-    (scroll)="handleScroll()"
-    class="markdown"
-    [src]="src"
-    (load)="endLoading()"
-  ></markdown>
+  <ledge-render (scroll)="handleScroll()" [content]="data" *ngIf="data"></ledge-render>
   <mat-spinner *ngIf="loading" class="loading" color="accent"></mat-spinner>
 
   <div *ngFor="let tool of toolsets">
