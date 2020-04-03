@@ -80,6 +80,14 @@
       </div>
     </div>
 
+    <div *ngSwitchCase="'list-style'">
+      <div class="list-style list-style-{{item.config.type}}">
+        <div *ngFor="let listItem of item.data;let index = index;" class="list-style-item item-{{index}}">
+          {{listItem.name}}
+        </div>
+      </div>
+    </div>
+
     <div *ngSwitchCase="'heading'">
       <h1 *ngIf="item.depth === 1">{{item.text}}</h1>
       <h2 *ngIf="item.depth === 2">{{item.text}}</h2>

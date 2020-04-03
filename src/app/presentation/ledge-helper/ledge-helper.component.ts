@@ -9,6 +9,26 @@ export class LedgeHelperComponent implements OnInit {
   content = `
 # Syntax Test
 
+\`\`\`list-style
+ - 开源工具采用
+ - 商业采购
+ - 自研研发交通平台
+
+config: {"type": "circle"}
+\`\`\`
+
+\`\`\`list-style
+ - 基于开源方案遇到困难
+   - 性能瓶颈
+   - 业务需求⽇益多元化，但团队规模有限
+ - 扩展更多的能力
+   - 更多元化的代码质量检查
+   - 审计需求
+   - 二进制、镜像安全扫描
+
+config: {"type": "group-square"}
+\`\`\`
+
 \`\`\`echarts
 {
 "series": [

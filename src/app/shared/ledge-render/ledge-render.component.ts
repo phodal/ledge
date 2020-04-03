@@ -126,6 +126,15 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
       case 'echarts':
         this.markdownData.push({ type: 'echarts', data: codeBlock.text });
         break;
+      case 'list-style':
+        const listData = LedgeMarkdownConverter.toJson(codeBlock.text);
+        console.log(listData.lists);
+        this.markdownData.push({
+          type: 'list-style',
+          data: listData.lists[0].children,
+          config: listData.config,
+        });
+        break;
       default:
         this.markdownData.push(token);
         break;
