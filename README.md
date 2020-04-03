@@ -128,7 +128,7 @@ config: {"type": "slider"}
 - [ ] 更多的度量内容
   - [ ] 监控等
 - [ ] 更多的 DevOps 报告
-- [ ] 重构 markdown render
+- [x] 重构 markdown render
 - [ ] 单元测试
   - [ ] 考虑一下 E2E 测试方案
   - [ ] 补充 markdown render 旧的单元测试
