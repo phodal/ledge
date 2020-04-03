@@ -31,10 +31,6 @@ const routes: Routes = [
     component: PatternComponent,
   },
   {
-    path: 'design',
-    component: DesignComponent,
-  },
-  {
     path: 'practise',
     component: PractiseComponent,
   },
@@ -73,6 +69,11 @@ const routes: Routes = [
   {
     path: 'solution',
     component: SolutionComponent,
+  },
+  {
+    path: 'design',
+    loadChildren: () =>
+      import('./presentation/design/design.module').then((m) => m.DesignModule),
   },
   {
     path: 'helper',

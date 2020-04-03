@@ -15,10 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomMaterialModule } from './shared/custom-material.module';
 import { CaseStudyComponent } from './presentation/case-study/case-study.component';
 import { PatternComponent } from './presentation/pattern/pattern.component';
-import { DesignComponent } from './presentation/design/design.component';
 import { PractiseComponent } from './presentation/practise/practise.component';
 import { ManualComponent } from './presentation/manual/manual.component';
-import { PathComponent } from './presentation/design/path/path.component';
 import { FormsModule } from '@angular/forms';
 import { DragulaModule } from 'ng2-dragula';
 import { MaturityItemComponent } from './presentation/maturity/maturity-item/maturity-item.component';
@@ -26,7 +24,6 @@ import { ResourcesComponent } from './presentation/resources/resources.component
 import { ReporterComponent } from './presentation/reporter/reporter.component';
 import { AwesomeToolComponent } from './presentation/awesome-tool/awesome-tool.component';
 import { MobileComponent } from './presentation/mobile/mobile.component';
-import { LedgeHelperComponent } from './presentation/ledge-helper/ledge-helper.component';
 import { ThinkTankComponent } from './presentation/think-tank/think-tank.component';
 import { SolutionComponent } from './presentation/solution/solution.component';
 import { AtomDialogComponent } from './features/atom-dialog/atom-dialog.component';
@@ -46,15 +43,12 @@ import { MaturityComponent } from './presentation/maturity/maturity.component';
 
     CaseStudyComponent,
     PatternComponent,
-    DesignComponent,
     PractiseComponent,
     ManualComponent,
-    PathComponent,
     ResourcesComponent,
     ReporterComponent,
     AwesomeToolComponent,
     MobileComponent,
-    LedgeHelperComponent,
     ThinkTankComponent,
     SolutionComponent,
 
@@ -69,7 +63,6 @@ import { MaturityComponent } from './presentation/maturity/maturity.component';
     BrowserAnimationsModule,
     FormsModule,
     CustomMaterialModule,
-    DragulaModule.forRoot(),
   ],
   providers: [Title],
   bootstrap: [AppComponent],
