@@ -117,6 +117,10 @@
       <blockquote [innerHTML]="item.text"></blockquote>
     </div>
 
+    <div *ngSwitchCase="'hr'">
+      <hr>
+    </div>
+
     <div *ngSwitchDefault>
       {{stringify(item)}}
     </div>
