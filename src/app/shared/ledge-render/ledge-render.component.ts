@@ -7,7 +7,7 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
-import marked from 'marked/lib/marked';
+import marked, { Slugger } from 'marked/lib/marked';
 import { Token, Tokens, TokensList } from 'marked';
 import LedgeMarkdownConverter from '../components/model/ledge-markdown-converter';
 
@@ -19,12 +19,14 @@ import LedgeMarkdownConverter from '../components/model/ledge-markdown-converter
 })
 export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
   constructor() {}
+
   @Input()
   content: string;
   markdownData: any[] = [];
   token = null;
   tokens: TokensList | any = [];
   listQueue = [];
+  sluger = new Slugger();
 
   isPureParagraph = true;
 
@@ -69,6 +71,22 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
     return body;
   }
 
+  unescape(html) {
+    const unescapeTest = /&(#(?:\d+)|(?:#x[0-9A-Fa-f]+)|(?:\w+));?/gi;
+    return html.replace(unescapeTest, (_, n) => {
+      n = n.toLowerCase();
+      if (n === 'colon') {
+        return ':';
+      }
+      if (n.charAt(0) === '#') {
+        return n.charAt(1) === 'x'
+          ? String.fromCharCode(parseInt(n.substring(2), 16))
+          : String.fromCharCode(+n.substring(1));
+      }
+      return '';
+    });
+  }
+
   private tok() {
     const token: Token = this.token;
     switch (token.type) {
@@ -99,6 +117,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
           type: 'heading',
           depth: token.depth,
           text: inline,
+          anchor: this.sluger.slug(this.unescape(inline)),
         });
         break;
       case 'list_start': {

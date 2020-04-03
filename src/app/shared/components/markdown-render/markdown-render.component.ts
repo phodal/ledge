@@ -15,20 +15,8 @@ import { DOCUMENT, Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 
 import { MarkdownService } from 'ngx-markdown';
-import marked, { Slugger } from 'marked/lib/marked';
-import { maxBy } from 'lodash-es';
-import * as echarts from 'echarts';
-
-import * as d3 from 'd3';
-import * as dagreD3 from 'dagre-d3';
-import * as graphlibDot from 'graphlib-dot';
-// import * as mermaid from 'mermaid';
-
-import ChartOptions from '../../support/chart-options';
-import MarkdownHelper from '../model/markdown.helper';
+import { Slugger } from 'marked/lib/marked';
 import Tocify, { TocItem } from './tocify';
-import LedgeMarkdownConverter from '../model/ledge-markdown-converter';
-import ECharts = echarts.ECharts;
 
 @Component({
   selector: 'component-markdown-render',
