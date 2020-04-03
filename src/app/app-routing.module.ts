@@ -76,7 +76,10 @@ const routes: Routes = [
   },
   {
     path: 'helper',
-    component: LedgeHelperComponent,
+    loadChildren: () =>
+      import('./presentation/ledge-helper/ledge-helper.module').then(
+        (m) => m.LedgeHelperModule
+      ),
   },
 ];
 
