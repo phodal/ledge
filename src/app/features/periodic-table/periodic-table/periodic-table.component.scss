@@ -1,6 +1,9 @@
 :host {
   flex-grow: 1;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @import 'src/styles/variables';
@@ -44,7 +47,7 @@ $selected-color: #fff;
     width: 120px;
     font-size: 0.75em;
     display: inline-block;
-    flex: 1 0 21%;
+    flex: 1 0 20%;
     margin: 5px;
   }
 }
