@@ -74,37 +74,26 @@ export class MarkdownRenderComponent
   onResize(event) {}
 
   @HostListener('window:scroll', ['$event'])
-  handleScroll() {
-    let top = 0;
-    if (this.drawerEl && this.drawerEl.nativeElement) {
-      top = this.drawerEl.nativeElement.scrollTop;
-    }
-
+  handleScroll(event) {
     const windowScroll = window.pageYOffset;
     const headerHeight = 64;
-    if (windowScroll >= headerHeight) {
-      this.sticky = true;
-    } else {
-      this.sticky = false;
-    }
+    this.sticky = windowScroll >= headerHeight;
 
     if (
       window.pageYOffset ||
       document.documentElement.scrollTop ||
-      document.body.scrollTop ||
-      top > 64
+      document.body.scrollTop
     ) {
       this.windowScrolled = true;
     } else if (
       (this.windowScrolled && window.pageYOffset) ||
       document.documentElement.scrollTop ||
-      document.body.scrollTop ||
-      top < 10
+      document.body.scrollTop
     ) {
       this.windowScrolled = false;
     }
 
-    this.handleForMenuSync(top);
+    this.handleForMenuSync(windowScroll);
   }
 
   private handleForMenuSync(top: number) {
