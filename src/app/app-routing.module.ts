@@ -1,20 +1,16 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './presentation/home/home.component';
-import { CaseStudyComponent } from './presentation/case-study/case-study.component';
-import { PatternComponent } from './presentation/pattern/pattern.component';
-import { DesignComponent } from './presentation/design/design.component';
-import { PractiseComponent } from './presentation/practise/practise.component';
-import { ManualComponent } from './presentation/manual/manual.component';
-import { ReporterComponent } from './presentation/reporter/reporter.component';
+import { RouterModule, Routes } from '@angular/router';
 import { AwesomeToolComponent } from './presentation/awesome-tool/awesome-tool.component';
+import { CaseStudyComponent } from './presentation/case-study/case-study.component';
+import { ManualComponent } from './presentation/manual/manual.component';
+import { MaturityComponent } from './presentation/maturity/maturity.component';
 import { MobileComponent } from './presentation/mobile/mobile.component';
-import { ToolsetComponent } from './shared/toolset/toolset.component';
-import { LedgeHelperComponent } from './presentation/ledge-helper/ledge-helper.component';
-import { ThinkTankComponent } from './presentation/think-tank/think-tank.component';
+import { PatternComponent } from './presentation/pattern/pattern.component';
+import { PractiseComponent } from './presentation/practise/practise.component';
+import { ReporterComponent } from './presentation/reporter/reporter.component';
 import { ResourcesComponent } from './presentation/resources/resources.component';
 import { SolutionComponent } from './presentation/solution/solution.component';
-import { MaturityComponent } from './presentation/maturity/maturity.component';
+import { ThinkTankComponent } from './presentation/think-tank/think-tank.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -53,10 +49,6 @@ const routes: Routes = [
   {
     path: 'mobile',
     component: MobileComponent,
-  },
-  {
-    path: 'toolset',
-    component: ToolsetComponent,
   },
   {
     path: 'think-tank',

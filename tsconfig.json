@@ -18,7 +18,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ledge-render": [
+        "dist/ledge-render/ledge-render",
+        "dist/ledge-render"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

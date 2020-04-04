@@ -1,0 +1,13 @@
+<div #tool>
+  <div *ngIf="option.type === 'slider'" class="slider">
+    <div *ngFor="let item of option.data">
+      <div class="name">{{item.name}}</div>
+      <div class="slide">
+        <mat-slider step="5" class="slide-element"></mat-slider>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="option.type === 'line-chart'" class="line-chart">
+      <div #lineChart class="toolset-chart"></div>
+  </div>
+</div>

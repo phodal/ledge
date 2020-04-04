@@ -1,0 +1,35 @@
+:host {
+  padding: 4em;
+}
+
+.slider {
+  width: 100%;
+  padding-left: 2em;
+  padding-top: 2em;
+  display: flex;
+  flex-direction: column;
+
+  div {
+    display: inline-block;
+  }
+
+  .name {
+    width: 100px;
+  }
+
+  .slide {
+    width: auto;
+  }
+
+  .slide-element {
+    width: 300px;
+  }
+}
+
+.line-chart {
+
+  .toolset-chart {
+    width: 1200px;
+    height: 600px;
+  }
+}

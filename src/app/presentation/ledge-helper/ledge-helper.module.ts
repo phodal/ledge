@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+import { RouterModule } from '@angular/router';
+import { LedgeRenderModule } from 'ledge-render';
 import { SharedModule } from '../../shared/shared.module';
 import { LedgeHelperComponent } from './ledge-helper.component';
 
@@ -12,6 +12,7 @@ import { LedgeHelperComponent } from './ledge-helper.component';
     CommonModule,
     FormsModule,
     SharedModule,
+    LedgeRenderModule,
     RouterModule.forChild([{ path: '', component: LedgeHelperComponent }]),
   ],
 })
