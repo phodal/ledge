@@ -33,7 +33,7 @@ export class MarkdownRenderComponent
   data = '';
 
   @ViewChild('toc', { static: false }) tocEl: ElementRef;
-  @ViewChild('drawerContent', { static: false }) drawerEl: ElementRef;
+  @ViewChild('render', { static: false }) scrollEl: ElementRef;
 
   loading = this.data !== '';
 
@@ -45,6 +45,7 @@ export class MarkdownRenderComponent
 
   private lastTocId: string;
   private scrollItems: any[] = [];
+  private isScrollingTop: boolean = false;
 
   constructor(
     private markdownService: MarkdownService,
@@ -70,14 +71,14 @@ export class MarkdownRenderComponent
 
   ngOnChanges(changes: SimpleChanges): void {}
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {}
-
   @HostListener('window:scroll', ['$event'])
   handleScroll(event) {
     const windowScroll = window.pageYOffset;
     const headerHeight = 64;
     this.sticky = windowScroll >= headerHeight;
+    if (windowScroll < 64) {
+      return;
+    }
 
     if (
       window.pageYOffset ||
@@ -123,9 +124,10 @@ export class MarkdownRenderComponent
   }
 
   scrollToTop() {
+    this.sticky = false;
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-    if (this.drawerEl && this.drawerEl.nativeElement) {
-      this.drawerEl.nativeElement.scrollTop = 0;
+    if (this.scrollEl && this.scrollEl.nativeElement) {
+      this.scrollEl.nativeElement.scrollTop = 0;
     }
   }
 
@@ -137,11 +139,12 @@ export class MarkdownRenderComponent
     }
     this.tocify.reset();
 
-    this.startSyncMenu();
+    setTimeout(() => this.startSyncMenu(), 10);
     setTimeout(() => this.gotoHeading(), 500);
   }
 
   private startSyncMenu() {
+    this.scrollItems = [];
     const elements = document.getElementsByClassName('ledge-heading');
     Array.from(elements).forEach((el) => {
       this.scrollItems.push(el);

@@ -6,13 +6,13 @@
       </div>
     </div>
     <div class="right-content">
-      <ledge-render [content]="data" *ngIf="data" (scroll)="handleScroll($event)"></ledge-render>
+      <ledge-render #render [content]="data" *ngIf="data" (scroll)="handleScroll($event)"></ledge-render>
     </div>
   </div>
 </div>
 
 <div *ngIf="!showToc" class="no-toc-markdown">
-  <ledge-render [content]="data" *ngIf="data"></ledge-render>
+  <ledge-render #render [content]="data" *ngIf="data"></ledge-render>
 </div>
 
 <!--Scroll to top-->
