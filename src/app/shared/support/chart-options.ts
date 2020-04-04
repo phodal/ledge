@@ -71,58 +71,6 @@ function buildRadarChartOption(data) {
   };
 }
 
-// tslint:disable-next-line:no-shadowed-variable
-function buildConfig(data, graphic: any[]) {
-  if (data.config && data.config.left) {
-    const keys = Object.keys(data.config);
-    // tslint:disable-next-line:prefer-for-of
-    for (let i = 0; i < keys.length; i++) {
-      const key = keys[i];
-      const graphConfig: any = {
-        type: 'group',
-        bounding: 'all',
-        children: [
-          {
-            type: 'text',
-            style: { fill: '#000', text: '', fontSize: 18 },
-          },
-        ],
-      };
-
-      const textValue = data.config[key];
-      graphConfig.children[0].style.text = textValue;
-      switch (key) {
-        case 'left':
-          graphConfig.top = 'middle';
-          graphConfig.left = 30;
-          graphConfig.children[0].style.text = '';
-          for (const textValueKey of textValue) {
-            graphConfig.children[0].style.text += textValueKey + '\n';
-          }
-          break;
-        case 'right':
-          graphConfig.top = 'middle';
-          graphConfig.right = 30;
-          graphConfig.children[0].style.text = '';
-          for (const textValueKey of textValue) {
-            graphConfig.children[0].style.text += textValueKey + '\n';
-          }
-          break;
-        case 'bottom':
-          graphConfig.left = 'center';
-          graphConfig.bottom = 30;
-          break;
-        case 'top':
-          graphConfig.left = 'center';
-          graphConfig.top = 30;
-          break;
-      }
-
-      graphic.push(graphConfig);
-    }
-  }
-}
-
 const ChartOptions = {
   buildRadarChartOption,
 };
