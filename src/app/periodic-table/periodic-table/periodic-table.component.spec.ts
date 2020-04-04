@@ -10,9 +10,8 @@ describe('PeriodicTableComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [SharedModule],
-      declarations: [ PeriodicTableComponent ]
-    })
-    .compileComponents();
+      declarations: [PeriodicTableComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

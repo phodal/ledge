@@ -10,7 +10,7 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
-import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 const BASE_URL = 'https://en.wikipedia.org/wiki';
 
@@ -18,13 +18,15 @@ const BASE_URL = 'https://en.wikipedia.org/wiki';
   selector: 'app-wiki',
   template: `
     <div class="modal-content" #modalContent>
-      <div class="close-modal" #closeModalDiv><p class="close-icon" (click)="closeModal.emit()">X</p></div>
+      <div class="close-modal" #closeModalDiv>
+        <p class="close-icon" (click)="closeModal.emit()">X</p>
+      </div>
       <iframe [src]="url" #iframe></iframe>
       <div class="loader" #loader><p class="text">Loading Content...</p></div>
     </div>
   `,
   styles: [
-      `
+    `
       :host {
         position: fixed;
         left: 0;
@@ -107,24 +109,37 @@ export class AppWikiComponent implements OnInit, AfterViewInit {
 
   url: SafeUrl;
 
-  constructor(private santiizer: DomSanitizer, private renderer: Renderer2) {
-  }
+  constructor(private santiizer: DomSanitizer, private renderer: Renderer2) {}
 
   ngOnInit() {
-    this.url = this.santiizer.bypassSecurityTrustResourceUrl(`${BASE_URL}/${this.atomName}`);
+    this.url = this.santiizer.bypassSecurityTrustResourceUrl(
+      `${BASE_URL}/${this.atomName}`
+    );
   }
 
   ngAfterViewInit() {
     const el = this.iframe.nativeElement;
     el.onload = () => {
-      this.renderer.setStyle(this.getNativeElement(this.loader), 'opacity', '0');
+      this.renderer.setStyle(
+        this.getNativeElement(this.loader),
+        'opacity',
+        '0'
+      );
       this.renderer.setStyle(this.getNativeElement(this.loader), 'width', '0');
       this.renderer.setStyle(this.getNativeElement(this.loader), 'height', '0');
       this.renderer.setStyle(el, 'opacity', '1');
       this.renderer.setStyle(el, 'width', '100%');
       this.renderer.setStyle(el, 'height', 'calc(100% - 3rem)');
-      this.renderer.setStyle(this.getNativeElement(this.closeModalDiv), 'display', 'block');
-      this.renderer.setStyle(this.getNativeElement(this.modalContent), 'background', '#fff');
+      this.renderer.setStyle(
+        this.getNativeElement(this.closeModalDiv),
+        'display',
+        'block'
+      );
+      this.renderer.setStyle(
+        this.getNativeElement(this.modalContent),
+        'background',
+        '#fff'
+      );
     };
   }
 

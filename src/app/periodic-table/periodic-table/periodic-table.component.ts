@@ -9,7 +9,7 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { assign, get } from 'lodash-es';
+import { get } from 'lodash-es';
 import { combineLatest, Observable, Subject } from 'rxjs';
 import { debounceTime, map, startWith, takeUntil, tap } from 'rxjs/operators';
 import { Atom, HighlightState } from '../shared';
@@ -31,7 +31,6 @@ interface HeaderInfo {
   colNum: number;
   inside: boolean;
 }
-
 
 const LANT_ATOM_GROUP = {
   number: '57-71',
@@ -77,24 +76,24 @@ export class PeriodicTableComponent implements OnInit, OnChanges {
   selectCategory: string;
 
   categories = [
-    { type: 'scm', displayName: '源码管理'},
-    { type: 'packageManage', displayName: '制品管理'},
-    { type: 'database', displayName: '数据库自动化'},
-    { type: 'testing', displayName: '测试'},
-    { type: 'config', displayName: '配置管理'},
-    { type: 'ci', displayName: '持续集成'},
-    { type: 'deployment', displayName: '部署'},
-    { type: 'security', displayName: '安全'},
-    { type: 'containers', displayName: '容器化'},
-    { type: 'releaseOrchestration', displayName: '发布编排'},
-    { type: 'openCloud', displayName: '开源云'},
-    { type: 'publicCloud', displayName: '公有云'},
-    { type: 'monitoring', displayName: '监控'},
-    { type: 'analytics', displayName: '分析'},
-    { type: 'aiops', displayName: '智能运维'},
-    { type: 'collaboration', displayName: '协作'},
-    { type: 'operation', displayName: '运营'},
-    { type: 'platform', displayName: '平台'},
+    { type: 'scm', displayName: '源码管理' },
+    { type: 'packageManage', displayName: '制品管理' },
+    { type: 'database', displayName: '数据库自动化' },
+    { type: 'testing', displayName: '测试' },
+    { type: 'config', displayName: '配置管理' },
+    { type: 'ci', displayName: '持续集成' },
+    { type: 'deployment', displayName: '部署' },
+    { type: 'security', displayName: '安全' },
+    { type: 'containers', displayName: '容器化' },
+    { type: 'releaseOrchestration', displayName: '发布编排' },
+    { type: 'openCloud', displayName: '开源云' },
+    { type: 'publicCloud', displayName: '公有云' },
+    { type: 'monitoring', displayName: '监控' },
+    { type: 'analytics', displayName: '分析' },
+    { type: 'aiops', displayName: '智能运维' },
+    { type: 'collaboration', displayName: '协作' },
+    { type: 'operation', displayName: '运营' },
+    { type: 'platform', displayName: '平台' },
   ];
 
   constructor(private http: HttpClient) {
@@ -116,25 +115,27 @@ export class PeriodicTableComponent implements OnInit, OnChanges {
     );
 
     this.atoms$ = combineLatest(
-      this.http.get<Atom[]>('./assets/periodic-table.json').pipe(startWith([] as Atom[])),
+      this.http
+        .get<Atom[]>('./assets/periodic-table.json')
+        .pipe(startWith([] as Atom[])),
       this.headerMove$
     ).pipe(
       map(([atoms, headerMove]) => {
         return atoms;
       }),
-      tap(atoms => (this.atoms = atoms)),
+      tap((atoms) => (this.atoms = atoms)),
       takeUntil(this.unsubscribe$)
     );
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    const {selectedMetal = null} = changes;
+    const { selectedMetal = null } = changes;
     this.metalClass = get(selectedMetal, 'currentValue', null);
   }
 
   showAtomDetails(atomNumber: number) {
     if (atomNumber) {
-      this.currentAtom = this.atoms.find(a => a.number === atomNumber);
+      this.currentAtom = this.atoms.find((a) => a.number === atomNumber);
       this.currentAtomCategory.emit(get(this.currentAtom, 'category', null));
     }
   }
