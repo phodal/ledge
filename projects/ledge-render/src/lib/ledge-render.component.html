@@ -100,12 +100,12 @@
       </div>
 
       <div *ngSwitchCase="'heading'">
-        <h1 *ngIf="item.depth === 1" [innerHTML]="item.text" id="{{item.anchor}}"></h1>
-        <h2 *ngIf="item.depth === 2" [innerHTML]="item.text" id="{{item.anchor}}"></h2>
-        <h3 *ngIf="item.depth === 3" [innerHTML]="item.text" id="{{item.anchor}}"></h3>
-        <h4 *ngIf="item.depth === 4" [innerHTML]="item.text" id="{{item.anchor}}"></h4>
-        <h5 *ngIf="item.depth === 5" [innerHTML]="item.text" id="{{item.anchor}}"></h5>
-        <h6 *ngIf="item.depth === 6" [innerHTML]="item.text" id="{{item.anchor}}"></h6>
+        <h1 *ngIf="item.depth === 1" [innerHTML]="item.text" class="ledge-heading" id="{{item.anchor}}"></h1>
+        <h2 *ngIf="item.depth === 2" [innerHTML]="item.text" class="ledge-heading" id="{{item.anchor}}"></h2>
+        <h3 *ngIf="item.depth === 3" [innerHTML]="item.text" class="ledge-heading" id="{{item.anchor}}"></h3>
+        <h4 *ngIf="item.depth === 4" [innerHTML]="item.text" class="ledge-heading" id="{{item.anchor}}"></h4>
+        <h5 *ngIf="item.depth === 5" [innerHTML]="item.text" class="ledge-heading" id="{{item.anchor}}"></h5>
+        <h6 *ngIf="item.depth === 6" [innerHTML]="item.text" class="ledge-heading" id="{{item.anchor}}"></h6>
       </div>
 
       <div *ngSwitchCase="'code'">

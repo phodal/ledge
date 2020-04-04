@@ -51,42 +51,38 @@ export class LedgeQuadrantComponent implements OnInit, AfterViewInit {
           ],
         };
 
-        const {textValueKey, textValueKey} = this.buildGraphConfig(data, key, graphConfig);
+        const textValue = data.config[key];
+        graphConfig.children[0].style.text = textValue;
+        switch (key) {
+          case 'left':
+            graphConfig.top = 'middle';
+            graphConfig.left = 30;
+            graphConfig.children[0].style.text = '';
+            for (const textValueKey of textValue) {
+              graphConfig.children[0].style.text += textValueKey + '\n';
+            }
+            break;
+          case 'right':
+            graphConfig.top = 'middle';
+            graphConfig.right = 30;
+            graphConfig.children[0].style.text = '';
+            for (const textValueKey of textValue) {
+              graphConfig.children[0].style.text += textValueKey + '\n';
+            }
+            break;
+          case 'bottom':
+            graphConfig.left = 'center';
+            graphConfig.bottom = 30;
+            break;
+          case 'top':
+            graphConfig.left = 'center';
+            graphConfig.top = 30;
+            break;
+        }
+
         graphic.push(graphConfig);
       }
     }
-  }
-
-  private buildGraphConfig(data, key: string, graphConfig: any) {
-    const textValue = data.config[key];
-    graphConfig.children[0].style.text = textValue;
-    switch (key) {
-      case 'left':
-        graphConfig.top = 'middle';
-        graphConfig.left = 30;
-        graphConfig.children[0].style.text = '';
-        for (const textValueKey of textValue) {
-          graphConfig.children[0].style.text += textValueKey + '\n';
-        }
-        break;
-      case 'right':
-        graphConfig.top = 'middle';
-        graphConfig.right = 30;
-        graphConfig.children[0].style.text = '';
-        for (const textValueKey of textValue) {
-          graphConfig.children[0].style.text += textValueKey + '\n';
-        }
-        break;
-      case 'bottom':
-        graphConfig.left = 'center';
-        graphConfig.bottom = 30;
-        break;
-      case 'top':
-        graphConfig.left = 'center';
-        graphConfig.top = 30;
-        break;
-    }
-    return {textValueKey, textValueKey};
   }
 
   buildOption(data) {
@@ -115,7 +111,10 @@ export class LedgeQuadrantComponent implements OnInit, AfterViewInit {
     this.buildConfig(data, graphic);
 
     return {
-      title: {text: data.name, left: 'center',},
+      title: {
+        text: data.name,
+        left: 'center',
+      },
       graphic,
       series: [
         {

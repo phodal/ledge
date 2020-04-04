@@ -284,7 +284,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
     }
   }
 
-  private stringify(str: any) {
+  stringify(str: any) {
     return JSON.stringify(str);
   }
 }
