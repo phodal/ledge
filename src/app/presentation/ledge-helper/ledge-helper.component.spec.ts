@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LedgeHelperComponent } from './ledge-helper.component';
 import { SharedModule } from '../../shared/shared.module';
+import { LedgeHelperModule } from './ledge-helper.module';
 
 describe('LedgeHelperComponent', () => {
   let component: LedgeHelperComponent;
@@ -9,10 +10,9 @@ describe('LedgeHelperComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [SharedModule],
-      declarations: [LedgeHelperComponent]
-    })
-      .compileComponents();
+      imports: [SharedModule, LedgeHelperModule],
+      declarations: [LedgeHelperComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
