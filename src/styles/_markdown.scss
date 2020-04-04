@@ -600,51 +600,45 @@
 }
 
 .markdown-toc {
-  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  overflow-y: scroll;
+
+  .right-content {
+    width: 85%;
+  }
 
   .left-drawer {
+    width: 15%;
+    min-width: 200px;
     font-size: 16px;
+    height: calc(100vh - 66px);
+
+    > ul {
+      padding: 1em;
+    }
 
     ul {
-      padding-right: 0;
+      width: 15%;
+      min-width: 200px;
+      text-indent: 1em;
 
       ul {
-        margin-right: 0;
+        padding: 0 0 0 1em;
+        font-size: 1.0em;
       }
     }
 
     li {
       list-style: none;
-
       a {
+        text-decoration: none;
         color: #000;
+        line-height: 1.2em;
 
         &.active {
           color: #ff4081;
-        }
-      }
-    }
-  }
-
-  ul {
-    margin-left: 8px;
-    padding: 2px;
-
-    ul {
-      margin: 0.2rem 0.8rem;
-      font-size: 1.0em;
-    }
-
-    li {
-      text-indent: 1em;
-      font-size: 0.95em;
-      margin-bottom: 0;
-
-      a {
-        text-decoration: none;
-
-        &:visited {
-          color: #000;
         }
       }
     }

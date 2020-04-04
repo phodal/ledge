@@ -1,7 +1,9 @@
 <div *ngIf="showToc">
   <div class="markdown-toc">
     <div class="left-drawer">
-      <ul class="toc" #toc [class.sticky]="sticky"></ul>
+      <div class="toc">
+        <ul #toc [class.sticky]="sticky"></ul>
+      </div>
     </div>
     <div class="right-content">
       <ledge-render [content]="data" *ngIf="data" (scroll)="handleScroll()"></ledge-render>

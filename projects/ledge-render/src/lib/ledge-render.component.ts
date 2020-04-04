@@ -52,16 +52,16 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
     }
   }
 
-  next(): Token {
+  private next(): Token {
     this.token = this.tokens.pop();
     return this.token;
   }
 
-  peek() {
+  private peek() {
     return this.tokens[this.tokens.length - 1] || 0;
   }
 
-  parseText() {
+  private parseText() {
     let body = this.token.text;
 
     while (this.peek().type === 'text') {
@@ -71,7 +71,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
     return body;
   }
 
-  unescape(html) {
+  private unescape(html) {
     const unescapeTest = /&(#(?:\d+)|(?:#x[0-9A-Fa-f]+)|(?:\w+));?/gi;
     return html.replace(unescapeTest, (_, n) => {
       n = n.toLowerCase();
@@ -284,7 +284,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
     }
   }
 
-  stringify(str: any) {
+  private stringify(str: any) {
     return JSON.stringify(str);
   }
 }

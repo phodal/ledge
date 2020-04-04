@@ -3,23 +3,6 @@
   box-sizing: border-box;
 }
 
-.markdown-toc {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  overflow-y: scroll;
-
-  .left-drawer {
-    width: 20%;
-    min-width: 160px;
-    height: calc(100vh - 66px);
-  }
-
-  .right-content {
-    width: 100%;
-  }
-}
-
 .no-toc-markdown {
   width: 95%;
   margin: 1em auto 0;
