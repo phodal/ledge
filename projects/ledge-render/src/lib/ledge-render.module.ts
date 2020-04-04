@@ -35,6 +35,6 @@ const LedgeComponents = [
     CustomMaterialModule,
   ],
   exports: [
-    ...LedgeComponents]
+    LedgeRenderComponent]
 })
 export class LedgeRenderModule { }
