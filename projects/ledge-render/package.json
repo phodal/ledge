@@ -1,6 +1,23 @@
 {
-  "name": "ledge-render",
+  "name": "@ledge-framework/render",
   "version": "0.0.1",
+  "description": "Ledge Framework render, a powerful markdown render.",
+  "license": "MPL-2.0",
+  "repository": "https://github.com/phodal/ledge",
+  "scirpts": {
+    "build": "ng build --prod"
+  },
+  "contributors": [
+    {
+      "name": "LiuuY",
+      "url": "https://github.com/LiuuY"
+    },
+    {
+      "name": "Phodal HUANG",
+      "url": "https://github.com/phodal/"
+    }
+  ],
+  "private": false,
   "peerDependencies": {
     "@angular/cdk": "^9.1.1",
     "@angular/common": "^9.0.5",

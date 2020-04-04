@@ -10,9 +10,11 @@
     "test:ci": "yarn ng test --watch=false --progress=false --browsers=ChromeHeadlessCI",
     "lint": "yarn ng lint",
     "commit": "git-cz",
-    "deploy": "yarn ng deploy --repo=https://github.com/phodal/do.git --cname=devops.phodal.com"
+    "deploy": "yarn ng deploy --repo=https://github.com/phodal/do.git --cname=devops.phodal.com",
+    "build:lib": "ng build ledge-render --prod",
+    "publish:lib": "cd dist/ledge-render && npm publish --access=public"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~9.0.3",
     "@angular/cdk": "^9.1.1",
