@@ -33,6 +33,7 @@ export class MarkdownRenderComponent
   data = '';
 
   @ViewChild('toc', { static: false }) tocEl: ElementRef;
+  @ViewChild('leftContent', { static: false }) leftEl: ElementRef;
   @ViewChild('render', { static: false }) scrollEl: ElementRef;
 
   loading = this.data !== '';
@@ -45,7 +46,6 @@ export class MarkdownRenderComponent
 
   private lastTocId: string;
   private scrollItems: any[] = [];
-  private isScrollingTop: boolean = false;
 
   constructor(
     private markdownService: MarkdownService,
@@ -75,26 +75,19 @@ export class MarkdownRenderComponent
   handleScroll(event) {
     const windowScroll = window.pageYOffset;
     const headerHeight = 64;
+    let top = 0;
+    if (this.scrollEl && this.scrollEl.nativeElement) {
+      top = this.scrollEl.nativeElement.scrollTop;
+    }
+
     this.sticky = windowScroll >= headerHeight;
-    if (windowScroll < 64) {
+    if (top <= headerHeight) {
+      this.windowScrolled = false;
       return;
     }
 
-    if (
-      window.pageYOffset ||
-      document.documentElement.scrollTop ||
-      document.body.scrollTop
-    ) {
-      this.windowScrolled = true;
-    } else if (
-      (this.windowScrolled && window.pageYOffset) ||
-      document.documentElement.scrollTop ||
-      document.body.scrollTop
-    ) {
-      this.windowScrolled = false;
-    }
-
-    this.handleForMenuSync(windowScroll);
+    this.windowScrolled = true;
+    this.handleForMenuSync(top);
   }
 
   private handleForMenuSync(top: number) {
@@ -128,6 +121,9 @@ export class MarkdownRenderComponent
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     if (this.scrollEl && this.scrollEl.nativeElement) {
       this.scrollEl.nativeElement.scrollTop = 0;
+    }
+    if (this.leftEl && this.leftEl.nativeElement) {
+      this.leftEl.nativeElement.scrollTop = 0;
     }
   }
 

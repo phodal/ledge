@@ -603,16 +603,19 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  overflow-y: scroll;
+  overflow-y: hidden;
 
   .right-content {
     width: 85%;
+    height: calc(100vh - 66px);
+    overflow-y: scroll;
   }
 
   .left-drawer {
     width: 15%;
     min-width: 200px;
     font-size: 16px;
+    overflow-y: scroll;
     height: calc(100vh - 66px);
 
     > ul {
