@@ -7,7 +7,7 @@
     "build": "yarn ng build",
     "build:ci": "yarn ng build --prod",
     "test": "yarn ng test",
-    "test:ci": "yarn ng test --watch=false --progress=false --browsers=ChromeHeadlessCI",
+    "test:ci": "yarn ng test --watch=false --progress=false --browsers=ChromeHeadlessCI --codeCoverage",
     "lint": "yarn ng lint",
     "commit": "git-cz",
     "deploy": "yarn ng deploy --repo=https://github.com/phodal/do.git --cname=devops.phodal.com",
