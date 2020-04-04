@@ -591,6 +591,7 @@
   pre {
     margin: 1em 0 !important;
     padding: 0 4px !important;
+
     code {
       padding: 0;
       font-size: 0.8em;
@@ -611,8 +612,10 @@
         margin-right: 0;
       }
     }
+
     li {
       list-style: none;
+
       a {
         color: #000;
 
@@ -648,16 +651,3 @@
   }
 }
 
-.normal-echarts {
-  width: 600px;
-  height: 400px;
-}
-
-.toolset-placeholder {
-  width: auto;
-  display: block;
-  height: auto;
-  border-radius: 4px;
-  border: 2px solid #ff4081;
-  margin: 2.5em auto;
-}

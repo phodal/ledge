@@ -1,13 +1,12 @@
 <div *ngIf="showToc">
-  <mat-drawer-container class="markdown-toc">
-    <mat-drawer mode="side" opened class="left-drawer">
+  <div class="markdown-toc">
+    <div class="left-drawer">
       <ul class="toc" #toc [class.sticky]="sticky"></ul>
-    </mat-drawer>
-    <mat-drawer-content class="right-content" #drawerContent>
+    </div>
+    <div class="right-content">
       <ledge-render [content]="data" *ngIf="data" (scroll)="handleScroll()"></ledge-render>
-
-    </mat-drawer-content>
-  </mat-drawer-container>
+    </div>
+  </div>
 </div>
 
 <div *ngIf="!showToc" class="no-toc-markdown">
