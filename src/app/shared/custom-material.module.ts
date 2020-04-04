@@ -11,6 +11,7 @@ import {
   MatDialogModule,
 } from '@angular/material/dialog';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { MatCardModule } from '@angular/material/card';
 
 const modules = [
   MatToolbarModule,
@@ -21,6 +22,7 @@ const modules = [
   MatSidenavModule,
   MatIconModule,
   MatDialogModule,
+  MatCardModule,
 
   ScrollingModule,
 ];

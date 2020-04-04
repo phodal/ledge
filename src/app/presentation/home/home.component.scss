@@ -6,6 +6,20 @@
   text-align: center;
 }
 
+.cards {
+  width: 80%;
+  margin: 3em auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .card {
+    color: #fff;
+    background: #424242;
+    width: 300px;
+  }
+}
+
 .period-title {
   margin: 0;
 
