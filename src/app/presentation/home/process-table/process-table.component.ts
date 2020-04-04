@@ -10,19 +10,18 @@ interface ProcessTable {
 @Component({
   selector: 'component-process-table',
   templateUrl: './process-table.component.html',
-  styleUrls: ['./process-table.component.scss']
+  styleUrls: ['./process-table.component.scss'],
 })
 export class ProcessTableComponent implements OnInit {
   @Input()
   tableValue: string;
   processTable: ProcessTable = {
     header: [],
-    cells: []
+    cells: [],
   };
   headerSize = 0;
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit(): void {
     const tokens = marked.lexer(this.tableValue);
@@ -46,13 +45,13 @@ export class ProcessTableComponent implements OnInit {
 
   getHeaderColumn() {
     return {
-      width: `calc(100% / ${this.headerSize} - 10px)`
+      width: `calc(100% / ${this.headerSize} - 10px)`,
     };
   }
 
   getColumnStyle() {
     return {
-      width: `calc(100% / ${this.headerSize} - 4px)`
+      width: `calc(100% / ${this.headerSize} - 4px)`,
     };
   }
 

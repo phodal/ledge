@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MarkdownRatingItemComponent } from './markdown-rating-item.component';
-import { SharedModule } from '../../../shared.module';
+import { SharedModule } from '../../../shared/shared.module';
 import { MarkdownModule } from 'ngx-markdown';
 
 describe('MarkdownRatingItemComponent', () => {
@@ -11,9 +11,8 @@ describe('MarkdownRatingItemComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [SharedModule, SharedModule, MarkdownModule],
-      declarations: [ MarkdownRatingItemComponent ]
-    })
-    .compileComponents();
+      declarations: [MarkdownRatingItemComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -22,7 +21,7 @@ describe('MarkdownRatingItemComponent', () => {
     component.item = {
       id: '',
       completed: false,
-      text: '23442'
+      text: '23442',
     };
     fixture.detectChanges();
   });

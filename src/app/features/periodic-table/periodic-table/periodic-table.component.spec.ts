@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PeriodicTableComponent } from './periodic-table.component';
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../shared/shared.module';
 
 describe('PeriodicTableComponent', () => {
   let component: PeriodicTableComponent;

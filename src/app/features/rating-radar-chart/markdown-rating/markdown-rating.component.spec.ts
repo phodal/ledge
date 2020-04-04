@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MarkdownRatingComponent } from './markdown-rating.component';
-import { SharedModule } from '../../../shared.module';
+import { SharedModule } from '../../../shared/shared.module';
 import { MarkdownModule } from 'ngx-markdown';
 
 describe('MarkdownRatingComponent', () => {
@@ -11,9 +11,8 @@ describe('MarkdownRatingComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [SharedModule, SharedModule, MarkdownModule],
-      declarations: [ MarkdownRatingComponent ]
-    })
-    .compileComponents();
+      declarations: [MarkdownRatingComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

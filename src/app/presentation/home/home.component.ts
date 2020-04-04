@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HighlightState } from '../../periodic-table/shared';
+import { HighlightState } from '../../features/periodic-table/shared';
 import { Title } from '@angular/platform-browser';
 import * as mdData from 'raw-loader!../../../assets/docs/home.md';
 

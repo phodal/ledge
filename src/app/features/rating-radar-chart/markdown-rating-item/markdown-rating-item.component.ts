@@ -1,8 +1,15 @@
-import { Component, EventEmitter, forwardRef, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  forwardRef,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import { MarkdownListModel } from '../../model/markdown.model';
-import MarkdownHelper from '../../model/markdown.helper';
-import {MatSliderChange} from '@angular/material/slider';
+import { MarkdownListModel } from '../../../shared/model/markdown.model';
+import MarkdownHelper from '../../../shared/model/markdown.helper';
+import { MatSliderChange } from '@angular/material/slider';
 
 @Component({
   selector: 'markdown-rating-item',
@@ -12,9 +19,9 @@ import {MatSliderChange} from '@angular/material/slider';
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => MarkdownRatingItemComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class MarkdownRatingItemComponent implements OnInit {
   @Input() item: MarkdownListModel;
@@ -23,14 +30,11 @@ export class MarkdownRatingItemComponent implements OnInit {
 
   private disabled = false;
 
-  onChange(param1) {
-  }
+  onChange(param1) {}
 
-  onTouched(param1) {
-  }
+  onTouched(param1) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   registerOnChange(fn: any): void {
     this.itemChange.emit = fn;

@@ -5,12 +5,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LedgeRenderModule } from '@ledge-framework/render';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
-import { MarkdownRatingItemComponent } from './components/markdown-radar-chart/markdown-rating-item/markdown-rating-item.component';
-import { MarkdownRatingComponent } from './components/markdown-radar-chart/markdown-rating/markdown-rating.component';
-import { RatingRadarChartComponent } from './components/markdown-radar-chart/rating-radar-chart.component';
-import { MarkdownRenderComponent } from './components/markdown-render/markdown-render.component';
-import Tocify from './components/markdown-render/tocify';
-import { ProcessTableComponent } from './components/process-table/process-table.component';
+import { MarkdownRatingItemComponent } from '../features/rating-radar-chart/markdown-rating-item/markdown-rating-item.component';
+import { MarkdownRatingComponent } from '../features/rating-radar-chart/markdown-rating/markdown-rating.component';
+import { RatingRadarChartComponent } from '../features/rating-radar-chart/rating-radar-chart.component';
+import { MarkdownRenderComponent } from '../features/markdown-render/markdown-render.component';
+import Tocify from '../features/markdown-render/tocify';
+import { ProcessTableComponent } from '../presentation/home/process-table/process-table.component';
 import { CustomMaterialModule } from './custom-material.module';
 
 @NgModule({

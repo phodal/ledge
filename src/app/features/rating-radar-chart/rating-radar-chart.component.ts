@@ -8,10 +8,10 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { MarkdownListModel } from '../model/markdown.model';
+import { MarkdownListModel } from '../../shared/model/markdown.model';
 import * as echarts from 'echarts';
-import ChartOptions from '../../support/chart-options';
-import MarkdownHelper from '../model/markdown.helper';
+import ChartOptions from '../../shared/support/chart-options';
+import MarkdownHelper from '../../shared/model/markdown.helper';
 
 @Component({
   selector: 'rating-radar-chart',

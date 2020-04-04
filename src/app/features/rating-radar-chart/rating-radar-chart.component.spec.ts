@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RatingRadarChartComponent } from './rating-radar-chart.component';
-import { SharedModule } from '../../shared.module';
+import { SharedModule } from '../../shared/shared.module';
 import { MarkdownModule } from 'ngx-markdown';
 
 describe('MarkdownRadarChartComponent', () => {
