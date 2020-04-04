@@ -26,6 +26,7 @@
     "@angular/platform-browser": "~9.0.3",
     "@angular/platform-browser-dynamic": "^9.1.0",
     "@angular/router": "~9.0.3",
+    "@ledge-framework/render": "~0.0.1",
     "@ngx-pwa/local-storage": "^9.0.2",
     "core-js": "^3.6.4",
     "d3": "^5.15.0",
