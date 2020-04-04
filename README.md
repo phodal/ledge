@@ -10,6 +10,7 @@ Ledge （from Know-Ledge，意指承载物）知识和工具平台，是我们�
 
 ![CI](https://github.com/phodal/ledge/workflows/CI/badge.svg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/64e2ddc705fbeba4435e/maintainability)](https://codeclimate.com/github/phodal/ledge/maintainability)
+[![codecov](https://codecov.io/gh/phodal/ledge/branch/master/graph/badge.svg)](https://codecov.io/gh/phodal/ledge)
 
 ![Screenshots](docs/images/ledge-ss.png "Ledge 首页截图")
 
