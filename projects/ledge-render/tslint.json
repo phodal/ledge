@@ -5,13 +5,15 @@
       true,
       "attribute",
       "lib",
-      "camelCase"
+      "camelCase",
+      "ledge"
     ],
     "component-selector": [
       true,
       "element",
       "lib",
-      "kebab-case"
+      "kebab-case",
+      "ledge"
     ]
   }
 }

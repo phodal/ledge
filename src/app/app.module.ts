@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LedgeRenderModule } from 'ledge-render';
+import { LedgeRenderModule } from '@ledge-framework/render';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AwesomeToolComponent } from './presentation/awesome-tool/awesome-tool.component';
