@@ -21,9 +21,11 @@ export class LedgeQuadrantComponent implements OnInit, AfterViewInit {
 
   @ViewChild('chart', {}) reporter: ElementRef;
 
-  constructor() {}
+  constructor() {
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   ngAfterViewInit(): void {
     const myChart = echarts.init(this.reporter.nativeElement);
@@ -44,43 +46,47 @@ export class LedgeQuadrantComponent implements OnInit, AfterViewInit {
           children: [
             {
               type: 'text',
-              style: { fill: '#000', text: '', fontSize: 18 },
+              style: {fill: '#000', text: '', fontSize: 18},
             },
           ],
         };
 
-        const textValue = data.config[key];
-        graphConfig.children[0].style.text = textValue;
-        switch (key) {
-          case 'left':
-            graphConfig.top = 'middle';
-            graphConfig.left = 30;
-            graphConfig.children[0].style.text = '';
-            for (const textValueKey of textValue) {
-              graphConfig.children[0].style.text += textValueKey + '\n';
-            }
-            break;
-          case 'right':
-            graphConfig.top = 'middle';
-            graphConfig.right = 30;
-            graphConfig.children[0].style.text = '';
-            for (const textValueKey of textValue) {
-              graphConfig.children[0].style.text += textValueKey + '\n';
-            }
-            break;
-          case 'bottom':
-            graphConfig.left = 'center';
-            graphConfig.bottom = 30;
-            break;
-          case 'top':
-            graphConfig.left = 'center';
-            graphConfig.top = 30;
-            break;
-        }
-
+        const {textValueKey, textValueKey} = this.buildGraphConfig(data, key, graphConfig);
         graphic.push(graphConfig);
       }
     }
+  }
+
+  private buildGraphConfig(data, key: string, graphConfig: any) {
+    const textValue = data.config[key];
+    graphConfig.children[0].style.text = textValue;
+    switch (key) {
+      case 'left':
+        graphConfig.top = 'middle';
+        graphConfig.left = 30;
+        graphConfig.children[0].style.text = '';
+        for (const textValueKey of textValue) {
+          graphConfig.children[0].style.text += textValueKey + '\n';
+        }
+        break;
+      case 'right':
+        graphConfig.top = 'middle';
+        graphConfig.right = 30;
+        graphConfig.children[0].style.text = '';
+        for (const textValueKey of textValue) {
+          graphConfig.children[0].style.text += textValueKey + '\n';
+        }
+        break;
+      case 'bottom':
+        graphConfig.left = 'center';
+        graphConfig.bottom = 30;
+        break;
+      case 'top':
+        graphConfig.left = 'center';
+        graphConfig.top = 30;
+        break;
+    }
+    return {textValueKey, textValueKey};
   }
 
   buildOption(data) {
@@ -109,49 +115,12 @@ export class LedgeQuadrantComponent implements OnInit, AfterViewInit {
     this.buildConfig(data, graphic);
 
     return {
-      title: {
-        text: data.name,
-        left: 'center',
-      },
+      title: {text: data.name, left: 'center',},
       graphic,
       series: [
         {
           roam: false,
-          label: {
-            normal: {
-              position: 'insideTopLeft',
-              formatter: (params) => {
-                const children: any[] = params.data.children;
-                const arr = ['{name|' + params.name + '}', '{hr|}'];
-
-                for (const child of children) {
-                  arr.push(`{child|` + child.name + '}');
-                }
-
-                return arr.join('\n');
-              },
-              rich: {
-                child: {
-                  fontSize: 16,
-                  lineHeight: 30,
-                  align: 'left',
-                  color: 'white',
-                },
-                name: {
-                  fontSize: 20,
-                  align: 'center',
-                  color: '#fff',
-                },
-                hr: {
-                  width: '100%',
-                  borderColor: 'rgba(255,255,255,0.2)',
-                  borderWidth: 0.5,
-                  height: 0,
-                  lineHeight: 10,
-                },
-              },
-            },
-          },
+          label: this.buildLabelInfo(),
           type: 'treemap',
           breadcrumb: {
             show: false,
@@ -178,6 +147,44 @@ export class LedgeQuadrantComponent implements OnInit, AfterViewInit {
           data: quadData,
         },
       ],
+    };
+  }
+
+  private buildLabelInfo() {
+    return {
+      normal: {
+        position: 'insideTopLeft',
+        formatter: (params) => {
+          const children: any[] = params.data.children;
+          const arr = ['{name|' + params.name + '}', '{hr|}'];
+
+          for (const child of children) {
+            arr.push(`{child|` + child.name + '}');
+          }
+
+          return arr.join('\n');
+        },
+        rich: {
+          child: {
+            fontSize: 16,
+            lineHeight: 30,
+            align: 'left',
+            color: 'white',
+          },
+          name: {
+            fontSize: 20,
+            align: 'center',
+            color: '#fff',
+          },
+          hr: {
+            width: '100%',
+            borderColor: 'rgba(255,255,255,0.2)',
+            borderWidth: 0.5,
+            height: 0,
+            lineHeight: 10,
+          },
+        },
+      },
     };
   }
 }
