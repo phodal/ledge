@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { StorageMap } from '@ngx-pwa/local-storage';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { MatDrawerContent } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-solution',
@@ -10,6 +11,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ['./solution.component.scss'],
 })
 export class SolutionComponent implements OnInit {
+  @ViewChild('drawerContent', {}) drawerContent: MatDrawerContent;
+
   solutions = [{ displayName: 'Coding', source: 'coding' }];
   currentSource: string;
   src: string;
@@ -63,6 +66,7 @@ export class SolutionComponent implements OnInit {
       .subscribe((response) => {
         const queryParams: Params = { source };
         this.storage.set('solution.last', source).subscribe();
+        this.resetScrollbar();
         this.content = response;
 
         this.router.navigate([], {
@@ -71,6 +75,12 @@ export class SolutionComponent implements OnInit {
           queryParamsHandling: 'merge', // remove to replace all query params by provided
         });
       });
+  }
+
+  private resetScrollbar() {
+    if (this.drawerContent && this.drawerContent.getElementRef()) {
+      this.drawerContent.getElementRef().nativeElement.scrollTop = 0;
+    }
   }
 
   private buildSrc(source: string) {
