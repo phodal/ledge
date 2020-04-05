@@ -74,6 +74,9 @@
     "ng-packagr": "^9.0.0",
     "prettier": "^2.0.2",
     "puppeteer": "^2.1.1",
+    "stylelint": "^13.3.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-scss": "^3.16.0",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
     "typescript": "~3.7.5"
@@ -84,11 +87,11 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn ng test && yarn ng build --prod --aot"
+      "pre-push": "yarn run test:ci"
     }
   },
   "lint-staged": {
-    "src/app/*.{css,scss}": [
+    "src/app/**/*.{css,scss}": [
       "stylelint --syntax=scss",
       "prettier --parser --write"
     ],

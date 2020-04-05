@@ -10,6 +10,7 @@
 
 .header {
   margin-top: 1em;
+
   h3 {
     text-align: center;
   }
@@ -19,7 +20,6 @@
   padding: 0;
   margin-right: 6px;
   margin-top: 12px;
-
   background-color: rgba(255, 255, 255, 0.2);
   max-width: 100%;
   width: 100%;
@@ -60,7 +60,6 @@
 .container > div {
   display: inline-block;
   overflow-y: auto;
-
   cursor: move;
   cursor: grab;
   cursor: -moz-grab;
@@ -93,19 +92,19 @@
 }
 
 .add-item {
-  top: 3.0rem;
+  top: 3rem;
   position: absolute;
   right: 4rem;
 }
 
 .download {
-  top: 3.0rem;
+  top: 3rem;
   position: absolute;
   right: 35rem;
 }
 
 .remove-column {
-  top: 3.0rem;
+  top: 3rem;
   position: absolute;
   right: 18rem;
 }
@@ -175,7 +174,7 @@
 }
 
 #color-redlight {
-  background-color: #ee1111;
+  background-color: #e11;
 }
 
 #color-white {
