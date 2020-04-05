@@ -76,11 +76,18 @@ export class HomeComponent implements OnInit {
         'https://avatars0.githubusercontent.com/u/22843012?s=460&u=6197636e584b6bec7982eccaf220b7bed42ddf0d&v=4',
     },
     {
+      name: '郭晋',
+      link: '',
+      work: '用户体验设计',
+      title: 'ThoughtWorks 用户体验设计师',
+      avatar: '/assets/resources/images/avatar-new.svg',
+    },
+    {
       name: 'You',
       link: '',
       title: '',
       work: 'Help us, testing in production, give feedback',
-      avatar: '/assets/resources/images/avatar.svg',
+      avatar: '/assets/resources/images/avatar-new.svg',
     },
   ];
   homemd = mdData.default;

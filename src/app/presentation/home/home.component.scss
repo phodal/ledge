@@ -54,12 +54,23 @@
   text-align: center;
 }
 
+
+.contrib-section {
+  width: 1200px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
 .contributors {
   display: flex;
   height: auto;
+  flex-wrap: wrap;
 
   .contributor {
-    width: 180px;
+    width: 200px;
+    height: 240px;
     min-height: 180px;
     text-align: center;
     margin: auto;
@@ -88,7 +99,6 @@
       border-radius: 128px;
     }
   }
-
 }
 
 .footer {
