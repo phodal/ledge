@@ -39,6 +39,13 @@ Use [yarn link](https://classic.yarnpkg.com/en/docs/cli/link/) to avoid reinstal
 4. `yarn build ledge-render --watch`
 5. `yarn start`
 
+### Add new markdown syntax
+
+1. design new markdown code syntax
+2. add type to `handleCode` in `ledge-render.component.ts`
+3. use `ng g c` to generate new component
+4. link to new component
+
 ## Roadmap
 
 Todo:
