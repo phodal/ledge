@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from "@angular/core";
-import colors from "./colors";
+import { Component, OnInit, Input } from '@angular/core';
+import colors from './colors';
 
 interface CardData {
   header: string;
@@ -13,21 +13,21 @@ interface HeaderStyle {
 }
 
 @Component({
-  selector: "ledge-card",
-  templateUrl: "./ledge-card.component.html",
-  styleUrls: ["./ledge-card.component.scss"],
+  selector: 'ledge-card',
+  templateUrl: './ledge-card.component.html',
+  styleUrls: ['./ledge-card.component.scss'],
 })
 export class SkillCardComponent implements OnInit {
   @Input()
   data: CardData = {
-    header: "",
+    header: '',
     cells: [],
     index: -1,
   };
   @Input()
   headerStyle: HeaderStyle = {
-    bg: "#fff",
-    font: "#333",
+    bg: '#fff',
+    font: '#333',
   };
 
   constructor() {}
@@ -36,7 +36,7 @@ export class SkillCardComponent implements OnInit {
     console.log(this.data);
   }
 
-  /**TODO */
+  /* TODO */
   getHeaderStyle() {
     let idx = this.data.index;
 
@@ -45,9 +45,9 @@ export class SkillCardComponent implements OnInit {
     }
 
     return {
-      "background-color":
+      'background-color':
         (this.headerStyle && this.headerStyle.bg) || colors[idx],
-      color: (this.headerStyle && this.headerStyle.font) || "#333",
+      color: (this.headerStyle && this.headerStyle.font) || '#333',
     };
   }
 }
