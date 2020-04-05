@@ -85,7 +85,7 @@ export class HomeComponent implements OnInit {
     {
       name: 'You',
       link: '',
-      title: '',
+      title: 'github users',
       work: 'Help us, testing in production, give feedback',
       avatar: '/assets/resources/images/avatar-new.svg',
     },

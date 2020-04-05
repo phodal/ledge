@@ -61,6 +61,13 @@
   border-radius: 8px;
   box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
+
+  .section-title {
+    font-size: 40px;
+    letter-spacing: 2.5px;
+    padding: 36px 0;
+    text-align: center;
+  }
 }
 
 .contributors {
@@ -84,19 +91,32 @@
       }
     }
 
+    .username {
+      padding: 6px;
+    }
+
     .name {
       font-size: 1.4em;
       color: black;
+      padding: 6px;
+    }
+
+    .title {
+      font-size: 12px;
+      color: #111111;
     }
 
     .work {
       font-size: 1.0em;
+      padding: 6px;
+      color: #111111;
+      line-height: 1.5;
     }
 
     img {
-      height: 128px;
-      width: 128px;
-      border-radius: 128px;
+      height: 120px;
+      width: 120px;
+      border-radius: 120px;
     }
   }
 }
