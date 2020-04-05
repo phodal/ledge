@@ -34,6 +34,29 @@ export class LedgeRadarComponent implements OnInit, AfterViewInit {
   }
 
   private buildOption(data) {
+    let {indicator, legend, seriesData} = this.buildIndicatorAndSeries(data);
+
+    return {
+      tooltip: {},
+      legend: {
+        data: legend,
+      },
+      radar: {
+        name: {
+          textStyle: {
+            color: '#000',
+            borderRadius: 3,
+            padding: [3, 5],
+            fontSize: 14,
+          },
+        },
+        indicator,
+      },
+      series: [{ type: 'radar', data: seriesData }],
+    };
+  }
+
+  private buildIndicatorAndSeries(data) {
     let indicator: any[] = data.children;
 
     let legend: any[] = [data.name];
@@ -73,23 +96,6 @@ export class LedgeRadarComponent implements OnInit, AfterViewInit {
       }
     }
 
-    return {
-      tooltip: {},
-      legend: {
-        data: legend,
-      },
-      radar: {
-        name: {
-          textStyle: {
-            color: '#000',
-            borderRadius: 3,
-            padding: [3, 5],
-            fontSize: 14,
-          },
-        },
-        indicator,
-      },
-      series: [{ type: 'radar', data: seriesData }],
-    };
+    return {indicator, legend, seriesData};
   }
 }
