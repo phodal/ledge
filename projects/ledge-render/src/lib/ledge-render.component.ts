@@ -224,9 +224,8 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
         this.markdownData.push({
           type: 'process-card',
           data: cardData.tables[0],
-          colors: cardData.config.colors || [],
+          config: cardData.config,
         });
-        console.log(this.markdownData);
         break;
       case 'mindmap':
         const mindmapData = LedgeMarkdownConverter.toJson(codeBlock.text);

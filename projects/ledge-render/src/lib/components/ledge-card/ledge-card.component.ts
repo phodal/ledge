@@ -17,7 +17,7 @@ interface HeaderStyle {
   templateUrl: './ledge-card.component.html',
   styleUrls: ['./ledge-card.component.scss'],
 })
-export class SkillCardComponent implements OnInit {
+export class LedgeCardComponent implements OnInit {
   @Input()
   data: CardData = {
     header: '',
@@ -32,22 +32,21 @@ export class SkillCardComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    console.log(this.data);
-  }
+  ngOnInit(): void {}
 
-  /* TODO */
+  /* TODO：更好的实现方式 */
   getHeaderStyle() {
     let idx = this.data.index;
 
     if (!idx && idx !== 0) {
       idx = Math.floor(Math.random() * 10);
     }
+    const bgColor = (this.headerStyle && this.headerStyle.bg) || colors[idx];
+    const fontColor = (this.headerStyle && this.headerStyle.font) || '#333';
 
     return {
-      'background-color':
-        (this.headerStyle && this.headerStyle.bg) || colors[idx],
-      color: (this.headerStyle && this.headerStyle.font) || '#333',
+      'background-color': bgColor,
+      color: fontColor,
     };
   }
 }

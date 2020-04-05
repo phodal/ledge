@@ -11,7 +11,7 @@ import { LedgeRadarComponent } from './chart/ledge-radar/ledge-radar.component';
 import { CustomMaterialModule } from './custom-material.module';
 import { LedgeRenderComponent } from './ledge-render.component';
 import { ToolsetComponent } from './toolset/toolset.component';
-import { SkillCardComponent } from './components/ledge-card/ledge-card.component';
+import { LedgeCardComponent } from './components/ledge-card/ledge-card.component';
 
 const LedgeComponents = [
   LedgeRenderComponent,
@@ -23,7 +23,7 @@ const LedgeComponents = [
   LedgeGraphvizComponent,
   LedgePureEchartsComponent,
   ToolsetComponent,
-  SkillCardComponent,
+  LedgeCardComponent,
 ];
 
 

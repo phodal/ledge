@@ -1,4 +1,4 @@
-// random colors
+// default colors
 export default [
   '#e55852',
   '#e98832',

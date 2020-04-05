@@ -88,8 +88,8 @@
         >
           <ledge-card
             class="column"
-            [headerStyle]="item.colors[index]"
-            [data]="{ header: header, cells: item.data.cells[index],index:index }"
+            [headerStyle]="item.config.colors && item.config.colors[index]"
+            [data]="{ header: header, cells: item.data.cells[index], index:index }"
           ></ledge-card>
         </ng-container>
       </div>
