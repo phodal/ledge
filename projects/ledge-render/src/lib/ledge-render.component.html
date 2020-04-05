@@ -82,6 +82,18 @@
         </div>
       </div>
 
+      <div *ngSwitchCase="'process-card'" class="flex-table row">
+        <ng-container
+          *ngFor="let header of item.data.header; let index = index"
+        >
+          <ledge-card
+            class="column"
+            [headerStyle]="item.colors[index]"
+            [data]="{ header: header, cells: item.data.cells[index],index:index }"
+          ></ledge-card>
+        </ng-container>
+      </div>
+
       <div *ngSwitchCase="'list-style'">
         <div class="list-style list-style-{{item.config.type}}">
           <div *ngFor="let listItem of item.data;let index = index;" class="list-style-item item-{{index}}">
