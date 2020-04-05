@@ -76,6 +76,7 @@
     "puppeteer": "^2.1.1",
     "stylelint": "^13.3.0",
     "stylelint-config-standard": "^20.0.0",
+    "stylelint-scss": "^3.16.0",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
     "typescript": "~3.7.5"
@@ -90,7 +91,7 @@
     }
   },
   "lint-staged": {
-    "src/app/*.{css,scss}": [
+    "src/app/**/*.{css,scss}": [
       "stylelint --syntax=scss",
       "prettier --parser --write"
     ],
