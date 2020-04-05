@@ -230,6 +230,7 @@
     text-align: center;
     flex: 1;
     margin-left: 2em;
+    position: relative;
 
     &:first-child {
       margin-left: 0;
@@ -239,7 +240,14 @@
       font-size: 1.2em;
       line-height: 1.5em;
       margin-top: 1em;
+    }
 
+    .step-symbol {
+      position: absolute;
+      top: 50%;
+      right: -32px;
+      height: 10px;
+      width: 20px;
       background: url("/assets/resources/images/arrow-right-thin.svg") no-repeat center right 10px;
     }
 
