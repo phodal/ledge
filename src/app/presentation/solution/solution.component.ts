@@ -11,7 +11,8 @@ import { MatDrawerContent } from '@angular/material/sidenav';
   styleUrls: ['./solution.component.scss'],
 })
 export class SolutionComponent implements OnInit {
-  @ViewChild('drawerContent', {}) drawerContent: MatDrawerContent;
+  @ViewChild('drawerContent', { static: false })
+  drawerContent: MatDrawerContent;
 
   solutions = [{ displayName: 'Coding', source: 'coding' }];
   currentSource: string;
@@ -78,8 +79,11 @@ export class SolutionComponent implements OnInit {
   }
 
   private resetScrollbar() {
-    if (this.drawerContent && this.drawerContent.getElementRef()) {
-      this.drawerContent.getElementRef().nativeElement.scrollTop = 0;
+    if (!!this.drawerContent) {
+      // on test drawerContent is different
+      if (!this.drawerContent.hasOwnProperty('nativeElement')) {
+        this.drawerContent.getElementRef().nativeElement.scrollTop = 0;
+      }
     }
   }
 

@@ -13,7 +13,6 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ToolsetOption } from '@ledge-framework/render';
 import { Slugger } from 'marked/lib/marked';
 import { MarkdownService } from 'ngx-markdown';
 import Tocify, { TocItem } from './tocify';

@@ -11,7 +11,8 @@ import { MatDrawerContent } from '@angular/material/sidenav';
   styleUrls: ['./case-study.component.scss'],
 })
 export class CaseStudyComponent implements OnInit {
-  @ViewChild('drawerContent', {}) drawerContent: MatDrawerContent;
+  @ViewChild('drawerContent', { static: false })
+  drawerContent: MatDrawerContent;
 
   cases = [
     { displayName: '美团', source: 'meituan' },
@@ -98,8 +99,11 @@ export class CaseStudyComponent implements OnInit {
   }
 
   private resetScrollbar() {
-    if (this.drawerContent && this.drawerContent.getElementRef()) {
-      this.drawerContent.getElementRef().nativeElement.scrollTop = 0;
+    if (!!this.drawerContent) {
+      // on test drawerContent is different
+      if (!this.drawerContent.hasOwnProperty('nativeElement')) {
+        this.drawerContent.getElementRef().nativeElement.scrollTop = 0;
+      }
     }
   }
 
