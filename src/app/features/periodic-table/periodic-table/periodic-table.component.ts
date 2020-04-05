@@ -114,12 +114,11 @@ export class PeriodicTableComponent implements OnInit, OnChanges {
       debounceTime(STAY_AT_LEAST)
     );
 
-    this.atoms$ = combineLatest(
-      this.http
-        .get<Atom[]>('./assets/periodic-table.json')
-        .pipe(startWith([] as Atom[])),
-      this.headerMove$
-    ).pipe(
+    const tableReq = this.http
+      .get<Atom[]>('./assets/periodic-table.json')
+      .pipe(startWith([] as Atom[]));
+
+    this.atoms$ = combineLatest([tableReq, this.headerMove$]).pipe(
       map(([atoms, headerMove]) => {
         return atoms;
       }),
