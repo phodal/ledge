@@ -1,5 +1,10 @@
 @import "../../../styles/color";
 
+.container {
+  position: relative;
+  z-index: 100;
+}
+
 .intro {
   width: 80%;
   max-width: 1400px;
@@ -168,32 +173,6 @@
   background: $black;
   display: flex;
   color: $white;
-  margin-top: 4em;
-  padding-top: 4em;
-  padding-bottom: 4em;
-
-  .columns {
-    width: 960px;
-    margin: 0 auto;
-
-    .rows {
-      .cell-title {
-        font-size: 1.2em;
-        font-weight: bold;
-        line-height: 1.6em;
-      }
-
-      .cell {
-        color: $white;
-        font-size: 1.1em;
-
-        a {
-          padding: 0;
-          color: $white;
-          line-height: 1.6em;
-          text-decoration: none;
-        }
-      }
-    }
-  }
+  margin-top: -20em;
+  height: 40em;
 }
