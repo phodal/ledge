@@ -31,7 +31,7 @@ import { LedgeRenderModule } from '@ledge-framework/render';
 
 ## Development
 
-Use (yarn link)[https://classic.yarnpkg.com/en/docs/cli/link/] to avoid reinstalling the library on every build.
+Use [yarn link](https://classic.yarnpkg.com/en/docs/cli/link/) to avoid reinstalling the library on every build.
 
 1. `cd ./dist/ledge-render`
 2. `yarn link`
