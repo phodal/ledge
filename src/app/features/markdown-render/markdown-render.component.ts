@@ -36,13 +36,10 @@ export class MarkdownRenderComponent
   @ViewChild('leftContent', { static: false }) leftEl: ElementRef;
   @ViewChild('render', { static: false }) scrollEl: ElementRef;
 
-  loading = this.data !== '';
-
   private toc = [];
   tocStr = '';
   sticky = false;
   windowScrolled = false;
-  toolsets: ToolsetOption[] = [];
 
   private lastTocId: string;
   private scrollItems: any[] = [];
