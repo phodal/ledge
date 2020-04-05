@@ -1,0 +1,54 @@
+// Navigation Bar
+.mat-toolbar {
+  box-shadow: 0 1px 0 0 $lighter-gray;
+
+  &.mat-accent {
+    color: $purple;
+    background: $white;
+    box-shadow: 0 1px 0 0 $lighter-gray;
+  }
+
+  .mat-toolbar-row {
+    align-items: stretch;
+  }
+
+  .mat-button {
+    font-size: 16px;
+    font-weight: normal;
+    height: 100%;
+    border-radius: 0;
+  
+    &.active {
+      color: $white;
+      background-color: $purple;  
+    }  
+  }
+}
+
+.cdk-overlay-container {
+  .cdk-overlay-backdrop.nav-menu-wrapper {
+    & + .cdk-overlay-connected-position-bounding-box {
+      .mat-menu-panel {
+        margin-top: 16px;
+        border-radius: 0;
+    
+        .mat-menu-content:not(:empty) {
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+    
+        .mat-menu-content {
+          .mat-menu-item {
+            height: 60px;
+            box-shadow: 0 1px 0 0 $lighter-gray;
+
+            &:hover {
+              color: $purple;
+              background-color: rgba($purple, .2); 
+            }
+          }
+        }
+      }
+    }
+  }
+}

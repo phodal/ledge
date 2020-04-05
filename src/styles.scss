@@ -9,6 +9,7 @@
 @import "styles/graphviz";
 @import "styles/mermaid";
 @import "styles/color";
+@import "styles/material_ui";
 
 @import "styles/mdstyles/process-table";
 @import "styles/mdstyles/infinity";
@@ -42,9 +43,9 @@ body {
 }
 
 /* Optional: show position indicator in red */
-::-webkit-scrollbar-thumb {
-  background: #ff4081;
-}
+// ::-webkit-scrollbar-thumb {
+//   background: #ff4081;
+// }
 
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.1);
@@ -92,21 +93,6 @@ body {
 
 .webcomponents-plugins {
 
-}
-
-.github {
-  height: 24px;
-  line-height: 36px;
-  margin: 0 4px 3px 0;
-  vertical-align: middle;
-  cursor: pointer;
-  white-space: nowrap;
-  text-align: center;
-
-  img {
-    width: 24px;
-    height: 24px;
-  }
 }
 
 .home-markdown {
