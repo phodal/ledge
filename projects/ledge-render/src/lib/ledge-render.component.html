@@ -137,17 +137,17 @@
 
       <div *ngSwitchCase="'list'">
         <ng-template #recursiveList let-list>
-          <li *ngFor="let item of list" class="sub-item" [innerHTML]="item.body.name">
-            <ul *ngIf="!item.ordered && item.body.children.children && item.body.children.children.length > 0">
-              <ng-container
-                *ngTemplateOutlet="recursiveList; context:{ $implicit: item.body.children.children }"></ng-container>
+          <li *ngFor="let item of list" class="sub-item">
+            <div [outerHTML]="item.body.name"></div>
+            <ul *ngIf="!item.ordered && item.body.children && item.body.children.length > 0">
+              <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.body.children }"></ng-container>
             </ul>
-            <ol *ngIf="item.ordered && item.body.children.children && item.body.children.children.length > 0">
-              <ng-container
-                *ngTemplateOutlet="recursiveList; context:{ $implicit: item.body.children.children }"></ng-container>
+            <ol *ngIf="item.ordered && item.body.children && item.body.children.length > 0">
+              <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.body.children }"></ng-container>
             </ol>
           </li>
         </ng-template>
+
         <ul *ngIf="!item.ordered"><ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.data }"></ng-container></ul>
         <ol *ngIf="item.ordered"><ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.data }"></ng-container></ol>
       </div>

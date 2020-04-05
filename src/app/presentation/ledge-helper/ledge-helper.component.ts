@@ -11,8 +11,8 @@ export class LedgeHelperComponent implements OnInit {
 
 1. fsda
 2. 34
-  a. a
-  b. a
+  - a
+  - a
 3. sdaf
 
 \`\`\`list-style

@@ -169,7 +169,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
               this.tokens.links
             );
           } else {
-            itemBody.children = this.tok();
+            itemBody.children = this.tok().children;
           }
         }
 
@@ -293,6 +293,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   stringify(str: any) {
+    console.log(str);
     return JSON.stringify(str);
   }
 }
