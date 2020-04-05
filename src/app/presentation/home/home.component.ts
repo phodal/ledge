@@ -77,10 +77,11 @@ export class HomeComponent implements OnInit {
     },
     {
       name: '郭晋',
-      link: '',
+      link: 'https://www.behance.net/GUO-JIN',
       work: '用户体验设计',
       title: 'ThoughtWorks 用户体验设计师',
-      avatar: '/assets/resources/images/avatar-new.svg',
+      avatar:
+        'https://mir-s3-cdn-cf.behance.net/user/230/09f5c331679359.570378575cc1d.jpg',
     },
     {
       name: 'You',
