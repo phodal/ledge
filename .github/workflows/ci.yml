@@ -28,7 +28,6 @@ jobs:
 
       - name: Install
         run: |
-          npm install -g yarn
           yarn install
 
       - name: Build
