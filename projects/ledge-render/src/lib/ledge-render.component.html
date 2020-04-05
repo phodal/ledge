@@ -87,7 +87,7 @@
           *ngFor="let header of item.data.header; let index = index"
         >
           <ledge-card
-            class="column"
+            class="column card-column"
             [headerStyle]="item.config.colors && item.config.colors[index]"
             [data]="{ header: header, cells: item.data.cells[index], index:index }"
           ></ledge-card>
