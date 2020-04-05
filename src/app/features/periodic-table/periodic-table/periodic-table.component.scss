@@ -6,9 +6,9 @@
   justify-content: center;
 }
 
-@import 'src/styles/variables';
+@import "src/styles/variables";
 
-$heading-color: #000088;
+$heading-color: #008;
 $grid-gap: 4px;
 $selected-color: #fff;
 
@@ -142,7 +142,6 @@ $selected-color: #fff;
     color: $heading-color;
     position: relative;
     cursor: pointer;
-
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
