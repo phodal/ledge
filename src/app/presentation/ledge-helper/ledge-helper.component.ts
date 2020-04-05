@@ -9,9 +9,11 @@ export class LedgeHelperComponent implements OnInit {
   content = `
 # Ledge 语法帮助
 
-1. first
-2. second
-3. third
+1. fsda
+2. 34
+  a. a
+  b. a
+3. sdaf
 
 \`\`\`list-style
  - 开源工具采用
