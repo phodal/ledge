@@ -35,6 +35,7 @@ export class CaseStudyComponent implements OnInit {
     { displayName: '大搜车', source: 'dasouche' },
     { displayName: '小米', source: 'xiaomi' },
     { displayName: '微博', source: 'weibo' },
+    { displayName: '优酷', source: 'youku' },
   ];
   currentSource: string;
   src: string;
