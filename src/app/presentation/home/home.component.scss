@@ -120,7 +120,7 @@
 
   .process-title {
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.5px;
     letter-spacing: 1px;
     text-align: center;
     margin: 0px auto;
@@ -134,6 +134,25 @@
     height: 310px;
     background-color: #f3f4f5;
     padding: 61px 0;
+  }
+
+  .devops-content {
+    margin: 40px auto;
+    width: 1080px;
+  }
+}
+
+:host ::ng-deep {
+
+  .devops-content {
+
+    .no-toc-markdown {
+      width: 100%;
+    }
+
+    .render-item {
+      padding: 0;
+    }
   }
 }
 

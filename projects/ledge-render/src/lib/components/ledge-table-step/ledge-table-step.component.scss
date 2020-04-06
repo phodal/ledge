@@ -1,0 +1,98 @@
+$black: #111;
+$white: #fff;
+$gray: #999aaa;
+
+@mixin arrow {
+  width: 0;
+  height: 0;
+  border: 12px solid;
+  position: absolute;
+}
+
+@mixin rect {
+  position: absolute;
+  width: 18px;
+  height: 10px;
+  background-color: $gray;
+}
+
+:host ::ng-deep {
+  ledge-card {
+    .card {
+      min-width: 220px;
+    }
+  }
+}
+
+.table-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.step-row {
+  display: flex;
+  align-items: flex-start;
+  height: 430px; // TODO: 高度需要动态
+
+  .column {
+    display: flex;
+    align-items: center;
+    height: 90%;
+  }
+
+  &-reverse {
+    flex-direction: row-reverse;
+  }
+
+  &-wrap {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.arrow {
+  position: relative;
+  width: 68px;
+
+  &-right {
+    @include arrow;
+    left: 30px;
+    border-color: transparent transparent transparent $gray;
+  }
+
+  &-left {
+    @include arrow;
+    right: 30px;
+    border-color: transparent $gray transparent transparent;
+  }
+
+  &-down {
+    @include arrow;
+    top: 30px;
+    border-color: $gray transparent transparent transparent;
+  }
+}
+
+.rect {
+  &-left {
+    @include rect;
+    top: 7px;
+    left: 18px;
+  }
+
+  &-right {
+    @include rect;
+    top: 7px;
+    right: 18px;
+  }
+
+  &-down {
+    @include rect;
+    top: 18px;
+    left: 7px;
+    width: 10px;
+    height: 18px;
+  }
+}

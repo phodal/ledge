@@ -157,6 +157,10 @@
         <ledge-step-line [data]="item.data"></ledge-step-line>
       </div>
 
+      <div class="table-step" *ngSwitchCase="'table-step'">
+        <ledge-table-step [data]="item.data" [config]="item.config"></ledge-table-step>
+      </div>
+
       <div *ngSwitchDefault>
         {{stringify(item)}}
       </div>
