@@ -84,9 +84,7 @@ export class LedgeMindmapComponent implements OnInit, AfterViewInit {
           lineStyle: {
             width: 2,
           },
-
           label: {
-            backgroundColor: '#fff',
             position: 'left',
             verticalAlign: 'middle',
             align: 'right',
@@ -100,7 +98,6 @@ export class LedgeMindmapComponent implements OnInit, AfterViewInit {
               align: 'left',
             },
           },
-
           expandAndCollapse: true,
           animationDuration: 550,
           animationDurationUpdate: 750,
