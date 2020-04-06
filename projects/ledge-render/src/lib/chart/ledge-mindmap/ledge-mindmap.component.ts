@@ -69,7 +69,7 @@ export class LedgeMindmapComponent implements OnInit, AfterViewInit {
       series: [
         {
           type: 'tree',
-          roam: true,
+          roam: 'move',
           id: 0,
           name: 'tree1',
           data: [data],
@@ -84,15 +84,12 @@ export class LedgeMindmapComponent implements OnInit, AfterViewInit {
           lineStyle: {
             width: 2,
           },
-
           label: {
-            backgroundColor: '#fff',
             position: 'left',
             verticalAlign: 'middle',
             align: 'right',
             fontSize: 14,
           },
-
           leaves: {
             label: {
               position: 'right',
@@ -100,8 +97,7 @@ export class LedgeMindmapComponent implements OnInit, AfterViewInit {
               align: 'left',
             },
           },
-
-          expandAndCollapse: true,
+          expandAndCollapse: false,
           animationDuration: 550,
           animationDurationUpdate: 750,
         },

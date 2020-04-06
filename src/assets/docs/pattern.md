@@ -1,6 +1,6 @@
 ```pyramid
  - DevOps
-   - 文化建设、组织架构转型：组织文化
+   - 文化建设：组织文化、组织架构转型
    - 需求、设计、研发、运营：流程规范
    - 需求分析、代码开发、自动化测试、部署运维：技术实践
    - 项目管理、研发管理、测试管理、部署管理、监控分析：工具支撑
@@ -95,11 +95,11 @@
 
 # 模式：流畅度模型
 
-![数字化流畅度模型](assets/images/mdb.svg "数字化流畅度模型")
+![数字化流畅度模型](assets/images/mdb.svg '数字化流畅度模型')
 
 based on: MDB & [https://martinfowler.com/articles/agileFluency.html](https://martinfowler.com/articles/agileFluency.html)
 
-![DevOps流畅度模型](assets/images/devops-fluency.svg "DevOps 流畅度模型")
+![DevOps流畅度模型](assets/images/devops-fluency.svg 'DevOps 流畅度模型')
 
 ### 敏捷实例化
 
