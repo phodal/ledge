@@ -1,5 +1,5 @@
-@import "~@angular/material/theming";
-@import "../../../styles/behavior";
+@import '~@angular/material/theming';
+@import '../../../styles/behavior';
 
 .case-study {
   min-height: 600px;
@@ -14,7 +14,6 @@
 .left-drawer {
   width: 15%;
   min-width: 200px;
-  min-height: 100vh;
 
   h2 {
     padding: 20px 0;
