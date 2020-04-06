@@ -119,14 +119,15 @@ export class LedgeQuadrantComponent implements OnInit, AfterViewInit {
       series: [
         {
           roam: false,
+          nodeClick: false,
           label: this.buildLabelInfo(),
           type: 'treemap',
           breadcrumb: {
             show: false,
           },
           visualMin: 0,
-          visualMax: 1,
-          visualDimension: 1,
+          visualMax: 0,
+          visualDimension: 0,
           levels: [
             {
               itemStyle: {
