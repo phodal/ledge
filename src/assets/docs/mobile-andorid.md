@@ -40,13 +40,13 @@
 
 - 如果测试对`Android`框架有依赖性（特别是与框架建立复杂交互的测试），则最好使用 `Robolectric`添加框架依赖项。
 
-      	> 例：待测试的类同时依赖`Context`、`Intent`、`Bundle`、`Application`等`Android Framework`中的类时，此时我们可以引入`Robolectric`框架进行本地单元测试的编写。
+> 例：待测试的类同时依赖`Context`、`Intent`、`Bundle`、`Application`等`Android Framework`中的类时，此时我们可以引入`Robolectric`框架进行本地单元测试的编写。
 
 - 如果测试对`Android`框架的依赖性极小，或者如果测试仅取决于我们自己应用的对象，则可以使用诸如`Mockito`之类的模拟框架添加模拟依赖项。([BasicUnitAndroidTest](https://github.com/android/testing-samples/tree/master/unit/BasicUnitAndroidTest))
 
-      	> 例：待测试的类只依赖`java api`（最理想的情况）,此时对于待测试类所依赖的其他类我们就可以利用`Mockito`框架mock其依赖类，再进行当前类的单元测试编写。([EmailValidatorTest](https://github.com/android/testing-samples/blob/master/unit/BasicSample/app/src/test/java/com/example/android/testing/unittesting/BasicSample/EmailValidatorTest.java))
+> 例：待测试的类只依赖`java api`（最理想的情况）,此时对于待测试类所依赖的其他类我们就可以利用`Mockito`框架 mock 其依赖类，再进行当前类的单元测试编写。([EmailValidatorTest](https://github.com/android/testing-samples/blob/master/unit/BasicSample/app/src/test/java/com/example/android/testing/unittesting/BasicSample/EmailValidatorTest.java))
 
-      	> 例：待测试的类除了依赖`java api`外仅依赖`Android Framework`中`Context`这个类,此时我们就可以利用`Mockito`框架`mock` `Context`类，再进行当前类的单元测试编写。([SharedPreferencesHelperTest](https://github.com/android/testing-samples/blob/master/unit/BasicSample/app/src/test/java/com/example/android/testing/unittesting/BasicSample/SharedPreferencesHelperTest.java))
+> 例：待测试的类除了依赖`java api`外仅依赖`Android Framework`中`Context`这个类,此时我们就可以利用`Mockito`框架`mock` `Context`类，再进行当前类的单元测试编写。([SharedPreferencesHelperTest](https://github.com/android/testing-samples/blob/master/unit/BasicSample/app/src/test/java/com/example/android/testing/unittesting/BasicSample/SharedPreferencesHelperTest.java))
 
 #### 设置测试环境
 
