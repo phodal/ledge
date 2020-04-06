@@ -1,0 +1,57 @@
+@mixin arrow {
+  width: 0;
+  height: 0;
+  border: 12px solid;
+}
+
+.step-line {
+  display: flex;
+  align-items: flex-start;
+  width: 930px;
+  &-reverse {
+    flex-direction: row-reverse;
+  }
+
+  &-wrap {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  >div {
+    display: flex;
+    align-items: center;
+  }
+
+  .step-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 154px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: #111111;
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 34px;
+  }
+
+  .arrow {
+    &-right {
+      @include arrow;
+      margin: 0 2px 0 14px;
+      border-color: transparent transparent transparent #111111;
+    }
+
+    &-left {
+      @include arrow;
+      margin: 0 14px 0 2px;
+      border-color: transparent #111111 transparent transparent;
+    }
+
+    &-down {
+      @include arrow;
+      margin: 14px 0 2px 0;
+      border-color: #111111 transparent transparent transparent;
+    }
+  }
+}
