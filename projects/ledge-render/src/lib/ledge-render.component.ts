@@ -264,6 +264,13 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
           config: listData.config,
         });
         break;
+        case 'step-line':
+        const stepLineData = LedgeMarkdownConverter.toJson(codeBlock.text);
+        this.markdownData.push({
+          type: 'step-line',
+          data: stepLineData.lists[0].children
+        });
+        break;
       default:
         this.markdownData.push(token);
         break;

@@ -1,0 +1,25 @@
+<ng-container *ngIf="data.length>6">
+  <div class="step-line">
+    <div *ngFor="let dataOne of data.slice(0,5);let index = index"
+      [class.step-line-wrap]="index===data.slice(0,5).length-1">
+      <span class="step-item">{{dataOne.name}}</span>
+      <span [class]="index===data.slice(0,5).length-1?'arrow-down':'arrow-right'"></span>
+    </div>
+  </div>
+
+  <div class="step-line step-line-reverse">
+    <div *ngFor="let dataTwo of data.slice(5,data.length);let index = index">
+      <span class="arrow-left" *ngIf="index !== data.slice(5,data.length).length-1"></span>
+      <span class="step-item">{{dataTwo.name}}</span>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="data.length<=6">
+  <div class="step-line">
+    <div *ngFor="let item of data;let index = index">
+      <span class="step-item">{{item.name}}</span>
+      <span class="arrow-right" *ngIf="index !== data.length-1"></span>
+    </div>
+  </div>
+</ng-container>

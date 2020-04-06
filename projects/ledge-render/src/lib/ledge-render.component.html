@@ -135,7 +135,10 @@
           <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.data }"></ng-container>
         </ul>
       </div>
-
+      
+      <div class="step-line" *ngSwitchCase="'step-line'">
+        <ledge-step-line [data]="item.data"></ledge-step-line>
+      </div>
 
       <div *ngSwitchDefault>
         {{stringify(item)}}
