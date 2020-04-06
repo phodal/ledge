@@ -1,0 +1,51 @@
+.card {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  box-sizing: border-box;
+  line-height: 1.5;
+  list-style: none;
+  background-color: #f3f4f5;
+  border-radius: 2px;
+  transition: all 0.3s;
+  // border: 1px solid #e8e8e8;
+  max-width: 300px;
+  height: 100%;
+  &-head {
+    height: 60px;
+    padding: 0 24px;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 16px;
+    border-bottom: 1px solid #e8e8e8;
+    text-align: center;
+    .title {
+      display: inline-block;
+      flex: 1;
+      padding: 13px 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 18px;
+      font-weight: 600;
+      font-stretch: normal;
+      line-height: 1.89;
+      letter-spacing: 0.75px;
+    }
+  }
+  &-body {
+    padding: 20px 20px 0 20px;
+    zoom: 1;
+    p {
+      font-size: 14px;
+      font-style: normal;
+      line-height: 1.57;
+      letter-spacing: normal;
+      text-align: center;
+      color: #111111;
+      margin-bottom: 19px;
+    }
+  }
+}

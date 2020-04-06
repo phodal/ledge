@@ -5,7 +5,7 @@ import {
   Input,
   OnChanges,
   OnInit,
-  SimpleChanges
+  SimpleChanges,
 } from '@angular/core';
 import { Token, Tokens, TokensList } from 'marked';
 import marked, { Slugger } from 'marked/lib/marked';
@@ -169,7 +169,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
               this.tokens.links
             );
           } else {
-            itemBody.children = this.tok();
+            itemBody.children = this.tok().children;
           }
         }
 
@@ -217,6 +217,14 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
         this.markdownData.push({
           type: 'process-table',
           data: tableData.tables[0],
+        });
+        break;
+      case 'process-card':
+        const cardData = LedgeMarkdownConverter.toJson(codeBlock.text);
+        this.markdownData.push({
+          type: 'process-card',
+          data: cardData.tables[0],
+          config: cardData.config,
         });
         break;
       case 'mindmap':
@@ -292,6 +300,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   stringify(str: any) {
+    console.log(str);
     return JSON.stringify(str);
   }
 }

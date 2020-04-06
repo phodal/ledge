@@ -13,7 +13,6 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ToolsetOption } from '@ledge-framework/render';
 import { Slugger } from 'marked/lib/marked';
 import { MarkdownService } from 'ngx-markdown';
 import Tocify, { TocItem } from './tocify';
@@ -36,20 +35,17 @@ export class MarkdownRenderComponent
   @ViewChild('leftContent', { static: false }) leftEl: ElementRef;
   @ViewChild('render', { static: false }) scrollEl: ElementRef;
 
-  loading = this.data !== '';
-
   private toc = [];
   tocStr = '';
   sticky = false;
   windowScrolled = false;
-  toolsets: ToolsetOption[] = [];
+  tocify = new Tocify();
 
   private lastTocId: string;
   private scrollItems: any[] = [];
 
   constructor(
     private markdownService: MarkdownService,
-    private tocify: Tocify,
     private location: Location,
     private route: ActivatedRoute,
     private renderer2: Renderer2,

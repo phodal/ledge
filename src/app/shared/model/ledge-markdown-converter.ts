@@ -12,7 +12,7 @@ const LedgeMarkdownConverter = {
     '<': '&lt;',
     '>': '&gt;',
     '"': '&quot;',
-    "'": '&#39;',
+    '\'': '&#39;',
   },
   transpose(arr: any[][]) {
     return zip.apply(this, arr);

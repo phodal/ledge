@@ -25,9 +25,13 @@
     <component-process-table class="process-bar" [tableValue]="devOpsExample"></component-process-table>
   </div>
 
-  <div class="intro markdown second-header">
-    <h4>它可以帮助您寻找最适合的软件工程技术实践</h4>
-    <component-markdown-render class="home-markdown" [data]="homemd" [showScroll]="false"></component-markdown-render>
+  <div class="home-section">
+    <div class="section-title">「它可以」</div>
+    <div class="section-sub-title">- 帮助您寻找最适合的软件工程技术实践 -</div>
+    <div class="sample-title">示例：质量内建</div>
+    <div class="section-content">
+      <component-markdown-render [data]="homemd" [showScroll]="false"></component-markdown-render>
+    </div>
   </div>
 
   <div class="esp-insight">
@@ -38,25 +42,17 @@
     <img src="/assets/images/esp.svg" alt="ESP Modeling">
   </div>
 
-  <div class="home-section">
+  <div class="home-section box-shadow">
     <div class="section-title">Core Contributors</div>
     <div class="contributors">
       <div class="contributor" *ngFor="let user of contributors">
-        <div class="avatar"><a href="{{user.link}}"><img src="{{user.avatar}}" alt=""></a></div>
-        <div class="username"><a href="{{user.link}}">{{user.name}}</a></div>
+        <div class="avatar"><a href="{{user.link}}" target="_blank"><img src="{{user.avatar}}" alt=""></a></div>
+        <div class="username"><a href="{{user.link}}" target="_blank">{{user.name}}</a></div>
         <div class="title">/{{user.title}}/</div>
         <div class="work">{{user.work}}</div>
       </div>
     </div>
   </div>
-
-  <div class="footer">
-    <div class="columns">
-      <div class="rows">
-        <div class="cell-title">资源</div>
-        <div class="cell"><a href="https://github.com/phodal/ledge" target="_blank">Ledge 知识平台</a></div>
-        <div class="cell"><a href="https://github.com/phodal/migration" target="_blank">《系统重构与迁移指南》</a></div>
-      </div>
-    </div>
-  </div>
+</div>
+<div class="footer">
 </div>

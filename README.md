@@ -1,7 +1,7 @@
 # Ledge 知识和工具平台
 
 <p align="center"> 
-  <img src="docs/ledge.svg" width="128" height="128">
+  <img src="src/assets/images/logo.svg" width="288" height="74">
 </p>
 
 在线使用：[https://devops.phodal.com/](https://devops.phodal.com/)

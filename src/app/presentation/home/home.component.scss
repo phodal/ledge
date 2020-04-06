@@ -1,4 +1,9 @@
-@import "../../../styles/color";
+@import '../../../styles/color';
+
+.container {
+  position: relative;
+  z-index: 100;
+}
 
 .intro {
   width: 80%;
@@ -46,7 +51,8 @@
 .period-title {
   margin: 0;
 
-  h2, h4 {
+  h2,
+  h4 {
     text-align: center;
     margin: 1em auto 0;
   }
@@ -78,12 +84,10 @@
   text-align: center;
 }
 
-
 .home-section {
   width: 1200px;
   margin: 0 auto;
   border-radius: 8px;
-  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
   background-color: $white;
 
   .section-title {
@@ -91,7 +95,32 @@
     letter-spacing: 2.5px;
     padding: 36px 0;
     text-align: center;
+    font-weight: 600;
   }
+
+  .section-sub-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1.25px;
+  }
+
+  .sample-title {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  .section-content {
+    padding-bottom: 60px;
+    margin-top: 35px;
+  }
+}
+
+.box-shadow {
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 .contributors {
@@ -131,7 +160,7 @@
     }
 
     .work {
-      font-size: 1.0em;
+      font-size: 1em;
       padding: 6px;
       color: $black;
       line-height: 1.5;
@@ -149,32 +178,6 @@
   background: $black;
   display: flex;
   color: $white;
-
-  margin-top: 4em;
-  padding-top: 4em;
-  padding-bottom: 4em;
-
-  .columns {
-    width: 960px;
-    margin: 0 auto;
-
-    .rows {
-      .cell-title {
-        font-size: 1.2em;
-        font-weight: bold;
-        line-height: 1.6em;
-      }
-      .cell {
-        color: $white;
-        font-size: 1.1em;
-
-        a {
-          padding: 0;
-          color: $white;
-          line-height: 1.6em;
-          text-decoration: none;
-        }
-      }
-    }
-  }
+  margin-top: -20em;
+  height: 40em;
 }

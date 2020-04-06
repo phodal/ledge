@@ -84,6 +84,22 @@ export class HomeComponent implements OnInit {
         'https://mir-s3-cdn-cf.behance.net/user/230/09f5c331679359.570378575cc1d.jpg',
     },
     {
+      name: '王玲',
+      link: 'https://github.com/klxq',
+      work: '项目开发人员',
+      title: 'ThoughtWorks UI Developer',
+      avatar:
+        'https://avatars1.githubusercontent.com/u/9253941?s=460&u=8c1be979f965c43ac501a8d871955e0083676d78&v=4',
+    },
+    {
+      name: 'giscafer',
+      link: 'https://github.com/giscafer',
+      work: '项目开发人员',
+      title: '全栈开发工程师',
+      avatar:
+        'https://avatars0.githubusercontent.com/u/8676711?s=460&u=b88b7ee37574da3b6aef32da9a5986eb82bc4d11&v=4',
+    },
+    {
       name: 'You',
       link: '',
       title: 'github users',

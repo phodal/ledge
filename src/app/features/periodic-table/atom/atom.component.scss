@@ -1,8 +1,4 @@
-@import 'src/styles/variables';
-
-:host {
-
-}
+@import "src/styles/variables";
 
 $selected-color: #fff;
 
@@ -21,7 +17,7 @@ $selected-color: #fff;
   width: $periodic-square;
   height: $periodic-square;
   color: #fff;
-  transition: transform .2s; /* Animation */
+  transition: transform 0.2s; /* Animation */
 
   &.unselect {
     //opacity: 0.8;

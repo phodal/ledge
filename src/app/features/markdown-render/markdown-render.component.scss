@@ -21,11 +21,11 @@
   bottom: 64px;
   right: 32px;
   opacity: 0;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .show-scrollTop {
   opacity: 1;
   z-index: 999;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }

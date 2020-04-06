@@ -9,7 +9,6 @@ import { MarkdownRatingItemComponent } from '../features/rating-radar-chart/mark
 import { MarkdownRatingComponent } from '../features/rating-radar-chart/markdown-rating/markdown-rating.component';
 import { RatingRadarChartComponent } from '../features/rating-radar-chart/rating-radar-chart.component';
 import { MarkdownRenderComponent } from '../features/markdown-render/markdown-render.component';
-import Tocify from '../features/markdown-render/tocify';
 import { ProcessTableComponent } from '../presentation/home/process-table/process-table.component';
 import { CustomMaterialModule } from './custom-material.module';
 
@@ -47,7 +46,7 @@ import { CustomMaterialModule } from './custom-material.module';
     RatingRadarChartComponent,
     ProcessTableComponent,
   ],
-  providers: [Tocify],
+  providers: [],
   exports: [
     MarkdownRenderComponent,
     MarkdownRatingComponent,

@@ -9,6 +9,7 @@
 @import "styles/graphviz";
 @import "styles/mermaid";
 @import "styles/color";
+@import "styles/material_ui";
 
 @import "styles/mdstyles/process-table";
 @import "styles/mdstyles/infinity";
@@ -23,41 +24,10 @@ html, body { height: 100%; }
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-  // for firefox
-  scrollbar-color: #ff4081 #fff;
-  scrollbar-width: none;
-}
-
 body {
   min-width: 1200px;
   width: auto;
   font-family: -apple-system, "PingFangHK-Regular", "PingFang SC", BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
-}
-
-::-webkit-scrollbar {
-  width: 8px;  /* Remove scrollbar space */
-  background: transparent;  /* Optional: just make scrollbar invisible */
-}
-
-/* Optional: show position indicator in red */
-::-webkit-scrollbar-thumb {
-  background: #ff4081;
-}
-
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.1);
-  border-radius: 12px;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 12px;
-  -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.1);
-}
-
-body {
-  background: #fff;
   font-size: 16px;
   margin: 0;
 }
@@ -68,49 +38,10 @@ body {
   }
 }
 
-.markdown {
-  img {
-    //width: 400px;
-  }
-}
-
 .spacer {
   flex: 1 1 auto;
 }
 
-.loading {
-  margin: 5em auto;
-}
-
 .center {
   text-align: center;
-}
-
-.mat-button.active {
-  background: #e91e63;
-}
-
-.webcomponents-plugins {
-
-}
-
-.github {
-  height: 24px;
-  line-height: 36px;
-  margin: 0 4px 3px 0;
-  vertical-align: middle;
-  cursor: pointer;
-  white-space: nowrap;
-  text-align: center;
-
-  img {
-    width: 24px;
-    height: 24px;
-  }
-}
-
-.home-markdown {
-  .no-toc-markdown {
-    height: 256px !important;
-  }
 }

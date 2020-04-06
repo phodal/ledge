@@ -779,7 +779,7 @@ config: {"left": "支持团队", "right": "评价产品", "bottom": "面向技�
 
 所有人应该对质量负责：
 
-![淘宝内测线上 bug 示例](/assets/docs/images/ios-bug-taobao.jpg "淘宝内测 bug 示例")
+![淘宝内测线上 bug 示例](/assets/docs/images/ios-bug-taobao.jpg '淘宝内测 bug 示例')
 
 从流程上来说：
 
@@ -890,23 +890,23 @@ E2E 定义示例：
 
 ```javascript
 defineSupportCode(function ({ Given, When, Then }) {
-  Given("当我在网站的首页", function () {
-    return this.driver.get("http://0.0.0.0:7272/");
+  Given('当我在网站的首页', function () {
+    return this.driver.get('http://0.0.0.0:7272/');
   });
 
-  When("输入用户名 {string}", function (text) {
-    return this.driver.findElement(By.id("username_field")).sendKeys(text);
+  When('输入用户名 {string}', function (text) {
+    return this.driver.findElement(By.id('username_field')).sendKeys(text);
   });
 
-  When("输入密码 {string}", function (text) {
-    return this.driver.findElement(By.id("password_field")).sendKeys(text);
+  When('输入密码 {string}', function (text) {
+    return this.driver.findElement(By.id('password_field')).sendKeys(text);
   });
 
-  When("提交登录信息", function () {
-    return this.driver.findElement(By.id("login_button")).click();
+  When('提交登录信息', function () {
+    return this.driver.findElement(By.id('login_button')).click();
   });
 
-  Then("页面应该返回 {string}", function (string) {
+  Then('页面应该返回 {string}', function (string) {
     this.driver.getTitle().then(function (title) {
       expect(title).to.equal(string);
     });
@@ -917,6 +917,14 @@ defineSupportCode(function ({ Given, When, Then }) {
 ### 测试替身
 
 > 有时候对被测系统(SUT)进行测试是很困难的，因为它依赖于其他无法在测试环境中使用的组件。这有可能是因为这些组件不可用，它们不会返回测试所需要的结果，或者执行它们会有不良副作用。在其他情况下，我们的测试策略要求对被测系统的内部行为有更多控制或更多可见性。 如果在编写测试时无法使用（或选择不使用）实际的依赖组件(DOC)，可以用测试替身来代替。测试替身不需要和真正的依赖组件有完全一样的的行为方式；他只需要提供和真正的组件同样的 API 即可，这样被测系统就会以为它是真正的组件！ ——Gerard Meszaros
+
+| 类型         | 解释                                                                                                                                     |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Dummy Object | 不包含实现的对象（Null 也是），在测试中需要传入，但是它没有被真正地使用，通常它们只是被用来填充参数列表。                                |
+| Fake         | 有具体实现的，但是实现中做了些捷径，使它们不能应用与生产环境（举个典型的例子：内存数据库）                                               |
+| Stub         | 状态验证。返回固定值的实现                                                                                                               |
+| Spy          | 行为验证。类似于 Stub，但会记录被调用那些成员，以确定 SUT（System Under Test）与它的交互是否是正确的                                     |
+| Mock         | 由 Mock 库动态创建的，能提供类似 Dummy、Stub、Spy 的功能。开发人员看不到 Mock object 的代码，但可以设置 Mock object 成员的行为及返回值。 |
 
 Mock 和 Stub 就是常见的两种方式：
 

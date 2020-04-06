@@ -1,3 +1,7 @@
+/***************************************************************************************************
+ * Load `$localize` onto the global scope - used if i18n tags appear in Angular templates.
+ */
+import '@angular/localize/init';
 /**
  * This file includes polyfills needed by Angular and is loaded before the app.
  * You can add your own extra polyfills to this file.
@@ -31,7 +35,6 @@ import 'core-js/es/regexp';
 import 'core-js/es/map';
 import 'core-js/es/weak-map';
 import 'core-js/es/set';
-
 
 import 'core-js/es/reflect';
 
@@ -72,7 +75,7 @@ import 'core-js/es/reflect';
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
-import 'zone.js/dist/zone';  // Included with Angular CLI.
+import 'zone.js/dist/zone'; // Included with Angular CLI.
 
 (window as any).__Zone_enable_cross_context_check = true; // patch for IE
 /***************************************************************************************************
@@ -80,12 +83,12 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
  */
 (window as any).global = window;
 
-
 (window as any).global = window; // gets rid of the first error
 // @ts-ignore
 global.Buffer = global.Buffer || require('buffer').Buffer; // which leads to buffer being required
-(window as any).process = { // which leads to window.process.version needing to be parsed
+(window as any).process = {
+  // which leads to window.process.version needing to be parsed
   env: { DEBUG: undefined }, // https://github.com/nodejs/readable-stream/issues/313
-  version: 'v0.9.'
+  version: 'v0.9.',
 };
 (window as any).setImmediate = window.setTimeout; // which leads to setImmediate being required

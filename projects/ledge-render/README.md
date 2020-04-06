@@ -31,6 +31,8 @@ import { LedgeRenderModule } from '@ledge-framework/render';
 
 ## Development
 
+### Develop in Ledge website project
+
 Use [yarn link](https://classic.yarnpkg.com/en/docs/cli/link/) to avoid reinstalling the library on every build.
 
 1. `cd ./dist/ledge-render`
@@ -38,6 +40,18 @@ Use [yarn link](https://classic.yarnpkg.com/en/docs/cli/link/) to avoid reinstal
 3. in root dir, run `yarn link "@ledge-framework/render"`, it will use `./dist/ledge-render` instead.
 4. `yarn build ledge-render --watch`
 5. `yarn start`
+
+
+### Develop in CodeSandbox
+
+[![Edit @ledge-framework/render](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/ledge-frameworkrender-349x9?fontsize=14&hidenavigation=1&theme=dark)
+
+### Add new markdown syntax
+
+1. design new markdown code syntax
+2. add type to `handleCode` in `ledge-render.component.ts`
+3. use `ng g c` to generate new component
+4. link to new component
 
 ## Roadmap
 

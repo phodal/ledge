@@ -54,11 +54,12 @@
 
       <div *ngSwitchCase="'process-step'">
         <div class="markdown-process-step">
-          <div class="process-step-column" *ngFor="let row of item.data.children">
+          <div class="process-step-column" *ngFor="let row of item.data.children;let last = last;">
             <div class="process-title">{{row.name}}</div>
             <div class="process-body">
               <div class="process-step-item" *ngFor="let cell of row.children">{{cell.name}}</div>
             </div>
+            <div class="step-symbol" *ngIf="!last"></div>
           </div>
         </div>
       </div>
@@ -79,6 +80,18 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <div *ngSwitchCase="'process-card'" class="flex-table row">
+        <ng-container
+          *ngFor="let header of item.data.header; let index = index"
+        >
+          <ledge-card
+            class="column card-column"
+            [headerStyle]="item.config.colors && item.config.colors[index]"
+            [data]="{ header: header, cells: item.data.cells[index], index:index }"
+          ></ledge-card>
+        </ng-container>
       </div>
 
       <div *ngSwitchCase="'list-style'">
@@ -124,16 +137,19 @@
 
       <div *ngSwitchCase="'list'">
         <ng-template #recursiveList let-list>
-          <li *ngFor="let item of list" class="sub-item" [innerHTML]="item.body.name">
-            <ul *ngIf="item.body.children.children && item.body.children.children.length > 0">
-              <ng-container
-                *ngTemplateOutlet="recursiveList; context:{ $implicit: item.body.children.children }"></ng-container>
+          <li *ngFor="let item of list" class="sub-item">
+            <div [outerHTML]="item.body.name"></div>
+            <ul *ngIf="!item.ordered && item.body.children && item.body.children.length > 0">
+              <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.body.children }"></ng-container>
             </ul>
+            <ol *ngIf="item.ordered && item.body.children && item.body.children.length > 0">
+              <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.body.children }"></ng-container>
+            </ol>
           </li>
         </ng-template>
-        <ul>
-          <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.data }"></ng-container>
-        </ul>
+
+        <ul *ngIf="!item.ordered"><ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.data }"></ng-container></ul>
+        <ol *ngIf="item.ordered"><ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.data }"></ng-container></ol>
       </div>
       
       <div class="step-line" *ngSwitchCase="'step-line'">

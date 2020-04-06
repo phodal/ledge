@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { StorageMap } from '@ngx-pwa/local-storage';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { MatDrawerContent } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-case-study',
@@ -10,6 +11,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ['./case-study.component.scss'],
 })
 export class CaseStudyComponent implements OnInit {
+  @ViewChild('drawerContent', { static: false })
+  drawerContent: MatDrawerContent;
+
   cases = [
     { displayName: '美团', source: 'meituan' },
     { displayName: 'Ledge', source: 'ledge' },
@@ -82,6 +86,7 @@ export class CaseStudyComponent implements OnInit {
     this.http
       .get(this.src, { headers, responseType: 'text' })
       .subscribe((response) => {
+        this.resetScrollbar();
         this.storage.set('casestudy.last', source).subscribe();
         this.content = response;
         const queryParams: Params = { source };
@@ -91,6 +96,15 @@ export class CaseStudyComponent implements OnInit {
           queryParamsHandling: 'merge', // remove to replace all query params by provided
         });
       });
+  }
+
+  private resetScrollbar() {
+    if (!!this.drawerContent) {
+      // on test drawerContent is different
+      if (!this.drawerContent.hasOwnProperty('nativeElement')) {
+        this.drawerContent.getElementRef().nativeElement.scrollTop = 0;
+      }
+    }
   }
 
   private buildSrc(source: string) {

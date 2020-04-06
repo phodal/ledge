@@ -9,25 +9,11 @@ export class LedgeHelperComponent implements OnInit {
   content = `
 # Ledge 语法帮助
 
- - list
- - item
-
-> spliqt
-
- + a
-   + a
-     + a
-     + b
-
-这是一个正常无比的段落。
-
-> blockquote
-
-## [Link in Heading](https://devops.phodal.com/design)
-
-<a href="https://www.phodal.com/">phodal.com</a>
-
-----
+1. fsda
+2. 34
+  - a
+  - a
+3. sdaf
 
 \`\`\`list-style
  - 开源工具采用
@@ -281,6 +267,27 @@ config: {"type": "bar", "multiset": true}
  - 智能运维
  - 协作
  \`\`\`
+
+ - list
+ - item
+
+> spliqt
+
+ + a
+   + a
+     + a
+     + b
+
+这是一个正常无比的段落。
+
+> blockquote
+
+## [Link in Heading](https://devops.phodal.com/design)
+
+<a href="https://www.phodal.com/">phodal.com</a>
+
+----
+
 `;
 
   constructor() {}

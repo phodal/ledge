@@ -12,6 +12,7 @@ import {
 } from '@angular/material/dialog';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
 
 const modules = [
   MatToolbarModule,
@@ -23,6 +24,7 @@ const modules = [
   MatIconModule,
   MatDialogModule,
   MatCardModule,
+  MatInputModule,
 
   ScrollingModule,
 ];

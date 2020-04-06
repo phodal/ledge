@@ -11,14 +11,14 @@ describe('SolutionComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [SharedModule, RouterTestingModule],
-      declarations: [SolutionComponent]
-    })
-      .compileComponents();
+      declarations: [SolutionComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(SolutionComponent);
     component = fixture.componentInstance;
+    component.src = '';
     fixture.detectChanges();
   });
 

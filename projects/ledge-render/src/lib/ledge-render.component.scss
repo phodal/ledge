@@ -1,7 +1,15 @@
-.ledge-render  {
+.ledge-render {
   width: 100%;
 }
 
 .render-item {
   padding: 0 2em;
+}
+
+.card-column {
+  padding: 0 0.5rem !important;
+}
+
+li {
+  white-space: pre-wrap
 }
