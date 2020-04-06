@@ -1,7 +1,10 @@
 <div class="container">
   <div class="title-desc">
-    <h1> -  LEDGE - </h1>
-    <p>Ledge（源自 know-ledge，意指承载物）知识平台是基于我们所进行的一系列 DevOps 实践、敏捷实践、精益实践提炼出来的知识体系。</p>
+    <h1>- LEDGE -</h1>
+    <p>
+      Ledge（源自 know-ledge，意指承载物）知识平台是基于我们所进行的一系列
+      DevOps 实践、敏捷实践、精益实践提炼出来的知识体系。
+    </p>
   </div>
 
   <div class="period-title markdown">
@@ -10,19 +13,33 @@
   </div>
   <app-periodic-table
     [selectedMetal]="highlightState"
-    (currentAtomCategory)="setCurrentAtomCategory($event)"></app-periodic-table>
+    (currentAtomCategory)="setCurrentAtomCategory($event)"
+  >
+  </app-periodic-table>
 
-  <div class="intro markdown second-header">
-    <h4>它可以帮助您设计数字化时代的 DevOps 流程</h4>
-    <h5>DevOps 运动的主要特点是强烈倡导对构建软件的所有环节 (从集成、测试、发布到部署和基础架构管理) 进行全面的自动化和监控。</h5>
+  <div class="home-section">
+    <div class="section-title">「它可以」</div>
+    <div class="section-sub-title">- 帮助您设计数字化时代的 DevOps 流程 -</div>
+    <div class="process-title">
+      DevOps 运动的主要特点是强烈倡导对构建软件的所有环节
+      (从集成、测试、发布到部署和基础架构管理) 进行全面的自动化和监控。
+    </div>
+    <div class="process-content">
+      <component-markdown-render
+        [data]="processTemplate"
+        [showScroll]="false"
+      ></component-markdown-render>
+    </div>
   </div>
-  <component-process-table class="process-bar" [tableValue]="processTemplate"></component-process-table>
 
   <div class="process-bar">
     <div class="markdown center">
       <h3>从而根据不同的企业情况，搭建出专属的 DevOps 流水线</h3>
     </div>
-    <component-process-table class="process-bar" [tableValue]="devOpsExample"></component-process-table>
+    <component-process-table
+      class="process-bar"
+      [tableValue]="devOpsExample"
+    ></component-process-table>
   </div>
 
   <div class="home-section">
@@ -30,29 +47,39 @@
     <div class="section-sub-title">- 帮助您寻找最适合的软件工程技术实践 -</div>
     <div class="sample-title">示例：质量内建</div>
     <div class="section-content">
-      <component-markdown-render [data]="homemd" [showScroll]="false"></component-markdown-render>
+      <component-markdown-render
+        [data]="homemd"
+        [showScroll]="false"
+      ></component-markdown-render>
     </div>
   </div>
 
   <div class="esp-insight">
     <div class="markdown">
       <h2 class="center">这就是 Ledge 知识平台</h2>
-      <h3 class="center">沉淀我们的各种实践，向您提供全程的数据化变革策略、规划与咨询</h3>
+      <h3 class="center">
+        沉淀我们的各种实践，向您提供全程的数据化变革策略、规划与咨询
+      </h3>
     </div>
-    <img src="/assets/images/esp.svg" alt="ESP Modeling">
+    <img src="/assets/images/esp.svg" alt="ESP Modeling" />
   </div>
 
   <div class="home-section box-shadow">
     <div class="section-title">Core Contributors</div>
     <div class="contributors">
       <div class="contributor" *ngFor="let user of contributors">
-        <div class="avatar"><a href="{{user.link}}" target="_blank"><img src="{{user.avatar}}" alt=""></a></div>
-        <div class="username"><a href="{{user.link}}" target="_blank">{{user.name}}</a></div>
-        <div class="title">/{{user.title}}/</div>
-        <div class="work">{{user.work}}</div>
+        <div class="avatar">
+          <a href="{{ user.link }}" target="_blank"
+            ><img src="{{ user.avatar }}" alt=""
+          /></a>
+        </div>
+        <div class="username">
+          <a href="{{ user.link }}" target="_blank">{{ user.name }}</a>
+        </div>
+        <div class="title">/{{ user.title }}/</div>
+        <div class="work">{{ user.work }}</div>
       </div>
     </div>
   </div>
 </div>
-<div class="footer">
-</div>
+<div class="footer"></div>

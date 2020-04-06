@@ -19,10 +19,13 @@ ul {
     &.task-list-item {
       list-style: none;
 
-      input[type="checkbox"] {
-        margin: 0 .2em .25em -1.6em;
+      input[type='checkbox'] {
+        margin: 0 0.2em 0.25em -1.6em;
         vertical-align: middle;
       }
     }
   }
+}
+.step-line {
+  display: flex;
 }

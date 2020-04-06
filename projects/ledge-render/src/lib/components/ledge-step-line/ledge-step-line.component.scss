@@ -1,9 +1,17 @@
+$black: #111;
+$white: #fff;
+
 @mixin arrow {
   width: 0;
   height: 0;
   border: 12px solid;
 }
-
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .step-line {
   display: flex;
   align-items: flex-start;
@@ -17,7 +25,7 @@
     justify-content: center;
   }
 
-  >div {
+  > div {
     display: flex;
     align-items: center;
   }
@@ -26,12 +34,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 154px;
+    min-width: 154px;
+    width: max-content;
     height: 60px;
     border-radius: 30px;
-    background-color: #111111;
+    background-color: $black;
     font-size: 18px;
-    color: #ffffff;
+    color: $white;
     line-height: 34px;
   }
 
@@ -39,19 +48,19 @@
     &-right {
       @include arrow;
       margin: 0 2px 0 14px;
-      border-color: transparent transparent transparent #111111;
+      border-color: transparent transparent transparent $black;
     }
 
     &-left {
       @include arrow;
       margin: 0 14px 0 2px;
-      border-color: transparent #111111 transparent transparent;
+      border-color: transparent $black transparent transparent;
     }
 
     &-down {
       @include arrow;
       margin: 14px 0 2px 0;
-      border-color: #111111 transparent transparent transparent;
+      border-color: $black transparent transparent transparent;
     }
   }
 }

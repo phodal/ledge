@@ -32,8 +32,19 @@ export class HomeComponent implements OnInit {
     `;
 
   processTemplate = `
-|源码管理|制品管理|配置管理|数据库自动化|测试|持续集成|监控|分析|智能运维| 协作|
-|---|---|---|---|---|---|---|---|---|---|
+  \`\`\`step-line
+  - 源码管理
+  - 制品管理
+  - 配置管理
+  - 数据库自动化
+  - 测试
+  - 持续集成
+  - 监控
+  - 分析
+  - 智能运维
+  - 协作
+  \`\`\`
+ 
   `;
   contributors: Contributor[] = [
     {
