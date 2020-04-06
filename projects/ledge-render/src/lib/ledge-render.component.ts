@@ -110,7 +110,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
       case 'paragraph':
         return this.handleParaGraph(token);
       case 'text':
-        return token.text;
+        return marked.inlineLexer(token.text, this.tokens.links);
       case 'heading':
         const inline = marked.inlineLexer(token.text, this.tokens.links);
         this.markdownData.push({
