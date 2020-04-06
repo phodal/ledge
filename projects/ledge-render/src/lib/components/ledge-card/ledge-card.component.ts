@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import colors from './colors';
+import LedgeCardColors from './lege-card-colors';
 
 interface CardData {
   header: string;
@@ -41,7 +41,7 @@ export class LedgeCardComponent implements OnInit {
     if (!idx && idx !== 0) {
       idx = Math.floor(Math.random() * 10);
     }
-    const bgColor = (this.headerStyle && this.headerStyle.bg) || colors[idx];
+    const bgColor = (this.headerStyle && this.headerStyle.bg) || LedgeCardColors[idx];
     const fontColor = (this.headerStyle && this.headerStyle.font) || '#333';
 
     return {

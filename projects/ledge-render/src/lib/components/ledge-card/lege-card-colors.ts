@@ -1,5 +1,4 @@
-// default colors
-export default [
+const LedgeCardColors = [
   '#e55852',
   '#e98832',
   '#f0d668',
@@ -11,3 +10,5 @@ export default [
   '#666666',
   '#F37C20',
 ];
+
+export default LedgeCardColors;

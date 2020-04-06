@@ -10,6 +10,7 @@ import {
 import { Token, Tokens, TokensList } from 'marked';
 import marked, { Slugger } from 'marked/lib/marked';
 import LedgeMarkdownConverter from './components/model/ledge-markdown-converter';
+import LedgeColors from './support/ledgeColors';
 
 @Component({
   selector: 'ledge-render',
@@ -27,6 +28,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
   tokens: TokensList | any = [];
   listQueue = [];
   sluger = new Slugger();
+  colorsForIndex = LedgeColors;
 
   isPureParagraph = true;
 

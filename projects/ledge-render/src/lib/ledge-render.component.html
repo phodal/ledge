@@ -91,7 +91,8 @@
 
       <div *ngSwitchCase="'list-style'">
         <div class="list-style list-style-{{item.config.type}}">
-          <div *ngFor="let listItem of item.data;let index = index;" class="list-style-item item-{{index}}">
+          <div *ngFor="let listItem of item.data;let index = index;" class="list-style-item"
+               [style.background-color]="colorsForIndex[index]">
             <div [innerHTML]="listItem.name"></div>
 
             <ng-template #recursiveList let-list>
