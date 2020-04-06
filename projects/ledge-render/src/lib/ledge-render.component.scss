@@ -10,6 +10,19 @@
   padding: 0 0.5rem !important;
 }
 
-li {
-  white-space: pre-wrap
+ul {
+  padding-left: 1em;
+
+  li {
+    white-space: pre-wrap;
+
+    &.task-list-item {
+      list-style: none;
+
+      input[type="checkbox"] {
+        margin: 0 .2em .25em -1.6em;
+        vertical-align: middle;
+      }
+    }
+  }
 }

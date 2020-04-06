@@ -89,6 +89,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
 
   private tok() {
     const token: Token = this.token;
+    console.log(token.type);
     switch (token.type) {
       case 'table':
         this.markdownData.push(token);
@@ -169,7 +170,12 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
               this.tokens.links
             );
           } else {
-            itemBody.children = this.tok().children;
+            const tok = this.tok();
+            if (tok.children) {
+              itemBody.children = tok.children;
+            } else {
+              itemBody.name += tok;
+            }
           }
         }
 

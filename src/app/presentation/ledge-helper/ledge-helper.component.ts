@@ -10,10 +10,16 @@ export class LedgeHelperComponent implements OnInit {
 # Ledge 语法帮助
 
 1. fsda
-2. 34
+2. 34 sdf
   - a
   - a
 3. sdaf
+
+b
+
+ - [ ] a
+ - [ ] b
+   - [ ] c
 
 \`\`\`list-style
  - 开源工具采用

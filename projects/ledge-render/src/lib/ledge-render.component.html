@@ -137,7 +137,8 @@
 
       <div *ngSwitchCase="'list'">
         <ng-template #recursiveList let-list>
-          <li *ngFor="let item of list" class="sub-item">
+          <li *ngFor="let item of list" class="sub-item" [ngClass]="item.task ? 'task-list-item' : ''">
+            <input type="checkbox" *ngIf="item.task" [checked]="item.checked" />
             <div [outerHTML]="item.body.name"></div>
             <ul *ngIf="!item.ordered && item.body.children && item.body.children.length > 0">
               <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.body.children }"></ng-container>
