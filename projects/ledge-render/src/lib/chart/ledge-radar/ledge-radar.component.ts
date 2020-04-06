@@ -33,7 +33,12 @@ export class LedgeRadarComponent implements OnInit, AfterViewInit {
     return {
       tooltip: {},
       legend: {
+        bottom: 5,
         data: legend,
+      },
+      title: {
+        text: data.name,
+        left: 'center'
       },
       radar: {
         name: {
