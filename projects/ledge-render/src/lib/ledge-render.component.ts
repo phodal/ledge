@@ -18,7 +18,7 @@ import LedgeMarkdownConverter from './components/model/ledge-markdown-converter'
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
-  constructor() {}
+  constructor() { }
 
   @Input()
   content: string;
@@ -34,7 +34,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
     // this.renderContent(this.content);
   }
 
-  ngAfterViewInit(): void {}
+  ngAfterViewInit(): void { }
 
   ngOnChanges(changes: SimpleChanges): void {
     const { content } = changes;
@@ -278,7 +278,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
           config: listData.config,
         });
         break;
-        case 'step-line':
+      case 'step-line':
         const stepLineData = LedgeMarkdownConverter.toJson(codeBlock.text);
         this.markdownData.push({
           type: 'step-line',

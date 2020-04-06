@@ -117,6 +117,24 @@
     padding-bottom: 60px;
     margin-top: 35px;
   }
+
+  .process-title {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 0px auto;
+    margin-top: 16px;
+    width: 800px;
+  }
+
+  .process-content {
+    margin: 40px auto;
+    width: 1080px;
+    height: 310px;
+    background-color: #f3f4f5;
+    padding: 61px 0;
+  }
 }
 
 .box-shadow {

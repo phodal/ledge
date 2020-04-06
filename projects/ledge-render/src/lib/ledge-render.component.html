@@ -36,14 +36,14 @@
       <div *ngSwitchCase="'table'">
         <table>
           <thead>
-          <tr>
-            <th *ngFor="let h of item.header">{{h}}</th>
-          </tr>
+            <tr>
+              <th *ngFor="let h of item.header">{{h}}</th>
+            </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let row of item.cells">
-            <td *ngFor="let cell of row">{{cell}}</td>
-          </tr>
+            <tr *ngFor="let row of item.cells">
+              <td *ngFor="let cell of row">{{cell}}</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -83,14 +83,9 @@
       </div>
 
       <div *ngSwitchCase="'process-card'" class="flex-table row">
-        <ng-container
-          *ngFor="let header of item.data.header; let index = index"
-        >
-          <ledge-card
-            class="column card-column"
-            [headerStyle]="item.config.colors && item.config.colors[index]"
-            [data]="{ header: header, cells: item.data.cells[index], index:index }"
-          ></ledge-card>
+        <ng-container *ngFor="let header of item.data.header; let index = index">
+          <ledge-card class="column card-column" [headerStyle]="item.config.colors && item.config.colors[index]"
+            [data]="{ header: header, cells: item.data.cells[index], index:index }"></ledge-card>
         </ng-container>
       </div>
 
@@ -122,7 +117,7 @@
       </div>
 
       <div *ngSwitchCase="'code'">
-      <pre class="language-{{item.lang}}">
+        <pre class="language-{{item.lang}}">
         <code class="language-{{item.lang}}">{{item.text}}</code>
       </pre>
       </div>
@@ -149,10 +144,14 @@
           </li>
         </ng-template>
 
-        <ul *ngIf="!item.ordered"><ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.data }"></ng-container></ul>
-        <ol *ngIf="item.ordered"><ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.data }"></ng-container></ol>
+        <ul *ngIf="!item.ordered">
+          <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.data }"></ng-container>
+        </ul>
+        <ol *ngIf="item.ordered">
+          <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.data }"></ng-container>
+        </ol>
       </div>
-      
+
       <div class="step-line" *ngSwitchCase="'step-line'">
         <ledge-step-line [data]="item.data"></ledge-step-line>
       </div>
