@@ -20,6 +20,13 @@ import { SolutionComponent } from './presentation/solution/solution.component';
 import { ThinkTankComponent } from './presentation/think-tank/think-tank.component';
 import { CustomMaterialModule } from './shared/custom-material.module';
 import { SharedModule } from './shared/shared.module';
+import { registerLocaleData } from '@angular/common';
+
+import localeGb from '@angular/common/locales/en-GB';
+import localZhHans from '@angular/common/locales/zh-Hans';
+
+registerLocaleData(localeGb, 'en-gb');
+registerLocaleData(localZhHans, 'zh-Hans');
 
 @NgModule({
   declarations: [

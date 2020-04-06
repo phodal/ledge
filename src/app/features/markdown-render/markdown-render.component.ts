@@ -39,13 +39,13 @@ export class MarkdownRenderComponent
   tocStr = '';
   sticky = false;
   windowScrolled = false;
+  tocify = new Tocify();
 
   private lastTocId: string;
   private scrollItems: any[] = [];
 
   constructor(
     private markdownService: MarkdownService,
-    private tocify: Tocify,
     private location: Location,
     private route: ActivatedRoute,
     private renderer2: Renderer2,
