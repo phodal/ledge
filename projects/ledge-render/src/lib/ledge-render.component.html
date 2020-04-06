@@ -142,7 +142,7 @@
             <ul *ngIf="!item.ordered && item.body.children && item.body.children.length > 0">
               <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.body.children }"></ng-container>
             </ul>
-            <ol *ngIf="item.ordered && item.body.children && item.body.children.length > 0">
+            <ol *ngIf="item.ordered && item.body.children && item.body.children.length > 0" [attr.start]="item.start">
               <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.body.children }"></ng-container>
             </ol>
           </li>
