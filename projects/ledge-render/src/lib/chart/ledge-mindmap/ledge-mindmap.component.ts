@@ -19,26 +19,45 @@ export class LedgeMindmapComponent implements OnInit, AfterViewInit {
   @Input()
   data: LedgeList;
 
-  @ViewChild('chart', {}) reporter: ElementRef;
+  chartData: any;
+  dataLevel = 1;
+  dataSize = 1;
+  chartOption: any;
+
+  @ViewChild('chart', {}) chart: ElementRef;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.chartData = LedgeChartConverter.toTreeData(this.data.children);
+    this.getDataLevel(this.chartData);
+    this.chartOption = this.buildMindmapOption(this.chartData);
+  }
 
   ngAfterViewInit(): void {
-    const myChart = echarts.init(this.reporter.nativeElement);
-    const treeData = LedgeChartConverter.toTreeData(this.data.children);
-    const option = this.buildMindmapOption(treeData);
-    myChart.setOption(option as any);
+    const myChart = echarts.init(this.chart.nativeElement);
+    myChart.setOption(this.chartOption as any);
+  }
+
+  getDataLevel(data) {
+    this.dataLevel++;
+    if (data.children) {
+      this.getDataLevel(data.children);
+    } else {
+      this.dataSize = (this.dataLevel + 1) * data.length;
+    }
+  }
+
+  getHeight() {
+    const height = this.dataSize * 50 + 'px';
+    const width = (this.dataLevel + 1) * 320 + 'px';
+    return {
+      height,
+      width
+    };
   }
 
   buildMindmapOption(data) {
-    let height = '600px';
-    const dataStr = JSON.stringify(data);
-    if (dataStr.length > 500) {
-      height = '720px';
-    }
-
     return {
       feature: {
         saveAsImage: {},
@@ -49,14 +68,13 @@ export class LedgeMindmapComponent implements OnInit, AfterViewInit {
       },
       series: [
         {
-          height,
           type: 'tree',
           roam: true,
           id: 0,
           name: 'tree1',
           data: [data],
           top: '12%',
-          left: '18%',
+          left: '20%',
           bottom: '12%',
           right: '40%',
           symbolSize: 12,
