@@ -135,6 +135,25 @@
     background-color: #f3f4f5;
     padding: 61px 0;
   }
+
+  .devops-content {
+    margin: 40px auto;
+    width: 1080px;
+  }
+}
+
+:host ::ng-deep {
+
+  .devops-content {
+
+    .no-toc-markdown {
+      width: 100%;
+    }
+
+    .render-item {
+      padding: 0;
+    }
+  }
 }
 
 .box-shadow {

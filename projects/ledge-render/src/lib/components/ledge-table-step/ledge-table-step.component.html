@@ -1,0 +1,46 @@
+<!-- 自适应屏幕动态计算每行个数？ -->
+
+<div class="table-steps">
+  <div
+    class="step-row"
+    *ngFor="let arr of headers; let hIndex = index"
+    [class.step-row-reverse]="(hIndex + 1) % 2 === 0"
+  >
+    <ng-container
+      *ngFor="let headerName of arr; let index = index; let last = last"
+    >
+      <div class="column" [class.step-row-wrap]="index === arr.length - 1">
+        <div
+          class="arrow"
+          *ngIf="
+            (hIndex + 1) % 2 === 0 && !last && hIndex === headers.length - 1
+          "
+        >
+          <span
+            [class]="index === arr.length - 1 ? 'arrow-down' : 'arrow-left'"
+          ></span>
+          <span
+            [class]="index === arr.length - 1 ? 'rect-down' : 'rect-right'"
+          ></span>
+        </div>
+        <ledge-card
+          style="height: 100%;"
+          [headerStyle]="config.colors && config.colors[hIndex * column + index]"
+          [data]="{
+            header: headerName,
+            cells: data.cells[index],
+            index: hIndex * column + index
+          }"
+        ></ledge-card>
+        <div class="arrow" *ngIf="(hIndex + 1) % 2 !== 0">
+          <span
+            [class]="index === arr.length - 1 ? 'rect-down' : 'rect-left'"
+          ></span>
+          <span
+            [class]="index === arr.length - 1 ? 'arrow-down' : 'arrow-right'"
+          ></span>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
