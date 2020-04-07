@@ -86,9 +86,14 @@
 
 .home-section {
   width: 1200px;
-  margin: 0 auto;
+  margin: 2em auto 0;
   border-radius: 8px;
   background-color: $white;
+
+  &.period-section {
+    width: auto;
+    padding: 2em;
+  }
 
   .section-title {
     font-size: 40px;
@@ -123,8 +128,7 @@
     line-height: 1.5;
     letter-spacing: 1px;
     text-align: center;
-    margin: 0px auto;
-    margin-top: 16px;
+    margin: 16px auto 0;
     width: 800px;
   }
 
@@ -143,9 +147,7 @@
 }
 
 :host ::ng-deep {
-
   .devops-content {
-
     .no-toc-markdown {
       width: 100%;
     }

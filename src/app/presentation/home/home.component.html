@@ -7,15 +7,17 @@
     </p>
   </div>
 
-  <div class="period-title markdown">
-    <h4>它可以帮助您的企业在数字化时代更好地前进。</h4>
-    <h2 class="title intro">DevOps 元素周期表 —— 选择您的 DevOps 工具</h2>
+  <div class="home-section period-section">
+    <div class="period-title markdown">
+      <h4>它可以帮助您的企业在数字化时代更好地前进。</h4>
+      <h2 class="title intro">DevOps 元素周期表 —— 选择您的 DevOps 工具</h2>
+    </div>
+    <app-periodic-table
+      [selectedMetal]="highlightState"
+      (currentAtomCategory)="setCurrentAtomCategory($event)"
+    >
+    </app-periodic-table>
   </div>
-  <app-periodic-table
-    [selectedMetal]="highlightState"
-    (currentAtomCategory)="setCurrentAtomCategory($event)"
-  >
-  </app-periodic-table>
 
   <div class="home-section">
     <div class="section-title">「它可以」</div>
@@ -58,7 +60,7 @@
         沉淀我们的各种实践，向您提供全程的数据化变革策略、规划与咨询
       </h3>
     </div>
-    <img src="/assets/images/esp.svg" alt="ESP Modeling" />
+    <img src="/assets/images/esp.svg" alt="ESP Modeling"/>
   </div>
 
   <div class="home-section box-shadow">
@@ -67,7 +69,7 @@
       <div class="contributor" *ngFor="let user of contributors">
         <div class="avatar">
           <a href="{{ user.link }}" target="_blank"
-            ><img src="{{ user.avatar }}" alt=""
+          ><img src="{{ user.avatar }}" alt=""
           /></a>
         </div>
         <div class="username">
