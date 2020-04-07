@@ -120,7 +120,12 @@
 
   .section-content {
     padding-bottom: 60px;
-    margin-top: 35px;
+    margin-top: 36px;
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
   }
 
   .process-title {
