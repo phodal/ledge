@@ -49,11 +49,11 @@ export class LedgeMindmapComponent implements OnInit, AfterViewInit {
   }
 
   getHeight() {
-    const height = this.dataSize * 50 + 'px';
-    const width = (this.dataLevel + 1) * 320 + 'px';
+    const height = this.dataSize * 50;
+    const width = (this.dataLevel + 1) * 320;
     return {
-      height,
-      width
+      height: height + 'px',
+      width: width + 'px'
     };
   }
 
