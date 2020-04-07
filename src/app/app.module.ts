@@ -24,6 +24,7 @@ import { registerLocaleData } from '@angular/common';
 
 import localeGb from '@angular/common/locales/en-GB';
 import localZhHans from '@angular/common/locales/zh-Hans';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 registerLocaleData(localeGb, 'en-gb');
 registerLocaleData(localZhHans, 'zh-Hans');
@@ -55,6 +56,7 @@ registerLocaleData(localZhHans, 'zh-Hans');
     FormsModule,
     CustomMaterialModule,
     LedgeRenderModule,
+    ScullyLibModule,
   ],
   providers: [Title],
   bootstrap: [AppComponent],

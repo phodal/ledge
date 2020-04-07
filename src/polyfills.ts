@@ -92,3 +92,9 @@ global.Buffer = global.Buffer || require('buffer').Buffer; // which leads to buf
   version: 'v0.9.',
 };
 (window as any).setImmediate = window.setTimeout; // which leads to setImmediate being required
+
+/***************************************************************************************************
+ * SCULLY IMPORTS
+ */
+// tslint:disable-next-line: align
+import 'zone.js/dist/task-tracking';

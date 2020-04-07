@@ -14,7 +14,9 @@
     "commit": "git-cz",
     "deploy": "yarn ng deploy --repo=https://github.com/phodal/do.git --cname=devops.phodal.com",
     "build:lib": "yarn ng build ledge-render --prod",
-    "publish:lib": "cd dist/ledge-render && npm publish --access=public"
+    "publish:lib": "cd dist/ledge-render && npm publish --access=public",
+    "scully": "scully",
+    "scully:serve": "scully serve"
   },
   "private": false,
   "dependencies": {
@@ -31,6 +33,9 @@
     "@angular/router": "~9.0.3",
     "@ledge-framework/render": "~0.0.6",
     "@ngx-pwa/local-storage": "^9.0.2",
+    "@scullyio/init": "^0.0.23",
+    "@scullyio/ng-lib": "latest",
+    "@scullyio/scully": "latest",
     "core-js": "^3.6.4",
     "d3": "^5.15.0",
     "d3-graphviz": "^3.0.4",
