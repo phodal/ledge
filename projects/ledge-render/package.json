@@ -1,6 +1,6 @@
 {
   "name": "@ledge-framework/render",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Ledge Framework render, a powerful markdown render.",
   "license": "MPL-2.0",
   "repository": "https://github.com/phodal/ledge",
