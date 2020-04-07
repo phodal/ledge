@@ -168,6 +168,19 @@
       color: $purple;
     }
 
+    a::after {
+      content: '';
+      display: block;
+      background: url('/assets/resources/images/arrow.svg') no-repeat;
+      background-size: 10px 20px;
+      width: 10px;
+      height: 20px;
+      float: right;
+      right: 12px;
+      position: relative;
+      top: 52px;
+    }
+
     .resource-item {
       flex: 1 1 auto;
       height: 120px;
