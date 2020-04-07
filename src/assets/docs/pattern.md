@@ -361,4 +361,10 @@ GitHub 解释版：
    - 运营需求化
 ```
 
+### 核心：架构金字塔
+
+![Architecture Level](https://phodal.github.io/trusted/images/architecture-level.jpg '架构金字塔')
+
+出自：《[架构金字塔](https://www.phodal.com/blog/architecture-pyramid/)》
+
 ## Architecture Dashboard
