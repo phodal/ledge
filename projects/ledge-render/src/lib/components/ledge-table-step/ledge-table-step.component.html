@@ -28,7 +28,7 @@
           [headerStyle]="config.colors && config.colors[hIndex * column + index]"
           [data]="{
             header: headerName,
-            cells: data.cells[index],
+            cells: data.cells[hIndex * column + index],
             index: hIndex * column + index
           }"
         ></ledge-card>
