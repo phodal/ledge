@@ -12,16 +12,9 @@
       <div class="column" [class.step-row-wrap]="index === arr.length - 1">
         <div
           class="arrow"
-          *ngIf="
-            (hIndex + 1) % 2 === 0 && !last && hIndex === headers.length - 1
-          "
-        >
-          <span
-            [class]="index === arr.length - 1 ? 'arrow-down' : 'arrow-left'"
-          ></span>
-          <span
-            [class]="index === arr.length - 1 ? 'rect-down' : 'rect-right'"
-          ></span>
+          *ngIf="(hIndex + 1) % 2 === 0 && !last && hIndex === headers.length - 1">
+          <span [class]="index === arr.length - 1 ? 'arrow-down' : 'arrow-left'"></span>
+          <span [class]="index === arr.length - 1 ? 'rect-down' : 'rect-right'"></span>
         </div>
         <ledge-card
           style="height: 100%;"
@@ -30,15 +23,10 @@
             header: headerName,
             cells: data.cells[hIndex * column + index],
             index: hIndex * column + index
-          }"
-        ></ledge-card>
+          }"></ledge-card>
         <div class="arrow" *ngIf="(hIndex + 1) % 2 !== 0">
-          <span
-            [class]="index === arr.length - 1 ? 'rect-down' : 'rect-left'"
-          ></span>
-          <span
-            [class]="index === arr.length - 1 ? 'arrow-down' : 'arrow-right'"
-          ></span>
+          <span [class]="index === arr.length - 1 ? 'rect-down' : 'rect-left'"></span>
+          <span [class]="index === arr.length - 1 ? 'arrow-down' : 'arrow-right'"></span>
         </div>
       </div>
     </ng-container>
