@@ -28,6 +28,14 @@
 
 ## 三步工作法
 
+《凤凰项目》中的三步工作法：
+
+![三步工作法](/assets/images/devops-three-ways.jpg '三步工作法')
+
+扩展资料：《[The Three Ways: The Principles Underpinning DevOps](https://itrevolution.com/the-three-ways-principles-underpinning-devops/)》
+
+《DevOps 实践指南》 对应的示例：
+
 ```mindmap
  - 三步工作法
    - 流动原则
@@ -74,8 +82,6 @@
      - 在日常工作中注入弹性模式
      - 领导层强化学习文化
 ```
-
-—— 《DevOps 实践指南》
 
 # 价值流驱动
 
