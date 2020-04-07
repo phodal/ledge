@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "./node_modules/.bin/ng",
     "start": "yarn ng serve",
-    "build": "yarn ng build --max_old_space_size=4096",
-    "build:ci": "yarn ng build --prod --max_old_space_size=4096",
+    "build": "yarn ng build",
+    "build:ci": "yarn ng build --prod",
     "build:stats": "yarn ng build --stats-json",
     "analyze": "webpack-bundle-analyzer dist/ledge/stats-es2015.json",
     "test": "yarn ng test",
