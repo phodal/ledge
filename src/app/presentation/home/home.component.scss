@@ -150,6 +150,47 @@
   }
 }
 
+.relate {
+  background-color: transparent;
+
+  .relate-title {
+    font-size: 24px;
+    text-align: center;
+    line-height: 1.5;
+    padding: 1em 0;
+  }
+
+  .relate-resources {
+    display: flex;
+    flex-direction: row;
+
+    a:hover {
+      color: $purple;
+    }
+
+    .resource-item {
+      flex: 1 1 auto;
+      height: 120px;
+      margin-right: 2em;
+      width: 25%;
+      line-height: 120px;
+      background-color: $white;
+      text-decoration: none;
+      color: $black;
+      text-align: center;
+      font-size: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}
+
 :host ::ng-deep {
   .devops-content {
     .no-toc-markdown {
@@ -164,6 +205,7 @@
 
 .contribution {
   border-radius: 8px;
+  margin-top: 4em;
   box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
 
   .contributors {
