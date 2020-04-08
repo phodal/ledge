@@ -9,7 +9,6 @@ import { MarkdownRatingItemComponent } from '../features/rating-radar-chart/mark
 import { MarkdownRatingComponent } from '../features/rating-radar-chart/markdown-rating/markdown-rating.component';
 import { RatingRadarChartComponent } from '../features/rating-radar-chart/rating-radar-chart.component';
 import { MarkdownRenderComponent } from '../features/markdown-render/markdown-render.component';
-import { ProcessTableComponent } from '../presentation/home/process-table/process-table.component';
 import { CustomMaterialModule } from './custom-material.module';
 
 @NgModule({
@@ -44,7 +43,6 @@ import { CustomMaterialModule } from './custom-material.module';
     MarkdownRatingComponent,
     MarkdownRatingItemComponent,
     RatingRadarChartComponent,
-    ProcessTableComponent,
   ],
   providers: [],
   exports: [
@@ -52,7 +50,6 @@ import { CustomMaterialModule } from './custom-material.module';
     MarkdownRatingComponent,
     MarkdownRatingItemComponent,
     RatingRadarChartComponent,
-    ProcessTableComponent,
   ],
   entryComponents: [],
 })

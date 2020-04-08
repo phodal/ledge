@@ -1,5 +1,5 @@
 import marked from 'marked/lib/marked';
-import { zip } from 'lodash-es';
+import { zip } from '../../utils/zip';
 
 const LedgeMarkdownConverter = {
   // marked

@@ -9,7 +9,6 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { get } from 'lodash-es';
 import { combineLatest, Observable, Subject } from 'rxjs';
 import { debounceTime, map, startWith, takeUntil, tap } from 'rxjs/operators';
 import { Atom, HighlightState } from '../shared';
@@ -129,13 +128,13 @@ export class PeriodicTableComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     const { selectedMetal = null } = changes;
-    this.metalClass = get(selectedMetal, 'currentValue', null);
+    this.metalClass = selectedMetal?.currentValue || null;
   }
 
   showAtomDetails(atomNumber: number) {
     if (atomNumber) {
       this.currentAtom = this.atoms.find((a) => a.number === atomNumber);
-      this.currentAtomCategory.emit(get(this.currentAtom, 'category', null));
+      this.currentAtomCategory.emit(this.currentAtom?.category || null);
     }
   }
 

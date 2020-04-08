@@ -31,7 +31,6 @@
     "dagre-d3": "^0.6.4",
     "echarts": "^4.7.0",
     "graphlib-dot": "^0.6.4",
-    "lodash-es": "^4.17.15",
     "marked": "^0.8.2",
     "shortid": "^2.2.15"
   }

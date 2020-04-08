@@ -1,5 +1,3 @@
-import { last } from 'lodash-es';
-
 export interface TocItem {
   anchor: string;
   level: number;
@@ -27,7 +25,7 @@ export default class Tocify {
       // 第一个 item 直接 push
       items.push(item);
     } else {
-      let lastItem = last(items) as TocItem; // 最后一个 item
+      let lastItem = items[items.length - 1]; // 最后一个 item
 
       if (item.level > lastItem.level) {
         // item 是 lastItem 的 children
@@ -39,7 +37,7 @@ export default class Tocify {
             break;
           }
 
-          lastItem = last(children) as TocItem; // 重置 lastItem 为 children 的最后一个 item
+          lastItem = children[children.length - 1]; // 重置 lastItem 为 children 的最后一个 item
 
           if (item.level <= lastItem.level) {
             // item level 小于或等于 lastItem level 都视为与 children 同级
@@ -59,5 +57,5 @@ export default class Tocify {
   reset = () => {
     this.tocItems = [];
     this.anchors = [];
-  }
+  };
 }
