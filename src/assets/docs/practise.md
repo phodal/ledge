@@ -687,6 +687,10 @@ Dashing: http://dashing.io/
 
 # 持续：持续创新文化
 
+如 RedHat 官方在 [DevOps 文件](https://www.redhat.com/zh/topics/devops) 所讲述：
+
+> DevOps 十分依赖重视开放性和透明度的协作文化。实施 DevOps 就等于应用开源原则和实践，因为 DevOps 的文化价值观与开源社区和敏捷性工作方法的价值观紧密交融。
+
 or 持续实验文化
 
 ## 持续学习
