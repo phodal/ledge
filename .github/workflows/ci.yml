@@ -50,7 +50,7 @@ jobs:
         run: yarn test:ci
 
       - name: Build Scully
-        run: node node_modules/.bin/scully --tds --host='0.0.0.0'
+        run: node node_modules/.bin/scully --tds --host='0.0.0.0' --project=ledge
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
