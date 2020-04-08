@@ -29,6 +29,7 @@ jobs:
       - name: Install
         run: |
           yarn install
+          ls dist
 
       - name: Build
         run: yarn build:ci
@@ -50,4 +51,4 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.SuperSecret }}
           BRANCH: gh-pages # The branch the action should deploy to.
           REPOSITORY_NAME: "phodal/do"
-          FOLDER: dist/static
+          FOLDER: dist/ledge
