@@ -12,7 +12,7 @@ Ledge （from Know-Ledge，意指承载物）知识和工具平台，是我们�
 [![Maintainability](https://api.codeclimate.com/v1/badges/64e2ddc705fbeba4435e/maintainability)](https://codeclimate.com/github/phodal/ledge/maintainability)
 [![codecov](https://codecov.io/gh/phodal/ledge/branch/master/graph/badge.svg)](https://codecov.io/gh/phodal/ledge)
 
-![Screenshots](docs/images/ledge-ss.png "Ledge 首页截图")
+![Screenshots](docs/images/ledge-ss.png 'Ledge 首页截图')
 
 您可以在这个平台上看到：
 
@@ -54,8 +54,9 @@ Ledge （from Know-Ledge，意指承载物）知识和工具平台，是我们�
 
 - [文档代码化](https://devops.phodal.com/practise#docs-like-code)。我们采用了 Markdown like code 的理念，来生成一系列的内容和图表等。
 - 持续部署。基于 GitHub Pages 和 GitHub Actions，我们构建了一套自动化部署系统，提交即部署。
-- 微前端。我们通过 Web Components 来构建项目的微前端体系
-- WebComponents
+- Static Site Generator.
+- ~微前端。我们通过 Web Components 来构建项目的微前端体系~
+- ~WebComponents~
 
 ### Setup
 
