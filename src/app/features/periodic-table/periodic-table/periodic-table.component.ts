@@ -34,14 +34,14 @@ interface HeaderInfo {
 
 const LANT_ATOM_GROUP = {
   number: '57-71',
-  category: 'lanthanide',
+  category: 'atom-placeholder',
   symbol: '',
   name: '',
   atomic_mass: null,
 };
 const ACT_ATOM_GROUP = {
   number: '89-103',
-  category: 'actinide',
+  category: 'atom-placeholder',
   symbol: '',
   name: '',
   atomic_mass: null,
