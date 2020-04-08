@@ -25,6 +25,8 @@ import { registerLocaleData } from '@angular/common';
 import localeGb from '@angular/common/locales/en-GB';
 import localZhHans from '@angular/common/locales/zh-Hans';
 import { ScullyLibModule } from '@scullyio/ng-lib';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 registerLocaleData(localeGb, 'en-gb');
 registerLocaleData(localZhHans, 'zh-Hans');
@@ -57,6 +59,9 @@ registerLocaleData(localZhHans, 'zh-Hans');
     CustomMaterialModule,
     LedgeRenderModule,
     ScullyLibModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+    }),
   ],
   providers: [Title],
   bootstrap: [AppComponent],
