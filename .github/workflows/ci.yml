@@ -33,8 +33,6 @@ jobs:
       - name: Build
         run: |
           yarn build:ci
-          yarn scully
-          ls dist
 
       - name: Testing
         run: yarn test:ci
