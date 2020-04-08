@@ -37,6 +37,9 @@ jobs:
       - name: Testing
         run: yarn test:ci
 
+      - name: Build Scully
+        run: npm run scully
+
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
@@ -51,4 +54,4 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.SuperSecret }}
           BRANCH: gh-pages # The branch the action should deploy to.
           REPOSITORY_NAME: "phodal/do"
-          FOLDER: dist/ledge
+          FOLDER: dist/static
