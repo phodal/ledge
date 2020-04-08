@@ -18,7 +18,7 @@
       </div>
 
       <div *ngSwitchCase="'quadrant'">
-        <ledge-quadrant [data]="item.data"></ledge-quadrant>
+        <ledge-quadrant [data]="item.data" [config]="item.config"></ledge-quadrant>
       </div>
 
       <div *ngSwitchCase="'toolset'">

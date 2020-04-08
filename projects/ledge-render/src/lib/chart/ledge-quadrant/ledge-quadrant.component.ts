@@ -19,6 +19,9 @@ export class LedgeQuadrantComponent implements OnInit, AfterViewInit {
   @Input()
   data: LedgeList;
 
+  @Input()
+  config: any;
+
   @ViewChild('chart', {}) reporter: ElementRef;
 
   constructor() {
@@ -35,8 +38,8 @@ export class LedgeQuadrantComponent implements OnInit, AfterViewInit {
   }
 
   buildConfig(data, graphic: any[]) {
-    if (data.config && data.config.left) {
-      const keys = Object.keys(data.config);
+    if (this.config && this.config.left) {
+      const keys = Object.keys(this.config);
       // tslint:disable-next-line:prefer-for-of
       for (let i = 0; i < keys.length; i++) {
         const key = keys[i];
@@ -51,7 +54,7 @@ export class LedgeQuadrantComponent implements OnInit, AfterViewInit {
           ],
         };
 
-        const textValue = data.config[key];
+        const textValue = this.config[key];
         graphConfig.children[0].style.text = textValue;
         switch (key) {
           case 'left':
@@ -80,6 +83,7 @@ export class LedgeQuadrantComponent implements OnInit, AfterViewInit {
             break;
         }
 
+        console.log(graphConfig);
         graphic.push(graphConfig);
       }
     }
@@ -109,6 +113,7 @@ export class LedgeQuadrantComponent implements OnInit, AfterViewInit {
     // tslint:disable-next-line:no-shadowed-variable
     const graphic = [];
     this.buildConfig(data, graphic);
+    console.log(graphic);
 
     return {
       title: {

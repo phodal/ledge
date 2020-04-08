@@ -255,6 +255,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
         this.markdownData.push({
           type: 'quadrant',
           data: quadrantData.lists[0],
+          config: quadrantData.config
         });
         break;
       case 'toolset':
