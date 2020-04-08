@@ -12,7 +12,7 @@
     "test:ci": "yarn ng test --watch=false --progress=false --browsers=ChromeHeadlessCI --codeCoverage",
     "lint": "yarn ng lint",
     "commit": "git-cz",
-    "deploy": "node --max_old_space_size=4096 node_modules/@angular/cli/bin/ng deploy --repo=https://github.com/phodal/do.git --cname=devops.phodal.com",
+    "deploy": "yarn build:ci && node --max_old_space_size=4096 node_modules/@angular/cli/bin/ng deploy --dir=dist/static --repo=https://github.com/phodal/do.git --cname=devops.phodal.com",
     "build:lib": "node --max_old_space_size=4096 node_modules/@angular/cli/bin/ng build ledge-render --prod",
     "publish:lib": "cd dist/ledge-render && npm publish --access=public",
     "scully": "scully",
