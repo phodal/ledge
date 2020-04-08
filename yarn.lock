@@ -1233,6 +1233,11 @@
   dependencies:
     find-up "^4.0.0"
 
+"@gammastream/scully-plugin-sitemap@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@gammastream/scully-plugin-sitemap/-/scully-plugin-sitemap-0.0.4.tgz#45d3431763ee3e641a07751f20ff0ed5252b2b2a"
+  integrity sha512-Pb0e+FqWku4aOE4KCimtI2NZN0VB3ydcFsPVh1bEyDnT+On0rv+UlhzT6gkd1pbcBwezIc34DGLKD6woqncYFg==
+
 "@hpcc-js/wasm@^0.3.8":
   version "0.3.10"
   resolved "https://registry.yarnpkg.com/@hpcc-js/wasm/-/wasm-0.3.10.tgz#d5d86d267d0bb9110cb4ba7939f74d2665ca193b"
@@ -12840,6 +12845,11 @@ xml-name-validator@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/xml-name-validator/-/xml-name-validator-3.0.0.tgz#6ae73e06de4d8c6e47f9fb181f78d648ad457c6a"
   integrity sha512-A5CUptxDsvxKJEU3yO6DuWBSJz/qizqzJKOMIfUJHETbBw/sFaDxgd6fxm1ewUaM0jZ444Fc5vC5ROYurg/4Pw==
+
+xmlbuilder@^15.1.0:
+  version "15.1.0"
+  resolved "https://registry.yarnpkg.com/xmlbuilder/-/xmlbuilder-15.1.0.tgz#4c4c9109180937baeb839978b590250be09a4aef"
+  integrity sha512-xae5hmPQnmSFhpiuV3NGXq+FWGOvWy/rIzxVLnRtSSABbPZWltTQCe6WlHDpCq5pGvnGwNsWnS1FdkW7Tx9FNQ==
 
 xmlchars@^2.2.0:
   version "2.2.0"

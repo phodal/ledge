@@ -61,6 +61,7 @@
     "@angular/language-service": "~9.0.3",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@gammastream/scully-plugin-sitemap": "^0.0.4",
     "@types/d3": "^5.7.2",
     "@types/echarts": "^4.4.3",
     "@types/jasmine": "~3.5.0",
@@ -88,7 +89,8 @@
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
     "typescript": "~3.7.5",
-    "webpack-bundle-analyzer": "^3.6.1"
+    "webpack-bundle-analyzer": "^3.6.1",
+    "xmlbuilder": "^15.1.0"
   },
   "browser": {
     "crypto": false
