@@ -29,10 +29,11 @@ jobs:
       - name: Install
         run: |
           yarn install
-          ls dist
 
       - name: Build
-        run: yarn build:ci
+        run: |
+          yarn build:ci
+          ls dist
 
       - name: Testing
         run: yarn test:ci
