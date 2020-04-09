@@ -1,4 +1,4 @@
-@import "src/styles/variables";
+@import 'src/styles/variables';
 
 :host {
   display: block;
@@ -9,6 +9,7 @@
 .symbol {
   margin-left: 0.2em;
   font-size: 1.3em;
+  cursor: pointer;
 }
 
 .item-block {
