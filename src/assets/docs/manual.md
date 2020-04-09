@@ -714,6 +714,41 @@ ElasticSearch + Logstash + Kibana
 
 #### 提交信息门禁
 
+## DevOps 知识平台
+
+### Google DevOps 文档
+
+Google 示例：[Google DevOps](https://cloud.google.com/devops?hl=zh-cn)
+
+```mindmap
+- DevOps 技术
+   - 版本控制
+   - 持续集成
+   - 部署自动化
+   - 主干开发
+   - 测试自动化
+   - 架构
+   - 赋予团队选择工具的能力
+   - 测试数据管理
+   - 更早将安全性纳入软件开发流程
+- DevOps 流程
+   - 团队实验
+   - 简化变更审核流程
+   - 客户反馈
+   - 价值流中工作的可视性
+   - 小批量工作方式
+- DevOps 衡量
+   - 监控系统以制定明智的业务决策
+   - 主动式故障通知
+   - 进行中工作数限制
+   - 目视管理
+- DevOps 文化
+   - 工作满意度
+   - Westrum 组织文化
+   - 学习文化
+   - 如何进行转型
+```
+
 # 附录 1：移动应用的自动化测试
 
 ## BDD 方式
