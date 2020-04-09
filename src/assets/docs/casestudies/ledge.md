@@ -15,10 +15,11 @@
 ### DevOps 流程
 
 ```process-table
-| 源码管理 | 代码质量 | 制品管理  | 测试 | 持续集成 | 分析 | 协作  |
-|-|-|-|-|-|-|-|
-| Git | TSLint | Git (history) | Jasmine | GitHub Action | GitHub Traffic | GitHub Projects |
-| GitHub | Code Climate | |  Jest | | Google Analysis |  |
+| 源码管理 | 代码质量 | 制品管理 | 测试 | 持续集成 | 构建 | 部署  | 分析 | 协作  |
+|-|-|-|-|-|-|-|-|-|
+| Git | TSLint | GitHub | Jasmine | GitHub Action | Node.js | GitHub Action | GitHub Traffic | GitHub Projects |
+| GitHub | Code Climate | |   |  | Yarn | Scully | Google Analysis |  |
+|  | CodeCov | | | |  | |
 ```
 
 ## 测试策略
