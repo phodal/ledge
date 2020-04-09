@@ -30,7 +30,7 @@
       </div>
 
       <div *ngSwitchCase="'pie'">
-        <ledge-pie [data]="item.data"></ledge-pie>
+        <ledge-pie [data]="item.data" [config]="item.config"></ledge-pie>
       </div>
 
       <div *ngSwitchCase="'echarts'">

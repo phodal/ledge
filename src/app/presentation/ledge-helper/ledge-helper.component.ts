@@ -27,8 +27,6 @@ b
    - b: 19
    - c: 21
    - d: 12
-
-config: {"type": "percent"}
 \`\`\`
 
 \`\`\`list-style
