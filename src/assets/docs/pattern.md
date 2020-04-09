@@ -99,6 +99,7 @@ based on: MDB & [https://martinfowler.com/articles/agileFluency.html](https://ma
   - 低延迟
   - 可监控性
   - 可用性
+
 ```
 
 分支

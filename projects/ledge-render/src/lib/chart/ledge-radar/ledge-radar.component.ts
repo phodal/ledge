@@ -31,6 +31,11 @@ export class LedgeRadarComponent implements OnInit, AfterViewInit {
     const {indicator, legend, seriesData} = this.buildIndicatorAndSeries(data);
 
     return {
+      toolbox: {
+        feature: {
+          saveAsImage: {},
+        }
+      },
       tooltip: {},
       legend: {
         bottom: 5,
@@ -79,6 +84,13 @@ export class LedgeRadarComponent implements OnInit, AfterViewInit {
               value: [],
               areaStyle: {}
             };
+
+            if (this.config.showValue) {
+              seriesData[j].label = {
+                show: true,
+                  formatter: params => params.value
+              };
+            }
           }
 
           seriesData[j].name = legend[j];
