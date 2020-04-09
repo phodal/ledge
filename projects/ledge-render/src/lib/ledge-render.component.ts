@@ -275,6 +275,14 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
           config: tableStepData.config,
         });
         break;
+      case 'pie':
+        const pieData = LedgeMarkdownConverter.toJson(codeBlock.text);
+        this.markdownData.push({
+          type: 'pie',
+          data: pieData.lists[0].children,
+          config: pieData.config,
+        });
+        break;
       default:
         this.markdownData.push(token);
         break;

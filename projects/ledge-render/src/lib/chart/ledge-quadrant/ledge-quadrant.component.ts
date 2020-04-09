@@ -83,7 +83,6 @@ export class LedgeQuadrantComponent implements OnInit, AfterViewInit {
             break;
         }
 
-        console.log(graphConfig);
         graphic.push(graphConfig);
       }
     }
@@ -113,7 +112,6 @@ export class LedgeQuadrantComponent implements OnInit, AfterViewInit {
     // tslint:disable-next-line:no-shadowed-variable
     const graphic = [];
     this.buildConfig(data, graphic);
-    console.log(graphic);
 
     return {
       title: {

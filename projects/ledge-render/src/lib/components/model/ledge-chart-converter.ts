@@ -1,6 +1,10 @@
 const LedgeChartConverter = {
   toTreeData(data: any) {
-    if (data.length === 1) {
+    if (!data) {
+      return {};
+    }
+
+    if (data && data.length === 1) {
       const anies = this.transformTreeData(data);
       return anies[0];
     }

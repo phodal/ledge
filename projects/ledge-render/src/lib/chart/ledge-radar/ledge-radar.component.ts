@@ -15,13 +15,13 @@ export class LedgeRadarComponent implements OnInit, AfterViewInit {
   @Input()
   config: any;
 
-  @ViewChild('chart', {}) reporter: ElementRef;
+  @ViewChild('chart', {}) chart: ElementRef;
 
   ngOnInit(): void {
   }
 
   ngAfterViewInit(): void {
-    const myChart = echarts.init(this.reporter.nativeElement);
+    const myChart = echarts.init(this.chart.nativeElement);
     const treeData = LedgeChartConverter.toTreeData(this.data.children);
     const option = this.buildOption(treeData);
     myChart.setOption(option as any);
