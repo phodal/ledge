@@ -78,6 +78,40 @@
      - 领导层强化学习文化
 ```
 
+### 加速：高效 DevOps 的技术/管理实践
+
+见：《[https://guides.sonatype.com/foundations/devops/principle-based-devops-frameworks/](https://guides.sonatype.com/foundations/devops/principle-based-devops-frameworks/)》
+
+- 技术实践
+  - 持续交付
+    - 版本控制
+    - 部署自动化
+    - 持续集成（CI）
+    - 基于主干的开发
+    - 测试自动化
+    - 测试数据管理
+    - 安全前移（DevSecOps）
+    - 持续交付（CD）
+  - 架构
+    - 低耦合架构
+    - 赋权团队
+  - 产品和流程
+    - 客户反馈
+    - 价值流
+    - 以小批量方式工作
+    - 团队实验
+- 管理实践
+  - 精益管理和监控
+    - 轻量级变更批准流程
+    - 监控
+    - 限制在制品数
+    - 可视化工作
+  - 文化
+    - 支持学习
+    - 团队内协作
+    - 工作满意度
+    - 变革型领导
+
 ### DevOps 四大支柱
 
 来源：（《Effective DevOps》）
