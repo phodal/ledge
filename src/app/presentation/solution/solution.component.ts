@@ -14,7 +14,10 @@ export class SolutionComponent implements OnInit {
   @ViewChild('drawerContent', { static: false })
   drawerContent: MatDrawerContent;
 
-  solutions = [{ displayName: 'Coding', source: 'coding' }];
+  solutions = [
+    { displayName: 'Coding', source: 'coding' },
+    { displayName: '云开发（腾讯云）', source: 'cloudbase' },
+  ];
   currentSource: string;
   src: string;
   content: string;
