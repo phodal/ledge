@@ -1,4 +1,5 @@
 @import './behavior';
+@import './color';
 
 .markdown {
   .color-primary {
@@ -641,7 +642,7 @@
         line-height: 1.2em;
 
         &.active {
-          color: #ff4081;
+          color: $purple;
         }
       }
     }
