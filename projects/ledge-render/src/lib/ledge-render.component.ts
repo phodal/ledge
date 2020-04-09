@@ -143,22 +143,6 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
         const loose = this.token.loose;
         const checked = this.token.checked;
         const task = this.token.task;
-        //
-        // if (this.token.task) {
-        //   if (loose) {
-        //     if (this.peek().type === 'text') {
-        //       const nextToken = this.peek();
-        //       nextToken.text = this.renderer.checkbox(checked) + ' ' + nextToken.text;
-        //     } else {
-        //       this.tokens.push({
-        //         type: 'text',
-        //         text: this.renderer.checkbox(checked)
-        //       });
-        //     }
-        //   } else {
-        //     body += this.renderer.checkbox(checked);
-        //   }
-        // }
 
         while (this.next().type !== 'list_item_end') {
           if (!loose && this.token.type === 'text') {
