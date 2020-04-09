@@ -46,3 +46,9 @@ body {
 .center {
   text-align: center;
 }
+
+.scroll-to-top {
+  .mat-fab.mat-accent {
+    background-color: $purple;
+  }
+}
