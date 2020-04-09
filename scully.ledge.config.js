@@ -29,5 +29,4 @@ exports.config = {
   outDir: './dist/static',
   sitemapOptions,
   defaultPostRenderers,
-  routes: {},
 };

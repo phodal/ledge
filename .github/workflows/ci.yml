@@ -48,9 +48,9 @@ jobs:
 
       - name: Testing
         run: yarn test:ci
-#
-#      - name: Build Scully
-#        run: npx scully --showGuessError
+
+      - name: Build Scully
+        run: npx scully --showGuessError
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
@@ -60,10 +60,10 @@ jobs:
           name: codecov-umbrella
           fail_ci_if_error: true
 
-#      - name: Deploy 🚀
-#        uses: JamesIves/github-pages-deploy-action@releases/v3
-#        with:
-#          ACCESS_TOKEN: ${{ secrets.SuperSecret }}
-#          BRANCH: gh-pages # The branch the action should deploy to.
-#          REPOSITORY_NAME: "phodal/do"
-#          FOLDER: dist/static
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.SuperSecret }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          REPOSITORY_NAME: "phodal/do"
+          FOLDER: dist/static
