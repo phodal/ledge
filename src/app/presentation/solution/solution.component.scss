@@ -1,5 +1,5 @@
-@import "~@angular/material/theming";
-@import "../../../styles/behavior";
+@import '~@angular/material/theming';
+@import '../../../styles/behavior';
 
 .solution {
   min-height: 600px;
@@ -38,5 +38,14 @@
         cursor: pointer;
       }
     }
+  }
+}
+
+.help-icon {
+  top: 4px;
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
   }
 }
