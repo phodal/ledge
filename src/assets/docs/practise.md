@@ -1,4 +1,4 @@
-# DevOps 框架
+# 框架
 
 ## DevOps 框架
 
@@ -24,6 +24,8 @@
 
 扩展资料：《[The Three Ways: The Principles Underpinning DevOps](https://itrevolution.com/the-three-ways-principles-underpinning-devops/)》
 
+#### 三步法实例化
+
 《DevOps 实践指南》 对应的示例：
 
 ```mindmap
@@ -31,6 +33,9 @@
    - 流动原则
      - 使工作可见
        - Kanban
+         - 电子看板
+         - 物理看板
+         - 技术债看板
      - 限制在制制品数
      - 减少批量大小
      - 减少交接次数
