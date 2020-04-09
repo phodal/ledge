@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HighlightState } from '../../features/periodic-table/shared';
 import { Title } from '@angular/platform-browser';
 import * as mdData from 'raw-loader!../../../assets/docs/home.md';
+import { NavigationEnd, Router } from '@angular/router';
 
 interface Contributor {
   name: string;
@@ -126,7 +127,7 @@ config: {"colors": [{"bg":"#e55852","font":"#b71a09"},{"bg":"#e98832","font":"#c
   ];
   homemd = mdData.default;
 
-  constructor(title: Title) {
+  constructor(title: Title, private router: Router) {
     title.setTitle('Ledge DevOps 知识平台 - DevOps 工具元素周期表');
   }
 
@@ -134,5 +135,12 @@ config: {"colors": [{"bg":"#e55852","font":"#b71a09"},{"bg":"#e98832","font":"#c
     this.category = category;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        return;
+      }
+      window.scrollTo(0, 0);
+    });
+  }
 }
