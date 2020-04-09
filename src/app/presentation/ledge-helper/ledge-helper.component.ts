@@ -21,6 +21,16 @@ b
  - [ ] b
    - [ ] c
 
+\`\`\`pie
+ - Sometitle
+   - a: 48
+   - b: 19
+   - c: 21
+   - d: 12
+
+config: {"type": "percent"}
+\`\`\`
+
 \`\`\`list-style
  - 开源工具采用
  - 商业采购

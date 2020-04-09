@@ -14,6 +14,7 @@ import { ToolsetComponent } from './toolset/toolset.component';
 import { LedgeStepLineComponent } from './components/ledge-step-line/ledge-step-line.component';
 import { LedgeCardComponent } from './components/ledge-card/ledge-card.component';
 import { LedgeTableStepComponent } from './components/ledge-table-step/ledge-table-step.component';
+import { LedgePieComponent } from './chart/ledge-pie/ledge-pie.component';
 
 const LedgeComponents = [
   LedgeRenderComponent,
@@ -28,6 +29,7 @@ const LedgeComponents = [
   ToolsetComponent,
   LedgeCardComponent,
   LedgeTableStepComponent,
+  LedgePieComponent,
 ];
 
 
