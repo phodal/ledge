@@ -18,7 +18,7 @@ import LedgeColors from './support/ledgeColors';
   styleUrls: ['./ledge-render.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
+export class LedgeRenderComponent implements OnInit, OnChanges {
   constructor() { }
 
   @Input()
@@ -27,16 +27,12 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
   token = null;
   tokens: TokensList | any = [];
   listQueue = [];
-  sluger = new Slugger();
+  slugger = new Slugger();
   colorsForIndex = LedgeColors;
 
   isPureParagraph = true;
 
-  ngOnInit(): void {
-    // this.renderContent(this.content);
-  }
-
-  ngAfterViewInit(): void { }
+  ngOnInit(): void {}
 
   ngOnChanges(changes: SimpleChanges): void {
     const { content } = changes;
@@ -119,7 +115,7 @@ export class LedgeRenderComponent implements OnInit, AfterViewInit, OnChanges {
           type: 'heading',
           depth: token.depth,
           text: inline,
-          anchor: this.sluger.slug(this.unescape(inline)),
+          anchor: this.slugger.slug(this.unescape(inline)),
         });
         break;
       case 'list_start': {
