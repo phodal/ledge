@@ -1238,10 +1238,10 @@
   dependencies:
     find-up "^4.0.0"
 
-"@gammastream/scully-plugin-sitemap@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@gammastream/scully-plugin-sitemap/-/scully-plugin-sitemap-0.0.4.tgz#45d3431763ee3e641a07751f20ff0ed5252b2b2a"
-  integrity sha512-Pb0e+FqWku4aOE4KCimtI2NZN0VB3ydcFsPVh1bEyDnT+On0rv+UlhzT6gkd1pbcBwezIc34DGLKD6woqncYFg==
+"@gammastream/scully-plugin-sitemap@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@gammastream/scully-plugin-sitemap/-/scully-plugin-sitemap-0.0.5.tgz#af89a40431315b10741f097c656ce0822e3f2454"
+  integrity sha512-mQePFahJGx3MIHZQwPgRJSyNkGRaDs/JX5kUytV+ovR4hfW/ttvhnqNn0D/dYpowE+6wxz8KJLm13Iz3n3hgjQ==
 
 "@hpcc-js/wasm@^0.3.8":
   version "0.3.10"
@@ -1253,10 +1253,10 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@ledge-framework/render@~0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@ledge-framework/render/-/render-0.0.6.tgz#d053728024b624f2ead053d14349e75180631e80"
-  integrity sha512-PkXugwDpym+MDeYZGTzsRutXneXHz0PpYJ9AnD9EL6Ek+OwDjOoDQ7wzG7h1PmC8G0no5ubEGsuqOyC2UNcgSw==
+"@ledge-framework/render@~0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@ledge-framework/render/-/render-0.0.8.tgz#89d67c96bc8d46d402901442df2de987a3879375"
+  integrity sha512-SvM7dYDGQvOTVmYnTgsviX5X3LYE5X6JATpCIGec65wEJ8UlUmnggE7EZAJGEkrVh6Ssk8adljTQipjFYQfdqA==
 
 "@marionebl/sander@^0.6.0":
   version "0.6.1"
