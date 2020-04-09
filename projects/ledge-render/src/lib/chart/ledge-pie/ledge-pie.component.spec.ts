@@ -16,6 +16,10 @@ describe('LedgePieComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(LedgePieComponent);
     component = fixture.componentInstance;
+    component.data = [{
+      name: '',
+      children: []
+    }];
     fixture.detectChanges();
   });
 

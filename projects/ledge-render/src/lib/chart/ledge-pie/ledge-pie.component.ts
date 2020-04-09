@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
-import { LedgeList } from '../../components/model/ledge-chart.model';
 import * as echarts from 'echarts';
+import { LedgeListItem } from '../../components/model/ledge-chart.model';
 
 @Component({
   selector: 'ledge-pie',
@@ -9,7 +9,7 @@ import * as echarts from 'echarts';
 })
 export class LedgePieComponent implements AfterViewInit {
   @Input()
-  data: LedgeList;
+  data: LedgeListItem[];
 
   @Input()
   config: any;
