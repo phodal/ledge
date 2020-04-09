@@ -1,5 +1,4 @@
 import marked from 'marked/lib/marked';
-import { zip } from '../../utils/zip';
 
 const LedgeMarkdownConverter = {
   // marked
@@ -12,10 +11,15 @@ const LedgeMarkdownConverter = {
     '<': '&lt;',
     '>': '&gt;',
     '"': '&quot;',
-    "'": '&#39;',
+    '\'': '&#39;',
   },
-  transpose(arr: any[][]) {
-    return zip.apply(this, arr);
+
+  transpose(array: any[][]) {
+    if (array.length === 0) {
+      return;
+    }
+
+    return array[0].map((col, i) => array.map(row => row[i]));
   },
 
   getEscapeReplacement(ch) {
