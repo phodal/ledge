@@ -52,3 +52,19 @@ body {
     background-color: $purple;
   }
 }
+
+.home-markdown {
+  .markdown {
+    p {
+      padding: 2em;
+      text-align: center;
+    }
+  }
+
+  .card {
+    p {
+      padding:0;
+      text-align: left;
+    }
+  }
+}
