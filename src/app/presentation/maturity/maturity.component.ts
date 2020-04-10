@@ -24,7 +24,7 @@ export class MaturityComponent implements OnInit {
  -  [ ] 配置管理: 3
    - [ ] 版本控制
    - [ ] 变更管理
- -  [ ] 持续与持续集成: 3
+ -  [ ] 持续构建与持续集成: 3
    - [ ] 构建实践
    - [ ] 持续集成
  -  [ ] 测试管理: 3
