@@ -7,7 +7,7 @@
       <div class="section-name">{{section.name}}</div>
       <div class="section-items">
         <div class="section-item" *ngFor="let item of section.children">
-          <ng-container *ngIf="!showImage(item.name)"> {{item.name}} </ng-container>
+          <span class="pure-text" *ngIf="!showImage(item.name)"> {{item.name}} </span>
           <img *ngIf="showImage(item.name)" [src]="getImageUrl(item.name)" (error)="updateUrl(item.name, $event)" alt="{{item.name}}">
         </div>
       </div>

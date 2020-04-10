@@ -4,7 +4,7 @@
   .process-column {
     flex-direction: column;
     width: 100%;
-    padding: 8px;
+    padding: 4px;
 
 
     .column-title {
@@ -17,6 +17,7 @@
       flex: 1;
       position: relative;
       margin-top: 1em;
+      background: #fff;
 
       .section-name {
         top: -0.5em;
@@ -33,9 +34,13 @@
         .section-item {
           display: inline-block;
 
+          .pure-text {
+            padding: 16px 8px;
+          }
+
           img {
             display: inline-block;
-            width: 64px;
+            width: 60px;
             height: auto;
             margin: 0;
           }

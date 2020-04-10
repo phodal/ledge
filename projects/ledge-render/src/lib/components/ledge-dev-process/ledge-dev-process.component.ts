@@ -33,11 +33,11 @@ export class LedgeDevProcessComponent implements OnInit {
   }
 
   showImage(name: string) {
-    if (this.imagesShow.name === undefined) {
+    if (this.imagesShow[name] === undefined) {
       return true;
     }
 
-    if (this.imagesShow.name && this.imagesShow.name.showImage) {
+    if (this.imagesShow[name] && this.imagesShow[name].showImage) {
       return true;
     }
 
