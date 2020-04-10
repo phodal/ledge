@@ -41,7 +41,7 @@
  - 测试
    - 测试
      - Jasmine
-     - Karam
+     - Karma
  - 持续集成
    - 持续集成
      - Github
@@ -49,12 +49,13 @@
    - 构建
      - Node.js
      - Npm
+     - Yarn
  - 部署
    - 部署
      - GitHub
  - 分析
    - 分析
-     - Google Analysis
+     - Google Analytics
 ```
 
 ## 测试策略
