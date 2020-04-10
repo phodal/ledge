@@ -225,6 +225,7 @@ config: {"type": "line-chart"}
 
 ### 设计 DevOps
 
+```dev-process
 - Collaborate
   - Application Lifecycle Mgmt
     - Jira
@@ -365,7 +366,58 @@ config: {"type": "line-chart"}
   - Cloud / Iaas / PaaS
     - Amazon
     - Dokku
-    - Dokku
+    - Flynn
+    - Heroku
+    - Google Cloud Platform
+    - Rockspace
+    - OpenStack
+    - Appfog
+    - Deis
+    - OpenShift
+    - Engine Yard
+  - Orchestration & Scheduling
+    - Mesosphere
+    - Docker Swarm
+    - Kubernetes
+    - Marathon
+    - Rancher
+    - Nomad
+    - Mesos
+  - BI / Monitoring / Logging
+    - Logstash
+    - ElasticSearch
+    - Splunk
+    - Vector
+    - Kibana
+    - Datadog
+    - Zabbix
+    - Zipkin
+    - AppDynamics
+    - x-pack
+    - Google Analysis
+    - Sentry
+    - New Relic
+    - Vizceral
+    - Prometheus
+    - Pinpoint
+    - Sensu
+    - Grik
+    - Dynatrace
+    - Runscope
+    - Atlas
+    - Riemann
+    - APIMetrics
+    - Grafana
+    - Graphite
+    - Raygun
+    - StatsD
+    - Beats
+    - OpsGenie
+    - KeeIO
+    - Moog
+    - Rollbar
+    - Airbrake.io
+```
 
 ### DevOps 元素周期表
 
