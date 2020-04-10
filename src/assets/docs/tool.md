@@ -229,7 +229,6 @@ config: {"type": "line-chart"}
 - Collaborate
   - 应用生命周期管理
     - Jira
-    - Mingle
     - Trello
     - Team Foundation Server
     - Pivotal Tracker
@@ -338,14 +337,14 @@ config: {"type": "line-chart"}
     - Capistrano
     - SSH
     - Juju
-    - Nolio
+    - CA Nolio
     - ElasticBox
     - Spinnaker
   - 配置管理
     - Puppet
     - Chef
     - Ansible
-    - SaltStack
+    - Salt
     - CFEngine
     - PowerShell DSC
     - Vagrant
