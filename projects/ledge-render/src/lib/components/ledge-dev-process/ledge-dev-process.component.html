@@ -1,1 +1,13 @@
-<p>ledge-dev-process works!</p>
+<div class="dev-process">
+  <div class="process-column" *ngFor="let column of data">
+    <div class="column-title">{{column.name}}</div>
+    <div class="section-block" *ngFor="let section of column.children">
+      <div class="section-name">{{section.name}}</div>
+      <div class="section-items">
+        <div class="section-item" *ngFor="let item of section.children">
+          {{item.name}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

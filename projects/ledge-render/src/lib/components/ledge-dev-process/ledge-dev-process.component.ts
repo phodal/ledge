@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { LedgeListItem } from '../model/ledge-chart.model';
 
 @Component({
   selector: 'ledge-dev-process',
@@ -6,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ledge-dev-process.component.scss']
 })
 export class LedgeDevProcessComponent implements OnInit {
+  @Input()
+  data: LedgeListItem[];
+
+  @Input()
+  config: any;
 
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.data);
   }
 }

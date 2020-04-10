@@ -283,6 +283,14 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
           config: pieData.config,
         });
         break;
+      case 'dev-process':
+        const devProcessData = LedgeMarkdownConverter.toJson(codeBlock.text);
+        this.markdownData.push({
+          type: 'dev-process',
+          data: devProcessData.lists[0].children,
+          config: devProcessData.config,
+        });
+        break;
       default:
         this.markdownData.push(token);
         break;

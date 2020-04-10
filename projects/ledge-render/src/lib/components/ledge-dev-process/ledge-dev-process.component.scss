@@ -1,0 +1,22 @@
+.dev-process {
+  display: flex;
+
+  .process-column {
+    flex-direction: column;
+    width: 100%;
+    padding: 1em;
+
+    .section-block {
+      flex: 1;
+
+      .section-items {
+        border: 1px solid #222;
+
+        .section-item {
+          padding: 1em;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

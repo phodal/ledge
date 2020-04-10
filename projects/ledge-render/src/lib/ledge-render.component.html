@@ -37,6 +37,10 @@
         <ledge-pure-echarts [data]="item.data"></ledge-pure-echarts>
       </div>
 
+      <div *ngSwitchCase="'dev-process'">
+        <ledge-dev-process [data]="item.data" [config]="item.config"></ledge-dev-process>
+      </div>
+
       <div *ngSwitchCase="'table'">
         <table>
           <thead>
