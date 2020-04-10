@@ -16,7 +16,7 @@
     "deploy": "yarn package && npx angular-cli-ghpages --repo=https://github.com/phodal/do.git --dir=dist/static --cname=devops.phodal.com",
     "build:lib": "node --max_old_space_size=4096 ./node_modules/.bin/ng build ledge-render --prod",
     "publish:lib": "cd dist/ledge-render && npm publish --access=public",
-    "scully": "scully",
+    "scully": "scully --scanRoutes",
     "scully:serve": "scully serve"
   },
   "private": false,

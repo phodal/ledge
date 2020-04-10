@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AwesomeToolComponent } from './presentation/awesome-tool/awesome-tool.component';
-import { CaseStudyComponent } from './presentation/case-study/case-study.component';
 import { ManualComponent } from './presentation/manual/manual.component';
 import { MaturityComponent } from './presentation/maturity/maturity.component';
 import { MobileComponent } from './presentation/mobile/mobile.component';
@@ -16,7 +15,10 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   {
     path: 'case-study',
-    component: CaseStudyComponent,
+    loadChildren: () =>
+      import('./presentation/case-study/case-study.module').then(
+        (m) => m.CaseStudyModule
+      ),
   },
   {
     path: 'pattern',
