@@ -1253,10 +1253,10 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@ledge-framework/render@~0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@ledge-framework/render/-/render-0.0.9.tgz#c4ad822d0ed4ea7f9709c62489517bd0c616f547"
-  integrity sha512-wEZFWRSfFeLwcOt8mBRnFAWrcyh5cNnrex+UgJT+MYEF/6LUYDmR35RrpxGwWmewSS6/Lp58BjoUPNMkP6684w==
+"@ledge-framework/render@~0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@ledge-framework/render/-/render-0.0.10.tgz#59ef9a218138764d96b3aa83a9f3f6191bb0916a"
+  integrity sha512-cNZ6W44rft9J6k2JPCkfx4k6s/BInpKIu4oiyajPfOh7RBAuHqeNDAieJnpeTdOh33lmGwD1d5rS0Is2qSWrjw==
 
 "@marionebl/sander@^0.6.0":
   version "0.6.1"
