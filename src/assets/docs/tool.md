@@ -223,6 +223,86 @@ config: {"type": "line-chart"}
 
 ## DevOps
 
+### 设计 DevOps
+
+- Collaborate
+  - Application Lifecycle Mgmt
+    - Jira
+    - Mingle
+    - Trello
+    - Visual Studio TFS
+    - Pivotal Tracker
+    - Basecamp
+    - Phabricator
+  - Communication & ChatOps
+    - Slack
+    - HipChat
+    - #irc
+    - Flowdock
+    - Microsoft Teams
+    - Ryver
+    - Mattermost
+    - Rocket.chat
+    - Cog
+    - Nestor
+    - Lita
+    - Hubot
+  - Knowledge Sharing
+    - GitHub Pages
+    - Jekyll
+    - Markdown
+    - Hugo
+    - Read the Docs
+    - Raml
+    - apiblueprint
+    - Flarum
+    - Graphviz
+    - Open API
+    - Reddit
+    - Discourse
+- Build
+  - SCM/VCS
+    - Git
+    - Subversion
+    - Mercurial
+    - GitHub
+    - Gogs
+    - BitBucket
+    - GitBucket
+    - GitLab
+  - CI
+    - Wercker
+    - Snap
+    - TeamCity
+    - Jenkins
+    - Bamboo
+    - CircleCI
+    - GoCD
+    - Drone.io
+    - Travis CI
+    - CodeShip
+  - Build
+    - Sbt
+    - Gradle
+    - Grunt
+    - Docker
+    - Maven
+    - Broccoli.js
+    - Nant
+    - Apache Ant
+    - Gulp
+    - Packer
+    - MSBuild
+    - Leiningen
+    - Rake
+  - Database Management
+    - DBMaestro
+    - DBDeploy
+    - Flyway
+    - Redgate
+    - Flocker
+    - Liquibase
+
 ### DevOps 元素周期表
 
 ### DevOps 工具功能
