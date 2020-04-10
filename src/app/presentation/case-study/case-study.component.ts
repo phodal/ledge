@@ -3,7 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MatDrawerContent } from '@angular/material/sidenav';
-import { cases } from './cases';
+import { Case, cases } from './cases';
 
 @Component({
   selector: 'app-case-study',
@@ -16,19 +16,22 @@ export class CaseStudyComponent implements OnInit {
   currentSource: string;
   src: string;
   content: string;
-  cases = cases;
+  cases: Case[] = cases;
 
   constructor(
-    title: Title,
+    private title: Title,
     private activatedRoute: ActivatedRoute,
     private http: HttpClient
-  ) {
-    title.setTitle('Ledge DevOps 知识平台 - 案例学习');
-  }
+  ) {}
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((p) => {
-      this.configSource(p.get('case'));
+      const param = p.get('case');
+      const currentCase = this.cases.find((ca) => ca.source === param);
+      this.title.setTitle(
+        `${currentCase.displayName} 互联网公司/传统公司 DevOps 案例学习 - Ledge DevOps 知识平台`
+      );
+      this.configSource(param);
     });
   }
 
