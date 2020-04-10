@@ -7,7 +7,6 @@ import { LedgeRenderModule } from '@ledge-framework/render';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AwesomeToolComponent } from './presentation/awesome-tool/awesome-tool.component';
-import { CaseStudyComponent } from './presentation/case-study/case-study.component';
 import { ManualComponent } from './presentation/manual/manual.component';
 import { MaturityItemComponent } from './presentation/maturity/maturity-item/maturity-item.component';
 import { MaturityComponent } from './presentation/maturity/maturity.component';
@@ -35,7 +34,6 @@ registerLocaleData(localZhHans, 'zh-Hans');
   declarations: [
     AppComponent,
 
-    CaseStudyComponent,
     PatternComponent,
     PractiseComponent,
     ManualComponent,

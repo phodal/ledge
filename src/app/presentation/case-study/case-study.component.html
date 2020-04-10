@@ -4,6 +4,7 @@
     <ul>
       <li *ngFor="let casestudy of cases"
           (click)="getCase(casestudy.source)"
+          [routerLink]="['/case-study', casestudy.source]"
           [ngClass]="casestudy.source === currentSource ? 'active' : '' ">
         <span>{{casestudy.displayName}}</span>
       </li>
