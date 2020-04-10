@@ -18,8 +18,43 @@
 | 源码管理 | 代码质量 | 制品管理 | 测试 | 持续集成 | 构建 | 部署  | 分析 | 协作  |
 |-|-|-|-|-|-|-|-|-|
 | Git | TSLint | GitHub | Jasmine | GitHub Action | Node.js | GitHub Action | GitHub Traffic | GitHub Projects |
-| GitHub | Code Climate | |   |  | Yarn | Scully | Google Analysis |  |
+| GitHub | Code Climate | NPM |  Karma  |  | Yarn | Scully | Google Analysis |  |
 |  | CodeCov | | | |  | |
+```
+
+```dev-process
+ - 协作
+   - 协作
+     - GitHub
+ - 源码管理
+   - 源码管理
+     - Git
+ - 代码质量
+   - 代码质量
+     - Code Climate
+     - TSLint
+     - CodeCov
+ - 制品管理
+   - 制品管理
+     - NPM
+     - GitHub
+ - 测试
+   - 测试
+     - Jasmine
+     - Karam
+ - 持续集成
+   - 持续集成
+     - Github
+ - 构建
+   - 构建
+     - Node.js
+     - Npm
+ - 部署
+   - 部署
+     - GitHub
+ - 分析
+   - 分析
+     - Google Analysis
 ```
 
 ## 测试策略
