@@ -302,6 +302,70 @@ config: {"type": "line-chart"}
     - Redgate
     - Flocker
     - Liquibase
+- Test
+  - Testing
+    - Selenium
+    - Jasmine
+    - Mocha
+    - Gauntlt
+    - OWASP ZAP
+    - Gatling
+    - Karam
+    - JUnit
+    - Fitnesse
+    - Nunit
+    - QUnit
+    - TestNG
+    - Cucumber
+    - Cucumber.js
+    - Galen Framework
+    - Load Impact
+    - Apache JMeter
+    - BlazeMeter
+    - Pytest
+    - ServerSpec
+    - BrowserSync
+    - Specflow
+    - Pa11y
+    - Newmand
+    - xUnit
+- Deploy
+  - Deployment
+    - Octopus Deploy
+    - XL Depoy
+    - Ubran Code
+    - RunDeck
+    - Capistrano
+    - SSH
+    - Juju
+    - Nolio
+    - ElasticBox
+    - Spinnaker
+  - Config Mgmt./Provisioning
+    - Puppet
+    - Chef
+    - Ansible
+    - SaltStack
+    - CFEngine
+    - PowerShell DSC
+    - Vagrant
+    - Terraform
+  - Artefact Management
+    - DockerHub
+    - Docker Registry
+    - Quay
+    - Bower
+    - JFrog Artifactory
+    - Python Package Index
+    - Nuget
+    - Archiva
+    - NPM
+    - Nexus
+- Run
+  - Cloud / Iaas / PaaS
+    - Amazon
+    - Dokku
+    - Dokku
 
 ### DevOps 元素周期表
 
