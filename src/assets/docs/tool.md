@@ -273,12 +273,12 @@ config: {"type": "line-chart"}
     - GitLab
   - CI
     - Wercker
-    - Snap
+    - Snap CI
     - TeamCity
     - Jenkins
     - Bamboo
     - CircleCI
-    - GoCD
+    - Go
     - Drone.io
     - Travis CI
     - CodeShip
@@ -290,7 +290,7 @@ config: {"type": "line-chart"}
     - Maven
     - Broccoli.js
     - Nant
-    - Apache Ant
+    - Ant
     - Gulp
     - Packer
     - MSBuild
@@ -321,7 +321,7 @@ config: {"type": "line-chart"}
     - Cucumber.js
     - Galen Framework
     - Load Impact
-    - Apache JMeter
+    - JMeter
     - BlazeMeter
     - Pytest
     - ServerSpec

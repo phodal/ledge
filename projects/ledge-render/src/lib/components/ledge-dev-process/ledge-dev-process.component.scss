@@ -13,8 +13,14 @@
         border: 1px solid #222;
 
         .section-item {
-          padding: 1em;
           display: inline-block;
+
+          img {
+            display: inline-block;
+            width: 64px;
+            height: auto;
+            margin: 0;
+          }
         }
       }
     }
