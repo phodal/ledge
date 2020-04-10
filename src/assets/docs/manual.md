@@ -755,7 +755,7 @@ Google 示例：[Google DevOps](https://cloud.google.com/devops?hl=zh-cn)
 
 文章来源：《[【架构拾集】移动应用的自动化测试（BDD 方式）](https://www.phodal.com/blog/phodal-architecture-101-mobile-appllication-test-architecture/)》
 
-### 技术远景
+### 技术愿景
 
 作为一个团队的技术负责人，我希望：拥有一个移动应用测试架构，它能快速让测试人员快速上手——阅读、编写测试用例。与此同时，我希望这些测试用例是能让非技术人员阅读，诸如业务分析人员，并且符合真实的用户使用场景。
 
