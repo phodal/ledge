@@ -227,7 +227,7 @@ config: {"type": "line-chart"}
 
 ```dev-process
 - Collaborate
-  - Application Lifecycle Mgmt
+  - 应用生命周期管理
     - Jira
     - Mingle
     - Trello
@@ -235,7 +235,7 @@ config: {"type": "line-chart"}
     - Pivotal Tracker
     - Basecamp
     - Phabricator
-  - Communication & ChatOps
+  - 沟通和 ChatOps
     - Slack
     - HipChat
     - #irc
@@ -248,7 +248,7 @@ config: {"type": "line-chart"}
     - Nestor
     - Lita
     - Hubot
-  - Knowledge Sharing
+  - 知识分享
     - GitHub
     - Jekyll
     - Markdown
@@ -262,7 +262,7 @@ config: {"type": "line-chart"}
     - Reddit
     - Discourse
 - Build
-  - SCM/VCS
+  - 版本控制
     - Git
     - Subversion
     - Mercurial
@@ -271,7 +271,7 @@ config: {"type": "line-chart"}
     - BitBucket
     - GitBucket
     - GitLab
-  - CI
+  - 持续集成/持续交付
     - Wercker
     - Snap CI
     - TeamCity
@@ -282,7 +282,7 @@ config: {"type": "line-chart"}
     - Drone.io
     - Travis CI
     - CodeShip
-  - Build
+  - 构建
     - Sbt
     - Gradle
     - Grunt
@@ -296,15 +296,15 @@ config: {"type": "line-chart"}
     - MSBuild
     - Leiningen
     - Rake
-  - Database Management
+  - 数据库管理
     - DBMaestro
     - DBDeploy
     - Flyway
     - Redgate
     - Flocker
     - Liquibase
-- Test
-  - Testing
+- 测试
+  - 测试
     - Selenium
     - Jasmine
     - Mocha
@@ -329,8 +329,8 @@ config: {"type": "line-chart"}
     - Pa11y
     - Newmand
     - xUnit.net
-- Deploy
-  - Deployment
+- 部署
+  - 部署
     - Octopus Deploy
     - XL Deploy
     - Ubran Code
@@ -341,7 +341,7 @@ config: {"type": "line-chart"}
     - Nolio
     - ElasticBox
     - Spinnaker
-  - Config Mgmt./Provisioning
+  - 配置管理
     - Puppet
     - Chef
     - Ansible
@@ -350,7 +350,7 @@ config: {"type": "line-chart"}
     - PowerShell DSC
     - Vagrant
     - Terraform
-  - Artefact Management
+  - 制品管理
     - Docker Hub
     - Docker Registry
     - Quay
@@ -361,8 +361,8 @@ config: {"type": "line-chart"}
     - Archiva
     - NPM
     - Nexus
-- Run
-  - Cloud / Iaas / PaaS
+- 运行
+  - 云 / Iaas / PaaS
     - Amazon Web Services
     - Dokku
     - Flynn
@@ -374,7 +374,7 @@ config: {"type": "line-chart"}
     - Deis
     - OpenShift
     - Engine Yard
-  - Orchestration & Scheduling
+  - 编排和调度
     - Mesosphere
     - Docker Swarm
     - Kubernetes
@@ -382,7 +382,7 @@ config: {"type": "line-chart"}
     - Rancher
     - Nomad
     - Mesos
-  - BI / Monitoring / Logging
+  - 商业智能 / 监控 / 日志
     - Logstash
     - ElasticSearch
     - Splunk
