@@ -8,7 +8,7 @@ demo page: [https://devops.phodal.com/](https://devops.phodal.com/)
 
 ## Usage
 
-1.install: `yarn add @ledge-framework/ledge`
+1.install: `yarn add @ledge-framework/render`
 2.import module
 
 ```
