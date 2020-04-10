@@ -231,7 +231,7 @@ config: {"type": "line-chart"}
     - Jira
     - Mingle
     - Trello
-    - Visual Studio TFS
+    - Team Foundation Server
     - Pivotal Tracker
     - Basecamp
     - Phabricator
@@ -249,7 +249,7 @@ config: {"type": "line-chart"}
     - Lita
     - Hubot
   - Knowledge Sharing
-    - GitHub Pages
+    - GitHub
     - Jekyll
     - Markdown
     - Hugo
@@ -288,7 +288,7 @@ config: {"type": "line-chart"}
     - Grunt
     - Docker
     - Maven
-    - Broccoli.js
+    - Broccoli
     - Nant
     - Ant
     - Gulp
@@ -318,7 +318,6 @@ config: {"type": "line-chart"}
     - QUnit
     - TestNG
     - Cucumber
-    - Cucumber.js
     - Galen Framework
     - Load Impact
     - JMeter
@@ -329,11 +328,11 @@ config: {"type": "line-chart"}
     - Specflow
     - Pa11y
     - Newmand
-    - xUnit
+    - xUnit.net
 - Deploy
   - Deployment
     - Octopus Deploy
-    - XL Depoy
+    - XL Deploy
     - Ubran Code
     - RunDeck
     - Capistrano
@@ -352,11 +351,11 @@ config: {"type": "line-chart"}
     - Vagrant
     - Terraform
   - Artefact Management
-    - DockerHub
+    - Docker Hub
     - Docker Registry
     - Quay
     - Bower
-    - JFrog Artifactory
+    - Artifactory
     - Python Package Index
     - Nuget
     - Archiva
@@ -364,7 +363,7 @@ config: {"type": "line-chart"}
     - Nexus
 - Run
   - Cloud / Iaas / PaaS
-    - Amazon
+    - Amazon Web Services
     - Dokku
     - Flynn
     - Heroku
