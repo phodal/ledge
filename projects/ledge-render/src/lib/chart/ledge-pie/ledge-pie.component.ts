@@ -63,9 +63,7 @@ export class LedgePieComponent implements AfterViewInit {
             normal: {
               show: true,
               position: 'inner',
-              formatter(params) {
-                return params.value + '%\n';
-              },
+              formatter: '{d}%'
             }
           }
         }
