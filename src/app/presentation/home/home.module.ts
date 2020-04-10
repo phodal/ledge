@@ -11,12 +11,14 @@ import { SharedModule } from '../../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { CustomMaterialModule } from '../../shared/custom-material.module';
 import { PeriodicTableModule } from '../../features/periodic-table/periodic-table.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [HomeComponent],
   imports: [
     CommonModule,
     SharedModule,
+    HttpClientModule,
     PeriodicTableModule,
     CustomMaterialModule,
     RouterModule.forChild([{ path: '', component: HomeComponent }]),

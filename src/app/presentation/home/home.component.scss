@@ -158,6 +158,7 @@
     p {
       font-size: 1.2em;
       line-height: 1.5;
+      margin-bottom: 2em;
     }
 
     padding: 2em;
@@ -283,6 +284,21 @@
         height: 120px;
         width: 120px;
         border-radius: 120px;
+      }
+
+      .small-avatar {
+        img {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    }
+
+    &.all-contributors {
+      .contributor {
+        width: 100px;
+        height: 120px;
+        min-height: 120px;
       }
     }
   }
