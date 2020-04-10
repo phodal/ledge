@@ -3,6 +3,15 @@
 .container {
   position: relative;
   z-index: 100;
+
+  a {
+    text-decoration: none;
+    color: $purple;
+
+    &:hover {
+      color: $purple;
+    }
+  }
 }
 
 .intro {
@@ -152,6 +161,10 @@
   .devops-content {
     margin: 40px auto;
     width: 1080px;
+
+    p {
+      text-align: center;
+    }
   }
 
   .section-more {
