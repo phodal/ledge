@@ -15,9 +15,20 @@
 
     .section-block {
       flex: 1;
+      position: relative;
+      margin-top: 1em;
+
+      .section-name {
+        top: -0.5em;
+        left: 1em;
+        padding: 0 1em;
+        position: absolute;
+        background: #fff;
+      }
 
       .section-items {
         border: 1px solid #222;
+        padding-top: 0.5em;
 
         .section-item {
           display: inline-block;
