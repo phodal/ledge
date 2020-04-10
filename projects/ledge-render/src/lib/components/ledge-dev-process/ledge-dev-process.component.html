@@ -1,6 +1,8 @@
 <div class="dev-process">
-  <div class="process-column" *ngFor="let column of data">
-    <div class="column-title">{{column.name}}</div>
+  <div class="process-column" *ngFor="let column of data;let index = index">
+    <div class="column-title header type_{{index}}">
+      {{column.name}}
+    </div>
     <div class="section-block" *ngFor="let section of column.children">
       <div class="section-name">{{section.name}}</div>
       <div class="section-items">

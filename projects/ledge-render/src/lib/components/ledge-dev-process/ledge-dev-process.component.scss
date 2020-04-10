@@ -4,7 +4,14 @@
   .process-column {
     flex-direction: column;
     width: 100%;
-    padding: 1em;
+    padding: 8px;
+
+
+    .column-title {
+      text-align: center;
+      color: #fff;
+      padding: 1em 0;
+    }
 
     .section-block {
       flex: 1;
