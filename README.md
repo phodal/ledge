@@ -95,21 +95,24 @@ todo: fix Angular elements bug
 \`\`\`
 ````
 
-- echarts。直接渲染 Echarts 图表
-- mindmap。Markdown List 转为思维导图
-- radar。Markdown List 转为雷达图
-- process。流程
-- process-table。带流程的图表
-- process-step。带流程的图表 2
-- pyramid。金字塔图形
-- quadrant。四象限图
-- class。直接调用 CSS 的 class
+- 图表
+  - echarts。直接渲染 Echarts 图表
+  - mindmap。Markdown List 转为思维导图
+  - radar。Markdown List 转为雷达图
+  - pie。饼图
+  - quadrant。四象限图
+  - pyramid。金字塔图形
 - graphviz。使用 Dot 渲染图片
-- mermaid。使用 mermaid 可视化
-- webcomponents。调用 WebComponents 组件
-- toolset。调用 Toolset 相关的组件
-  - slider。权衡滑块
-  - line-chart。表图
+- 流程可视化
+  - process-table。带流程的图表
+  - process-step。带流程的图表 2
+  - process-card。卡片式流程
+- <del>mermaid。使用 mermaid 可视化</del>
+- <del>webcomponents。调用 WebComponents 组件</del>
+- 工具
+  - toolset。调用 Toolset 相关的组件
+    - slider。权衡滑块
+    - line-chart。表图
 
 ### 权衡滑块示例
 
