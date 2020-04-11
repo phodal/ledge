@@ -22,7 +22,7 @@ b
    - [ ] c
 
 \`\`\`pie
- - Sometitle
+ - Some & title
    - a: 4
    - b: 12
    - c: 21

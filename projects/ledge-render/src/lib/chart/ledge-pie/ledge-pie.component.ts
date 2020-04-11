@@ -59,6 +59,7 @@ export class LedgePieComponent implements AfterViewInit {
           type: 'pie',
           radius: '60%',
           data: seriesData,
+          animation: false,
           label: {
             normal: {
               show: true,
