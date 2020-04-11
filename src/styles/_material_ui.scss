@@ -1,9 +1,13 @@
 // Navigation Bar
-.mat-toolbar {
-  box-shadow: 0 1px 0 0 $lighter-gray;
+.header {
   position: fixed;
   top: 0;
   z-index: 999;
+  width: 100%;
+}
+
+.mat-toolbar {
+  box-shadow: 0 1px 0 0 $lighter-gray;
 
   &.mat-accent {
     color: $purple;
