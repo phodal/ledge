@@ -54,6 +54,7 @@ export class LedgePyramidComponent implements OnInit, AfterViewInit {
           width: 1,
           type: 'solid',
         },
+        show: false
       },
       itemStyle: {
         borderColor: '#fff',
