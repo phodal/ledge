@@ -69,6 +69,11 @@ export class LedgePyramidComponent implements OnInit, AfterViewInit {
     const series = this.buildSeries(data, seriesData);
 
     return {
+      title: {
+        text: data.name,
+        top: 'bottom',
+        left: 'center'
+      },
       tooltip: {
         trigger: 'item',
         formatter: '{b}',
