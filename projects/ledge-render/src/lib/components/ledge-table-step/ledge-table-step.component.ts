@@ -18,6 +18,7 @@ export class LedgeTableStepComponent implements OnInit {
   column = 4;
   rowNums = [];
   headers = [];
+  width = '1080px'; // TODO: 根据column 数量动态宽度
 
   constructor() {}
 

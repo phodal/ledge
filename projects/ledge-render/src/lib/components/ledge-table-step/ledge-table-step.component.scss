@@ -11,8 +11,8 @@ $gray: #999aaa;
 
 @mixin rect {
   position: absolute;
-  width: 18px;
-  height: 10px;
+  width: 16px;
+  height: 12px;
   background-color: $gray;
 }
 
@@ -25,16 +25,14 @@ $gray: #999aaa;
 }
 
 .table-steps {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: block;
 }
 
 .step-row {
   display: flex;
   align-items: flex-start;
   height: 430px; // TODO: 高度需要动态
+  margin-bottom: 10px;
 
   .column {
     display: flex;
@@ -44,6 +42,10 @@ $gray: #999aaa;
 
   &-reverse {
     flex-direction: row-reverse;
+  }
+
+  &-reverse > &-wrap {
+    flex-direction: column-reverse;
   }
 
   &-wrap {
@@ -78,21 +80,21 @@ $gray: #999aaa;
 .rect {
   &-left {
     @include rect;
-    top: 7px;
+    top: 6px;
     left: 18px;
   }
 
   &-right {
     @include rect;
-    top: 7px;
+    top: 6px;
     right: 18px;
   }
 
   &-down {
     @include rect;
     top: 18px;
-    left: 7px;
-    width: 10px;
+    left: 6px;
+    width: 12px;
     height: 18px;
   }
 }
