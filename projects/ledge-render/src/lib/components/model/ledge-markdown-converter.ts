@@ -64,7 +64,7 @@ const LedgeMarkdownConverter = {
           break;
         }
         case 'text': {
-          result += `"name": "${this.escape(token.text)}",`;
+          result += `"name": ${JSON.stringify(token.text)},`;
           break;
         }
         case 'list_item_end': {
