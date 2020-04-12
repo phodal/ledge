@@ -85,40 +85,42 @@
     </div>
   </div>
 
-  <div class="home-section contribution">
-    <div class="section-title">Core Contributors</div>
-    <div class="contributors">
-      <div class="contributor" *ngFor="let user of contributors">
-        <div class="avatar">
-          <a href="{{ user.link }}" target="_blank"
-          ><img src="{{ user.avatar }}" alt=""
-          /></a>
-        </div>
-        <div class="username">
-          <a href="{{ user.link }}" target="_blank">{{ user.name }}</a>
-        </div>
-        <div class="title">/{{ user.title }}/</div>
-        <div class="work">{{ user.work }}</div>
-      </div>
-    </div>
-    <div class="section-more">
-      <p>
-        还有其他/她优秀的小伙伴也为这个项目做出了巨大的贡献 <br/>
-        你可以在<a href="https://github.com/phodal/ledge/graphs/contributors" target="_blank">这里</a>看到所有人的身影
-      </p>
-      <div class="all-contributors contributors" *ngIf="(allContributors$ | async) as allContributors">
-        <div class="contributor" *ngFor="let user of allContributors">
-          <div class="avatar small-avatar">
-            <a href="{{ user.html_url }}" target="_blank">
-              <img src="{{ user.avatar_url }}" alt=""/>
-            </a>
+  <div class="home-section contribution" ngxInViewport (inViewport)="show($event)">
+    <ng-container *ngIf="inViewport">
+      <div class="section-title">Core Contributors</div>
+      <div class="contributors">
+        <div class="contributor" *ngFor="let user of contributors">
+          <div class="avatar">
+            <a href="{{ user.link }}" target="_blank"
+            ><img src="{{ user.avatar }}" alt=""
+            /></a>
           </div>
           <div class="username">
-            <a href="{{ user.html_url }}" target="_blank">{{ user.login }}</a>
+            <a href="{{ user.link }}" target="_blank">{{ user.name }}</a>
+          </div>
+          <div class="title">/{{ user.title }}/</div>
+          <div class="work">{{ user.work }}</div>
+        </div>
+      </div>
+      <div class="section-more">
+        <p>
+          还有其他/她优秀的小伙伴也为这个项目做出了巨大的贡献 <br/>
+          你可以在<a href="https://github.com/phodal/ledge/graphs/contributors" target="_blank">这里</a>看到所有人的身影
+        </p>
+        <div class="all-contributors contributors" *ngIf="(allContributors$ | async) as allContributors">
+          <div class="contributor" *ngFor="let user of allContributors">
+            <div class="avatar small-avatar">
+              <a href="{{ user.html_url }}" target="_blank">
+                <img src="{{ user.avatar_url }}" alt=""/>
+              </a>
+            </div>
+            <div class="username">
+              <a href="{{ user.html_url }}" target="_blank">{{ user.login }}</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </ng-container>
   </div>
 </div>
 <div class="footer"></div>
