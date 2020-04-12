@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { Atom, HighlightState } from '../../features/periodic-table/shared';
+import { HighlightState } from '../../features/periodic-table/shared';
 import { Title } from '@angular/platform-browser';
 import * as mdData from 'raw-loader!../../../assets/docs/home.md';
 import { NavigationEnd, Router } from '@angular/router';
@@ -130,6 +130,7 @@ config: {"colors": [{"bg":"#e55852","font":"#b71a09"},{"bg":"#e98832","font":"#c
   homemd = mdData.default;
   allContributors$: Observable<any>;
   allContributors: any[];
+  inViewport = false;
 
   constructor(title: Title, private router: Router, private http: HttpClient) {
     title.setTitle('Ledge DevOps 知识平台 - DevOps 工具元素周期表');
@@ -152,5 +153,11 @@ config: {"colors": [{"bg":"#e55852","font":"#b71a09"},{"bg":"#e98832","font":"#c
     this.allContributors$ = this.http
       .get('https://api.github.com/repos/phodal/ledge/contributors')
       .pipe();
+  }
+
+  show(event: Partial<IntersectionObserverEntry>) {
+    if (event.intersectionRatio >= 0.5) {
+      this.inViewport = true;
+    }
   }
 }
