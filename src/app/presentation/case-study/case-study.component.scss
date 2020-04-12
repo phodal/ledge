@@ -3,7 +3,7 @@
 
 .case-study {
   min-height: 600px;
-  height: 100%;
+  height: calc(100vh - 66px);
 
   .active {
     background-color: #ff4081;
