@@ -26,17 +26,17 @@ jobs:
         with:
           node-version: "12.x"
 
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - uses: actions/cache@v1
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+#      - name: Get yarn cache directory path
+#        id: yarn-cache-dir-path
+#        run: echo "::set-output name=dir::$(yarn cache dir)"
+#
+#      - uses: actions/cache@v1
+#        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+#        with:
+#          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+#          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+#          restore-keys: |
+#            ${{ runner.os }}-yarn-
 
       - name: Install
         run: |
@@ -49,11 +49,6 @@ jobs:
       - name: Testing
         run: yarn test:ci
 
-      - name: Build Scully
-        run: |
-          npx scully --showGuessError --host='0.0.0.0'
-        continue-on-error: true
-
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
@@ -61,6 +56,11 @@ jobs:
           flags: unittests
           name: codecov-umbrella
           fail_ci_if_error: false
+
+      - name: Build Scully
+        run: |
+          npx scully --showGuessError --host='0.0.0.0'
+#        continue-on-error: true
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
