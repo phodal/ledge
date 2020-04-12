@@ -51,8 +51,7 @@ jobs:
 
       - name: Build Scully
         run: |
-          npx scully --showGuessError
-        continue-on-error: true
+          npx scully --showGuessError --host='0.0.0.0'
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
