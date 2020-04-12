@@ -1,4 +1,4 @@
-<div class="path">
+<div class="app-path">
   <div class="header markdown">
     <h3>Path to Production</h3>
   </div>
@@ -17,7 +17,7 @@
     </mat-toolbar-row>
   </mat-toolbar>
 
-  <div class="page">
+  <div class="path-page">
     <div class="path">
       <div id="pipe-header">
         <div class="pipe-header" *ngFor="let pipe of pipeData;let i = index" id="{{i}}_header"
@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class='wrapper' id="pipe">
-        <div class='container'
+        <div class='path-container'
              *ngFor="let pipe of pipeData;let i = index"
              id="{{i}}_pipe"
              dragula="ITEMS"

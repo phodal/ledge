@@ -1,182 +1,184 @@
-#pipe {
-  position: relative;
-  float: right;
-  display: inline-block;
-  width: calc(100% - 138px);
-  max-width: 100%;
-  height: 180px;
-  padding-right: 32px;
-}
+.app-path {
+  #pipe {
+    position: relative;
+    float: right;
+    display: inline-block;
+    width: calc(100% - 138px);
+    max-width: 100%;
+    height: 180px;
+    padding-right: 32px;
+  }
 
-.header {
-  margin-top: 1em;
+  .header {
+    margin-top: 1em;
 
-  h3 {
+    h3 {
+      text-align: center;
+    }
+  }
+
+  .path-container {
+    padding: 0;
+    margin-right: 6px;
+    margin-top: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    max-width: 100%;
+    width: 100%;
+    color: #fff;
+    line-height: 1.3em;
+    border: 1px dashed #fff;
+    border-radius: 6px;
+    font-weight: normal;
+
+    div {
+      height: 150px;
+      max-height: 150px;
+      width: 10%;
+      max-width: 10%;
+    }
+  }
+
+  .path-container:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  /*
+   * note that styling gu-mirror directly is a bad practice because it's too generic.
+   * you're better off giving the draggable elements a unique class and styling that directly!
+   */
+  .path-container > div,
+  .gu-mirror {
+    margin: 10px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: opacity 0.4s ease-in-out;
+  }
+
+  .path-container > div.empty {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .path-container > div {
+    display: inline-block;
+    overflow-y: auto;
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+  }
+
+  .gu-mirror {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+  }
+
+  #header {
+    height: 80px;
     text-align: center;
   }
-}
 
-.home-container {
-  padding: 0;
-  margin-right: 6px;
-  margin-top: 12px;
-  background-color: rgba(255, 255, 255, 0.2);
-  max-width: 100%;
-  width: 100%;
-  color: #fff;
-  line-height: 1.3em;
-  border: 1px dashed #fff;
-  border-radius: 6px;
-  font-weight: normal;
-
-  div {
-    height: 150px;
-    max-height: 150px;
-    width: 10%;
-    max-width: 10%;
+  #header h1 {
+    line-height: 80px;
   }
-}
 
-.home-container:nth-child(odd) {
-  background-color: rgba(0, 0, 0, 0.2);
-}
+  #pipe-header {
+    position: absolute;
+    left: 20px;
+  }
 
-/*
- * note that styling gu-mirror directly is a bad practice because it's too generic.
- * you're better off giving the draggable elements a unique class and styling that directly!
- */
-.home-container > div,
-.gu-mirror {
-  margin: 10px;
-  padding: 5px;
-  background-color: rgba(0, 0, 0, 0.2);
-  transition: opacity 0.4s ease-in-out;
-}
+  .pipe-header h2 {
+    position: relative;
+    top: calc(50% - 1.6rem);
+  }
 
-.home-container > div.empty {
-  background-color: rgba(0, 0, 0, 0.05);
-}
+  .add-item {
+    top: 3rem;
+    position: absolute;
+    right: 4rem;
+  }
 
-.home-container > div {
-  display: inline-block;
-  overflow-y: auto;
-  cursor: move;
-  cursor: grab;
-  cursor: -moz-grab;
-  cursor: -webkit-grab;
-}
+  .download {
+    top: 3rem;
+    position: absolute;
+    right: 35rem;
+  }
 
-.gu-mirror {
-  cursor: grabbing;
-  cursor: -moz-grabbing;
-  cursor: -webkit-grabbing;
-}
+  .remove-column {
+    top: 3rem;
+    position: absolute;
+    right: 18rem;
+  }
 
-#header {
-  height: 80px;
-  text-align: center;
-}
+  #color-green {
+    background-color: #00a300;
+  }
 
-#header h1 {
-  line-height: 80px;
-}
+  #color-greendark {
+    background-color: #1e7145;
+  }
 
-#pipe-header {
-  position: absolute;
-  left: 20px;
-}
+  #color-greenlight {
+    background-color: #99b433;
+  }
 
-.pipe-header h2 {
-  position: relative;
-  top: calc(50% - 1.6rem);
-}
+  #color-magenta {
+    background-color: #ff0097;
+  }
 
-.add-item {
-  top: 3rem;
-  position: absolute;
-  right: 4rem;
-}
+  #color-purplelight {
+    background-color: #9f00a7;
+  }
 
-.download {
-  top: 3rem;
-  position: absolute;
-  right: 35rem;
-}
+  #color-purple {
+    background-color: #7e3878;
+  }
 
-.remove-column {
-  top: 3rem;
-  position: absolute;
-  right: 18rem;
-}
+  #color-purpledark {
+    background-color: #603cba;
+  }
 
-#color-green {
-  background-color: #00a300;
-}
+  #color-darken {
+    background-color: #1d1d1d;
+  }
 
-#color-greendark {
-  background-color: #1e7145;
-}
+  #color-teal {
+    background-color: #00aba9;
+  }
 
-#color-greenlight {
-  background-color: #99b433;
-}
+  #color-bluelight {
+    background-color: #eff4ff;
+  }
 
-#color-magenta {
-  background-color: #ff0097;
-}
+  #color-blue {
+    background-color: #2d89ef;
+  }
 
-#color-purplelight {
-  background-color: #9f00a7;
-}
+  #color-bluedark {
+    background-color: #2b5797;
+  }
 
-#color-purple {
-  background-color: #7e3878;
-}
+  #color-yellow {
+    background-color: #ffc40d;
+  }
 
-#color-purpledark {
-  background-color: #603cba;
-}
+  #color-orange {
+    background-color: #e3a21a;
+  }
 
-#color-darken {
-  background-color: #1d1d1d;
-}
+  #color-orangedark {
+    background-color: #da532c;
+  }
 
-#color-teal {
-  background-color: #00aba9;
-}
+  #color-red {
+    background-color: #b91d47;
+  }
 
-#color-bluelight {
-  background-color: #eff4ff;
-}
+  #color-redlight {
+    background-color: #e11;
+  }
 
-#color-blue {
-  background-color: #2d89ef;
-}
-
-#color-bluedark {
-  background-color: #2b5797;
-}
-
-#color-yellow {
-  background-color: #ffc40d;
-}
-
-#color-orange {
-  background-color: #e3a21a;
-}
-
-#color-orangedark {
-  background-color: #da532c;
-}
-
-#color-red {
-  background-color: #b91d47;
-}
-
-#color-redlight {
-  background-color: #e11;
-}
-
-#color-white {
-  background-color: #fff;
+  #color-white {
+    background-color: #fff;
+  }
 }
