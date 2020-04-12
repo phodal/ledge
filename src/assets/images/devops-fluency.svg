@@ -62,20 +62,20 @@
             <g id="Group" transform="translate(567.000000, 152.000000)">
                 <rect id="Rectangle" fill="#7F8A33" x="0" y="0" width="229" height="75"></rect>
                 <text id="专注" font-family="PingFangSC-Regular, PingFang SC" font-size="24" font-weight="normal" fill="#FFFFFF">
-                    <tspan x="91" y="46">专注</tspan>
+                    <tspan x="91" y="46">交付</tspan>
                 </text>
                 <polygon id="Triangle" fill="#FFFFFF" transform="translate(6.000000, 38.000000) rotate(90.000000) translate(-6.000000, -38.000000) " points="6 32 15 44 -3 44"></polygon>
             </g>
             <g id="Group" transform="translate(567.000000, 291.000000)">
                 <rect id="Rectangle" fill="#586C4D" transform="translate(114.500000, 37.500000) scale(-1, 1) translate(-114.500000, -37.500000) " x="0" y="0" width="229" height="75"></rect>
                 <text id="优化" font-family="PingFangSC-Regular, PingFang SC" font-size="24" font-weight="normal" fill="#FFFFFF">
-                    <tspan x="91" y="46">优化</tspan>
+                    <tspan x="91" y="46">执行</tspan>
                 </text>
                 <polygon id="Triangle" fill="#FFFFFF" transform="translate(223.000000, 38.000000) scale(-1, 1) rotate(90.000000) translate(-223.000000, -38.000000) " points="223 32 232 44 214 44"></polygon>
             </g>
             <rect id="Rectangle" fill="#2E4B65" transform="translate(228.500000, 328.500000) scale(-1, 1) translate(-228.500000, -328.500000) " x="114" y="291" width="229" height="75"></rect>
             <text id="优化" font-family="PingFangSC-Regular, PingFang SC" font-size="24" font-weight="normal" fill="#FFFFFF">
-                <tspan x="205" y="337">优化</tspan>
+                <tspan x="205" y="337">强化</tspan>
             </text>
             <polygon id="Triangle" fill="#FFFFFF" transform="translate(337.000000, 329.000000) scale(-1, 1) rotate(90.000000) translate(-337.000000, -329.000000) " points="337 323 346 335 328 335"></polygon>
             <text id="版权：www.agilefluency." font-family="PingFangSC-Semibold, PingFang SC" font-size="12" font-weight="500" fill="#000000">
