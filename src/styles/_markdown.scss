@@ -625,7 +625,7 @@
     .level_4,
     .level_5 {
       line-height: 1.5;
-
+      white-space: nowrap;
       &:hover {
         color: $purple;
         border-bottom: 2px solid $purple;
