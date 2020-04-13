@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: CD
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -46,13 +46,16 @@ jobs:
         run: |
           yarn build:ci
 
-      - name: Testing
-        run: yarn test:ci
+      - name: Build Scully
+        run: |
+          npx scully --showGuessError --host='0.0.0.0'
+        continue-on-error: true
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          file: ./coverage/ledge/lcov.info
-          flags: unittests
-          name: codecov-umbrella
-          fail_ci_if_error: false
+          ACCESS_TOKEN: ${{ secrets.SuperSecret }}
+          BRANCH: gh-pages
+          REPOSITORY_NAME: "phodal/do"
+          FOLDER: dist/static
+        continue-on-error: true
