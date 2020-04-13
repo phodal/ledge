@@ -75,7 +75,7 @@ export class LedgeRadarComponent implements OnInit, AfterViewInit {
           max: 5,
         });
         const values = nameValuesSplit[1];
-        const valuesSplit = values.split(' -&gt; ');
+        const valuesSplit = values.split(' -> ');
         // tslint:disable-next-line:prefer-for-of
         for (let j = 0; j < legend.length; j++) {
           if (!seriesData[j]) {
