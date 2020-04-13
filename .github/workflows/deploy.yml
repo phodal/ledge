@@ -48,6 +48,7 @@ jobs:
 
       - name: Build Scully
         run: |
+          nohup npx scully serve
           npx scully --showGuessError --host='0.0.0.0'
         continue-on-error: true
 
