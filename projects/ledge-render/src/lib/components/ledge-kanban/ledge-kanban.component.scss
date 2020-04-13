@@ -4,24 +4,10 @@
   height: 100%;
 }
 
-.app-name {
-  font-size: 28px;
-  font-family: 'Lato', sans-serif;
-  font-weight: bold;
-}
-
-.has-gradient-text {
-  background: -webkit-linear-gradient(#13f7f4, #2af598);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-
 .board {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-
   // Override Automatic Minimum Size
   // https://stackoverflow.com/questions/36247140/why-dont-flex-items-shrink-past-content-size
   min-width: 0;
@@ -35,6 +21,7 @@
       font-size: 20px;
       font-weight: bold;
       color: white;
+      text-align: center;
     }
   }
 
@@ -54,8 +41,8 @@
         flex-basis: 0; // to force the columns to all be the same size, regardless of content
 
         min-width: 300px;
-        margin: 50px;
-        padding: 25px;
+        margin: 32px;
+        padding: 24px;
 
         border-radius: 4px;
 
@@ -68,7 +55,6 @@
         .column-title {
           font-size: 20px;
           font-weight: 800;
-          font-family: 'Lato', sans-serif;
           text-transform: uppercase;
           margin-bottom: 20px;
         }
@@ -76,7 +62,6 @@
     }
   }
 }
-
 
 .tasks-container {
   flex-grow: 1;
