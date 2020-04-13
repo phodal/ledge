@@ -16,6 +16,7 @@ import { LedgeCardComponent } from './components/ledge-card/ledge-card.component
 import { LedgeTableStepComponent } from './components/ledge-table-step/ledge-table-step.component';
 import { LedgePieComponent } from './chart/ledge-pie/ledge-pie.component';
 import { LedgeDevProcessComponent } from './components/ledge-dev-process/ledge-dev-process.component';
+import { VirtualScrollerModule } from 'ngx-virtual-scroller';
 
 const LedgeComponents = [
   LedgeRenderComponent,
@@ -42,6 +43,7 @@ const LedgeComponents = [
     CommonModule,
     FormsModule,
     CustomMaterialModule,
+    VirtualScrollerModule,
   ],
   exports: [
     LedgeRenderComponent]

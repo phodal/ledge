@@ -1253,10 +1253,10 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@ledge-framework/render@~0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@ledge-framework/render/-/render-0.0.11.tgz#a09eed6d4f2961b067f2926d502ff2bf051e1fdf"
-  integrity sha512-nK74xI9Urg3wVbJFLgVw+M8UoOGlgElQ2l4VSKYeC69VOCai/5VRCEzTM4er4inTvO7mSFv2Qrx6utI4Vvg1Vg==
+"@ledge-framework/render@~0.0.12":
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/@ledge-framework/render/-/render-0.0.12.tgz#3b4468d694cf99a8f2be1fc4bebd4254b8026e64"
+  integrity sha512-TuLRySWh7O29bfWdCCIyqDc4yAaCwhjM9lms5DsKzXP8SQdZQVuXYeRc3k8HNlYrOcNZieRzPdxPylCQkuV9bg==
 
 "@marionebl/sander@^0.6.0":
   version "0.6.1"
@@ -1456,6 +1456,11 @@
   integrity sha512-XIB2XbzHTN6ieIjfIMV9hlVcfPU26s2vafYWQcZHWXHOxiaRZYEDKEwdl129Zyg50+foYV2jCgtrqSA6qNuNSA==
   dependencies:
     defer-to-connect "^1.0.1"
+
+"@tweenjs/tween.js@17.4.0":
+  version "17.4.0"
+  resolved "https://registry.yarnpkg.com/@tweenjs/tween.js/-/tween.js-17.4.0.tgz#2e9ab3f2111906b30dfe1ef3259a9781dd211d35"
+  integrity sha512-J3fzl1F6wvh8KXVVcIuHN12xi1ZDcPA/0Vix+ZcJYwZWVHUwfIqfvzYXXEw7ybeev6477KCTt9fKydU+ajUqcg==
 
 "@types/color-name@^1.1.1":
   version "1.1.1"
@@ -1821,6 +1826,11 @@
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/tough-cookie/-/tough-cookie-4.0.0.tgz#fef1904e4668b6e5ecee60c52cc6a078ffa6697d"
   integrity sha512-I99sngh224D0M7XgW1s120zxCt3VYQ3IQsuw3P3jbq5GG4yc79+ZjyKznyOGIQrflfylLgcfekeZW/vk0yng6A==
+
+"@types/tween.js@17.2.0":
+  version "17.2.0"
+  resolved "https://registry.yarnpkg.com/@types/tween.js/-/tween.js-17.2.0.tgz#25f98311daecb165ab91ee2cd7f17a9b1e6cc30c"
+  integrity sha512-mOsqurEtFEzwgkVc/jDVE2XrjZBYTbrmDUyCr9GXmnfc6q5otokxFtKvSY/B21zgz9LVRIvRTawKczjKi57wrA==
 
 "@types/unist@*", "@types/unist@^2.0.0", "@types/unist@^2.0.2":
   version "2.0.3"
@@ -8408,6 +8418,14 @@ ngx-markdown@^9.0.0:
     katex "^0.11.0"
     marked "^0.8.0"
     prismjs "^1.16.0"
+
+ngx-virtual-scroller@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/ngx-virtual-scroller/-/ngx-virtual-scroller-4.0.3.tgz#2d2ce26dbdbfd89507cca7f58c5e4e9cc1285f48"
+  integrity sha512-JBqUJ/f7GRCZDnI/JeiFoTmYR8rC/Hyv8L5I7ImePM6f/hwiFNRsrK8Abdd0E3TwklwgmZAK875te9XQJrgsyQ==
+  dependencies:
+    "@tweenjs/tween.js" "17.4.0"
+    "@types/tween.js" "17.2.0"
 
 nice-try@^1.0.4:
   version "1.0.5"

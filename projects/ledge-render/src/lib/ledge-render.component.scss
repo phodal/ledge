@@ -1,5 +1,14 @@
 .ledge-render {
   width: 100%;
+
+  virtual-scroller {
+    width: 100%;
+    height: calc(100vh - 66px);
+
+    .render-item {
+      display: block;
+    }
+  }
 }
 
 .render-item {

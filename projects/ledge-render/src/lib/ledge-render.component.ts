@@ -23,6 +23,9 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
 
   @Input()
   content: string;
+  @Input()
+  virtualScroll: false;
+
   markdownData: any[] = [];
   token = null;
   tokens: TokensList | any = [];

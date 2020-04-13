@@ -1,8 +1,15 @@
-<div class="ledge-render">
+<div class="ledge-render" *ngIf="!virtualScroll">
   <div *ngFor="let item of markdownData" class="markdown render-item">
     <ng-template *ngTemplateOutlet="renderItem; context: {$implicit: item}"></ng-template>
-
   </div>
+</div>
+
+<div class="ledge-render" *ngIf="virtualScroll">
+  <virtual-scroller #scroll [items]="markdownData">
+    <div *ngFor="let item of scroll.viewPortItems" class="markdown render-item">
+      <ng-template *ngTemplateOutlet="renderItem; context: {$implicit: item}"></ng-template>
+    </div>
+  </virtual-scroller>
 </div>
 
 <ng-template #renderItem let-item>

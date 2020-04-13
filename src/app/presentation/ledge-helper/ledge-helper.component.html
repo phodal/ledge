@@ -2,5 +2,5 @@
   <div class="source">
     <textarea matInput cols="25" [ngModel]="content" (ngModelChange)="changeContent($event)"></textarea>
   </div>
-  <ledge-render class="sample" [content]="content"></ledge-render>
+  <ledge-render class="sample" [content]="content" virtualScroll="true"></ledge-render>
 </div>

@@ -51,6 +51,7 @@
     "mermaid": "^8.4.8",
     "ng2-dragula": "^2.1.1",
     "ngx-markdown": "^9.0.0",
+    "ngx-virtual-scroller": "^4.0.3",
     "rxjs": "~6.5.4",
     "shortid": "^2.2.15",
     "tslib": "^1.10.0",
