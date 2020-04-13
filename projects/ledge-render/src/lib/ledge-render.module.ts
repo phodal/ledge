@@ -17,6 +17,7 @@ import { LedgeTableStepComponent } from './components/ledge-table-step/ledge-tab
 import { LedgePieComponent } from './chart/ledge-pie/ledge-pie.component';
 import { LedgeDevProcessComponent } from './components/ledge-dev-process/ledge-dev-process.component';
 import { VirtualScrollerModule } from 'ngx-virtual-scroller';
+import { LedgeTechRadarComponent } from './chart/ledge-tech-radar/ledge-tech-radar.component';
 
 const LedgeComponents = [
   LedgeRenderComponent,
@@ -32,7 +33,8 @@ const LedgeComponents = [
   LedgeCardComponent,
   LedgeTableStepComponent,
   LedgePieComponent,
-  LedgeDevProcessComponent
+  LedgeDevProcessComponent,
+  LedgeTechRadarComponent
 ];
 
 

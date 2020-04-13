@@ -294,6 +294,14 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
           config: devProcessData.config,
         });
         break;
+      case 'tech-radar':
+        const techRadarData = LedgeMarkdownConverter.toJson(codeBlock.text);
+        this.markdownData.push({
+          type: 'dev-process',
+          data: techRadarData.lists[0].children,
+          config: techRadarData.config,
+        });
+        break;
       default:
         this.markdownData.push(token);
         break;

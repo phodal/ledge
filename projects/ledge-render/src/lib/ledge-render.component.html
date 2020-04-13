@@ -54,6 +54,10 @@
       <ledge-dev-process [data]="item.data" [config]="item.config"></ledge-dev-process>
     </div>
 
+    <div *ngSwitchCase="'tech-data'">
+      <ledge-tech-radar [data]="item.data" [config]="item.config"></ledge-tech-radar>
+    </div>
+
     <div *ngSwitchCase="'table'">
       <table>
         <thead>
