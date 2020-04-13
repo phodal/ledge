@@ -26,11 +26,17 @@ export class LedgeMindmapComponent implements OnInit, AfterViewInit {
 
   @ViewChild('chart', {}) chart: ElementRef;
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.chartData = LedgeChartConverter.toTreeData(this.data.children);
+
+    const dataStr = JSON.stringify(this.chartData);
+    const childLength = (dataStr.match(/:/g) || []).length;
+    this.dataSize = childLength;
     this.getDataLevel(this.chartData);
+
     this.chartOption = this.buildMindmapOption(this.chartData);
   }
 
@@ -43,14 +49,16 @@ export class LedgeMindmapComponent implements OnInit, AfterViewInit {
     this.dataLevel++;
     if (data.children) {
       this.getDataLevel(data.children);
-    } else {
-      this.dataSize = (this.dataLevel + 1) * data.length;
     }
   }
 
   getHeight() {
-    const height = this.dataSize * 50;
-    const width = (this.dataLevel + 1) * 320;
+    const height = this.dataSize * 25;
+    let width = (this.dataLevel + 1) * 320;
+    if (width < 800) {
+      width = 800;
+    }
+
     return {
       height: height + 'px',
       width: width + 'px'
