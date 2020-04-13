@@ -190,7 +190,8 @@ Path to Production，来源于精益，旨在通过可视化的方式来展示�
     {
         "type": "treemap",
         "breadcrumb": {"show": false},
-        "roam": "move",
+        "roam": "false",
+        "nodeClick": "false",
         "data": [{
             "name": "nodeA","value": 10,
             "children": [
