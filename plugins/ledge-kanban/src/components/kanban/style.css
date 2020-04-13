@@ -1,0 +1,15 @@
+.board_container {
+  position: relative;
+}
+
+.board {
+  user-select: none;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: absolute;
+  right: 0;
+  left: 0px;
+  top: 0;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,131 @@
+.list_wrapper {
+  width: 300px;
+  margin-right: 10px;
+  height: 100%;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.list {
+  background: #e2e4e6;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-height: 100%;
+  position: relative;
+  white-space: normal;
+  box-shadow: 0 1px 1px rgba(23, 43, 77, 0.2),
+    0 0 0.5px 0 rgba(23, 43, 77, 0.25);
+  transition: all 0.3s cubic-bezier(0.15, 1, 0.33, 1);
+  -webkit-transition: all 0.3s cubic-bezier(0.15, 1, 0.33, 1);
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.5;
+}
+
+.list_header {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 8px 10px;
+  position: relative;
+  min-height: 18px;
+}
+
+.header_title {
+  font-size: 16px;
+  text-align: left;
+  font-weight: 500;
+  /* padding-left: 10px;
+  padding-top: 10px; */
+  margin: 0;
+  margin-top: 5px;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
+.header_desc {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+  margin-top: 5px;
+}
+
+.header_due {
+  float: left;
+  height: 24px;
+  line-height: 24px;
+  margin-left: 0px;
+  background: #c7c7c7;
+  border-radius: 3px;
+  padding: 0 10px;
+}
+.header_due .due_item {
+  line-height: 24px;
+  font-size: 13px;
+  text-decoration: underline;
+  font-weight: 500;
+  color: #444444;
+}
+
+.header_members {
+  float: left;
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+.members_item {
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+  background: #c7c7c7;
+  display: block;
+}
+
+.members_item .item_photo {
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+}
+.header_setName {
+  background: 0 0;
+  border: none;
+  border-radius: 3px;
+  box-shadow: none;
+  font-weight: 700;
+  margin: -3px -5px;
+  height: 18px;
+  min-height: 18px;
+  padding: 3px 5px;
+  resize: none;
+  max-height: 16pc;
+  overflow: hidden;
+  word-wrap: break-word;
+  height: 24px;
+}
+.header_setName.isEditing {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.list_cards {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  margin: 0 4px;
+  padding: 0 4px;
+  z-index: 1;
+  min-height: 0;
+  -webkit-box-flex: 1;
+  overflow-x: hidden;
+}

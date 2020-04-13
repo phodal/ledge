@@ -1,0 +1,50 @@
+@import "../components/bin/style.css";
+@import "../components/output/style.css";
+@import "../components/card/style.css";
+@import "../components/kanban/style.css";
+
+.list_outputs {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  margin: 0 4px;
+  padding: 0 4px;
+  z-index: 1;
+  min-height: 0;
+  -webkit-box-flex: 1;
+  overflow-x: hidden;
+}
+
+.list_outputs h2 {
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.5;
+}
+
+.outputs_card {
+  background: #333c44;
+  border-radius: 3px;
+  overflow: hidden;
+  padding: 6px 6px 2px 8px;
+  position: relative;
+  z-index: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  cursor: pointer;
+  margin-bottom: 6px;
+  max-width: 300px;
+  min-height: 20px;
+  position: relative;
+  z-index: 0;
+  padding: 10px;
+}
+
+.outputs_card span {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
