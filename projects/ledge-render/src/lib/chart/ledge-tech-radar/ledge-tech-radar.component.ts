@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { LedgeListItem } from '../../components/model/ledge-chart.model';
 import * as d3 from 'd3';
 
@@ -7,7 +7,7 @@ import * as d3 from 'd3';
   templateUrl: './ledge-tech-radar.component.html',
   styleUrls: ['./ledge-tech-radar.component.scss']
 })
-export class LedgeTechRadarComponent implements OnInit, AfterViewInit {
+export class LedgeTechRadarComponent implements OnInit, AfterViewInit, OnChanges {
   @Input()
   data: LedgeListItem[];
 
@@ -23,7 +23,11 @@ export class LedgeTechRadarComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    console.log(this.data);
+    this.rebuildRadarData();
+  }
+
+  private rebuildRadarData() {
+    this.trData = [];
     for (const item of this.data) {
       const items = [];
       for (const levelList of item.children) {
@@ -43,7 +47,10 @@ export class LedgeTechRadarComponent implements OnInit, AfterViewInit {
         items
       });
     }
+  }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    this.rebuildRadarData();
   }
 
   getLevelByName(name: string) {
