@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
-import { LedgeList } from '../../components/model/ledge-chart.model';
+import { LedgeListItem } from '../../components/model/ledge-chart.model';
 import * as d3 from 'd3';
 
 @Component({
@@ -9,76 +9,67 @@ import * as d3 from 'd3';
 })
 export class LedgeTechRadarComponent implements OnInit, AfterViewInit {
   @Input()
-  data: LedgeList;
+  data: LedgeListItem[];
 
   @Input()
   config: any;
+
+  trData: {
+    name: string,
+    items: any[],
+  }[] = [];
 
   constructor() {
   }
 
   ngOnInit(): void {
+    console.log(this.data);
+    for (const item of this.data) {
+      const items = [];
+      for (const levelList of item.children) {
+        const level = this.getLevelByName(levelList.name);
+        if (levelList.children) {
+          for (const finalItem of levelList.children) {
+            items.push({
+              name: finalItem.name,
+              circle: level
+            });
+          }
+        }
+      }
+
+      this.trData.push({
+        name: item.name,
+        items
+      });
+    }
+
+  }
+
+  getLevelByName(name: string) {
+    let level = 0;
+    switch (name.toLowerCase()) {
+      case 'adopt':
+        level = 1;
+        break;
+      case 'trail':
+        level = 2;
+        break;
+      case 'assess':
+        level = 3;
+        break;
+      case 'hold':
+        level = 4;
+        break;
+      default:
+        level = 0;
+    }
+
+    return level;
   }
 
   ngAfterViewInit(): void {
-    this.renderData([
-        {
-          name: 'Frontend',
-          items: [
-            {name: 'Angular', circle: 1},
-            {name: 'React', circle: 2},
-            {name: 'Vue.js', circle: 3},
-            {name: 'd3', circle: 2},
-            {name: 'ionic', circle: 2},
-            {name: 'MVC-Spec', circle: 3},
-            {name: 'Android', circle: 3},
-            {name: 'Liferay/Vaadin', circle: 4},
-            {name: 'JSF', circle: 4}
-          ]
-        },
-        {
-          name: 'Backend',
-          items: [
-            {name: 'JavaEE', circle: 1},
-            {name: 'Python', circle: 2},
-            {name: 'Spring (Boot)', circle: 2},
-            {name: '.NET', circle: 3},
-            {name: 'MongoDB', circle: 3},
-            {name: 'MicroProfile', circle: 3},
-            {name: 'JBoss Drools', circle: 4},
-            {name: 'ElasticSearch', circle: 4},
-            {name: 'Apache Camel', circle: 4}
-          ]
-        },
-        {
-          name: 'Tools',
-          items: [
-            {name: 'Jenkins', circle: 1},
-            {name: 'Maven', circle: 1},
-            {name: 'Junit', circle: 1},
-            {name: 'Sonarqube', circle: 1},
-            {name: 'Gradle', circle: 2},
-            {name: 'Vagrant', circle: 4},
-            {name: 'Rundeck', circle: 2},
-            {name: 'Bamboo', circle: 3},
-            {name: 'Robot Framework', circle: 3}
-          ]
-        },
-        {
-          name: 'Plattform',
-          items: [
-            {name: 'Wildfly', circle: 1},
-            {name: 'OAuth/Keycloak', circle: 2},
-            {name: 'Node.js', circle: 2},
-            {name: 'Docker', circle: 2},
-            {name: 'Gitlab', circle: 2},
-            {name: 'Icinga2', circle: 2},
-            {name: 'OpenShift', circle: 3},
-            {name: 'Tomcat', circle: 4}
-          ]
-        }
-      ]
-    );
+    this.renderData(this.trData);
   }
 
   private renderData(treeData) {
