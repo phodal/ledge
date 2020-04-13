@@ -71,7 +71,7 @@
         </thead>
         <tbody>
         <tr *ngFor="let row of item.cells">
-          <td *ngFor="let cell of row">{{cell}}</td>
+          <td *ngFor="let cell of row" [innerHTML]="cell" ></td>
         </tr>
         </tbody>
       </table>
