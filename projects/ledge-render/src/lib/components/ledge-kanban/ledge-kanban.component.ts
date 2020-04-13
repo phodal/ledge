@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { LedgeListItem } from '../model/ledge-chart.model';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Column } from './model/column';
@@ -9,43 +9,36 @@ import { Board } from './model/board';
   templateUrl: './ledge-kanban.component.html',
   styleUrls: ['./ledge-kanban.component.scss']
 })
-export class LedgeKanbanComponent implements OnInit {
+export class LedgeKanbanComponent implements OnInit, OnChanges {
   @Input()
   data: LedgeListItem[];
 
   @Input()
   config: any;
 
-  board: Board = new Board('Test Board', [
-    new Column('Ideas', [
-      'Some random idea',
-      'This is another random idea',
-      'build an awesome application'
-    ]),
-    new Column('Research', [
-      'Lorem ipsum',
-      'foo',
-      'This was in the \'Research\' column'
-    ]),
-    new Column('Todo', [
-      'Get to work',
-      'Pick up groceries',
-      'Go home',
-      'Fall asleep'
-    ]),
-    new Column('Done', [
-      'Get up',
-      'Brush teeth',
-      'Take a shower',
-      'Check e-mail',
-      'Walk dog'
-    ])
-  ]);
+  board: Board = new Board('', []);
 
   constructor() {
   }
 
   ngOnInit(): void {
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.updateKanbanData();
+  }
+
+  private updateKanbanData() {
+    const kanbanData = this.data[0];
+
+    this.board = new Board(kanbanData.name, []);
+    for (const column of kanbanData.children) {
+      const col = new Column(column.name, []);
+      for (const cell of column.children) {
+        col.tasks.push(cell.name);
+      }
+      this.board.columns.push(col);
+    }
   }
 
   drop(event: CdkDragDrop<string[]>) {
@@ -58,5 +51,4 @@ export class LedgeKanbanComponent implements OnInit {
         event.currentIndex);
     }
   }
-
 }
