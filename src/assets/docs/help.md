@@ -1,5 +1,15 @@
 # Ledge 语法帮助
 
+```kanban
+ - Kanban Name
+     - Todo
+       - done basic feature
+     - Doing
+       - create componet
+     - Done
+       - create card
+```
+
 ```tech-radar
  - 框架
    - adopt
@@ -31,10 +41,6 @@
      - Web Components
    - assess
    - hold
-```
-
-```kanban
-
 ```
 
 ```list-style

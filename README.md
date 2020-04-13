@@ -152,16 +152,17 @@ Fluency model:
 
 - [http://agilefluency.org/](http://agilefluency.org/)
 
-Periodic based on:
+and:
 
-- [https://stackblitz.com/edit/ng-periodic-table](https://stackblitz.com/edit/ng-periodic-table)
 - [https://www.nexthink.com/periodic-table/](https://www.nexthink.com/periodic-table/)
 
 others see in the Code.
 
 ## License
 
-Tech Radar based on: [https://cofinpro.github.io/Tech-Radar/](https://cofinpro.github.io/Tech-Radar/))
+- Periodic based on:[https://stackblitz.com/edit/ng-periodic-table](https://stackblitz.com/edit/ng-periodic-table)
+- Tech Radar based on: [https://cofinpro.github.io/Tech-Radar/](https://cofinpro.github.io/Tech-Radar/))
+- Kanban based on: https://github.com/Devstackr/kanban-angular-layout
 
 [![Phodal's Idea](http://brand.phodal.com/shields/idea-small.svg)](http://ideas.phodal.com/)
 
