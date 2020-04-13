@@ -4,7 +4,7 @@ export const config: Config = {
   namespace: 'ledge-kanban',
   taskQueue: 'async',
   bundles: [
-    { components: ['ledge-kanban', 'oce-bin', 'oce-card', 'oce-kanban', 'oce-modal'] }
+    { components: ['ledge-kanban'] }
   ],
   outputTargets: [
     {
