@@ -18,6 +18,7 @@ import { LedgePieComponent } from './chart/ledge-pie/ledge-pie.component';
 import { LedgeDevProcessComponent } from './components/ledge-dev-process/ledge-dev-process.component';
 import { VirtualScrollerModule } from 'ngx-virtual-scroller';
 import { LedgeTechRadarComponent } from './chart/ledge-tech-radar/ledge-tech-radar.component';
+import { LedgeKanbanComponent } from './components/ledge-kanban/ledge-kanban.component';
 
 const LedgeComponents = [
   LedgeRenderComponent,
@@ -34,7 +35,8 @@ const LedgeComponents = [
   LedgeTableStepComponent,
   LedgePieComponent,
   LedgeDevProcessComponent,
-  LedgeTechRadarComponent
+  LedgeTechRadarComponent,
+  LedgeKanbanComponent
 ];
 
 

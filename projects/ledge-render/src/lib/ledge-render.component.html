@@ -58,6 +58,10 @@
       <ledge-tech-radar [data]="item.data" [config]="item.config"></ledge-tech-radar>
     </div>
 
+    <div *ngSwitchCase="'kanban'">
+      <ledge-kanban [data]="item.data" [config]="item.config"></ledge-kanban>
+    </div>
+
     <div *ngSwitchCase="'table'">
       <table>
         <thead>
