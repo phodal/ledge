@@ -619,8 +619,28 @@
     overflow-y: scroll;
     height: calc(100vh - 66px);
 
-    > ul {
-      padding: 1em;
+    .level_1,
+    .level_2,
+    .level_3,
+    .level_4,
+    .level_5 {
+      line-height: 1.5;
+
+      &:hover {
+        color: $purple;
+        text-decoration: underline;
+      }
+    }
+
+    .level_1 {
+      font-weight: 800;
+    }
+
+    .level_2,
+    .level_3,
+    .level_4,
+    .level_5 {
+      font-weight: 100;
     }
 
     ul {
@@ -636,6 +656,7 @@
 
     li {
       list-style: none;
+
       a {
         text-decoration: none;
         color: #000;
