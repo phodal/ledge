@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { StorageMap } from '@ngx-pwa/local-storage';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MatDrawerContent } from '@angular/material/sidenav';
+import { Solution, solutions } from './solutions';
 
 @Component({
   selector: 'app-solution',
@@ -13,43 +13,25 @@ import { MatDrawerContent } from '@angular/material/sidenav';
 export class SolutionComponent implements OnInit {
   @ViewChild('drawerContent', { static: false })
   drawerContent: MatDrawerContent;
-
-  solutions = [
-    { displayName: 'Coding', source: 'coding' },
-    { displayName: '云开发（腾讯云）', source: 'cloudbase' },
-  ];
   currentSource: string;
   src: string;
   content: string;
+  solutions: Solution[] = solutions;
 
   constructor(
-    title: Title,
-    private storage: StorageMap,
+    private title: Title,
     private activatedRoute: ActivatedRoute,
-    private router: Router,
     private http: HttpClient
-  ) {
-    title.setTitle('Ledge DevOps 知识平台 - 解决方案');
-  }
+  ) {}
 
   ngOnInit(): void {
-    this.activatedRoute.queryParams.subscribe((params) => {
-      const source = params.source;
-      if (source) {
-        this.configSource(source);
-      } else {
-        this.getSourceFromLocalStorage();
-      }
-    });
-  }
-
-  private getSourceFromLocalStorage() {
-    this.storage.get('solution.last').subscribe((value: string) => {
-      if (!!value) {
-        this.configSource(value);
-      } else {
-        this.configSource('coding');
-      }
+    this.activatedRoute.paramMap.subscribe((p) => {
+      const param = p.get('case');
+      const currentCase = this.solutions.find((ca) => ca.source === param);
+      this.title.setTitle(
+        `${currentCase.displayName} DevOps 解决方案 - Ledge DevOps 知识平台`
+      );
+      this.configSource(param);
     });
   }
 
@@ -57,7 +39,7 @@ export class SolutionComponent implements OnInit {
     this.getCase(value);
   }
 
-  getCase(source: string) {
+  async getCase(source: string) {
     this.src = this.buildSrc(source);
     this.currentSource = source;
 
@@ -68,16 +50,8 @@ export class SolutionComponent implements OnInit {
     this.http
       .get(this.src, { headers, responseType: 'text' })
       .subscribe((response) => {
-        const queryParams: Params = { source };
-        this.storage.set('solution.last', source).subscribe();
         this.resetScrollbar();
         this.content = response;
-
-        this.router.navigate([], {
-          relativeTo: this.activatedRoute,
-          queryParams,
-          queryParamsHandling: 'merge', // remove to replace all query params by provided
-        });
       });
   }
 

@@ -15,7 +15,6 @@ import { PatternComponent } from './presentation/pattern/pattern.component';
 import { PractiseComponent } from './presentation/practise/practise.component';
 import { ReporterComponent } from './presentation/reporter/reporter.component';
 import { ResourcesComponent } from './presentation/resources/resources.component';
-import { SolutionComponent } from './presentation/solution/solution.component';
 import { ThinkTankComponent } from './presentation/think-tank/think-tank.component';
 import { CustomMaterialModule } from './shared/custom-material.module';
 import { SharedModule } from './shared/shared.module';
@@ -42,7 +41,6 @@ registerLocaleData(localZhHans, 'zh-Hans');
     AwesomeToolComponent,
     MobileComponent,
     ThinkTankComponent,
-    SolutionComponent,
 
     MaturityComponent,
     MaturityItemComponent,
