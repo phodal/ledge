@@ -628,12 +628,12 @@
 
       &:hover {
         color: $purple;
-        text-decoration: underline;
+        border-bottom: 2px solid $purple;
       }
     }
 
     .level_1 {
-      font-weight: 800;
+      font-weight: 400;
     }
 
     .level_2,
