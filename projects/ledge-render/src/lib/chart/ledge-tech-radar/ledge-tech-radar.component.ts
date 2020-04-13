@@ -239,7 +239,7 @@ export class LedgeTechRadarComponent implements OnInit, AfterViewInit {
         .enter()
         .append('li')
         .append('a')
-        .attr('href', '#radarChart')
+        // .attr('href', '#radarChart')
         .on('click', handleClick)
         .text((d: any) => d.name);
     }
@@ -307,9 +307,9 @@ export class LedgeTechRadarComponent implements OnInit, AfterViewInit {
       d3.selectAll(`.legend li`)
         .filter((d: any) => d === technology)
         .classed('active', true);
-
-      d3.text(encodeURI(`tech/${data.name.toLocaleLowerCase()}.html`))
-        .then(text => d3.select('#tech-info').html(text));
+      //
+      // d3.text(encodeURI(`tech/${data.name.toLocaleLowerCase()}.html`))
+      //   .then(text => d3.select('#tech-info').html(text));
 
       // follow the href
       return true;
