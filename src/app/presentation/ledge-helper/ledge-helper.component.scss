@@ -1,15 +1,12 @@
 .helper {
   display: flex;
   flex-grow: 1;
-  height: calc(100vh - 68px);
+  height: calc(100vh - 64px);
   overflow-y: hidden;
   padding: 0 0.2em;
 }
 
 .source {
-  flex: 1;
-  margin-right: 14px;
-
   textarea {
     font-size: 14px;
     margin-left: 1em;
@@ -21,7 +18,6 @@
 
 .sample {
   height: 100%;
-  width: 50%;
   flex-shrink: 0;
   overflow-y: hidden;
 }

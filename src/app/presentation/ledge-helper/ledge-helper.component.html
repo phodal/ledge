@@ -1,6 +1,8 @@
-<div class="helper">
-  <div class="source">
+<as-split unit="percent" [direction]="direction" (dragEnd)="dragEnd('percent', $event)" #split="asSplit" class="helper">
+  <as-split-area size="30" #area1="asSplitArea" class="source">
     <textarea matInput cols="25" [ngModel]="content" (ngModelChange)="term$.next($event)"></textarea>
-  </div>
+  </as-split-area>
+    <as-split-area size="70" #area2="asSplitArea">
   <ledge-render class="sample" [content]="content" virtualScroll="true"></ledge-render>
-</div>
+  </as-split-area>
+</as-split>
