@@ -1,6 +1,6 @@
 <div class="helper">
   <div class="source">
-    <textarea matInput cols="25" [ngModel]="content" (ngModelChange)="changeContent($event)"></textarea>
+    <textarea matInput cols="25" [ngModel]="content" (ngModelChange)="term$.next($event)"></textarea>
   </div>
   <ledge-render class="sample" [content]="content" virtualScroll="true"></ledge-render>
 </div>

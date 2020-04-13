@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { EMPTY, Subject, Subscription } from 'rxjs';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-ledge-helper',
   templateUrl: './ledge-helper.component.html',
   styleUrls: ['./ledge-helper.component.scss'],
 })
-export class LedgeHelperComponent implements OnInit {
+export class LedgeHelperComponent implements OnInit, OnDestroy {
   content = `
 # Ledge 语法帮助
 
@@ -304,11 +306,28 @@ config: {"type": "bar", "multiset": true}
 
 `;
 
-  constructor() {}
+  term$ = new Subject<string>();
+  private searchSubscription: Subscription;
+
+  constructor() {
+    this.searchSubscription = this.term$
+      .pipe(
+        debounceTime(500),
+        distinctUntilChanged(),
+        switchMap((term) => {
+          this.content = term;
+          return EMPTY;
+        })
+      )
+      .subscribe();
+  }
 
   ngOnInit(): void {}
 
-  changeContent($event: any) {
-    this.content = $event;
+  ngOnDestroy(): void {
+    if (this.searchSubscription) {
+      this.searchSubscription.unsubscribe();
+      this.searchSubscription = null;
+    }
   }
 }
