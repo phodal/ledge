@@ -1,13 +1,22 @@
 @import '~@angular/material/theming';
 @import '../../../styles/behavior';
+@import '../../../styles/color';
 
 .case-study {
   min-height: 600px;
   height: calc(100vh - 66px);
 
   .active {
-    background-color: #ff4081;
+    background-color: $purple;
     color: #fff;
+    outline: none;
+
+    &:active,
+    &:focus {
+      outline: 0;
+      border: none;
+      -moz-outline-style: none;
+    }
   }
 }
 

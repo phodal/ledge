@@ -1,12 +1,13 @@
 @import '~@angular/material/theming';
 @import '../../../styles/behavior';
+@import '../../../styles/color';
 
 .solution {
   min-height: 600px;
   height: calc(100vh - 66px);
 
   .active {
-    background-color: #ff4081;
+    background-color: $purple;
     color: #fff;
   }
 }
@@ -31,6 +32,13 @@
       font-size: 1.2rem;
       padding: 1rem;
       display: block;
+
+      &:active,
+      &:focus {
+        outline: 0;
+        border: none;
+        -moz-outline-style: none;
+      }
 
       @extend .noselect;
 
