@@ -1,177 +1,182 @@
 <div class="ledge-render">
   <div *ngFor="let item of markdownData" class="markdown render-item">
-    <div [ngSwitch]="item.type">
-      <div *ngSwitchCase="'chart'">
-        <ledge-bar-chart [data]="item.data"></ledge-bar-chart>
-      </div>
+    <ng-template *ngTemplateOutlet="renderItem; context: {$implicit: item}"></ng-template>
 
-      <div *ngSwitchCase="'mindmap'">
-        <ledge-mindmap [data]="item.data"></ledge-mindmap>
-      </div>
+  </div>
+</div>
 
-      <div *ngSwitchCase="'pyramid'">
-        <ledge-pyramid [data]="item.data"></ledge-pyramid>
-      </div>
+<ng-template #renderItem let-item>
+  <ng-container [ngSwitch]="item.type">
+    <div *ngSwitchCase="'chart'">
+      <ledge-bar-chart [data]="item.data"></ledge-bar-chart>
+    </div>
 
-      <div *ngSwitchCase="'radar'">
-        <ledge-radar [data]="item.data" [config]="item.config"></ledge-radar>
-      </div>
+    <div *ngSwitchCase="'mindmap'">
+      <ledge-mindmap [data]="item.data"></ledge-mindmap>
+    </div>
 
-      <div *ngSwitchCase="'quadrant'">
-        <ledge-quadrant [data]="item.data" [config]="item.config"></ledge-quadrant>
-      </div>
+    <div *ngSwitchCase="'pyramid'">
+      <ledge-pyramid [data]="item.data"></ledge-pyramid>
+    </div>
 
-      <div *ngSwitchCase="'toolset'">
-        <toolset [option]="item.data"></toolset>
-      </div>
+    <div *ngSwitchCase="'radar'">
+      <ledge-radar [data]="item.data" [config]="item.config"></ledge-radar>
+    </div>
 
-      <div *ngSwitchCase="'graphviz'">
-        <ledge-graphviz [data]="item.data"></ledge-graphviz>
-      </div>
+    <div *ngSwitchCase="'quadrant'">
+      <ledge-quadrant [data]="item.data" [config]="item.config"></ledge-quadrant>
+    </div>
 
-      <div *ngSwitchCase="'pie'">
-        <ledge-pie [data]="item.data" [config]="item.config"></ledge-pie>
-      </div>
+    <div *ngSwitchCase="'toolset'">
+      <toolset [option]="item.data"></toolset>
+    </div>
 
-      <div *ngSwitchCase="'echarts'">
-        <ledge-pure-echarts [data]="item.data"></ledge-pure-echarts>
-      </div>
+    <div *ngSwitchCase="'graphviz'">
+      <ledge-graphviz [data]="item.data"></ledge-graphviz>
+    </div>
 
-      <div *ngSwitchCase="'dev-process'">
-        <ledge-dev-process [data]="item.data" [config]="item.config"></ledge-dev-process>
-      </div>
+    <div *ngSwitchCase="'pie'">
+      <ledge-pie [data]="item.data" [config]="item.config"></ledge-pie>
+    </div>
 
-      <div *ngSwitchCase="'table'">
-        <table>
-          <thead>
-            <tr>
-              <th *ngFor="let h of item.header">{{h}}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let row of item.cells">
-              <td *ngFor="let cell of row">{{cell}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <div *ngSwitchCase="'echarts'">
+      <ledge-pure-echarts [data]="item.data"></ledge-pure-echarts>
+    </div>
 
-      <div *ngSwitchCase="'paragraph'">
-        <p [innerHTML]="item.data"></p>
-      </div>
+    <div *ngSwitchCase="'dev-process'">
+      <ledge-dev-process [data]="item.data" [config]="item.config"></ledge-dev-process>
+    </div>
 
-      <div *ngSwitchCase="'process-step'">
-        <div class="markdown-process-step">
-          <div class="process-step-column" *ngFor="let row of item.data.children;let last = last;">
-            <div class="process-title">{{row.name}}</div>
-            <div class="process-body">
-              <div class="process-step-item" *ngFor="let cell of row.children">{{cell.name}}</div>
+    <div *ngSwitchCase="'table'">
+      <table>
+        <thead>
+        <tr>
+          <th *ngFor="let h of item.header">{{h}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let row of item.cells">
+          <td *ngFor="let cell of row">{{cell}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div *ngSwitchCase="'paragraph'">
+      <p [innerHTML]="item.data"></p>
+    </div>
+
+    <div *ngSwitchCase="'process-step'">
+      <div class="markdown-process-step">
+        <div class="process-step-column" *ngFor="let row of item.data.children;let last = last;">
+          <div class="process-title">{{row.name}}</div>
+          <div class="process-body">
+            <div class="process-step-item" *ngFor="let cell of row.children">{{cell.name}}</div>
+          </div>
+          <div class="step-symbol" *ngIf="!last"></div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'process-table'">
+      <div class="process-table markdown-table">
+        <div class="table-container" role="table" aria-label="Destinations">
+          <div class="flex-table header" role="rowgroup">
+            <div class="flex-row cell type_{{index}}" *ngFor="let header of item.data.header;let index = index;">
+              {{header}}
             </div>
-            <div class="step-symbol" *ngIf="!last"></div>
+          </div>
+        </div>
+        <div class="table-space"></div>
+        <div class="flex-table row">
+          <div class="table-column" *ngFor="let row of item.data.cells;">
+            <div class="cell" *ngFor="let cell of row">{{cell}}</div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div *ngSwitchCase="'process-table'">
-        <div class="process-table markdown-table">
-          <div class="table-container" role="table" aria-label="Destinations">
-            <div class="flex-table header" role="rowgroup">
-              <div class="flex-row cell type_{{index}}" *ngFor="let header of item.data.header;let index = index;">
-                {{header}}
+    <div *ngSwitchCase="'process-card'" class="flex-table row">
+      <ng-container *ngFor="let header of item.data.header; let index = index">
+        <ledge-card class="column card-column" [headerStyle]="item.config.colors && item.config.colors[index]"
+                    [data]="{ header: header, cells: item.data.cells[index], index:index }"></ledge-card>
+      </ng-container>
+    </div>
+
+    <div *ngSwitchCase="'list-style'">
+      <div class="list-style list-style-{{item.config.type}}">
+        <div *ngFor="let listItem of item.data;let index = index;" class="list-style-item"
+             [style.background-color]="colorsForIndex[index]">
+          <div [innerHTML]="listItem.name"></div>
+
+          <ng-template #recursiveList let-list>
+            <div *ngFor="let item of list" class="sub-item">
+              <div class="list-style-item">{{item.name}}</div>
+              <div *ngIf="item.children && item.children.length > 0">
+                <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.children }"></ng-container>
               </div>
             </div>
-          </div>
-          <div class="table-space"></div>
-          <div class="flex-table row">
-            <div class="table-column" *ngFor="let row of item.data.cells;">
-              <div class="cell" *ngFor="let cell of row">{{cell}}</div>
-            </div>
-          </div>
+          </ng-template>
+          <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: listItem.children }"></ng-container>
         </div>
       </div>
+    </div>
 
-      <div *ngSwitchCase="'process-card'" class="flex-table row">
-        <ng-container *ngFor="let header of item.data.header; let index = index">
-          <ledge-card class="column card-column" [headerStyle]="item.config.colors && item.config.colors[index]"
-            [data]="{ header: header, cells: item.data.cells[index], index:index }"></ledge-card>
-        </ng-container>
-      </div>
+    <div *ngSwitchCase="'heading'">
+      <h1 *ngIf="item.depth === 1" [innerHTML]="item.text" class="ledge-heading" id="{{item.anchor}}"></h1>
+      <h2 *ngIf="item.depth === 2" [innerHTML]="item.text" class="ledge-heading" id="{{item.anchor}}"></h2>
+      <h3 *ngIf="item.depth === 3" [innerHTML]="item.text" class="ledge-heading" id="{{item.anchor}}"></h3>
+      <h4 *ngIf="item.depth === 4" [innerHTML]="item.text" class="ledge-heading" id="{{item.anchor}}"></h4>
+      <h5 *ngIf="item.depth === 5" [innerHTML]="item.text" class="ledge-heading" id="{{item.anchor}}"></h5>
+      <h6 *ngIf="item.depth === 6" [innerHTML]="item.text" class="ledge-heading" id="{{item.anchor}}"></h6>
+    </div>
 
-      <div *ngSwitchCase="'list-style'">
-        <div class="list-style list-style-{{item.config.type}}">
-          <div *ngFor="let listItem of item.data;let index = index;" class="list-style-item"
-               [style.background-color]="colorsForIndex[index]">
-            <div [innerHTML]="listItem.name"></div>
-
-            <ng-template #recursiveList let-list>
-              <div *ngFor="let item of list" class="sub-item">
-                <div class="list-style-item">{{item.name}}</div>
-                <div *ngIf="item.children && item.children.length > 0">
-                  <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.children }"></ng-container>
-                </div>
-              </div>
-            </ng-template>
-            <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: listItem.children }"></ng-container>
-          </div>
-        </div>
-      </div>
-
-      <div *ngSwitchCase="'heading'">
-        <h1 *ngIf="item.depth === 1" [innerHTML]="item.text" class="ledge-heading" id="{{item.anchor}}"></h1>
-        <h2 *ngIf="item.depth === 2" [innerHTML]="item.text" class="ledge-heading" id="{{item.anchor}}"></h2>
-        <h3 *ngIf="item.depth === 3" [innerHTML]="item.text" class="ledge-heading" id="{{item.anchor}}"></h3>
-        <h4 *ngIf="item.depth === 4" [innerHTML]="item.text" class="ledge-heading" id="{{item.anchor}}"></h4>
-        <h5 *ngIf="item.depth === 5" [innerHTML]="item.text" class="ledge-heading" id="{{item.anchor}}"></h5>
-        <h6 *ngIf="item.depth === 6" [innerHTML]="item.text" class="ledge-heading" id="{{item.anchor}}"></h6>
-      </div>
-
-      <div *ngSwitchCase="'code'">
+    <div *ngSwitchCase="'code'">
         <pre class="language-{{item.lang}}">
         <code class="language-{{item.lang}}">{{item.text}}</code>
       </pre>
-      </div>
-
-      <div *ngSwitchCase="'blockquote'">
-        <blockquote [innerHTML]="item.text"></blockquote>
-      </div>
-
-      <div *ngSwitchCase="'hr'">
-        <hr>
-      </div>
-
-      <div *ngSwitchCase="'list'">
-        <ng-template #recursiveList let-list>
-          <li *ngFor="let item of list" class="sub-item" [ngClass]="item.task ? 'task-list-item' : ''">
-            <input type="checkbox" *ngIf="item.task" [checked]="item.checked" />
-            <div [outerHTML]="item.body.name"></div>
-            <ul *ngIf="!item.ordered && item.body.children && item.body.children.length > 0">
-              <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.body.children }"></ng-container>
-            </ul>
-            <ol *ngIf="item.ordered && item.body.children && item.body.children.length > 0" [attr.start]="item.start">
-              <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.body.children }"></ng-container>
-            </ol>
-          </li>
-        </ng-template>
-
-        <ul *ngIf="!item.ordered">
-          <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.data }"></ng-container>
-        </ul>
-        <ol *ngIf="item.ordered">
-          <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.data }"></ng-container>
-        </ol>
-      </div>
-
-      <div class="step-line" *ngSwitchCase="'step-line'">
-        <ledge-step-line [data]="item.data"></ledge-step-line>
-      </div>
-
-      <div class="table-step" *ngSwitchCase="'table-step'">
-        <ledge-table-step [data]="item.data" [config]="item.config"></ledge-table-step>
-      </div>
-
-      <div *ngSwitchDefault>
-        {{stringify(item)}}
-      </div>
     </div>
-  </div>
-</div>
+
+    <div *ngSwitchCase="'blockquote'">
+      <blockquote [innerHTML]="item.text"></blockquote>
+    </div>
+
+    <div *ngSwitchCase="'hr'">
+      <hr>
+    </div>
+
+    <div *ngSwitchCase="'list'">
+      <ng-template #recursiveList let-list>
+        <li *ngFor="let item of list" class="sub-item" [ngClass]="item.task ? 'task-list-item' : ''">
+          <input type="checkbox" *ngIf="item.task" [checked]="item.checked"/>
+          <div [outerHTML]="item.body.name"></div>
+          <ul *ngIf="!item.ordered && item.body.children && item.body.children.length > 0">
+            <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.body.children }"></ng-container>
+          </ul>
+          <ol *ngIf="item.ordered && item.body.children && item.body.children.length > 0" [attr.start]="item.start">
+            <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.body.children }"></ng-container>
+          </ol>
+        </li>
+      </ng-template>
+
+      <ul *ngIf="!item.ordered">
+        <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.data }"></ng-container>
+      </ul>
+      <ol *ngIf="item.ordered">
+        <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.data }"></ng-container>
+      </ol>
+    </div>
+
+    <div class="step-line" *ngSwitchCase="'step-line'">
+      <ledge-step-line [data]="item.data"></ledge-step-line>
+    </div>
+
+    <div class="table-step" *ngSwitchCase="'table-step'">
+      <ledge-table-step [data]="item.data" [config]="item.config"></ledge-table-step>
+    </div>
+
+    <div *ngSwitchDefault>
+      {{stringify(item)}}
+    </div>
+  </ng-container>
+</ng-template>
