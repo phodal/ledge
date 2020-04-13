@@ -67,8 +67,10 @@ export class LedgeMindmapComponent implements OnInit, AfterViewInit {
 
   buildMindmapOption(data) {
     return {
-      feature: {
-        saveAsImage: {},
+      toolbox: {
+        feature: {
+          saveAsImage: {},
+        },
       },
       tooltip: {
         trigger: 'item',
