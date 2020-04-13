@@ -20,7 +20,8 @@ export class LedgeTableStepComponent implements OnInit {
   headers = [];
   width = '1080px'; // TODO: 根据column 数量动态宽度
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {
     // TODO: 动态分组，动态宽度每行列数，目前默认为4
@@ -35,5 +36,9 @@ export class LedgeTableStepComponent implements OnInit {
       this.headers.push(arr);
       i++;
     }
+  }
+
+  isShowIconBeforeCard(data, hIndex, column, index, last, lastH) {
+    return (hIndex + 1) % 2 === 0 && (hIndex * column + index) !== data.header.length - 1 || (!last && lastH) && this.headers.length > 1;
   }
 }

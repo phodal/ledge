@@ -12,7 +12,7 @@
       <div class="column" [class.step-row-wrap]="index === arr.length - 1">
         <div
           class="arrow"
-          *ngIf="(hIndex + 1) % 2 === 0 && (hIndex * column + index)!==data.header.length-1 || (!last && lastH)">
+          *ngIf="isShowIconBeforeCard(data, hIndex, column, index, last, lastH)">
           <span [class]="index === arr.length - 1 ? 'arrow-down' : 'arrow-left'"></span>
           <span [class]="index === arr.length - 1 ? 'rect-down' : 'rect-right'"></span>
         </div>
