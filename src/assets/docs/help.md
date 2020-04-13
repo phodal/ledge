@@ -2,14 +2,15 @@
 
 ```kanban
  - Kanban Name
-     - Todo
-       - done basic feature
-       - write document
-     - Doing
-       - create componet
-       - add testing
-     - Done
-       - create card
+   - Todo
+     - done basic feature
+     - write document
+   - Doing
+     - create componet
+     - add testing
+   - Done
+     - create card
+   - Done
 ```
 
 ```tech-radar

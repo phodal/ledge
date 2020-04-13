@@ -29,13 +29,19 @@ export class LedgeKanbanComponent implements OnInit, OnChanges {
   }
 
   private updateKanbanData() {
+    if (this.data.length <= 0) {
+      return;
+    }
+
     const kanbanData = this.data[0];
 
     this.board = new Board(kanbanData.name, []);
     for (const column of kanbanData.children) {
       const col = new Column(column.name, []);
-      for (const cell of column.children) {
-        col.tasks.push(cell.name);
+      if (!!column.children) {
+        for (const cell of column.children) {
+          col.tasks.push(cell.name);
+        }
       }
       this.board.columns.push(col);
     }

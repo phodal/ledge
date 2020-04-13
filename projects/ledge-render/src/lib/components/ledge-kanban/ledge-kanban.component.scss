@@ -1,3 +1,8 @@
+$medium-grey: #ddd;
+$fontColor: white;
+$bgColor: rgb(0, 121, 191);
+$boardColor: rgba(white, 0.5);
+
 .root {
   display: flex;
   flex-direction: column;
@@ -12,16 +17,16 @@
   // https://stackoverflow.com/questions/36247140/why-dont-flex-items-shrink-past-content-size
   min-width: 0;
   min-height: 0;
+  background: $bgColor;
 
   .board-bar {
-    background: rgba(gray, 0.5);
     padding: 8px 15px;
 
     .board-name {
       font-size: 20px;
       font-weight: bold;
-      color: white;
-      text-align: center;
+      color: $fontColor;
+      text-align: left;
     }
   }
 
@@ -39,14 +44,11 @@
         flex-direction: column;
         flex-grow: 1;
         flex-basis: 0; // to force the columns to all be the same size, regardless of content
-
-        min-width: 300px;
-        margin: 32px;
-        padding: 24px;
-
+        min-width: 250px;
+        margin: 12px;
+        padding: 12px;
         border-radius: 4px;
-
-        background: rgba(white, 0.5);
+        background: $boardColor;
 
         &:not(:first-child) {
           margin-left: 0;
@@ -71,12 +73,10 @@
 .task {
   display: flex;
   padding: 15px 12px;
-  background: white;
-  border-bottom: solid 1px #ddd;
+  background: $fontColor;
+  border-bottom: solid 1px $medium-grey;
   border-radius: 4px;
-
   margin-bottom: 15px;
-
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.05),
   0 3px 14px 2px rgba(0, 0, 0, 0.05);
 }
