@@ -16,6 +16,19 @@ describe('LedgeTechRadarComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(LedgeTechRadarComponent);
     component = fixture.componentInstance;
+    component.data = [{
+      children: [
+        {
+          children: [
+            {
+              children: [],
+              name: '',
+            },
+          ],
+          name: '',
+        },
+      ],
+    }];
     fixture.detectChanges();
   });
 
