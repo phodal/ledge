@@ -1,25 +1,7 @@
 # Ledge 语法帮助
 
-1. fsda
-2. 34 sdf
-
-- a
-- a
-
-3. sdaf
-
-b
-
-- [ ] a
-- [ ] b
-  - [ ] c
-
-```pie
- - Some & title
-   - a: 4
-   - b: 12
-   - c: 21
-   - d: 19
+```tech-radar
+ - test
 ```
 
 ```list-style
@@ -290,3 +272,25 @@ config: {"type": "bar", "multiset": true}
 <a href="https://www.phodal.com/">phodal.com</a>
 
 ---
+
+1. fsda
+2. 34 sdf
+
+- a
+- a
+
+3. sdaf
+
+b
+
+- [ ] a
+- [ ] b
+  - [ ] c
+
+```pie
+ - Some & title
+   - a: 4
+   - b: 12
+   - c: 21
+   - d: 19
+```

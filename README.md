@@ -157,6 +157,8 @@ others see in the Code.
 
 ## License
 
+Tech Radar based on: [https://cofinpro.github.io/Tech-Radar/](https://cofinpro.github.io/Tech-Radar/))
+
 [![Phodal's Idea](http://brand.phodal.com/shields/idea-small.svg)](http://ideas.phodal.com/)
 
 @ 2020 A [Phodal Huang](https://www.phodal.com)'s [Idea](http://github.com/phodal/ideas). This code is distributed under the MPL license. See `LICENSE` in this directory.

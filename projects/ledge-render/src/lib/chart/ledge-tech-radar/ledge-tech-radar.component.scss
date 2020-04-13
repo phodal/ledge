@@ -1,0 +1,180 @@
+:host {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1200px;
+  color: rgb(33, 37, 41);
+}
+
+body {
+  font-family: Apercu, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.2em;
+}
+
+/* Lists */
+ul li,
+ol li {
+  line-height: 1.5em;
+}
+
+ol li.active {
+  font-weight: bold;
+}
+
+/* Headings */
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Colors */
+.color-1 {
+  color: #868e96;
+  fill: #868e96;
+  stroke: #868e96;
+}
+
+.color-2 {
+  color: #ec7b1a;
+  fill: #ec7b1a;
+  stroke: #ec7b1a;
+}
+
+.color-3 {
+  color: #fadceb;
+  fill: #fadceb;
+  stroke: #fadceb;
+}
+
+.color-4 {
+  color: #a5c5e8;
+  fill: #a5c5e8;
+  stroke: #a5c5e8;
+}
+
+.color-5 {
+  color: #847575;
+  fill: #847575;
+  stroke: #847575;
+}
+
+/* Element styles */
+
+/** Header **/
+header {
+  margin: 12px 0 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+nav {
+  display: none;
+  line-height: 24px;
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+
+nav > :not(:last-child):after {
+  content: ' --- ';
+  color: #ec7b1a;
+}
+
+/** Radar **/
+#radar {
+  /* Disable some webkit features to make the radar feel more native */
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  display: grid;
+  grid-column-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
+#radarChart {
+  display: inline-block;
+  grid-column: 1 /span 2;
+  width: 100%;
+  height: 100%
+}
+
+/* swap the last to legends as they run clockwise around the circle */
+#radar > .legend-2 {
+  grid-row: 3;
+  grid-column: 2;
+}
+
+#radar > .legend-3 {
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.tech-circle text,
+.tech-circle circle {
+  cursor: pointer;
+  font-size: 0.8em;
+  transition: 0.25s ease-in-out;
+}
+
+.tech-circle.active text,
+.tech-circle.active circle {
+  transform: scale(2);
+  font-size: 1.2em;
+}
+
+@media (min-width: 1000px) {
+  /* Element styles */
+  nav {
+    display: block;
+  }
+
+  #radar {
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  #radarChart {
+    grid-row: 1 / span 2;
+    grid-column: 2;
+    justify-self: center;
+    align-self: center;
+  }
+
+  #radar > .legend-0 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  #radar > .legend-1 {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  #radar > .legend-2 {
+    grid-column: 3;
+    grid-row: 2
+  }
+
+  #radar > .legend-3 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
