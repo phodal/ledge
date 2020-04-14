@@ -1,0 +1,15 @@
+@import '../../../styles/color';
+
+.checklists {
+  width: 80%;
+  max-width: 1200px;
+  margin: 2em auto;
+}
+
+.checklist-block {
+  background: #fff;
+  padding: 2em;
+  margin-bottom: 1em;
+  border-radius: 2px;
+  box-shadow: 0 1px 0 0 $lighter-gray;
+}
