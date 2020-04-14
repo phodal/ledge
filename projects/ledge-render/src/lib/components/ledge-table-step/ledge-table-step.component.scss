@@ -31,8 +31,8 @@ $gray: #999aaa;
 .step-row {
   display: flex;
   align-items: flex-start;
-  height: 430px; // TODO: 高度需要动态
-  margin-bottom: 10px;
+  height: 430px;
+  margin-bottom: 15px;
 
   .column {
     display: flex;
