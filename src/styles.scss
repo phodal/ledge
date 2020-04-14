@@ -17,7 +17,9 @@
 @import "styles/mdstyles/list-style";
 @import "styles/mdstyles/tech-radar";
 
-html, body { height: 100%; }
+html, body {
+  height: 100%;
+}
 
 * {
   box-sizing: border-box;
@@ -54,6 +56,16 @@ body {
   }
 }
 
+.case-study,
+.solution {
+  .no-toc-markdown {
+    height: calc(100vh - 66px);
+    overflow-y: scroll;
+    width: 100% !important;
+    margin: 0!important;
+  }
+}
+
 .home-markdown {
   .markdown {
     p {
@@ -64,7 +76,7 @@ body {
 
   .card {
     p {
-      padding:0;
+      padding: 0;
       text-align: left;
     }
   }
