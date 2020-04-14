@@ -36,6 +36,17 @@
           工具
           <mat-icon>arrow_drop_down</mat-icon>
         </button>
+
+        <mat-menu #langMenu="matMenu" backdropClass="nav-menu-wrapper">
+          <button mat-menu-item (click)="setLanguage('zh-cn')">中文</button>
+          <button mat-menu-item (click)="setLanguage('en')">En(ongoing...)</button>
+          <a mat-menu-item href="https://github.com/phodal/ledge/issues" target="_blank">More</a>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="langMenu">
+          Lang
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
       </div>
     </mat-toolbar-row>
   </mat-toolbar>

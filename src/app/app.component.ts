@@ -9,10 +9,13 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   title = 'ledge';
+  tran: TranslateService;
 
   constructor(private route: Router, translate: TranslateService) {
     translate.setDefaultLang('zh-cn');
     translate.use('zh-cn');
+
+    this.tran = translate;
   }
 
   // component-todo: refactor
@@ -23,5 +26,9 @@ export class AppComponent {
       this.route.url === '/report' ||
       this.route.url === '/design'
     );
+  }
+
+  setLanguage(lang: string) {
+    this.tran.use(lang);
   }
 }
