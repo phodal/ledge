@@ -3,8 +3,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ComponentChecklistComponent } from './component-checklist.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
-import { SharedModule } from '../../../shared/shared.module';
-import { FeaturesModule } from '../../features.module';
+import { StorageService } from '../../services/storage.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('ChecklistComponent', () => {
   let component: ComponentChecklistComponent;
@@ -15,9 +15,10 @@ describe('ChecklistComponent', () => {
       imports: [
         BrowserAnimationsModule,
         RouterTestingModule,
-        SharedModule,
-        FeaturesModule
+        FormsModule,
+        ReactiveFormsModule,
       ],
+      providers: [StorageService],
       declarations: []
     })
       .compileComponents();

@@ -2,8 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ComponentTodoComponent } from './component-todo.component';
-import { SharedModule } from '../../../shared/shared.module';
-import { StorageService } from '../../../core/services/storage.service';
+import { StorageService } from '../../services/storage.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('TodoComponent', () => {
   let component: ComponentTodoComponent;
@@ -11,7 +11,11 @@ describe('TodoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [SharedModule, BrowserAnimationsModule],
+      imports: [
+        BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule
+      ],
       providers: [StorageService],
       declarations: [ComponentTodoComponent]
     })

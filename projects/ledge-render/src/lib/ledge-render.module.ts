@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LedgeBarChartComponent } from './chart/ledge-bar-chart/ledge-bar-chart.component';
 import { LedgeGraphvizComponent } from './chart/ledge-graphviz/ledge-graphviz.component';
 import { LedgeMindmapComponent } from './chart/ledge-mindmap/ledge-mindmap.component';
@@ -51,6 +51,7 @@ const LedgeComponents = [
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     CustomMaterialModule,
     VirtualScrollerModule,
   ],
