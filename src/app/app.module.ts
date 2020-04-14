@@ -19,8 +19,6 @@ import { ThinkTankComponent } from './presentation/think-tank/think-tank.compone
 import { CustomMaterialModule } from './shared/custom-material.module';
 import { SharedModule } from './shared/shared.module';
 import { ScullyLibModule } from '@scullyio/ng-lib';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
@@ -60,9 +58,6 @@ export function createTranslateLoader(http: HttpClient) {
         useFactory: createTranslateLoader,
         deps: [HttpClient],
       },
-    }),
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
     }),
   ],
   providers: [Title],
