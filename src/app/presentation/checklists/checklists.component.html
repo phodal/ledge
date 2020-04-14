@@ -1,1 +1,10 @@
-<component-checklist [checklists]="techChecklist" [name]="'tech'"></component-checklist>
+<div class="checklists">
+  <h2>技术</h2>
+  <component-checklist [checklists]="techChecklist" [name]="'tech'"></component-checklist>
+  <h2>人</h2>
+  <component-checklist [checklists]="peopleChecklist" [name]="'people'"></component-checklist>
+  <h2>流程</h2>
+  <component-checklist [checklists]="processChecklist" [name]="'process'"></component-checklist>
+  <h2>业务</h2>
+  <component-checklist [checklists]="domainChecklist" [name]="'domain'"></component-checklist>
+</div>
