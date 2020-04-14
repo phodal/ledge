@@ -36,6 +36,7 @@ export class LedgeTableStepComponent implements OnInit, AfterViewInit {
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
 
   ngOnInit(): void {
+
     this.column = this.config.column || this.column;
     const headerLen = this.data.header.length;
     const rowNum = Math.ceil(headerLen / this.column);
