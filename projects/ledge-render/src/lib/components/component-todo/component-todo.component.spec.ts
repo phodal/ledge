@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ComponentTodoComponent } from './component-todo.component';
-import { StorageService } from '../../services/storage.service';
+import { LedgeStorageService } from '../../services/ledge-storage.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('TodoComponent', () => {
@@ -16,7 +16,7 @@ describe('TodoComponent', () => {
         FormsModule,
         ReactiveFormsModule
       ],
-      providers: [StorageService],
+      providers: [LedgeStorageService],
       declarations: [ComponentTodoComponent]
     })
       .compileComponents();

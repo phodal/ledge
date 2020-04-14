@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class StorageService {
+export class LedgeStorageService {
   get storage() {
     return window.localStorage;
   }

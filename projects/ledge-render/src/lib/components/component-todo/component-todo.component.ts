@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 
 import { TodoModel } from '../model/todo.model';
-import { StorageService } from '../../services/storage.service';
+import { LedgeStorageService } from '../../services/ledge-storage.service';
 
 @Component({
   selector: 'component-todo',
@@ -31,7 +31,7 @@ export class ComponentTodoComponent implements OnInit, OnDestroy, ControlValueAc
   onChange(change: any) {}
   onTouched() {}
 
-  constructor(private formBuilder: FormBuilder, private storage: StorageService) {
+  constructor(private formBuilder: FormBuilder, private storage: LedgeStorageService) {
   }
 
   ngOnInit() {

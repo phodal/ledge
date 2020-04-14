@@ -3,7 +3,7 @@ import { isEmpty } from 'lodash';
 
 import { ChecklistModel } from '../model/checklist.model';
 import { MatCheckboxChange } from '@angular/material/checkbox';
-import { StorageService } from '../../services/storage.service';
+import { LedgeStorageService } from '../../services/ledge-storage.service';
 
 @Component({
   selector: 'component-checklist',
@@ -14,7 +14,7 @@ export class ComponentChecklistComponent implements OnInit {
   @Input() checklists: ChecklistModel[] = [];
   @Input() name: string;
 
-  constructor(private storage: StorageService) {
+  constructor(private storage: LedgeStorageService) {
   }
 
   ngOnInit() {
