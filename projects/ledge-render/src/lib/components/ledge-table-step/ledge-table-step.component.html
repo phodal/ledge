@@ -1,10 +1,11 @@
-<!-- 自适应屏幕动态计算每行个数？ -->
 
-<div class="table-steps" [style.width]="width">
+<div class="table-steps" #tableStep>
   <div
     class="step-row"
-    *ngFor="let arr of headers; let hIndex = index; let lastH=last"
+    *ngFor="let arr of headers; let hIndex = index; let lastH=last;"
     [class.step-row-reverse]="(hIndex + 1) % 2 === 0"
+    [style.height]="rowHeight"
+    [class.first-row]="hIndex===0"
   >
     <ng-container
       *ngFor="let headerName of arr; let index = index; let last = last"
@@ -27,7 +28,7 @@
             cells: data.cells[hIndex * column + index],
             index: hIndex * column + index
           }"></ledge-card>
-        <div class="arrow" *ngIf="(hIndex + 1) % 2 !== 0 && (hIndex * column + index) !== data.header.length - 1">
+        <div class="arrow" *ngIf="isShowIconAfterCard(data, hIndex, column, index)">
           <span *ngIf="index === arr.length - 1" class="arrow-down-symbol">
             <span class="rect-down"></span><span class="arrow-down"></span></span>
           <span *ngIf="index !== arr.length - 1">
