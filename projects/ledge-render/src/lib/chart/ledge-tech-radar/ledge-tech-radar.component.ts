@@ -28,7 +28,7 @@ export class LedgeTechRadarComponent implements OnInit, AfterViewInit, OnChanges
 
   private rebuildRadarData() {
     this.trData = [];
-    for (const item of this.data) {
+    for (const item of this.data.slice(0, 4)) {
       const items = [];
       for (const levelList of item.children) {
         const level = this.getLevelByName(levelList.name);
