@@ -16,7 +16,6 @@
           <span [class]="index === arr.length - 1 ? 'arrow-down' : 'arrow-left'"></span>
           <span [class]="index === arr.length - 1 ? 'rect-down' : 'rect-right'"></span>
         </div>
-        <!-- <h3>{{hIndex * column + index}}-{{ (hIndex * column + index)!==data.header.length-1}}</h3> -->
         <ledge-card
           style="height: 100%;"
           [headerStyle]="config.colors && config.colors[hIndex * column + index]"
