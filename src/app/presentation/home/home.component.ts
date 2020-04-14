@@ -1,10 +1,11 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { HighlightState } from '../../features/periodic-table/shared';
 import { Title } from '@angular/platform-browser';
-import * as mdData from 'raw-loader!../../../assets/docs/home.md';
 import { NavigationEnd, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+
+import * as mdData from 'raw-loader!../../../assets/docs/home.md';
+import { HighlightState } from '../../features/periodic-table/shared';
 
 interface Contributor {
   name: string;
