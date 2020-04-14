@@ -1,27 +1,28 @@
 <div [ngClass]="isHome() ? 'app-header' : ''">
   <mat-toolbar color="accent">
-    <mat-toolbar-row >
+    <mat-toolbar-row>
       <button mat-button class="button-logo" routerLink="/home">
         <img src="/assets/images/logo.svg" alt="logo" class="logo">
       </button>
       <span class="spacer"></span>
       <div class="right">
-        <button mat-button routerLink="/home" routerLinkActive="active" i18n="@@home">首页</button>
-        <button mat-button routerLink="/case-study" routerLinkActive="active" i18n="@@case-study">案例学习</button>
-        <button mat-button routerLink="/pattern" routerLinkActive="active" i18n="@@pattern-rules">模式与原则</button>
-        <button mat-button routerLink="/practise" routerLinkActive="active" i18n="@@best-practise">最佳实践</button>
-        <button mat-button routerLink="/manual" routerLinkActive="active" i18n="@@manual">操作手册</button>
-        <button mat-button routerLink="/solution" routerLinkActive="active" i18n="@@solution">解决方案</button>
-        <button mat-button routerLink="/think-tank" routerLinkActive="active" i18n="@@think-tank">智库</button>
+        <button mat-button routerLink="/home" routerLinkActive="active">{{ 'home' | translate}}</button>
+        <button mat-button routerLink="/case-study" routerLinkActive="active">{{ 'case-study' | translate}}</button>
+        <button mat-button routerLink="/pattern" routerLinkActive="active">{{ 'patterns' | translate}}</button>
+        <button mat-button routerLink="/practise" routerLinkActive="active">{{ 'practises' | translate}}</button>
+        <button mat-button routerLink="/manual" routerLinkActive="active">{{ 'manual' | translate}}</button>
+        <button mat-button routerLink="/solution" routerLinkActive="active">解决方案</button>
+        <button mat-button routerLink="/think-tank" routerLinkActive="active">智库</button>
 
         <mat-menu #appMenu="matMenu" backdropClass="nav-menu-wrapper">
-          <button mat-menu-item routerLink="/mobile" routerLinkActive="active" i18n="@@mobile">移动端</button>
-          <button mat-menu-item routerLink="/maturity" routerLinkActive="active" i18n="@@maturity">度量</button>
-          <button mat-menu-item routerLink="/report" routerLinkActive="active" i18n="@@report">年度报告</button>
-          <button mat-menu-item routerLink="/resources" routerLinkActive="active" i18n="@@resources">DevOps 相关资源</button>
+          <button mat-menu-item routerLink="/mobile" routerLinkActive="active">移动端</button>
+          <button mat-menu-item routerLink="/maturity" routerLinkActive="active">度量</button>
+          <button mat-menu-item routerLink="/report" routerLinkActive="active">年度报告</button>
+          <button mat-menu-item routerLink="/resources" routerLinkActive="active">DevOps 相关资源</button>
         </mat-menu>
         <button mat-button [matMenuTriggerFor]="appMenu">
-          资源<mat-icon>arrow_drop_down</mat-icon>
+          资源
+          <mat-icon>arrow_drop_down</mat-icon>
         </button>
 
         <mat-menu #toolsetMenu="matMenu" backdropClass="nav-menu-wrapper">
@@ -32,7 +33,8 @@
         </mat-menu>
 
         <button mat-button [matMenuTriggerFor]="toolsetMenu">
-          工具<mat-icon>arrow_drop_down</mat-icon>
+          工具
+          <mat-icon>arrow_drop_down</mat-icon>
         </button>
       </div>
     </mat-toolbar-row>

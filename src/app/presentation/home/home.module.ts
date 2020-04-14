@@ -7,6 +7,13 @@ import { CustomMaterialModule } from '../../shared/custom-material.module';
 import { PeriodicTableModule } from '../../features/periodic-table/periodic-table.module';
 import { HttpClientModule } from '@angular/common/http';
 import { InViewportModule } from '@ngx-starter-kit/ngx-utils';
+import {
+  MissingTranslationHandler,
+  TranslateCompiler,
+  TranslateLoader,
+  TranslateModule,
+  TranslateParser,
+} from '@ngx-translate/core';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -18,6 +25,9 @@ import { InViewportModule } from '@ngx-starter-kit/ngx-utils';
     PeriodicTableModule,
     CustomMaterialModule,
     RouterModule.forChild([{ path: '', component: HomeComponent }]),
+    TranslateModule.forChild({
+      isolate: true,
+    }),
   ],
 })
 export class HomeModule {}

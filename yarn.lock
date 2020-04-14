@@ -1253,10 +1253,10 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@ledge-framework/render@~0.0.12":
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/@ledge-framework/render/-/render-0.0.12.tgz#3b4468d694cf99a8f2be1fc4bebd4254b8026e64"
-  integrity sha512-TuLRySWh7O29bfWdCCIyqDc4yAaCwhjM9lms5DsKzXP8SQdZQVuXYeRc3k8HNlYrOcNZieRzPdxPylCQkuV9bg==
+"@ledge-framework/render@~0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@ledge-framework/render/-/render-0.0.14.tgz#07f22f67f26122f0d6f901cb34e8c2070e2cf281"
+  integrity sha512-ebHa9G2Y+wPzz3sOcCzC8mfZpkuBgZCg25l7TVJsOY4FuvD5ljaCRQZ0N5L8+g57W7OeNr9Mzry2qLhufRCr6Q==
 
 "@marionebl/sander@^0.6.0":
   version "0.6.1"
@@ -1286,6 +1286,18 @@
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/@ngx-starter-kit/ngx-utils/-/ngx-utils-0.0.8.tgz#cf54ff20534124a9f25e72130819e93345eb8002"
   integrity sha512-82kZAja5xUVwUWNRtWpjffrKPRT4uhshv8cFVhamOd+UpprUHNNpLHD5ePhd3WUxivxQDGmfPU2OK9M5Z/Q3jw==
+  dependencies:
+    tslib "^1.9.0"
+
+"@ngx-translate/core@^12.1.2":
+  version "12.1.2"
+  resolved "https://registry.yarnpkg.com/@ngx-translate/core/-/core-12.1.2.tgz#0c6f24249953a79cfc2d581b2cd1b5d6d338d9db"
+  integrity sha512-ZudJsqIxTKlLmPoqK8gJY3UpMGujR0Xm7HfXL6AR79yGRS23QqpjAhMfx4v5qUCcHMmQ9/78bW8QJLfp31c7vQ==
+
+"@ngx-translate/http-loader@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@ngx-translate/http-loader/-/http-loader-4.0.0.tgz#8a555248ad4b7d513460fcec9da25b0447962f1d"
+  integrity sha512-x8LumqydWD7eX9yQTAVeoCM9gFUIGVTUjZqbxdAUavAA3qVnk9wCQux7iHLPXpydl8vyQmLoPQR+fFU+DUDOMA==
   dependencies:
     tslib "^1.9.0"
 

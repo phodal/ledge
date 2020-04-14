@@ -10,6 +10,7 @@ import { MarkdownRatingComponent } from '../features/rating-radar-chart/markdown
 import { RatingRadarChartComponent } from '../features/rating-radar-chart/rating-radar-chart.component';
 import { MarkdownRenderComponent } from '../features/markdown-render/markdown-render.component';
 import { CustomMaterialModule } from './custom-material.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { CustomMaterialModule } from './custom-material.module';
     ReactiveFormsModule,
     CustomMaterialModule,
     LedgeRenderModule,
+    TranslateModule,
     MarkdownModule.forRoot({
       sanitize: SecurityContext.NONE,
       loader: HttpClient,

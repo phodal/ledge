@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule, Title } from '@angular/platform-browser';
@@ -18,16 +18,15 @@ import { ResourcesComponent } from './presentation/resources/resources.component
 import { ThinkTankComponent } from './presentation/think-tank/think-tank.component';
 import { CustomMaterialModule } from './shared/custom-material.module';
 import { SharedModule } from './shared/shared.module';
-import { registerLocaleData } from '@angular/common';
-
-import localeGb from '@angular/common/locales/en-GB';
-import localZhHans from '@angular/common/locales/zh-Hans';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-registerLocaleData(localeGb, 'en-gb');
-registerLocaleData(localZhHans, 'zh-Hans');
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -55,6 +54,13 @@ registerLocaleData(localZhHans, 'zh-Hans');
     CustomMaterialModule,
     LedgeRenderModule,
     ScullyLibModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient],
+      },
+    }),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),

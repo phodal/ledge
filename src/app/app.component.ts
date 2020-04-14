@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,10 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'ledge';
 
-  constructor(private route: Router) {}
+  constructor(private route: Router, translate: TranslateService) {
+    translate.setDefaultLang('zh-cn');
+    translate.use('zh-cn');
+  }
 
   // component-todo: refactor
   isHome() {
