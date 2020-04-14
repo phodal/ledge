@@ -1,0 +1,16 @@
+<form [formGroup]="form" *ngIf="!disableInput">
+  <mat-form-field>
+    <input matInput formControlName="todo">
+  </mat-form-field>
+
+  <button mat-button (click)="submitTodo()">Add</button>
+</form>
+
+<mat-list>
+  <mat-list-item *ngFor="let toDo of toDos" [class.complete]="toDo?.complete">
+    <mat-checkbox [checked]="toDo.complete" (change)="completeChange($event, toDo)">
+      <span class="title">{{ toDo?.title }}</span>
+      <span *ngIf="toDo.description" class="description">&nbsp;&nbsp; {{toDo.description}}</span>
+    </mat-checkbox>
+  </mat-list-item>
+</mat-list>

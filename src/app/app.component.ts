@@ -11,7 +11,7 @@ export class AppComponent {
 
   constructor(private route: Router) {}
 
-  // todo: refactor
+  // component-todo: refactor
   isHome() {
     return (
       this.route.url === '/home' ||

@@ -16,6 +16,6 @@ const LedgeColors = [
   '#007C78'
 ];
 
-// todo: refactor vars for color
+// component-todo: refactor vars for color
 
 export default LedgeColors;

@@ -1,0 +1,9 @@
+<div *ngFor="let checklist of checklists;let i = index">
+  <mat-checkbox [checked]="checklist.complete" (change)="completeChange($event, toDo)">
+    <span class="title">{{checklist?.title}}</span>
+    <span *ngIf="checklist.description" class="description">&nbsp;&nbsp; {{checklist.description}}</span>
+  </mat-checkbox>
+  <span *ngIf="checklist.description" class="description">: &nbsp;&nbsp; {{checklist.description}}</span>
+  <component-todo name="todo" ngDefaultControl [disableInput]="true" [ngModel]="checklist.subitems" (ngModelChange)="changeTodo($event, i)"></component-todo>
+</div>
+

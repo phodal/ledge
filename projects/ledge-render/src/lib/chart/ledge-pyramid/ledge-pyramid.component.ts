@@ -106,7 +106,7 @@ export class LedgePyramidComponent implements OnInit, AfterViewInit {
         series[2].data[i].name = othersSplit[1];
       }
 
-      // todo: remove hard code
+      // component-todo: remove hard code
       series[0].width = 'auto';
       series[1].width = 'auto';
       series[2].width = 'auto';
