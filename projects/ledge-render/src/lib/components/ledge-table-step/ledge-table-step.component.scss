@@ -51,10 +51,6 @@ $gray: #999aaa;
   &-wrap {
     flex-wrap: wrap;
     justify-content: center;
-    /*
-    .arrow {
-      padding-left: 14px;
-    } */
   }
 }
 
@@ -102,7 +98,7 @@ $gray: #999aaa;
   &-down {
     @include rect;
     top: 18px;
-    left: 20px;
+    left: 6px;
     width: 12px;
     height: 18px;
   }
