@@ -7,8 +7,9 @@ export interface Case {
 export type Cases = Array<Case>;
 
 export const cases: Cases = [
-  { displayName: '美团', source: 'meituan', default: true },
   { displayName: 'Ledge', source: 'ledge' },
+  { displayName: '腾讯云-云开发', source: 'cloudbase' },
+  { displayName: '美团', source: 'meituan', default: true },
   { displayName: '大型银行转型', source: 'tw-banks' },
   { displayName: 'DaoCloud', source: 'daocloud' },
   { displayName: '招商银行', source: 'cmb' },
