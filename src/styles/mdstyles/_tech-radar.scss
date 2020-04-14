@@ -1,27 +1,32 @@
 
 /* Colors */
+$color1: #868e96;
+$color2: #ec7b1a;
+$color3: #dc5332;
+$color4: #55acee;
+
 .color-1 {
-  color: #868e96;
-  fill: #868e96;
-  stroke: #868e96;
+  color: $color1;
+  fill: $color1;
+  stroke: $color1;
 }
 
 .color-2 {
-  color: #ec7b1a;
-  fill: #ec7b1a;
-  stroke: #ec7b1a;
+  color: $color2;
+  fill: $color2;
+  stroke: $color2;
 }
 
 .color-3 {
-  color: #fadceb;
-  fill: #fadceb;
-  stroke: #fadceb;
+  color: $color3;
+  fill: $color3;
+  stroke: $color3;
 }
 
 .color-4 {
-  color: #a5c5e8;
-  fill: #a5c5e8;
-  stroke: #a5c5e8;
+  color: $color4;
+  fill: $color4;
+  stroke: $color4;
 }
 
 .color-5 {
