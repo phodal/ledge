@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-const TECH_CHECKLIST = require('./checklists/technology.json');
+import * as TECH_CHECKLIST from './checklists/technology.json';
 
 @Component({
   selector: 'app-checklists',
