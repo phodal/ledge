@@ -13,9 +13,9 @@
         <div
           class="arrow"
           *ngIf="isShowIconBeforeCard(data, hIndex, column, index, last, lastH)">
-          <span *ngIf="index === arr.length - 1 ">
+          <span *ngIf="index === arr.length - 1" class="arrow-down-symbol">
             <span class="arrow-down"></span><span class="rect-down"></span></span>
-          <span *ngIf="index !== arr.length - 1 ">
+          <span *ngIf="index !== arr.length - 1">
             <span class="arrow-left"></span><span class="rect-right"></span>
           </span>
         </div>
@@ -27,10 +27,10 @@
             cells: data.cells[hIndex * column + index],
             index: hIndex * column + index
           }"></ledge-card>
-        <div class="arrow" *ngIf="(hIndex + 1) % 2 !== 0 && (hIndex * column + index)!==data.header.length-1">
-          <span *ngIf="index === arr.length - 1 ">
+        <div class="arrow" *ngIf="(hIndex + 1) % 2 !== 0 && (hIndex * column + index) !== data.header.length - 1">
+          <span *ngIf="index === arr.length - 1" class="arrow-down-symbol">
             <span class="rect-down"></span><span class="arrow-down"></span></span>
-          <span *ngIf="index !== arr.length - 1 ">
+          <span *ngIf="index !== arr.length - 1">
             <span class="rect-left"></span><span class="arrow-right"></span>
           </span>
         </div>
