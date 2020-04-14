@@ -26,6 +26,7 @@ const sitemapOptions = {
 function casePlugin(route, config) {
   return Promise.resolve([
     { route: '/case-study/meituan' },
+    { route: '/case-study/cloudbase' },
     { route: '/case-study/ledge' },
     { route: '/case-study/tw-banks' },
     { route: '/case-study/daocloud' },
@@ -49,8 +50,19 @@ function casePlugin(route, config) {
     { route: '/case-study/bilibili' },
   ]);
 }
+
+function solutionPlugin(route, config) {
+  return Promise.resolve([
+    { route: '/solution/coding' },
+    { route: '/solution/cloudbase' },
+    { route: '/solution/worktile' },
+    { route: '/solution/firim' },
+  ]);
+}
+
 const validator = async (conf) => [];
 registerPlugin('router', 'case', casePlugin, validator);
+registerPlugin('router', 'solution', solutionPlugin, validator);
 
 exports.config = {
   projectRoot: './src',
@@ -61,6 +73,9 @@ exports.config = {
   routes: {
     '/case-study/:case': {
       type: 'case',
+    },
+    '/solution/:solution': {
+      type: 'solution',
     },
   },
 };

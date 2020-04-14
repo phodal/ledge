@@ -4,7 +4,7 @@ import { SolutionComponent } from './solution.component';
 
 const routes: Routes = [
   {
-    path: ':case',
+    path: ':solution',
     component: SolutionComponent,
   },
   { path: '', pathMatch: 'full', redirectTo: 'coding' },
