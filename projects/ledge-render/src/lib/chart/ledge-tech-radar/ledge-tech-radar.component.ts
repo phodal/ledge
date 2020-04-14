@@ -216,7 +216,7 @@ export class LedgeTechRadarComponent implements OnInit, AfterViewInit, OnChanges
 
           radarCircle
             .append('a')
-            .attr('href', () => `#${techSectionData.name}`)
+            // .attr('href', () => `#${techSectionData.name}`)
             .append('text').text((rData: any) => rData.number)
             .attr('class', 'dot')
             .attr('fill', 'white')
