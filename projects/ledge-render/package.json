@@ -1,6 +1,6 @@
 {
   "name": "@ledge-framework/render",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Ledge Framework render, a powerful markdown render.",
   "license": "MPL-2.0",
   "repository": "https://github.com/phodal/ledge",
@@ -18,7 +18,7 @@
       "url": "https://github.com/phodal/"
     },
     {
-      "name": "Nickbing Lao",
+      "name": "giscafer",
       "url": "https://github.com/giscafer"
     }
   ],
