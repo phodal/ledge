@@ -1,10 +1,22 @@
+.component-checklist {
+  border: 1px solid #eee;
+  padding: 8px 8px 0 8px;
+  margin-top: 4px;
+  border-radius: 4px;
+}
+
 .title {
   font-size: 16px;
-  padding: 8px 0;
-  font-weight: bold;
+  padding: 0;
+  font-weight: 300;
 }
 
 .description {
   font-weight: lighter;
   font-size: 12px;
+}
+
+.checklist-item {
+  height: 24px;
+  line-height: 24px;
 }
