@@ -21,6 +21,7 @@ import { LedgeTechRadarComponent } from './chart/ledge-tech-radar/ledge-tech-rad
 import { LedgeKanbanComponent } from './components/ledge-kanban/ledge-kanban.component';
 import { ComponentTodoComponent } from './components/component-todo/component-todo.component';
 import { ComponentChecklistComponent } from './components/component-checklist/component-checklist.component';
+import { StorageService } from './services/storage.service';
 
 const LedgeComponents = [
   LedgeRenderComponent,
@@ -55,7 +56,11 @@ const LedgeComponents = [
     CustomMaterialModule,
     VirtualScrollerModule,
   ],
+  providers: [StorageService],
   exports: [
-    LedgeRenderComponent]
+    LedgeRenderComponent,
+    ComponentChecklistComponent
+  ]
 })
-export class LedgeRenderModule { }
+export class LedgeRenderModule {
+}

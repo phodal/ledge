@@ -28,7 +28,7 @@ export class ComponentChecklistComponent implements OnInit {
     this.storage.setItem('inception.component-checklist.' + this.name, this.checklists);
   }
 
-  completeChange($event: MatCheckboxChange, toDo: any) {
+  completeChange($event: MatCheckboxChange) {
 
   }
 }

@@ -1,0 +1,177 @@
+[
+  {
+    "title": "技术远景",
+    "priority": "High",
+    "description": "在技术上，我们有什么追求",
+    "tools": [
+      "Lean Canvas"
+    ],
+    "documentation": [
+    ],
+    "tags": [
+      "all",
+      "vision"
+    ]
+  },
+  {
+    "title": "文档",
+    "priority": "High",
+    "description": "文档即代码——好的文档应该是版本管理的。",
+    "subitems": [
+      {
+        "title": "Path to Production",
+        "description": "旨在通过可视化的方式来展示项目的上线流程，并优化过程中的瓶颈问题。"
+      },
+      {
+        "title": " 上线及发布日记",
+        "description": ""
+      },
+      {
+        "title": "项目相关的 wiki 和文档记录",
+        "description": ""
+      },
+      {
+        "title": "开发规范",
+        "description": ""
+      }
+    ],
+    "tags": [
+      "all",
+      "technology"
+    ]
+  },
+  {
+    "title": "架构",
+    "priority": "High",
+    "description": "系统相关的架构图，如 C4Model 方式描述\n 现有的技术栈及其关系",
+    "subitems": [
+      {
+        "title": "系统相关的架构图",
+        "description": "如 C4Model 方式描述"
+      },
+      {
+        "title": "现有的技术栈及其未来方案",
+        "description": ""
+      }
+    ],
+    "tags": [
+      "all",
+      "technology"
+    ]
+  },
+  {
+    "title": "代码库",
+    "priority": "High",
+    "description": "在代码库中拥有诸如搭建指南、架构决策记录、编码器配置等相应的事项。",
+    "subitems": [
+      {
+        "title": "搭建指南",
+        "description": "这份指南应该随项目的代码一起分发。"
+      },
+      {
+        "title": "架构决策记录",
+        "description": "放置在代码库的 ``docs/adr`` 目录中"
+      },
+      {
+        "title": "编辑器配置和代码风格规范",
+        "description": "使用诸如 editorconfig 这样的工具，来统一规范化代码，并采用 Lint 工具来分析代码 。"
+      },
+      {
+        "title": "模式和风格指南",
+        "description": "在项目中融入系统架构，如 Clean Architecture 和风格，并有明显的指引。"
+      },
+      {
+        "title": "分支管理模式",
+        "description": "GitFlow 或者 master，或者 Feature Branch。"
+      },
+      {
+        "title": "代码提交风格",
+        "description": "业务风格或者是开源软件风格？"
+      }
+    ],
+    "tags": [
+      "all",
+      "technology"
+    ]
+  },
+  {
+    "title": "测试",
+    "priority": "High",
+    "description": "如何针对项目进行有效的测试",
+    "subitems": [
+      {
+        "title": "测试策略",
+        "description": "测试层级, 测试金字塔"
+      },
+      {
+        "title": "自动化测试"
+      }
+    ],
+    "tags": [
+      "all",
+      "technology"
+    ]
+  },
+  {
+    "title": "项目演进",
+    "priority": "High",
+    "description": "未来的技术栈\n 系统的演进方案",
+    "subitems": [
+      {
+        "title": "技术风险点",
+        "description": "即需要提前 spike 调研的内容"
+      },
+      {
+        "title": "未来的技术栈"
+      },
+      {
+        "title": "系统的演进方案"
+      }
+    ],
+    "tags": [
+      "all",
+      "technology"
+    ]
+  },
+  {
+    "title": "安全",
+    "priority": "High",
+    "description": "安全无小事",
+    "subitems": [
+      {
+        "title": "安全标准",
+        "description": "安全更重要，还是体验更重要？"
+      },
+      {
+        "title": "代码中的数据加密"
+      },
+      {
+        "title": "代码安全"
+      }
+    ],
+    "tags": [
+      "all",
+      "technology"
+    ]
+  },
+  {
+    "title": "质量",
+    "priority": "High",
+    "description": "",
+    "subitems": [
+      {
+        "title": "项目质量跟踪"
+      },
+      {
+        "title": "代码质量可视化"
+      },
+      {
+        "title": "应用质量策略"
+      }
+    ],
+    "tags": [
+      "all",
+      "technology"
+    ]
+  }
+]

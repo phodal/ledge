@@ -27,6 +27,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'checklists',
+    loadChildren: () =>
+      import('./presentation/checklists/checklists.module').then(
+        (m) => m.ChecklistsModule
+      ),
+  },
+  {
     path: 'pattern',
     component: PatternComponent,
   },

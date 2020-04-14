@@ -1,5 +1,5 @@
 <div *ngFor="let checklist of checklists;let i = index">
-  <mat-checkbox [checked]="checklist.complete" (change)="completeChange($event, toDo)">
+  <mat-checkbox [checked]="checklist.complete" (change)="completeChange($event)">
     <span class="title">{{checklist?.title}}</span>
     <span *ngIf="checklist.description" class="description">&nbsp;&nbsp; {{checklist.description}}</span>
   </mat-checkbox>
