@@ -11,7 +11,7 @@
   </div>
 </div>
 
-<div *ngIf="!showToc" class="no-toc-markdown" #render>
+<div *ngIf="!showToc" class="no-toc-markdown" #render (scroll)="handleScroll($event)">
   <ledge-render [content]="data" *ngIf="data"></ledge-render>
 </div>
 

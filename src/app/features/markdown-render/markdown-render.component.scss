@@ -10,8 +10,8 @@
 }
 
 .no-toc-markdown {
-  width: 95%;
-  margin: 1em auto 0;
+  height: calc(100vh - 66px);
+  overflow-y: scroll;
 }
 
 .sticky {
