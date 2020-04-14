@@ -57,6 +57,9 @@ export class LedgeTableStepComponent implements OnInit, AfterViewInit {
     const firstRowEl = this.elementRef.nativeElement.querySelector(
       '.first-row'
     );
+    if (!firstRowEl) {
+      return;
+    }
     const arr = [];
     const totalWidth = Array.from(firstRowEl.children).reduce(
       (total: number, c, index) => {
