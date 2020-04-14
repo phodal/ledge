@@ -11,29 +11,29 @@
         <button mat-button routerLink="/pattern" routerLinkActive="active">{{ 'patterns' | translate}}</button>
         <button mat-button routerLink="/practise" routerLinkActive="active">{{ 'practises' | translate}}</button>
         <button mat-button routerLink="/manual" routerLinkActive="active">{{ 'manual' | translate}}</button>
-        <button mat-button routerLink="/solution" routerLinkActive="active">解决方案</button>
-        <button mat-button routerLink="/think-tank" routerLinkActive="active">智库</button>
+        <button mat-button routerLink="/solution" routerLinkActive="active">{{ 'solution' | translate}}</button>
+        <button mat-button routerLink="/think-tank" routerLinkActive="active">{{ 'think-tank' | translate}}</button>
 
         <mat-menu #appMenu="matMenu" backdropClass="nav-menu-wrapper">
-          <button mat-menu-item routerLink="/mobile" routerLinkActive="active">移动端</button>
-          <button mat-menu-item routerLink="/maturity" routerLinkActive="active">度量</button>
-          <button mat-menu-item routerLink="/report" routerLinkActive="active">年度报告</button>
-          <button mat-menu-item routerLink="/resources" routerLinkActive="active">DevOps 相关资源</button>
+          <button mat-menu-item routerLink="/mobile" routerLinkActive="active">{{ 'think-tank' | translate}}</button>
+          <button mat-menu-item routerLink="/maturity" routerLinkActive="active">{{ 'maturity' | translate}}</button>
+          <button mat-menu-item routerLink="/report" routerLinkActive="active">{{ 'maturity' | translate}}</button>
+          <button mat-menu-item routerLink="/resources" routerLinkActive="active">{{ 'resources' | translate}}</button>
         </mat-menu>
         <button mat-button [matMenuTriggerFor]="appMenu">
-          资源
+          {{ 'resource' | translate}}
           <mat-icon>arrow_drop_down</mat-icon>
         </button>
 
         <mat-menu #toolsetMenu="matMenu" backdropClass="nav-menu-wrapper">
-          <button mat-menu-item routerLink="/tool" routerLinkActive="active">工具集</button>
-          <button mat-menu-item routerLink="/design" routerLinkActive="active">设计 DevOps</button>
-          <button mat-menu-item routerLink="/helper" routerLinkActive="active">Ledge 编辑器</button>
-          <button mat-menu-item routerLink="/checklists" routerLinkActive="active">新项目检查清单</button>
+          <button mat-menu-item routerLink="/tool" routerLinkActive="active">{{ 'toolsets' | translate}}</button>
+          <button mat-menu-item routerLink="/design" routerLinkActive="active">{{ 'design-devops' | translate}}</button>
+          <button mat-menu-item routerLink="/helper" routerLinkActive="active">{{ 'ledge-editor' | translate}}</button>
+          <button mat-menu-item routerLink="/checklists" routerLinkActive="active">{{ 'checklists' | translate}}</button>
         </mat-menu>
 
         <button mat-button [matMenuTriggerFor]="toolsetMenu">
-          工具
+          {{ 'tool' | translate}}
           <mat-icon>arrow_drop_down</mat-icon>
         </button>
 
@@ -44,7 +44,7 @@
         </mat-menu>
 
         <button mat-button [matMenuTriggerFor]="langMenu">
-          Lang
+          Languages
           <mat-icon>arrow_drop_down</mat-icon>
         </button>
       </div>
