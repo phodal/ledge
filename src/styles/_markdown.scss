@@ -423,7 +423,7 @@ $list-color: #262626;
 
   dl dl, dl ol, dl ul, ol dl, ol ol, ol ul, ul dl, ul ol, ul ul {
     font-size: 90%;
-    margin: 1.0rem 0 1.5rem 3.0rem
+    margin: 1.0rem 0 1.5rem 1.0rem
   }
 
   ol {
@@ -431,7 +431,7 @@ $list-color: #262626;
   }
 
   ul {
-    list-style: circle inside
+    list-style: circle
   }
 
   li {
@@ -630,6 +630,7 @@ $list-color: #262626;
     .level_5 {
       line-height: 1.5;
       white-space: nowrap;
+
       &:hover {
         color: $purple;
         border-bottom: 2px solid $purple;
