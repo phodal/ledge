@@ -10,4 +10,5 @@ export const solutions: Solutions = [
   { displayName: 'Coding', source: 'coding' },
   { displayName: '云开发（腾讯云）', source: 'cloudbase' },
   { displayName: 'Worktile', source: 'worktile' },
+  { displayName: 'fir.im', source: 'firim' },
 ];
