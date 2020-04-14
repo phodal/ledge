@@ -1,4 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Input,
+  OnInit,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
 import { LedgeTable } from '../model/ledge-chart.model';
 
 @Component({
@@ -6,25 +14,30 @@ import { LedgeTable } from '../model/ledge-chart.model';
   templateUrl: './ledge-table-step.component.html',
   styleUrls: ['./ledge-table-step.component.scss'],
 })
-export class LedgeTableStepComponent implements OnInit {
+export class LedgeTableStepComponent implements OnInit, AfterViewInit {
   @Input() data: LedgeTable = {
     header: [],
     cells: [],
   };
   @Input() config = {
+    rowHeight: '',
+    column: 4,
     colors: [],
   };
 
+  @ViewChild('tableStep')
+  tableStepEl: ElementRef;
+
   column = 4;
+  rowHeight = '430px';
   rowNums = [];
   headers = [];
-  width = '1080px'; // TODO: 根据column 数量动态宽度
 
-  constructor() {
-  }
+  constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
 
   ngOnInit(): void {
-    // TODO: 动态分组，动态宽度每行列数，目前默认为4
+
+    this.column = this.config.column || this.column;
     const headerLen = this.data.header.length;
     const rowNum = Math.ceil(headerLen / this.column);
 
@@ -36,9 +49,43 @@ export class LedgeTableStepComponent implements OnInit {
       this.headers.push(arr);
       i++;
     }
+
+    this.rowHeight = this.config.rowHeight || this.rowHeight;
+  }
+
+  ngAfterViewInit(): void {
+    // 动态设置每行step 宽度，使得对齐和自动箭头换行
+    const firstRowEl = this.elementRef.nativeElement.querySelector(
+      '.first-row'
+    );
+
+    const rowWidth = Array.from(firstRowEl.children).reduce(
+      (totalWidth: number, c) => {
+        const width = (c as HTMLDivElement).getBoundingClientRect().width;
+        return totalWidth + width;
+      },
+      0
+    );
+
+    this.renderer.setStyle(
+      this.tableStepEl.nativeElement,
+      'width',
+      `${(rowWidth as number) - 68}px`
+    );
   }
 
   isShowIconBeforeCard(data, hIndex, column, index, last, lastH) {
-    return (hIndex + 1) % 2 === 0 && (hIndex * column + index) !== data.header.length - 1 || (!last && lastH) && this.headers.length > 1;
+    return (
+      ((hIndex + 1) % 2 === 0 &&
+        hIndex * column + index !== data.header.length - 1) ||
+      (!last && lastH && this.headers.length > 1 && (hIndex + 1) % 2 === 0)
+    );
+  }
+
+  isShowIconAfterCard(data, hIndex, column, index) {
+    return (
+      (hIndex + 1) % 2 !== 0 &&
+      hIndex * column + index !== data.header.length - 1
+    );
   }
 }

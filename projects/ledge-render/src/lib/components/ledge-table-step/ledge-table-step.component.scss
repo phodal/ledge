@@ -31,8 +31,8 @@ $gray: #999aaa;
 .step-row {
   display: flex;
   align-items: flex-start;
-  height: 430px; // TODO: 高度需要动态
-  margin-bottom: 10px;
+  height: 430px;
+  margin-bottom: 15px;
 
   .column {
     display: flex;
@@ -51,6 +51,10 @@ $gray: #999aaa;
   &-wrap {
     flex-wrap: wrap;
     justify-content: center;
+
+    .arrow {
+      padding-left: 14px;
+    }
   }
 }
 
@@ -93,7 +97,7 @@ $gray: #999aaa;
   &-down {
     @include rect;
     top: 18px;
-    left: 6px;
+    left: 20px;
     width: 12px;
     height: 18px;
   }
