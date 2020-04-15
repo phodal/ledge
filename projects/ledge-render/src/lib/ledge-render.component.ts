@@ -314,6 +314,14 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
           config: kanbanData.config,
         });
         break;
+      case 'checklist':
+        const checklistData = LedgeMarkdownConverter.toJson(codeBlock.text);
+        this.markdownData.push({
+          type: 'checklist',
+          data: checklistData.lists[0].children,
+          config: checklistData.config,
+        });
+        break;
       default:
         this.markdownData.push(token);
         break;

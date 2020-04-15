@@ -22,6 +22,7 @@ import { LedgeKanbanComponent } from './components/ledge-kanban/ledge-kanban.com
 import { ComponentTodoComponent } from './components/component-todo/component-todo.component';
 import { ComponentChecklistComponent } from './components/component-checklist/component-checklist.component';
 import { LedgeStorageService } from './services/ledge-storage.service';
+import { LedgeChecklistComponent } from './components/ledge-checklist/ledge-checklist.component';
 
 const LedgeComponents = [
   LedgeRenderComponent,
@@ -40,6 +41,7 @@ const LedgeComponents = [
   LedgeDevProcessComponent,
   LedgeTechRadarComponent,
   LedgeKanbanComponent,
+  LedgeChecklistComponent,
 
   ComponentTodoComponent,
   ComponentChecklistComponent

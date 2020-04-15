@@ -62,6 +62,10 @@
       <ledge-kanban [data]="item.data" [config]="item.config"></ledge-kanban>
     </div>
 
+    <div *ngSwitchCase="'checklist'">
+      <ledge-checklist [data]="item.data" [config]="item.config"></ledge-checklist>
+    </div>
+
     <div *ngSwitchCase="'table'">
       <table>
         <thead>

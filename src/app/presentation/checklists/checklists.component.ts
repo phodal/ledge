@@ -7,6 +7,8 @@ import PEOPLE_CHECKLIST from './checklists/people.json';
 import DOMAIN_CHECKLIST from './checklists/domain.json';
 import { StorageMap } from '@ngx-pwa/local-storage';
 
+import * as agileMD from 'raw-loader!../../../assets/docs/checklists/agile.md';
+
 @Component({
   selector: 'app-checklists',
   templateUrl: './checklists.component.html',
@@ -17,6 +19,8 @@ export class ChecklistsComponent implements OnInit {
   processChecklist: any = PROCESS_CHECKLIST;
   peopleChecklist: any = PEOPLE_CHECKLIST;
   domainChecklist: any = DOMAIN_CHECKLIST;
+
+  agileContent = agileMD.default;
 
   selectedTabIndex = 0;
 
