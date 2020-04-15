@@ -17,5 +17,10 @@
   "ledge-editor": "Ledge Editor",
   "checklists": "Checklists",
   "ledge-introduction": "Ledge (come from know-ledge, meaning carrier) knowledge platform is a knowledge system based on a series of DevOps practices, agile practices, and lean practices that we conduct.",
-  "it-can": "Ledge Can"
+  "it-can": "Ledge Can",
+  "homepage": {
+    "digital-forward": "move forward business better in the digital transformation",
+    "devops-period-tooltip": "DevOps Periodic Table - pick up your DevOps tool",
+    "help-you-design-devops": "help your design DevOps process"
+  }
 }
