@@ -11,12 +11,12 @@ import { LedgeStorageService } from '../../services/ledge-storage.service';
   templateUrl: './component-todo.component.html',
   styleUrls: ['./component-todo.component.scss'],
   providers: [
-  {
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => ComponentTodoComponent),
-    multi: true
-  }
-]
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => ComponentTodoComponent),
+      multi: true
+    }
+  ]
 })
 export class ComponentTodoComponent implements OnInit, OnDestroy, ControlValueAccessor {
   @Input() form: FormGroup;
@@ -28,8 +28,11 @@ export class ComponentTodoComponent implements OnInit, OnDestroy, ControlValueAc
   private unsubscribe = new Subject<void>();
   private disabled = false;
 
-  onChange(change: any) {}
-  onTouched() {}
+  onChange(change: any) {
+  }
+
+  onTouched() {
+  }
 
   constructor(private formBuilder: FormBuilder, private storage: LedgeStorageService) {
   }
@@ -85,6 +88,8 @@ export class ComponentTodoComponent implements OnInit, OnDestroy, ControlValueAc
   }
 
   writeValue(value: any): void {
-    this.toDos = value;
+    if (value !== null && value !== undefined) {
+      this.toDos = value;
+    }
   }
 }

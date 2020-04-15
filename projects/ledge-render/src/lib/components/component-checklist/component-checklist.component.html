@@ -4,6 +4,6 @@
       <span class="title">{{checklist?.title}}</span>
       <span *ngIf="checklist.description" class="description">  {{checklist.description}}</span>
     </mat-checkbox>
-    <component-todo name="todo" ngDefaultControl [disableInput]="true" [(ngModel)]="checklist.subitems" (ngModelChange)="changeTodo($event, i)"></component-todo>
+    <component-todo name="todo" [disableInput]="true" [toDos]="checklist.subitems"></component-todo>
   </div>
 </div>
