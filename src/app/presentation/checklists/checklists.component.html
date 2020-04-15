@@ -1,5 +1,5 @@
 <div class="checklists">
-  <mat-tab-group>
+  <mat-tab-group [(selectedIndex)]="selectedTabIndex" (selectedTabChange)="onTabChanged($event);">
     <mat-tab label="新项目检查清单">
       <div class="checklist-block" id="checklist-tech">
         <h2>技术</h2>
