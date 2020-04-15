@@ -10,17 +10,14 @@ import { StorageMap } from '@ngx-pwa/local-storage';
 })
 export class AppComponent implements OnInit {
   title = 'ledge';
-  tran: TranslateService;
 
   constructor(
     private route: Router,
-    translate: TranslateService,
+    public translate: TranslateService,
     private storage: StorageMap
   ) {
     translate.setDefaultLang('zh-cn');
     translate.use('zh-cn');
-
-    this.tran = translate;
   }
 
   // component-todo: refactor
@@ -34,14 +31,14 @@ export class AppComponent implements OnInit {
   }
 
   setLanguage(lang: string) {
-    this.tran.use(lang);
-    this.storage.set('language', lang);
+    this.translate.use(lang);
+    this.storage.set('language', lang).subscribe();
   }
 
   ngOnInit(): void {
     this.storage.get('language').subscribe((value: string) => {
       if (!!value) {
-        this.tran.use(value);
+        this.translate.use(value);
       }
     });
   }
