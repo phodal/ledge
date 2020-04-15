@@ -24,7 +24,6 @@ export class ChecklistsComponent implements OnInit {
 
   ngOnInit(): void {
     this.storage.get('checklists.last.index').subscribe((value: string) => {
-      console.log(value);
       if (!!value) {
         this.selectedTabIndex = parseInt(value, 10);
       }
