@@ -6,6 +6,8 @@ import { AtomDetailsComponent } from './atom-details/atom-details.component';
 import { AtomDialogComponent } from './atom-dialog/atom-dialog.component';
 import { AtomCategoryComponent } from './atom-category/atom-category.component';
 import { CustomMaterialModule } from '../../shared/custom-material.module';
+import { HttpClientModule } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,13 @@ import { CustomMaterialModule } from '../../shared/custom-material.module';
     AtomDialogComponent,
     AtomCategoryComponent,
   ],
-  imports: [CommonModule, CustomMaterialModule],
+  imports: [
+    CommonModule,
+    CustomMaterialModule,
+    HttpClientModule,
+    TranslateModule.forChild({
+      isolate: false,
+    }),
+  ],
 })
 export class PeriodicTableModule {}

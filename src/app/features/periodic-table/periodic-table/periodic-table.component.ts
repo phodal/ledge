@@ -12,6 +12,7 @@ import {
 import { combineLatest, Observable, Subject } from 'rxjs';
 import { debounceTime, map, startWith, takeUntil, tap } from 'rxjs/operators';
 import { Atom, HighlightState } from '../shared';
+import { TranslateService } from '@ngx-translate/core';
 
 const MAX_ROW_INDEX = 7;
 const MAX_COL_INDEX = 18;
@@ -74,7 +75,8 @@ export class PeriodicTableComponent implements OnInit, OnChanges {
   currentColHeader: number;
   selectCategory: string;
 
-  categories = [
+  categories = [];
+  zhCategories = [
     { type: 'scm', displayName: '源码管理' },
     { type: 'packageManage', displayName: '制品管理' },
     { type: 'database', displayName: '数据库自动化' },
@@ -95,12 +97,38 @@ export class PeriodicTableComponent implements OnInit, OnChanges {
     { type: 'platform', displayName: '平台' },
   ];
 
-  constructor(private http: HttpClient) {
+  enCategories = [
+    { type: 'scm', displayName: 'SCM' },
+    { type: 'packageManage', displayName: 'Package Mgr.' },
+    { type: 'database', displayName: 'Database Mgr.' },
+    { type: 'testing', displayName: 'Testing' },
+    { type: 'config', displayName: 'Config Mgr.' },
+    { type: 'ci', displayName: 'CI' },
+    { type: 'deployment', displayName: 'Deployment' },
+    { type: 'security', displayName: 'Security' },
+    { type: 'containers', displayName: 'Containers' },
+    { type: 'releaseOrchestration', displayName: 'Release Orc.' },
+    { type: 'openCloud', displayName: 'OS Cloud' },
+    { type: 'publicCloud', displayName: 'Public Cloud' },
+    { type: 'monitoring', displayName: 'Monitoring' },
+    { type: 'analytics', displayName: 'Analysis' },
+    { type: 'aiops', displayName: 'AIOps' },
+    { type: 'collaboration', displayName: 'Collaboration' },
+    { type: 'operation', displayName: 'Ops' },
+    { type: 'platform', displayName: 'Platform' },
+  ];
+
+  constructor(private http: HttpClient, public translate: TranslateService) {
     this.currentAtom = null;
     this.currentRowHeader = null;
     this.currentColHeader = null;
     this.atoms = null;
     this.selectCategory = '';
+    if (this.translate.currentLang === 'en') {
+      this.categories = this.enCategories;
+    } else {
+      this.categories = this.zhCategories;
+    }
   }
 
   ngOnInit() {
