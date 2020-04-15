@@ -5,7 +5,6 @@ import { AtomComponent } from './atom/atom.component';
 import { AtomDetailsComponent } from './atom-details/atom-details.component';
 import { AtomDialogComponent } from './atom-dialog/atom-dialog.component';
 import { AppPhaseComponent } from './app-phase/app-phase.component';
-import { AppWikiComponent } from './app-wiki/app-wiki.component';
 import { CustomMaterialModule } from '../../shared/custom-material.module';
 
 @NgModule({
@@ -15,7 +14,6 @@ import { CustomMaterialModule } from '../../shared/custom-material.module';
     AtomDetailsComponent,
     AtomDialogComponent,
     AppPhaseComponent,
-    AppWikiComponent,
   ],
   exports: [
     PeriodicTableComponent,
@@ -23,7 +21,6 @@ import { CustomMaterialModule } from '../../shared/custom-material.module';
     AtomDetailsComponent,
     AtomDialogComponent,
     AppPhaseComponent,
-    AppWikiComponent,
   ],
   imports: [CommonModule, CustomMaterialModule],
 })
