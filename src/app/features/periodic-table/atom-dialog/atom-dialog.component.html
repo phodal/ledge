@@ -1,11 +1,20 @@
 <h2 mat-dialog-title>{{data.name}}</h2>
 <mat-dialog-content class="mat-typography">
   <p *ngIf="data.homepage">首页：<a href="{{data.homepage}}" target="_blank">{{data.homepage}}</a></p>
+  <p>简介：</p>
   {{data.description}}
+  <div *ngIf="!data.description" class="no-description">
+    暂无！<br>
+    欢迎帮助其他/她小伙伴完善此条目：<a href="https://github.com/phodal/ledge/blob/master/src/assets/periodic-table.json" target="_blank">GitHub</a>
+  </div>
+  <p>相关资源：</p>
   <div *ngIf="data.resources" class="resources">
-    <p>相关资源：</p>
     <div *ngFor="let resource of data.resources">
       <a href="{{resource.link}}" target="_blank">{{resource.name}}</a> &nbsp;&nbsp; {{resource.description}}
     </div>
+  </div>
+  <div *ngIf="!data.resources" class="no-resources">
+    暂无！<br>
+    欢迎帮助其他/她小伙伴完善此条目：<a href="https://github.com/phodal/ledge/blob/master/src/assets/periodic-table.json" target="_blank">GitHub</a>
   </div>
 </mat-dialog-content>

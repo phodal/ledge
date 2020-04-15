@@ -1,3 +1,18 @@
+@import '../../../../styles/color';
+
 .resources {
   margin-top: 2em;
+}
+
+p {
+  margin-top: 1em;
+}
+
+.no-description,
+.no-resources {
+  color: $mid-gray;
+
+  a {
+    color: $black;
+  }
 }
