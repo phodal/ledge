@@ -22,6 +22,8 @@
   "homepage": {
     "digital-forward": "帮助您的企业在数字化时代更好地前进",
     "devops-period-tooltip": "DevOps 元素周期表 —— 选择您的 DevOps 工具",
-    "help-you-design-devops": "帮助您设计数字化时代的 DevOps 流程"
+    "help-you-design-devops": "帮助您设计数字化时代的 DevOps 流程",
+    "devops-features": "DevOps 运动的主要特点是强烈倡导对构建软件的所有环节 (从集成、测试、发布到部署和基础架构管理) 进行全面的自动化和监控。",
+    "design-by-different": "从而根据不同的企业情况，会出现不同的 DevOps 流水线"
   }
 }
