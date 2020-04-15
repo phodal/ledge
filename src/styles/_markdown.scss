@@ -605,6 +605,14 @@ $list-color: #262626;
   }
 }
 
+.markdown {
+  .ledge-checklist {
+    label {
+      font-size: 1em !important;
+    }
+  }
+}
+
 .markdown-toc {
   display: flex;
   flex-direction: row;

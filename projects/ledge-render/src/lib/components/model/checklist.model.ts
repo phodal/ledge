@@ -1,12 +1,12 @@
 export interface ChecklistModel {
   title: string;
-  priority: string;
+  priority?: string;
   description: string;
-  tools: string[];
+  tools?: string[];
   complete?: string;
-  documentation: string[];
-  tags: [];
-  subitems: CheckItem[];
+  documentation?: string[];
+  tags?: [];
+  subitems?: CheckItem[];
 }
 
 export interface CheckItem {
