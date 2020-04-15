@@ -34,6 +34,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'partners',
+    loadChildren: () =>
+      import('./presentation/partners/partners.module').then(
+        (m) => m.PartnersModule
+      ),
+  },
+  {
     path: 'pattern',
     component: PatternComponent,
   },
