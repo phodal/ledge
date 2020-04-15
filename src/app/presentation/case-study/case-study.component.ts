@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MatDrawerContent } from '@angular/material/sidenav';
 import { Case, cases } from './cases';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-case-study',
@@ -21,7 +22,8 @@ export class CaseStudyComponent implements OnInit {
   constructor(
     private title: Title,
     private activatedRoute: ActivatedRoute,
-    private http: HttpClient
+    private http: HttpClient,
+    private translate: TranslateService
   ) {}
 
   ngOnInit(): void {
