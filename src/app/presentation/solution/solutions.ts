@@ -11,4 +11,5 @@ export const solutions: Solutions = [
   { displayName: '云开发（腾讯云）', source: 'cloudbase' },
   { displayName: 'Worktile', source: 'worktile' },
   { displayName: 'fir.im', source: 'firim' },
+  { displayName: '禅道', source: 'zentao' },
 ];
