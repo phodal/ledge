@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MatDrawerContent } from '@angular/material/sidenav';
 import { Solution, solutions } from './solutions';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-solution',
@@ -21,7 +22,8 @@ export class SolutionComponent implements OnInit {
   constructor(
     private title: Title,
     private activatedRoute: ActivatedRoute,
-    private http: HttpClient
+    private http: HttpClient,
+    translate: TranslateService
   ) {}
 
   ngOnInit(): void {

@@ -3,6 +3,11 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SolutionComponent } from './solution.component';
 import { SharedModule } from '../../shared/shared.module';
 import { RouterTestingModule } from '@angular/router/testing';
+import {
+  TranslateFakeLoader,
+  TranslateLoader,
+  TranslateModule,
+} from '@ngx-translate/core';
 
 describe('SolutionComponent', () => {
   let component: SolutionComponent;
@@ -10,7 +15,16 @@ describe('SolutionComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [SharedModule, RouterTestingModule],
+      imports: [
+        SharedModule,
+        RouterTestingModule,
+        TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useClass: TranslateFakeLoader,
+          },
+        }),
+      ],
       declarations: [SolutionComponent],
     }).compileComponents();
   }));

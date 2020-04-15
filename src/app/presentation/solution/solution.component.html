@@ -1,17 +1,18 @@
 <mat-drawer-container class="solution">
   <mat-drawer mode="side" opened class="left-drawer">
-    <h2>解决方案 <mat-icon class="help-icon"
-                       [matTooltipPosition]="'right'"
-                       matTooltip="为了 Ledge 平台的发展，当前仅免费提供给将 Ledge 列为合作伙伴的 DevOps 厂商。">help</mat-icon></h2>
+    <h2>{{ 'solution' | translate}}
+      <mat-icon class="help-icon"
+                [matTooltipPosition]="'right'"
+                matTooltip="为了 Ledge 平台的发展，当前仅免费提供给将 Ledge 列为合作伙伴的 DevOps 厂商。">help
+      </mat-icon>
+    </h2>
     <ul>
-      <ul>
-        <li *ngFor="let solution of solutions"
-            (click)="getCase(solution.source)"
-            [routerLink]="['/solution', solution.source]"
-            [ngClass]="solution.source === currentSource ? 'active' : '' ">
-          <span>{{solution.displayName}}</span>
-        </li>
-      </ul>
+      <li *ngFor="let solution of solutions"
+          (click)="getCase(solution.source)"
+          [routerLink]="['/solution', solution.source]"
+          [ngClass]="solution.source === currentSource ? 'active' : '' ">
+        <span>{{solution.displayName}}</span>
+      </li>
     </ul>
   </mat-drawer>
   <mat-drawer-content #drawerContent>
