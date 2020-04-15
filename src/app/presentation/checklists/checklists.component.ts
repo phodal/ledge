@@ -8,6 +8,7 @@ import DOMAIN_CHECKLIST from './checklists/domain.json';
 import { StorageMap } from '@ngx-pwa/local-storage';
 
 import * as agileMD from 'raw-loader!../../../assets/docs/checklists/agile.md';
+import * as azureDevOps from 'raw-loader!../../../assets/docs/checklists/devops.md';
 
 @Component({
   selector: 'app-checklists',
@@ -21,6 +22,7 @@ export class ChecklistsComponent implements OnInit {
   domainChecklist: any = DOMAIN_CHECKLIST;
 
   agileContent = agileMD.default;
+  devopsContent = azureDevOps.default;
 
   selectedTabIndex = 0;
 
