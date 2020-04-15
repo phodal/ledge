@@ -14,6 +14,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatTabsModule } from '@angular/material/tabs';
 
 const modules = [
   MatToolbarModule,
@@ -27,6 +28,7 @@ const modules = [
   MatCardModule,
   MatInputModule,
   MatTooltipModule,
+  MatTabsModule,
 
   ScrollingModule,
 ];
