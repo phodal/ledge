@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 
 import * as mdData from 'raw-loader!../../../assets/docs/home.md';
 import { HighlightState } from '../../features/periodic-table/shared';
+import { TranslateService } from '@ngx-translate/core';
 
 interface Contributor {
   name: string;
@@ -130,10 +131,14 @@ config: {"colors": [{"bg":"#e55852","font":"#b71a09"},{"bg":"#e98832","font":"#c
   ];
   homemd = mdData.default;
   allContributors$: Observable<any>;
-  allContributors: any[];
   inViewport = false;
 
-  constructor(title: Title, private router: Router, private http: HttpClient) {
+  constructor(
+    title: Title,
+    private router: Router,
+    private http: HttpClient,
+    public translate: TranslateService
+  ) {
     title.setTitle('Ledge DevOps 知识平台 - DevOps 工具元素周期表');
   }
 
