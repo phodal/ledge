@@ -4,7 +4,7 @@ import { PeriodicTableComponent } from './periodic-table/periodic-table.componen
 import { AtomComponent } from './atom/atom.component';
 import { AtomDetailsComponent } from './atom-details/atom-details.component';
 import { AtomDialogComponent } from './atom-dialog/atom-dialog.component';
-import { AppPhaseComponent } from './app-phase/app-phase.component';
+import { AtomCategoryComponent } from './atom-category/atom-category.component';
 import { CustomMaterialModule } from '../../shared/custom-material.module';
 
 @NgModule({
@@ -13,14 +13,14 @@ import { CustomMaterialModule } from '../../shared/custom-material.module';
     AtomComponent,
     AtomDetailsComponent,
     AtomDialogComponent,
-    AppPhaseComponent,
+    AtomCategoryComponent,
   ],
   exports: [
     PeriodicTableComponent,
     AtomComponent,
     AtomDetailsComponent,
     AtomDialogComponent,
-    AppPhaseComponent,
+    AtomCategoryComponent,
   ],
   imports: [CommonModule, CustomMaterialModule],
 })

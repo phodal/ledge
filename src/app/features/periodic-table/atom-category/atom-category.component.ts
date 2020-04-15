@@ -17,10 +17,10 @@ import {
     <div class="{{ type }} item-block"></div>
     <span class="symbol">{{ symbol }}</span>
   </div> `,
-  styleUrls: ['./app-phase.component.scss'],
+  styleUrls: ['./atom-category.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppPhaseComponent implements OnInit {
+export class AtomCategoryComponent implements OnInit {
   @Output()
   enter = new EventEmitter<string>();
 
