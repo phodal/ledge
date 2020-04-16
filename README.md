@@ -111,6 +111,8 @@ todo: fix Angular elements bug
   - process-table。带流程的图表
   - process-step。带流程的图表 2
   - process-card。卡片式流程
+  - dev-process。工具 Logo 可视化
+- checklist。检查清单
 - <del>mermaid。使用 mermaid 可视化</del>
 - <del>webcomponents。调用 WebComponents 组件</del>
 - 工具
@@ -155,6 +157,8 @@ config: {"type": "slider"}
   - [ ] Fluent DevOps
   - [ ] [Health Radar](https://www.scaledagileframework.com/blog/assess-your-devops-health-with-the-safe-devops-radar/)
 - [ ] BizDevOps
+- [ ] I18N
+  - [ ] EN
 
 ### 3.0 Ledge
 
