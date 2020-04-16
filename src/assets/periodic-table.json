@@ -578,6 +578,7 @@
   {
     "name": "Spinnaker",
     "category": "releaseOrchestration",
+    "description": "Spinnaker是一个免费的开源持续交付软件平台，最初由Netflix开发，并很快被Google接受和扩展。它旨在与Kubernetes，Google Cloud Platform，AWS，Microsoft Azure和Oracle Cloud配合使用，并支持社区定期添加的更多平台。",
     "number": 6,
     "pay": "Os",
     "symbol": "Sp"
