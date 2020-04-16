@@ -134,21 +134,31 @@ config: {"type": "slider"}
 
 ## Todo
 
-- [ ] 更多的度量内容
-  - [ ] 监控等
-- [ ] 更多的 DevOps 报告
-- [x] 重构 markdown render
+### 1.0 It works
+
+- [x] 更多的度量内容
+  - [x] 监控等
+- [x] 更多的 DevOps 报告
 - [ ] 单元测试
-  - [ ] 考虑一下 E2E 测试方案
-  - [ ] 补充 markdown render 旧的单元测试
-- [ ] 完善 toolset
+  - [x] 考虑一下 E2E 测试方案
+- [x] 完善 toolset
   - [x] slider
   - [x] line-chart
-- [ ] 提取 markdown 文档化系统
+- [x] 重构 markdown render
+- [x] I18N support
 
-  2.0 Toolset
+### 2.0 Toolset
 
+- [ ] Ledge Framework
 - [ ] workflow design: https://github.com/elsa-workflows/elsa-designer
+- [ ] Interactive DevOps Design
+  - [ ] Fluent DevOps
+  - [ ] [Health Radar](https://www.scaledagileframework.com/blog/assess-your-devops-health-with-the-safe-devops-radar/)
+- [ ] BizDevOps
+
+### 3.0 Ledge
+
+- [ ] Ledge as Code
 
 ## Inspired by
 
