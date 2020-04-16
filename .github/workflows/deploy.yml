@@ -48,7 +48,7 @@ jobs:
 
       - name: Build Scully
         run: |
-          npm run scully -- --host='0.0.0.0' --scanRoutes
+          npx scully -- --host='0.0.0.0' --scanRoutes
         continue-on-error: true
 
 #      - name: Deploy 🚀
