@@ -3,24 +3,28 @@ import {
   Component,
   EventEmitter,
   Input,
+  OnChanges,
   OnInit,
   Output,
+  SimpleChanges,
 } from '@angular/core';
 
 @Component({
   selector: 'app-atom-category',
-  template: `<div
-    (mouseenter)="enter.emit(type)"
-    (mouseleave)="enter.emit('')"
-    [class.selected]="selected"
-  >
-    <div class="{{ type }} item-block"></div>
-    <span class="symbol">{{ symbol }}</span>
-  </div> `,
+  template: `
+    <div
+      (mouseenter)="enter.emit(type)"
+      (mouseleave)="enter.emit('')"
+      [class.selected]="selected"
+    >
+      <div class="{{ type }} item-block"></div>
+      <span class="symbol">{{ name }}</span>
+    </div>
+  `,
   styleUrls: ['./atom-category.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AtomCategoryComponent implements OnInit {
+export class AtomCategoryComponent implements OnInit, OnChanges {
   @Output()
   enter = new EventEmitter<string>();
 
@@ -28,7 +32,7 @@ export class AtomCategoryComponent implements OnInit {
   selected: boolean;
 
   @Input()
-  symbol: string;
+  name: string;
 
   @Input()
   type: string;
@@ -36,4 +40,10 @@ export class AtomCategoryComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.name) {
+      this.name = changes.name.currentValue;
+    }
+  }
 }
