@@ -7,16 +7,17 @@ export interface Case {
 export type Cases = Array<Case>;
 
 export const cases: Cases = [
-  { displayName: 'Ledge', source: 'ledge' },
+  { displayName: 'Ledge', source: 'ledge', default: true },
   { displayName: '腾讯云-云开发', source: 'cloudbase' },
-  { displayName: '美团', source: 'meituan', default: true },
+  { displayName: '携程', source: 'xuecheng' },
+  { displayName: '小米', source: 'xiaomi' },
+  { displayName: '美团', source: 'meituan' },
   { displayName: '大型银行转型', source: 'tw-banks' },
   { displayName: 'DaoCloud', source: 'daocloud' },
   { displayName: '招商银行', source: 'cmb' },
   { displayName: 'HP', source: 'hp' },
   { displayName: 'Etsy', source: 'etsy' },
   { displayName: '中国银行', source: 'china-bank' },
-  { displayName: '携程', source: 'xuecheng' },
   { displayName: '农业银行', source: 'nonghang' },
   { displayName: '华为', source: 'huawei' },
   { displayName: '百度', source: 'baidu' },
@@ -26,7 +27,6 @@ export const cases: Cases = [
   { displayName: 'Atlassian', source: 'atlassian' },
   { displayName: '政采云', source: 'zhengcaiyun' },
   { displayName: '大搜车', source: 'dasouche' },
-  { displayName: '小米', source: 'xiaomi' },
   { displayName: '微博', source: 'weibo' },
   { displayName: '优酷', source: 'youku' },
   { displayName: 'Bilibili', source: 'bilibili' },
