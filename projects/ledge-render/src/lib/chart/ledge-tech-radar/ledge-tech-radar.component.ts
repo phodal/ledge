@@ -47,6 +47,7 @@ export class LedgeTechRadarComponent implements OnInit, AfterViewInit, OnChanges
         items
       });
     }
+    console.log(this.trData);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -240,7 +241,7 @@ export class LedgeTechRadarComponent implements OnInit, AfterViewInit, OnChanges
 
       // append the list
       legendSection.append('ol')
-        .attr('start', (d: any) => d.items[0].number)
+        .attr('start', (d: any) => d.items[0] ? d.items[0].number : 0)
         .selectAll('li')
         .data((d: any) => d.items)
         .enter()
