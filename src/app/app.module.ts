@@ -51,6 +51,7 @@ export function createTranslateLoader(http: HttpClient) {
     LedgeRenderModule,
     ScullyLibModule,
     TranslateModule.forRoot({
+      defaultLanguage: 'zh-cn',
       loader: {
         provide: TranslateLoader,
         useFactory: createTranslateLoader,
