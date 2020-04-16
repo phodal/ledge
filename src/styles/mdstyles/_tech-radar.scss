@@ -4,6 +4,7 @@ $color1: #868e96;
 $color2: #ec7b1a;
 $color3: #dc5332;
 $color4: #55acee;
+$black: #000;
 
 .color-1 {
   color: $color1;
@@ -88,6 +89,10 @@ $color4: #55acee;
     grid-column: 2;
     justify-self: center;
     align-self: center;
+  }
+
+  .legend li.active a {
+    color: $black;
   }
 
   #radar > .legend-0 {

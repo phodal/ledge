@@ -207,7 +207,15 @@ export class LedgeTechRadarComponent implements OnInit, AfterViewInit, OnChanges
               return `translate(${x}, ${y})`;
             })
             .attr('class', 'tech-circle')
-            .on('click', handleClick);
+            .on('click', handleClick)
+            .on('mouseover', (event: any) => {
+              d3.selectAll(`.legend li`)
+                .classed('active', false)
+                .filter((d: any) => {
+                  return d.number === event.number;
+                })
+                .classed('active', true);
+            });
 
           radarCircle.append('circle')
             .attr('class', 'radarCircle, color-' + (c + 1))
@@ -223,7 +231,6 @@ export class LedgeTechRadarComponent implements OnInit, AfterViewInit, OnChanges
             .attr('fill', 'white')
             .attr('text-anchor', 'middle')
             .attr('dominant-baseline', 'central');
-
         });
 
       // draw the legend
