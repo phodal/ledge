@@ -12,7 +12,7 @@ import {
 } from '@angular/core';
 import { combineLatest, Observable, Subject } from 'rxjs';
 import { debounceTime, map, startWith, takeUntil, tap } from 'rxjs/operators';
-import { Atom, HighlightState } from '../shared';
+import { Atom, HighlightState } from '../support';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { ChangeDetection } from '@angular/cli/lib/config/schema';
 

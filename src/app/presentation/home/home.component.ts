@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import * as mdData from 'raw-loader!../../../assets/docs/home.md';
-import { HighlightState } from '../../features/periodic-table/shared';
+import { HighlightState } from '../../features/periodic-table/support';
 import { TranslateService } from '@ngx-translate/core';
 
 interface Contributor {

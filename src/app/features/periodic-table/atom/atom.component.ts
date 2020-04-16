@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 import { Subject } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
-import { HighlightState } from '../shared';
+import { HighlightState } from '../support';
 import { MatDialog } from '@angular/material/dialog';
 import { AtomDialogComponent } from '../atom-dialog/atom-dialog.component';
 
