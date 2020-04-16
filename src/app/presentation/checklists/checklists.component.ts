@@ -9,6 +9,7 @@ import { StorageMap } from '@ngx-pwa/local-storage';
 
 import * as agileMD from 'raw-loader!../../../assets/docs/checklists/agile.md';
 import * as azureDevOps from 'raw-loader!../../../assets/docs/checklists/devops.md';
+import * as gruntworkDevOps from 'raw-loader!../../../assets/docs/checklists/devops-gruntwork.md';
 
 @Component({
   selector: 'app-checklists',
@@ -23,6 +24,7 @@ export class ChecklistsComponent implements OnInit {
 
   agileContent = agileMD.default;
   devopsContent = azureDevOps.default;
+  gdevopsContent = gruntworkDevOps.default;
 
   selectedTabIndex = 0;
 
