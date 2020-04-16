@@ -137,22 +137,22 @@
                     <rect id="Rectangle" fill="#D8D8D8" x="11.9411765" y="30.8571429" width="37.5294118" height="5.14285714"></rect>
                 </g>
             </g>
-            <text id="Maturity（成熟度）" font-family="PingFangSC-Semibold, PingFang SC" font-size="24" font-weight="500" fill="#000000">
+            <text id="Maturity（成熟度）" font-family="PingFang SC" font-size="24" font-weight="200" fill="#000000">
                 <tspan x="0" y="66">Maturity（成熟度）</tspan>
             </text>
-            <text id="Insights（洞见）" font-family="PingFangSC-Semibold, PingFang SC" font-size="24" font-weight="500" fill="#000000">
+            <text id="Insights（洞见）" font-family="PingFang SC" font-size="24" font-weight="200" fill="#000000">
                 <tspan x="0" y="204">Insights（洞见）</tspan>
             </text>
-            <text id="Measure（度量）" font-family="PingFangSC-Semibold, PingFang SC" font-size="24" font-weight="500" fill="#000000">
+            <text id="Measure（度量）" font-family="PingFang SC" font-size="24" font-weight="200" fill="#000000">
                 <tspan x="0" y="351">Measure（度量）</tspan>
             </text>
-            <text id="Capable（能力）" font-family="PingFangSC-Semibold, PingFang SC" font-size="24" font-weight="500" fill="#000000">
+            <text id="Capable（能力）" font-family="PingFang SC" font-size="24" font-weight="200" fill="#000000">
                 <tspan x="737" y="66">Capable（能力）</tspan>
             </text>
-            <text id="Patterns（原则与模式）" font-family="PingFangSC-Semibold, PingFang SC" font-size="24" font-weight="500" fill="#000000">
+            <text id="Patterns（原则与模式）" font-family="PingFang SC" font-size="24" font-weight="200" fill="#000000">
                 <tspan x="737" y="213">Patterns（原则与模式）</tspan>
             </text>
-            <text id="Starterkit（入门包）" font-family="PingFangSC-Semibold, PingFang SC" font-size="24" font-weight="500" fill="#000000">
+            <text id="Starterkit（入门包）" font-family="PingFang SC" font-size="24" font-weight="200" fill="#000000">
                 <tspan x="737" y="351">Starterkit（入门包）</tspan>
             </text>
         </g>
