@@ -82,7 +82,10 @@ export class LedgeTechRadarComponent implements OnInit, AfterViewInit, OnChanges
 
   private renderData(treeData) {
     // based on: https://cofinpro.github.io/Tech-Radar/
-    const axisLabels = ['', 'Adopt', 'Trail', 'Assess', 'Hold'].reverse();
+    let axisLabels = ['', 'Adopt', 'Trail', 'Assess', 'Hold'].reverse();
+    if (this.config && !!this.config.hiddenLegend) {
+      axisLabels = ['', '', '', '', ''];
+    }
 
     const cfg = {
       id: '#radar',

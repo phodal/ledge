@@ -9,36 +9,45 @@
      - 《奈飞文化手册》
    - trail
      - 《团队协作的五大障碍》
+     - 《丰田模式：精益制造的 14 项管理原则》
    - assess
    - hold
      - 《凤凰项目：一个IT运维的传奇故事》
  - 流程
    - adopt
      - 《持续交付》
-     - 《持续交付 2.0》
+     - 《精益软件度量：实践者的观察与思考》
    - trail
+     - 《Jenkins 权威指南》
+     - 《持续交付 2.0： 业务引领的DevOps精要》
    - assess
    - hold
      - 《发布！软件的设计与部署》
      - 《发布！设计与部署稳定的分布式系统（第2版）》
  - 实践
    - adopt
-     - 《演进式架构》
-   - trail
+     - 《基础设施即代码：云服务器管理》
      - 《测试驱动开发：实战与模式解析》
-   - assess
      - 《看板实战》
+   - trail
+     - 《演进式架构》
+     - 《微服务架构设计》
+   - assess
    - hold
  - 实施
    - adopt
+    - 《Effective DevOps》
     - 《DevOps实践指南》
-    - 《DevOps实施手册 在多级IT企业中使用DevOps》
+    - 《DevOps实施手册 在多级 IT 企业中使用 DevOps》
    - trail
     - 《Accelerate》
+    - 《DevOps 最佳实践》
    - assess
-    - 《SRE：Google运维解密》
+    - 《SRE：Google 运维解密》
    - hold
-    - 《DevOps实践》
+    - 《DevOps 实践》
+
+config: {"hiddenLegend": true}
 ```
 
 《Accelerate》 提出了 [加速：高效 DevOps 的技术/管理实践](/practise#加速：高效-devops-的技术管理实践)
