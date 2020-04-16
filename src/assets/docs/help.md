@@ -1,5 +1,17 @@
 # Ledge 语法帮助
 
+```checklist
+- [ ] Eating
+  - [ ] Today
+    - [ ] breakfast
+    - [ ] brunch
+    - [ ] elevenses
+    - [ ] lunch
+    - [ ] tea
+    - [ ] supper
+    - [ ] dinner：the main meal of the day, eaten either in the middle of the day or in the evening
+```
+
 ```kanban
  - Kanban Name
    - Todo
