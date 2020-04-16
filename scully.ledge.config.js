@@ -57,6 +57,7 @@ function solutionPlugin(route, config) {
     { route: '/solution/cloudbase' },
     { route: '/solution/worktile' },
     { route: '/solution/firim' },
+    { route: '/solution/zentao' },
   ]);
 }
 
