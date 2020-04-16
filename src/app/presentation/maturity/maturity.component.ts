@@ -9,7 +9,7 @@ import { Title } from '@angular/platform-browser';
 export class MaturityComponent implements OnInit {
   list = [
     {
-      name: '第二部分：敏捷开发管理',
+      name: '第一部分：敏捷开发管理',
       key: 'agile',
       value: `
  - [ ] 需求管理
@@ -18,7 +18,7 @@ export class MaturityComponent implements OnInit {
 `,
     },
     {
-      name: '第三部分：持续交付',
+      name: '第二部分：持续交付',
       key: 'cd',
       value: `
  -  [ ] 配置管理: 3
@@ -44,7 +44,7 @@ export class MaturityComponent implements OnInit {
   `,
     },
     {
-      name: '第四部分：技术运营',
+      name: '第三部分：技术运营',
       key: 'techops',
       value: `
  - [ ] 监控管理
