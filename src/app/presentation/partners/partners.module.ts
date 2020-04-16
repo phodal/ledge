@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
 import { PartnersComponent } from './partners.component';
 import { CustomMaterialModule } from '../../shared/custom-material.module';
 import { SharedModule } from '../../shared/shared.module';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [PartnersComponent],

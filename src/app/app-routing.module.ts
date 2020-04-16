@@ -8,7 +8,6 @@ import { PatternComponent } from './presentation/pattern/pattern.component';
 import { PractiseComponent } from './presentation/practise/practise.component';
 import { ReporterComponent } from './presentation/reporter/reporter.component';
 import { ResourcesComponent } from './presentation/resources/resources.component';
-import { ThinkTankComponent } from './presentation/think-tank/think-tank.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -38,6 +37,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./presentation/partners/partners.module').then(
         (m) => m.PartnersModule
+      ),
+  },
+  {
+    path: 'think-tank',
+    loadChildren: () =>
+      import('./presentation/think-tank/think-tank.module').then(
+        (m) => m.ThinkTankModule
       ),
   },
   {
@@ -71,10 +77,6 @@ const routes: Routes = [
   {
     path: 'mobile',
     component: MobileComponent,
-  },
-  {
-    path: 'think-tank',
-    component: ThinkTankComponent,
   },
   {
     path: 'design',
