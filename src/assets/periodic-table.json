@@ -754,6 +754,7 @@
   {
     "name": "Grafana",
     "category": "analytics",
+    "description": "Grafana is the open source analytics and monitoring solution for every database.",
     "number": 54,
     "pay": "Os",
     "symbol": "Gr",
