@@ -58,6 +58,9 @@ body {
 
 .case-study,
 .solution {
+  &.mat-drawer-container {
+    top: 2px;
+  }
   .no-toc-markdown {
     height: calc(100vh - 66px);
     overflow-y: scroll;
