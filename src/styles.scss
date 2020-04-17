@@ -55,6 +55,22 @@ body {
   }
 }
 
+.markdown {
+  .ledge-checklist {
+    label {
+      font-size: 1em !important;
+    }
+  }
+
+  .home-container {
+    margin: 0 auto;
+    max-width: 112.0rem;
+    padding: 0 2.0rem;
+    position: relative;
+    width: 100%
+  }
+}
+
 .home-markdown {
   .markdown {
     p {
