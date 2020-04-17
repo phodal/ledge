@@ -756,7 +756,16 @@
     "category": "analytics",
     "number": 54,
     "pay": "Os",
-    "symbol": "Gr"
+    "symbol": "Gr",
+    "resources": [{
+      "name": "GitHub",
+      "link": "https://github.com/grafana/grafana",
+      "description": "This is the main repository for Grafana - The tool for beautiful monitoring and metric analytics & dashboards for Graphite, InfluxDB & Prometheus & More."
+    }, {
+      "name": "tutorials",
+      "link": "https://grafana.com/tutorials/",
+      "description": "This is the tutorials for Grafana - Grafana Tutorials are step-by-step guides that help you make the most of Grafana."
+    }]
   },
   {
     "name": "Piwik",
