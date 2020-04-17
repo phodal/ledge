@@ -272,13 +272,27 @@ Bruck Tuckman 团队发展模型：
 
 —— 来自《深入核心的敏捷开发》
 
-## DevOps 看板
+## DevOps 实施看板
 
 ### 可视化现状
+
+```kanban
+ - DevOps 实施看板
+   - Todo
+     - 可视化后端测试覆盖率
+   - Doing
+     - 引入后端测试框架
+     - 引入前端测试框架
+   - Done
+     - 制定测试实施计划
+     - 制定测试策略
+```
 
 # 探索：可行方案
 
 ## 可构建
+
+不可构建的系统？
 
 ### 遗留系统问题
 
@@ -309,9 +323,7 @@ Bruck Tuckman 团队发展模型：
 
 ### 流水线
 
-策略
-
-过程步骤：
+实施过程步骤：
 
 - 流水线 hello, world
 - 构建和部署流程自动化
@@ -402,130 +414,15 @@ Bruck Tuckman 团队发展模型：
     - 非持续发布周期的持续交付
 ```
 
-## DevOps 技术栈知识图谱
+## 代码规范
 
-### DevOps
+### 制定代码规范
 
-来源：[https://github.com/raycad/devops-roadmap](https://github.com/raycad/devops-roadmap)
+#### Checkstyle
 
-```mindmap
- - 源码管理
-   - 源码管理服务
-     - Gitlab
-     - Gitea
-     - Gogs
- - 前端
-   - 框架
-     - React
-     - Angular
-     - Vue
-   - 构建工具
-     - Webpack + Gulp
-   - 单元测试
-     - Jest
-     - Jasmine
-     - Karma
- - 后端
-   - 语言和框架
-     - Golang
-       - Gin
-       - Echo
-     - Java
-       - Spring Boot
-     - Node.js
-       - Express
-       - Koa
-       - Next.js
-     - Python
-       - Django
-       - Flask
-   - IAM
-     - OAuth
-     - JWT
-   - 消息代理
-     - Kafka
-     - RabbitMQ
-     - ZeroMQ
-   - Web 服务器
-     - Apache
-     - Nginx
-   - Mock API
-     - JSON Server
-     - Moco
-     - Mockoon
-   - API 文档
-     - Swagger
- - 数据库
-   - 关系型数据库
-     - PostreSQL
-     - MariaDB
-     - MySQL
-   - 非关系型数据库
-     - 文档存储
-       - MongoDB
-       - RethinkDB
-     - 键值存储
-       - Redis
-       - Memcached
-     - 搜索引擎
-       - ElasticSearch
-       - Solr
-     - 时序
-       - InfluxDB
-       - Graphite
-     - 图形数据库
-       - Neo4j
- - API 网关
-   - Traefik
-   - Kong
-   - Zuul
- - 云计算
-   - OpenStack
-   - CloudStack
- - 服务测试
-   - API 测试
-     - jMeter
-     - Postman
-   - 性能测试
-     - nGrinder
-     - jMeter
-     - wrk
-   - 自动化 E2E 测试
-     - Selenium
-     - Cucumber
- - 运维
-   - 容器化
-     - Docker
-   - 编排
-     - Kubernetes
-   - CI/CD
-     - Jenkins
-     - GoCD
-     - Drone
-   - 配置管理
-     - Ansible
-     - Chef
-   - 监控
-     - Grafana
-     - Nagios
-     - Icingga
-   - 日志管理
-     - ELK
-     - Fluentd
-     - Apache Flume
- - 大数据
-   - 数据流
-     - Apache Spark Streaming
-     - Flink
-   - 数据处理
-     - Apache Spark
-     - Apache Storm
-   - 数据集成（ETL)
-     - Apache NiFi
-     - Pentaho
-```
+#### Lint
 
-## 自动修复工具
+### 自动修复工具
 
 - Prettier 是一个代码风格统一工具。
 - Angular Lint。`ng lint --fix`
@@ -548,7 +445,16 @@ Bruck Tuckman 团队发展模型：
 
 #### C4 模型
 
-### 调整架构 ？
+> C4 模型由一系列分层的软件架构图组成，这些架构图用于描述上下文、容器、组件和代码。C4 图的层次结构提供了不同的抽象级别，每种抽象级别都与不同的受众有关。
+
+- 系统上下文
+- 容器
+- 组件
+- 代码
+
+- 此处应有 C4 图示例 -
+
+### 调整架构
 
 #### 康威定律
 
@@ -557,6 +463,10 @@ Bruck Tuckman 团队发展模型：
 #### 康威逆定律
 
 > 构建与目标系统架构相仿的团队结构，这样项目会更容易实现。
+
+### 领域驱动设计
+
+#### 事件风暴
 
 ## 搭建持续集成
 
