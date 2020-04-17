@@ -3,54 +3,20 @@
 
 $list-color: #262626;
 
+$markdown-primary: #384452;
+$markdown-grey: #d1d8df;
+$markdown-green: #1abc9c;
+$markdown-dark-grey: #5e6772;
+$markdown-blue: #23B7F3;
+$markdown-code-grey: #eef1f5;
+$markdown-color-red: #f53d3d;
+$markdown-color-yellow: #ffff3a;
+$markdown-light-grey: #fdfdfd;
+$markdown-mid-grey: #666;
+
 .markdown {
-  .color-primary {
-    color: #384452;
-    background-color: #384452
-  }
-
-  .color-grey {
-    color: #d1d8df;
-    background-color: #d1d8df
-  }
-
-  .color-green {
-    color: #1abc9c;
-    background-color: #1abc9c
-  }
-
-  .color-dark-grey {
-    color: #5e6772;
-    background-color: #5e6772
-  }
-
-  .color-blue {
-    color: #23B7F3;
-    background-color: #23B7F3
-  }
-
-  .color-code-grey {
-    color: #eef1f5;
-    background-color: #eef1f5
-  }
-
-  .color-red {
-    color: #f53d3d;
-    background-color: #f53d3d
-  }
-
-  .color-yellow {
-    color: #ffff3a;
-    background-color: #ffff3a
-  }
-
-  .color-light-grey {
-    color: #fdfdfd;
-    background-color: #fdfdfd
-  }
-
   blockquote {
-    border-left: 0.3rem solid #1abc9c;
+    border-left: 0.3rem solid $markdown-green;
     margin-left: 0;
     margin-right: 0;
     padding: 1rem 1.5rem
@@ -61,7 +27,7 @@ $list-color: #262626;
   }
 
   q:before {
-    color: #1abc9c;
+    color: $markdown-green;
     content: open-quote;
     font-size: 4em;
     line-height: 0.1em;
@@ -74,8 +40,8 @@ $list-color: #262626;
   }
 
   .button, button, input[type='button'], input[type='reset'], input[type='submit'] {
-    background-color: #384452;
-    border: 0.1rem solid #384452;
+    background-color: $markdown-primary;
+    border: 0.1rem solid $markdown-primary;
     border-radius: .4rem;
     color: #fff;
     cursor: pointer;
@@ -93,8 +59,8 @@ $list-color: #262626;
   }
 
   .button:focus, .button:hover, button:focus, button:hover, input[type='button']:focus, input[type='button']:hover, input[type='reset']:focus, input[type='reset']:hover, input[type='submit']:focus, input[type='submit']:hover {
-    background-color: #1abc9c;
-    border-color: #1abc9c;
+    background-color: $markdown-green;
+    border-color: $markdown-green;
     color: #fff;
     outline: 0
   }
@@ -105,44 +71,44 @@ $list-color: #262626;
   }
 
   .button[disabled]:focus, .button[disabled]:hover, button[disabled]:focus, button[disabled]:hover, input[type='button'][disabled]:focus, input[type='button'][disabled]:hover, input[type='reset'][disabled]:focus, input[type='reset'][disabled]:hover, input[type='submit'][disabled]:focus, input[type='submit'][disabled]:hover {
-    background-color: #384452;
-    border-color: #384452
+    background-color: $markdown-primary;
+    border-color: $markdown-primary
   }
 
   .button.button-outline, button.button-outline, input[type='button'].button-outline, input[type='reset'].button-outline, input[type='submit'].button-outline {
     background-color: transparent;
-    color: #384452
+    color: $markdown-primary
   }
 
   .button.button-outline:focus, .button.button-outline:hover, button.button-outline:focus, button.button-outline:hover, input[type='button'].button-outline:focus, input[type='button'].button-outline:hover, input[type='reset'].button-outline:focus, input[type='reset'].button-outline:hover, input[type='submit'].button-outline:focus, input[type='submit'].button-outline:hover {
     background-color: transparent;
-    border-color: #1abc9c;
-    color: #1abc9c
+    border-color: $markdown-green;
+    color: $markdown-green
   }
 
   .button.button-outline[disabled]:focus, .button.button-outline[disabled]:hover, button.button-outline[disabled]:focus, button.button-outline[disabled]:hover, input[type='button'].button-outline[disabled]:focus, input[type='button'].button-outline[disabled]:hover, input[type='reset'].button-outline[disabled]:focus, input[type='reset'].button-outline[disabled]:hover, input[type='submit'].button-outline[disabled]:focus, input[type='submit'].button-outline[disabled]:hover {
     border-color: inherit;
-    color: #384452
+    color: $markdown-primary
   }
 
   .button.button-clear, button.button-clear, input[type='button'].button-clear, input[type='reset'].button-clear, input[type='submit'].button-clear {
     background-color: transparent;
     border-color: transparent;
-    color: #384452
+    color: $markdown-primary
   }
 
   .button.button-clear:focus, .button.button-clear:hover, button.button-clear:focus, button.button-clear:hover, input[type='button'].button-clear:focus, input[type='button'].button-clear:hover, input[type='reset'].button-clear:focus, input[type='reset'].button-clear:hover, input[type='submit'].button-clear:focus, input[type='submit'].button-clear:hover {
     background-color: transparent;
     border-color: transparent;
-    color: #1abc9c
+    color: $markdown-green
   }
 
   .button.button-clear[disabled]:focus, .button.button-clear[disabled]:hover, button.button-clear[disabled]:focus, button.button-clear[disabled]:hover, input[type='button'].button-clear[disabled]:focus, input[type='button'].button-clear[disabled]:hover, input[type='reset'].button-clear[disabled]:focus, input[type='reset'].button-clear[disabled]:hover, input[type='submit'].button-clear[disabled]:focus, input[type='submit'].button-clear[disabled]:hover {
-    color: #384452
+    color: $markdown-primary
   }
 
   code {
-    background: #eef1f5;
+    background: $markdown-code-grey;
     border-radius: .4rem;
     font-size: 86%;
     margin: 0 .2rem;
@@ -151,8 +117,8 @@ $list-color: #262626;
   }
 
   pre {
-    background: #eef1f5;
-    border-left: 0.3rem solid #1abc9c;
+    background: $markdown-code-grey;
+    border-left: 0.3rem solid $markdown-green;
     overflow-y: hidden
   }
 
@@ -165,7 +131,7 @@ $list-color: #262626;
 
   hr {
     border: 0;
-    border-top: 0.1rem solid #384452;
+    border-top: 0.1rem solid $markdown-primary;
     margin: 3.0rem 0
   }
 
@@ -174,7 +140,7 @@ $list-color: #262626;
     -moz-appearance: none;
     appearance: none;
     background-color: transparent;
-    border: 0.1rem solid #d1d8df;
+    border: 0.1rem solid $markdown-grey;
     border-radius: .4rem;
     box-shadow: none;
     box-sizing: inherit;
@@ -184,7 +150,7 @@ $list-color: #262626;
   }
 
   input[type='email']:focus, input[type='number']:focus, input[type='password']:focus, input[type='search']:focus, input[type='tel']:focus, input[type='text']:focus, input[type='url']:focus, input:not([type]):focus, textarea:focus, select:focus {
-    border-color: #1abc9c;
+    border-color: $markdown-green;
     outline: 0
   }
 
@@ -232,16 +198,16 @@ $list-color: #262626;
   figcaption {
     text-align: center;
     padding: 8px;
-    color: #666;
+    color: $markdown-mid-grey;
   }
 
   a {
-    color: #1abc9c;
+    color: $markdown-green;
     text-decoration: none
   }
 
   a:focus, a:hover {
-    color: #23B7F3
+    color: $markdown-blue
   }
 
   dl, ol, ul {
@@ -265,7 +231,7 @@ $list-color: #262626;
 
   li {
     font-size: 1rem;
-    color: #384452
+    color: $markdown-primary
   }
 
   .button, button, dd, dt, li {
@@ -286,8 +252,8 @@ $list-color: #262626;
   }
 
   table thead th, thead th {
-    border-top: 0.1rem solid #d1d8df;
-    background: #fdfdfd
+    border-top: 0.1rem solid $markdown-grey;
+    background: $markdown-light-grey
   }
 
   table td {
@@ -295,15 +261,15 @@ $list-color: #262626;
   }
 
   tbody tr:nth-child(even) {
-    background: #fdfdfd
+    background: $markdown-light-grey
   }
 
   tbody tr:nth-child(odd) {
-    background: #eef1f5
+    background: $markdown-code-grey
   }
 
   td, th {
-    border-bottom: 0.1rem solid #d1d8df;
+    border-bottom: 0.1rem solid $markdown-grey;
     padding: 1.2rem 1.5rem;
     text-align: left;
   }
@@ -318,7 +284,7 @@ $list-color: #262626;
   }
 
   u {
-    background: #ffff3a
+    background: $markdown-color-yellow
   }
 
   b, strong {
