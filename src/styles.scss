@@ -1,12 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~material-design-icons/iconfont/material-icons.css';
 
-@import "styles/variables";
+@import "styles/periodic-variables";
 
 @import "styles/markdown";
 @import "styles/dragula";
 @import "styles/behavior";
-@import "styles/graphviz";
+@import "styles/mdstyles/graphviz";
 @import "styles/color";
 @import "styles/material-ui";
 
