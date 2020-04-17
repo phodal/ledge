@@ -70,6 +70,14 @@ config: {"hiddenLegend": true}
 
 《DevOps 实践》 这本书我并不推荐，一个是时间太早：2016 年，内容不合时宜；另外一个是，大部分内容网上都有。不过呢，手法上差不多是这样的。
 
+## 大会 Presentation
+
+[SRECon](https://www.usenix.org/srecon)
+
+## DevOps 厂商案例
+
+[AWS 客户成功案例](https://aws.amazon.com/cn/solutions/case-studies/)
+
 ## 文章
 
 ### 敏捷
