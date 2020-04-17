@@ -1,0 +1,128 @@
+@import "./color";
+
+.markdown-toc {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  overflow-y: hidden;
+
+  .right-content {
+    width: 85%;
+    height: calc(100vh - 66px);
+    overflow-y: scroll;
+  }
+
+  .left-drawer {
+    width: 15%;
+    min-width: 200px;
+    font-size: 16px;
+    overflow-y: scroll;
+    height: calc(100vh - 66px);
+
+    .level_1,
+    .level_2,
+    .level_3,
+    .level_4,
+    .level_5 {
+      line-height: 1.5;
+      white-space: nowrap;
+
+      &:hover {
+        color: $purple;
+        border-bottom: 2px solid $purple;
+      }
+    }
+
+    .level_1 {
+      font-weight: 400;
+    }
+
+    .level_2,
+    .level_3,
+    .level_4,
+    .level_5 {
+      font-weight: 100;
+    }
+
+    ul {
+      width: 15%;
+      min-width: 200px;
+      text-indent: 1em;
+
+      ul {
+        padding: 0 0 0 1em;
+        font-size: 1.0em;
+      }
+    }
+
+    li {
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        color: #000;
+        line-height: 1.2em;
+
+        &.active {
+          color: $purple;
+        }
+      }
+    }
+  }
+}
+
+.case-study,
+.solution {
+  &.mat-drawer-container {
+    top: 2px;
+  }
+
+  .no-toc-markdown {
+    height: calc(100vh - 66px);
+    overflow-y: scroll;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .active {
+    background-color: $purple;
+    color: #fff;
+    border-radius: 24px;
+
+    &:hover {
+      color: #fff;
+      background-color: $purple;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0 12px;
+
+    li {
+      margin: 8px 0;
+      height: 44px;
+      line-height: 44px;
+      font-size: 1.1rem;
+      text-align: center;
+      display: block;
+
+      &:active,
+      &:focus {
+        outline: 0;
+        border: none;
+        -moz-outline-style: none;
+        border-radius: 24px;
+      }
+
+      @extend .noselect;
+
+      &:hover {
+        cursor: pointer;
+        border-radius: 24px;
+        background-color: $hover-grey;
+        color: $black;
+      }
+    }
+  }
+}
