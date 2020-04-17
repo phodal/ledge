@@ -15,6 +15,8 @@
   },
   {
     "name": "GitHub",
+    "description": "GitHub 是世界上最大的代码托管服务平台和开源社区，发明了 fork 用于开源协作，提供 Git 代码托管、持续集成（Actions）、制品库（Packages）、静态网站（Pages）等服务，提供 SaaS 和企业私有化部署，于 2008 年在美国成立，于 2018 年被微软以 75 亿美元收购。",
+    "homepage": "https://github.com/",
     "category": "scm",
     "number": 11,
     "pay": "Fm",
