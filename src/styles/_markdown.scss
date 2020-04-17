@@ -1,8 +1,7 @@
 @import './behavior';
 @import './color';
 
-$list-color: #262626;
-
+$markdown-list-color: #262626;
 $markdown-primary: #384452;
 $markdown-grey: #d1d8df;
 $markdown-green: #1abc9c;
@@ -354,7 +353,7 @@ $markdown-mid-grey: #666;
     margin-top: 0.8em;
 
     li {
-      color: $list-color;
+      color: $markdown-list-color;
     }
   }
 
