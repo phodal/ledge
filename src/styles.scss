@@ -117,3 +117,18 @@ body {
   }
 }
 
+.ledge-render {
+  .table-step {
+    .card-body {
+      p {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+
+  .flex-table {
+    margin: 1em 0;
+    display: flex;
+    justify-content: center;
+  }
+}
