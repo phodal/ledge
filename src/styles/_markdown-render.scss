@@ -98,33 +98,35 @@
     }
   }
 
-  ul {
-    margin: 0;
-    padding: 0 12px;
+  .left-drawer {
+    ul {
+      margin: 0;
+      padding: 0 12px;
 
-    li {
-      margin: 8px 0;
-      height: 44px;
-      line-height: 44px;
-      font-size: 1.1rem;
-      text-align: center;
-      display: block;
+      li {
+        margin: 8px 0;
+        height: 44px;
+        line-height: 44px;
+        font-size: 1.1rem;
+        text-align: center;
+        display: block;
 
-      &:active,
-      &:focus {
-        outline: 0;
-        border: none;
-        -moz-outline-style: none;
-        border-radius: 24px;
-      }
+        &:active,
+        &:focus {
+          outline: 0;
+          border: none;
+          -moz-outline-style: none;
+          border-radius: 24px;
+        }
 
-      @extend .noselect;
+        @extend .noselect;
 
-      &:hover {
-        cursor: pointer;
-        border-radius: 24px;
-        background-color: $hover-grey;
-        color: $black;
+        &:hover {
+          cursor: pointer;
+          border-radius: 24px;
+          background-color: $hover-grey;
+          color: $black;
+        }
       }
     }
   }
