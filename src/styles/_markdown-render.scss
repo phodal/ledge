@@ -93,8 +93,8 @@
     border-radius: 24px;
 
     &:hover {
-      color: #fff;
-      background-color: $purple;
+      color: #fff !important;
+      background-color: $purple !important;
     }
   }
 
