@@ -45,4 +45,8 @@ export class AppComponent implements OnInit {
       }
     });
   }
+
+  openLink(link: string) {
+    window.open(link, '_blank');
+  }
 }

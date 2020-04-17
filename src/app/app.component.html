@@ -43,7 +43,7 @@
           <a class="mat-menu-item" mat-menu-item href="https://github.com/phodal/ledge/issues" target="_blank">More</a>
         </mat-menu>
 
-        <a mat-button href="https://zhuanlan.zhihu.com/bizdevops" target="_blank">{{'blog' | translate}}</a>
+        <button mat-button (click)="openLink('https://zhuanlan.zhihu.com/bizdevops')">{{'blog' | translate}}</button>
 
         <button mat-button [matMenuTriggerFor]="langMenu">
           <mat-icon>language</mat-icon>
