@@ -5,19 +5,6 @@
 .case-study {
   min-height: 600px;
   height: calc(100vh - 66px);
-
-  .active {
-    background-color: $purple;
-    color: #fff;
-    outline: none;
-
-    &:active,
-    &:focus {
-      outline: 0;
-      border: none;
-      -moz-outline-style: none;
-    }
-  }
 }
 
 .left-drawer {
@@ -30,22 +17,5 @@
     font-weight: bold;
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     margin-bottom: 0;
-  }
-
-  ul {
-    margin: 0;
-    padding: 0;
-
-    li {
-      font-size: 1.1rem;
-      padding: 1rem;
-      display: block;
-
-      @extend .noselect;
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
   }
 }
