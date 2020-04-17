@@ -48,7 +48,7 @@ jobs:
 
       - name: Build Scully
         run: |
-          npx scully -- --host='0.0.0.0' --scanRoutes
+          npx scully -- --host='0.0.0.0' --scanRoutes --serverTimeout 30000
         continue-on-error: true
 
 #      - name: Deploy 🚀
