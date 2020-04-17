@@ -46,12 +46,13 @@
    - adopt
     - 《Effective DevOps》
     - 《DevOps实践指南》
+    - 《Java 持续交付》
     - 《DevOps实施手册 在多级 IT 企业中使用 DevOps》
     - 《领域驱动设计：软件核心复杂性应对之道》
    - trail
     - 《Accelerate》
     - 《DevOps 最佳实践》
-     - 《学习敏捷开发》
+    - 《学习敏捷开发》
    - assess
     - 《SRE：Google 运维解密》
    - hold
