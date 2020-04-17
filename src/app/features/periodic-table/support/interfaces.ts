@@ -25,4 +25,5 @@ export interface Atom {
   symbol: string;
   pd: string;
   resources?: AtomResources[];
+  books?: AtomResources[];
 }

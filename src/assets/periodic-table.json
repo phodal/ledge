@@ -30,11 +30,22 @@
     "symbol": "Sv"
   },
   {
-    "name": "Mercurial",
+    "name": "Git",
     "category": "scm",
     "number": 37,
     "pay": "Os",
-    "symbol": "Mc"
+    "symbol": "Gt",
+    "description": "Git 是一个分散式版本控制软件，最初由林纳斯·托瓦兹创作，于2005年以GPL释出。最初目的是为更好地管理Linux核心开发而设计。应注意的是，这与GNU Interactive Tools[5]（一个类似Norton Commander界面的文件管理器）不同。Git 最初的开发动力来自于BitKeeper和Monotone。",
+    "resources": [{
+      "name": "Git Homepage",
+      "link": "https://git-scm.com/",
+      "description": ""
+    }],
+    "books": [{
+      "name": "《Git版本控制管理》",
+      "link": "https://book.douban.com/subject/26341974//",
+      "description": "是学习掌握Git的最佳教程，总共分为21章，其内容涵盖了如何在多种真实开发环境中使用Git；洞察Git的常用案例、初始任务和基本功能；如何在集中和分布式版本控制中使用Git 等内容。"
+    }]
   },
   {
     "name": "Gerrit",

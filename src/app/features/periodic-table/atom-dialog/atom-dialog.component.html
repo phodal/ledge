@@ -17,4 +17,14 @@
     暂无！<br>
     欢迎帮助其他/她小伙伴完善此条目：<a href="https://github.com/phodal/ledge/blob/master/src/assets/periodic-table.json" target="_blank">GitHub</a>
   </div>
+  <p>相关书籍：</p>
+  <div *ngIf="data.books" class="resources">
+    <div *ngFor="let books of data.books">
+      <a href="{{books.link}}" target="_blank">{{books.name}}</a> &nbsp;&nbsp; {{books.description}}
+    </div>
+  </div>
+  <div *ngIf="!data.books" class="no-resources">
+    暂无！<br>
+    欢迎帮助其他/她小伙伴完善此条目：<a href="https://github.com/phodal/ledge/blob/master/src/assets/periodic-table.json" target="_blank">GitHub</a>
+  </div>
 </mat-dialog-content>
