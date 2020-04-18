@@ -1253,10 +1253,10 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@ledge-framework/render@~0.0.14":
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/@ledge-framework/render/-/render-0.0.14.tgz#07f22f67f26122f0d6f901cb34e8c2070e2cf281"
-  integrity sha512-ebHa9G2Y+wPzz3sOcCzC8mfZpkuBgZCg25l7TVJsOY4FuvD5ljaCRQZ0N5L8+g57W7OeNr9Mzry2qLhufRCr6Q==
+"@ledge-framework/render@~0.0.17":
+  version "0.0.17"
+  resolved "https://registry.yarnpkg.com/@ledge-framework/render/-/render-0.0.17.tgz#76ef5e04618e7dce3b4abff7c63cf232b5af1023"
+  integrity sha512-AdN7lmz7OsDLSuZP8dx2RTkXtK7nXIkuySzuwxb/bHs0EafgzdE6KAXT1ditGdvzuAMBlCg0dDQ7HmvsyZEVOw==
 
 "@marionebl/sander@^0.6.0":
   version "0.6.1"
@@ -1418,10 +1418,10 @@
     semver "6.3.0"
     semver-intersect "1.4.0"
 
-"@scullyio/init@^0.0.23":
-  version "0.0.23"
-  resolved "https://registry.yarnpkg.com/@scullyio/init/-/init-0.0.23.tgz#2bfda13e7874fe7329370c8b2774edb87097f686"
-  integrity sha512-4eeKOLwOgk0a3Jc785uPYljo+1ySXJv/pEI5g33loU5q9p184b0gRTFX1a+Vyvw2ZWQYoGSDLp7VjZu95Lh2yg==
+"@scullyio/init@^0.0.25":
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/@scullyio/init/-/init-0.0.25.tgz#a7afd464e29222bc44a95e25389428f748259de1"
+  integrity sha512-IP1mtlEfGIahT6KyRPFD7VYmiithiuzsR/iOcuO3gUNT6UYgLtcxeHVhZqrrjx3Vg+YJ0j883Qkmx+lTH1R30g==
   dependencies:
     "@angular-devkit/core" "^9.0.0-rc.5"
     "@angular-devkit/schematics" "^9.0.0-rc.5"
@@ -1434,10 +1434,10 @@
   resolved "https://registry.yarnpkg.com/@scullyio/ng-lib/-/ng-lib-0.0.22.tgz#e36873eec3778914dde59279980577c85b361ed7"
   integrity sha512-cgJL/Jo2VbgrzEStSD2Er19Hyz2LV04rRMK6MAk/BIupcjPc7RtU0thVD2FCplAtbeEm7SdVlLcox+rLdlFNlw==
 
-"@scullyio/scully@latest":
-  version "0.0.86"
-  resolved "https://registry.yarnpkg.com/@scullyio/scully/-/scully-0.0.86.tgz#17cd1cafcf318c7bfeca58bb183f161d6d59956b"
-  integrity sha512-ve9l5VlcRL+vf4IOHCBBOoH8NQRDQSVQO06tLRaGrKaI/184uxBL/q55euys8f5AZtbm9DFsexDS/lNQ9PquoA==
+"@scullyio/scully@0.0.87":
+  version "0.0.87"
+  resolved "https://registry.yarnpkg.com/@scullyio/scully/-/scully-0.0.87.tgz#c4604df363cd92b31cf9b4173c9ec5619a6c8661"
+  integrity sha512-lsB+YMifW8filcGZQlXlVsDAFptS8R3SEWbdwd6KlmTt5WR3INna5vjt5iTHuw0uRfi39zTNkQv2KmaHweD9Eg==
   dependencies:
     asciidoctor.js "^1.5.9"
     chalk "^3.0.0"
@@ -1447,6 +1447,7 @@
     front-matter "^3.0.2"
     fs-extra "^9.0.0"
     guess-parser "^0.4.17"
+    highlight.js "^9.18.1"
     jsdom "^16.2.1"
     jsonc "2.0.0"
     marked "^0.8.1"
@@ -6134,6 +6135,11 @@ hex-color-regex@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
+
+highlight.js@^9.18.1:
+  version "9.18.1"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.18.1.tgz#ed21aa001fe6252bb10a3d76d47573c6539fe13c"
+  integrity sha512-OrVKYz70LHsnCgmbXctv/bfuvntIKDz177h0Co37DQ5jamGZLVmoCVMtjMtNZY3X9DrCcKfklHPNeA0uPZhSJg==
 
 hmac-drbg@^1.0.0:
   version "1.0.1"
