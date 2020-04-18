@@ -41,7 +41,7 @@
     "@ngx-translate/http-loader": "^4.0.0",
     "@scullyio/init": "^0.0.25",
     "@scullyio/ng-lib": "latest",
-    "@scullyio/scully": "0.0.87",
+    "@scullyio/scully": "latest",
     "angular-split": "^3.0.3",
     "core-js": "^3.6.4",
     "d3": "^5.15.0",

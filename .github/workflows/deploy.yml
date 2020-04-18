@@ -49,13 +49,12 @@ jobs:
       - name: Build Scully
         run: |
           npm run scully -- --host='0.0.0.0' --scanRoutes --serverTimeout=60000
-        continue-on-error: true
 
-#      - name: Deploy 🚀
-#        uses: JamesIves/github-pages-deploy-action@releases/v3
-#        with:
-#          ACCESS_TOKEN: ${{ secrets.SuperSecret }}
-#          BRANCH: gh-pages
-#          REPOSITORY_NAME: "phodal/do"
-#          FOLDER: dist/static
-#        continue-on-error: true
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.SuperSecret }}
+          BRANCH: gh-pages
+          REPOSITORY_NAME: "phodal/do"
+          FOLDER: dist/static
+        continue-on-error: true
