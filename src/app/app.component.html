@@ -1,5 +1,5 @@
-<div class="ledge-app" [ngClass]="isHome() ? 'app-header' : ''">
-  <mat-toolbar color="accent">
+<div class="ledge-app">
+  <mat-toolbar color="accent" [ngClass]="isHome() ? 'app-header' : ''">
     <mat-toolbar-row>
       <button mat-button class="button-logo" routerLink="/home">
         <img src="/assets/images/logo.svg" alt="logo" class="logo">
