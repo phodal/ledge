@@ -1,7 +1,7 @@
 @import '../../../styles/color';
 
 .home-container {
-  height: 100vh;
+  height: calc(100vh - 66px);
 
   a {
     text-decoration: none;
