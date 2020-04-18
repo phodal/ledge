@@ -31,7 +31,7 @@ export class SolutionComponent implements OnInit {
       const param = p.get('solution');
       const currentCase = this.solutions.find((ca) => ca.source === param);
       this.title.setTitle(
-        `${currentCase.displayName} DevOps 解决方案 - Ledge DevOps 知识平台`
+        `${currentCase.displayName} DevOps 厂商解决方案 - Ledge DevOps 知识平台`
       );
       this.configSource(param);
     });

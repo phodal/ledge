@@ -31,7 +31,7 @@ export class CaseStudyComponent implements OnInit {
       const param = p.get('case');
       const currentCase = this.cases.find((ca) => ca.source === param);
       this.title.setTitle(
-        `${currentCase.displayName} 互联网公司/传统公司 DevOps 案例学习 - Ledge DevOps 知识平台`
+        `${currentCase.displayName} DevOps 案例学习（互联网公司/传统公司） - Ledge DevOps 知识平台`
       );
       this.configSource(param);
     });
