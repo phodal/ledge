@@ -69,7 +69,7 @@ config: {"colors": [{"bg":"#e55852","font":"#b71a09"},{"bg":"#e98832","font":"#c
     {
       name: '刘宇',
       link: 'https://github.com/LiuuY',
-      work: '核心开发、丰富学习案例',
+      work: '核心开发、丰富学习案例、创建前端智库',
       title: 'ThoughtWorks 高级咨询师',
       avatar:
         'https://avatars0.githubusercontent.com/u/14286374?s=460&u=1933f64247e26812c67ca1c41aa0b7ba23b069f6&v=4',
