@@ -27,7 +27,8 @@
     "design-by-different": "different enterprise, different DevOps pipelines"
   },
   "tank-page": {
-    "frontend": "Frontend"
+    "frontend": "Frontend",
+    "requirements": "BA"
   },
   "helper": {
     "theme": "Theme"

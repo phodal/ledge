@@ -27,7 +27,8 @@
     "design-by-different": "从而根据不同的企业情况，会出现不同的 DevOps 流水线"
   },
   "tank-page": {
-    "frontend": "前端"
+    "frontend": "前端",
+    "requirements": "需求管理"
   },
   "helper": {
     "theme": "主题"
