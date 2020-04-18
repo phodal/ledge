@@ -19,7 +19,7 @@ export class LedgeDevProcessComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.data);
+
   }
 
   getImageUrl(name: string) {

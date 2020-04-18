@@ -47,7 +47,6 @@ export class LedgeTechRadarComponent implements OnInit, AfterViewInit, OnChanges
         items
       });
     }
-    console.log(this.trData);
   }
 
   ngOnChanges(changes: SimpleChanges): void {

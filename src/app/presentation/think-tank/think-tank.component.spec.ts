@@ -1,6 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ThinkTankComponent } from './think-tank.component';
+import { SharedModule } from '../../shared/shared.module';
+import { RouterTestingModule } from '@angular/router/testing';
+import {
+  TranslateFakeLoader,
+  TranslateLoader,
+  TranslateModule,
+} from '@ngx-translate/core';
 
 describe('ThinkTankComponent', () => {
   let component: ThinkTankComponent;
@@ -8,9 +15,18 @@ describe('ThinkTankComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ThinkTankComponent ]
-    })
-    .compileComponents();
+      imports: [
+        SharedModule,
+        RouterTestingModule,
+        TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useClass: TranslateFakeLoader,
+          },
+        }),
+      ],
+      declarations: [ThinkTankComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
