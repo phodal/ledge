@@ -86,7 +86,7 @@ exports.config = {
     '/solution/:solution': {
       type: 'solution',
     },
-    '/think-thank/:tank': {
+    '/think-tank/:tank': {
       type: 'tank',
     },
   },
