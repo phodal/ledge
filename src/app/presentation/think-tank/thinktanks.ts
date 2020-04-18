@@ -10,4 +10,5 @@ export type Thinktanks = Array<Thinktank>;
 export const thinktanks: Thinktanks = [
   { displayName: 'QA', source: 'qa', default: true },
   { displayName: 'Android', source: 'mobile-android', default: true },
+  { displayName: 'Frontend', source: 'frontend', default: true },
 ];
