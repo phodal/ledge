@@ -5,23 +5,13 @@ import * as mdData from 'raw-loader!../../../assets/docs/help.md';
 import { EMPTY, Subject, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
-// cleaning angular.json with script import
 import 'brace/index';
 import 'brace/mode/markdown';
 import 'brace/theme/github';
 import 'brace/theme/monokai';
-// import 'brace/theme/chrome';
-// import 'brace/theme/clouds';
-// import 'brace/theme/chaos';
-// import 'brace/theme/eclipse';
-// import 'brace/theme/iplastic';
-// import 'brace/theme/monokai';
-// import 'brace/theme/merbivore';
-// import 'brace/theme/terminal';
-// import 'brace/theme/textmate';
-// import 'brace/theme/tomorrow';
-// import 'brace/theme/twilight';
-// import 'brace/theme/xcode';
+
+import * as mdData from 'raw-loader!../../../assets/docs/help.md';
+import { SplitAreaDirective, SplitComponent } from 'angular-split';
 
 @Component({
   selector: 'app-ledge-helper',

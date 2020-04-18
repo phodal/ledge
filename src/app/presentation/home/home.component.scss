@@ -1,6 +1,10 @@
 @import '../../../styles/color';
 
 .home-container {
+  position: relative;
+  z-index: 100;
+  top: 64px;
+
   a {
     text-decoration: none;
     color: $purple;

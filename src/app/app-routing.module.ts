@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AwesomeToolComponent } from './presentation/awesome-tool/awesome-tool.component';
 import { ManualComponent } from './presentation/manual/manual.component';
 import { MaturityComponent } from './presentation/maturity/maturity.component';
-import { MobileComponent } from './presentation/mobile/mobile.component';
 import { PatternComponent } from './presentation/pattern/pattern.component';
 import { PractiseComponent } from './presentation/practise/practise.component';
 import { ReporterComponent } from './presentation/reporter/reporter.component';
@@ -73,10 +72,6 @@ const routes: Routes = [
   {
     path: 'tool',
     component: AwesomeToolComponent,
-  },
-  {
-    path: 'mobile',
-    component: MobileComponent,
   },
   {
     path: 'design',

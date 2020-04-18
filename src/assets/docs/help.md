@@ -3,7 +3,7 @@
 ```checklist
 - [ ] Eating
   - [ ] Today
-    - [ ] breakfast
+    - [x] breakfast
     - [ ] brunch
     - [ ] elevenses
     - [ ] lunch

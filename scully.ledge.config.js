@@ -61,9 +61,17 @@ function solutionPlugin(route, config) {
   ]);
 }
 
+function thinkTankPlugin(route, config) {
+  return Promise.resolve([
+    { route: '/think-tank/qa' },
+    { route: '/think-tank/mobile-android' },
+  ]);
+}
+
 const validator = async (conf) => [];
 registerPlugin('router', 'case', casePlugin, validator);
 registerPlugin('router', 'solution', solutionPlugin, validator);
+registerPlugin('router', 'tank', thinkTankPlugin, validator);
 
 exports.config = {
   projectRoot: './src',
@@ -77,6 +85,9 @@ exports.config = {
     },
     '/solution/:solution': {
       type: 'solution',
+    },
+    '/think-thank/:tank': {
+      type: 'tank',
     },
   },
 };
