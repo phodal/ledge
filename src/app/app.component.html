@@ -40,6 +40,8 @@
   <button mat-button routerLink="/solution" routerLinkActive="active">{{ 'solution' | translate}}</button>
 
   <mat-menu #tankMenu="matMenu" backdropClass="nav-menu-wrapper">
+    <button mat-menu-item routerLink="/think-tank/ba" routerLinkActive="active">
+      BA {{ 'think-tank' | translate}}</button>
     <button mat-menu-item routerLink="/think-tank/qa" routerLinkActive="active">
       QA {{ 'think-tank' | translate}}</button>
     <button mat-menu-item routerLink="/think-tank/mobile-android" routerLinkActive="active">
