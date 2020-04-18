@@ -1,8 +1,34 @@
-<as-split unit="percent" [direction]="direction" (dragEnd)="dragEnd('percent', $event)" #split="asSplit" class="helper">
+<as-split
+  unit="percent"
+  [direction]="direction"
+  (dragEnd)="dragEnd('percent', $event)"
+  #split="asSplit"
+  class="helper"
+>
   <as-split-area size="30" #area1="asSplitArea" class="source">
-    <textarea matInput cols="25" [ngModel]="content" (ngModelChange)="term$.next($event)"></textarea>
+    <!--<textarea matInput cols="25" [ngModel]="content" (ngModelChange)="term$.next($event)"></textarea> -->
+    <div
+      #editor
+      ace-editor
+      [text]="content"
+      [mode]="'markdown'"
+      [theme]="themeSelected"
+      [options]="aceOptions"
+      [readOnly]="false"
+      (textChanged)="onAceChange($event)"
+      (editorRef)="editorRef($event)"
+      class="md-editor"
+    ></div>
+    <div class="toolbar">
+      <label for="">{{ 'helper.theme' | translate }}：</label>
+      <mat-select  [(value)]="themeSelected">
+        <mat-option *ngFor="let theme of themes" [value]="theme">
+          {{ theme }}
+        </mat-option>
+      </mat-select>
+    </div>
   </as-split-area>
-    <as-split-area size="70" #area2="asSplitArea">
-  <ledge-render class="sample" [content]="content"></ledge-render>
+  <as-split-area size="70" #area2="asSplitArea">
+    <ledge-render class="sample" [content]="content"></ledge-render>
   </as-split-area>
 </as-split>

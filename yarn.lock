@@ -1441,8 +1441,8 @@
 
 "@scullyio/scully@latest":
   version "0.0.87"
-  resolved "https://registry.yarnpkg.com/@scullyio/scully/-/scully-0.0.87.tgz#c4604df363cd92b31cf9b4173c9ec5619a6c8661"
-  integrity sha512-lsB+YMifW8filcGZQlXlVsDAFptS8R3SEWbdwd6KlmTt5WR3INna5vjt5iTHuw0uRfi39zTNkQv2KmaHweD9Eg==
+  resolved "https://registry.npm.taobao.org/@scullyio/scully/download/@scullyio/scully-0.0.87.tgz#c4604df363cd92b31cf9b4173c9ec5619a6c8661"
+  integrity sha1-xGBN82PNkrMc+bQXPJ7FYZpshmE=
   dependencies:
     asciidoctor.js "^1.5.9"
     chalk "^3.0.0"
@@ -8438,6 +8438,13 @@ ng2-dragula@^2.1.1:
   dependencies:
     "@types/dragula" "^2.1.34"
     dragula "^3.7.2"
+
+ngx-ace-tern@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.npm.taobao.org/ngx-ace-tern/download/ngx-ace-tern-1.2.2.tgz#b2dca3982fc06b159fbda0a8a185666ee9bd28e6"
+  integrity sha1-styjmC/AaxWfvaCooYVmbum9KOY=
+  dependencies:
+    tslib "^1.9.0"
 
 ngx-markdown@^9.0.0:
   version "9.0.0"
