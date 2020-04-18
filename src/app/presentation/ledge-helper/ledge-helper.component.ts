@@ -4,6 +4,25 @@ import { SplitAreaDirective, SplitComponent } from 'angular-split';
 import * as mdData from 'raw-loader!../../../assets/docs/help.md';
 import { EMPTY, Subject, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+
+// cleaning angular.json with script import
+import 'brace/index';
+import 'brace/mode/markdown';
+import 'brace/theme/github';
+import 'brace/theme/monokai';
+// import 'brace/theme/chrome';
+// import 'brace/theme/clouds';
+// import 'brace/theme/chaos';
+// import 'brace/theme/eclipse';
+// import 'brace/theme/iplastic';
+// import 'brace/theme/monokai';
+// import 'brace/theme/merbivore';
+// import 'brace/theme/terminal';
+// import 'brace/theme/textmate';
+// import 'brace/theme/tomorrow';
+// import 'brace/theme/twilight';
+// import 'brace/theme/xcode';
+
 @Component({
   selector: 'app-ledge-helper',
   templateUrl: './ledge-helper.component.html',
@@ -35,21 +54,21 @@ export class LedgeHelperComponent implements OnInit, OnDestroy {
   };
   acEditor: any;
   themes = [
-    'chrome',
+    'github',
+    'monokai',
+    /*  'chrome',
     'clouds',
     'chaos',
     'eclipse',
-    'github',
     'iplastic',
-    'monokai',
+    'tomorrow',
     'merbivore',
     'terminal',
     'textmate',
-    'tomorrow',
     'twilight',
-    'xcode',
+    'xcode', */
   ];
-  themeSelected = 'chrome';
+  themeSelected = 'github';
   term$ = new Subject<string>();
   private searchSubscription: Subscription;
 
@@ -86,8 +105,9 @@ export class LedgeHelperComponent implements OnInit, OnDestroy {
     }
   }
 
-  onAceChange(data) {
-    console.log('~~~编辑器内容变化~~~', data);
+  onAceChange($event) {
+    // console.log('~~~编辑器内容变化~~~', $event);
+    this.term$.next($event);
   }
 
   editorRef($event) {

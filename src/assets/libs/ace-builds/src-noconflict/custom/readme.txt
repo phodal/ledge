@@ -1,1 +1,0 @@
-replace the worker-html.js in the directory above this with this file to make the html mode worker lint javascript instead of html (it will lint javascript inside of script tags)

@@ -10,7 +10,7 @@ import {
   TranslateModule,
 } from '@ngx-translate/core';
 
-require('../../../assets/libs/ace-builds/src-noconflict/ace.js');
+import 'brace/index';
 
 describe('LedgeHelperComponent', () => {
   let component: LedgeHelperComponent;
