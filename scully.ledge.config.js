@@ -65,6 +65,7 @@ function thinkTankPlugin(route, config) {
   return Promise.resolve([
     { route: '/think-tank/qa' },
     { route: '/think-tank/mobile-android' },
+    { route: '/think-tank/frontend' },
   ]);
 }
 
