@@ -6,49 +6,7 @@
       </button>
       <span class="spacer"></span>
       <div class="right" fxShow="true" fxHide.lt-md="true">
-        <button mat-button routerLink="/home" routerLinkActive="active">{{ 'home' | translate}}</button>
-        <button mat-button routerLink="/case-study" routerLinkActive="active">{{ 'case-study' | translate}}</button>
-        <button mat-button routerLink="/pattern" routerLinkActive="active">{{ 'patterns' | translate}}</button>
-        <button mat-button routerLink="/practise" routerLinkActive="active">{{ 'practises' | translate}}</button>
-        <button mat-button routerLink="/manual" routerLinkActive="active">{{ 'manual' | translate}}</button>
-        <button mat-button routerLink="/solution" routerLinkActive="active">{{ 'solution' | translate}}</button>
-        <button mat-button routerLink="/think-tank" routerLinkActive="active">{{ 'think-tank' | translate}}</button>
-
-        <mat-menu #appMenu="matMenu" backdropClass="nav-menu-wrapper">
-          <button mat-menu-item routerLink="/mobile" routerLinkActive="active">{{ 'mobile' | translate}}</button>
-          <button mat-menu-item routerLink="/maturity" routerLinkActive="active">{{ 'maturity' | translate}}</button>
-          <button mat-menu-item routerLink="/report" routerLinkActive="active">{{ 'report' | translate}}</button>
-          <button mat-menu-item routerLink="/resources" routerLinkActive="active">{{ 'resources' | translate}}</button>
-        </mat-menu>
-        <button mat-button [matMenuTriggerFor]="appMenu">
-          {{ 'resource' | translate}}
-          <mat-icon>arrow_drop_down</mat-icon>
-        </button>
-
-        <mat-menu #toolsetMenu="matMenu" backdropClass="nav-menu-wrapper">
-          <button mat-menu-item routerLink="/tool" routerLinkActive="active">{{ 'toolsets' | translate}}</button>
-          <button mat-menu-item routerLink="/design" routerLinkActive="active">{{ 'design-devops' | translate}}</button>
-          <button mat-menu-item routerLink="/helper" routerLinkActive="active">{{ 'ledge-editor' | translate}}</button>
-          <button mat-menu-item routerLink="/checklists" routerLinkActive="active">{{ 'checklists' | translate}}</button>
-        </mat-menu>
-
-        <button mat-button [matMenuTriggerFor]="toolsetMenu">
-          {{ 'tool' | translate}}
-          <mat-icon>arrow_drop_down</mat-icon>
-        </button>
-
-        <mat-menu #langMenu="matMenu" backdropClass="nav-menu-wrapper">
-          <button mat-menu-item (click)="setLanguage('zh-cn')">中文</button>
-          <button mat-menu-item (click)="setLanguage('en')">English (need help)</button>
-          <a class="mat-menu-item" mat-menu-item href="https://github.com/phodal/ledge/issues" target="_blank">Add more lang</a>
-        </mat-menu>
-
-        <button mat-button (click)="openLink('https://zhuanlan.zhihu.com/bizdevops')">{{'blog' | translate}}</button>
-
-        <button mat-button [matMenuTriggerFor]="langMenu">
-          <mat-icon>language</mat-icon>
-          <mat-icon>arrow_drop_down</mat-icon>
-        </button>
+        <ng-template *ngTemplateOutlet="navMenu"></ng-template>
       </div>
 
       <div fxShow="true" fxHide.gt-sm="true">
@@ -60,16 +18,57 @@
 
   <mat-sidenav-container fxFlexFill>
     <mat-sidenav #sidenav fxLayout="column">
-      <div fxLayout="column">
-        <a (click)="sidenav.toggle()" href="#" mat-button>Close</a>
-        <a href="#" mat-button>Menu Item 1</a>
-        <a href="#" mat-button>Menu Item 2</a>
-        <a href="#" mat-button>Menu Item 3</a>
-        <a href="#" mat-button>Menu Item 4</a>
-        <a href="#" mat-button>Menu Item 5</a>
-        <a href="#" mat-button>Menu Item 6</a>
+      <div fxLayout="column" class="ledge-side-menu">
+        <button mat-button (click)="sidenav.toggle()">Close</button>
+        <ng-template *ngTemplateOutlet="navMenu"></ng-template>
       </div>
     </mat-sidenav>
     <mat-sidenav-content fxFlexFill><router-outlet></router-outlet></mat-sidenav-content>
   </mat-sidenav-container>
 </div>
+
+<ng-template #navMenu>
+  <button mat-button routerLink="/home" routerLinkActive="active">{{ 'home' | translate}}</button>
+  <button mat-button routerLink="/case-study" routerLinkActive="active">{{ 'case-study' | translate}}</button>
+  <button mat-button routerLink="/pattern" routerLinkActive="active">{{ 'patterns' | translate}}</button>
+  <button mat-button routerLink="/practise" routerLinkActive="active">{{ 'practises' | translate}}</button>
+  <button mat-button routerLink="/manual" routerLinkActive="active">{{ 'manual' | translate}}</button>
+  <button mat-button routerLink="/solution" routerLinkActive="active">{{ 'solution' | translate}}</button>
+  <button mat-button routerLink="/think-tank" routerLinkActive="active">{{ 'think-tank' | translate}}</button>
+
+  <mat-menu #appMenu="matMenu" backdropClass="nav-menu-wrapper">
+    <button mat-menu-item routerLink="/mobile" routerLinkActive="active">{{ 'mobile' | translate}}</button>
+    <button mat-menu-item routerLink="/maturity" routerLinkActive="active">{{ 'maturity' | translate}}</button>
+    <button mat-menu-item routerLink="/report" routerLinkActive="active">{{ 'report' | translate}}</button>
+    <button mat-menu-item routerLink="/resources" routerLinkActive="active">{{ 'resources' | translate}}</button>
+  </mat-menu>
+  <button mat-button [matMenuTriggerFor]="appMenu">
+    {{ 'resource' | translate}}
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
+
+  <mat-menu #toolsetMenu="matMenu" backdropClass="nav-menu-wrapper">
+    <button mat-menu-item routerLink="/tool" routerLinkActive="active">{{ 'toolsets' | translate}}</button>
+    <button mat-menu-item routerLink="/design" routerLinkActive="active">{{ 'design-devops' | translate}}</button>
+    <button mat-menu-item routerLink="/helper" routerLinkActive="active">{{ 'ledge-editor' | translate}}</button>
+    <button mat-menu-item routerLink="/checklists" routerLinkActive="active">{{ 'checklists' | translate}}</button>
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="toolsetMenu">
+    {{ 'tool' | translate}}
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
+
+  <mat-menu #langMenu="matMenu" backdropClass="nav-menu-wrapper">
+    <button mat-menu-item (click)="setLanguage('zh-cn')">中文</button>
+    <button mat-menu-item (click)="setLanguage('en')">English (need help)</button>
+    <a class="mat-menu-item" mat-menu-item href="https://github.com/phodal/ledge/issues" target="_blank">Add more lang</a>
+  </mat-menu>
+
+  <button mat-button (click)="openLink('https://zhuanlan.zhihu.com/bizdevops')">{{'blog' | translate}}</button>
+
+  <button mat-button [matMenuTriggerFor]="langMenu">
+    <mat-icon>language</mat-icon>
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
+</ng-template>

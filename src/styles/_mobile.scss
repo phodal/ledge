@@ -1,3 +1,9 @@
+.ledge-side-menu {
+  button {
+    padding: 0.5em;
+    width: 8em;
+  }
+}
 @media screen and (max-width: 1366px) {
   .button-logo {
     margin-left: 0 !important;
@@ -6,7 +12,7 @@
 
 @media screen and (max-width: 1024px) {
   .left-drawer {
-    display: none;
+    display: none !important;
   }
 
   body {
