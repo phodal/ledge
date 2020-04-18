@@ -1,1 +1,3 @@
-<component-markdown-render [data]="data" showToc="true"></component-markdown-render>
+<div *ngIf="content">
+  <component-markdown-render [data]="content" showToc="true"></component-markdown-render>
+</div>

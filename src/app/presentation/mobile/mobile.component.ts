@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as mdData from 'raw-loader!../../../assets/docs/mobile-andorid.md';
+import * as mdData from 'raw-loader!../../../assets/docs/think-tank/mobile-android.md';
 
 @Component({
   selector: 'app-mobile',

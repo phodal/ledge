@@ -65,7 +65,12 @@ export class MarkdownRenderComponent
     this.render();
   }
 
-  ngOnChanges(changes: SimpleChanges): void {}
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.data) {
+      this.markdownService.compile(changes.data.currentValue);
+      this.render();
+    }
+  }
 
   @HostListener('window:scroll', ['$event'])
   handleScroll(event) {

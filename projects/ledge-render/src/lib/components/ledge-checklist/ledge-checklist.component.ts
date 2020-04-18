@@ -37,6 +37,7 @@ export class LedgeChecklistComponent implements OnInit, OnChanges {
         subitems: []
       };
       for (const child of item.children) {
+        console.log(child);
         const splitName = child.name.split('：');
         checklist.subitems.push({
           title: splitName[0],

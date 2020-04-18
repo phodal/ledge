@@ -34,10 +34,18 @@
   <button mat-button routerLink="/practise" routerLinkActive="active">{{ 'practises' | translate}}</button>
   <button mat-button routerLink="/manual" routerLinkActive="active">{{ 'manual' | translate}}</button>
   <button mat-button routerLink="/solution" routerLinkActive="active">{{ 'solution' | translate}}</button>
-  <button mat-button routerLink="/think-tank" routerLinkActive="active">{{ 'think-tank' | translate}}</button>
+
+  <mat-menu #tankMenu="matMenu" backdropClass="nav-menu-wrapper">
+    <button mat-menu-item routerLink="/think-tank/qa" routerLinkActive="active">QA {{ 'think-tank' | translate}}</button>
+    <button mat-menu-item routerLink="/think-tank/mobile-android" routerLinkActive="active">Android {{ 'think-tank' | translate}}</button>
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="tankMenu">
+    {{ 'think-tank' | translate}}
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
 
   <mat-menu #appMenu="matMenu" backdropClass="nav-menu-wrapper">
-    <button mat-menu-item routerLink="/mobile" routerLinkActive="active">{{ 'mobile' | translate}}</button>
     <button mat-menu-item routerLink="/maturity" routerLinkActive="active">{{ 'maturity' | translate}}</button>
     <button mat-menu-item routerLink="/report" routerLinkActive="active">{{ 'report' | translate}}</button>
     <button mat-menu-item routerLink="/resources" routerLinkActive="active">{{ 'resources' | translate}}</button>
