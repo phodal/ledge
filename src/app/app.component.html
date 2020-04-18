@@ -10,7 +10,9 @@
       </div>
 
       <div fxShow="true" fxHide.gt-sm="true">
-        <button mat-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+        <button mat-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
       </div>
     </mat-toolbar-row>
   </mat-toolbar>
@@ -23,7 +25,9 @@
         <ng-template *ngTemplateOutlet="navMenu"></ng-template>
       </div>
     </mat-sidenav>
-    <mat-sidenav-content fxFlexFill><router-outlet></router-outlet></mat-sidenav-content>
+    <mat-sidenav-content fxFlexFill>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
 
@@ -36,9 +40,13 @@
   <button mat-button routerLink="/solution" routerLinkActive="active">{{ 'solution' | translate}}</button>
 
   <mat-menu #tankMenu="matMenu" backdropClass="nav-menu-wrapper">
-    <button mat-menu-item routerLink="/think-tank/qa" routerLinkActive="active">QA {{ 'think-tank' | translate}}</button>
-    <button mat-menu-item routerLink="/think-tank/mobile-android" routerLinkActive="active">Android {{ 'think-tank' | translate}}</button>
-    <button mat-menu-item routerLink="/think-tank/frontend" routerLinkActive="active">Frontend {{ 'think-tank' | translate}}</button>
+    <button mat-menu-item routerLink="/think-tank/qa" routerLinkActive="active">
+      QA {{ 'think-tank' | translate}}</button>
+    <button mat-menu-item routerLink="/think-tank/mobile-android" routerLinkActive="active">
+      Android {{ 'think-tank' | translate}}</button>
+    <button mat-menu-item routerLink="/think-tank/frontend" routerLinkActive="active">
+      {{ 'tank-page.frontend' | translate}}{{ 'think-tank' | translate}}
+    </button>
   </mat-menu>
 
   <button mat-button [matMenuTriggerFor]="tankMenu">
@@ -71,7 +79,8 @@
   <mat-menu #langMenu="matMenu" backdropClass="nav-menu-wrapper">
     <button mat-menu-item (click)="setLanguage('zh-cn')">中文</button>
     <button mat-menu-item (click)="setLanguage('en')">English (need help)</button>
-    <a class="mat-menu-item" mat-menu-item href="https://github.com/phodal/ledge/issues" target="_blank">Add more lang</a>
+    <a class="mat-menu-item" mat-menu-item href="https://github.com/phodal/ledge/issues" target="_blank">Add more
+      lang</a>
   </mat-menu>
 
   <button mat-button (click)="openLink('https://zhuanlan.zhihu.com/bizdevops')">{{'blog' | translate}}</button>

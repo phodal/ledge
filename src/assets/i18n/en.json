@@ -26,6 +26,9 @@
     "devops-features": "DevOps is that it strongly advocates comprehensive automation and monitoring of all aspects of building software (from integration, testing, release to deployment and infrastructure management).",
     "design-by-different": "different enterprise, different DevOps pipelines"
   },
+  "tank-page": {
+    "frontend": "Frontend"
+  },
   "helper": {
     "theme": "Theme"
   }
