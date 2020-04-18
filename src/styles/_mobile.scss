@@ -1,0 +1,14 @@
+@media screen and (max-width: 1024px) {
+  .left-drawer {
+    display: none;
+  }
+
+  body {
+    min-width: auto!important;
+  }
+
+  .markdown-toc .right-content {
+    width: 100%;
+  }
+}
+

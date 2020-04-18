@@ -254,6 +254,11 @@
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-9.0.5.tgz#71df41a45e60619fb7454ab9fe604d6ce7d0d8da"
   integrity sha512-7VznrYjaAIzeq/zQ7v6tbeoOI7JJKgChKwG7s8jRoEpENu+w2pRlRdyQul88iJLsXgObR+/TfBNm/K+G4cqAFw==
 
+"@angular/flex-layout@^9.0.0-beta.29":
+  version "9.0.0-beta.29"
+  resolved "https://registry.yarnpkg.com/@angular/flex-layout/-/flex-layout-9.0.0-beta.29.tgz#a334ffd15c272e2d48cdaef3879625aadcc13a54"
+  integrity sha512-93sxR+kYfYMOdnlWL0Q77FZ428gg8XnBu0YZm6GsCdkw/vLggIT/G1ZAqHlCPIODt6pxmCJ5KXh4ShvniIYDsA==
+
 "@angular/forms@~9.0.3":
   version "9.0.5"
   resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-9.0.5.tgz#3bc96364754a50e03595873045b72ab886ee0748"
@@ -1434,7 +1439,7 @@
   resolved "https://registry.yarnpkg.com/@scullyio/ng-lib/-/ng-lib-0.0.22.tgz#e36873eec3778914dde59279980577c85b361ed7"
   integrity sha512-cgJL/Jo2VbgrzEStSD2Er19Hyz2LV04rRMK6MAk/BIupcjPc7RtU0thVD2FCplAtbeEm7SdVlLcox+rLdlFNlw==
 
-"@scullyio/scully@0.0.87":
+"@scullyio/scully@latest":
   version "0.0.87"
   resolved "https://registry.yarnpkg.com/@scullyio/scully/-/scully-0.0.87.tgz#c4604df363cd92b31cf9b4173c9ec5619a6c8661"
   integrity sha512-lsB+YMifW8filcGZQlXlVsDAFptS8R3SEWbdwd6KlmTt5WR3INna5vjt5iTHuw0uRfi39zTNkQv2KmaHweD9Eg==

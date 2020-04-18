@@ -3,12 +3,6 @@
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 1024px) {
-  .left-drawer {
-    display: none;
-  }
-}
-
 .no-toc-markdown {
   width: 95%;
   margin: 1em auto 0;

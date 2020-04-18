@@ -27,6 +27,7 @@
     "@angular/common": "~9.0.3",
     "@angular/compiler": "~9.0.3",
     "@angular/core": "~9.0.3",
+    "@angular/flex-layout": "^9.0.0-beta.29",
     "@angular/forms": "~9.0.3",
     "@angular/localize": "^9.1.0",
     "@angular/material": "^9.1.1",
