@@ -1,11 +1,11 @@
-<div [ngClass]="isHome() ? 'app-header' : ''">
+<div class="ledge-app" [ngClass]="isHome() ? 'app-header' : ''">
   <mat-toolbar color="accent">
     <mat-toolbar-row>
       <button mat-button class="button-logo" routerLink="/home">
         <img src="/assets/images/logo.svg" alt="logo" class="logo">
       </button>
       <span class="spacer"></span>
-      <div class="right">
+      <div class="right" fxShow="true" fxHide.lt-md="true">
         <button mat-button routerLink="/home" routerLinkActive="active">{{ 'home' | translate}}</button>
         <button mat-button routerLink="/case-study" routerLinkActive="active">{{ 'case-study' | translate}}</button>
         <button mat-button routerLink="/pattern" routerLinkActive="active">{{ 'patterns' | translate}}</button>
@@ -50,7 +50,26 @@
           <mat-icon>arrow_drop_down</mat-icon>
         </button>
       </div>
+
+      <div fxShow="true" fxHide.gt-sm="true">
+        <button mat-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+      </div>
     </mat-toolbar-row>
   </mat-toolbar>
+
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav fxLayout="column">
+      <div fxLayout="column">
+        <a (click)="sidenav.toggle()" href="#" mat-button>Close</a>
+        <a href="#" mat-button>Menu Item 1</a>
+        <a href="#" mat-button>Menu Item 2</a>
+        <a href="#" mat-button>Menu Item 3</a>
+        <a href="#" mat-button>Menu Item 4</a>
+        <a href="#" mat-button>Menu Item 5</a>
+        <a href="#" mat-button>Menu Item 6</a>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill><router-outlet></router-outlet></mat-sidenav-content>
+  </mat-sidenav-container>
 </div>
-<router-outlet></router-outlet>

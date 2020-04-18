@@ -1,3 +1,9 @@
+@media screen and (max-width: 1366px) {
+  .button-logo {
+    margin-left: 0 !important;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .left-drawer {
     display: none;
@@ -5,10 +11,6 @@
 
   body {
     min-width: auto!important;
-  }
-
-  .button-logo {
-    margin-left: 0 !important;
   }
 
   .markdown-toc .right-content {

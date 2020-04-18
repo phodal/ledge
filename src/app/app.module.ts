@@ -20,6 +20,7 @@ import { SharedModule } from './shared/shared.module';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -50,6 +51,7 @@ export function createTranslateLoader(http: HttpClient) {
     CustomMaterialModule,
     LedgeRenderModule,
     ScullyLibModule,
+    FlexLayoutModule,
     TranslateModule.forRoot({
       defaultLanguage: 'zh-cn',
       loader: {
