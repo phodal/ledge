@@ -8,10 +8,17 @@
   },
   {
     "name": "Gitea",
+    "description": "Gitea 是一个开源社区驱动的轻量级代码托管解决方案，后端采用 Go 编写，采用 MIT 许可证。Gitea 是一个从 Gogs 发展而来的自己托管的Git服务程序。他和 GitHub，Bitbucket，Gitlab等比较类似。",
+    "homepage": "https://gitea.io/en-us/",
     "category": "scm",
     "number": 3,
     "pay": "Fm",
-    "symbol": "Ge"
+    "symbol": "Ge",
+    "resources": [{
+      "name": "Gitea 文档（中文）",
+      "link": "https://docs.gitea.io/zh-cn/",
+      "description": ""
+    }]
   },
   {
     "name": "GitHub",
@@ -20,7 +27,12 @@
     "category": "scm",
     "number": 11,
     "pay": "Fm",
-    "symbol": "Gh"
+    "symbol": "Gh",
+    "books": [{
+      "name": "《GitHub 漫游指南》",
+      "link": "https://github.com/phodal/github",
+      "description": "一本有关如何在 Github 上构建一个好的项目的中文电子书。 探索用户的行为。 找到一些有趣的东西。"
+    }]
   },
   {
     "name": "SubVersion",
@@ -35,16 +47,17 @@
     "number": 37,
     "pay": "Os",
     "symbol": "Gt",
-    "description": "Git 是一个分散式版本控制软件，最初由林纳斯·托瓦兹创作，于2005年以GPL释出。最初目的是为更好地管理Linux核心开发而设计。应注意的是，这与GNU Interactive Tools[5]（一个类似Norton Commander界面的文件管理器）不同。Git 最初的开发动力来自于BitKeeper和Monotone。",
-    "resources": [{
-      "name": "Git Homepage",
-      "link": "https://git-scm.com/",
-      "description": ""
-    }],
+    "description": "Git 是一个分散式版本控制软件，最初由林纳斯·托瓦兹创作，于 2005 年以 GPL 释出。最初目的是为更好地管理Linux核心开发而设计。应注意的是，这与 GNU Interactive Tools[5]（一个类似 Norton Commander 界面的文件管理器）不同。Git 最初的开发动力来自于 BitKeeper 和Monotone。",
+    "homepage": "https://git-scm.com/",
     "books": [{
-      "name": "《Git版本控制管理》",
+      "name": "《Git 版本控制管理》",
       "link": "https://book.douban.com/subject/26341974//",
-      "description": "是学习掌握Git的最佳教程，总共分为21章，其内容涵盖了如何在多种真实开发环境中使用Git；洞察Git的常用案例、初始任务和基本功能；如何在集中和分布式版本控制中使用Git 等内容。"
+      "description": "是学习掌握 Git 的最佳教程，总共分为 21 章，其内容涵盖了如何在多种真实开发环境中使用 Git ；洞察 Git 的常用案例、初始任务和基本功能；如何在集中和分布式版本控制中使用 Git 等内容。"
+    },
+    {
+      "name": "《Pro Git》(第二版)",
+      "link": "https://git-scm.com/book/en/v2",
+      "description": "作为 Git 官方推荐书籍，《Pro Git》值得 Git 初学者和爱好者认真阅读一遍。"
     }]
   },
   {
@@ -105,7 +118,9 @@
     "category": "ci",
     "number": 22,
     "pay": "Os",
-    "symbol": "Jk"
+    "symbol": "Jk",
+    "homepage": "https://jenkins.io/zh/",
+    "description": "Jenkins 是一个开源软件项目，是基于 Java 开发的一种持续集成工具，用于监控持续重复的工作，旨在提供一个开放易用的软件平台，使软件的持续集成变成可能。"
   },
   {
     "name": "Bamboo",
@@ -133,7 +148,9 @@
     "category": "ci",
     "number": 39,
     "pay": "Pd",
-    "symbol": "Tr"
+    "symbol": "Tr",
+    "homepage": "https://www.travis-ci.org/",
+    "description": "Travis CI 是在软件开发领域中的一个在线的，分布式的持续集成服务，用来构建及测试在GitHub托管的代码。"
   },
 
 
@@ -209,7 +226,9 @@
     "category": "testing",
     "number": 23,
     "pay": "Os",
-    "symbol": "Ju"
+    "symbol": "Ju",
+    "homepage": "https://junit.org",
+    "description": "JUnit 是一个 Java编程语言的单元测试框架。JUnit 在测试驱动的开发方面有很重要的发展，是起源于 JUnit 的一个统称为 xUnit 的单元测试框架之一。"
   },
   {
     "name": "Selenium",
