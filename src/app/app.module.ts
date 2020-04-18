@@ -10,7 +10,6 @@ import { AwesomeToolComponent } from './presentation/awesome-tool/awesome-tool.c
 import { ManualComponent } from './presentation/manual/manual.component';
 import { MaturityItemComponent } from './presentation/maturity/maturity-item/maturity-item.component';
 import { MaturityComponent } from './presentation/maturity/maturity.component';
-import { MobileComponent } from './presentation/mobile/mobile.component';
 import { PatternComponent } from './presentation/pattern/pattern.component';
 import { PractiseComponent } from './presentation/practise/practise.component';
 import { ReporterComponent } from './presentation/reporter/reporter.component';
@@ -29,14 +28,12 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-
     PatternComponent,
     PractiseComponent,
     ManualComponent,
     ResourcesComponent,
     ReporterComponent,
     AwesomeToolComponent,
-    MobileComponent,
 
     MaturityComponent,
     MaturityItemComponent,
