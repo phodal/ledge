@@ -3,7 +3,6 @@ import { EMPTY, Subject, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import * as mdData from 'raw-loader!../../../assets/docs/help.md';
 import { SplitAreaDirective, SplitComponent } from 'angular-split';
-import { IOutputData } from 'angular-split/lib/interface';
 
 @Component({
   selector: 'app-ledge-helper',
