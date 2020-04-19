@@ -87,9 +87,9 @@
 
   .progress {
     $gap: 10px;
-    $line-height: 20px;
+    $line-height: 24px;
     $bullet-radius: 5px;
-    $line-thick: 2px;
+    $line-thick: 1px;
     $next-color: #666;
     $current-color: #333;
     $prev-color: #333;
@@ -207,12 +207,15 @@
             // Dot
             &:before {
               content: "";
-              background: $purple;
-              padding: $bullet-radius;
               border-radius: 50%;
               position: absolute;
-              left: -$gap;
               top: $line-height/2;
+              left: -$gap;
+              height: 12px;
+              width: 12px;
+              border-radius: $line-height/$line-height;
+              border: solid 1px $purple;
+              background: #fff;
               transform: translateX(-50%) translateY(-50%);
               transition: padding 0.2s ease;
             }
@@ -220,11 +223,11 @@
             // Line
             &:after {
               content: "";
-              background: $purple; //rgba(0, 0, 0, 0.6);
+              background: $purple;
               border-radius: 2px;
               position: absolute;
               left: -$gap;
-              top: $line-height/2;
+              top: $line-height;
               height: 101%;
               width: $line-thick;
               transform: translateX(-50%);
@@ -244,7 +247,7 @@
           .level_2 {
             font-size: 14px;
 
-            &:before{
+            &:before {
               position: relative;
               left: -6px;
               content: '';
@@ -259,7 +262,7 @@
           .level_3, .level_4, .level_5 {
             font-size: 12px;
 
-            &:before{
+            &:before {
               position: relative;
               left: -6px;
               content: '-';
