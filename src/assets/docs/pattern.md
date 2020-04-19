@@ -27,6 +27,8 @@
 
 # 模式：流畅度模型
 
+## 流畅度模型
+
 ![数字化流畅度模型](assets/images/mdb.svg '数字化流畅度模型')
 
 based on: MDB & [https://martinfowler.com/articles/agileFluency.html](https://martinfowler.com/articles/agileFluency.html)
