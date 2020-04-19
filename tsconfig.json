@@ -24,6 +24,10 @@
       "ledge-render": [
         "dist/ledge-render/ledge-render",
         "dist/ledge-render"
+      ],
+      "ledge-view": [
+        "dist/ledge-view/ledge-view",
+        "dist/ledge-view"
       ]
     }
   },

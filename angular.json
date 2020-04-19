@@ -202,6 +202,46 @@
           }
         }
       }
+    },
+    "ledge-view": {
+      "projectType": "library",
+      "root": "projects/ledge-view",
+      "sourceRoot": "projects/ledge-view/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ledge-view/tsconfig.lib.json",
+            "project": "projects/ledge-view/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ledge-view/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ledge-view/src/test.ts",
+            "tsConfig": "projects/ledge-view/tsconfig.spec.json",
+            "karmaConfig": "projects/ledge-view/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ledge-view/tsconfig.lib.json",
+              "projects/ledge-view/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ledge",
