@@ -13,46 +13,13 @@
   }
 
   .left-drawer {
-    width: 15%;
-    min-width: 200px;
+    width: 20%;
+    min-width: 240px;
     font-size: 16px;
     overflow-y: scroll;
     height: calc(100vh - 66px);
     padding-right: 8px;
-
-    .level_1,
-    .level_2,
-    .level_3,
-    .level_4,
-    .level_5 {
-      line-height: 1.5;
-      white-space: nowrap;
-
-      a {
-        text-decoration: none;
-        color: #000;
-        line-height: 1.2em;
-
-        &:hover {
-          color: $purple;
-        }
-
-        &.active {
-          color: $purple;
-        }
-      }
-    }
-
-    .level_1 {
-      font-weight: 400;
-    }
-
-    .level_2,
-    .level_3,
-    .level_4,
-    .level_5 {
-      font-weight: 100;
-    }
+    overflow-x: hidden;
   }
 }
 
@@ -137,6 +104,7 @@
 
       &.left {
         padding-right: $gap;
+        padding-left: $gap;
         text-align: right;
 
         // Line
@@ -161,6 +129,37 @@
 
       &.right {
         padding-left: $gap;
+
+        .level_1,
+        .level_2,
+        .level_3,
+        .level_4,
+        .level_5 {
+          a {
+            text-decoration: none;
+            color: #000;
+            line-height: 1.2em;
+
+            &:hover {
+              color: $purple;
+            }
+
+            &.active {
+              color: $purple;
+            }
+          }
+        }
+
+        .level_1 {
+          font-weight: 400;
+        }
+
+        .level_2,
+        .level_3,
+        .level_4,
+        .level_5 {
+          font-weight: 100;
+        }
 
         div {
           &.prev {
@@ -200,6 +199,8 @@
           }
 
           &.level_1 {
+            font-size: 16px;
+            padding-left: 12px;
             // Dot
             &:before {
               content: "";
@@ -232,7 +233,36 @@
           .level_3,
           .level_4,
           .level_5 {
-            margin-left: 12px;
+            padding-left: 12px;
+            min-height: 24px;
+            line-height: 24px;
+          }
+
+          .level_2 {
+            font-size: 14px;
+
+            &:before{
+              position: relative;
+              left: -6px;
+              content: '';
+              display: inline-block;
+              width: 8px;
+              height: 8px;
+              border-radius: 4px;
+              background-color: $purple;
+            }
+          }
+
+          .level_3, .level_4, .level_5 {
+            font-size: 12px;
+
+            &:before{
+              position: relative;
+              left: -6px;
+              content: '-';
+              display: inline-block;
+              color: $purple;
+            }
           }
         }
       }
@@ -243,7 +273,6 @@
         position: relative;
         line-height: $line-height;
         cursor: default;
-        min-height: 30px;
 
         &:last-of-type {
           flex: 0;

@@ -186,9 +186,9 @@ export class MarkdownRenderComponent
       const link = `<a id="menu-${item.anchor}" href="${href}" title=${item.text}>${item.text}</a>`;
       if (item.children) {
         const childrenItems = this.renderToc(item.children);
-        return `<div class="level_${
-          item.level
-        }">${link}<div>${childrenItems.join('')}</div></div>`;
+        return `<div class="level_${item.level}">
+${link}<div class="level_child">${childrenItems.join('')}</div>
+</div>`;
       } else {
         return `<div class="level_${item.level}">${link}</div>`;
       }
