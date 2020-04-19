@@ -5,7 +5,7 @@
     "ng": "./node_modules/.bin/ng",
     "start": "yarn ng serve",
     "build": "node --max_old_space_size=4096 ./node_modules/.bin/ng build",
-    "build:ci": "node --max_old_space_size=4096 ./node_modules/.bin/ng build --prod",
+    "build:ci": "node --max_old_space_size=4096 ./node_modules/.bin/ng build --prod --configuration ci",
     "build:stats": "node --max_old_space_size=4096 ./node_modules/.bin/ng build --stats-json",
     "analyze": "webpack-bundle-analyzer dist/ledge/stats-es2015.json",
     "test": "yarn ng test",

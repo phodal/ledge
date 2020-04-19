@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { StorageMap } from '@ngx-pwa/local-storage';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -16,10 +17,14 @@ export class AppComponent implements OnInit {
     public translate: TranslateService,
     private storage: StorageMap
   ) {
-    if (translate.getBrowserLang().includes('zh')) {
+    if (environment.ci) {
       translate.use('zh-cn');
     } else {
-      translate.use('en');
+      if (translate.getBrowserLang().includes('zh')) {
+        translate.use('zh-cn');
+      } else {
+        translate.use('en');
+      }
     }
   }
 
