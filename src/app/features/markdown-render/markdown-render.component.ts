@@ -32,11 +32,13 @@ export class MarkdownRenderComponent
   data = '';
 
   @ViewChild('toc', { static: false }) tocEl: ElementRef;
+  @ViewChild('tocLeft', { static: false }) tocLeftEl: ElementRef;
   @ViewChild('leftContent', { static: false }) leftEl: ElementRef;
   @ViewChild('render', { static: false }) scrollEl: ElementRef;
 
   private toc = [];
   tocStr = '';
+  tocLeftStr = '';
   sticky = false;
   windowScrolled = false;
   tocify = new Tocify();
@@ -108,6 +110,7 @@ export class MarkdownRenderComponent
     if (!!tocLink) {
       if (!!this.lastTocId) {
         const lastElement = document.getElementById('menu-' + this.lastTocId);
+        lastElement.classList.add('prev');
         lastElement.classList.remove('active');
       }
 
@@ -133,6 +136,11 @@ export class MarkdownRenderComponent
     this.tocStr = this.renderToc(items).join('');
     if (this.tocEl && this.tocEl.nativeElement) {
       this.tocEl.nativeElement.innerHTML = this.tocStr;
+    }
+
+    this.tocLeftStr = this.renderTocLeft(items).join('');
+    if (this.tocLeftEl && this.tocLeftEl.nativeElement) {
+      this.tocLeftEl.nativeElement.innerHTML = this.tocLeftStr;
     }
     this.tocify.reset();
 
@@ -175,12 +183,27 @@ export class MarkdownRenderComponent
   private renderToc(items: TocItem[]) {
     return items.map((item) => {
       const href = `${this.location.path()}#${item.anchor}`;
-      const link = `<a class="level_${item.level}" id="menu-${item.anchor}" href="${href}" title=${item.text}>${item.text}</a>`;
+      const link = `<a id="menu-${item.anchor}" href="${href}" title=${item.text}>${item.text}</a>`;
       if (item.children) {
         const childrenItems = this.renderToc(item.children);
-        return `<li>${link}<ul>${childrenItems.join('')}</ul></li>`;
+        return `<div class="level_${
+          item.level
+        }">${link}<div>${childrenItems.join('')}</div></div>`;
       } else {
-        return `<li>${link}</li>`;
+        return `<div class="level_${item.level}">${link}</div>`;
+      }
+    });
+  }
+
+  private renderTocLeft(items: TocItem[]) {
+    return items.map((item) => {
+      if (item.children) {
+        const childrenItems = this.renderTocLeft(item.children);
+        return `<div class="left-menu-${item.anchor}"><div>${childrenItems.join(
+          ''
+        )}</div></div>`;
+      } else {
+        return `<div class="left-menu-${item.anchor}"></div>`;
       }
     });
   }

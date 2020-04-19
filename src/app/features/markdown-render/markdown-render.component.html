@@ -1,8 +1,13 @@
 <div *ngIf="showToc">
   <div class="markdown-toc">
     <div class="left-drawer" #leftContent>
-      <div class="toc">
-        <ul #toc [class.sticky]="sticky"></ul>
+      <div class="progress">
+        <div class="left">
+          <div #tocLeft [class.sticky]="sticky"></div>
+        </div>
+        <div class="toc right">
+          <ul #toc [class.sticky]="sticky"></ul>
+        </div>
       </div>
     </div>
     <div class="right-content" #render (scroll)="handleScroll($event)">

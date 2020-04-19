@@ -28,9 +28,18 @@
       line-height: 1.5;
       white-space: nowrap;
 
-      &:hover {
-        color: $purple;
-        border-bottom: 2px solid $purple;
+      a {
+        text-decoration: none;
+        color: #000;
+        line-height: 1.2em;
+
+        &:hover {
+          color: $purple;
+        }
+
+        &.active {
+          color: $purple;
+        }
       }
     }
 
@@ -43,33 +52,6 @@
     .level_4,
     .level_5 {
       font-weight: 100;
-    }
-
-    ul {
-      width: 100%;
-      text-indent: 1em;
-      padding-right: 0;
-
-      ul {
-        padding: 0 0 0 1em;
-        font-size: 1.0em;
-      }
-    }
-
-    li {
-      list-style: none;
-      overflow-x: hidden;
-      text-overflow: ellipsis;
-
-      a {
-        text-decoration: none;
-        color: #000;
-        line-height: 1.2em;
-
-        &.active {
-          color: $purple;
-        }
-      }
     }
   }
 }
@@ -126,6 +108,145 @@
           border-radius: 24px;
           background-color: $hover-grey;
           color: $black;
+        }
+      }
+    }
+  }
+}
+
+.left-drawer {
+  display: flex;
+  flex: 1;
+
+  .progress {
+    $gap: 10px;
+    $line-height: 20px;
+    $bullet-radius: 5px;
+    $line-thick: 2px;
+    $next-color: #666;
+    $current-color: #333;
+    $prev-color: #333;
+
+    display: inline-flex;
+    height: 100%;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      color: $purple;
+
+      &.left {
+        padding-right: $gap;
+        text-align: right;
+
+        // Line
+        div {
+          &:last-of-type:after {
+            display: none;
+          }
+
+          &:after {
+            content: "";
+            background: fade_out($purple, .9); //rgba(0, 0, 0, 0.6);
+            border-radius: 2px;
+            position: absolute;
+            right: -$gap;
+            top: $line-height/2;
+            height: 101%;
+            width: 1px;
+            transform: translateX(50%);
+          }
+        }
+      }
+
+      &.right {
+        padding-left: $gap;
+
+        div {
+          &.prev {
+            &:after {
+              transition: none;
+            }
+          }
+
+          &.active {
+            color: $current-color;
+            font-weight: bold;
+
+            &:before {
+              background: $current-color;
+              padding: $bullet-radius * 2;
+              transition: all 0.2s .15s cubic-bezier(0.175, 0.885, 0.32, 2);
+            }
+
+            &:after {
+              height: 0%;
+              transition: height .2s ease-out;
+            }
+
+            ~ div {
+              color: $next-color;
+
+              &:before {
+                background: $next-color;
+                padding: $bullet-radius * 0.5;
+              }
+
+              &:after {
+                height: 0%;
+                transition: none;
+              }
+            }
+          }
+
+          &.level_1 {
+            // Dot
+            &:before {
+              content: "";
+              background: $purple;
+              padding: $bullet-radius;
+              border-radius: 50%;
+              position: absolute;
+              left: -$gap;
+              top: $line-height/2;
+              transform: translateX(-50%) translateY(-50%);
+              transition: padding 0.2s ease;
+            }
+
+            // Line
+            &:after {
+              content: "";
+              background: $purple; //rgba(0, 0, 0, 0.6);
+              border-radius: 2px;
+              position: absolute;
+              left: -$gap;
+              top: $line-height/2;
+              height: 101%;
+              width: $line-thick;
+              transform: translateX(-50%);
+              transition: height 0.2s ease;
+            }
+          }
+
+          .level_2,
+          .level_3,
+          .level_4,
+          .level_5 {
+            margin-left: 12px;
+          }
+        }
+      }
+
+      div {
+        flex: 1;
+        //outline: 1px solid rgba(0, 0, 0, 0.1);
+        position: relative;
+        line-height: $line-height;
+        cursor: default;
+        min-height: 30px;
+
+        &:last-of-type {
+          flex: 0;
         }
       }
     }
