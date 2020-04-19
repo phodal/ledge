@@ -1,10 +1,17 @@
 [
   {
     "name": "Gitlab",
+    "description": "GitLab 是由 GitLab Inc.开发，一款基于 Git 的完全集成的软件开发平台（fully integrated software development platform）。另外，GitLab 且具有wiki以及在线编辑、issue跟踪功能、CI/CD 等功能。",
+    "homepage": "https://about.gitlab.com/",
     "category": "scm",
     "number": 1,
     "pay": "Os",
-    "symbol": "Gl"
+    "symbol": "Gl",
+    "resources": [{
+      "name": "Gitlab 文档（英文）",
+      "link": "https://docs.gitlab.com/",
+      "description": ""
+    }]
   },
   {
     "name": "Gitea",
@@ -32,6 +39,10 @@
       "name": "《GitHub 漫游指南》",
       "link": "https://github.com/phodal/github",
       "description": "一本有关如何在 Github 上构建一个好的项目的中文电子书。 探索用户的行为。 找到一些有趣的东西。"
+    }, {
+      "name": "GitHub vs. GitLab",
+      "link": "https://about.gitlab.com/devops-tools/github-vs-gitlab.html",
+      "description": "Gitlab 和 Github比较"
     }]
   },
   {
@@ -39,7 +50,14 @@
     "category": "scm",
     "number": 19,
     "pay": "Os",
-    "symbol": "Sv"
+    "symbol": "Sv",
+    "homepage": "https://subversion.apache.org/",
+    "description": "Apache Subversion（简称SVN，svn），一个开放源代码的版本控制系统，相较于RCS、CVS，它采用了分支管理系统，它的设计目标就是取代CVS。互联网上很多版本控制服务已从CVS转移到Subversion。",
+    "resources": [{
+      "name": "Github",
+      "link": "https://github.com/apache/subversion",
+      "description":""
+    }]
   },
   {
     "name": "Git",
@@ -78,10 +96,17 @@
 
   {
     "name": "Nexus",
+    "description": "Nexus是一个强大的Maven仓库管理器，它极大地简化了本地内部仓库的维护和外部仓库的访问。 如果使用了公共的Maven仓库服务器，可以从Maven中央仓库下载所需要的构件（Artifact），但这通常不是一个好的做法。 正常做法是在本地架设一个本地Maven仓库服务器，利用Nexus私服可以只在一个地方就能够完全控制访问和部署在你所维护仓库中的每个Artifact。",
+    "homepage" : "https://www.sonatype.com/",
     "category": "packageManage",
     "number": 56,
     "pay": "Os",
-    "symbol": "Nx"
+    "symbol": "Nx",
+    "resources": [{
+      "name": "Nexus 文档（英文）",
+      "link": "https://help.sonatype.com/repomanager3",
+      "description": ""
+    }]
   },
   {
     "name": "Archiva",
@@ -141,7 +166,9 @@
     "category": "ci",
     "number": 21,
     "pay": "Pd",
-    "symbol": "Tc"
+    "symbol": "Tc",
+    "homepage": "https://www.jetbrains.com/zh-cn/teamcity/",
+    "description": "TeamCity：JetBrains 简明无忧的 CI 和 CD 服务器,获取开箱即用的强大持续集成。"
   },
   {
     "name": "Travis CI",
@@ -159,20 +186,35 @@
     "category": "monitoring",
     "number": 57,
     "pay": "Os",
-    "symbol": "Zb"
+    "symbol": "Zb",
+    "homepage" : "https://www.zabbix.com/",
+    "description": "Zabbix 是由 Alexei Vladishev 开发的一种网络监视、管理系统，基于 Server-Client 架构。可用于监视各种网络服务、服务器和网络机器等状态。",
+    "resources": [{
+      "name": "Zabbix 产品手册 (中文)",
+      "link": "https://www.zabbix.com/documentation/4.0/zh/manual",
+      "description": ""
+    }]
   },
   {
     "name": "Nagios",
     "category": "monitoring",
     "number": 58,
     "pay": "Os",
-    "symbol": "Na"
+    "symbol": "Na",
+    "homepage": "https://www.nagios.org/",
+    "description": "Nagios（IPA: /ˈnɑːɡioʊs/）是电脑系统和网络监控程序，用于检测主机和服务，当异常发生和解除时能提醒用户；是基于GPLv2开发的开源软件，可免费获得及使用。",
+    "resources": [{
+      "name": "Nagios在线帮助中文版",
+      "link": "http://nagios-cn.sourceforge.net/nagios-cn/",
+      "description": ""
+    }]
   },
   {
     "name": "Ganglia",
     "category": "monitoring",
     "number": 59,
     "description": "Ganglia 是用于高性能计算系统，群集和网络的可伸缩的分布式监视工具。",
+    "homepage": "http://ganglia.sourceforge.net/",
     "pay": "Os",
     "symbol": "Gl"
   },
@@ -180,6 +222,7 @@
     "name": "Sensu",
     "category": "monitoring",
     "number": 60,
+    "homepage": "https://sensu.io/",
     "description": "Sensu 是由 Sonian 公司开发的一种监控框架，主要用于拥有大规模节点的云计算平台的检查与监控。",
     "pay": "Os",
     "symbol": "Ss"
@@ -189,6 +232,7 @@
     "category": "monitoring",
     "number": 61,
     "description": "Sensu 是由 Sonian 公司开发的一种监控框架，主要用于拥有大规模节点的云计算平台的检查与监控。",
+    "homepage": "https://icinga.com/",
     "pay": "Os",
     "symbol": "Ic"
   },
@@ -197,14 +241,22 @@
     "category": "monitoring",
     "number": 62,
     "pay": "Os",
-    "symbol": "Sd"
+    "symbol": "Sd",
+    "description": "StatsD 是一个简单的网络守护进程，基于 Node.js 平台，通过 UDP 或者 TCP 方式侦听各种统计信息，包括计数器和定时器，并发送聚合信息到后端服务，例如  Graphite.",
+    "resources": [{
+      "name": "Github",
+      "link": "https://github.com/statsd/statsd",
+      "description": ""
+    }]
   },
   {
     "name": "Graphite",
     "category": "monitoring",
     "number": 63,
     "pay": "Os",
-    "symbol": "Gp"
+    "symbol": "Gp",
+    "homepage": "https://graphiteapp.org/",
+    "description": "Graphite 是一个用于采集网站实时信息并进行统计的开源项目，可用于采集多种网站服务运行状态信息。"
   },
   {
     "name": "OpenNMS",
@@ -218,7 +270,18 @@
     "category": "monitoring",
     "number": 65,
     "pay": "Os",
-    "symbol": "Kk"
+    "symbol": "Kk",
+    "homepage": "https://kafka.apache.org/",
+    "description": "Kafka是由Apache软件基金会开发的一个开源流处理平台，由Scala和Java编写。该项目的目标是为处理实时数据提供一个统一、高吞吐、低延迟的平台。其持久化层本质上是一个“按照分布式事务日志架构的大规模发布/订阅消息队列”，这使它作为企业级基础设施来处理流式数据非常有价值。此外，Kafka可以通过Kafka Connect连接到外部系统（用于数据输入/输出），并提供了Kafka Streams——一个Java流式处理库。",
+    "resources": [{
+      "name": "Github",
+      "link": "https://github.com/apache/kafka",
+      "description": ""
+    }, {
+      "name": "Kafka文档(中文)",
+      "link": "http://kafka.apachecn.org/",
+      "description": ""
+    }]
   },
 
   {
@@ -235,7 +298,18 @@
     "category": "testing",
     "number": 24,
     "pay": "Os",
-    "symbol": "Se"
+    "symbol": "Se",
+    "homepage": "https://www.selenium.dev/",
+    "description": "Selenium 是支持 web 浏览器自动化的一系列工具和库的综合项目。",
+    "resources": [{
+      "name": "Selenium 浏览器自动化项目",
+      "link": "https://www.selenium.dev/documentation/zh-cn/",
+      "description": ""
+    }, {
+      "name": "Selenium with Python中文翻译文档",
+      "link": "https://selenium-python-zh.readthedocs.io/en/latest/",
+      "description" : ""
+    }]
   },
   {
     "name": "Cucumber",
@@ -270,14 +344,32 @@
     "category": "testing",
     "number": 43,
     "pay": "Os",
-    "symbol": "Mc"
+    "symbol": "Mc",
+    "homepage": "https://mochajs.org/",
+    "description": "mocha是一个功能丰富的javascript测试框架，运行在node.js和浏览器中，使异步测试变得简单有趣。Mocha测试连续运行，允许灵活和准确的报告，同时将未捕获的异常映射到正确的测试用例。",
+    "resources": [{
+      "name": "mochajs文档(中文)",
+      "link": "https://mochajs.cn/",
+      "description": ""
+    }]
   },
   {
     "name": "JMeter",
     "category": "testing",
     "number": 44,
     "pay": "Os",
-    "symbol": "Jm"
+    "symbol": "Jm",
+    "homepage": "https://jmeter.apache.org/",
+    "description": "",
+    "resources":[{
+      "name": "Github",
+      "link": "https://github.com/apache/jmeter",
+      "description": ""
+    }, {
+      "name": "JMeter 文档(英文)",
+      "link": "https://jmeter.apache.org/usermanual/index.html",
+      "description": ""
+    }]
   },
   {
     "name": "Jasmine",
@@ -305,14 +397,18 @@
     "category": "testing",
     "number": 75,
     "pay": "Os",
-    "symbol": "Pm"
+    "symbol": "Pm",
+    "homepage": "https://www.postman.com/",
+    "description": "Postman 是一个功能强大的 API 测试套件，已经成为许多开发人员必备的工具。"
   },
   {
     "name": "TestNG",
     "category": "testing",
     "number": 76,
     "pay": "Os",
-    "symbol": "Tn"
+    "symbol": "Tn",
+    "homepage": "https://testng.org/doc/",
+    "description": ""
   },
   {
     "name": "Jacoco",
@@ -447,21 +543,27 @@
     "category": "config",
     "number": 27,
     "pay": "Os",
-    "symbol": "As"
+    "symbol": "As",
+    "homepage": "https://www.ansible.com/",
+    "description": "Ansible是一个IT自动化工具。它可以配置系统，开发软件，或者编排高级的IT任务，例如持续开发或者零宕机滚动更新。"
   },
   {
     "name": "Chef",
     "category": "config",
     "number": 45,
     "pay": "Os",
-    "symbol": "Cf"
+    "symbol": "Cf",
+    "homepage": "https://www.chef.io/",
+    "description": "Chef 是一个系统集成框架，为整个架构提供配置管理功能."
   },
   {
     "name": "Puppet",
     "category": "config",
     "number": 110,
     "pay": "Os",
-    "symbol": "Pu"
+    "symbol": "Pu",
+    "homepage": "https://puppet.com/",
+    "description": ""
   },
   {
     "name": "Saltstack Salt",
@@ -540,35 +642,49 @@
     "category": "containers",
     "number": 5,
     "pay": "Os",
-    "symbol": "Dk"
+    "symbol": "Dk",
+    "homepage": "https://www.docker.com/",
+    "description": "Docker 是一个开放源代码软件，是一个开放平台，用于开发应用、交付应用、运行应用。 Docker允许用户将基础设施中的应用单独分割出来，形成更小的颗粒，从而提高交付软件地速度。 Docker容器 与虚拟机类似，但原理上，容器是将操作系统层虚拟化，虚拟机则是虚拟化硬件，因此容器更具有便携性、高效地利用服务器。"
   },
   {
     "name": "Kubernetes",
     "category": "containers",
     "number": 13,
     "pay": "Os",
-    "symbol": "K8"
+    "symbol": "K8",
+    "homepage": "https://kubernetes.io/",
+    "description": "Kubernetes是用于自动部署、扩展和管理“容器化应用程序”的开源系统。该系统由Google设计并捐赠给Cloud Native Computing Foundation来使用。 它旨在提供“跨主机集群的自动部署、扩展以及运行应用程序容器的平台”。 它支持一系列容器工具, 包括Docker等。"
   },
   {
     "name": "Mesos",
     "category": "containers",
     "number": 31,
     "pay": "Os",
-    "symbol": "Mo"
+    "symbol": "Mo",
+    "homepage": "http://mesos.apache.org/",
+    "description": "Mesos是分布式操作系统内核.Mesos是以与Linux内核同样的原则而创建的，不同点仅仅是在于抽象的层面。Mesos内核运行在每一个机器上，同时通过 API 为各种应用提供跨数据中心和云的资源管理调度能力。这些应用包括Hadoop、Spark、Kafka、Elastic Search。还可配合框架 Marathon 来管理大规模的Docker等容器化应用。"
   },
   {
     "name": "Rancher",
     "category": "containers",
     "number": 49,
     "pay": "Os",
-    "symbol": "Rc"
+    "symbol": "Rc",
+    "homepage": "https://rancher.com/",
+    "resources": [{
+      "name": "Rancher文档(中文)",
+      "link": "https://rancher.com/docs/rancher/latest/zh/",
+      "description": ""
+    }]
   },
   {
     "name": "Helm",
     "category": "containers",
     "number": 81,
     "pay": "Os",
-    "symbol": "He"
+    "symbol": "He",
+    "homepage": "https://helm.sh/",
+    "description": "Helm是Kubernetes的一个包管理工具，用来简化Kubernetes应用的部署和管理。可以把Helm比作CentOS的yum工具。"
   },
   {
     "name": "Pivotal PKS",
@@ -582,14 +698,18 @@
     "category": "containers",
     "number": 113,
     "pay": "Os",
-    "symbol": "Cr"
+    "symbol": "Cr",
+    "homepage": "https://coreos.com/",
+    "description": "Rocket （也叫 rkt）是 CoreOS 推出的一款容器引擎，和 Docker 类似，帮助开发者打包应用和依赖包到可移植容器中，简化搭环境等部署工作。Rocket 和 Docker 不同的地方在于，Rocket 没有 Docker 那些为企业用户提供的“友好功能”，比如云服务加速工具、集群系统等。反过来说，Rocket 想做的，是一个更纯粹的业界标准。"
   },
   {
     "name": "K3s",
     "category": "containers",
     "number": 112,
     "pay": "Os",
-    "symbol": "K3"
+    "symbol": "K3",
+    "homepage": "https://k3s.io/",
+    "description": "轻量级Kubernetes发行版。"
   },
 
 
@@ -627,7 +747,8 @@
     "category": "releaseOrchestration",
     "number": 82,
     "pay": "Os",
-    "symbol": "Xl"
+    "symbol": "Xl",
+    "homepage": "https://xebialabs.com/products/xl-deploy/"
   },
 
 
@@ -636,35 +757,40 @@
     "category": "openCloud",
     "number": 16,
     "pay": "Os",
-    "symbol": "Cf"
+    "symbol": "Cf",
+    "homepage": "https://www.cloudfoundry.org/"
   },
   {
     "name": "OpenShift",
     "category": "openCloud",
     "number": 52,
     "pay": "Os",
-    "symbol": "Os"
+    "symbol": "Os",
+    "homepage": "https://www.openshift.com/"
   },
   {
     "name": "OpenStack",
     "category": "openCloud",
     "number": 8,
     "pay": "Os",
-    "symbol": "Ot"
+    "symbol": "Ot",
+    "homepage": "https://www.openstack.org/"
   },
   {
     "name": "OpenWhisk",
     "category": "openCloud",
     "number": 34,
     "pay": "Os",
-    "symbol": "Ow"
+    "symbol": "Ow",
+    "homepage": "https://openwhisk.apache.org/"
   },
   {
     "name": "OpenFaaS",
     "category": "openCloud",
     "number": 84,
     "pay": "Os",
-    "symbol": "Of"
+    "symbol": "Of",
+    "homepage": "https://www.openfaas.com/"
   },
 
   {
@@ -672,63 +798,86 @@
     "category": "publicCloud",
     "number": 83,
     "pay": "Pd",
-    "symbol": "Az"
+    "symbol": "Az",
+    "homepage": "https://www.azure.cn/",
+    "description": "微软Azure云"
   },
   {
     "name": "AWS China",
     "category": "publicCloud",
     "number": 15,
     "pay": "Pd",
-    "symbol": "Ac"
+    "symbol": "Ac",
+    "homepage": "https://www.amazonaws.cn/",
+    "description": "亚马逊云平台"
   },
   {
     "name": "Google Cloud",
     "category": "publicCloud",
     "number": 7,
     "pay": "Pd",
-    "symbol": "Gc"
+    "symbol": "Gc",
+    "homepage": "https://cloud.google.com/",
+    "description": "Google云端平台是一项使用了Google核心基础架构、数据分析和机器学习技术的云计算服务。"
   },
   {
     "name": "IBM Cloud",
     "category": "publicCloud",
     "number": 114,
     "pay": "Pd",
-    "symbol": "Ic"
+    "symbol": "Ic",
+    "homepage":"https://www.ibm.com/cn-zh/cloud",
+    "description": ""
   },
   {
     "name": "Alibaba Cloud",
     "category": "publicCloud",
     "number": 33,
     "pay": "Pd",
-    "symbol": "Al"
+    "symbol": "Al",
+    "homepage": "https://cn.aliyun.com/",
+    "description": "阿里云计算, Alibaba Cloud，是一家提供云端运算服务的科技公司，创立于2009年9月，为阿里巴巴集团全资所有。阿里云计算公司总部位于杭州，在北京和硅谷等地设有研发中心和运营机构，涉及云计算的产品与服务。"
   },
   {
     "name": "Tencent Cloud",
     "category": "publicCloud",
     "number": 115,
     "pay": "Pd",
-    "symbol": "Tc"
+    "symbol": "Tc",
+    "homepage": "https://cloud.tencent.com/",
+    "description": "腾讯云，是腾讯推出的云端运算服务，发布全球云服务版图，构建覆盖全球的数据中心节点，在更多地区跟全球的合作伙伴共同构建，为中国出海企业以及海外本土企业提供云服务。"
   },
   {
     "name": "Huawei Cloud",
     "category": "publicCloud",
     "number": 51,
     "pay": "Pd",
-    "symbol": "Hc"
+    "symbol": "Hc",
+    "homepage": "https://www.huaweicloud.com/",
+    "description": "华为云，成立于2011年，隶属于华为公司。其提供弹性云服务器、对象存储服务、软件开发云等云计算服务"
   },
   {
     "name": "Splunk",
     "category": "aiops",
     "number": 9,
     "pay": "Os",
-    "symbol": "Sp"
+    "symbol": "Sp",
+    "homepage": "https://www.splunk.com/zh-hans_cn",
+    "description": "",
+    "resources": [{
+      "name": "Splunk中文手册",
+      "link": "https://docs.splunk.com/Documentation/Splunk/8.0.3/Translated/SimplifiedChinesemanuals",
+      "description": ""
+    }]
   },
   {
     "name": "Logstash",
     "category": "aiops",
     "number":17,
     "pay": "Os",
-    "symbol": "Ls"
+    "symbol": "Ls",
+    "homepage": "https://www.elastic.co/cn/logstash",
+    "description": "Logstash 是开源的服务器端数据处理管道，能够同时从多个来源采集数据，转换数据，然后将数据发送到您最喜欢的“存储库”中。"
   },
   {
     "name": "Fluent",
@@ -742,7 +891,9 @@
     "category": "aiops",
     "number":53,
     "pay": "Os",
-    "symbol": "Pt"
+    "symbol": "Pt",
+    "homepage": "https://prometheus.io/",
+    "description": "Prometheus 是由前 Google 工程师从 2012 年开始在 Soundcloud 以开源软件的形式进行研发的系统监控和告警工具包."
   },
   {
     "name": "Moogsoft",
@@ -757,7 +908,9 @@
     "category": "analytics",
     "number": 2,
     "pay": "Os",
-    "symbol": "Kb"
+    "symbol": "Kb",
+    "homepage": "https://www.elastic.co/cn/kibana",
+    "description": "Kibana 是一款开源的数据分析和可视化平台，它是 Elastic Stack 成员之一，设计用于和 Elasticsearch 协作。您可以使用 Kibana 对 Elasticsearch 索引中的数据进行搜索、查看、交互操作。您可以很方便的利用图表、表格及地图对数据进行多元化的分析和呈现。"
   },
   {
     "name": "AppDynamics",
@@ -784,7 +937,7 @@
   {
     "name": "Grafana",
     "category": "analytics",
-    "description": "Grafana is the open source analytics and monitoring solution for every database.",
+    "description": "Grafana是一个开源的指标量监测和可视化工具。常用于展示基础设施的时序数据和应用程序运行分析。",
     "number": 54,
     "pay": "Os",
     "symbol": "Gr",
@@ -832,14 +985,18 @@
     "category": "collaboration",
     "number": 92,
     "pay": "Pd",
-    "symbol": "Tb"
+    "symbol": "Tb",
+    "homepage": "https://www.teambition.com/",
+    "description": "Teambition 是一个简单，高效的项目协作工具，你可以在这里管理项目，跟踪任务进度，存储项目文件，让你的团队协作更高效。"
   },
   {
     "name": "Confluence",
     "category": "collaboration",
     "number": 93,
     "pay": "Pd",
-    "symbol": "Cf"
+    "symbol": "Cf",
+    "homepage": "https://www.atlassian.com/zh/software/confluence",
+    "description": "Confluence是由澳大利亚软件公司Atlassian开发和发布的协作软件程序。"
   },
   {
     "name": "Wekan",
@@ -860,14 +1017,18 @@
     "category": "collaboration",
     "number": 96,
     "pay": "Os",
-    "symbol": "Bz"
+    "symbol": "Bz",
+    "homepage": "https://www.bugzilla.org/",
+    "description": "Bugzilla是一款用于软件缺陷的追踪管理网络程序，由Mozilla计划开发和应用。1998年，网景公司开放其源代码后，以Mozilla公共许可证协议许可。有许多组织采用其作为旗下软件（特别是自由软件）的产品缺陷追踪系统。"
   },
   {
     "name": "Redmine",
     "category": "collaboration",
     "number": 97,
     "pay": "Os",
-    "symbol": "Rm"
+    "symbol": "Rm",
+    "homepage": "https://www.redmine.org/",
+    "description": "Redmine是一个网页界面的项目管理与缺陷跟踪管理系统的自由及开放源代码软件工具。它集成了项目管理所需的各项功能：日历、燃尽图和甘特图 以协助可视化表现项目与时间限制，问题跟踪和版本控制。此外，Redmine也可以同时处理多个项目。"
   },
   {
     "name": "Coding DevOps",
