@@ -22,7 +22,7 @@ Search open/closed issues before submitting since someone might have asked the s
 ## Feature Request
 
 <!---
-Please describe the function of this function:
+Please describe the act on of this feature:
 
   1. What is the usage scenario of this feature?
   2. What does this feature solve for you?
@@ -38,7 +38,7 @@ Please describe the function of this function:
 <!---
 Provide code samples of how the API would work once implemented.
 
-请一下你期望这个新功能的 API 是如何使用的，并提供一些代码示例。
+请描述一下你期望这个新功能的 API 是如何使用的，并提供一些代码示例。
 -->
 
 ## Other reference  [Optional]
