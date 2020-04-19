@@ -5,11 +5,19 @@
   flex-direction: row;
   width: 100%;
   overflow-y: hidden;
+  border-top: solid 1px $border-color;
 
   .right-content {
     width: 85%;
     height: calc(100vh - 66px);
     overflow-y: scroll;
+
+    .ledge-render {
+      width: calc(100% - 2em);
+      border: solid 1px $border-color;
+      background: $white;
+      margin: 2em 1em;
+    }
   }
 
   .left-drawer {
@@ -20,6 +28,8 @@
     height: calc(100vh - 66px);
     padding-right: 8px;
     overflow-x: hidden;
+    background: $white;
+    border-right: solid 1px $border-color;
   }
 }
 
