@@ -138,7 +138,7 @@
           a {
             text-decoration: none;
             color: #000;
-            line-height: 1.2em;
+            line-height: 24px;
 
             &:hover {
               color: $purple;
@@ -154,7 +154,10 @@
           font-weight: 400;
         }
 
-        .level_2,
+        .level_2 {
+          font-weight: 300;
+        }
+
         .level_3,
         .level_4,
         .level_5 {
@@ -233,8 +236,8 @@
           .level_3,
           .level_4,
           .level_5 {
-            padding-left: 12px;
-            min-height: 24px;
+            padding-left: 8px;
+            min-height: 30px;
             line-height: 24px;
           }
 
