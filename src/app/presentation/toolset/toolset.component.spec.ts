@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AwesomeToolComponent } from './awesome-tool.component';
+import { ToolsetComponent } from './toolset.component';
 
 describe('AwesomeToolComponent', () => {
-  let component: AwesomeToolComponent;
-  let fixture: ComponentFixture<AwesomeToolComponent>;
+  let component: ToolsetComponent;
+  let fixture: ComponentFixture<ToolsetComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AwesomeToolComponent ]
-    })
-    .compileComponents();
+      declarations: [ToolsetComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AwesomeToolComponent);
+    fixture = TestBed.createComponent(ToolsetComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

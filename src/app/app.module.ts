@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LedgeRenderModule } from '@ledge-framework/render';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AwesomeToolComponent } from './presentation/awesome-tool/awesome-tool.component';
+import { ToolsetComponent } from './presentation/toolset/toolset.component';
 import { ManualComponent } from './presentation/manual/manual.component';
 import { MaturityItemComponent } from './presentation/maturity/maturity-item/maturity-item.component';
 import { MaturityComponent } from './presentation/maturity/maturity.component';
@@ -33,7 +33,7 @@ export function createTranslateLoader(http: HttpClient) {
     ManualComponent,
     ResourcesComponent,
     ReporterComponent,
-    AwesomeToolComponent,
+    ToolsetComponent,
 
     MaturityComponent,
     MaturityItemComponent,
