@@ -1,3 +1,5 @@
+@import "./color";
+
 // Navigation Bar
 .app-header {
   position: fixed;
@@ -12,7 +14,8 @@
   &.mat-accent {
     color: $purple;
     background: $white;
-    box-shadow: 0 1px 0 0 $lighter-gray;
+    box-shadow: none;
+    border-bottom: solid 1px $border-color;
   }
 
   .mat-toolbar-row {

@@ -5,7 +5,6 @@
   flex-direction: row;
   width: 100%;
   overflow-y: hidden;
-  border-top: solid 1px $border-color;
 
   .right-content {
     width: 85%;
@@ -35,15 +34,18 @@
 
 .case-study,
 .solution {
-  &.mat-drawer-container {
-    top: 2px;
-  }
-
   .no-toc-markdown {
     height: calc(100vh - 66px);
     overflow-y: scroll;
     width: 100% !important;
     margin: 0 !important;
+
+    .ledge-render {
+      width: calc(100% - 2em);
+      border: solid 1px $border-color;
+      background: $white;
+      margin: 2em 1em;
+    }
   }
 
   .active {

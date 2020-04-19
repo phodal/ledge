@@ -1,6 +1,5 @@
 <mat-drawer-container class="case-study">
   <mat-drawer mode="side" opened class="left-drawer">
-    <h2>{{ 'case-study' | translate }}</h2>
     <ul>
       <li *ngFor="let casestudy of cases"
           (click)="getCase(casestudy.source)"
