@@ -1,4 +1,46 @@
-# [0.0.0](https://github.com/phodal/ledge/compare/v0.9.9...v0.0.0) (2020-04-15)
+# [0.0.0](https://github.com/phodal/ledge/compare/v0.9.10...v0.0.0) (2020-04-20)
+
+## [0.9.10](https://github.com/phodal/ledge/compare/v0.9.9...v0.9.10) (2020-04-20)
+
+### Bug Fixes
+
+- add something about Gitea,GitHub,Git,Jenkins,Travis CI and JUnit. ([91d8a81](https://github.com/phodal/ledge/commit/91d8a81ad9ab2218bd16ef50b98e7c62339008e1))
+- change menu a to menu botton for [#116](https://github.com/phodal/ledge/issues/116) ([dd58c14](https://github.com/phodal/ledge/commit/dd58c14f2dcd7932637aee9bd3deb56ee4dfeca0))
+- fix [#120](https://github.com/phodal/ledge/issues/120) ([b973b81](https://github.com/phodal/ledge/commit/b973b817a4dea8a78c0fadbc6c0aae10cac5112d))
+- fix design design ops height issue ([cee0a2f](https://github.com/phodal/ledge/commit/cee0a2f4e1ff4742b914bbe6d13cd5c1086033c6))
+- fix example color issue ([e483df7](https://github.com/phodal/ledge/commit/e483df768e94d40b2fd3099859fc350a719b2d56))
+- fix home container issue ([3367266](https://github.com/phodal/ledge/commit/33672664786a34ba578a3871750fd3bf3d21468c))
+- fix home styles issue ([06e6afe](https://github.com/phodal/ledge/commit/06e6afe9f22e7fb0a71ce92bc235763265b77aba))
+- fix home ui issue ([2b9cd74](https://github.com/phodal/ledge/commit/2b9cd740404302676a042f7ec01b3f9ac448e730))
+- fix homepage height issue ([aa6537d](https://github.com/phodal/ledge/commit/aa6537d1d1a63daa6cbf1f867d0a81967b971125))
+- fix homepage height issue ([c6f420a](https://github.com/phodal/ledge/commit/c6f420a7739c63c0304b0e0b1f71997327b1a656))
+- fix homepage table i18n issue ([806099e](https://github.com/phodal/ledge/commit/806099e585b9708f8a4b6227964f822b5f11aaea))
+- fix html element issue ([678d639](https://github.com/phodal/ledge/commit/678d63963a3edf7bc9a840c8da137259e734ce46))
+- fix maturity layout isseu ([54069e0](https://github.com/phodal/ledge/commit/54069e06c79f3950cc585fd5b9040d05ff6cf3c5))
+- fix ngmodel duplicated issue ([8bfd9eb](https://github.com/phodal/ledge/commit/8bfd9eb3d9daae328a14067adf0055fb7a4b8b80))
+- fix routing typo ([b8e9e67](https://github.com/phodal/ledge/commit/b8e9e6734609cd266a39c871fe5bb89fca0a9331))
+- fix styles issue ([4cd0567](https://github.com/phodal/ledge/commit/4cd05673b7d51b6ed837c802f3351c7dea66b28e))
+- fix tech radar chart issue ([e54f9b9](https://github.com/phodal/ledge/commit/e54f9b9181dcaa0873a482c3dbdde1968b1cee14))
+- fix testing ([eecc2f0](https://github.com/phodal/ledge/commit/eecc2f0eb34f204446c55ba54c9361e0f2c71983))
+- fix toolbar lost shawdow issue && fixed [#110](https://github.com/phodal/ledge/issues/110) ([587e68c](https://github.com/phodal/ledge/commit/587e68cfa1092d424e853aa8ba4107e8080f32a1))
+- rename language menu tag && fixed [#116](https://github.com/phodal/ledge/issues/116) ([8543c38](https://github.com/phodal/ledge/commit/8543c38fc4359e2fad8d51e2da5c48a453da0dfd))
+- set default lange to root module for [#115](https://github.com/phodal/ledge/issues/115) ([d0c3a4a](https://github.com/phodal/ledge/commit/d0c3a4ad50e1bc912cd7424a40d6214f2729326c))
+
+### Features
+
+- add basic reponsive for menu ([c18441d](https://github.com/phodal/ledge/commit/c18441d0ae559eaff6aa793315bce8ef5ebc8b8a))
+- add books support for periodic table ([1792ecb](https://github.com/phodal/ledge/commit/1792ecb8ed69afab337514720c8e001956180dee))
+- add hover support for tech radar ([8438336](https://github.com/phodal/ledge/commit/8438336be342c0bad2160cc4334b436f7c38dff0))
+- init ledge-checklist ([c3855e3](https://github.com/phodal/ledge/commit/c3855e30bdeabc66c3b034e22137c75a104cb054))
+- init mobile ([5229f67](https://github.com/phodal/ledge/commit/5229f6711976b4127bfbe57be322d1ac424e4849))
+- init partners module ([c44798e](https://github.com/phodal/ledge/commit/c44798ecdba2b328cd4b7a76a76a68252b894ce4))
+- intergration agile checklists ([437246c](https://github.com/phodal/ledge/commit/437246ccc75564f3000e28c0cb2917b0683850aa))
+- make checklists enable move to tab ([5ee459e](https://github.com/phodal/ledge/commit/5ee459ec0a54cbb15704aebcd4f5f2c2f76bdd04))
+- make first relase for future log change ([9998507](https://github.com/phodal/ledge/commit/99985071b2304d534610ed2231991ed3059d6f21))
+- **seo:** update title for study ([7c10267](https://github.com/phodal/ledge/commit/7c10267be8660f640ae7d4f23db246cec0c717ee))
+- **tool:helper:** support markdown code style ([6fe1082](https://github.com/phodal/ledge/commit/6fe108267171586cf7ee96302df2056bff44ff1b)), closes [#112](https://github.com/phodal/ledge/issues/112)
+- **view:** init module ([d3d74bf](https://github.com/phodal/ledge/commit/d3d74bfc6a44fdd600390b3bb3b9c4c5eb4504c2))
+- support for multiple think tank ([f6ccb2f](https://github.com/phodal/ledge/commit/f6ccb2f295b0549bec5af69a8eae50209f0689d9))
 
 ## [0.9.9](https://github.com/phodal/ledge/compare/1cc2556d8df57ff643fe8190353f33c0bc9610e3...v0.9.9) (2020-04-15)
 
