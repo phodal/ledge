@@ -2023,16 +2023,6 @@ digraph {
 9. 持续偿还的技术债务
 10. 强有力的个人 & 愿意改进的团队
 
-# 远程工作实践
-
-TBD
-
-## 工具选型
-
-[How to do effective video calls](https://martinfowler.com/articles/effective-video-calls.html)
-
-### 工具示例
-
 # 微架构
 
 ## 后端：微服务
@@ -2067,3 +2057,17 @@ TBD
 ## 前端：微前端
 
 ## APP：基座化
+
+# 分布式团队
+
+TBD
+
+## 远程工具
+
+### 工具选型
+
+[How to do effective video calls](https://martinfowler.com/articles/effective-video-calls.html)
+
+#### 工具示例
+
+## 离岸交付
