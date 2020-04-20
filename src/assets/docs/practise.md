@@ -1326,11 +1326,13 @@ config: {"left": "支持团队", "right": "评价产品", "bottom": "面向技�
 - BDD 方式（Given-When-Then）
 - 设置-操作-断言（Arrange-Act-Assert）
 
+#### BDD
+
 Given-When-Then 表达方式可以称之为一个公式一个模板，这种方式旨在指导程序员为“用户故事”编写测试用例变得方便。
 
-- Given 一个上下文，指定测试预设
-- When 进行一系列操作，即所要执行的操作
-- Then 得到一系列可观察的后果，即需要检测的断言
+- Given 一个上下文，指定测试预设。以 Given 开头的步骤，表示运作开始时系统所处的位置。
+- When 进行一系列操作，即所要执行的操作。以 When 开头的步骤，表示用户在系统上所执行的操作。
+- Then 得到一系列可观察的后果，即需要检测的断言。以 Then 开头的步骤，表示前面步骤的结果。
 
 E2E 定义示例：
 
@@ -1358,6 +1360,26 @@ defineSupportCode(function ({ Given, When, Then }) {
     });
   });
 });
+```
+
+#### 设置-操作-断言
+
+JUnit 示例：
+
+```java
+@Test
+public void shouldReturnItemNameInUpperCase() {
+    // Given
+    Item mockedItem = new Item("it1", "Item 1", "This is item 1", 2000, true);
+    when(itemRepository.findById("it1")).thenReturn(mockedItem);
+
+    // When
+    String result = itemService.getItemNameUpperCase("it1");
+
+    // Then
+    verify(itemRepository, times(1)).findById("it1");
+    assertThat(result, is("ITEM 1"));
+}
 ```
 
 ### 测试替身
