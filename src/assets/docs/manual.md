@@ -15,34 +15,6 @@
 
 ## 识别目标和现状
 
-## 明确 DevOps
-
-DevOps 流程
-
-![DevOps 流程](/assets/docs/images/devops.png 'DevOps 流程')
-
-- 规划
-- 编码
-- 构建
-- 测试
-- 发布
-- 部署
-- 运维
-- 监控
-
-DevOps 框架
-
-—— 出自《DevOps 最佳实践》
-
-![DevOps 框架](/assets/docs/images/devops-framework.jpg 'DevOps 框架')
-
-- DevOps 持续测试。
-- DevOps 敏捷开发。
-- DevOps 持续集成。
-- DevOps 持续交付。
-- DevOps 持续监控。
-- DevOps 敏捷流程。
-
 ## 可视化现状和未来
 
 ### Path to Production
@@ -76,6 +48,34 @@ Path to Production，来源于精益，旨在通过可视化的方式来展示�
 |---|---|---|---|---|---|---|---|---|---|
 |---|---|---|---|---|---|---|---|---|---|
 ```
+
+## 确认 DevOps 流程
+
+DevOps 流程
+
+![DevOps 流程](/assets/docs/images/devops.png 'DevOps 流程')
+
+- 规划
+- 编码
+- 构建
+- 测试
+- 发布
+- 部署
+- 运维
+- 监控
+
+DevOps 框架
+
+—— 出自《DevOps 最佳实践》
+
+![DevOps 框架](/assets/docs/images/devops-framework.jpg 'DevOps 框架')
+
+- DevOps 持续测试。
+- DevOps 敏捷开发。
+- DevOps 持续集成。
+- DevOps 持续交付。
+- DevOps 持续监控。
+- DevOps 敏捷流程。
 
 # 度量
 
@@ -241,11 +241,7 @@ config: {"left": "简单", "right": "困难", "bottom": "不重要", "top": "重
 
 ## 有意愿的组织
 
-## 有意愿的个人
-
-## 组织提供支持
-
-## 团队
+## 有意愿的团队
 
 ### 团队发展阶段模型
 
@@ -271,6 +267,12 @@ Bruck Tuckman 团队发展模型：
 ```
 
 —— 来自《深入核心的敏捷开发》
+
+## 有意愿的个人
+
+### DevOps 内部教练
+
+## 组织提供支持
 
 ## DevOps 实施看板
 
