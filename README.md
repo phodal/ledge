@@ -10,7 +10,7 @@
 
 1. 腾讯云云开发： [https://ledge.wdsm.io/](https://ledge.wdsm.io/)
 
-Ledge （from Know-Ledge，意指承载物）知识和工具平台，是我们基于在 ThoughtWorks 进行的一系列 DevOps 实践、敏捷实践、软件开发与测试、精益实践提炼出来的知识体系。它包含了各种最佳实践、原则与模式、操作手册、度量、工具，用于帮助您的企业在数字化时代更好地前进，还有 DevOps 转型。
+Ledge （from Know-Ledge，意指承载物）知识和工具平台，是我们基于在 ThoughtWorks 进行的一系列 DevOps 实践、敏捷实践、软件开发与测试、精益实践提炼出来的知识体系。它包含了各种最佳实践、原则与模式、实施手册、度量、工具，用于帮助您的企业在数字化时代更好地前进，还有 DevOps 转型。
 
 ![CI](https://github.com/phodal/ledge/workflows/CI/badge.svg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/64e2ddc705fbeba4435e/maintainability)](https://codeclimate.com/github/phodal/ledge/maintainability)
@@ -25,7 +25,7 @@ Ledge （from Know-Ledge，意指承载物）知识和工具平台，是我们�
 - **案例学习**。从社区的知识库中，我们总结了传统企业走向 DevOps 的经验，并浓缩到易于使用的内容和材料中。
 - **最佳实践**。我们从海量的 DevOps 内容中，提炼出了一系列的最佳实践，以更好地帮助企业进行 DevOps 实践。
 - **模式与原则**。基于我们的实践，我们提炼了位于它背后的模式与原则，帮助个人和组织更好地了解 DevOps 文化。
-- **操作手册**。只凭实践与原则，无法让中小型 IT 团队进行 DevOps 转型，所以我们准备了详实的操作手册，以帮助您一步步前进。
+- **实施手册**。只凭实践与原则，无法让中小型 IT 团队进行 DevOps 转型，所以我们准备了详实的实施手册，以帮助您一步步前进。
 - **度量**。KPI - 度量、度量 - KPI、KPI - 度量，帮助您更好地度量 DevOps 转型情况。
 - **报告**。我们尝试从丰富地 DevOps 报告中，提炼出有用的实践和工具。
 - **Mobile DevOps**。我们相信移动应用的 DevOps 改进，才是大多数公司的挑战。
