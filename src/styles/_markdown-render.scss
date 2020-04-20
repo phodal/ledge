@@ -239,7 +239,7 @@
               border-radius: 2px;
               position: absolute;
               left: -$gap;
-              top: 19px;
+              top: 18px;
               height: 101%;
               width: $line-thick;
               transform: translateX(-50%);
@@ -273,11 +273,15 @@
             font-size: 12px;
 
             &:before {
+              height: 0;
               position: relative;
-              left: -6px;
-              content: '-';
+              content: "";
+              top: -1px;
               display: inline-block;
-              color: $purple;
+              vertical-align: middle;
+              border: 1px solid $purple;
+              right: 4px;
+              width: 4px;
             }
           }
         }
