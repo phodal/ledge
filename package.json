@@ -18,7 +18,8 @@
     "build:lib": "node --max_old_space_size=4096 ./node_modules/.bin/ng build ledge-render --prod",
     "publish:lib": "cd dist/ledge-render && npm publish --access=public",
     "scully": "scully --scanRoutes",
-    "scully:serve": "scully serve"
+    "scully:serve": "scully serve",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "private": false,
   "dependencies": {
