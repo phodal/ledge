@@ -65,7 +65,6 @@
       padding: 0 12px;
 
       li {
-        margin: 8px 0;
         height: 44px;
         line-height: 44px;
         font-size: 1.1rem;
@@ -147,10 +146,11 @@
         .level_3,
         .level_4,
         .level_5 {
+          margin: 8px 0;
+
           a {
             text-decoration: none;
             color: #000;
-            line-height: 24px;
 
             &:hover {
               color: $purple;
@@ -252,8 +252,6 @@
           .level_4,
           .level_5 {
             padding-left: 8px;
-            min-height: 30px;
-            line-height: 24px;
           }
 
           .level_2 {
@@ -287,9 +285,7 @@
 
       div {
         flex: 1;
-        //outline: 1px solid rgba(0, 0, 0, 0.1);
         position: relative;
-        line-height: $line-height;
         cursor: default;
 
         &:last-of-type {
