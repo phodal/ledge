@@ -138,7 +138,7 @@ based on: MDB & [https://martinfowler.com/articles/agileFluency.html](https://ma
        - 可恢复性
 ```
 
-## 架构特性
+### 架构特性
 
 —— 《演进式架构》一书所列表的架构特性
 
@@ -160,7 +160,11 @@ based on: MDB & [https://martinfowler.com/articles/agileFluency.html](https://ma
 | 安全性   | 简单性   | 稳定性   | 标准合规性 | 可生存性 |
 | 可持续性 | 可裁剪性 | 可测试性 | 及时性     | 可追溯性 |
 
-## 缩短反馈
+## 前移
+
+> 前移（左移，Shifting Left）原则的核心思想是，将那些通常在较晚阶段完成的工作，尽早提前完成。
+
+### 缩短反馈
 
 - 迭代
 - 回顾会议
