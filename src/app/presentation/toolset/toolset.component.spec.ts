@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ToolsetComponent } from './toolset.component';
+import { SharedModule } from '../../shared/shared.module';
+import { CustomMaterialModule } from '../../shared/custom-material.module';
+import { LedgeRenderModule } from 'ledge-render';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AwesomeToolComponent', () => {
   let component: ToolsetComponent;
@@ -8,6 +12,12 @@ describe('AwesomeToolComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        SharedModule,
+        CustomMaterialModule,
+        LedgeRenderModule,
+        RouterTestingModule,
+      ],
       declarations: [ToolsetComponent],
     }).compileComponents();
   }));

@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ManualComponent } from './manual.component';
+import { SharedModule } from '../../shared/shared.module';
+import { CustomMaterialModule } from '../../shared/custom-material.module';
+import { LedgeRenderModule } from 'ledge-render';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ManualComponent', () => {
   let component: ManualComponent;
@@ -8,9 +12,14 @@ describe('ManualComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ManualComponent ]
-    })
-    .compileComponents();
+      imports: [
+        SharedModule,
+        CustomMaterialModule,
+        LedgeRenderModule,
+        RouterTestingModule,
+      ],
+      declarations: [ManualComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

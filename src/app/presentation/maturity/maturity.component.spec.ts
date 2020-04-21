@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MaturityComponent } from './maturity.component';
+import { SharedModule } from '../../shared/shared.module';
+import { CustomMaterialModule } from '../../shared/custom-material.module';
+import { LedgeRenderModule } from 'ledge-render';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MaturityItemComponent } from './maturity-item/maturity-item.component';
 
 describe('MaturityComponent', () => {
   let component: MaturityComponent;
@@ -8,9 +13,14 @@ describe('MaturityComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MaturityComponent ]
-    })
-    .compileComponents();
+      imports: [
+        SharedModule,
+        CustomMaterialModule,
+        LedgeRenderModule,
+        RouterTestingModule,
+      ],
+      declarations: [MaturityComponent, MaturityItemComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
