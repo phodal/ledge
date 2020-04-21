@@ -69,10 +69,24 @@ function thinkTankPlugin(route, config) {
   ]);
 }
 
+function checklistsPlugin(route, config) {
+  return Promise.resolve([
+    { route: '/checklists/0' },
+    { route: '/checklists/1' },
+    { route: '/checklists/2' },
+    { route: '/checklists/3' },
+    { route: '/checklists/4' },
+    { route: '/checklists/5' },
+    { route: '/checklists/6' },
+    { route: '/checklists/7' },
+  ]);
+}
+
 const validator = async (conf) => [];
 registerPlugin('router', 'case', casePlugin, validator);
 registerPlugin('router', 'solution', solutionPlugin, validator);
 registerPlugin('router', 'tank', thinkTankPlugin, validator);
+registerPlugin('router', 'checklists', checklistsPlugin, validator);
 
 exports.config = {
   projectRoot: './src',
@@ -89,6 +103,9 @@ exports.config = {
     },
     '/think-tank/:tank': {
       type: 'tank',
+    },
+    '/checklists/:selectedIndex': {
+      type: 'checklists',
     },
   },
 };

@@ -14,6 +14,7 @@ import * as xpDevOps from 'raw-loader!../../../assets/docs/checklists/xp.md';
 import * as codeReview from 'raw-loader!../../../assets/docs/checklists/codereview.md';
 import * as fe from 'raw-loader!../../../assets/docs/checklists/front-end.md';
 import * as devSecOps from 'raw-loader!../../../assets/docs/checklists/devsecops.md';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-checklists',
@@ -36,9 +37,16 @@ export class ChecklistsComponent implements OnInit {
 
   selectedTabIndex = 0;
 
-  constructor(private storage: StorageMap) {}
+  constructor(
+    private storage: StorageMap,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
+    this.activatedRoute.paramMap.subscribe((p) => {
+      this.selectedTabIndex = Number(p.get('selectedIndex'));
+    });
     this.storage.get('checklists.last.index').subscribe((value: string) => {
       if (!!value) {
         this.selectedTabIndex = parseInt(value, 10);
@@ -48,6 +56,7 @@ export class ChecklistsComponent implements OnInit {
 
   onTabChanged($event: MatTabChangeEvent) {
     this.selectedTabIndex = $event.index;
+    this.router.navigate(['/checklists/', this.selectedTabIndex]);
     this.storage
       .set('checklists.last.index', this.selectedTabIndex)
       .subscribe();
