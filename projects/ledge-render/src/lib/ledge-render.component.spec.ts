@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { LedgeRenderComponent } from './ledge-render.component';
 
-fdescribe('LedgeChecklistComponent', () => {
+describe('LedgeChecklistComponent', () => {
   let component: LedgeRenderComponent;
   let fixture: ComponentFixture<LedgeRenderComponent>;
 
