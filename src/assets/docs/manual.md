@@ -763,6 +763,20 @@ changelog:
 
 ### StatsD + Graphite + Grafana
 
+```graphviz
+digraph {
+  subgraph stats {
+    uWSGI -> StatsD;
+    Logstash -> StatsD;
+    Diamond -> StatsD;
+    App1 -> StatsD;
+    App2 -> StatsD;
+  }
+
+  StatsD -> Graphite -> Grafana;
+}
+```
+
 - [Statsd](https://github.com/etsy/statsd) 是一个使用 Node 开发网络守护进程，它的特点是通过 UDP（性能好，及时挂了也不影响主服务）或者 TCP 来监听各种数据信息，然后发送聚合数据到后端服务进行处理。
 - [Graphite](https://github.com/graphite-project/carbon) 是一套 Python 写的开源编程接口，主要是用来收集服务器的及时状态，在这里主要作为 statsd 的数据后端。分为了三个子项目
   - carbon 守护进程，接收 StatsD 发送过来的原始统计数据。
