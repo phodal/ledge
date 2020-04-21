@@ -601,7 +601,86 @@ JDepend 设计质量指标：
 
 ## 搭建持续集成
 
+### Jenkins
+
+见：[Installing Jenkins](https://jenkins.io/doc/book/installing/)
+
+### GoCD
+
+见：[Installing GoCD server](https://docs.gocd.org/current/installation/installing_go_server.html)
+
 ## 代码化构建流
+
+### 编程式
+
+#### Bash
+
+#### Gradle
+
+aka Groovy
+
+#### Kotlin Script
+
+#### Makefile
+
+Go 示例：
+
+```makefile
+all: clean build
+build: build-linux build-windows build-macos
+test:
+#	make build-plugins
+	$(GOTEST) -v ./...
+clean:
+	$(GOCLEAN)
+	rm -rf $(BINARY_DIR)
+run:
+	$(GOBUILD) -o $(BINARY_DIR) -v ./...
+	./$(BINARY_DIR)
+lint:
+	golint ./pkg/...
+changelog:
+	conventional-changelog -p angular -i CHANGELOG.md -s -r 0
+```
+
+#### JavaScript
+
+通过 `package.json` 中的 `script` 字段，如 Ledge 中的：
+
+```json
+{
+  "scripts": {
+    "ng": "./node_modules/.bin/ng",
+    "start": "yarn ng serve",
+    "build": "node --max_old_space_size=4096 ./node_modules/.bin/ng build",
+    "build:ci": "node --max_old_space_size=4096 ./node_modules/.bin/ng build --configuration ci",
+    "build:stats": "node --max_old_space_size=4096 ./node_modules/.bin/ng build --stats-json",
+    "analyze": "webpack-bundle-analyzer dist/ledge/stats-es2015.json",
+    "test": "yarn ng test",
+    "test:ci": "yarn ng test --watch=false --progress=false --browsers=ChromeHeadlessCI --codeCoverage",
+    "lint": "yarn ng lint",
+    "commit": "git-cz",
+    "package": "yarn build:ci && rm -rf dist/static && yarn scully",
+    "deploy": "yarn package && npx angular-cli-ghpages --repo=https://github.com/phodal/do.git --dir=dist/static --cname=devops.phodal.com",
+    "publish:cloudbase": "cloudbase hosting:deploy dist/static -e ledge2-8daa6a",
+    "build:lib": "node --max_old_space_size=4096 ./node_modules/.bin/ng build ledge-render --prod",
+    "publish:lib": "cd dist/ledge-render && npm publish --access=public",
+    "scully": "scully --scanRoutes",
+    "scully:serve": "scully serve",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+  }
+}
+```
+
+### Pipeline as Code
+
+#### Jenkins
+
+见：[Pipeline](https://jenkins.io/doc/book/pipeline/))
+
+#### GoCD
+
+见：[GoCD](https://docs.gocd.org/current/advanced_usage/pipelines_as_code.html))
 
 ## 代码化配置
 
@@ -616,13 +695,25 @@ JDepend 设计质量指标：
 
 #### 引入 Flyway
 
+见：[Flyway Command line install](https://flywaydb.org/getstarted/firststeps/commandline)
+
 ## 实施自动化测试
 
-#### 后端测试体系
+### 后端测试体系
 
-#### 前端测试体系
+#### API
 
-#### Android 测试体系
+#### Mock
+
+#### UT
+
+### 前端测试体系
+
+#### E2E
+
+#### UT
+
+### Android 测试体系
 
 官方指南：《[Build effective unit tests](https://developer.android.com/training/testing/unit-testing)》
 
