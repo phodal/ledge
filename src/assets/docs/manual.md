@@ -676,11 +676,11 @@ changelog:
 
 #### Jenkins
 
-见：[Pipeline](https://jenkins.io/doc/book/pipeline/))
+见：[Pipeline](https://jenkins.io/doc/book/pipeline/)
 
 #### GoCD
 
-见：[GoCD](https://docs.gocd.org/current/advanced_usage/pipelines_as_code.html))
+见：[GoCD](https://docs.gocd.org/current/advanced_usage/pipelines_as_code.html)
 
 ## 代码化配置
 
@@ -761,11 +761,40 @@ changelog:
 
 > 监控，观察并记录系统状态变化和数据流的过程。
 
+### StatsD + Graphite + Grafana
+
+- [Statsd](https://github.com/etsy/statsd) 是一个使用 Node 开发网络守护进程，它的特点是通过 UDP（性能好，及时挂了也不影响主服务）或者 TCP 来监听各种数据信息，然后发送聚合数据到后端服务进行处理。
+- [Graphite](https://github.com/graphite-project/carbon) 是一套 Python 写的开源编程接口，主要是用来收集服务器的及时状态，在这里主要作为 statsd 的数据后端。分为了三个子项目
+  - carbon 守护进程，接收 StatsD 发送过来的原始统计数据。
+  - whisper 用来存储统计数据的时间序列数据库。
+  - graphite webapp 用来图形化展示统计数据的 web 项目。
+- [Grafana](https://github.com/grafana/grafana) 使用 Go 开发，可以在界面上设计调整自己的统计图表，支持多重报警，可定制化。
+
+#### Java
+
+Kamon
+
+Docker 镜像：[StatsD + Graphite + Grafana 4 + Kamon Dashboards](https://github.com/kamon-io/docker-grafana-graphite)
+
+#### Python
+
+[pystatsd](https://github.com/jsocol/pystatsd))
+
+## 日志
+
 ### ELK
 
 ElasticSearch + Logstash + Kibana
 
+安装见: [https://www.elastic.co/start](https://www.elastic.co/start)
+
 ### Kafka + Flink
+
+Flink：[Flink Downloads](https://flink.apache.org/downloads.html)
+
+Flink 中文：[Flink 下载](https://flink.apache.org/zh/downloads.html)
+
+Kafka：[Kafka Quickstart](https://kafka.apache.org/quickstart)
 
 ## 追踪问题
 
