@@ -2028,7 +2028,23 @@ digraph {
 - 基本的安全控制，包含经过案例加固的机器镜像、受限的端口访问，以及访问控制面板时要求提供强身份验证
 - 了解运维方面产生的成本
 
+示例：
+```process-table
+| ToDo | Analysis | Ready 4 Dev | In Dev | Ready 4 QA | In QA | Done |
+|-|-|-|-|-|-|-|
+| STORY |STORY | Task | Task | STORY | Task | Task|
+| STORY |      |      | STORY|       |      |     |
+| STORY |      |      |      |       |      |     |
+| STORY |      |      |      |       |      |     |
+| STORY |      |      |      |       |      |     |
+| STORY |      |      |      |       |      |     |
+| Task  |      |      |      |       |      |     |
+| Task  |      |      |      |       |      |     |
+```
+
 ### PAAS 平台
+
+
 
 ### 容器平台
 
