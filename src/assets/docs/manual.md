@@ -864,6 +864,19 @@ OpenCensus：[OpenCensus](https://opencensus.io/)
 
 ### ELK
 
+示例架构：
+
+```graphviz
+digraph {
+  rankdir=LR;
+  APP1 -> Kafka;
+  APP3 -> Kafka;
+  APP4 -> Kafka
+  Kafka -> Logstash;
+  Logstash -> ElasticSearch -> Kibana;
+}
+```
+
 ElasticSearch + Logstash + Kibana
 
 安装见: [https://www.elastic.co/start](https://www.elastic.co/start)
