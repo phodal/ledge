@@ -6,7 +6,7 @@ import { Title } from '@angular/platform-browser';
   templateUrl: './maturity.component.html',
   styleUrls: ['./maturity.component.scss'],
 })
-export class MaturityComponent implements OnInit {
+export class MaturityComponent {
   list = [
     {
       name: '第一部分：敏捷开发管理',
@@ -62,6 +62,4 @@ export class MaturityComponent implements OnInit {
   constructor(title: Title) {
     title.setTitle('Ledge DevOps 知识平台 - 成熟度');
   }
-
-  ngOnInit(): void {}
 }

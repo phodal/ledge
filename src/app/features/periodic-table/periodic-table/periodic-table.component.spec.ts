@@ -1,12 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { PeriodicTableComponent } from './periodic-table.component';
-import { SharedModule } from '../../../shared/shared.module';
 import {
   TranslateFakeLoader,
   TranslateLoader,
   TranslateModule,
 } from '@ngx-translate/core';
+
+import { PeriodicTableModule } from '../periodic-table.module';
+import { PeriodicTableComponent } from './periodic-table.component';
+import { SharedModule } from '../../../shared/shared.module';
 
 describe('PeriodicTableComponent', () => {
   let component: PeriodicTableComponent;
@@ -16,6 +17,7 @@ describe('PeriodicTableComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         SharedModule,
+        PeriodicTableModule,
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,
@@ -35,5 +37,22 @@ describe('PeriodicTableComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should update category', () => {
+    const type = 'openCloud';
+
+    component.select(type);
+
+    expect(component.selectCategory).toEqual(type);
+  });
+
+  it('should enable hover detail', () => {
+    component.atoms = [{ number: 3 } as any];
+    const atomNumber = 3;
+
+    component.showAtomDetails(atomNumber);
+
+    expect(component.currentAtom.number).toEqual(atomNumber);
   });
 });

@@ -5,7 +5,7 @@
                        [type]="category.type"
                        [selected]="selectCategory === category.type"
                        [name]="category.displayName"
-                       (enter)="enterPhase($event)"></app-atom-category>
+                       (enter)="select($event)"></app-atom-category>
   </div>
 
   <div class="periodic-grid">
@@ -23,7 +23,6 @@
         [selectedCategory]="selectCategory"
         [metalSelected]="metalClass"
         (hoverAtom)="showAtomDetails($event)"
-        (click)="open(atom.name)"
       ></app-atom>
     </ng-container>
     <app-atom class="periodic-atom-57-71 atom-placeholder" [data]="lantAtomGroup"></app-atom>

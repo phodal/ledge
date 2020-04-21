@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Atom } from '../support';
 
@@ -7,8 +7,6 @@ import { Atom } from '../support';
   templateUrl: './atom-dialog.component.html',
   styleUrls: ['./atom-dialog.component.scss'],
 })
-export class AtomDialogComponent implements OnInit {
+export class AtomDialogComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public data: Atom) {}
-
-  ngOnInit(): void {}
 }

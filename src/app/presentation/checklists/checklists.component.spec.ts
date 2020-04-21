@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChecklistsComponent } from './checklists.component';
+import { SharedModule } from '../../shared/shared.module';
+import { LedgeRenderModule } from '@ledge-framework/render';
+import { CustomMaterialModule } from '../../shared/custom-material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('ChecklistsComponent', () => {
   let component: ChecklistsComponent;
@@ -8,6 +12,12 @@ describe('ChecklistsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        SharedModule,
+        CustomMaterialModule,
+        LedgeRenderModule,
+        BrowserAnimationsModule,
+      ],
       declarations: [ChecklistsComponent],
     }).compileComponents();
   }));
@@ -19,6 +29,12 @@ describe('ChecklistsComponent', () => {
   });
 
   it('should create', () => {
+    component.ngOnInit();
     expect(component).toBeTruthy();
+  });
+
+  it('should change table', () => {
+    component.onTabChanged({ index: 1 } as any);
+    expect(component.selectedTabIndex).toEqual(1);
   });
 });

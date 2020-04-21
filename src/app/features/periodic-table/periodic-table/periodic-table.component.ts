@@ -14,7 +14,6 @@ import { combineLatest, Observable, Subject } from 'rxjs';
 import { debounceTime, map, startWith, takeUntil, tap } from 'rxjs/operators';
 import { Atom, HighlightState } from '../support';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
-import { ChangeDetection } from '@angular/cli/lib/config/schema';
 
 const MAX_ROW_INDEX = 7;
 const MAX_COL_INDEX = 18;
@@ -181,11 +180,7 @@ export class PeriodicTableComponent implements OnInit, OnChanges {
     }
   }
 
-  enterPhase(type: string) {
+  select(type: string) {
     this.selectCategory = type;
-  }
-
-  open(atomName) {
-    // this.wikiAtomName = atomName;
   }
 }

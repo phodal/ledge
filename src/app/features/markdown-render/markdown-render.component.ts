@@ -159,12 +159,14 @@ export class MarkdownRenderComponent
   private gotoHeading() {
     this.route.fragment.subscribe((fragment: string) => {
       if (!!fragment) {
-        const element = this.myElement.nativeElement.querySelector(
-          '#' + fragment
-        );
-        if (!!element) {
-          element.scrollIntoView();
-        }
+        try {
+          const element = this.myElement.nativeElement.querySelector(
+            '#' + fragment
+          );
+          if (!!element) {
+            element.scrollIntoView();
+          }
+        } catch (e) {}
       }
     });
   }

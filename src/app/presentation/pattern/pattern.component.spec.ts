@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PatternComponent } from './pattern.component';
+import { SharedModule } from '../../shared/shared.module';
+import { CustomMaterialModule } from '../../shared/custom-material.module';
+import { LedgeRenderModule } from '@ledge-framework/render';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('PatternComponent', () => {
   let component: PatternComponent;
@@ -8,9 +12,14 @@ describe('PatternComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PatternComponent ]
-    })
-    .compileComponents();
+      imports: [
+        SharedModule,
+        CustomMaterialModule,
+        LedgeRenderModule,
+        RouterTestingModule,
+      ],
+      declarations: [PatternComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -20,6 +29,7 @@ describe('PatternComponent', () => {
   });
 
   it('should create', () => {
+    component.ngOnInit();
     expect(component).toBeTruthy();
   });
 });

@@ -2,6 +2,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ReporterComponent } from './reporter.component';
 import { SharedModule } from '../../shared/shared.module';
+import { CustomMaterialModule } from '../../shared/custom-material.module';
+import { LedgeRenderModule } from '@ledge-framework/render';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ReporterComponent', () => {
   let component: ReporterComponent;
@@ -9,10 +12,14 @@ describe('ReporterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [SharedModule],
-      declarations: [ReporterComponent]
-    })
-      .compileComponents();
+      imports: [
+        SharedModule,
+        CustomMaterialModule,
+        LedgeRenderModule,
+        RouterTestingModule,
+      ],
+      declarations: [ReporterComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -22,6 +29,7 @@ describe('ReporterComponent', () => {
   });
 
   it('should create', () => {
+    component.ngOnInit();
     expect(component).toBeTruthy();
   });
 });

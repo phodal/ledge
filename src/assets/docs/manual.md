@@ -601,7 +601,86 @@ JDepend 设计质量指标：
 
 ## 搭建持续集成
 
+### Jenkins
+
+见：[Installing Jenkins](https://jenkins.io/doc/book/installing/)
+
+### GoCD
+
+见：[Installing GoCD server](https://docs.gocd.org/current/installation/installing_go_server.html)
+
 ## 代码化构建流
+
+### 编程式
+
+#### Bash
+
+#### Gradle
+
+aka Groovy
+
+#### Kotlin Script
+
+#### Makefile
+
+Go 示例：
+
+```makefile
+all: clean build
+build: build-linux build-windows build-macos
+test:
+#	make build-plugins
+	$(GOTEST) -v ./...
+clean:
+	$(GOCLEAN)
+	rm -rf $(BINARY_DIR)
+run:
+	$(GOBUILD) -o $(BINARY_DIR) -v ./...
+	./$(BINARY_DIR)
+lint:
+	golint ./pkg/...
+changelog:
+	conventional-changelog -p angular -i CHANGELOG.md -s -r 0
+```
+
+#### JavaScript
+
+通过 `package.json` 中的 `script` 字段，如 Ledge 中的：
+
+```json
+{
+  "scripts": {
+    "ng": "./node_modules/.bin/ng",
+    "start": "yarn ng serve",
+    "build": "node --max_old_space_size=4096 ./node_modules/.bin/ng build",
+    "build:ci": "node --max_old_space_size=4096 ./node_modules/.bin/ng build --configuration ci",
+    "build:stats": "node --max_old_space_size=4096 ./node_modules/.bin/ng build --stats-json",
+    "analyze": "webpack-bundle-analyzer dist/ledge/stats-es2015.json",
+    "test": "yarn ng test",
+    "test:ci": "yarn ng test --watch=false --progress=false --browsers=ChromeHeadlessCI --codeCoverage",
+    "lint": "yarn ng lint",
+    "commit": "git-cz",
+    "package": "yarn build:ci && rm -rf dist/static && yarn scully",
+    "deploy": "yarn package && npx angular-cli-ghpages --repo=https://github.com/phodal/do.git --dir=dist/static --cname=devops.phodal.com",
+    "publish:cloudbase": "cloudbase hosting:deploy dist/static -e ledge2-8daa6a",
+    "build:lib": "node --max_old_space_size=4096 ./node_modules/.bin/ng build ledge-render --prod",
+    "publish:lib": "cd dist/ledge-render && npm publish --access=public",
+    "scully": "scully --scanRoutes",
+    "scully:serve": "scully serve",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+  }
+}
+```
+
+### Pipeline as Code
+
+#### Jenkins
+
+见：[Pipeline](https://jenkins.io/doc/book/pipeline/)
+
+#### GoCD
+
+见：[GoCD](https://docs.gocd.org/current/advanced_usage/pipelines_as_code.html)
 
 ## 代码化配置
 
@@ -616,13 +695,25 @@ JDepend 设计质量指标：
 
 #### 引入 Flyway
 
+见：[Flyway Command line install](https://flywaydb.org/getstarted/firststeps/commandline)
+
 ## 实施自动化测试
 
-#### 后端测试体系
+### 后端测试体系
 
-#### 前端测试体系
+#### API
 
-#### Android 测试体系
+#### Mock
+
+#### UT
+
+### 前端测试体系
+
+#### E2E
+
+#### UT
+
+### Android 测试体系
 
 官方指南：《[Build effective unit tests](https://developer.android.com/training/testing/unit-testing)》
 
@@ -670,11 +761,54 @@ JDepend 设计质量指标：
 
 > 监控，观察并记录系统状态变化和数据流的过程。
 
+### StatsD + Graphite + Grafana
+
+```graphviz
+digraph {
+  subgraph stats {
+    uWSGI -> StatsD;
+    Logstash -> StatsD;
+    Diamond -> StatsD;
+    App1 -> StatsD;
+    App2 -> StatsD;
+  }
+
+  StatsD -> Graphite -> Grafana;
+}
+```
+
+- [Statsd](https://github.com/etsy/statsd) 是一个使用 Node 开发网络守护进程，它的特点是通过 UDP（性能好，及时挂了也不影响主服务）或者 TCP 来监听各种数据信息，然后发送聚合数据到后端服务进行处理。
+- [Graphite](https://github.com/graphite-project/carbon) 是一套 Python 写的开源编程接口，主要是用来收集服务器的及时状态，在这里主要作为 statsd 的数据后端。分为了三个子项目
+  - carbon 守护进程，接收 StatsD 发送过来的原始统计数据。
+  - whisper 用来存储统计数据的时间序列数据库。
+  - graphite webapp 用来图形化展示统计数据的 web 项目。
+- [Grafana](https://github.com/grafana/grafana) 使用 Go 开发，可以在界面上设计调整自己的统计图表，支持多重报警，可定制化。
+
+#### Java
+
+Kamon
+
+Docker 镜像：[StatsD + Graphite + Grafana 4 + Kamon Dashboards](https://github.com/kamon-io/docker-grafana-graphite)
+
+#### Python
+
+[pystatsd](https://github.com/jsocol/pystatsd))
+
+## 日志
+
 ### ELK
 
 ElasticSearch + Logstash + Kibana
 
+安装见: [https://www.elastic.co/start](https://www.elastic.co/start)
+
 ### Kafka + Flink
+
+Flink：[Flink Downloads](https://flink.apache.org/downloads.html)
+
+Flink 中文：[Flink 下载](https://flink.apache.org/zh/downloads.html)
+
+Kafka：[Kafka Quickstart](https://kafka.apache.org/quickstart)
 
 ## 追踪问题
 

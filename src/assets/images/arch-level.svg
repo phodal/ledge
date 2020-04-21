@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="851px" height="429px" viewBox="0 0 851 429" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(0.000000, 2.000000)">
+            <g id="primard" transform="translate(52.000000, 0.000000)">
+                <polygon id="Triangle" stroke="#979797" stroke-width="2" fill="#9B9B9B" fill-rule="nonzero" points="398 0 796 426 0 426"></polygon>
+                <polyline id="Line-2" stroke="#FFFFFF" stroke-width="4" stroke-linecap="square" points="113 304.720703 236.234375 283 301.820312 326.441406 459.007812 283 608.542969 316.5 662 283"></polyline>
+                <polygon id="Triangle" stroke="#979797" stroke-width="2" fill="#D8D8D8" fill-rule="nonzero" points="397.5 0 662 283 133 283"></polygon>
+                <polygon id="Triangle" stroke="#979797" stroke-width="2" fill="#FFFFFF" fill-rule="nonzero" points="397.5 0 599 215 196 215"></polygon>
+                <polygon id="Triangle" stroke="#979797" stroke-width="2" fill="#D8D8D8" fill-rule="nonzero" points="397.5 0 541 153 254 153"></polygon>
+                <polygon id="Triangle" stroke="#979797" stroke-width="2" fill="#FFFFFF" fill-rule="nonzero" points="397.5 0 477 85 318 85"></polygon>
+            </g>
+            <text id="应用级" font-family="PingFangSC-Regular, PingFang SC" font-size="18" font-weight="normal" fill="#4A4A4A">
+                <tspan x="423" y="130">应用级</tspan>
+            </text>
+            <text id="系统级" font-family="PingFangSC-Regular, PingFang SC" font-size="18" font-weight="normal" fill="#4A4A4A">
+                <tspan x="423" y="72">系统级</tspan>
+            </text>
+            <text id="模块级" font-family="PingFangSC-Regular, PingFang SC" font-size="18" font-weight="normal" fill="#4A4A4A">
+                <tspan x="423" y="194">模块级</tspan>
+            </text>
+            <text id="代码级" font-family="PingFangSC-Regular, PingFang SC" font-size="18" font-weight="normal" fill="#4A4A4A">
+                <tspan x="423" y="258">代码级</tspan>
+            </text>
+            <rect id="Rectangle" stroke="#979797" stroke-width="2" fill="#FFFFFF" fill-rule="nonzero" x="492" y="35" width="353" height="42" rx="3"></rect>
+            <rect id="Rectangle" stroke="#979797" stroke-width="2" fill="#FFFFFF" fill-rule="nonzero" x="492" y="99" width="353" height="42" rx="3"></rect>
+            <text id="分层架构、微内核架构等" font-family="PingFangSC-Regular, PingFang SC" font-size="18" font-weight="normal" fill="#4A4A4A">
+                <tspan x="505" y="128">分层架构、微内核架构等</tspan>
+            </text>
+            <rect id="Rectangle" stroke="#979797" stroke-width="2" fill="#FFFFFF" fill-rule="nonzero" x="492" y="163" width="353" height="42" rx="3"></rect>
+            <rect id="Rectangle" stroke="#979797" stroke-width="2" fill="#FFFFFF" fill-rule="nonzero" x="626" y="345" width="214" height="42" rx="3"></rect>
+            <text id="基础设施层" font-family="PingFangSC-Regular, PingFang SC" font-size="18" font-weight="normal" fill="#4A4A4A">
+                <tspan x="643" y="373">基础设施层</tspan>
+            </text>
+            <rect id="Rectangle" stroke="#979797" stroke-width="2" fill="#FFFFFF" fill-rule="nonzero" x="492" y="227" width="353" height="42" rx="3"></rect>
+            <text id="规范、原则、质量等" font-family="PingFangSC-Regular, PingFang SC" font-size="18" font-weight="normal" fill="#4A4A4A">
+                <tspan x="505" y="252">规范、原则、质量等</tspan>
+            </text>
+            <text id="基础适应度函数" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#4A4A4A">
+                <tspan x="757" y="260">基础适应度函数</tspan>
+            </text>
+            <text id="组件化、模块化、插件化等" font-family="PingFangSC-Regular, PingFang SC" font-size="18" font-weight="normal" fill="#4A4A4A">
+                <tspan x="505" y="191">组件化、模块化、插件化等</tspan>
+            </text>
+            <text id="模式库、设计系统、云原生、DevOps" font-family="PingFangSC-Regular, PingFang SC" font-size="18" font-weight="normal" fill="#4A4A4A">
+                <tspan x="290" y="372">模式库、设计系统、云原生、DevOps 等</tspan>
+            </text>
+            <text id="服务导向架构、聚合导向架构等" font-family="PingFangSC-Regular, PingFang SC" font-size="18" font-weight="normal" fill="#4A4A4A">
+                <tspan x="505" y="64">服务导向架构、聚合导向架构等</tspan>
+            </text>
+            <path id="Line" d="M260.487371,148.026326 L262.230522,149.006849 L282.230522,160.256849 L285.329458,162 L282.230522,163.743151 L262.230522,174.993151 L260.487371,175.973674 L258.526326,172.487371 L260.269478,171.506849 L273.612,164 L113,164 L113,160 L273.615,160 L260.269478,152.493151 L258.526326,151.512629 L260.487371,148.026326 Z" fill="#979797" fill-rule="nonzero"></path>
+            <rect id="Rectangle" stroke="#979797" stroke-width="4" fill-rule="nonzero" x="2" y="28" width="111" height="246" rx="3"></rect>
+            <text id="文档" font-family="PingFangSC-Regular, PingFang SC" font-size="18" font-weight="normal" fill="#4A4A4A">
+                <tspan x="39" y="100">文档</tspan>
+            </text>
+            <text id="构建系统" font-family="PingFangSC-Regular, PingFang SC" font-size="18" font-weight="normal" fill="#4A4A4A">
+                <tspan x="21" y="156">构建系统</tspan>
+            </text>
+            <text id="工作流" font-family="PingFangSC-Regular, PingFang SC" font-size="18" font-weight="normal" fill="#4A4A4A">
+                <tspan x="30" y="212">工作流</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

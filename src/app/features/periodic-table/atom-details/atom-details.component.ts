@@ -15,7 +15,5 @@ export class AtomDetailsComponent implements OnInit {
   @Input()
   data = null;
 
-  constructor() {}
-
   ngOnInit() {}
 }

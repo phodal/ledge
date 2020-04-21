@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ResourcesComponent } from './resources.component';
+import { SharedModule } from '../../shared/shared.module';
+import { CustomMaterialModule } from '../../shared/custom-material.module';
+import { LedgeRenderModule } from '@ledge-framework/render';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ResourcesComponent', () => {
   let component: ResourcesComponent;
@@ -8,9 +12,14 @@ describe('ResourcesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ResourcesComponent ]
-    })
-    .compileComponents();
+      imports: [
+        SharedModule,
+        CustomMaterialModule,
+        LedgeRenderModule,
+        RouterTestingModule,
+      ],
+      declarations: [ResourcesComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -20,6 +29,7 @@ describe('ResourcesComponent', () => {
   });
 
   it('should create', () => {
+    component.ngOnInit();
     expect(component).toBeTruthy();
   });
 });

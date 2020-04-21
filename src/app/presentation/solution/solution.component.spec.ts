@@ -1,13 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { SolutionComponent } from './solution.component';
-import { SharedModule } from '../../shared/shared.module';
 import { RouterTestingModule } from '@angular/router/testing';
 import {
   TranslateFakeLoader,
   TranslateLoader,
   TranslateModule,
 } from '@ngx-translate/core';
+import { ActivatedRoute, convertToParamMap } from '@angular/router';
+import { of } from 'rxjs';
+import { LedgeRenderModule } from '@ledge-framework/render';
+import { BrowserTestingModule } from '@angular/platform-browser/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { CustomMaterialModule } from '../../shared/custom-material.module';
+import { SolutionComponent } from './solution.component';
+import { SharedModule } from '../../shared/shared.module';
 
 describe('SolutionComponent', () => {
   let component: SolutionComponent;
@@ -18,6 +24,10 @@ describe('SolutionComponent', () => {
       imports: [
         SharedModule,
         RouterTestingModule,
+        LedgeRenderModule,
+        CustomMaterialModule,
+        BrowserAnimationsModule,
+        BrowserTestingModule,
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,
@@ -26,6 +36,15 @@ describe('SolutionComponent', () => {
         }),
       ],
       declarations: [SolutionComponent],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            fragment: of({}),
+            paramMap: of(convertToParamMap({ solution: 'coding' })),
+          },
+        },
+      ],
     }).compileComponents();
   }));
 

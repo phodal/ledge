@@ -1,32 +1,33 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
-import { AtomDialogComponent } from './atom-dialog.component';
 import { SharedModule } from '../../../shared/shared.module';
-import { CustomMaterialModule } from '../../../shared/custom-material.module';
+import { AtomCategoryComponent } from './atom-category.component';
 
-describe('AtomDialogComponent', () => {
-  let component: AtomDialogComponent;
-  let fixture: ComponentFixture<AtomDialogComponent>;
+describe('AtomCategoryComponent', () => {
+  let component: AtomCategoryComponent;
+  let fixture: ComponentFixture<AtomCategoryComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [SharedModule, CustomMaterialModule],
+      imports: [SharedModule],
       providers: [
         { provide: MAT_DIALOG_DATA, useValue: {} },
         { provide: MatDialogRef, useValue: {} },
       ],
-      declarations: [AtomDialogComponent],
+      declarations: [AtomCategoryComponent],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AtomDialogComponent);
+    fixture = TestBed.createComponent(AtomCategoryComponent);
     component = fixture.componentInstance;
+    component.name = '';
     fixture.detectChanges();
   });
 
   it('should create', () => {
+    component.ngOnInit();
     expect(component).toBeTruthy();
   });
 });
