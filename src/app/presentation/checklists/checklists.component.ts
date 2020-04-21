@@ -13,6 +13,7 @@ import * as gruntworkDevOps from 'raw-loader!../../../assets/docs/checklists/dev
 import * as xpDevOps from 'raw-loader!../../../assets/docs/checklists/xp.md';
 import * as codeReview from 'raw-loader!../../../assets/docs/checklists/codereview.md';
 import * as fe from 'raw-loader!../../../assets/docs/checklists/front-end.md';
+import * as devSecOps from 'raw-loader!../../../assets/docs/checklists/devsecops.md';
 
 @Component({
   selector: 'app-checklists',
@@ -31,6 +32,7 @@ export class ChecklistsComponent implements OnInit {
   xpContent = xpDevOps.default;
   codeReviewContent = codeReview.default;
   feContent = fe.default;
+  devSecOpsContent = devSecOps.default;
 
   selectedTabIndex = 0;
 
