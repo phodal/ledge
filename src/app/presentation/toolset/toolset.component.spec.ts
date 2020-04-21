@@ -29,6 +29,7 @@ describe('AwesomeToolComponent', () => {
   });
 
   it('should create', () => {
+    component.ngOnInit();
     expect(component).toBeTruthy();
   });
 });

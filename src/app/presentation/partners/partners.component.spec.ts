@@ -29,6 +29,7 @@ describe('PartnersComponent', () => {
   });
 
   it('should create', () => {
+    component.ngOnInit();
     expect(component).toBeTruthy();
   });
 });

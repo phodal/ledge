@@ -29,6 +29,7 @@ describe('PractiseComponent', () => {
   });
 
   it('should create', () => {
+    component.ngOnInit();
     expect(component).toBeTruthy();
   });
 });

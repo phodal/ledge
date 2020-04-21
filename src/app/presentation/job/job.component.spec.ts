@@ -29,6 +29,7 @@ describe('JobComponent', () => {
   });
 
   it('should create', () => {
+    component.ngOnInit();
     expect(component).toBeTruthy();
   });
 });

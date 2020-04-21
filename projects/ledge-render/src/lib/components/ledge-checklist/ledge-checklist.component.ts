@@ -16,9 +16,6 @@ export class LedgeChecklistComponent implements OnInit, OnChanges {
   checklists: any;
   title: any;
 
-  constructor() {
-  }
-
   ngOnInit(): void {
   }
 

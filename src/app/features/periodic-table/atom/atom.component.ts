@@ -3,11 +3,9 @@ import {
   Component,
   EventEmitter,
   Input,
-  OnChanges,
   OnDestroy,
   OnInit,
   Output,
-  SimpleChanges,
 } from '@angular/core';
 import { Subject } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
@@ -24,7 +22,7 @@ const STAY_AT_LEAST = 250;
   styleUrls: ['./atom.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AtomComponent implements OnInit, OnChanges, OnDestroy {
+export class AtomComponent implements OnInit, OnDestroy {
   @Input()
   data: any;
 
@@ -69,8 +67,6 @@ export class AtomComponent implements OnInit, OnChanges, OnDestroy {
         (err) => console.error(err)
       );
   }
-
-  ngOnChanges(changes: SimpleChanges) {}
 
   ngOnDestroy() {
     if (this.unsubscribe$) {

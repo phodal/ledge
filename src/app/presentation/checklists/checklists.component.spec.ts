@@ -29,6 +29,7 @@ describe('ChecklistsComponent', () => {
   });
 
   it('should create', () => {
+    component.ngOnInit();
     expect(component).toBeTruthy();
   });
 

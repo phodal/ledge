@@ -37,8 +37,6 @@ export class AtomCategoryComponent implements OnInit, OnChanges {
   @Input()
   type: string;
 
-  constructor() {}
-
   ngOnInit() {}
 
   ngOnChanges(changes: SimpleChanges): void {

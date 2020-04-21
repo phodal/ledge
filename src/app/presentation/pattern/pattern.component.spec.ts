@@ -29,6 +29,7 @@ describe('PatternComponent', () => {
   });
 
   it('should create', () => {
+    component.ngOnInit();
     expect(component).toBeTruthy();
   });
 });

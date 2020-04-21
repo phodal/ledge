@@ -9,7 +9,5 @@ import * as mdData from 'raw-loader!../../../assets/docs/tool.md';
 export class ToolsetComponent implements OnInit {
   data = mdData.default;
 
-  constructor() {}
-
   ngOnInit(): void {}
 }

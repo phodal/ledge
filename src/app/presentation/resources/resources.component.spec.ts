@@ -29,6 +29,7 @@ describe('ResourcesComponent', () => {
   });
 
   it('should create', () => {
+    component.ngOnInit();
     expect(component).toBeTruthy();
   });
 });
