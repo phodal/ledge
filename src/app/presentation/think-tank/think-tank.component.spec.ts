@@ -8,6 +8,13 @@ import {
   TranslateLoader,
   TranslateModule,
 } from '@ngx-translate/core';
+import { LedgeRenderModule } from 'ledge-render';
+import { CustomMaterialModule } from '../../shared/custom-material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserTestingModule } from '@angular/platform-browser/testing';
+import { SolutionComponent } from '../solution/solution.component';
+import { ActivatedRoute, convertToParamMap } from '@angular/router';
+import { of } from 'rxjs';
 
 describe('ThinkTankComponent', () => {
   let component: ThinkTankComponent;
@@ -18,6 +25,10 @@ describe('ThinkTankComponent', () => {
       imports: [
         SharedModule,
         RouterTestingModule,
+        LedgeRenderModule,
+        CustomMaterialModule,
+        BrowserAnimationsModule,
+        BrowserTestingModule,
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,
@@ -26,6 +37,15 @@ describe('ThinkTankComponent', () => {
         }),
       ],
       declarations: [ThinkTankComponent],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            fragment: of({}),
+            paramMap: of(convertToParamMap({ tank: 'qa' })),
+          },
+        },
+      ],
     }).compileComponents();
   }));
 
