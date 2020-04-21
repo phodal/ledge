@@ -3,10 +3,10 @@ import { Title } from '@angular/platform-browser';
 import { NavigationEnd, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 import * as mdData from 'raw-loader!../../../assets/docs/home.md';
 import { HighlightState } from '../../features/periodic-table/support';
-import { TranslateService } from '@ngx-translate/core';
 import { contributors } from './contributiors';
 
 @Component({
