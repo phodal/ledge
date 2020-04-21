@@ -60,15 +60,10 @@ export class MaturityComponent {
   ];
 
   maturity = {
-    table: ''
-  }
+    table: '',
+  };
 
   constructor(title: Title) {
     title.setTitle('Ledge DevOps 知识平台 - 成熟度');
   }
-<<<<<<< Updated upstream
-=======
-
-  ngOnInit(): void { }
->>>>>>> Stashed changes
 }
