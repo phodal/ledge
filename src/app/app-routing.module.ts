@@ -84,6 +84,11 @@ const routes: Routes = [
       import('./presentation/home/home.module').then((m) => m.HomeModule),
   },
   {
+    path: 'job',
+    loadChildren: () =>
+      import('./presentation/job/job.module').then((m) => m.JobModule),
+  },
+  {
     path: 'helper',
     loadChildren: () =>
       import('./presentation/ledge-helper/ledge-helper.module').then(
