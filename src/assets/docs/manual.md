@@ -370,37 +370,6 @@ Bruck Tuckman 团队发展模型：
 - Selenium。Web 浏览器，支持主流语言
 - Puppeteer。Node.js API 操作 Chrome 浏览器
 
-#### 架构的单元测试
-
-ArchUnit： ArchUnit 是用来检查架构特征的 Java 测试库，比如包与类的依赖关系、注解、甚至是调用层级一致性。它可以附加在现有的测试方案中，以单元测试的方式运行，但目前只能用于 Java 架构。ArchUnit 测试套件可以合并到持续集成环境及部署流水线中，使我们可以更容易地利用架构适应度函数实现演进式架构。
-
-参见：《[ArchUnit](https://insights.thoughtworks.cn/archunit/)》
-
-JDepend 设计质量指标：
-
-- 类和接口的数量。包中具体类和抽象类（包括接口）的数量，代表了该包的可扩展性。
-- 输入耦合度（Ca）。有多少其他的包依赖于该包中的类，表示了该包的职责范围。
-- 输出耦合度（Ce）。该包中的类依赖于其他包的数量，表示了该包的独立度。
-- 抽象性（A）。包中所有抽象类（包括接口）的数量，占包中所有类数量的比率。
-- 不稳定性（I）。输出耦合度占总耦合度的比率，I = Ce/（Ce + Ca）。该指标表示该包对变化的适应能力。
-- 与主序列的距离。某个包与理想线 A + I = 1 的垂直距离。该指标表示该包在抽象性和稳定性之间的平衡程度。
-- 包依赖循环。如果包的依赖之间形成了循环，会生成其中各个包的层级路径报告。
-
-```radar
- - 设计质量指标
-  - 类和接口的数量
-  - 输入耦合度
-  - 输出耦合度
-  - 抽象性
-  - 不稳定性
-  - 与主序列的距离
-  - 包依赖循环
-```
-
-#### 普通单元测试
-
-#### API 测试
-
 ### 遗留代码
 
 如我在《[系统重构与迁移指南](https://migration.ink/)》一书中指出，要给遗留系统项目加测试并不是一件容易的事情。你需要找到对应年代的测试框架，熟悉对应年代的技术栈，然后才能一点点切入系统。
@@ -701,6 +670,33 @@ changelog:
 
 ### 后端测试体系
 
+#### 架构测试
+
+ArchUnit： ArchUnit 是用来检查架构特征的 Java 测试库，比如包与类的依赖关系、注解、甚至是调用层级一致性。它可以附加在现有的测试方案中，以单元测试的方式运行，但目前只能用于 Java 架构。ArchUnit 测试套件可以合并到持续集成环境及部署流水线中，使我们可以更容易地利用架构适应度函数实现演进式架构。
+
+参见：《[ArchUnit](https://insights.thoughtworks.cn/archunit/)》
+
+JDepend 设计质量指标：
+
+- 类和接口的数量。包中具体类和抽象类（包括接口）的数量，代表了该包的可扩展性。
+- 输入耦合度（Ca）。有多少其他的包依赖于该包中的类，表示了该包的职责范围。
+- 输出耦合度（Ce）。该包中的类依赖于其他包的数量，表示了该包的独立度。
+- 抽象性（A）。包中所有抽象类（包括接口）的数量，占包中所有类数量的比率。
+- 不稳定性（I）。输出耦合度占总耦合度的比率，I = Ce/（Ce + Ca）。该指标表示该包对变化的适应能力。
+- 与主序列的距离。某个包与理想线 A + I = 1 的垂直距离。该指标表示该包在抽象性和稳定性之间的平衡程度。
+- 包依赖循环。如果包的依赖之间形成了循环，会生成其中各个包的层级路径报告。
+
+```radar
+ - 设计质量指标
+  - 类和接口的数量
+  - 输入耦合度
+  - 输出耦合度
+  - 抽象性
+  - 不稳定性
+  - 与主序列的距离
+  - 包依赖循环
+```
+
 #### API
 
 #### Mock
@@ -751,11 +747,51 @@ changelog:
 - KIF
 - Kiwi
 
+### 性能和压力测试
+
+#### Apache Benchmark
+
+Apache Benchmark：[Ab](https://httpd.apache.org/docs/2.4/programs/ab.html)
+
+SuperBenchmarker（Windows 版的 Apache Benchmark）： [SuperBenchmarker](https://github.com/aliostad/SuperBenchmarker)
+
+示例：
+
+```
+$ ab -n 10 -c 2 https://devops.phodal.com/
+```
+
+#### Gatling
+
+Gatling：[Gatling](https://github.com/gatling/gatling)
+
+安装：[https://gatling.io/docs/current/installation](https://gatling.io/docs/current/installation)
+
 ## 自动化部署应用
 
 ### K8S + Dockerfile
 
 ### 非镜像的自动化方案
+
+## 指标
+
+### Eclipse MicroProfile
+
+> Eclipse MicroProfile 是一个微服务的基准平台定义，针对微服务架构优化企业 Java，并为跨多个 MicroProfile 运行环境提供应用程序可移植性。
+
+Eclipse Microprofile Metrics：[Eclipse Microprofile Metrics](https://github.com/eclipse/microprofile-metrics)
+
+MicroProfile OpenTracing：[MicroProfile OpenTracing](https://github.com/eclipse/microprofile-opentracing)
+
+TBC
+
+### Dropwizard Metrics
+
+GitHub: [https://github.com/dropwizard/metrics](https://github.com/dropwizard/metrics)
+
+### Spring Boot Actuator
+
+Spring Boot Actuator：[Spring Boot Actuator](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#production-ready)
 
 ## 引入监控
 
@@ -794,7 +830,37 @@ Docker 镜像：[StatsD + Graphite + Grafana 4 + Kamon Dashboards](https://githu
 
 [pystatsd](https://github.com/jsocol/pystatsd))
 
-## 日志
+## 日志收集和存储
+
+### Java
+
+记录工具：
+
+SLF4J：[SL4J](http://www.slf4j.org/)
+
+Apache Log4J 2：[Log4J 2](https://logging.apache.org/log4j/2.x/)
+
+## 异常处理
+
+### Airbrake
+
+[Airbrake](https://airbrake.io/)
+
+## 请求跟踪
+
+### Java
+
+OpenZipkin：[https://zipkin.io/](https://zipkin.io/)
+
+Spring Cloud Sleuth：[https://spring.io/projects/spring-cloud-sleuth](https://spring.io/projects/spring-cloud-sleuth)
+
+OpenCensus：[OpenCensus](https://opencensus.io/)
+
+### Prometheus
+
+> Prometheus 是用于事件监视和警报的免费软件应用程序。它将实时指标记录在使用 HTTP 拉模型构建的时间序列数据库中，并具有灵活的查询和实时警报。
+
+官网：[https://prometheus.io/](https://prometheus.io/)
 
 ### ELK
 
