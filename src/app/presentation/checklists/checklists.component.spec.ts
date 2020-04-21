@@ -5,6 +5,9 @@ import { SharedModule } from '../../shared/shared.module';
 import { LedgeRenderModule } from '@ledge-framework/render';
 import { CustomMaterialModule } from '../../shared/custom-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ActivatedRoute, convertToParamMap } from '@angular/router';
+import { of } from 'rxjs';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ChecklistsComponent', () => {
   let component: ChecklistsComponent;
@@ -17,8 +20,18 @@ describe('ChecklistsComponent', () => {
         CustomMaterialModule,
         LedgeRenderModule,
         BrowserAnimationsModule,
+        RouterTestingModule,
       ],
       declarations: [ChecklistsComponent],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            fragment: of({}),
+            paramMap: of(convertToParamMap({ selectedTabIndex: '0' })),
+          },
+        },
+      ],
     }).compileComponents();
   }));
 
