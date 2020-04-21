@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./skill-tree.component.scss'],
 })
 export class SkillTreeComponent implements OnInit {
+  data: any;
   constructor() {}
 
   ngOnInit(): void {}
