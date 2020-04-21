@@ -95,6 +95,13 @@ const routes: Routes = [
         (m) => m.LedgeHelperModule
       ),
   },
+  {
+    path: 'skilltree',
+    loadChildren: () =>
+      import('./presentation/skill-tree/skill-tree.module').then(
+        (m) => m.SkillTreeModule
+      ),
+  },
 ];
 
 @NgModule({
