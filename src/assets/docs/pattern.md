@@ -487,6 +487,8 @@ GitHub 解释版：
 
 # 云研发
 
+## 研发即代码
+
 未来的软件开发模型（《[云研发：研发即代码](https://github.com/phodal/cloud-dev)》）
 
 ```process-step
@@ -522,9 +524,9 @@ GitHub 解释版：
    - 运营需求化
 ```
 
-### 核心：架构金字塔
+## 架构金字塔
 
-![Architecture Level](https://phodal.github.io/trusted/images/architecture-level.jpg '架构金字塔')
+![Architecture Level](/assets/images/arch-level.svg '架构金字塔')
 
 出自：《[架构金字塔](https://www.phodal.com/blog/architecture-pyramid/)》
 
