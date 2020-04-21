@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ManualComponent } from './manual.component';
 import { SharedModule } from '../../shared/shared.module';
 import { CustomMaterialModule } from '../../shared/custom-material.module';
-import { LedgeRenderModule } from 'ledge-render';
+import { LedgeRenderModule } from '@ledge-framework/render';
 import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ManualComponent', () => {

@@ -7,7 +7,7 @@ import {
 } from '@ngx-translate/core';
 import { ActivatedRoute, convertToParamMap } from '@angular/router';
 import { of } from 'rxjs';
-import { LedgeRenderModule } from 'ledge-render';
+import { LedgeRenderModule } from '@ledge-framework/render';
 import { BrowserTestingModule } from '@angular/platform-browser/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 

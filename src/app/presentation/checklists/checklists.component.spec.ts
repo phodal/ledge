@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChecklistsComponent } from './checklists.component';
 import { SharedModule } from '../../shared/shared.module';
-import { LedgeRenderModule } from 'ledge-render';
+import { LedgeRenderModule } from '@ledge-framework/render';
 import { CustomMaterialModule } from '../../shared/custom-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 

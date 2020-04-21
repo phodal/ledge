@@ -8,7 +8,7 @@ import {
   TranslateLoader,
   TranslateModule,
 } from '@ngx-translate/core';
-import { LedgeRenderModule } from 'ledge-render';
+import { LedgeRenderModule } from '@ledge-framework/render';
 import { CustomMaterialModule } from '../../shared/custom-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserTestingModule } from '@angular/platform-browser/testing';

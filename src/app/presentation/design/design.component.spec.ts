@@ -4,7 +4,7 @@ import { DesignComponent } from './design.component';
 import { SharedModule } from '../../shared/shared.module';
 import { DesignModule } from './design.module';
 import { CustomMaterialModule } from '../../shared/custom-material.module';
-import { LedgeRenderModule } from 'ledge-render';
+import { LedgeRenderModule } from '@ledge-framework/render';
 import { RouterTestingModule } from '@angular/router/testing';
 
 describe('DesignComponent', () => {
