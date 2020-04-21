@@ -8,16 +8,23 @@ import {
   TranslateLoader,
   TranslateModule,
 } from '@ngx-translate/core';
+import { ActivatedRoute, convertToParamMap, Router } from '@angular/router';
+import { of } from 'rxjs';
+import { LedgeRenderModule } from 'ledge-render';
 
-describe('SolutionComponent', () => {
+fdescribe('SolutionComponent', () => {
   let component: SolutionComponent;
   let fixture: ComponentFixture<SolutionComponent>;
+  let mockRouter: any;
 
   beforeEach(async(() => {
+    mockRouter = jasmine.createSpyObj('Router', ['navigate']);
+
     TestBed.configureTestingModule({
       imports: [
         SharedModule,
         RouterTestingModule,
+        LedgeRenderModule,
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,
@@ -26,6 +33,15 @@ describe('SolutionComponent', () => {
         }),
       ],
       declarations: [SolutionComponent],
+      providers: [
+        { provide: Router, useValue: mockRouter },
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            paramMap: of(convertToParamMap({ solution: 'coding' })),
+          },
+        },
+      ],
     }).compileComponents();
   }));
 
