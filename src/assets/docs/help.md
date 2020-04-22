@@ -371,7 +371,7 @@ config: {"colors": [{"bg":"#e55852","font":"#b71a09"},{"bg":"#e98832","font":"#c
 
 ### table-step
 
-支持配置的熟悉有：
+支持配置的属性有：
 
 - `rowHeight` 行高
 - `colors` 颜色配置参考 `process-card`
