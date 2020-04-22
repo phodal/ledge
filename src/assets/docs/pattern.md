@@ -185,6 +185,115 @@ ThoughtWorks Tech Lead 模型
 
 > DevSecOps 是糅合了开发、安全及运营理念以创建解决方案的全新方法，是 DevOps 与 SecOps 的结合。 DevSecOps 的作用和意义建立在 每个人都对安全负责 的理念之上，其目标是在不影响安全需求的情况下快速的执行安全决策，将决策传递至拥有最高级别环境信息的人员。
 
+### DevSecOps 示例
+
+- 需求
+  - Wekan
+  - Gitlab
+    - Ganttlab
+- 开发（后端）
+  - Swagger
+    - knife4j
+  - Spring Cloud Alibaba
+  - Skaffolder CLI
+- 开发（前端）
+  - Swagger
+    - Pont
+  - Jest.js
+- IDE
+  - Idea
+    - Sonarlint
+- 版本控制
+  - truffleHog \*
+  - Git Toolkit
+  - Gitlab
+  - git-secrets \*
+- 持续集成
+  - Jenkins
+    - Blue Ocean
+    - Health Advisor
+    - Prometheus
+    - Docker
+    - Git
+    - Pipeline
+- 构建
+  - Dockerfile
+    - \*
+- 分析
+  - SAST \*
+    - Sonarqube
+    - Snyk
+    - FOSSology
+    - CodeQL CLI
+  - Compliance \*
+  - SCA \*
+    - Ort
+    - Dependency-Check
+    - Dependency-Track
+- 制品
+  - 供应链安全 \*
+    - ClearlyDefined
+    - OpenChain
+  - 容器 \*
+    - Anchore
+    - Trivy
+    - Clair
+  - 优化
+    - Docker Slim
+  - 源
+    - Nexus
+    - Artifactory
+    - Archiva
+- 部署
+  - Ansible
+  - Nomad
+  - Docker Compose
+  - Make
+  - Werf
+  - Tekton
+  - Screwdriver
+- 环境
+  - OS
+    - Zsh
+  - Docker
+  - Kubernetes
+    - Rancher
+    - OpenShift/OKD
+    - KubeOperator
+  - hardening & compliance \*
+    - kube-hunter
+    - Falco
+    - Lynis
+  - diagnosis
+    - Sysdig Inspect
+    - Arthus reaction
+  - monitoring
+    - Prometheus/Grafana
+    - Influxdb
+  - apm & tracing
+    - Skywalking
+  - logging
+    - ELK
+    - Loki
+- 集成测试
+  - Fuzzing \*
+  - 自动化测试
+    - Dredd
+    - Newman + Postman
+    - Http Runner 基于录制
+    - Cucumber
+    - galasa-dev
+    - Pact
+  - DAST \*
+    - Zed
+    - Openvas Nvt
+    - Contrast Security
+    - Vulscan
+    - Nessus
+    - Vuls.io
+- 可见性
+  - Hygieia
+
 ## BizDevOps
 
 > Business + Development + Operations = BizDevOps
