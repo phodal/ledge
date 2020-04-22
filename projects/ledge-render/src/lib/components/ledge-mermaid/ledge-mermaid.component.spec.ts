@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LedgeMermaidComponent } from './ledge-mermaid.component';
+import { TohtmlPipe } from '../../pipes/tohtml.pipe';
 
 describe('LedgeMermaidComponent', () => {
   let component: LedgeMermaidComponent;
@@ -8,9 +9,8 @@ describe('LedgeMermaidComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LedgeMermaidComponent ]
-    })
-    .compileComponents();
+      declarations: [LedgeMermaidComponent, TohtmlPipe],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
