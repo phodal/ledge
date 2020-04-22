@@ -1,36 +1,48 @@
-
 <div class="table-steps" #tableStep>
   <div
     class="step-row"
-    *ngFor="let arr of headers; let hIndex = index; let lastH=last;"
+    *ngFor="let arr of headers; let hIndex = index; let lastH = last"
     [class.step-row-reverse]="(hIndex + 1) % 2 === 0"
-    [style.height]="rowHeight"
-    [class.first-row]="hIndex===0"
+    [class.first-row]="hIndex === 0"
+    [style.height]="stepRowHeight"
   >
     <ng-container
       *ngFor="let headerName of arr; let index = index; let last = last"
     >
-      <div class="column" [class.step-row-wrap]="index === arr.length - 1">
+      <div
+        class="column"
+        [style.height]="rowHeight"
+        [class.step-row-wrap]="index === arr.length - 1"
+      >
         <div
           class="arrow"
-          *ngIf="isShowIconBeforeCard(data, hIndex, column, index, last, lastH)">
+          *ngIf="isShowIconBeforeCard(data, hIndex, column, index, last, lastH)"
+        >
           <span *ngIf="index === arr.length - 1" class="arrow-down-symbol">
-            <span class="arrow-down"></span><span class="rect-down"></span></span>
+            <span class="arrow-down"></span><span class="rect-down"></span
+          ></span>
           <span *ngIf="index !== arr.length - 1">
             <span class="arrow-left"></span><span class="rect-right"></span>
           </span>
         </div>
         <ledge-card
           style="height: 100%;"
-          [headerStyle]="config.colors && config.colors[hIndex * column + index]"
+          [headerStyle]="
+            config.colors && config.colors[hIndex * column + index]
+          "
           [data]="{
             header: headerName,
             cells: data.cells[hIndex * column + index],
             index: hIndex * column + index
-          }"></ledge-card>
-        <div class="arrow" *ngIf="isShowIconAfterCard(data, hIndex, column, index)">
+          }"
+        ></ledge-card>
+        <div
+          class="arrow"
+          *ngIf="isShowIconAfterCard(data, hIndex, column, index)"
+        >
           <span *ngIf="index === arr.length - 1" class="arrow-down-symbol">
-            <span class="rect-down"></span><span class="arrow-down"></span></span>
+            <span class="rect-down"></span><span class="arrow-down"></span
+          ></span>
           <span *ngIf="index !== arr.length - 1">
             <span class="rect-left"></span><span class="arrow-right"></span>
           </span>
