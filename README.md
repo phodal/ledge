@@ -116,7 +116,7 @@ todo: fix Angular elements bug
   - step-line。 多行带箭头 step 流程
   - table-step。 多行带箭头卡式流程图表
 - checklist。检查清单
-- <del>mermaid。使用 mermaid 可视化</del>
+- mermaid。使用 [mermaid](https://mermaid-js.github.io/mermaid/) 可视化
 - <del>webcomponents。调用 WebComponents 组件</del>
 - 工具
   - toolset。调用 Toolset 相关的组件
