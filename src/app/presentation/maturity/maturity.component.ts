@@ -64,6 +64,6 @@ export class MaturityComponent {
   };
 
   constructor(title: Title) {
-    title.setTitle('Ledge DevOps 知识平台 - 成熟度');
+    title.setTitle('DevOps 成熟度评估 — Ledge DevOps 知识平台 ');
   }
 }

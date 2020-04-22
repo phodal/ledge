@@ -11,7 +11,7 @@ export class PractiseComponent implements OnInit {
   data = mdData.default;
 
   constructor(title: Title) {
-    title.setTitle('Ledge DevOps 知识平台 - 最佳实践');
+    title.setTitle('DevOps 最佳实践 - Ledge DevOps 知识平台');
   }
 
   ngOnInit(): void {}

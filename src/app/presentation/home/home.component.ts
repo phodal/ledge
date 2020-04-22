@@ -62,7 +62,7 @@ config: {"colors": [{"bg":"#e55852","font":"#b71a09"},{"bg":"#e98832","font":"#c
     private http: HttpClient,
     public translate: TranslateService
   ) {
-    title.setTitle('Ledge DevOps 知识平台 - DevOps 工具元素周期表');
+    title.setTitle('DevOps 工具元素周期表 - Ledge DevOps 知识平台');
   }
 
   setCurrentAtomCategory(category: string) {
