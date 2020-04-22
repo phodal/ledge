@@ -194,6 +194,10 @@
       <ledge-table-step [data]="item.data" [config]="item.config"></ledge-table-step>
     </div>
 
+    <div *ngSwitchCase="'mermaid'">
+      <ledge-mermaid [data]="item.data"></ledge-mermaid>
+    </div>
+
     <div *ngSwitchDefault>
       {{stringify(item)}}
     </div>

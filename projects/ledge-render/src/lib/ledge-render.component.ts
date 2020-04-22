@@ -321,6 +321,13 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
           config: checklistData.config,
         });
         break;
+      case 'mermaid':
+        const mermaidData = codeBlock.text;
+        this.markdownData.push({
+          type: 'mermaid',
+          data: mermaidData,
+        });
+        break;
       default:
         this.markdownData.push(token);
         break;
