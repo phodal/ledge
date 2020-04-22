@@ -37,7 +37,7 @@ $black: #000;
 }
 
 /** Radar **/
-#radar {
+.ledge-tech-radar{
   /* Disable some webkit features to make the radar feel more native */
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
@@ -55,12 +55,12 @@ $black: #000;
 }
 
 /* swap the last to legends as they run clockwise around the circle */
-#radar > .legend-2 {
+.ledge-tech-radar> .legend-2 {
   grid-row: 3;
   grid-column: 2;
 }
 
-#radar > .legend-3 {
+.ledge-tech-radar> .legend-3 {
   grid-row: 3;
   grid-column: 1;
 }
@@ -79,7 +79,7 @@ $black: #000;
 }
 
 @media (min-width: 1000px) {
-  #radar {
+  .ledge-tech-radar{
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 1fr 1fr;
   }
@@ -95,22 +95,22 @@ $black: #000;
     color: $black;
   }
 
-  #radar > .legend-0 {
+  .ledge-tech-radar> .legend-0 {
     grid-column: 1;
     grid-row: 1;
   }
 
-  #radar > .legend-1 {
+  .ledge-tech-radar> .legend-1 {
     grid-column: 3;
     grid-row: 1;
   }
 
-  #radar > .legend-2 {
+  .ledge-tech-radar> .legend-2 {
     grid-column: 3;
     grid-row: 2
   }
 
-  #radar > .legend-3 {
+  .ledge-tech-radar> .legend-3 {
     grid-column: 1;
     grid-row: 2;
   }
