@@ -101,6 +101,7 @@ todo: fix Angular elements bug
 
 - 图表
   - echarts。直接渲染 Echarts 图表
+  - chart。 Echarts 的 bar 图表
   - mindmap。Markdown List 转为思维导图
   - radar。Markdown List 转为雷达图
   - pie。饼图
@@ -112,6 +113,8 @@ todo: fix Angular elements bug
   - process-step。带流程的图表 2
   - process-card。卡片式流程
   - dev-process。工具 Logo 可视化
+  - step-line。 多行带箭头 step 流程
+  - table-step。 多行带箭头卡式流程图表
 - checklist。检查清单
 - <del>mermaid。使用 mermaid 可视化</del>
 - <del>webcomponents。调用 WebComponents 组件</del>
