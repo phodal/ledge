@@ -17,15 +17,7 @@ export class AppComponent implements OnInit {
     public translate: TranslateService,
     private storage: StorageMap
   ) {
-    if (environment.ci) {
-      translate.use('zh-cn');
-    } else {
-      if (translate.getBrowserLang().includes('zh')) {
-        translate.use('zh-cn');
-      } else {
-        translate.use('en');
-      }
-    }
+    translate.use('zh-cn');
   }
 
   // component-todo: refactor
