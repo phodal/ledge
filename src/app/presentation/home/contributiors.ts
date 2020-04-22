@@ -41,7 +41,7 @@ export const contributors: Contributor[] = [
   {
     name: '于晓南',
     link: 'https://github.com/ConnieYXN',
-    work: '项目 QA，创建、维护测试智库',
+    work: '项目 QA，创建、维护测试智库、需求智库',
     title: 'ThoughtWorks 高级咨询师',
     avatar:
       'https://avatars0.githubusercontent.com/u/22843012?s=460&u=6197636e584b6bec7982eccaf220b7bed42ddf0d&v=4',
