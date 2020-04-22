@@ -32,7 +32,11 @@
 
 #### CSS Flex
 
+[CSS Flex](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) 是一种「一维」布局。
+
 #### CSS Grid
+
+[CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)，相较于 [Flex](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) 是一种「二维」布局。
 
 ### SASS/LESS
 
