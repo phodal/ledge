@@ -1,5 +1,9 @@
 # Ledge 语法帮助
 
+## 组件
+
+### checklist
+
 ```checklist
 - [ ] Eating
   - [ ] Today
@@ -11,6 +15,8 @@
     - [ ] supper
     - [ ] dinner：the main meal of the day, eaten either in the middle of the day or in the evening
 ```
+
+### kanban
 
 ```kanban
  - Kanban Name
@@ -24,6 +30,8 @@
      - create card
    - Done
 ```
+
+### tech-radar
 
 ```tech-radar
  - 框架
@@ -58,6 +66,10 @@
    - hold
 ```
 
+### list-style
+
+配置图形为`圆形`
+
 ```list-style
  - 开源工具采用
  - 商业采购
@@ -65,6 +77,8 @@
 
 config: {"type": "circle"}
 ```
+
+配置图形为`方形组`
 
 ```list-style
  - 基于开源方案遇到困难
@@ -77,6 +91,8 @@ config: {"type": "circle"}
 
 config: {"type": "group-square"}
 ```
+
+### echarts
 
 ```echarts
 {
@@ -98,6 +114,10 @@ config: {"type": "group-square"}
 }
 ```
 
+### graphviz
+
+绘制流程图
+
 ```graphviz
 digraph {
   rankdir=LR;
@@ -106,6 +126,10 @@ digraph {
   "重构" -> "红"[dir="back" label="重构"];
 }
 ```
+
+### toolset
+
+type 为 `slider`
 
 ```toolset
  - 用户体验
@@ -117,6 +141,8 @@ digraph {
 config: {"type": "slider"}
 ```
 
+type 为 `line-chart`
+
 ```toolset
 |  Challenge;Skill/Ability   | low | high |
 |-|-|-|
@@ -125,6 +151,8 @@ config: {"type": "slider"}
 
 config: {"type": "line-chart"}
 ```
+
+### quadrant
 
 ```quadrant
  - 技术债墙
@@ -147,6 +175,8 @@ config: {"type": "line-chart"}
 config: {"left": "简单", "right": "困难", "bottom": "不重要", "top": "重要"}
 ```
 
+### radar
+
 ```radar
  - 质量属性网络
    - 可靠性
@@ -156,6 +186,8 @@ config: {"left": "简单", "right": "困难", "bottom": "不重要", "top": "重
    - 性能
    - 可用性
 ```
+
+有图例和数据
 
 ```radar
  - 质量成熟度评估模型
@@ -170,6 +202,8 @@ config: {"left": "简单", "right": "困难", "bottom": "不重要", "top": "重
 config: {"legend": ["当前", "未来"]}
 ```
 
+### pyramid
+
 ```pyramid
  - 寻找价值
    - 价值：、
@@ -180,6 +214,8 @@ config: {"legend": ["当前", "未来"]}
    - 组织：团队、人员与技能
    - 指导：何物、何时
 ```
+
+### mindmap
 
 ```mindmap
  - CI 建设
@@ -207,6 +243,8 @@ config: {"legend": ["当前", "未来"]}
     - 全量提醒
 ```
 
+### process-step
+
 ```process-step
  - 平台层
    - 运维平台
@@ -233,14 +271,7 @@ config: {"legend": ["当前", "未来"]}
    - 研发效能数据仓库
 ```
 
-```javascript
-console.log('hello, world');
-```
-
-|     | normal | table |
-| --- | ------ | ----- |
-|     |        |       |
-|     |        |       |
+### process-table
 
 ```process-table
 | 源码管理 | 代码质量 | 制品管理  | 测试 | 持续集成 | 分析 | 协作  |
@@ -249,7 +280,9 @@ console.log('hello, world');
 | GitHub | Code Climate | |  Jest | | Google Analysis |  |
 ```
 
-### 采用 DevOps 的行业
+### chart
+
+> 采用 DevOps 的行业
 
 ```chart
 | 行业 | 占比 |
@@ -269,7 +302,9 @@ console.log('hello, world');
 | 非营利 | 1% |
 ```
 
-## 组织所使用的操作系统
+> 组织所使用的操作系统
+
+配置项 `config: {"type": "bar", "multiset": true}`
 
 ```chart
 | 操作系统  |  2018 | 2019 |
@@ -294,6 +329,33 @@ console.log('hello, world');
 config: {"type": "bar", "multiset": true}
 ```
 
+### pie
+
+```pie
+ - Some & title
+   - a: 4
+   - b: 12
+   - c: 21
+   - d: 19
+```
+
+### process-card
+
+支持样式颜色配置 `"colors": [{"bg":"#e55852","font":"#b71a09"}]`，`bg` 为背景色，`font` 为字体颜色。
+
+```process-card
+| 缺陷收集 | 缺陷分析 | 缺陷预防  |
+|-|-|-|
+| 缺陷模板 | 缺陷分类 | 可测性 |
+| 生命周期| 缺陷统计 | 缺陷响应力 |
+| 管理工具 | 缺陷分布 | 敏捷过程 |
+| 缺陷扫除 | 缺陷报告 | 二八法则 |
+
+config: {"colors": [{"bg":"#e55852","font":"#b71a09"},{"bg":"#e98832","font":"#c85113"},{"bg":"#f0d668","font":"#b88d0f"},{"bg":"#a4c9cf","font":"#598893"},{"bg":"#47c0af","font":"#175a54"},{"bg":"#387fd5","font":"#9ac9f5"},{"bg":"#7753df","font":"#cbb5f8"}]}
+```
+
+### step-line
+
 ```step-line
  - 源码管理
  - 制品管理
@@ -306,6 +368,43 @@ config: {"type": "bar", "multiset": true}
  - 智能运维
  - 协作
 ```
+
+### table-step
+
+支持配置的熟悉有：
+
+- `rowHeight` 行高
+- `colors` 颜色配置参考 `process-card`
+- `column` 设置每行多少列（默认自适应，默认最少 4 列）
+
+```table-step
+| 项目 / 过程管理 | 配置管理 | 构建  | 测试 / 质量 | 制品 / 部署 | 基础设施 | 沟通协作 | 可视化   |
+|---|----|---|---|----|----|----|----|
+| Jira          | Gitee   | Maven | Junit      | Ubran code | VMWare  | 招呼     | Tableau |
+| Tracker       | Rational ClearCase |  Gradle | Cucumber | Fit2Cloud | OpenShift | 移事通 | Grafana |
+| VP            | CMDB | NPM | JMeter     | B9         | Cloud Foundry | | Kibana |
+| Confluence    |   Firefly    | Ant   | RobotFramework | JFrog Artifactory | | |  Prometheus |
+| ITIL          |    | MSBuild | Protractor | | | | ElasticSearch |
+|               |           |  Docker  | Sonar | | | | X-Pack |
+|               |           |        | BlackDuck | | | | |
+
+config: {"rowHeight": "340px" ,"colors": [{"bg":"#e55852","font":"#b71a09"},{"bg":"#e98832","font":"#c85113"},{"bg":"#f0d668","font":"#b88d0f"},
+{"bg":"#a4c9cf","font":"#598893"},{"bg":"#47c0af","font":"#175a54"},
+{"bg":"#387fd5","font":"#9ac9f5"},{"bg":"#7753df","font":"#cbb5f8"},{"bg":"#485cde","font":"#a0b1f3"}]}
+```
+
+---
+
+## 其他 Markdown 语法
+
+```javascript
+console.log('hello, world');
+```
+
+|     | normal | table |
+| --- | ------ | ----- |
+|     |        |       |
+|     |        |       |
 
 - list
 - item
@@ -340,11 +439,3 @@ b
 - [ ] a
 - [ ] b
   - [ ] c
-
-```pie
- - Some & title
-   - a: 4
-   - b: 12
-   - c: 21
-   - d: 19
-```
