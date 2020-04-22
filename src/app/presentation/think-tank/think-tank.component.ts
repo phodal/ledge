@@ -26,7 +26,7 @@ export class ThinkTankComponent implements OnInit {
       const param = p.get('tank');
       const currentCase = this.tanks.find((ca) => ca.source === param);
       this.title.setTitle(
-        `${currentCase.displayName} DevOps 案例学习（互联网公司/传统公司） - Ledge DevOps 知识平台`
+        `DevOps ${currentCase.displayName} 智库 - Ledge DevOps 知识平台`
       );
       this.configSource(param);
     });
