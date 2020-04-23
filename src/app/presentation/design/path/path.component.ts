@@ -105,7 +105,7 @@ export class PathComponent implements OnInit {
       const itemLength = items[i].items.length;
       for (let j = 0; j <= this.maxLength; j++) {
         if (j > itemLength) {
-          items[i].items[j - 1] = ' ';
+          items[i].items[j - 1] = '';
         }
       }
     }
@@ -203,6 +203,10 @@ export class PathComponent implements OnInit {
     $event.preventDefault();
     const value = ($event.target as any).value;
     this.pipeData[i].items[j] = value;
+    this.storage.set('ledge.path', this.pipeData).subscribe(() => {});
+  }
+
+  dragItems() {
     this.storage.set('ledge.path', this.pipeData).subscribe(() => {});
   }
 

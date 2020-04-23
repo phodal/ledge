@@ -31,6 +31,7 @@
              id="{{i}}_pipe"
              dragula="ITEMS"
              [(dragulaModel)]="pipe.items"
+             (dragulaModelChange)="pipe.items = $event; dragItems()"
              [ngStyle]="getContainerStyle(pipe)">
 
           <textarea
@@ -39,7 +40,7 @@
             [ngStyle]="getEditableStyle()"
             [ngModel]="pipeData[i].items[j]"
             (change)="updateItem(i, j, $event)"
-            *ngFor="let item of pipe.items;let j = index">
+            *ngFor="let item of pipeData[i].items;let j = index">
 
           </textarea>
         </div>
