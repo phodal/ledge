@@ -87,10 +87,23 @@ export class LedgePyramidComponent implements OnInit, AfterViewInit {
     const series = [];
     const split = data.children[0].name.split('、');
     if (split.length === 2) {
-      series.push(seriesData);
+      const centerData = JSON.parse(JSON.stringify(seriesData));
+      centerData.label = {
+        position: 'center',
+        fontSize: 14,
+        lineHeight: 28,
+        formatter: (params: any) => {
+          params.data.name = params.data.name.replace(/<br>/, '\n');
+          return params.data.name;
+        }
+      };
+      series.push(centerData);
+      console.log(series);
+
       const leftSeries = JSON.parse(JSON.stringify(seriesData));
       leftSeries.label.position = 'left';
       series.push(leftSeries);
+
       const rightSeries = JSON.parse(JSON.stringify(seriesData));
       rightSeries.label.position = 'right';
       series.push(rightSeries);
