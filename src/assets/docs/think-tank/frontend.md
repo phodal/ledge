@@ -108,7 +108,25 @@
 
 ### PRPL
 
+[PRPL](https://web.dev/apply-instant-loading-with-prpl/) 指的是：
+
+1. Push (or preload) the most important resources.
+2. Render the initial route as soon as possible.
+3. Pre-cache remaining assets.
+4. Lazy load other routes and non-critical assets.
+
+代表着一种让网页加载更快的模式。
+
 ### RAIL
+
+[RAIL](https://developers.google.com/web/fundamentals/performance/rail) 指的是：
+
+1. Response
+2. Animation
+3. Idle
+4. Load
+
+代表一种以用户为中心，将用户体验分解为上述 4 个方面的模式。
 
 ### Lighthouse
 
