@@ -1045,10 +1045,26 @@
     "number": 116,
     "pay": "Pd",
     "symbol": "Cb",
-    "description": "",
-    "homepage": "https://cloudbase.net/",
-    "resources": []
-  },
+    "description": "云开发（Tencent CloudBase，TCB）是云端一体化的后端云服务 ，采用 serverless 架构，免去了移动应用构建中繁琐的服务器搭建和运维。同时云开发提供的静态托管、命令行工具（CLI）、Flutter SDK 等能力极大的降低了应用开发的门槛。使用云开发可以快速构建完整的小程序/小游戏、H5、Web、移动 App 等应用。 ",
+    "homepage": "https://cloud.tencent.com/product/tcb?from=12334",
+    "resources": [
+        {
+        "name": "GitHub",
+        "link": "https://github.com/tencentcloudbase/",
+        "description": "云开发官方团队的 Github，其中包含了使用云开发开发项目的各种 SDK"
+        },
+        {
+        "name": "Documents",
+        "link": "http://docs.cloudbase.net/",
+        "description": "云开发官方文档，可以在文档中查询云开发的使用方法"
+        },
+       {
+        "name": "零基础入门教程",
+        "link": "https://club.cloudbase.net/handbook/tcb01.html",
+        "description": "云开发提供的零基础入门教程，可以帮助开发者快速掌握云开发的使用方式"
+        }
+      ]
+    },
   {
     "name": "TBD",
     "category": "atom-placeholder",
