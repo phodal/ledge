@@ -21,7 +21,6 @@ const originPipeLine = [
     id: 1,
     title: 'Process',
     items: [
-      // tslint:disable-next-line:max-line-length
       'Commit Code',
       'PUSH Hooks',
       'RUN CI',
@@ -211,7 +210,7 @@ export class PathComponent implements OnInit {
   }
 
   resetAll() {
-    this.pipeData = originPipeLine;
+    this.pipeData = JSON.parse(JSON.stringify(originPipeLine));
     this.maxLength = this.getMaxLength(originPipeLine);
     this.fillDefaultValue();
     this.storage.set('ledge.path', this.pipeData).subscribe(() => {});
