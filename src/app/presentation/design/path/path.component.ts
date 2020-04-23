@@ -156,8 +156,9 @@ export class PathComponent implements OnInit {
   private getContainerHeightWidth() {
     const innerWidth = window.innerWidth;
     let itemWidth = (innerWidth - 200) / this.maxLength - 20;
-    if (itemWidth < 100) {
-      itemWidth = 100;
+    const minHeight = 100;
+    if (itemWidth < minHeight) {
+      itemWidth = minHeight;
     }
 
     const itemHeightPx = itemWidth + 'px';
@@ -174,8 +175,15 @@ export class PathComponent implements OnInit {
   }
 
   getHeaderHeight() {
+    const paddingOffset = 20 + 12;
+    let height = this.getContainerHeightWidth().itemWidth + paddingOffset;
+    const maxHeaderHeight = 180 + 20 + 12;
+    if (height >= maxHeaderHeight) {
+      height = maxHeaderHeight;
+    }
+
     return {
-      height: this.getContainerHeightWidth().itemWidth + 20 + 12 + 'px',
+      height: height + 'px',
     };
   }
 
