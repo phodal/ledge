@@ -125,6 +125,7 @@ export class PathComponent implements OnInit {
     }
 
     const that = this;
+
     function removeLastItem(items) {
       // tslint:disable-next-line:prefer-for-of
       for (let i = 0; i < items.length; i++) {
@@ -201,20 +202,9 @@ export class PathComponent implements OnInit {
   }
 
   updateItem(i: number, j: number, $event: Event) {
-    const value = ($event.target as any).innerText;
+    const value = ($event.target as any).value;
     this.pipeData[i].items[j] = value;
     this.storage.set('ledge.path', this.pipeData).subscribe(() => {});
-  }
-
-  enableEdit(i: number, j: number) {
-    const elementId = `pipe${i}_child${j}`;
-    const filterElements = this.itemElements.filter((el) => {
-      return el.nativeElement.id === elementId;
-    });
-    if (filterElements.length > 0) {
-      const element = filterElements[0];
-      this.renderer.setProperty(element.nativeElement, 'contentEditable', true);
-    }
   }
 
   resetAll() {

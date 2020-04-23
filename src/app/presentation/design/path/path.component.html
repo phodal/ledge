@@ -33,17 +33,16 @@
              [(dragulaModel)]="pipe.items"
              [ngStyle]="getContainerStyle(pipe)">
 
-          <div
+          <textarea
             class="editable"
             #itemElement
             id="pipe{{i}}_child{{j}}"
-            (dblclick)="enableEdit(i, j)"
             [ngStyle]="getEditableStyle()"
-            (keydown.enter)="updateItem(i, j, $event)"
-            ngDefaultControl
+            (change)="updateItem(i, j, $event)"
+            autocomplete="off"
             *ngFor="let item of pipe.items;let j = index">
             {{item}}
-          </div>
+          </textarea>
         </div>
       </div>
     </div>
