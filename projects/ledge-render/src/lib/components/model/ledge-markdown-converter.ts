@@ -1,5 +1,18 @@
 import marked from 'marked/lib/marked';
 
+const renderer = new marked.Renderer();
+renderer.link = (href, title, text) => {
+  const link = marked.Renderer.prototype.link.call(renderer, href, title, text);
+  if (/^https:\/\//.test(href) || /^http:\/\//.test(href)) {
+    return link.replace('<a', '<a target="_blank"');
+  }
+  return link;
+};
+
+marked.setOptions({
+  renderer,
+});
+
 const LedgeMarkdownConverter = {
   // marked
   escapeTest: /[&<>"']/,
