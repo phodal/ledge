@@ -78,11 +78,10 @@ const originPipeLine = [
   styleUrls: ['./path.component.scss'],
 })
 export class PathComponent implements OnInit {
-  @ViewChildren('itemElement') itemElements: QueryList<ElementRef>;
   pipeData = originPipeLine;
   maxLength: number;
 
-  constructor(private storage: StorageMap, private renderer: Renderer2) {}
+  constructor(private storage: StorageMap) {}
 
   ngOnInit(): void {
     this.maxLength = this.getMaxLength(this.pipeData);
@@ -106,7 +105,7 @@ export class PathComponent implements OnInit {
       const itemLength = items[i].items.length;
       for (let j = 0; j <= this.maxLength; j++) {
         if (j > itemLength) {
-          items[i].items[j - 1] = '';
+          items[i].items[j - 1] = ' ';
         }
       }
     }
@@ -201,6 +200,7 @@ export class PathComponent implements OnInit {
   }
 
   updateItem(i: number, j: number, $event: Event) {
+    $event.preventDefault();
     const value = ($event.target as any).value;
     this.pipeData[i].items[j] = value;
     this.storage.set('ledge.path', this.pipeData).subscribe(() => {});

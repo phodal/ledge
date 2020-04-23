@@ -35,13 +35,12 @@
 
           <textarea
             class="editable"
-            #itemElement
             id="pipe{{i}}_child{{j}}"
             [ngStyle]="getEditableStyle()"
+            [ngModel]="pipeData[i].items[j]"
             (change)="updateItem(i, j, $event)"
-            autocomplete="off"
             *ngFor="let item of pipe.items;let j = index">
-            {{item}}
+
           </textarea>
         </div>
       </div>
