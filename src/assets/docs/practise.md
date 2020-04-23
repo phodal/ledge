@@ -2075,17 +2075,20 @@ digraph {
 
 示例：
 
-```process-table
-| ToDo | Analysis | Ready 4 Dev | In Dev | Ready 4 QA | In QA | Done |
-|-|-|-|-|-|-|-|
-| STORY |STORY | Task | Task | STORY | Task | Task|
-| STORY |      |      | STORY|       |      |     |
-| STORY |      |      |      |       |      |     |
-| STORY |      |      |      |       |      |     |
-| STORY |      |      |      |       |      |     |
-| STORY |      |      |      |       |      |     |
-| Task  |      |      |      |       |      |     |
-| Task  |      |      |      |       |      |     |
+```kanban
+ - Kanban
+     - ToDo
+       - Story 4
+       - Story 2
+       - Story 3
+       - Story 5
+     - Analysis
+     - Ready for Dev
+        - Story 1
+     - In Dev
+     - Ready for QA
+     - In QA
+     - Done
 ```
 
 ## DevOps 服务平台
