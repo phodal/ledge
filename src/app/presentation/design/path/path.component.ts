@@ -190,9 +190,8 @@ export class PathComponent implements OnInit {
 
   private getMaxLength(items: Item[]) {
     let maxLength = items[0].items.length;
-    // tslint:disable-next-line:prefer-for-of
-    for (let i = 0; i < items.length; i++) {
-      const itemLength = items[i].items.length;
+    for (const item of items) {
+      const itemLength = item.items.length;
       if (itemLength > maxLength) {
         maxLength = itemLength;
       }
