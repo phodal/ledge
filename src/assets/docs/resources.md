@@ -77,7 +77,9 @@ config: {"hiddenLegend": true}
 
 ## DevOps 厂商案例
 
-[AWS 客户成功案例](https://aws.amazon.com/cn/solutions/case-studies/)
+- [AWS 客户成功案例](https://aws.amazon.com/cn/solutions/case-studies/)
+- [腾讯云云开发案例](https://mp.weixin.qq.com/s/jcKEYinsdyKef9xGbHLGiw)
+
 
 ## 文章
 
