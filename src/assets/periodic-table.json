@@ -1035,16 +1035,19 @@
     "description": "CODING DevOps 提供从需求提交到产品迭代，从代码管理到持续集成，制品管理直至最终持续部署的全套流程。流水线标准化作业，自动化版本记录，降低企业研发管理难度，提升研发效率。",
     "homepage": "https://coding.net/",
     "category": "platform",
-    "number": 116,
+    "number": 117,
     "pay": "Pd",
     "symbol": "Co"
   },
   {
-    "name": "TBD",
-    "category": "atom-placeholder",
-    "number": 117,
-    "pay": "",
-    "symbol": ""
+    "name": "云开发",
+    "category": "publicCloud",
+    "number": 116,
+    "pay": "Pd",
+    "symbol": "Cb",
+    "description": "",
+    "homepage": "https://cloudbase.net/",
+    "resources": []
   },
   {
     "name": "TBD",
