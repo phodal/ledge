@@ -3,7 +3,7 @@ export interface ChecklistModel {
   priority?: string;
   description: string;
   tools?: string[];
-  complete?: string;
+  checked?: boolean;
   documentation?: string[];
   tags?: [];
   subitems?: CheckItem[];
@@ -11,6 +11,6 @@ export interface ChecklistModel {
 
 export interface CheckItem {
   title: string;
-  complete?: boolean;
+  checked?: boolean;
   description: string;
 }

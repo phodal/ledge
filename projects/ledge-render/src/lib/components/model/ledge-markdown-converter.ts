@@ -74,6 +74,9 @@ const LedgeMarkdownConverter = {
         }
         case 'list_item_start': {
           result += '{';
+          if (token.task) {
+            result += `"checked": ${token.checked}, `;
+          }
           break;
         }
         case 'text': {

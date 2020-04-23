@@ -66,7 +66,7 @@ config: {"hiddenLegend": true}
 ### checklist
 
 ```checklist
-- [ ] Eating
+- [x] Eating
   - [ ] Today
     - [x] breakfast
     - [ ] brunch

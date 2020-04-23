@@ -53,7 +53,7 @@ export class ComponentTodoComponent implements OnInit, OnDestroy, ControlValueAc
   addToDo(value) {
     this.toDos.push({
       id: Math.random(),
-      complete: false,
+      checked: false,
       title: value
     });
   }
@@ -64,7 +64,7 @@ export class ComponentTodoComponent implements OnInit, OnDestroy, ControlValueAc
   }
 
   completeChange($event: MatCheckboxChange, toDo: TodoModel) {
-    toDo.complete = $event.checked;
+    toDo.checked = $event.checked;
     this.onChange(this.toDos);
   }
 

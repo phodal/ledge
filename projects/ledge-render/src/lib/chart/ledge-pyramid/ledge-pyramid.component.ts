@@ -98,7 +98,6 @@ export class LedgePyramidComponent implements OnInit, AfterViewInit {
         }
       };
       series.push(centerData);
-      console.log(series);
 
       const leftSeries = JSON.parse(JSON.stringify(seriesData));
       leftSeries.label.position = 'left';
