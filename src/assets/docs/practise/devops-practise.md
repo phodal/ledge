@@ -573,7 +573,7 @@ merge newbranch
 3. 集成自动化验证
 4. 分支策略
 
-Jenkinsfile 最佳实践（来源：《[Pipeline Best Practices](https://jenkins.io/doc/book/pipeline/pipeline-best-practices/)》
+Jenkinsfile 最佳实践（来源：《[Pipeline Best Practices](https://jenkins.io/doc/book/pipeline/pipeline-best-practices/)》）
 
 1.  确保 Groovy 代码在流水线中只作为胶水。
 2.  避免流水线中的 Groovy 代码过于复杂
@@ -586,7 +586,7 @@ Jenkinsfile 最佳实践（来源：《[Pipeline Best Practices](https://jenkins
 2.  避免巨大的全局变量声明文件
 3.  避免非常大的共享库
 
-示例（来源《[流水线即代码](https://insights.thoughtworks.cn/pipeline-as-code/)》：
+示例（来源《[流水线即代码](https://insights.thoughtworks.cn/pipeline-as-code/)》）：
 
 ```groovy
 node('master') {
