@@ -462,7 +462,6 @@ $markdown-mid-grey: #666;
 
   h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
-    letter-spacing: -.1rem;
     margin-bottom: 2.0rem;
     margin-top: 0
   }
@@ -484,13 +483,11 @@ $markdown-mid-grey: #666;
 
   h4 {
     font-size: 1.3rem;
-    letter-spacing: -.08rem;
     line-height: 1.5
   }
 
   h5 {
     font-size: 1.2rem;
-    letter-spacing: -.05rem;
     line-height: 1.5
   }
 

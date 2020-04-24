@@ -56,4 +56,22 @@ describe('LedgeChecklistComponent', () => {
     expect(component.markdownData[0].type).toEqual('checklist');
     expect(component.markdownData[0].data[0].name).toEqual('DevOps 检查清单');
   });
+
+  it('should checklist checked', () => {
+    const content = `
+\`\`\`checklist
+- [x] DevOps 检查清单
+  - [ ] checked false
+\`\`\`
+`;
+
+    const simpleChange = new SimpleChange('', content, false);
+    const changesObj: SimpleChanges = {
+      content: simpleChange
+    };
+    component.ngOnChanges(changesObj);
+
+    expect(component.markdownData[0].data[0].checked).toEqual(true);
+    expect(component.markdownData[0].data[0].children[0].checked).toEqual(false);
+  });
 });

@@ -22,6 +22,7 @@ export interface LedgeTable {
 export interface LedgeListItem {
   children?: LedgeListItem[];
   name?: string;
+  checked?: boolean;
 }
 
 export interface LedgeList {

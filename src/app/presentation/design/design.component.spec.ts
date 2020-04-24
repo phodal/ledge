@@ -6,6 +6,7 @@ import { DesignModule } from './design.module';
 import { CustomMaterialModule } from '../../shared/custom-material.module';
 import { LedgeRenderModule } from '@ledge-framework/render';
 import { RouterTestingModule } from '@angular/router/testing';
+import { FormsModule } from '@angular/forms';
 
 describe('DesignComponent', () => {
   let component: DesignComponent;
@@ -14,6 +15,7 @@ describe('DesignComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
+        FormsModule,
         SharedModule,
         CustomMaterialModule,
         DesignModule,

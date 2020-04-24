@@ -29,8 +29,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
 |               |           |  Docker  | Sonar | | | | X-Pack |
 |               |           |        | BlackDuck | | | | |
 
-config: {"colors": [{"bg":"#e55852","font":"#b71a09"},{"bg":"#e98832","font":"#c85113"},{"bg":"#f0d668","font":"#b88d0f"},
-{"bg":"#a4c9cf","font":"#598893"},{"bg":"#47c0af","font":"#175a54"},
+config: {"rowHeight": "350px", "colors": [{"bg":"#e55852","font":"#b71a09"},{"bg":"#e98832","font":"#c85113"},
+{"bg":"#f0d668","font":"#b88d0f"},{"bg":"#a4c9cf","font":"#598893"},{"bg":"#47c0af","font":"#175a54"},
 {"bg":"#387fd5","font":"#9ac9f5"},{"bg":"#7753df","font":"#cbb5f8"},{"bg":"#485cde","font":"#a0b1f3"}]}
 \`\`\`
     `;

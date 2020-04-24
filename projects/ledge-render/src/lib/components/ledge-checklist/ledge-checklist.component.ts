@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { LedgeListItem } from '../model/ledge-chart.model';
-import { ChecklistModel } from '../model/checklist.model';
+import { CheckItem, ChecklistModel } from '../model/checklist.model';
 
 @Component({
   selector: 'ledge-checklist',
@@ -33,12 +33,20 @@ export class LedgeChecklistComponent implements OnInit, OnChanges {
         description: '',
         subitems: []
       };
+
+      if ((item as object).hasOwnProperty('checked')) {
+        checklist.checked = item.checked;
+      }
       for (const child of item.children) {
         const splitName = child.name.split('：');
-        checklist.subitems.push({
+        const subItem: CheckItem = {
           title: splitName[0],
           description: splitName.length > 1 ? splitName[1] : ''
-        });
+        };
+        if ((child as object).hasOwnProperty('checked')) {
+          subItem.checked = child.checked;
+        }
+        checklist.subitems.push(subItem);
       }
       checklists.push(checklist);
     }

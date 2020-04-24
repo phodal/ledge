@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { LedgeListItem } from '../../components/model/ledge-chart.model';
 import * as d3 from 'd3';
 
@@ -7,7 +7,9 @@ import * as d3 from 'd3';
   templateUrl: './ledge-tech-radar.component.html',
   styleUrls: ['./ledge-tech-radar.component.scss']
 })
-export class LedgeTechRadarComponent implements OnInit, AfterViewInit, OnChanges {
+export class LedgeTechRadarComponent implements OnInit, OnChanges {
+  @ViewChild('chart', {static: false}) chartEl: ElementRef;
+
   @Input()
   data: LedgeListItem[];
 
@@ -23,7 +25,17 @@ export class LedgeTechRadarComponent implements OnInit, AfterViewInit, OnChanges
   }
 
   ngOnInit(): void {
-    this.rebuildRadarData();
+
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.data) {
+      this.data = changes.data.currentValue;
+      this.rebuildRadarData();
+      setTimeout(() => {
+        this.renderData(this.trData);
+      });
+    }
   }
 
   private rebuildRadarData() {
@@ -49,10 +61,6 @@ export class LedgeTechRadarComponent implements OnInit, AfterViewInit, OnChanges
     }
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    this.rebuildRadarData();
-  }
-
   getLevelByName(name: string) {
     let level = 0;
     switch (name.toLowerCase()) {
@@ -75,11 +83,9 @@ export class LedgeTechRadarComponent implements OnInit, AfterViewInit, OnChanges
     return level;
   }
 
-  ngAfterViewInit(): void {
-    this.renderData(this.trData);
-  }
-
   private renderData(treeData) {
+    const chartElement = this.chartEl.nativeElement;
+
     // based on: https://cofinpro.github.io/Tech-Radar/
     let axisLabels = ['', 'Adopt', 'Trail', 'Assess', 'Hold'].reverse();
     if (this.config && !!this.config.hiddenLegend) {
@@ -87,7 +93,6 @@ export class LedgeTechRadarComponent implements OnInit, AfterViewInit, OnChanges
     }
 
     const cfg = {
-      id: '#radar',
       w: 600,				// Width of the circle
       h: 600,				// Height of the circle
       margin: {top: 10, right: 20, bottom: 10, left: 10}, // The margins of the SVG
@@ -97,7 +102,7 @@ export class LedgeTechRadarComponent implements OnInit, AfterViewInit, OnChanges
       color: d3.schemeCategory10	// Color function
     };
 
-    const radar = d3.select(cfg.id);
+    const radar = d3.select(chartElement);
     drawChart(enrichData(treeData));
 
     function drawChart(data) {
@@ -118,7 +123,7 @@ export class LedgeTechRadarComponent implements OnInit, AfterViewInit, OnChanges
       // Initiate the radar chart SVG
       const width = cfg.w + cfg.margin.left + cfg.margin.right;
       const height = cfg.h + cfg.margin.top + cfg.margin.bottom;
-      const svg = d3.select(cfg.id)
+      const svg = d3.select(chartElement)
         .append('div')
         .attr('id', 'radarChart')
         .append('svg')
@@ -236,7 +241,7 @@ export class LedgeTechRadarComponent implements OnInit, AfterViewInit, OnChanges
         });
 
       // draw the legend
-      const legendSection = d3.select(cfg.id)
+      const legendSection = d3.select(chartElement)
         .selectAll('.legend')
         .data(data)
         .join('div')
