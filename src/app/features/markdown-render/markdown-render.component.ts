@@ -30,6 +30,8 @@ export class MarkdownRenderComponent
   showScroll = true;
   @Input()
   data = '';
+  @Input()
+  virtualScroll = false;
 
   @ViewChild('toc', { static: false }) tocEl: ElementRef;
   @ViewChild('tocLeft', { static: false }) tocLeftEl: ElementRef;

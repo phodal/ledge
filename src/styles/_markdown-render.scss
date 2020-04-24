@@ -11,6 +11,12 @@
     height: calc(100vh - 66px);
     overflow-y: scroll;
 
+
+    virtual-scroller,
+    ledge-render {
+      height: 100%;
+    }
+
     .ledge-render {
       width: calc(100% - 2em);
       border: solid 1px $border-color;
