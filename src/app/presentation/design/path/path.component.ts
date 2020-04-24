@@ -21,7 +21,6 @@ const originPipeLine = [
     id: 1,
     title: 'Process',
     items: [
-      // tslint:disable-next-line:max-line-length
       'Commit Code',
       'PUSH Hooks',
       'RUN CI',
@@ -79,11 +78,10 @@ const originPipeLine = [
   styleUrls: ['./path.component.scss'],
 })
 export class PathComponent implements OnInit {
-  @ViewChildren('itemElement') itemElements: QueryList<ElementRef>;
   pipeData = originPipeLine;
   maxLength: number;
 
-  constructor(private storage: StorageMap, private renderer: Renderer2) {}
+  constructor(private storage: StorageMap) {}
 
   ngOnInit(): void {
     this.maxLength = this.getMaxLength(this.pipeData);
@@ -126,6 +124,7 @@ export class PathComponent implements OnInit {
     }
 
     const that = this;
+
     function removeLastItem(items) {
       // tslint:disable-next-line:prefer-for-of
       for (let i = 0; i < items.length; i++) {
@@ -157,8 +156,9 @@ export class PathComponent implements OnInit {
   private getContainerHeightWidth() {
     const innerWidth = window.innerWidth;
     let itemWidth = (innerWidth - 200) / this.maxLength - 20;
-    if (itemWidth < 100) {
-      itemWidth = 100;
+    const minHeight = 100;
+    if (itemWidth < minHeight) {
+      itemWidth = minHeight;
     }
 
     const itemHeightPx = itemWidth + 'px';
@@ -175,16 +175,22 @@ export class PathComponent implements OnInit {
   }
 
   getHeaderHeight() {
+    const paddingOffset = 20 + 12;
+    let height = this.getContainerHeightWidth().itemWidth + paddingOffset;
+    const maxHeaderHeight = 180 + 20 + 12;
+    if (height >= maxHeaderHeight) {
+      height = maxHeaderHeight;
+    }
+
     return {
-      height: this.getContainerHeightWidth().itemWidth + 20 + 12 + 'px',
+      height: height + 'px',
     };
   }
 
   private getMaxLength(items: Item[]) {
     let maxLength = items[0].items.length;
-    // tslint:disable-next-line:prefer-for-of
-    for (let i = 0; i < items.length; i++) {
-      const itemLength = items[i].items.length;
+    for (const item of items) {
+      const itemLength = item.items.length;
       if (itemLength > maxLength) {
         maxLength = itemLength;
       }
@@ -194,24 +200,18 @@ export class PathComponent implements OnInit {
   }
 
   updateItem(i: number, j: number, $event: Event) {
-    const value = ($event.target as any).innerText;
+    $event.preventDefault();
+    const value = ($event.target as any).value;
     this.pipeData[i].items[j] = value;
     this.storage.set('ledge.path', this.pipeData).subscribe(() => {});
   }
 
-  enableEdit(i: number, j: number) {
-    const elementId = `pipe${i}_child${j}`;
-    const filterElements = this.itemElements.filter((el) => {
-      return el.nativeElement.id === elementId;
-    });
-    if (filterElements.length > 0) {
-      const element = filterElements[0];
-      this.renderer.setProperty(element.nativeElement, 'contentEditable', true);
-    }
+  dragItems() {
+    this.storage.set('ledge.path', this.pipeData).subscribe(() => {});
   }
 
   resetAll() {
-    this.pipeData = originPipeLine;
+    this.pipeData = JSON.parse(JSON.stringify(originPipeLine));
     this.maxLength = this.getMaxLength(originPipeLine);
     this.fillDefaultValue();
     this.storage.set('ledge.path', this.pipeData).subscribe(() => {});

@@ -11,7 +11,7 @@ export class PatternComponent implements OnInit {
   data = mdData.default;
 
   constructor(title: Title) {
-    title.setTitle('Ledge DevOps 知识平台 - 原则与模式');
+    title.setTitle('DevOps 原则与模式 - Ledge DevOps 知识平台');
   }
 
   ngOnInit(): void {}

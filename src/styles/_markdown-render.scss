@@ -1,5 +1,17 @@
 @import "./color";
 
+.virtual-scroll-render {
+  .ledge-render {
+    top: 66px;
+    height: 100%;
+
+    virtual-scroller,
+    ledge-render {
+      height: 100%;
+    }
+  }
+}
+
 .markdown-toc {
   display: flex;
   flex-direction: row;

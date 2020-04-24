@@ -4,7 +4,6 @@ import { ToolsetComponent } from './presentation/toolset/toolset.component';
 import { ManualComponent } from './presentation/manual/manual.component';
 import { MaturityComponent } from './presentation/maturity/maturity.component';
 import { PatternComponent } from './presentation/pattern/pattern.component';
-import { PractiseComponent } from './presentation/practise/practise.component';
 import { ReporterComponent } from './presentation/reporter/reporter.component';
 import { ResourcesComponent } from './presentation/resources/resources.component';
 
@@ -46,12 +45,15 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'pattern',
-    component: PatternComponent,
+    path: 'practise',
+    loadChildren: () =>
+      import('./presentation/practise/practise.module').then(
+        (m) => m.PractiseModule
+      ),
   },
   {
-    path: 'practise',
-    component: PractiseComponent,
+    path: 'pattern',
+    component: PatternComponent,
   },
   {
     path: 'manual',
@@ -93,6 +95,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./presentation/ledge-helper/ledge-helper.module').then(
         (m) => m.LedgeHelperModule
+      ),
+  },
+  {
+    path: 'skilltree',
+    loadChildren: () =>
+      import('./presentation/skill-tree/skill-tree.module').then(
+        (m) => m.SkillTreeModule
       ),
   },
 ];

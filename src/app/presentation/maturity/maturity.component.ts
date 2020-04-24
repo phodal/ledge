@@ -12,9 +12,9 @@ export class MaturityComponent {
       name: '第一部分：敏捷开发管理',
       key: 'agile',
       value: `
- - [ ] 需求管理
- - [ ] 过程管理
- - [ ] 组织模型
+ - [ ] 需求管理: 2
+ - [ ] 过程管理: 2
+ - [ ] 组织模型: 2
 `,
     },
     {
@@ -47,19 +47,23 @@ export class MaturityComponent {
       name: '第三部分：技术运营',
       key: 'techops',
       value: `
- - [ ] 监控管理
- - [ ] 事件管理
- - [ ] 变更管理
- - [ ] 容量和性能管理
- - [ ] 成本管理
- - [ ] 连续性管理
- - [ ] 用户体验管理
- - [ ] 运营一体化平台
+ - [ ] 监控管理: 2
+ - [ ] 事件管理: 2
+ - [ ] 变更管理: 2
+ - [ ] 容量和性能管理: 2
+ - [ ] 成本管理: 2
+ - [ ] 连续性管理: 2
+ - [ ] 用户体验管理: 2
+ - [ ] 运营一体化平台: 2
       `,
     },
   ];
 
+  maturity = {
+    table: '',
+  };
+
   constructor(title: Title) {
-    title.setTitle('Ledge DevOps 知识平台 - 成熟度');
+    title.setTitle('DevOps 成熟度评估 — Ledge DevOps 知识平台 ');
   }
 }

@@ -23,6 +23,8 @@ import { ComponentTodoComponent } from './components/component-todo/component-to
 import { ComponentChecklistComponent } from './components/component-checklist/component-checklist.component';
 import { LedgeStorageService } from './services/ledge-storage.service';
 import { LedgeChecklistComponent } from './components/ledge-checklist/ledge-checklist.component';
+import { LedgeMermaidComponent } from './components/ledge-mermaid/ledge-mermaid.component';
+import { TohtmlPipe } from './pipes/tohtml.pipe';
 
 const LedgeComponents = [
   LedgeRenderComponent,
@@ -42,15 +44,16 @@ const LedgeComponents = [
   LedgeTechRadarComponent,
   LedgeKanbanComponent,
   LedgeChecklistComponent,
+  LedgeMermaidComponent,
 
   ComponentTodoComponent,
-  ComponentChecklistComponent
+  ComponentChecklistComponent,
 ];
 
+const LedgePipes = [TohtmlPipe];
 
 @NgModule({
-  declarations: [
-    ...LedgeComponents],
+  declarations: [...LedgePipes, ...LedgeComponents],
   imports: [
     CommonModule,
     FormsModule,
@@ -59,10 +62,6 @@ const LedgeComponents = [
     VirtualScrollerModule,
   ],
   providers: [LedgeStorageService],
-  exports: [
-    LedgeRenderComponent,
-    ComponentChecklistComponent
-  ]
+  exports: [LedgeRenderComponent, ComponentChecklistComponent, ...LedgePipes],
 })
-export class LedgeRenderModule {
-}
+export class LedgeRenderModule {}

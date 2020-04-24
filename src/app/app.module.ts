@@ -11,7 +11,6 @@ import { ManualComponent } from './presentation/manual/manual.component';
 import { MaturityItemComponent } from './presentation/maturity/maturity-item/maturity-item.component';
 import { MaturityComponent } from './presentation/maturity/maturity.component';
 import { PatternComponent } from './presentation/pattern/pattern.component';
-import { PractiseComponent } from './presentation/practise/practise.component';
 import { ReporterComponent } from './presentation/reporter/reporter.component';
 import { ResourcesComponent } from './presentation/resources/resources.component';
 import { CustomMaterialModule } from './shared/custom-material.module';
@@ -29,7 +28,6 @@ export function createTranslateLoader(http: HttpClient) {
   declarations: [
     AppComponent,
     PatternComponent,
-    PractiseComponent,
     ManualComponent,
     ResourcesComponent,
     ReporterComponent,

@@ -4,22 +4,26 @@
 
 ### 本地开发流程
 
-```process-table
+```table-step
 | 执行提交脚本 | 执行 pre-commit  | 执行 Checkstyle| 执行预置的 lint | 提交代码 |
 |-|-|-|-|-|
 | git-cz | husky | checkstyle | lint-staged | git commit |
 | conventional-changelog| commitlint | prettier  | | |
 | |  | | | |
+
+config: { "rowHeight": "180px", "colors": [{"bg":"#e55852","font":"#b71a09"},{"bg":"#e98832","font":"#c85113"},{"bg":"#f0d668","font":"#b88d0f"},{"bg":"#a4c9cf","font":"#598893"},{"bg":"#47c0af","font":"#175a54"},{"bg":"#387fd5","font":"#9ac9f5"},{"bg":"#7753df","font":"#cbb5f8"}]}
 ```
 
 ### DevOps 流程
 
-```process-table
+```table-step
 | 源码管理 | 代码质量 | 制品管理 | 测试 | 持续集成 | 构建 | 部署  | 分析 | 协作  |
 |-|-|-|-|-|-|-|-|-|
 | Git | TSLint | GitHub | Jasmine | GitHub Action | Node.js | GitHub Action | GitHub Traffic | GitHub Projects |
 | GitHub | Code Climate | NPM |  Karma  |  | Yarn | Scully | Google Analysis |  |
 |  | CodeCov | | | |  | |
+
+config: { "rowHeight": "230px", "colors": [{"bg":"#e55852","font":"#b71a09"},{"bg":"#e98832","font":"#c85113"},{"bg":"#f0d668","font":"#b88d0f"},{"bg":"#a4c9cf","font":"#598893"},{"bg":"#47c0af","font":"#175a54"},{"bg":"#387fd5","font":"#9ac9f5"},{"bg":"#7753df","font":"#cbb5f8"},{"bg":"#00a2a1","font":"#3de8e7"},{"bg":"#666666","font":"#eee"}]}
 ```
 
 ```dev-process

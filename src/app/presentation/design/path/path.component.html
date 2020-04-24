@@ -1,6 +1,6 @@
 <div class="app-path">
   <div class="header markdown">
-    <h3>Path to Production</h3>
+    <h3>Design DevOps</h3>
   </div>
 
   <mat-toolbar>
@@ -31,19 +31,18 @@
              id="{{i}}_pipe"
              dragula="ITEMS"
              [(dragulaModel)]="pipe.items"
+             (dragulaModelChange)="pipe.items = $event; dragItems()"
              [ngStyle]="getContainerStyle(pipe)">
 
-          <div
+          <textarea
             class="editable"
-            #itemElement
             id="pipe{{i}}_child{{j}}"
-            (dblclick)="enableEdit(i, j)"
             [ngStyle]="getEditableStyle()"
-            (keydown.enter)="updateItem(i, j, $event)"
-            ngDefaultControl
-            *ngFor="let item of pipe.items;let j = index">
-            {{item}}
-          </div>
+            [ngModel]="pipeData[i].items[j]"
+            (change)="updateItem(i, j, $event)"
+            *ngFor="let item of pipeData[i].items;let j = index">
+
+          </textarea>
         </div>
       </div>
     </div>

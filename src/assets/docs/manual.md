@@ -34,6 +34,38 @@
 
 ## 识别目标和现状
 
+## 落地策略
+
+### 自行落地
+
+#### 1. 组织层级解决跨团队协作
+
+#### 2. 建立 DevOps 知识库
+
+顺带一提，Ledge 已经成为了多个 DevOps 公司的内部资料库的外部参考资源。
+
+#### 3. 培养内部专职教练
+
+### 供应商
+
+#### 1. 避免供应商锁定
+
+> 供应商锁定通常被定义为“专利锁定或客户锁定，这使得客户依赖于供应商的产品和服务，无法在不产生大量切换成本的情况下使用其他供应商。
+
+#### 2. 培养内部能力
+
+### 外部教练
+
+#### 1. 结对模式
+
+#### 2. 赋能团队
+
+#### 3. 内部总结分享
+
+### 咨询公司
+
+咨询公司能从行业内的视野，提供相关的案例，给出更好的建议。
+
 ## 可视化现状和未来
 
 ### Path to Production
@@ -124,9 +156,24 @@ DevOps 框架
         - Success Rate（业务需求的成功率）
 ```
 
-## 度量团队和组织
-
 ## 度量系统
+
+### 度量软件发布
+
+简单来说就，就是我们应该从软件的发布模型，倒推出软件的分支策略
+
+#### 2B 模式
+
+2B 型软件，采用多分支是难以避免的：
+
+- 市场/客户驱动定制。如果一切的原则是为了生存下去，那么这一点难以避免。特别是那些生命周期长的行业应用来说，更是如此。
+- 销售驱动开发。
+
+常见的情况是，一个 10 来个的团队，一年可能要交付至少 20 个项目。更不用在电信行业中，需要针对于不同的国家或地区进行定制。
+
+#### 2C 模式
+
+2C 型软件，采用主干开发更有优势。
 
 ### 度量构建
 
@@ -167,6 +214,12 @@ DevOps 框架
   - ESLint
 - 通用
   - Sonar
+
+## 度量团队和组织
+
+### 团队组成和能力水平
+
+### 团队的多样性
 
 ## 技术债务评估
 
@@ -369,37 +422,6 @@ Bruck Tuckman 团队发展模型：
 - Appium。移动 APP 和桌面应用，支持主流语言
 - Selenium。Web 浏览器，支持主流语言
 - Puppeteer。Node.js API 操作 Chrome 浏览器
-
-#### 架构的单元测试
-
-ArchUnit： ArchUnit 是用来检查架构特征的 Java 测试库，比如包与类的依赖关系、注解、甚至是调用层级一致性。它可以附加在现有的测试方案中，以单元测试的方式运行，但目前只能用于 Java 架构。ArchUnit 测试套件可以合并到持续集成环境及部署流水线中，使我们可以更容易地利用架构适应度函数实现演进式架构。
-
-参见：《[ArchUnit](https://insights.thoughtworks.cn/archunit/)》
-
-JDepend 设计质量指标：
-
-- 类和接口的数量。包中具体类和抽象类（包括接口）的数量，代表了该包的可扩展性。
-- 输入耦合度（Ca）。有多少其他的包依赖于该包中的类，表示了该包的职责范围。
-- 输出耦合度（Ce）。该包中的类依赖于其他包的数量，表示了该包的独立度。
-- 抽象性（A）。包中所有抽象类（包括接口）的数量，占包中所有类数量的比率。
-- 不稳定性（I）。输出耦合度占总耦合度的比率，I = Ce/（Ce + Ca）。该指标表示该包对变化的适应能力。
-- 与主序列的距离。某个包与理想线 A + I = 1 的垂直距离。该指标表示该包在抽象性和稳定性之间的平衡程度。
-- 包依赖循环。如果包的依赖之间形成了循环，会生成其中各个包的层级路径报告。
-
-```radar
- - 设计质量指标
-  - 类和接口的数量
-  - 输入耦合度
-  - 输出耦合度
-  - 抽象性
-  - 不稳定性
-  - 与主序列的距离
-  - 包依赖循环
-```
-
-#### 普通单元测试
-
-#### API 测试
 
 ### 遗留代码
 
@@ -701,6 +723,33 @@ changelog:
 
 ### 后端测试体系
 
+#### 架构测试
+
+ArchUnit： ArchUnit 是用来检查架构特征的 Java 测试库，比如包与类的依赖关系、注解、甚至是调用层级一致性。它可以附加在现有的测试方案中，以单元测试的方式运行，但目前只能用于 Java 架构。ArchUnit 测试套件可以合并到持续集成环境及部署流水线中，使我们可以更容易地利用架构适应度函数实现演进式架构。
+
+参见：《[ArchUnit](https://insights.thoughtworks.cn/archunit/)》
+
+JDepend 设计质量指标：
+
+- 类和接口的数量。包中具体类和抽象类（包括接口）的数量，代表了该包的可扩展性。
+- 输入耦合度（Ca）。有多少其他的包依赖于该包中的类，表示了该包的职责范围。
+- 输出耦合度（Ce）。该包中的类依赖于其他包的数量，表示了该包的独立度。
+- 抽象性（A）。包中所有抽象类（包括接口）的数量，占包中所有类数量的比率。
+- 不稳定性（I）。输出耦合度占总耦合度的比率，I = Ce/（Ce + Ca）。该指标表示该包对变化的适应能力。
+- 与主序列的距离。某个包与理想线 A + I = 1 的垂直距离。该指标表示该包在抽象性和稳定性之间的平衡程度。
+- 包依赖循环。如果包的依赖之间形成了循环，会生成其中各个包的层级路径报告。
+
+```radar
+ - 设计质量指标
+  - 类和接口的数量
+  - 输入耦合度
+  - 输出耦合度
+  - 抽象性
+  - 不稳定性
+  - 与主序列的距离
+  - 包依赖循环
+```
+
 #### API
 
 #### Mock
@@ -751,11 +800,51 @@ changelog:
 - KIF
 - Kiwi
 
+### 性能和压力测试
+
+#### Apache Benchmark
+
+Apache Benchmark：[Ab](https://httpd.apache.org/docs/2.4/programs/ab.html)
+
+SuperBenchmarker（Windows 版的 Apache Benchmark）： [SuperBenchmarker](https://github.com/aliostad/SuperBenchmarker)
+
+示例：
+
+```
+$ ab -n 10 -c 2 https://devops.phodal.com/
+```
+
+#### Gatling
+
+Gatling：[Gatling](https://github.com/gatling/gatling)
+
+安装：[https://gatling.io/docs/current/installation](https://gatling.io/docs/current/installation)
+
 ## 自动化部署应用
 
 ### K8S + Dockerfile
 
 ### 非镜像的自动化方案
+
+## 指标
+
+### Eclipse MicroProfile
+
+> Eclipse MicroProfile 是一个微服务的基准平台定义，针对微服务架构优化企业 Java，并为跨多个 MicroProfile 运行环境提供应用程序可移植性。
+
+Eclipse Microprofile Metrics：[Eclipse Microprofile Metrics](https://github.com/eclipse/microprofile-metrics)
+
+MicroProfile OpenTracing：[MicroProfile OpenTracing](https://github.com/eclipse/microprofile-opentracing)
+
+TBC
+
+### Dropwizard Metrics
+
+GitHub: [https://github.com/dropwizard/metrics](https://github.com/dropwizard/metrics)
+
+### Spring Boot Actuator
+
+Spring Boot Actuator：[Spring Boot Actuator](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#production-ready)
 
 ## 引入监控
 
@@ -794,9 +883,52 @@ Docker 镜像：[StatsD + Graphite + Grafana 4 + Kamon Dashboards](https://githu
 
 [pystatsd](https://github.com/jsocol/pystatsd))
 
-## 日志
+## 日志收集和存储
+
+### Java
+
+记录工具：
+
+SLF4J：[SL4J](http://www.slf4j.org/)
+
+Apache Log4J 2：[Log4J 2](https://logging.apache.org/log4j/2.x/)
+
+## 异常处理
+
+### Airbrake
+
+[Airbrake](https://airbrake.io/)
+
+## 请求跟踪
+
+### Java
+
+OpenZipkin：[https://zipkin.io/](https://zipkin.io/)
+
+Spring Cloud Sleuth：[https://spring.io/projects/spring-cloud-sleuth](https://spring.io/projects/spring-cloud-sleuth)
+
+OpenCensus：[OpenCensus](https://opencensus.io/)
+
+### Prometheus
+
+> Prometheus 是用于事件监视和警报的免费软件应用程序。它将实时指标记录在使用 HTTP 拉模型构建的时间序列数据库中，并具有灵活的查询和实时警报。
+
+官网：[https://prometheus.io/](https://prometheus.io/)
 
 ### ELK
+
+示例架构：
+
+```graphviz
+digraph {
+  rankdir=LR;
+  APP1 -> Kafka;
+  APP3 -> Kafka;
+  APP4 -> Kafka
+  Kafka -> Logstash;
+  Logstash -> ElasticSearch -> Kibana;
+}
+```
 
 ElasticSearch + Logstash + Kibana
 
@@ -817,6 +949,8 @@ Kafka：[Kafka Quickstart](https://kafka.apache.org/quickstart)
 # 实施落地
 
 ## 主干开发
+
+### 从发布倒推分支策略
 
 ### 特性开关
 

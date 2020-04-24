@@ -11,7 +11,7 @@ export class ReporterComponent implements OnInit {
   content = mdData.default;
 
   constructor(title: Title) {
-    title.setTitle('Ledge DevOps 知识平台 - 年度报告');
+    title.setTitle('DevOps 年度报告 - Ledge DevOps 知识平台');
   }
 
   ngOnInit(): void {}

@@ -8,7 +8,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class DesignComponent implements OnInit {
   constructor(title: Title) {
-    title.setTitle('Ledge DevOps 知识平台 - 设计 Devops');
+    title.setTitle('DevOps 流程设计工具 — Ledge DevOps 知识平台');
   }
 
   ngOnInit(): void {}
