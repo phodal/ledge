@@ -47,6 +47,8 @@ export class MarkdownRenderComponent
 
   private lastTocId: string;
   private scrollItems: any[] = [];
+  toItem = 0;
+  private tocIndex = 0;
 
   constructor(
     private markdownService: MarkdownService,
@@ -140,10 +142,12 @@ export class MarkdownRenderComponent
       this.tocEl.nativeElement.innerHTML = this.tocStr;
     }
 
-    this.tocLeftStr = this.renderTocLeft(items).join('');
+    this.tocIndex = 0;
+    this.tocLeftStr = this.renderTocLeftPoint(items).join('');
     if (this.tocLeftEl && this.tocLeftEl.nativeElement) {
       this.tocLeftEl.nativeElement.innerHTML = this.tocLeftStr;
     }
+    this.tocIndex = 0;
     this.tocify.reset();
 
     setTimeout(() => this.startSyncMenu(), 10);
@@ -168,7 +172,9 @@ export class MarkdownRenderComponent
           if (!!element) {
             element.scrollIntoView();
           }
-        } catch (e) {}
+        } catch (e) {
+          console.log(e);
+        }
       }
     });
   }
@@ -186,26 +192,27 @@ export class MarkdownRenderComponent
 
   private renderToc(items: TocItem[]) {
     return items.map((item) => {
+      this.tocIndex++;
       const href = `${this.location.path()}#${item.anchor}`;
       const link = `<a id="menu-${item.anchor}" href="${href}" title=${item.text}>${item.text}</a>`;
       if (item.children) {
         const childrenItems = this.renderToc(item.children);
-        return `<div class="level_${item.level}">
+        return `<div class="level_${item.level}" data-tocId="${this.tocIndex}">
 ${link}<div class="level_child">${childrenItems.join('')}</div>
 </div>`;
       } else {
-        return `<div class="level_${item.level}">${link}</div>`;
+        return `<div class="level_${item.level}" data-tocId="${this.tocIndex}">${link}</div>`;
       }
     });
   }
 
-  private renderTocLeft(items: TocItem[]) {
+  private renderTocLeftPoint(items: TocItem[]) {
     return items.map((item) => {
       if (item.children) {
-        const childrenItems = this.renderTocLeft(item.children);
-        return `<div class="left-menu-${item.anchor}"><div>${childrenItems.join(
-          ''
-        )}</div></div>`;
+        const childrenItems = this.renderTocLeftPoint(item.children);
+        return `<div class="left-menu-${item.anchor}">
+  <div>${childrenItems.join('')}</div>
+</div>`;
       } else {
         return `<div class="left-menu-${item.anchor}"></div>`;
       }

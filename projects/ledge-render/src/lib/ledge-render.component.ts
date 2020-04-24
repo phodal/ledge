@@ -18,12 +18,13 @@ import LedgeColors from './support/ledgeColors';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LedgeRenderComponent implements OnInit, OnChanges {
-  constructor() { }
-
   @Input()
   content: string;
   @Input()
   virtualScroll: false;
+
+  @Input()
+  scrollToItem = 0;
 
   markdownData: any[] = [];
   token = null;
@@ -33,16 +34,23 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
   colorsForIndex = LedgeColors;
 
   isPureParagraph = true;
+  headingIndex = 0;
+  headingMap = {};
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
-    const { content } = changes;
+    const {content, scrollToItem} = changes;
     this.content = content.currentValue;
     this.renderContent(this.content);
+
+    console.log(scrollToItem);
   }
 
   private renderContent(content: string) {
+    this.headingIndex = 0;
+    this.headingMap = {};
     this.markdownData = [];
     const tokens = marked.lexer(content);
     this.tokens = tokens.reverse();
@@ -105,7 +113,7 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
           body += this.tok();
         }
         this.isPureParagraph = true;
-        this.markdownData.push({ type: 'blockquote', text: body });
+        this.markdownData.push({type: 'blockquote', text: body});
         break;
       case 'paragraph':
         return this.handleParaGraph(token);
@@ -119,6 +127,8 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
           text: inline,
           anchor: this.slugger.slug(this.unescape(inline)),
         });
+        this.headingMap[this.headingIndex] = this.markdownData.length - 1;
+        this.headingIndex++;
         break;
       case 'list_start': {
         const listBody = [];
@@ -132,10 +142,10 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
 
         this.listQueue.pop();
         if (this.listQueue.length === 0) {
-          this.markdownData.push({ type: 'list', data: listBody, ordered });
+          this.markdownData.push({type: 'list', data: listBody, ordered});
         }
 
-        return { children: listBody, ordered, start };
+        return {children: listBody, ordered, start};
       }
       case 'list_item_start': {
         const itemBody = {
@@ -162,7 +172,7 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
           }
         }
 
-        return { body: itemBody, task, checked };
+        return {body: itemBody, task, checked};
       }
       case 'hr':
         this.markdownData.push(token);
@@ -192,7 +202,7 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
     switch (codeBlock.lang) {
       case 'chart':
         const chartData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({ type: 'chart', data: chartData.tables[0] });
+        this.markdownData.push({type: 'chart', data: chartData.tables[0]});
         break;
       case 'process-step':
         const stepData = LedgeMarkdownConverter.toJson(codeBlock.text);
@@ -218,11 +228,11 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
         break;
       case 'mindmap':
         const mindmapData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({ type: 'mindmap', data: mindmapData.lists[0] });
+        this.markdownData.push({type: 'mindmap', data: mindmapData.lists[0]});
         break;
       case 'pyramid':
         const pyramidData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({ type: 'pyramid', data: pyramidData.lists[0] });
+        this.markdownData.push({type: 'pyramid', data: pyramidData.lists[0]});
         break;
       case 'radar':
         const radarData = LedgeMarkdownConverter.toJson(codeBlock.text);
@@ -249,14 +259,14 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
         const toolType = json.config.type;
         this.markdownData.push({
           type: 'toolset',
-          data: { type: toolType, data: this.getDataByType(json, toolType) },
+          data: {type: toolType, data: this.getDataByType(json, toolType)},
         });
         break;
       case 'graphviz':
-        this.markdownData.push({ type: 'graphviz', data: codeBlock.text });
+        this.markdownData.push({type: 'graphviz', data: codeBlock.text});
         break;
       case 'echarts':
-        this.markdownData.push({ type: 'echarts', data: codeBlock.text });
+        this.markdownData.push({type: 'echarts', data: codeBlock.text});
         break;
       case 'list-style':
         const listData = LedgeMarkdownConverter.toJson(codeBlock.text);
