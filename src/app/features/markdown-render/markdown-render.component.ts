@@ -48,7 +48,7 @@ export class MarkdownRenderComponent
 
   toItem = 0;
   tocFragmentMap = {};
-  private tocIndex = 0;
+  private tocIndex = -1;
 
   private lastTocId: string;
   private scrollItems: any[] = [];
@@ -69,13 +69,15 @@ export class MarkdownRenderComponent
       markedOptions
     ).bind(this);
     if (this.virtualScroll) {
-      /*   this.router.events.subscribe((event: any) => {
+      this.router.events.subscribe((event: any) => {
         if (event instanceof ActivationEnd) {
           const activationEnd = event as ActivationEnd;
-          const tocIndex = this.tocFragmentMap[encodeURIComponent(activationEnd.snapshot.fragment)];
+          const tocIndex = this.tocFragmentMap[
+            encodeURIComponent(activationEnd.snapshot.fragment)
+          ];
           this.toItem = tocIndex;
         }
-      });*/
+      });
     }
   }
 
@@ -154,18 +156,16 @@ export class MarkdownRenderComponent
 
   render() {
     const items = this.tocify.tocItems;
-    this.tocIndex = 0;
+    this.tocIndex = -1;
     this.tocStr = this.renderToc(items).join('');
     if (this.tocEl && this.tocEl.nativeElement) {
       this.tocEl.nativeElement.innerHTML = this.tocStr;
     }
 
-    this.tocIndex = 0;
     this.tocLeftStr = this.renderTocLeftPoint(items).join('');
     if (this.tocLeftEl && this.tocLeftEl.nativeElement) {
       this.tocLeftEl.nativeElement.innerHTML = this.tocLeftStr;
     }
-    this.tocIndex = 0;
     this.tocify.reset();
 
     setTimeout(() => this.startSyncMenu(), 10);
@@ -215,9 +215,12 @@ export class MarkdownRenderComponent
       const link = `<a id="menu-${item.anchor}" href="${href}" title=${item.text}>${item.text}</a>`;
       this.tocFragmentMap[encodeURIComponent(item.anchor)] = this.tocIndex;
       if (item.children) {
+        const parentIndex = JSON.stringify(this.tocIndex);
         const childrenItems = this.renderToc(item.children);
-        return `<div class="level_${item.level}" data-tocId="${this.tocIndex}">
-${link}<div class="level_child">${childrenItems.join('')}</div>
+        return `<div class="level_${
+          item.level
+        }" data-tocId="${parentIndex}">${link}
+<div class="level_child">${childrenItems.join('')}</div>
 </div>`;
       } else {
         return `<div class="level_${item.level}" data-tocId="${this.tocIndex}">${link}</div>`;

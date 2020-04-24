@@ -10,7 +10,7 @@ import { Token, Tokens, TokensList } from 'marked';
 import marked, { Slugger } from 'marked/lib/marked';
 import LedgeMarkdownConverter from './components/model/ledge-markdown-converter';
 import LedgeColors from './support/ledgeColors';
-import { VirtualScrollerComponent } from 'ngx-virtual-scroller';
+import { IPageInfo, VirtualScrollerComponent } from 'ngx-virtual-scroller';
 
 @Component({
   selector: 'ledge-render',
@@ -64,7 +64,9 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
       if (!this.virtualScroller) {
         return;
       }
-      this.virtualScroller.scrollToIndex(this.headingMap[this.scrollToItem], false, 66, 0);
+      this.virtualScroller.scrollToIndex(this.headingMap[this.scrollToItem], true, 0, 0, () => {
+        this.scrolling = false;
+      });
     }
   }
 
@@ -384,15 +386,9 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
     return JSON.stringify(str);
   }
 
-  vsUpdate($event: any[]) {
-    for (const mdItem of $event) {
-      if (mdItem.type === 'heading') {
-        if (mdItem.headingIndex !== this.lastHeading) {
-          this.lastHeading = mdItem.headingIndex;
-          this.headingChange.emit(mdItem);
-        }
-        return;
-      }
+  vsChange($event: IPageInfo) {
+    if (this.indexHeadingMap[$event.startIndex]) {
+      this.headingChange.emit(this.markdownData[$event.startIndex]);
     }
   }
 }
