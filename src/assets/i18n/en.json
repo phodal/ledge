@@ -28,7 +28,9 @@
   },
   "tank-page": {
     "frontend": "Frontend",
-    "requirements": "BA"
+    "requirements": "BA",
+    "qa": "QA",
+    "ops": "Operation"
   },
   "practise-page": {
     "devops": "DevOps Best Practise",

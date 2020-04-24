@@ -29,7 +29,8 @@
   "tank-page": {
     "frontend": "前端",
     "requirements": "需求管理",
-    "qa": "质量管理"
+    "qa": "质量管理",
+    "ops": "运营"
   },
   "practise-page": {
     "devops": "DevOps 最佳实践",
