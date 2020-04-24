@@ -64,6 +64,7 @@ function solutionPlugin(route, config) {
 function thinkTankPlugin(route, config) {
   return Promise.resolve([
     { route: '/think-tank/qa' },
+    { route: '/think-tank/ba' },
     { route: '/think-tank/mobile-android' },
     { route: '/think-tank/frontend' },
   ]);
@@ -82,11 +83,22 @@ function checklistsPlugin(route, config) {
   ]);
 }
 
+function practisePlugin(route, config) {
+  return Promise.resolve([
+    { route: '/practise/agile-practise' },
+    { route: '/practise/devops-platform' },
+    { route: '/practise/devops-practise' },
+    { route: '/practise/test-practise' },
+    { route: '/practise/tech-practise' },
+  ]);
+}
+
 const validator = async (conf) => [];
 registerPlugin('router', 'case', casePlugin, validator);
 registerPlugin('router', 'solution', solutionPlugin, validator);
 registerPlugin('router', 'tank', thinkTankPlugin, validator);
 registerPlugin('router', 'checklists', checklistsPlugin, validator);
+registerPlugin('router', 'practise', practisePlugin, validator);
 
 exports.config = {
   projectRoot: './src',
@@ -106,6 +118,9 @@ exports.config = {
     },
     '/checklists/:selectedIndex': {
       type: 'checklists',
+    },
+    '/practise/:practise': {
+      type: 'practise',
     },
   },
 };

@@ -30,6 +30,13 @@
     "frontend": "Frontend",
     "requirements": "BA"
   },
+  "practise-page": {
+    "devops": "DevOps Best Practise",
+    "test": "Test Best Practise",
+    "agile": "Agile Best Practise",
+    "tech": "Development Practise",
+    "platform": "DevOps Platform"
+  },
   "helper": {
     "theme": "Theme"
   }

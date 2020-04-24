@@ -31,6 +31,13 @@
     "requirements": "需求管理",
     "qa": "质量管理"
   },
+  "practise-page": {
+    "devops": "DevOps 最佳实践",
+    "test": "测试实践",
+    "agile": "敏捷实践",
+    "tech": "研发实践",
+    "platform": "DevOps 平台实践"
+  },
   "helper": {
     "theme": "主题"
   }
