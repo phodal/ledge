@@ -5,6 +5,16 @@ import { SharedModule } from '../../shared/shared.module';
 import { CustomMaterialModule } from '../../shared/custom-material.module';
 import { LedgeRenderModule } from '@ledge-framework/render';
 import { RouterTestingModule } from '@angular/router/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserTestingModule } from '@angular/platform-browser/testing';
+import {
+  TranslateFakeLoader,
+  TranslateLoader,
+  TranslateModule,
+} from '@ngx-translate/core';
+import { ThinkTankComponent } from '../think-tank/think-tank.component';
+import { ActivatedRoute, convertToParamMap } from '@angular/router';
+import { of } from 'rxjs';
 
 describe('PractiseComponent', () => {
   let component: PractiseComponent;
@@ -14,11 +24,28 @@ describe('PractiseComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         SharedModule,
-        CustomMaterialModule,
-        LedgeRenderModule,
         RouterTestingModule,
+        LedgeRenderModule,
+        CustomMaterialModule,
+        BrowserAnimationsModule,
+        BrowserTestingModule,
+        TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useClass: TranslateFakeLoader,
+          },
+        }),
       ],
       declarations: [PractiseComponent],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            fragment: of({}),
+            paramMap: of(convertToParamMap({ practise: 'devops-practise' })),
+          },
+        },
+      ],
     }).compileComponents();
   }));
 
