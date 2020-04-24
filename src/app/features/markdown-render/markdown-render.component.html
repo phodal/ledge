@@ -11,7 +11,12 @@
       </div>
     </div>
     <div class="right-content" #render (scroll)="handleScroll($event)">
-      <ledge-render [content]="data" *ngIf="data" [virtualScroll]="virtualScroll" [scrollToItem]="toItem"></ledge-render>
+      <ledge-render [content]="data" *ngIf="data"
+                    [virtualScroll]="virtualScroll"
+                    [scrollToItem]="toItem"
+                    (headingChange)="changeHeading($event)"
+      >
+      </ledge-render>
     </div>
   </div>
 </div>

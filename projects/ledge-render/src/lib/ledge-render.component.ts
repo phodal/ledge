@@ -1,9 +1,9 @@
 import {
   ChangeDetectionStrategy,
-  Component,
+  Component, EventEmitter,
   Input,
   OnChanges,
-  OnInit,
+  OnInit, Output,
   SimpleChanges,
 } from '@angular/core';
 import { Token, Tokens, TokensList } from 'marked';
@@ -26,6 +26,9 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
   @Input()
   scrollToItem = 0;
 
+  @Output()
+  headingChange = new EventEmitter<any>();
+
   markdownData: any[] = [];
   token = null;
   tokens: TokensList | any = [];
@@ -34,8 +37,11 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
   colorsForIndex = LedgeColors;
 
   isPureParagraph = true;
+
+  lastHeading = 0;
   headingIndex = 0;
   headingMap = {};
+  indexHeadingMap = {};
 
   ngOnInit(): void {
   }
@@ -125,9 +131,11 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
           type: 'heading',
           depth: token.depth,
           text: inline,
+          headingIndex: this.headingIndex,
           anchor: this.slugger.slug(this.unescape(inline)),
         });
         this.headingMap[this.headingIndex] = this.markdownData.length - 1;
+        this.indexHeadingMap[this.markdownData.length - 1] = this.headingIndex;
         this.headingIndex++;
         break;
       case 'list_start': {
@@ -360,5 +368,17 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
 
   stringify(str: any) {
     return JSON.stringify(str);
+  }
+
+  vsUpdate($event: any[]) {
+    for (const mdItem of $event) {
+      if (mdItem.type === 'heading') {
+        if (mdItem.headingIndex !== this.lastHeading) {
+          this.lastHeading = mdItem.headingIndex;
+          this.headingChange.emit(mdItem);
+        }
+        return;
+      }
+    }
   }
 }

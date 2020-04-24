@@ -44,11 +44,13 @@ export class MarkdownRenderComponent
   sticky = false;
   windowScrolled = false;
   tocify = new Tocify();
+  tocSlugger = new Slugger();
+
+  toItem = 0;
+  private tocIndex = 0;
 
   private lastTocId: string;
   private scrollItems: any[] = [];
-  toItem = 0;
-  private tocIndex = 0;
 
   constructor(
     private markdownService: MarkdownService,
@@ -110,7 +112,11 @@ export class MarkdownRenderComponent
     }
 
     const headingId = currentElement.getAttribute('id');
-    const tocLink = document.getElementById('menu-' + headingId);
+    const menuElement = document.getElementById('menu-' + headingId);
+    this.scrollToMenu(menuElement, headingId);
+  }
+
+  private scrollToMenu(tocLink: HTMLElement, headingId: string) {
     if (!!tocLink) {
       if (!!this.lastTocId) {
         const lastElement = document.getElementById('menu-' + this.lastTocId);
@@ -217,5 +223,12 @@ ${link}<div class="level_child">${childrenItems.join('')}</div>
         return `<div class="left-menu-${item.anchor}"></div>`;
       }
     });
+  }
+
+  changeHeading($event: any) {
+    const id: string = this.tocSlugger.slug($event.anchor);
+    const headingId = `menu-${id}`;
+    const menuElement = document.getElementById(headingId);
+    this.scrollToMenu(menuElement, id);
   }
 }

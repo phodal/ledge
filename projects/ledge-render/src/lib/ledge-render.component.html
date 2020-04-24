@@ -5,7 +5,7 @@
 </div>
 
 <div class="ledge-render" *ngIf="virtualScroll">
-  <virtual-scroller #scroll [items]="markdownData">
+  <virtual-scroller #scroll [items]="markdownData" (vsUpdate)="vsUpdate($event)">
     <div *ngFor="let item of scroll.viewPortItems" class="markdown render-item">
       <ng-template *ngTemplateOutlet="renderItem; context: {$implicit: item}"></ng-template>
     </div>
