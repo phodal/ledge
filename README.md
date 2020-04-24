@@ -96,7 +96,7 @@ todo: fix Angular elements bug
  - 第一阶段闭环：开发测试融合
    - 看板
    - 站会
-\`\`\`
+```
 ````
 
 - 图表
@@ -134,7 +134,7 @@ todo: fix Angular elements bug
  - 范围
 
 config: {"type": "slider"}
-\`\`\`
+```
 ````
 
 ## Todo
