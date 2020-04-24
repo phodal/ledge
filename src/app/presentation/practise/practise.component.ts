@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import * as mdData from 'raw-loader!../../../assets/docs/practise.md';
+import * as mdData from 'raw-loader!../../../assets/docs/practise/devops-practise.md';
 
 @Component({
   selector: 'app-practise',
@@ -11,7 +11,7 @@ export class PractiseComponent implements OnInit {
   data = mdData.default;
 
   constructor(title: Title) {
-    title.setTitle('DevOps 最佳实践 - Ledge DevOps 知识平台');
+    title.setTitle('DevOps 最佳实践『实施部分』 - Ledge DevOps 知识平台');
   }
 
   ngOnInit(): void {}
