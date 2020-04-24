@@ -12,7 +12,7 @@ import {
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ActivationEnd, Router } from '@angular/router';
 import { Slugger } from 'marked/lib/marked';
 import { MarkdownService } from 'ngx-markdown';
 import Tocify, { TocItem } from './tocify';
@@ -47,6 +47,7 @@ export class MarkdownRenderComponent
   tocSlugger = new Slugger();
 
   toItem = 0;
+  tocFragmentMap = {};
   private tocIndex = 0;
 
   private lastTocId: string;
@@ -58,7 +59,8 @@ export class MarkdownRenderComponent
     private route: ActivatedRoute,
     private renderer2: Renderer2,
     @Inject(DOCUMENT) private document: Document,
-    private myElement: ElementRef
+    private myElement: ElementRef,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -66,6 +68,15 @@ export class MarkdownRenderComponent
     this.markdownService.renderer.heading = this.renderHeading(
       markedOptions
     ).bind(this);
+    if (this.virtualScroll) {
+      /*   this.router.events.subscribe((event: any) => {
+        if (event instanceof ActivationEnd) {
+          const activationEnd = event as ActivationEnd;
+          const tocIndex = this.tocFragmentMap[encodeURIComponent(activationEnd.snapshot.fragment)];
+          this.toItem = tocIndex;
+        }
+      });*/
+    }
   }
 
   ngAfterViewInit(): void {
@@ -143,6 +154,7 @@ export class MarkdownRenderComponent
 
   render() {
     const items = this.tocify.tocItems;
+    this.tocIndex = 0;
     this.tocStr = this.renderToc(items).join('');
     if (this.tocEl && this.tocEl.nativeElement) {
       this.tocEl.nativeElement.innerHTML = this.tocStr;
@@ -201,6 +213,7 @@ export class MarkdownRenderComponent
       this.tocIndex++;
       const href = `${this.location.path()}#${item.anchor}`;
       const link = `<a id="menu-${item.anchor}" href="${href}" title=${item.text}>${item.text}</a>`;
+      this.tocFragmentMap[encodeURIComponent(item.anchor)] = this.tocIndex;
       if (item.children) {
         const childrenItems = this.renderToc(item.children);
         return `<div class="level_${item.level}" data-tocId="${this.tocIndex}">

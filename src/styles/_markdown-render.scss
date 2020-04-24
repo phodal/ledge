@@ -2,7 +2,8 @@
 
 .virtual-scroll-render {
   .ledge-render {
-    height: calc(100% - 66px);
+    top: 66px;
+    height: 100%;
 
     virtual-scroller,
     ledge-render {

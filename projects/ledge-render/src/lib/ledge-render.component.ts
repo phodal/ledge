@@ -4,12 +4,13 @@ import {
   Input,
   OnChanges,
   OnInit, Output,
-  SimpleChanges,
+  SimpleChanges, ViewChild,
 } from '@angular/core';
 import { Token, Tokens, TokensList } from 'marked';
 import marked, { Slugger } from 'marked/lib/marked';
 import LedgeMarkdownConverter from './components/model/ledge-markdown-converter';
 import LedgeColors from './support/ledgeColors';
+import { VirtualScrollerComponent } from 'ngx-virtual-scroller';
 
 @Component({
   selector: 'ledge-render',
@@ -29,6 +30,9 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
   @Output()
   headingChange = new EventEmitter<any>();
 
+  @ViewChild(VirtualScrollerComponent)
+  private virtualScroller: VirtualScrollerComponent;
+
   markdownData: any[] = [];
   token = null;
   tokens: TokensList | any = [];
@@ -42,16 +46,26 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
   headingIndex = 0;
   headingMap = {};
   indexHeadingMap = {};
+  scrolling = false;
 
   ngOnInit(): void {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     const {content, scrollToItem} = changes;
-    this.content = content.currentValue;
-    this.renderContent(this.content);
+    if (content) {
+      this.content = content.currentValue;
+      this.renderContent(this.content);
+    }
 
-    console.log(scrollToItem);
+    if (scrollToItem) {
+      this.scrolling = true;
+      this.scrollToItem = scrollToItem.currentValue;
+      if (!this.virtualScroller) {
+        return;
+      }
+      this.virtualScroller.scrollToIndex(this.headingMap[this.scrollToItem], false, 66, 0);
+    }
   }
 
   private renderContent(content: string) {
