@@ -182,7 +182,7 @@ others see in the Code.
 ## License
 
 - Periodic based on:[https://stackblitz.com/edit/ng-periodic-table](https://stackblitz.com/edit/ng-periodic-table)
-- Tech Radar based on: [https://cofinpro.github.io/Tech-Radar/](https://cofinpro.github.io/Tech-Radar/))
+- Tech Radar based on: [https://cofinpro.github.io/Tech-Radar/](https://cofinpro.github.io/Tech-Radar/)
 - Kanban based on: https://github.com/Devstackr/kanban-angular-layout
 
 [![Phodal's Idea](http://brand.phodal.com/shields/idea-small.svg)](http://ideas.phodal.com/)
