@@ -54,6 +54,8 @@
 
 #### Tailwind CSS
 
+[Tailwind](https://tailwindcss.com/), 是一个 CSS Framework，官方称之为「utility-first」，即它讲一些 CSS 功能封装为 「class」，且可自定义和扩展。
+
 ### Styled Components
 
 ### CSS Module
@@ -129,6 +131,10 @@
 代表一种以用户为中心，将用户体验分解为上述 4 个方面的模式。
 
 ### Lighthouse
+
+[Lighthouse](https://developers.google.com/web/tools/lighthouse) 是前端质量检测工具，包括「Performance」、「Accessibility」、「PWA」等等检测指标。
+
+它可以在 Chrome、命令行和 Node 中使用。
 
 ### Devtools
 
