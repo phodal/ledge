@@ -83,7 +83,13 @@
     "category": "scm",
     "number": 55,
     "pay": "Os",
-    "symbol": "Ge"
+    "symbol": "Ge",
+    "description": "Gerrit，一种开放源代码的代码审查软件，使用网页界面。利用网页浏览器，同一个团队的软件开发者，可以相互审阅彼此修改后的代码，决定是否能够提交，回退或是继续修改。它使用版本控制系统Git作为底层。",
+    "homepage": "https://www.gerritcodereview.com/",
+    "books":[{
+        "name":"《Learning Gerrit Code Review》",
+        "link":"https://www.oreilly.com/library/view/learning-gerrit-code/9781783289479/"
+    }]
   },
 
   {
@@ -91,9 +97,18 @@
     "category": "packageManage",
     "number": 88,
     "pay": "Fm",
-    "symbol": "Af"
+    "symbol": "Af",
+    "description": "Artifactory 是 Jfrog 的一款Maven仓库服务端软件，可以用来在内网搭建maven仓库，供公司内部公共库的上传和发布，以提高公共代码使用的便利性。",
+    "homepage": "https://jfrog.com/artifactory/",
+    "books":[{
+      "name":"《Jenkins and Artifactory》",
+      "link":"https://www.oreilly.com/library/view/mastering-jenkins/9781784390891/ch09s03.html"
+    }],
+    "resources": [{
+      "name": "JFrog Artifactory 文档（英文）",
+      "link": "https://www.jfrog.com/confluence/display/JFROG/JFrog+Artifactory"
+    }]
   },
-
   {
     "name": "Nexus",
     "description": "Nexus是一个强大的Maven仓库管理器，它极大地简化了本地内部仓库的维护和外部仓库的访问。 如果使用了公共的Maven仓库服务器，可以从Maven中央仓库下载所需要的构件（Artifact），但这通常不是一个好的做法。 正常做法是在本地架设一个本地Maven仓库服务器，利用Nexus私服可以只在一个地方就能够完全控制访问和部署在你所维护仓库中的每个Artifact。",
@@ -113,7 +128,17 @@
     "category": "packageManage",
     "number": 87,
     "pay": "Os",
-    "symbol": "Ah"
+    "symbol": "Ah",
+    "description": "Archiva，私服是架设在局域网的一种特殊的远程仓库，目的是代理远程仓库及部署第三方构件。有了私服之后，当 Maven 需要下载构件时，直接请求私服，私服上存在则下载到本地仓库；否则，私服请求外部的远程仓库，将构件下载到私服，再提供给本地仓库下载。",
+    "homepage": "https://archiva.apache.org/",
+    "resources": [{
+      "name": "Github",
+      "link": "https://github.com/apache/archiva",
+      "description":"Apache Archiva"
+    },{
+      "name":"Installing and Configuring the Archiva Maven Repository Manager",
+      "link": "https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.3/maven/installing-and-configuring-archiva-maven-repository-manager.html#GUID-9B488F70-D592-41B8-8E1C-047AABB6B87B"
+    }]
   },
 
   {
