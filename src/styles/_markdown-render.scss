@@ -1,5 +1,16 @@
 @import "./color";
 
+.virtual-scroll-render {
+  .ledge-render {
+    height: calc(100% - 66px);
+
+    virtual-scroller,
+    ledge-render {
+      height: 100%;
+    }
+  }
+}
+
 .markdown-toc {
   display: flex;
   flex-direction: row;
@@ -10,12 +21,6 @@
     width: 85%;
     height: calc(100vh - 66px);
     overflow-y: scroll;
-
-
-    virtual-scroller,
-    ledge-render {
-      height: 100%;
-    }
 
     .ledge-render {
       width: calc(100% - 2em);
