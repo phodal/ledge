@@ -40,11 +40,11 @@
 
 ### SASS/LESS
 
-### PostCSS
-
 ### 响应式设计
 
 ### BEM
+
+[BEM](http://getbem.com/)，即  Block Element Modifier 的缩写，是一种编写 CSS 的原则（methodologies），用于解决大型项目中 CSS 如何组织的问题。
 
 ### CSS Framework
 
@@ -56,9 +56,15 @@
 
 [Tailwind](https://tailwindcss.com/), 是一个 CSS Framework，官方称之为「utility-first」，即它讲一些 CSS 功能封装为 「class」，且可自定义和扩展。
 
-### Styled Components
+### PostCSS
+
+[PostCSS](https://postcss.org/)，基于 JavaScript 的 CSS 处理器。它有丰富的插件，例如：[autoprefixer](https://github.com/postcss/autoprefixer)、[postcss-preset-env](https://preset-env.cssdb.org/)。
 
 ### CSS Module
+
+[CSS Modules](https://github.com/css-modules/css-modules)，是指同一个 CSS 文件中的所有 CSS class 等都默认本地作用域。由于不是 CSS 原生支持，所以一般需要配合 Webpack 的 CSS-loader 或者 PostCSS 使用。
+
+### Styled Components
 
 ### Emotion
 
