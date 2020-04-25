@@ -16,6 +16,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 const modules = [
   MatToolbarModule,
@@ -31,6 +32,7 @@ const modules = [
   MatTooltipModule,
   MatTabsModule,
   MatSelectModule,
+  MatFormFieldModule,
 
   ScrollingModule,
 ];
