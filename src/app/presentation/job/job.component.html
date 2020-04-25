@@ -1,1 +1,59 @@
-<p>job works!</p>
+<div class="job">
+  <div class="title">
+    <h2>DevOps 招聘需求</h2>
+    <div class="operate">
+      <button mat-flat-button color="primary" (click)="openDialog()" disabled>
+        发布招聘
+      </button>
+    </div>
+  </div>
+  <div class="content">
+    <ng-container>
+      <table class="job-table">
+        <thead>
+          <tr>
+            <th class="first_td first_td_name">标题</th>
+            <th>公司</th>
+            <th>工作城市</th>
+            <th>发布日期<em class="blue_saojian"></em></th>
+            <th>联系方式</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="!loading">
+            <td colspan="5">
+              <mat-progress-spinner
+                class="spinner"
+                [color]="'primary'"
+                [mode]="'indeterminate'"
+                value="60"
+                diameter="40"
+              >
+              </mat-progress-spinner>
+            </td>
+          </tr>
+          <tr *ngIf="!loading && !jobList.length">
+            <td colspan="5">
+              <div class="error">数据请求失败！</div>
+            </td>
+          </tr>
+          <tr *ngFor="let job of jobList; let index = index">
+            <td>
+              <a
+                href="{{ job.htmlUrl }}"
+                matTooltip="点击查看详情"
+                class="link"
+                target="_blank"
+                >{{ job.jobTitle || 'DevOps工程师' }}</a
+              >
+            </td>
+            <td>{{ job.companyName }}</td>
+            <td>{{ job.workAddress }}</td>
+            <td>{{ job.date }}</td>
+            <td>{{ job.contact }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-container>
+  </div>
+</div>
