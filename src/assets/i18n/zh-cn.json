@@ -30,7 +30,9 @@
     "frontend": "前端",
     "requirements": "需求管理",
     "qa": "质量管理",
-    "ops": "运营"
+    "ops": "运营",
+    "microservices": "微服务",
+    "backend": "后端"
   },
   "practise-page": {
     "devops": "DevOps 最佳实践",

@@ -12,5 +12,7 @@ export const thinktanks: Thinktanks = [
   { displayName: '质量管理', source: 'qa', default: true },
   { displayName: 'Android', source: 'mobile-android' },
   { displayName: '前端', source: 'frontend' },
+  { displayName: '后端', source: 'backend' },
+  { displayName: '微服务', source: 'microservices' },
   { displayName: '运营', source: 'ops' },
 ];
