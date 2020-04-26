@@ -9,7 +9,7 @@
         <ng-template *ngTemplateOutlet="navMenu"></ng-template>
       </div>
 
-      <div fxShow.lt-sm="true">
+      <div fxHide="true" fxShow.lt-md="true">
         <button mat-button (click)="sidenav.toggle()">
           <mat-icon>menu</mat-icon>
         </button>
