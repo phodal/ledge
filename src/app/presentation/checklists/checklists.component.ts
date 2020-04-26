@@ -15,6 +15,7 @@ import * as codeReview from 'raw-loader!../../../assets/docs/checklists/coderevi
 import * as fe from 'raw-loader!../../../assets/docs/checklists/front-end.md';
 import * as devSecOps from 'raw-loader!../../../assets/docs/checklists/devsecops.md';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-checklists',
@@ -37,10 +38,22 @@ export class ChecklistsComponent implements OnInit {
 
   selectedTabIndex = 0;
 
+  contentMap = [
+    { name: '新项目检查清单' },
+    { name: '敏捷实践检查清单' },
+    { name: 'DevOps 检查清单（Azure）' },
+    { name: 'DevOps 检查清单（AWS）' },
+    { name: 'DevSecOps 检查清单' },
+    { name: '极限编程检查清单' },
+    { name: '代码回顾检查清单' },
+    { name: '前端项目检查清单' },
+  ];
+
   constructor(
     private storage: StorageMap,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private title: Title
   ) {}
 
   ngOnInit(): void {
@@ -52,13 +65,22 @@ export class ChecklistsComponent implements OnInit {
         this.selectedTabIndex = parseInt(value, 10);
       }
     });
+    this.setTitle();
   }
 
   onTabChanged($event: MatTabChangeEvent) {
     this.selectedTabIndex = $event.index;
+    this.setTitle();
+
     this.router.navigate(['/checklists/', this.selectedTabIndex]);
     this.storage
       .set('checklists.last.index', this.selectedTabIndex)
       .subscribe();
+  }
+
+  private setTitle() {
+    this.title.setTitle(
+      this.contentMap[this.selectedTabIndex].name + ' - DevOps 知识平台'
+    );
   }
 }
