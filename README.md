@@ -87,6 +87,10 @@ todo: fix Angular elements bug
 
 测试语法：[https://devops.phodal.com/helper](https://devops.phodal.com/helper)
 
+### 文档规范
+
+[Chinese Copywriting Guidelines](https://sparanoid.com/note/chinese-copywriting-guidelines/)
+
 ### Markdown 扩展语法
 
 通过语法高亮参数来扩展能力，如
