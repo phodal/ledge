@@ -32,7 +32,8 @@
     "qa": "QA",
     "ops": "Operation",
     "microservices": "MicroServices",
-    "backend": "Backend"
+    "backend": "Backend",
+    "refactoring": "Refactoring"
   },
   "job": "Job",
   "practise-page": {

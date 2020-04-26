@@ -32,7 +32,8 @@
     "qa": "质量管理",
     "ops": "运营",
     "microservices": "微服务",
-    "backend": "后端"
+    "backend": "后端",
+    "refactoring": "重构"
   },
   "job": "招聘",
   "practise-page": {
