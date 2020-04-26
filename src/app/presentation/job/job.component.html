@@ -44,11 +44,14 @@
                 href="{{ job.htmlUrl }}"
                 matTooltip="点击查看详情"
                 class="link"
-                target="_blank"
-                >{{ job.jobTitle || 'DevOps 工程师' }}</a
-              >
+                target="_blank">
+                {{ job.jobTitle || 'DevOps 工程师' }}
+                <mat-icon class="info-icon" [matTooltip]="job.jobDescription">info</mat-icon>
+              </a>
             </td>
-            <td>{{ job.companyName }}</td>
+            <td>{{ job.companyName }}
+              <mat-icon class="info-icon" [matTooltip]="job.companyDescription">info</mat-icon>
+            </td>
             <td>{{ job.workAddress }}</td>
             <td>{{ job.date }}</td>
             <td>{{ job.yearRequire }}</td>
