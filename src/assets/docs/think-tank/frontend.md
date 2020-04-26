@@ -233,3 +233,21 @@ SSG 的概念本身并不新，但是基于现在三大前端框架（Angular, R
 ## Progressive Web APP
 
 ## WebAssembly
+
+## 小程序
+
+小程序主要是运行在某个「超级 APP」上的 Web 应用，主要包括：
+
+1. [微信小程序](https://mp.weixin.qq.com/cgi-bin/wx?token=&lang=zh_CN)
+2. [支付宝](https://mini.open.alipay.com/channel/miniIndex.htm)
+3. [字节跳动小程序](https://developer.toutiao.com/)
+
+### 小程序框架
+
+由于各个公司都推出自己的小程序实现，导致开发者需要针对不同的小程序平台多次开发，所以 [Taro](https://taro.jd.com/) 这种小程序框架应运而生
+
+> 多端统一开发框架，支持用 React 的开发方式编写一次代码，生成能运行在微信/京东/百度/支付宝/字节跳动/ QQ 小程序/快应用/H5/React Native 等的应用。
+
+类似的还有 [WePY](https://wepyjs.github.io/wepy-docs/)、[mpvue](http://mpvue.com/) 、[uni-app](https://uniapp.dcloud.io/) 等等。
+
+他们都是基于某种框架的语法（React、Vue），然后编译成对应的小程序语法。
