@@ -232,7 +232,15 @@ SSG 的概念本身并不新，但是基于现在三大前端框架（Angular, R
 
 ## Progressive Web APP
 
+[PWA](https://en.wikipedia.org/wiki/Progressive_web_application)，不同于 Native APP 或者 Web APP，PWA 以 Web 技术开发（Javascript、HTML、CSS 等），同时使用一些现代 API 已实现例如：推送、离线使用、访问硬件等一般 Web APP 无法做到的功能。
+
+PWA 对比 Native APP 有无需安装，方便用户直接使用的优势；对比 Web APP 又有推送等上述 Navive 的功能。
+
 ## WebAssembly
+
+[Webassembly](https://webassembly.org/)
+
+> 它是一种低级的类汇编语言，具有紧凑的二进制格式，可以接近原生的性能运行，并为诸如 C / C ++等语言提供一个编译目标，以便它们可以在 Web 上运行。它也被设计为可以与 JavaScript 共存，允许两者一起工作。
 
 ## 小程序
 
