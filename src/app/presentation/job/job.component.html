@@ -15,13 +15,14 @@
             <th class="first_td first_td_name">标题</th>
             <th>公司</th>
             <th>工作城市</th>
-            <th>发布日期<em class="blue_saojian"></em></th>
+            <th>发布日期</th>
             <th>联系方式</th>
+            <th>工作年限</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngIf="loading">
-            <td colspan="5">
+            <td colspan="6">
               <mat-progress-spinner
                 class="spinner"
                 [color]="'primary'"
@@ -33,7 +34,7 @@
             </td>
           </tr>
           <tr *ngIf="!loading && !jobList.length">
-            <td colspan="5">
+            <td colspan="6">
               <div class="error">数据请求失败！</div>
             </td>
           </tr>
@@ -44,12 +45,13 @@
                 matTooltip="点击查看详情"
                 class="link"
                 target="_blank"
-                >{{ job.jobTitle || 'DevOps工程师' }}</a
+                >{{ job.jobTitle || 'DevOps 工程师' }}</a
               >
             </td>
             <td>{{ job.companyName }}</td>
             <td>{{ job.workAddress }}</td>
             <td>{{ job.date }}</td>
+            <td>{{ job.yearRequire }}</td>
             <td>{{ job.contact }}</td>
           </tr>
         </tbody>

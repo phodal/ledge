@@ -1,3 +1,5 @@
+@import '../../../styles/color';
+
 .job {
   padding: 30px 0;
   margin: 30px auto 0 auto;
@@ -7,7 +9,7 @@
   .title {
     padding-left: 20px;
     height: 80px;
-    color: #7753df;
+    color: $purple;
 
     h2 {
       float: left;
@@ -28,7 +30,7 @@
     th,
     td {
       text-align: center;
-      border-bottom: 1px solid #e9ecef;
+      border-bottom: 1px solid $lighter-gray;
       padding: 18px 3px;
     }
 
@@ -42,7 +44,7 @@
   }
 
   .error {
-    color: red;
+    color: $error-color;
     margin: 0 auto;
   }
 }
