@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { format } from 'date-fns';
 import { CreateJobDialogComponent } from './create-job-dialog/create-job-dialog.component';
 import { JobData } from './create-job-dialog/JobData';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-job',
@@ -14,9 +15,16 @@ export class JobComponent implements OnInit {
   loading = false;
   jobList: JobData[] = [];
 
-  constructor(public dialog: MatDialog, private http: HttpClient) {}
+  constructor(
+    public dialog: MatDialog,
+    private http: HttpClient,
+    private title: Title
+  ) {}
 
   ngOnInit(): void {
+    this.title.setTitle(
+      `DevOps 工作 Ledge DevOps 招聘信息中心 - Ledge DevOps 知识平台`
+    );
     this.qryJobComments();
   }
 
