@@ -34,6 +34,7 @@
     "microservices": "微服务",
     "backend": "后端"
   },
+  "job": "招聘",
   "practise-page": {
     "devops": "DevOps 最佳实践",
     "test": "测试实践",
