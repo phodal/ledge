@@ -68,6 +68,8 @@ function thinkTankPlugin(route, config) {
     { route: '/think-tank/ops' },
     { route: '/think-tank/mobile-android' },
     { route: '/think-tank/frontend' },
+    { route: '/think-tank/backend' },
+    { route: '/think-tank/microservices' },
   ]);
 }
 

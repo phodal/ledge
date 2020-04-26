@@ -1,0 +1,54 @@
+@import '../../../styles/color';
+
+.job {
+  padding: 30px 0;
+  margin: 30px auto 0 auto;
+  width: 1200px;
+  background-color: #fff;
+
+  .title {
+    padding-left: 20px;
+    height: 80px;
+    color: $purple;
+
+    h2 {
+      float: left;
+      width: 300px;
+    }
+  }
+
+  .operate {
+    float: right;
+    width: 150px;
+  }
+}
+
+.job-table {
+  width: 100%;
+
+  tr {
+    th,
+    td {
+      text-align: center;
+      border-bottom: 1px solid $lighter-gray;
+      padding: 18px 3px;
+    }
+
+    th {
+      font-size: 16px;
+    }
+
+    .spinner {
+      margin: 0 auto;
+    }
+  }
+
+  .info-icon {
+    margin-left: 4px;
+  }
+
+  .error {
+    color: $error-color;
+    margin: 0 auto;
+  }
+}

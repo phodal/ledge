@@ -30,8 +30,11 @@
     "frontend": "Frontend",
     "requirements": "BA",
     "qa": "QA",
-    "ops": "Operation"
+    "ops": "Operation",
+    "microservices": "MicroServices",
+    "backend": "Backend"
   },
+  "job": "Job",
   "practise-page": {
     "devops": "DevOps Best Practise",
     "test": "Test Best Practise",
