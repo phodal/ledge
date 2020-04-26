@@ -6,9 +6,23 @@
 
 ## HTML / CSS
 
-## 编程语言：Java / Python / PHP / Ruby 等等
+## 编程语言
 
-## Web 框架，如 Spring MVC、Flask、Laravel 等等
+### Java
+
+### Python
+
+### PHP
+
+### Ruby
+
+## Web
+
+### Spring Boot
+
+### Laravel
+
+### Flask
 
 ## HTTP 协议基础
 
@@ -26,7 +40,9 @@
 
 ## API 设计
 
-## 网络通信协议，如 TCP / Socket
+## 网络通信协议
+
+### TCP / Socket
 
 # 高级篇
 
@@ -52,7 +68,9 @@
 
 # 基础设施
 
-## 虚拟化，如 Docker
+## 虚拟化
+
+### Docker
 
 ## 自动化部署
 
@@ -60,7 +78,9 @@
 
 ## 发布脚本编写
 
-## Web 容器，如 Jboss
+## Web 容器
+
+### Tomcat
 
 # 缓存篇
 
