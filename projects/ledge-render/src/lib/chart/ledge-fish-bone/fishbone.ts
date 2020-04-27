@@ -65,8 +65,8 @@ const fishbone = () => {
   //   .on('tick', _tick);
 
   const forceLayout = d3.forceSimulation()
-    .force('link', d3.forceLink().distance(_linkDistance).strength(0.1))
-    .on('tick', _tick as any);
+    .force('link', d3.forceLink().distance(_linkDistance))
+    .on('tick', _tick);
 
   const fb1 = $ => {
     /*
@@ -105,11 +105,9 @@ const fishbone = () => {
     // create the links
     link = $.selectAll('.link')
       .data(dataLinks);
-    console.log(link);
 
-    link.enter().append('line');
-
-    link
+    link.enter()
+      .append('line')
       .attr('class', (d) => {
         return 'link link-' + d.depth;
       })
@@ -129,13 +127,12 @@ const fishbone = () => {
         (d) => {
           return 'node' + (d.root ? ' root' : '');
         })
-      .append('text');
+      .append('text')
 
-    node.select('text')
-      .attr(
-        'class', (d) => {
-          return 'label-' + d.depth;
-        })
+      .attr('class', (d) => {
+        console.log(d);
+        return 'label-' + d.depth;
+      })
       .attr('stroke', (d) => {
         if (d.color) {
           return d.color;
@@ -278,24 +275,25 @@ const fishbone = () => {
   }
 
 
-  function _linePosition($) {
-    $.attr('x1', (d) => {
-      return d.source.x;
-    });
-    $.attr('y1', (d) => {
-      return d.source.y;
-    });
-    $.attr('x2', (d) => {
-      return d.target.x;
-    });
-    $.attr('y2', (d) => {
-      return d.target.y;
-    });
+  function updateLink(linkNode) {
+    linkNode
+      .attr('x1', (d) => {
+        return d.source.x;
+      })
+      .attr('y1', (d) => {
+        return d.source.y;
+      })
+      .attr('x2', (d) => {
+        return d.target.x;
+      })
+      .attr('y2', (d) => {
+        return d.target.y;
+      });
   }
 
 
-  function _nodePosition($) {
-    $.attr('transform', d => 'translate(' + d.x + ',' + d.y + ')');
+  function updateNode(n) {
+    n.attr('transform', d => 'translate(' + d.x + ',' + d.y + ')');
   }
 
 
@@ -359,8 +357,8 @@ const fishbone = () => {
     });
 
     // actually apply all changes
-    node.call(_nodePosition);
-    link.call(_linePosition);
+    node.call(updateNode);
+    link.call(updateLink);
   }
 
   // the d3.fishbone() public API
@@ -372,19 +370,19 @@ const fishbone = () => {
   fb1.margin = (_) => {
     // how big is the whitespace around the diagram?
     // if (!arguments.length) {
-    //   return marginSize;
+    return marginSize;
     // }
-    marginSize = _;
-    return my;
+    // marginSize = _;
+    // return my;
   };
 
   fb1.children = (_) => {
     // how  will children be sought from each node?
     // if (!arguments.length) {
-    //   return children;
+    return children;
     // }
-    children = _;
-    return my;
+    // children = _;
+    // return my;
   };
 
   fb1.label = (_) => {
@@ -392,17 +390,18 @@ const fishbone = () => {
     // if (!arguments.length) {
     //   return label;
     // }
-    label = _;
-    return my;
+    return label;
+    // label = _;
+    // return my;
   };
 
   fb1._perNodeTick = (_) => {
     // what custom rules should be done per node?
     // if (!arguments.length) {
-    //   return perNodeTick;
+    return perNodeTick;
     // }
-    perNodeTick = _;
-    return my;
+    // perNodeTick = _;
+    // return my;
   };
 
   return fb1;
