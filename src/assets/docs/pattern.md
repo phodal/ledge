@@ -218,7 +218,7 @@ ThoughtWorks Tech Lead 模型
     - Pipeline
 - 构建
   - Dockerfile
-    - \*
+    - hadolint \*
 - 分析
   - SAST \*
     - Sonarqube
