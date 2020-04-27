@@ -15,4 +15,5 @@ export const thinktanks: Thinktanks = [
   { displayName: '后端', source: 'backend' },
   { displayName: '微服务', source: 'microservices' },
   { displayName: '运营', source: 'ops' },
+  { displayName: '重构', source: 'refactoring' },
 ];

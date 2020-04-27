@@ -52,6 +52,6 @@ export class PractiseComponent implements OnInit {
   }
 
   private buildSrc(source: string) {
-    return `assets/docs/practise/${source}.md`;
+    return `assets/docs/practises/${source}.md`;
   }
 }

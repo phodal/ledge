@@ -15,6 +15,7 @@ import * as codeReview from 'raw-loader!../../../assets/docs/checklists/coderevi
 import * as fe from 'raw-loader!../../../assets/docs/checklists/front-end.md';
 import * as devSecOps from 'raw-loader!../../../assets/docs/checklists/devsecops.md';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-checklists',
@@ -37,28 +38,57 @@ export class ChecklistsComponent implements OnInit {
 
   selectedTabIndex = 0;
 
+  contentMap = [
+    { name: '新项目检查清单', route: 'new-project' },
+    { name: '敏捷实践检查清单', route: 'agile-practise' },
+    { name: 'DevOps 检查清单（Azure）', route: 'azure-devops' },
+    { name: 'DevOps 检查清单（AWS）', route: 'aws-devops' },
+    { name: 'DevSecOps 检查清单', route: 'devsecops' },
+    { name: '极限编程检查清单', route: 'xp-practise' },
+    { name: '代码回顾检查清单', route: 'code-review' },
+    { name: '前端项目检查清单', route: 'frontend' },
+  ];
+
   constructor(
     private storage: StorageMap,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private title: Title
   ) {}
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((p) => {
-      this.selectedTabIndex = Number(p.get('selectedIndex'));
+      const routeName = p.get('name');
+      for (const [index, item] of this.contentMap.entries()) {
+        if (item.name === routeName) {
+          this.selectedTabIndex = index;
+        }
+      }
     });
     this.storage.get('checklists.last.index').subscribe((value: string) => {
       if (!!value) {
         this.selectedTabIndex = parseInt(value, 10);
       }
     });
+    this.setTitle();
   }
 
   onTabChanged($event: MatTabChangeEvent) {
     this.selectedTabIndex = $event.index;
-    this.router.navigate(['/checklists/', this.selectedTabIndex]);
+    this.setTitle();
+
+    this.router.navigate([
+      '/checklists/',
+      this.contentMap[this.selectedTabIndex].route,
+    ]);
     this.storage
       .set('checklists.last.index', this.selectedTabIndex)
       .subscribe();
+  }
+
+  private setTitle() {
+    this.title.setTitle(
+      this.contentMap[this.selectedTabIndex].name + ' - DevOps 知识平台'
+    );
   }
 }

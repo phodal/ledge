@@ -25,6 +25,7 @@ import { LedgeStorageService } from './services/ledge-storage.service';
 import { LedgeChecklistComponent } from './components/ledge-checklist/ledge-checklist.component';
 import { LedgeMermaidComponent } from './components/ledge-mermaid/ledge-mermaid.component';
 import { TohtmlPipe } from './pipes/tohtml.pipe';
+import { LedgeSunburstComponent } from './chart/ledge-sunburst/ledge-sunburst.component';
 
 const LedgeComponents = [
   LedgeRenderComponent,
@@ -45,6 +46,7 @@ const LedgeComponents = [
   LedgeKanbanComponent,
   LedgeChecklistComponent,
   LedgeMermaidComponent,
+  LedgeSunburstComponent,
 
   ComponentTodoComponent,
   ComponentChecklistComponent,

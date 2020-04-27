@@ -66,6 +66,10 @@
       <ledge-checklist [data]="item.data" [config]="item.config"></ledge-checklist>
     </div>
 
+    <div *ngSwitchCase="'sunburst'">
+      <ledge-sunburst [data]="item.data" [config]="item.config"></ledge-sunburst>
+    </div>
+
     <div *ngSwitchCase="'table'">
       <table>
         <thead>
