@@ -70,6 +70,10 @@
       <ledge-sunburst [data]="item.data" [config]="item.config"></ledge-sunburst>
     </div>
 
+    <div *ngSwitchCase="'fishbone'">
+      <ledge-fish-bone [data]="item.data" [config]="item.config"></ledge-fish-bone>
+    </div>
+
     <div *ngSwitchCase="'table'">
       <table>
         <thead>
