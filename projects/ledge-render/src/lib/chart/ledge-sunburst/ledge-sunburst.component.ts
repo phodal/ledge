@@ -25,9 +25,7 @@ export class LedgeSunburstComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     const myChart = echarts.init(this.chart.nativeElement);
     const result = this.setValue(this.data, 0);
-    console.log(result);
-    const option = this.buildOption(this.data);
-    console.log(this.data);
+    const option = this.buildOption(result);
     myChart.setOption(option as any);
   }
 
