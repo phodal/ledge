@@ -58,9 +58,6 @@ export class LedgeSunburstComponent implements OnInit, AfterViewInit {
       if (item.children) {
         this.setValue(item.children, value);
         item.value = value;
-        item.itemStyle = {
-          color: '#FFB499'
-        };
       } else {
         item.value = 1;
         value = 0;
