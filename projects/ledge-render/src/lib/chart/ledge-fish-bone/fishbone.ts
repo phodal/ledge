@@ -24,12 +24,10 @@ THE SOFTWARE.
 */
 import * as d3 from 'd3';
 
-const fishbone = (dataNodes: any, dataLinks: any) => {
-  console.log(dataNodes);
-  // private variables
+const fishbone = () => {
   let marginSize = 50;
-  // let dataNodes;
-  // let dataLinks;
+  let dataNodes;
+  let dataLinks;
 
   const my: any = undefined;
   const width = 900;
