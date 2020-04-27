@@ -17,7 +17,7 @@ export class LedgeSunburstComponent implements OnInit, AfterViewInit {
 
   @ViewChild('chart', {}) chart: ElementRef;
 
-  private childLevel = 1;
+  private childLevel = 0;
 
   ngOnInit(): void {
   }
@@ -53,17 +53,16 @@ export class LedgeSunburstComponent implements OnInit, AfterViewInit {
   }
 
   private setValue(list: LedgeListItem[], value) {
+    this.childLevel++;
     for (const item of list) {
-      value++;
       if (item.children) {
         this.setValue(item.children, value);
-        item.value = value;
       } else {
         item.value = 1;
-        value = 0;
       }
     }
 
+    this.childLevel--;
     return list;
   }
 }

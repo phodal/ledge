@@ -206,10 +206,10 @@ ThoughtWorks Tech Lead 模型
       - Idea
         - Sonarlint
     - 版本控制
-      - truffleHog \*
+      - truffleHog *
       - Git Toolkit
       - Gitlab
-      - git-secrets \*
+      - git-secrets *
     - 持续集成
       - Jenkins
         - Blue Ocean
@@ -220,23 +220,23 @@ ThoughtWorks Tech Lead 模型
         - Pipeline
     - 构建
       - Dockerfile
-        - hadolint \*
+        - hadolint *
     - 分析
-      - SAST \*
+      - SAST *
         - Sonarqube
         - Snyk
         - FOSSology
         - CodeQL CLI
-      - Compliance \*
-      - SCA \*
+      - Compliance *
+      - SCA *
         - Ort
         - Dependency-Check
         - Dependency-Track
     - 制品
-      - 供应链安全 \*
+      - 供应链安全 *
         - ClearlyDefined
         - OpenChain
-      - 容器 \*
+      - 容器 *
         - Anchore
         - Trivy
         - Clair
@@ -262,7 +262,7 @@ ThoughtWorks Tech Lead 模型
         - Rancher
         - OpenShift/OKD
         - KubeOperator
-      - hardening & compliance \*
+      - hardening & compliance *
         - kube-hunter
         - Falco
         - Lynis
@@ -278,7 +278,7 @@ ThoughtWorks Tech Lead 模型
         - ELK
         - Loki
     - 集成测试
-      - Fuzzing \*
+      - Fuzzing *
       - 自动化测试
         - Dredd
         - Newman + Postman
@@ -286,7 +286,7 @@ ThoughtWorks Tech Lead 模型
         - Cucumber
         - galasa-dev
         - Pact
-      - DAST \*
+      - DAST *
         - Zed
         - Openvas Nvt
         - Contrast Security
