@@ -76,14 +76,14 @@ function thinkTankPlugin(route, config) {
 
 function checklistsPlugin(route, config) {
   return Promise.resolve([
-    { route: '/checklists/0' },
-    { route: '/checklists/1' },
-    { route: '/checklists/2' },
-    { route: '/checklists/3' },
-    { route: '/checklists/4' },
-    { route: '/checklists/5' },
-    { route: '/checklists/6' },
-    { route: '/checklists/7' },
+    { route: '/checklists/new-project' },
+    { route: '/checklists/agile-practise' },
+    { route: '/checklists/azure-devops' },
+    { route: '/checklists/aws-devops' },
+    { route: '/checklists/devsecops' },
+    { route: '/checklists/xp-practise' },
+    { route: '/checklists/code-review' },
+    { route: '/checklists/frontend' },
   ]);
 }
 

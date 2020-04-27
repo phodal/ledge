@@ -39,14 +39,14 @@ export class ChecklistsComponent implements OnInit {
   selectedTabIndex = 0;
 
   contentMap = [
-    { name: '新项目检查清单' },
-    { name: '敏捷实践检查清单' },
-    { name: 'DevOps 检查清单（Azure）' },
-    { name: 'DevOps 检查清单（AWS）' },
-    { name: 'DevSecOps 检查清单' },
-    { name: '极限编程检查清单' },
-    { name: '代码回顾检查清单' },
-    { name: '前端项目检查清单' },
+    { name: '新项目检查清单', route: 'new-project' },
+    { name: '敏捷实践检查清单', route: 'agile-practise' },
+    { name: 'DevOps 检查清单（Azure）', route: 'azure-devops' },
+    { name: 'DevOps 检查清单（AWS）', route: 'aws-devops' },
+    { name: 'DevSecOps 检查清单', route: 'devsecops' },
+    { name: '极限编程检查清单', route: 'xp-practise' },
+    { name: '代码回顾检查清单', route: 'code-review' },
+    { name: '前端项目检查清单', route: 'frontend' },
   ];
 
   constructor(
@@ -58,7 +58,12 @@ export class ChecklistsComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((p) => {
-      this.selectedTabIndex = Number(p.get('selectedIndex'));
+      const routeName = p.get('name');
+      for (const [index, item] of this.contentMap.entries()) {
+        if (item.name === routeName) {
+          this.selectedTabIndex = index;
+        }
+      }
     });
     this.storage.get('checklists.last.index').subscribe((value: string) => {
       if (!!value) {
@@ -72,7 +77,10 @@ export class ChecklistsComponent implements OnInit {
     this.selectedTabIndex = $event.index;
     this.setTitle();
 
-    this.router.navigate(['/checklists/', this.selectedTabIndex]);
+    this.router.navigate([
+      '/checklists/',
+      this.contentMap[this.selectedTabIndex].route,
+    ]);
     this.storage
       .set('checklists.last.index', this.selectedTabIndex)
       .subscribe();

@@ -4,7 +4,7 @@ import { ChecklistsComponent } from './checklists.component';
 
 const routes: Routes = [
   {
-    path: ':selectedIndex',
+    path: ':name',
     component: ChecklistsComponent,
   },
   { path: '', pathMatch: 'full', redirectTo: '0' },
