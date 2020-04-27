@@ -200,20 +200,21 @@ DevOps 框架
 
 ### 自动化性能测试
 
-- JMeter
+- [JMeter](https://jmeter.apache.org/)
 
 ### 代码质量分析工具
 
 - Java
-  - CheckStyle
-  - PMD/CPD
-  - FindBugs
-  - CodeNarc
+  - [CheckStyle](https://checkstyle.org/)
+  - [PMD/CPD](https://pmd.github.io/)
+  - [FindBugs](http://findbugs.sourceforge.net/)
+- Groovy
+  - [CodeNarc](https://codenarc.github.io/CodeNarc/)
 - JavaScript / TypeScript
-  - Codelyzer
-  - ESLint
+  - [Codelyzer](http://codelyzer.com/)
+  - [ESLint](https://eslint.org/)
 - 通用
-  - Sonar
+  - [Sonar](https://www.sonarqube.org/)
 
 ## 度量团队和组织
 
