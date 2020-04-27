@@ -60,6 +60,12 @@ export class LedgeSunburstComponent implements OnInit, AfterViewInit {
       } else {
         item.value = 1;
       }
+
+      if (item.name.endsWith('*')) {
+        item.itemStyle = {
+          color: '#F54F4A'
+        };
+      }
     }
 
     this.childLevel--;

@@ -223,23 +223,23 @@ ThoughtWorks Tech Lead 模型
         - hadolint *
     - 分析
       - SAST *
-        - Sonarqube
-        - Snyk
-        - FOSSology
-        - CodeQL CLI
+        - Sonarqube *
+        - Snyk *
+        - FOSSology *
+        - CodeQL CLI *
       - Compliance *
       - SCA *
-        - Ort
-        - Dependency-Check
-        - Dependency-Track
+        - Ort *
+        - Dependency-Check *
+        - Dependency-Track *
     - 制品
       - 供应链安全 *
-        - ClearlyDefined
-        - OpenChain
+        - ClearlyDefined *
+        - OpenChain *
       - 容器 *
-        - Anchore
-        - Trivy
-        - Clair
+        - Anchore *
+        - Trivy *
+        - Clair *
       - 优化
         - Docker Slim
       - 源
@@ -262,10 +262,10 @@ ThoughtWorks Tech Lead 模型
         - Rancher
         - OpenShift/OKD
         - KubeOperator
-      - hardening & compliance *
-        - kube-hunter
-        - Falco
-        - Lynis
+      - 强化与合规 *
+        - kube-hunter *
+        - Falco *
+        - Lynis *
       - diagnosis
         - Sysdig Inspect
         - Arthus reaction
@@ -287,12 +287,12 @@ ThoughtWorks Tech Lead 模型
         - galasa-dev
         - Pact
       - DAST *
-        - Zed
-        - Openvas Nvt
-        - Contrast Security
-        - Vulscan
-        - Nessus
-        - Vuls.io
+        - Zed *
+        - Openvas Nvt *
+        - Contrast Security *
+        - Vulscan *
+        - Nessus *
+        - Vuls.io *
     - 可见性
       - Hygieia
 ```
