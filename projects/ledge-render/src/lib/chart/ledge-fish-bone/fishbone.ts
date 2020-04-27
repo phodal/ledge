@@ -33,8 +33,6 @@ const fishbone = () => {
   const width = 900;
   const height = 800;
 
-  return;
-
   // d3 selections and related things used in tick function
   let node;
   let link;
