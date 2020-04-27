@@ -61,7 +61,7 @@ export class LedgeSunburstComponent implements OnInit, AfterViewInit {
         item.value = 1;
       }
 
-      if (item.name.endsWith('*')) {
+      if (item.name && item.name.endsWith('*')) {
         item.itemStyle = {
           color: '#F54F4A'
         };
