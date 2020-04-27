@@ -26,8 +26,8 @@ import * as d3 from 'd3';
 
 const fishbone = () => {
   let marginSize = 50;
-  let dataNodes;
-  let dataLinks;
+  let dataNodes = [];
+  let dataLinks = [];
 
   const my: any = undefined;
   const width = 900;
@@ -105,18 +105,19 @@ const fishbone = () => {
     // create the links
     link = $.selectAll('.link')
       .data(dataLinks);
+    console.log(link);
 
     link.enter().append('line');
 
-    link
-      .attr({
-        class(d) {
-          return 'link link-' + d.depth;
-        },
-        'marker-end'(d) {
-          return d.arrow ? 'url(#' + arrowId() + ')' : null;
-        }
-      });
+    // link
+    //   .attr({
+    //     class(d) {
+    //       return 'link link-' + d.depth;
+    //     },
+    //     'marker-end'(d) {
+    //       return d.arrow ? 'url(#' + arrowId() + ')' : null;
+    //     }
+    //   });
 
     link.exit().remove();
 
@@ -126,30 +127,30 @@ const fishbone = () => {
 
     // actually create nodes
     node.enter().append('g')
-      .attr({
-        class(d) {
-          return 'node' + (d.root ? ' root' : '');
-        }
-      })
+      // .attr({
+      //   class(d) {
+      //     return 'node' + (d.root ? ' root' : '');
+      //   }
+      // })
       .append('text');
 
     node.select('text')
-      .attr({
-        class(d) {
-          return 'label-' + d.depth;
-        },
-        stroke(d) {
-          if (d.color) {
-            return d.color;
-          }
-        },
-        'text-anchor'(d) {
-          return !d.depth ? 'start' : d.horizontal ? 'end' : 'middle';
-        },
-        dy(d) {
-          return d.horizontal ? '.35em' : d.region === 1 ? '1em' : '-.2em';
-        }
-      })
+      // .attr({
+      //   class(d) {
+      //     return 'label-' + d.depth;
+      //   },
+      //   stroke(d) {
+      //     if (d.color) {
+      //       return d.color;
+      //     }
+      //   },
+      //   'text-anchor'(d) {
+      //     return !d.depth ? 'start' : d.horizontal ? 'end' : 'middle';
+      //   },
+      //   dy(d) {
+      //     return d.horizontal ? '.35em' : d.region === 1 ? '1em' : '-.2em';
+      //   }
+      // })
       .text(label);
 
     node.exit().remove();
@@ -177,15 +178,15 @@ const fishbone = () => {
     defs.selectAll('marker#' + arrowId())
       .data([1])
       .enter().append('marker')
-      .attr({
-        id: arrowId(),
-        viewBox: '0 -5 10 10',
-        refX: 10,
-        refY: 0,
-        markerWidth: 10,
-        markerHeight: 10,
-        orient: 'auto'
-      })
+      // .attr({
+      //   id: arrowId(),
+      //   viewBox: '0 -5 10 10',
+      //   refX: 10,
+      //   refY: 0,
+      //   markerWidth: 10,
+      //   markerHeight: 10,
+      //   orient: 'auto'
+      // })
       .append('path')
       .attr({d: 'M0,-5L10,0L0,5'});
   }
@@ -284,26 +285,26 @@ const fishbone = () => {
 
 
   function _linePosition($) {
-    $.attr({
-      x1(d) {
-        return d.source.x;
-      },
-      y1(d) {
-        return d.source.y;
-      },
-      x2(d) {
-        return d.target.x;
-      },
-      y2(d) {
-        return d.target.y;
-      }
-    });
+    // $.attr({
+    //   x1(d) {
+    //     return d.source.x;
+    //   },
+    //   y1(d) {
+    //     return d.source.y;
+    //   },
+    //   x2(d) {
+    //     return d.target.x;
+    //   },
+    //   y2(d) {
+    //     return d.target.y;
+    //   }
+    // });
   }
 
 
   function _nodePosition($) {
     // uses an SVG `transform` to position nodes
-    $.attr('transform', d => 'translate(' + d.x + ',' + d.y + ')');
+    // $.attr('transform', d => 'translate(' + d.x + ',' + d.y + ')');
   }
 
 
@@ -329,7 +330,7 @@ const fishbone = () => {
     dataNodes.forEach(d => {
       // handle the middle... could probably store the root width...
       if (d.root) {
-        d.x = width - (marginSize + root.getBBox().width);
+        // d.x = width - (marginSize + d.root.getBBox().width);
       }
       if (d.tail) {
         d.x = marginSize;
