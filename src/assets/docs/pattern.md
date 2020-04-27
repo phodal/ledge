@@ -187,112 +187,115 @@ ThoughtWorks Tech Lead 模型
 
 ### DevSecOps 示例
 
-- 需求
-  - Wekan
-  - Gitlab
-    - Ganttlab
-- 开发（后端）
-  - Swagger
-    - knife4j
-  - Spring Cloud Alibaba
-  - Skaffolder CLI
-- 开发（前端）
-  - Swagger
-    - Pont
-  - Jest.js
-- IDE
-  - Idea
-    - Sonarlint
-- 版本控制
-  - truffleHog \*
-  - Git Toolkit
-  - Gitlab
-  - git-secrets \*
-- 持续集成
-  - Jenkins
-    - Blue Ocean
-    - Health Advisor
-    - Prometheus
-    - Docker
-    - Git
-    - Pipeline
-- 构建
-  - Dockerfile
-    - hadolint \*
-- 分析
-  - SAST \*
-    - Sonarqube
-    - Snyk
-    - FOSSology
-    - CodeQL CLI
-  - Compliance \*
-  - SCA \*
-    - Ort
-    - Dependency-Check
-    - Dependency-Track
-- 制品
-  - 供应链安全 \*
-    - ClearlyDefined
-    - OpenChain
-  - 容器 \*
-    - Anchore
-    - Trivy
-    - Clair
-  - 优化
-    - Docker Slim
-  - 源
-    - Nexus
-    - Artifactory
-    - Archiva
-- 部署
-  - Ansible
-  - Nomad
-  - Docker Compose
-  - Make
-  - Werf
-  - Tekton
-  - Screwdriver
-- 环境
-  - OS
-    - Zsh
-  - Docker
-  - Kubernetes
-    - Rancher
-    - OpenShift/OKD
-    - KubeOperator
-  - hardening & compliance \*
-    - kube-hunter
-    - Falco
-    - Lynis
-  - diagnosis
-    - Sysdig Inspect
-    - Arthus reaction
-  - monitoring
-    - Prometheus/Grafana
-    - Influxdb
-  - apm & tracing
-    - Skywalking
-  - logging
-    - ELK
-    - Loki
-- 集成测试
-  - Fuzzing \*
-  - 自动化测试
-    - Dredd
-    - Newman + Postman
-    - Http Runner 基于录制
-    - Cucumber
-    - galasa-dev
-    - Pact
-  - DAST \*
-    - Zed
-    - Openvas Nvt
-    - Contrast Security
-    - Vulscan
-    - Nessus
-    - Vuls.io
-- 可见性
-  - Hygieia
+```sunburst
+ - DevSecOps 示例
+    - 需求
+      - Wekan
+      - Gitlab
+        - Ganttlab
+    - 开发（后端）
+      - Swagger
+        - knife4j
+      - Spring Cloud Alibaba
+      - Skaffolder CLI
+    - 开发（前端）
+      - Swagger
+        - Pont
+      - Jest.js
+    - IDE
+      - Idea
+        - Sonarlint
+    - 版本控制
+      - truffleHog \*
+      - Git Toolkit
+      - Gitlab
+      - git-secrets \*
+    - 持续集成
+      - Jenkins
+        - Blue Ocean
+        - Health Advisor
+        - Prometheus
+        - Docker
+        - Git
+        - Pipeline
+    - 构建
+      - Dockerfile
+        - hadolint \*
+    - 分析
+      - SAST \*
+        - Sonarqube
+        - Snyk
+        - FOSSology
+        - CodeQL CLI
+      - Compliance \*
+      - SCA \*
+        - Ort
+        - Dependency-Check
+        - Dependency-Track
+    - 制品
+      - 供应链安全 \*
+        - ClearlyDefined
+        - OpenChain
+      - 容器 \*
+        - Anchore
+        - Trivy
+        - Clair
+      - 优化
+        - Docker Slim
+      - 源
+        - Nexus
+        - Artifactory
+        - Archiva
+    - 部署
+      - Ansible
+      - Nomad
+      - Docker Compose
+      - Make
+      - Werf
+      - Tekton
+      - Screwdriver
+    - 环境
+      - OS
+        - Zsh
+      - Docker
+      - Kubernetes
+        - Rancher
+        - OpenShift/OKD
+        - KubeOperator
+      - hardening & compliance \*
+        - kube-hunter
+        - Falco
+        - Lynis
+      - diagnosis
+        - Sysdig Inspect
+        - Arthus reaction
+      - monitoring
+        - Prometheus/Grafana
+        - Influxdb
+      - apm & tracing
+        - Skywalking
+      - logging
+        - ELK
+        - Loki
+    - 集成测试
+      - Fuzzing \*
+      - 自动化测试
+        - Dredd
+        - Newman + Postman
+        - Http Runner 基于录制
+        - Cucumber
+        - galasa-dev
+        - Pact
+      - DAST \*
+        - Zed
+        - Openvas Nvt
+        - Contrast Security
+        - Vulscan
+        - Nessus
+        - Vuls.io
+    - 可见性
+      - Hygieia
+```
 
 ## BizDevOps
 

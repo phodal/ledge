@@ -355,6 +355,14 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
           config: checklistData.config,
         });
         break;
+      case 'sunburst':
+        const sunburstData = LedgeMarkdownConverter.toJson(codeBlock.text);
+        this.markdownData.push({
+          type: 'sunburst',
+          data: sunburstData.lists[0].children,
+          config: sunburstData.config,
+        });
+        break;
       case 'mermaid':
         const mermaidData = codeBlock.text;
         this.markdownData.push({
