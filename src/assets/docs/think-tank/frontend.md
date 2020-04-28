@@ -262,9 +262,17 @@ SSG 的概念本身并不新，但是基于现在三大前端框架（Angular, R
 
 ## GraphQL
 
+[GraphQL](https://graphql.org/)
+
+> GraphQL 既是一种用于 API 的查询语言也是一个满足你数据查询的运行时。 GraphQL 对你的 API 中的数据提供了一套易于理解的完整描述，使得客户端能够准确地获得它需要的数据，而且没有任何冗余，也让 API 更容易地随着时间推移而演进，还能用于构建强大的开发者工具。
+
 ### Apollo
 
+[Apollo](https://www.apollographql.com/)，是一个 GraphQL 的实现，包括 [Apollo Server](https://www.apollographql.com/docs/apollo-server/)、[Apollo Client](https://www.apollographql.com/docs/) 等多个框架/工具。
+
 ### Relay
+
+[Relay](https://relay.dev/)，是 Facebook 推出的，针对 React 的 GraphQL clinet。
 
 ## Progressive Web APP
 
