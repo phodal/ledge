@@ -162,7 +162,6 @@ const fishbone = () => {
     // select this so we know its width in tick
     root = $.select('.root').node();
   }; // fb1
-  const color = d3.schemeCategory10;
 
   function _arrow($) {
     // creates an svg:defs and marker with an arrow if needed...
