@@ -882,7 +882,7 @@ Docker 镜像：[StatsD + Graphite + Grafana 4 + Kamon Dashboards](https://githu
 
 #### Python
 
-[pystatsd](https://github.com/jsocol/pystatsd))
+[pystatsd](https://github.com/jsocol/pystatsd)
 
 ## 日志收集和存储
 
