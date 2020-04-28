@@ -67,7 +67,7 @@ const fishbone = () => {
 
   const forceLayout = d3.forceSimulation()
     .force('link', d3.forceLink().distance(_linkDistance))
-    .on('tick', _tick);
+    .on('tick', ticked);
 
   const fb1 = $ => {
     /*
@@ -309,7 +309,7 @@ const fishbone = () => {
   }
 
 
-  function _tick() {
+  function ticked() {
     /*
       the primary layout mechanism: a fair amount of the work is done
       by links, but override a lot of it here.
