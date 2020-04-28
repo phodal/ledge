@@ -145,6 +145,33 @@ En： Quality Attribute Web
 
 ![因果图示例](/assets/docs/images/typical-Ishikawa-diagram-Invensis.jpg '因果图示例')
 
+```fishbone
+ - 文件集不完整
+   - 人
+     - 操作员
+       - 手工停止批处理
+   - 机器
+     - 应用程序
+       - 新版本发布
+     - 网络
+       - 网络错误
+     - 数据库
+       - 数据库损坏
+     - 调度程序
+       - 调度错误
+   - 材料
+   - 方法
+     - 变更管理
+       - 数据库模型的变更申请没有沟通
+     - 服务级别管理
+       - 没有交付协议
+   - 度量
+     - 监控
+       - 有限的事态集
+
+config: {"height": 600, "width": 1200}
+```
+
 ### 工作路径
 
 En: Ways of Working
