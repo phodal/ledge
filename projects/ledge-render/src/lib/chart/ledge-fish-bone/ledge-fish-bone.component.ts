@@ -25,20 +25,8 @@ export class LedgeFishBoneComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    const data = {
-      name: 'Quality',
-      children: [
-        {
-          name: 'Machine',
-          children: [
-            {name: 'Mill'},
-            {name: 'Mixer'},
-            {name: 'Metal Lathe'}
-          ]
-        }
-      ]
-    };
-
+    const data = this.data[0];
+    console.log(data);
     const fb = fishbone();
     d3.select(this.chart.nativeElement)
       .append('svg')
