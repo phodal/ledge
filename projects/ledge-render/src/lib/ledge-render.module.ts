@@ -25,6 +25,8 @@ import { LedgeStorageService } from './services/ledge-storage.service';
 import { LedgeChecklistComponent } from './components/ledge-checklist/ledge-checklist.component';
 import { LedgeMermaidComponent } from './components/ledge-mermaid/ledge-mermaid.component';
 import { TohtmlPipe } from './pipes/tohtml.pipe';
+import { LedgeSunburstComponent } from './chart/ledge-sunburst/ledge-sunburst.component';
+import { LedgeFishBoneComponent } from './chart/ledge-fish-bone/ledge-fish-bone.component';
 
 const LedgeComponents = [
   LedgeRenderComponent,
@@ -45,6 +47,8 @@ const LedgeComponents = [
   LedgeKanbanComponent,
   LedgeChecklistComponent,
   LedgeMermaidComponent,
+  LedgeSunburstComponent,
+  LedgeFishBoneComponent,
 
   ComponentTodoComponent,
   ComponentChecklistComponent,
@@ -53,7 +57,7 @@ const LedgeComponents = [
 const LedgePipes = [TohtmlPipe];
 
 @NgModule({
-  declarations: [...LedgePipes, ...LedgeComponents],
+    declarations: [...LedgePipes, ...LedgeComponents],
   imports: [
     CommonModule,
     FormsModule,

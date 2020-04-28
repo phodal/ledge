@@ -12,7 +12,7 @@ import {
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ActivationEnd, Router } from '@angular/router';
 import { Slugger } from 'marked/lib/marked';
 import { MarkdownService } from 'ngx-markdown';
 import Tocify, { TocItem } from './tocify';
@@ -30,6 +30,8 @@ export class MarkdownRenderComponent
   showScroll = true;
   @Input()
   data = '';
+  @Input()
+  virtualScroll = false;
 
   @ViewChild('toc', { static: false }) tocEl: ElementRef;
   @ViewChild('tocLeft', { static: false }) tocLeftEl: ElementRef;
@@ -42,6 +44,11 @@ export class MarkdownRenderComponent
   sticky = false;
   windowScrolled = false;
   tocify = new Tocify();
+  tocSlugger = new Slugger();
+
+  toItem = 0;
+  tocFragmentMap = {};
+  private tocIndex = -1;
 
   private lastTocId: string;
   private scrollItems: any[] = [];
@@ -52,7 +59,8 @@ export class MarkdownRenderComponent
     private route: ActivatedRoute,
     private renderer2: Renderer2,
     @Inject(DOCUMENT) private document: Document,
-    private myElement: ElementRef
+    private myElement: ElementRef,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -60,6 +68,17 @@ export class MarkdownRenderComponent
     this.markdownService.renderer.heading = this.renderHeading(
       markedOptions
     ).bind(this);
+    if (this.virtualScroll) {
+      this.router.events.subscribe((event: any) => {
+        if (event instanceof ActivationEnd) {
+          const activationEnd = event as ActivationEnd;
+          const tocIndex = this.tocFragmentMap[
+            encodeURIComponent(activationEnd.snapshot.fragment)
+          ];
+          this.toItem = tocIndex;
+        }
+      });
+    }
   }
 
   ngAfterViewInit(): void {
@@ -106,7 +125,11 @@ export class MarkdownRenderComponent
     }
 
     const headingId = currentElement.getAttribute('id');
-    const tocLink = document.getElementById('menu-' + headingId);
+    const menuElement = document.getElementById('menu-' + headingId);
+    this.scrollToMenu(menuElement, headingId);
+  }
+
+  private scrollToMenu(tocLink: HTMLElement, headingId: string) {
     if (!!tocLink) {
       if (!!this.lastTocId) {
         const lastElement = document.getElementById('menu-' + this.lastTocId);
@@ -133,12 +156,13 @@ export class MarkdownRenderComponent
 
   render() {
     const items = this.tocify.tocItems;
+    this.tocIndex = -1;
     this.tocStr = this.renderToc(items).join('');
     if (this.tocEl && this.tocEl.nativeElement) {
       this.tocEl.nativeElement.innerHTML = this.tocStr;
     }
 
-    this.tocLeftStr = this.renderTocLeft(items).join('');
+    this.tocLeftStr = this.renderTocLeftPoint(items).join('');
     if (this.tocLeftEl && this.tocLeftEl.nativeElement) {
       this.tocLeftEl.nativeElement.innerHTML = this.tocLeftStr;
     }
@@ -166,7 +190,9 @@ export class MarkdownRenderComponent
           if (!!element) {
             element.scrollIntoView();
           }
-        } catch (e) {}
+        } catch (e) {
+          console.log(e);
+        }
       }
     });
   }
@@ -184,29 +210,41 @@ export class MarkdownRenderComponent
 
   private renderToc(items: TocItem[]) {
     return items.map((item) => {
+      this.tocIndex++;
       const href = `${this.location.path()}#${item.anchor}`;
       const link = `<a id="menu-${item.anchor}" href="${href}" title=${item.text}>${item.text}</a>`;
+      this.tocFragmentMap[encodeURIComponent(item.anchor)] = this.tocIndex;
       if (item.children) {
+        const parentIndex = JSON.stringify(this.tocIndex);
         const childrenItems = this.renderToc(item.children);
-        return `<div class="level_${item.level}">
-${link}<div class="level_child">${childrenItems.join('')}</div>
+        return `<div class="level_${
+          item.level
+        }" data-tocId="${parentIndex}">${link}
+<div class="level_child">${childrenItems.join('')}</div>
 </div>`;
       } else {
-        return `<div class="level_${item.level}">${link}</div>`;
+        return `<div class="level_${item.level}" data-tocId="${this.tocIndex}">${link}</div>`;
       }
     });
   }
 
-  private renderTocLeft(items: TocItem[]) {
+  private renderTocLeftPoint(items: TocItem[]) {
     return items.map((item) => {
       if (item.children) {
-        const childrenItems = this.renderTocLeft(item.children);
-        return `<div class="left-menu-${item.anchor}"><div>${childrenItems.join(
-          ''
-        )}</div></div>`;
+        const childrenItems = this.renderTocLeftPoint(item.children);
+        return `<div class="left-menu-${item.anchor}">
+  <div>${childrenItems.join('')}</div>
+</div>`;
       } else {
         return `<div class="left-menu-${item.anchor}"></div>`;
       }
     });
+  }
+
+  changeHeading($event: any) {
+    const id: string = this.tocSlugger.slug($event.anchor);
+    const headingId = `menu-${id}`;
+    const menuElement = document.getElementById(headingId);
+    this.scrollToMenu(menuElement, id);
   }
 }

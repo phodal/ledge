@@ -41,7 +41,6 @@ Use [yarn link](https://classic.yarnpkg.com/en/docs/cli/link/) to avoid reinstal
 4. `yarn build ledge-render --watch`
 5. `yarn start`
 
-
 ### Develop in CodeSandbox
 
 [![Edit @ledge-framework/render](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/ledge-frameworkrender-349x9?fontsize=14&hidenavigation=1&theme=dark)
@@ -52,6 +51,53 @@ Use [yarn link](https://classic.yarnpkg.com/en/docs/cli/link/) to avoid reinstal
 2. add type to `handleCode` in `ledge-render.component.ts`
 3. use `ng g c` to generate new component
 4. link to new component
+
+### Ledge extend code syntax
+
+````
+```process-step
+ - step1
+   - demo
+   - kanban
+```
+````
+
+- Chart
+  - echarts. Echarts chart.
+  - chart. Echarts bar chart.
+  - mindmap. Markdown List to mindmap.
+  - radar. Markdown List to radar chart.
+  - tech radar. Markdown list to tech radar chart.
+  - pie。Pie chart
+  - quadrant。quadrant chart
+  - pyramid。pyramid chart
+- graphviz。dot to graph
+- process visualization
+  - process-table。process chart
+  - process-step。process chart 2
+  - process-card。card process chart
+  - dev-process。process with logo
+  - step-line。title only line chart
+  - table-step。with arrow table chart
+- checklist。checklists
+- mermaid。use [mermaid](https://mermaid-js.github.io/mermaid/) as visual tools
+- toolset。use toolset components to extends
+  - slider
+  - line-chart
+
+### 权衡滑块示例
+
+````
+```toolset
+ - 用户体验
+ - 时间
+ - 成本
+ - 安全
+ - 范围
+
+config: {"type": "slider"}
+```
+````
 
 ## Roadmap
 

@@ -169,7 +169,7 @@ DevOps 框架
 - 市场/客户驱动定制。如果一切的原则是为了生存下去，那么这一点难以避免。特别是那些生命周期长的行业应用来说，更是如此。
 - 销售驱动开发。
 
-常见的情况是，一个 10 来个的团队，一年可能要交付至少 20 个项目。更不用在电信行业中，需要针对于不同的国家或地区进行定制。
+常见的情况是，一个十来个人的团队，一年可能要交付至少 20 个项目。更不用说在电信行业中，需要针对于不同的国家或地区进行定制。
 
 #### 2C 模式
 
@@ -200,20 +200,21 @@ DevOps 框架
 
 ### 自动化性能测试
 
-- JMeter
+- [JMeter](https://jmeter.apache.org/)
 
 ### 代码质量分析工具
 
 - Java
-  - CheckStyle
-  - PMD/CPD
-  - FindBugs
-  - CodeNarc
+  - [CheckStyle](https://checkstyle.org/)
+  - [PMD/CPD](https://pmd.github.io/)
+  - [FindBugs](http://findbugs.sourceforge.net/)
+- Groovy
+  - [CodeNarc](https://codenarc.github.io/CodeNarc/)
 - JavaScript / TypeScript
-  - Codelyzer
-  - ESLint
+  - [Codelyzer](http://codelyzer.com/)
+  - [ESLint](https://eslint.org/)
 - 通用
-  - Sonar
+  - [Sonar](https://www.sonarqube.org/)
 
 ## 度量团队和组织
 
@@ -881,7 +882,7 @@ Docker 镜像：[StatsD + Graphite + Grafana 4 + Kamon Dashboards](https://githu
 
 #### Python
 
-[pystatsd](https://github.com/jsocol/pystatsd))
+[pystatsd](https://github.com/jsocol/pystatsd)
 
 ## 日志收集和存储
 
@@ -1096,11 +1097,9 @@ BDD 在这一种上相当的迷人——能让非技术人员编写测试。而�
 对应的，开发人员需要编写实现：
 
 ```javascript
-...
 Given('当我在网站的首页', function() {
   return this.driver.get('http://0.0.0.0:7272/');
 });
-..
 ```
 
 从上述的代码中，一眼就可以看出复杂的地方，实现一个领域特定（业务特定）的 DSL 语言。
