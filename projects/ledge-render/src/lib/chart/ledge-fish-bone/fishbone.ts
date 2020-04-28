@@ -31,7 +31,7 @@ const fishbone = () => {
   let dataLinks = [];
 
   const my: any = undefined;
-  const width = 900;
+  const width = 1200;
   const height = 800;
 
   // d3 selections and related things used in tick function
@@ -315,7 +315,7 @@ const fishbone = () => {
     */
 
     // this is a "little bit"
-    const k = 6 * 1;
+    let k = 6 * this.alpha()
     let a;
     let b;
 
