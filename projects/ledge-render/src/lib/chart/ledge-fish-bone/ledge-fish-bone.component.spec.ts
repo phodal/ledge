@@ -16,6 +16,19 @@ describe('LedgeFishboneComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(LedgeFishBoneComponent);
     component = fixture.componentInstance;
+    component.data = [{
+      children: [
+        {
+          children: [
+            {
+              children: [],
+              name: '',
+            },
+          ],
+          name: '',
+        },
+      ],
+    }];
     fixture.detectChanges();
   });
 
