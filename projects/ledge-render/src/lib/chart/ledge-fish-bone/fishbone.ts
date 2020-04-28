@@ -24,6 +24,7 @@ THE SOFTWARE.
 */
 import * as d3 from 'd3';
 
+/* tslint:disable */
 const fishbone = () => {
   let marginSize = 50;
   let dataNodes = [];
@@ -130,7 +131,6 @@ const fishbone = () => {
       .append('text')
 
       .attr('class', (d) => {
-        console.log(d);
         return 'label-' + d.depth;
       })
       .attr('stroke', (d) => {
@@ -165,12 +165,12 @@ const fishbone = () => {
     // really just an example, as they aren't very flexible
     const defs = $.selectAll('defs').data([1]);
 
-    defs.enter().append('defs');
-
-    // create the arrows
-    defs.selectAll('marker#' + arrowId())
+    defs.enter()
+      .append('defs')
+      .selectAll('marker#' + arrowId())
       .data([1])
       .enter().append('marker')
+
       .attr('id', arrowId())
       .attr('viewBox', '0 -5 10 10')
       .attr('refX', 10)
@@ -274,20 +274,26 @@ const fishbone = () => {
     return currentNode.linkCount;
   }
 
+  function fixna(x) {
+    if (isFinite(x)) {
+      return x;
+    }
+    return 0;
+  }
 
   function updateLink(linkNode) {
     linkNode
       .attr('x1', (d) => {
-        return d.source.x;
+        return fixna(d.source.x);
       })
       .attr('y1', (d) => {
-        return d.source.y;
+        return fixna(d.source.y);
       })
       .attr('x2', (d) => {
-        return d.target.x;
+        return fixna(d.target.x);
       })
       .attr('y2', (d) => {
-        return d.target.y;
+        return fixna(d.target.y);
       });
   }
 

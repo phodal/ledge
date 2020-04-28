@@ -48,7 +48,6 @@ export class LedgeFishBoneComponent implements OnInit, AfterViewInit {
       .call(fb);
 
     fb.force().restart();
-    fb.force().restart();
   }
 
 }
