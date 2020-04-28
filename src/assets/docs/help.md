@@ -4,10 +4,17 @@
  - Path to Production
    - Feat
    - Design
+     - Pair Review
    - Dev
+     - PrePush
+     - Code Review
+   - Test
+     - Desk Check
    - Build
    - Deploy
    - Operatino
+
+config: {"height": 600, "width": 800}
 ```
 
 ## 读书雷达

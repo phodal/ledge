@@ -26,12 +26,24 @@ export class LedgeFishBoneComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     const data = this.data[0];
-    console.log(data);
     const fb = fishbone();
+    let width = 1200;
+    let height = 800;
+
+    if (this.config) {
+      if (this.config.width) {
+        width = this.config.width;
+      }
+      if (this.config.height) {
+        height = this.config.height;
+      }
+    }
+
+    fb.setWidthHeight(width, height);
     d3.select(this.chart.nativeElement)
       .append('svg')
-      .attr('width', 1200)
-      .attr('height', 800)
+      .attr('width', width)
+      .attr('height', height)
       .datum(data)
       .call(fb.defaultArrow)
       .call(fb);

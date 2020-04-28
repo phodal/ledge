@@ -31,8 +31,8 @@ const fishbone = () => {
   let dataLinks = [];
 
   const my: any = undefined;
-  const width = 1200;
-  const height = 800;
+  let width = 1200;
+  let height = 800;
 
   // d3 selections and related things used in tick function
   let node;
@@ -405,6 +405,12 @@ const fishbone = () => {
     perNodeTick = _;
     return my;
   };
+
+  fb1.setWidthHeight = (w, h) => {
+    width = w;
+    height = h;
+    forceLayout.force('center', d3.forceCenter(width / 2, height / 2))
+  }
 
   return fb1;
 };
