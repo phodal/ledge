@@ -66,6 +66,10 @@ const fishbone = () => {
   //   .on('tick', _tick);
 
   const forceLayout = d3.forceSimulation()
+    // .force("charge", d3.forceManyBody().strength(10))
+    .force("x", d3.forceX(width / 2).strength(1))
+    .force("y", d3.forceY(height / 2).strength(1))
+    .force("center", d3.forceCenter(width / 2, height / 2))
     .force('link', d3.forceLink().distance(_linkDistance))
     .on('tick', ticked);
 
@@ -376,19 +380,19 @@ const fishbone = () => {
   fb1.margin = (_) => {
     // how big is the whitespace around the diagram?
     // if (!arguments.length) {
-    return marginSize;
+    // return marginSize;
     // }
-    // marginSize = _;
-    // return my;
+    marginSize = _;
+    return my;
   };
 
   fb1.children = (_) => {
     // how  will children be sought from each node?
     // if (!arguments.length) {
-    return children;
+    // return children;
     // }
-    // children = _;
-    // return my;
+    children = _;
+    return my;
   };
 
   fb1.label = (_) => {
@@ -396,18 +400,17 @@ const fishbone = () => {
     // if (!arguments.length) {
     //   return label;
     // }
-    return label;
-    // label = _;
-    // return my;
+    label = _;
+    return my;
   };
 
   fb1._perNodeTick = (_) => {
     // what custom rules should be done per node?
     // if (!arguments.length) {
-    return perNodeTick;
+    // return perNodeTick;
     // }
-    // perNodeTick = _;
-    // return my;
+    perNodeTick = _;
+    return my;
   };
 
   return fb1;
