@@ -14,6 +14,7 @@ import * as xpDevOps from 'raw-loader!../../../assets/docs/checklists/xp.md';
 import * as codeReview from 'raw-loader!../../../assets/docs/checklists/codereview.md';
 import * as fe from 'raw-loader!../../../assets/docs/checklists/front-end.md';
 import * as devSecOps from 'raw-loader!../../../assets/docs/checklists/devsecops.md';
+import * as apiSecurity from 'raw-loader!../../../assets/docs/checklists/api-security.md';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
@@ -35,6 +36,7 @@ export class ChecklistsComponent implements OnInit {
   codeReviewContent = codeReview.default;
   feContent = fe.default;
   devSecOpsContent = devSecOps.default;
+  apiSecurityContent = apiSecurity.default;
 
   selectedTabIndex = 0;
 
@@ -46,6 +48,7 @@ export class ChecklistsComponent implements OnInit {
     { name: 'DevSecOps 检查清单', route: 'devsecops' },
     { name: '极限编程检查清单', route: 'xp-practise' },
     { name: '代码回顾检查清单', route: 'code-review' },
+    { name: 'API 安全性检查清单', route: 'api-security' },
     { name: '前端项目检查清单', route: 'frontend' },
   ];
 
