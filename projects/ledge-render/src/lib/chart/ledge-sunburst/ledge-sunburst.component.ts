@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import * as echarts from 'echarts';
-import { LedgeList, LedgeListItem } from '../../components/model/ledge-chart.model';
+import { LedgeListItem } from '../../components/model/ledge-chart.model';
 
 
 @Component({

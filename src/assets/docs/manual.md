@@ -882,7 +882,7 @@ Docker 镜像：[StatsD + Graphite + Grafana 4 + Kamon Dashboards](https://githu
 
 #### Python
 
-[pystatsd](https://github.com/jsocol/pystatsd))
+[pystatsd](https://github.com/jsocol/pystatsd)
 
 ## 日志收集和存储
 
@@ -1097,11 +1097,9 @@ BDD 在这一种上相当的迷人——能让非技术人员编写测试。而�
 对应的，开发人员需要编写实现：
 
 ```javascript
-...
 Given('当我在网站的首页', function() {
   return this.driver.get('http://0.0.0.0:7272/');
 });
-..
 ```
 
 从上述的代码中，一眼就可以看出复杂的地方，实现一个领域特定（业务特定）的 DSL 语言。

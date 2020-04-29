@@ -1,8 +1,6 @@
-# 工具
+# 架构工具集
 
-## 架构
-
-### 权衡滑块
+## 权衡滑块
 
 EN：Trade-off Sliders，又名二选一（Choose One Thing）
 
@@ -29,7 +27,7 @@ EN：Trade-off Sliders，又名二选一（Choose One Thing）
 | 可用性 vs 安全性           | 安全性，这是最重要的质量属性                               |
 | 可用性 vs 成本             | 可用性，为了实现高可用性，对方愿意出资购买冗余设备         |
 
-#### 权衡滑块工具
+### 权衡滑块工具
 
 ```toolset
  - 用户体验
@@ -45,7 +43,7 @@ config: {"type": "slider"}
 
 ![权衡滑块示例](/assets/docs/images/choose-one-thing.png '权衡滑块示例')
 
-### 移情图
+## 移情图
 
 源自：《架构师修炼之道》
 
@@ -77,13 +75,13 @@ config: {"type": "slider"}
      - 这喜欢学习新技术
 ```
 
-### 干系人地图
+## 干系人地图
 
 EN: Stakeholder Mapping
 
 > 为梳理在项目进程中各个事项的参与方，推进快速组织和避免会议扩大，有必要形成项目的干系人地图。
 
-### 质量属性网络
+## 质量属性网络
 
 En： Quality Attribute Web
 
@@ -111,7 +109,7 @@ En： Quality Attribute Web
 
 ![质量属性网络](/assets/docs/images/quality-attribute-web-diagram.png '质量属性网络示例')
 
-### 因果图
+## 因果图
 
 > 鱼骨图又名特性因素图是由日本管理大师石川馨先生所发展出来的，故又名石川图。鱼骨图是一种发现问题“根本原因”的方法，它也可以称之为“因果图”。鱼骨图原本用于质量管理。
 
@@ -145,13 +143,40 @@ En： Quality Attribute Web
 
 ![因果图示例](/assets/docs/images/typical-Ishikawa-diagram-Invensis.jpg '因果图示例')
 
-### 工作路径
+```fishbone
+ - 文件集不完整
+   - 人
+     - 操作员
+       - 手工停止批处理
+   - 机器
+     - 应用程序
+       - 新版本发布
+     - 网络
+       - 网络错误
+     - 数据库
+       - 数据库损坏
+     - 调度程序
+       - 调度错误
+   - 材料
+   - 方法
+     - 变更管理
+       - 数据库模型的变更申请没有沟通
+     - 服务级别管理
+       - 没有交付协议
+   - 度量
+     - 监控
+       - 有限的事态集
+
+config: {"height": 600, "width": 1200}
+```
+
+## 工作路径
 
 En: Ways of Working
 
 [武汉敏捷 PM Open Day 学习小记](https://www.jianshu.com/p/afac945a1d27)
 
-### Path to Production
+## Path to Production
 
 Path to Production，来源于精益，旨在通过可视化的方式来展示项目的上线流程，并优化过程中的瓶颈问题。它类似于我们使用 CI（持续集成）时的 Pipeline。传统的 Pipeline 的 gate 可以通过代码定义一些标准，由测试不能挂，测试覆盖率不能低于多少，打包不能失败等等。而这些 Pipeline 则是分别由开发人员、测试人员、运维人员、项目负责人等等来负责把控的。
 
@@ -175,7 +200,7 @@ Path to Production，来源于精益，旨在通过可视化的方式来展示�
 | 工具 | Git & GitHub | Jenkins      | Jenkins         | Jenkins       | -        | Jenkins       | -        | 邮件     | -       |
 | 制品 | 代码         | 持续集成结果 | -               | 测试报告      | 测试报告 | -             | 邮件结果 | -        |         |
 
-### 心流模型
+## 心流模型
 
 | 挑战 / 能力 | low     | high    |
 | ----------- | ------- | ------- |
@@ -191,7 +216,7 @@ Path to Production，来源于精益，旨在通过可视化的方式来展示�
 config: {"type": "line-chart"}
 ```
 
-### 架构决策记录
+## 架构决策记录
 
 来源：《[架构决策记录](https://www.phodal.com/blog/documenting-architecture-decisions/)》
 
@@ -211,19 +236,19 @@ config: {"type": "line-chart"}
 
 整个文件应该是一两页长。我们将把每个 ADR（架构决策记录）写成与未来开发者的对话。这需要良好的写作风格，以及完整的句子组织成段落。列表（原文：子弹）只能用于视觉风格，不能作为写作句子的借口。（列表杀人，甚至 PowerPoint 的列表。）
 
-### 新项目检查清单
+## 新项目检查清单
 
 ![新项目检查清单](https://raw.githubusercontent.com/phodal/techlead/master/assets/new-project-checklist.jpg '新项目检查清单')
 
 见：[https://phodal.github.io/new-project-checklist/](https://phodal.github.io/new-project-checklist/)
 
-### Tech Lead 工具集
+## Tech Lead 工具集
 
 见：[https://github.com/phodal/techlead](https://github.com/phodal/techlead)
 
-## DevOps
+# DevOps 工具集
 
-### 设计 DevOps
+## 设计 DevOps
 
 ```dev-process
 - Collaborate
@@ -458,18 +483,20 @@ config: {"type": "line-chart"}
 
 见首页
 
-### 测试
+# DevOps 工具推荐
 
-#### 分布式状态测试
+## 测试
+
+### 分布式状态测试
 
 - [Chaos Monkey](https://github.com/Netflix/chaosmonkey) Chaos Monkey randomly terminates virtual machine instances and containers that run inside of your production environment. Exposing engineers to failures more frequently incentivizes them to build resilient services.
 - [Jepsen](https://github.com/jepsen-io/jepsen) Jepsen is a Clojure library. A test is a Clojure program which uses the Jepsen library to set up a distributed system, run a bunch of operations against that system, and verify that the history of those operations makes sense.
 
-### 安全
+## 安全
 
 - [云原生安全模型 BeyondProd](https://cloud.google.com/security/beyondprod/)
 
-### 持续交付
+## 持续交付
 
 - [GoCD](https://www.gocd.org/) GoCD 是一个开源工具，在软件开发中使用它来帮助团队和组织自动执行软件的持续交付。它支持从代码签入到部署的整个构建-测试-发布过程的自动化。它有助于在较短的周期内继续生产有价值的软件，并确保可以随时可靠地发布该软件。
 - [Spinnaker](https://www.spinnaker.io/) 是一个免费的开源持续交付软件平台，最初由 Netflix 开发，并很快被 Google 接受和扩展。它旨在与 Kubernetes，Google Cloud Platform，AWS，Microsoft Azure 和 Oracle Cloud 配合使用，并支持社区定期添加的更多平台。

@@ -363,12 +363,21 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
           config: sunburstData.config,
         });
         break;
+      case 'fishbone':
+        const fishboneData = LedgeMarkdownConverter.toJson(codeBlock.text);
+        this.markdownData.push({
+          type: 'fishbone',
+          data: fishboneData.lists[0].children,
+          config: fishboneData.config,
+        });
+        break;
       case 'mermaid':
         const mermaidData = codeBlock.text;
         this.markdownData.push({
           type: 'mermaid',
           data: mermaidData,
         });
+        break;
         break;
       default:
         this.markdownData.push(token);
