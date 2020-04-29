@@ -442,9 +442,11 @@ config: {"type": "line-chart"}
     - Airbrake.io
 ```
 
-### DevOps 元素周期表
+## DevOps 元素周期表
 
-### DevOps 工具功能
+<a href="/" target="_blank">DevOps 元素周期表</a>
+
+## DevOps 工具功能
 
 ```process-step
  - 规划
