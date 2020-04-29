@@ -1029,15 +1029,13 @@ Kafka：[Kafka Quickstart](https://kafka.apache.org/quickstart)
 
 ## DevOps 平台
 
-### 工具标准化
-
-### 流程标准化
-
-#### 提交信息门禁
+见：<a href="/practise/devops-platform" target="_blank">DevOps 平台</a>
 
 ## DevOps 知识平台
 
 ### Google DevOps 文档
+
+> DevOps 是一项组织和文化运动，旨在加快软件交付速度，提高服务可靠性，并在软件利益相关方之间建立共享所有权。了解如何提高软件交付的速度、稳定性、可用性和安全性。
 
 Google 示例：[Google DevOps](https://cloud.google.com/devops?hl=zh-cn)
 
@@ -1097,7 +1095,7 @@ BDD 在这一种上相当的迷人——能让非技术人员编写测试。而�
 对应的，开发人员需要编写实现：
 
 ```javascript
-Given('当我在网站的首页', function() {
+Given('当我在网站的首页', function () {
   return this.driver.get('http://0.0.0.0:7272/');
 });
 ```
