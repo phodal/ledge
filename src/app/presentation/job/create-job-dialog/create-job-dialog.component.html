@@ -1,12 +1,25 @@
-<form class="form">
+<form class="form" [formGroup]="jobForm">
+  <span class="close" (click)="close()">X</span>
   <p>
     <mat-form-field class="half-width">
-      <input matInput placeholder="岗位名称" maxlength="40" value="" />
+      <input
+        matInput
+        placeholder="岗位名称"
+        maxlength="40"
+        formControlName="jobTitle"
+        required
+      />
     </mat-form-field>
   </p>
   <p>
     <mat-form-field class="full-width">
-      <input matInput placeholder="公司名称" maxlength="40" value="" />
+      <input
+        matInput
+        placeholder="公司名称"
+        maxlength="40"
+        formControlName="companyName"
+        required
+      />
     </mat-form-field>
   </p>
   <p>
@@ -15,25 +28,69 @@
         matInput
         placeholder="公司一句话介绍"
         maxlength="150"
+        formControlName="companyDescription"
+        required
       ></textarea>
     </mat-form-field>
   </p>
   <p>
     <mat-form-field class="full-width">
-      <textarea matInput placeholder="工作简介" style="height: 60px;" maxlength="350"></textarea>
+      <textarea
+        matInput
+        placeholder="工作简介"
+        style="height: 60px;"
+        maxlength="350"
+        formControlName="jobDescription"
+        required
+      ></textarea>
     </mat-form-field>
   </p>
   <p>
     <mat-form-field class="half-width">
-      <input matInput placeholder="年限要求" maxlength="20" />
+      <input
+        matInput
+        formControlName="yearRequire"
+        required
+        placeholder="年限要求"
+        maxlength="20"
+      />
     </mat-form-field>
-    <mat-form-field class="half-width">
-      <input matInput placeholder="工作地址" maxlength="20" />
+    <mat-form-field class="half-width margin-left">
+      <input
+        matInput
+        formControlName="workAddress"
+        required
+        placeholder="工作地址"
+        maxlength="20"
+      />
     </mat-form-field>
   </p>
   <p>
-    <mat-form-field>
-      <input matInput placeholder="联系方式" />
+    <mat-form-field class="half-width">
+      <input
+        matInput
+        formControlName="salary"
+        placeholder="待遇水平"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field class="half-width margin-left">
+      <input
+        matInput
+        formControlName="contact"
+        placeholder="联系方式"
+        required
+        clear
+      />
     </mat-form-field>
   </p>
+  <div class="operate">
+    <button mat-raised-button color="primary" (click)="onSubmit()">
+      确认
+    </button>
+    <button mat-raised-button (click)="onReset()" style="margin-left: 15px;">
+      清空
+    </button>
+  </div>
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
 </form>
