@@ -134,19 +134,45 @@ HTML5 是最新的 HTML 版本
 
 ### DOM 操作
 
+[DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
+
 ### Fetch/AJAX
+
+浏览器的两种原生网络请求方式：
+
+[AJAX](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX)
+
+[Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 
 ### ES6+
 
+JavaScript 的标准称之为 [ECMAScript](https://en.wikipedia.org/wiki/ECMAScript) 简称 ES，它有多个版本，普遍意义上讲已 2015 年以后发布的 ES6 （ES2015）为「现代的 JavaScript」。
+
 ### TypeScript
+
+[TypeScript](https://www.typescriptlang.org/) 是 JavaScript 类型的超集，他可以编译成 JavaScript。
 
 ## Web Component
 
+[Web Component](https://developer.mozilla.org/en-US/docs/Web/Web_Components)
+
+> Web Components 是一套不同的技术，允许您创建可重用的定制元素（它们的功能封装在您的代码之外）并且在您的 web 应用中使用它们。
+
 ### HTML Template
+
+[HTML Template](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/template)
+
+> HTML 内容模板元素是一种用于保存客户端内容机制，该内容在加载页面时不会呈现，但随后可以(原文为 may be)在运行时使用 JavaScript 实例化。
 
 ### Custom Element
 
+[Custom Element](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/Using_custom_elements)
+
+> Web Components 标准非常重要的一个特性是，它使开发者能够将 HTML 页面的功能封装为 custom elements（自定义标签），而往常，开发者不得不写一大堆冗长、深层嵌套的标签来实现同样的页面功能。
+
 ### Shadow DOM
+
+> Web components 的一个重要属性是封装——可以将标记结构、样式和行为隐藏起来，并与页面上的其他代码相隔离，保证不同的部分不会混在一起，可使代码更加干净、整洁。其中，Shadow DOM 接口是关键所在，它可以将一个隐藏的、独立的 DOM 附加到一个元素上。
 
 ## 构建
 
