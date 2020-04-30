@@ -62,9 +62,21 @@ HTML5 是最新的 HTML 版本
 
 #### Float
 
-#### Positioning
+[Float](https://css-tricks.com/all-about-floats/)，是最常用的 CSS 布局方式。
+
+#### Position
+
+[Position](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
+
+1. static
+2. relative
+3. absolute
+4. fixed
+5. sticky
 
 #### Box Model
+
+[Box Model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
 
 #### CSS Flex
 
@@ -76,7 +88,11 @@ HTML5 是最新的 HTML 版本
 
 ### SASS/LESS
 
+[SASS](https://sass-lang.com/) 和 [LESS](http://lesscss.org/) 是两种 [CSS 预处理器](https://developer.mozilla.org/en-US/docs/Glossary/CSS_preprocessor)
+
 ### 响应式设计
+
+> 自适应网页设计、回应式网页设计、对应式网页设计。 是一种网页设计的技术做法，该设计可使网站在不同的设备（从桌面电脑显示器到移动电话或其他移动产品设备）上浏览时对应不同分辨率皆有适合的呈现，减少用户进行缩放、平移和滚动等操作行为
 
 ### BEM
 
@@ -86,7 +102,9 @@ HTML5 是最新的 HTML 版本
 
 #### Bootstrap
 
-#### Material UI
+[Bootstrap](https://getbootstrap.com/)
+
+> Bootstrap 是一个用于 HTML、CSS 和 JS 开发的开源工具包。利用 Bootstrap 提供的 Sass 变量和混合（mixins）、响应式栅格系统、可扩展的预制组件以及强大的 jQuery 插件，能够让你快速地开发出产品原型或构建整个 app。
 
 #### Tailwind CSS
 
@@ -100,9 +118,17 @@ HTML5 是最新的 HTML 版本
 
 [CSS Modules](https://github.com/css-modules/css-modules)，是指同一个 CSS 文件中的所有 CSS class 等都默认本地作用域。由于不是 CSS 原生支持，所以一般需要配合 Webpack 的 CSS-loader 或者 PostCSS 使用。
 
-### Styled Components
+### CSS in JS
 
-### Emotion
+[CSS in JS](https://en.wikipedia.org/wiki/CSS-in-JS)
+
+> CSS-in-JS is a styling technique where JavaScript is used to style components. When this JavaScript is parsed, CSS is generated (usually as a style element) and attached into the DOM. It allows you to abstract CSS to the component level itself, using JavaScript to describe styles in a declarative and maintainable way.
+
+1. [Styled Components](https://styled-components.com/) 是一种在 React Component 应用 CSS 样式的库。
+
+2. [Emotion](https://emotion.sh/)，也是一种使用 JavaScript 来写 CSS 的库。
+
+由于 React 官方并没有一种推荐的方式，导致社区中有了众多的方法。
 
 ## JavaScript
 
