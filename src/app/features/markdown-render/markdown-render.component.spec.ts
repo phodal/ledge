@@ -4,7 +4,7 @@ import { MarkdownRenderComponent } from './markdown-render.component';
 import { SharedModule } from '../../shared/shared.module';
 import { RouterTestingModule } from '@angular/router/testing';
 
-fdescribe('MarkdownRenderComponent', () => {
+describe('MarkdownRenderComponent', () => {
   let component: MarkdownRenderComponent;
   let fixture: ComponentFixture<MarkdownRenderComponent>;
 

@@ -28,15 +28,16 @@ export class MarkdownRatingItemComponent implements OnInit {
   @Input() isParent: boolean;
   @Output() itemChange = new EventEmitter();
 
-  private disabled = false;
+  disabled = false;
 
-  onChange(param1) {}
+  onChange(_) {}
 
-  onTouched(param1) {}
+  onTouched(_) {}
 
   ngOnInit() {}
 
   registerOnChange(fn: any): void {
+    this.onChange = fn;
     this.itemChange.emit = fn;
   }
 

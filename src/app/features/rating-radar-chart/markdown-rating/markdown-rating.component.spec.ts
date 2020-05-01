@@ -22,6 +22,27 @@ describe('MarkdownRatingComponent', () => {
   });
 
   it('should create', () => {
+    component.onChange('aa');
+    component.onTouched({});
     expect(component).toBeTruthy();
+  });
+
+  it('should reg touch', () => {
+    const mockTouch = jasmine.createSpy('touch');
+    component.registerOnTouched(mockTouch);
+    component.onTouched({});
+    expect(mockTouch).toHaveBeenCalled();
+  });
+
+  it('should reg change', () => {
+    const mockChange = jasmine.createSpy('change');
+    component.registerOnChange(mockChange);
+    component.onChange('a');
+    expect(mockChange).toHaveBeenCalled();
+  });
+
+  it('should change state', () => {
+    component.setDisabledState(true);
+    expect(component.disabled).toEqual(true);
   });
 });
