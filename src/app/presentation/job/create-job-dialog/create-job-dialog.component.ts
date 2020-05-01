@@ -12,6 +12,7 @@ import { formToIssue, GITHUB_TOKEN, JobData } from './JobData';
 export class CreateJobDialogComponent implements OnInit {
   jobForm: FormGroup;
   errorMessage: string;
+
   constructor(
     public dialogRef: MatDialogRef<CreateJobDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: JobData,
@@ -57,9 +58,11 @@ export class CreateJobDialogComponent implements OnInit {
   commentOnGithubIssue(formValue) {
     const body = formToIssue(formValue);
 
+    const postInterface =
+      'https://api.github.com/repos/phodal/ledge/issues/140/comments';
     this.http
       .post(
-        'https://api.github.com/repos/phodal/ledge/issues/140/comments',
+        postInterface,
         { body },
         {
           headers: {
