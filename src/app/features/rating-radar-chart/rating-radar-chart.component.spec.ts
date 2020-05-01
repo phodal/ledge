@@ -10,7 +10,7 @@ describe('MarkdownRadarChartComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [SharedModule, SharedModule, MarkdownModule],
+      imports: [SharedModule, MarkdownModule],
       declarations: [RatingRadarChartComponent],
     }).compileComponents();
   }));
