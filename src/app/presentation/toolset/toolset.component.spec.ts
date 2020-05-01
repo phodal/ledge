@@ -6,7 +6,7 @@ import { CustomMaterialModule } from '../../shared/custom-material.module';
 import { LedgeRenderModule } from '@ledge-framework/render';
 import { RouterTestingModule } from '@angular/router/testing';
 
-describe('AwesomeToolComponent', () => {
+describe('ToolSetComponent', () => {
   let component: ToolsetComponent;
   let fixture: ComponentFixture<ToolsetComponent>;
 
