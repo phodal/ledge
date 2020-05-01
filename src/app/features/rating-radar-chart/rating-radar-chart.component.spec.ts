@@ -55,16 +55,23 @@ describe('MarkdownRadarChartComponent', () => {
     component.updateModel({});
     expect(component.onChange).toHaveBeenCalled();
   });
-  //
-  // it('should render when write value', () => {
-  //   const chartData = [{
-  //     text: 'hello',
-  //     children: [{
-  //       text: '',
-  //       children: []
-  //     }]
-  //   }];
-  //   component.writeValue(chartData);
-  //   expect(component.data).toEqual([]);
-  // });
+
+  it('should render when write value', () => {
+    const originText = '需求管理: 2';
+    const chartData = [
+      {
+        item: {
+          originText,
+          id: 'TDUJCTBda',
+          completed: false,
+          text: originText,
+          chartText: '需求管理',
+          chartValue: 2,
+        },
+      },
+    ];
+    component.writeValue(chartData);
+    expect(component.data.length).toEqual(1);
+    expect(component.data[0].name).toEqual(originText);
+  });
 });
