@@ -182,7 +182,7 @@ export class MarkdownRenderComponent
 
   private gotoHeading() {
     this.route.fragment.subscribe((fragment: string) => {
-      if (!!fragment) {
+      if (!!fragment && typeof fragment === 'string') {
         try {
           const element = this.myElement.nativeElement.querySelector(
             '#' + fragment
