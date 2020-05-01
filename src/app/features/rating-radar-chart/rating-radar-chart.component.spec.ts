@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { RatingRadarChartComponent } from './rating-radar-chart.component';
-import { SharedModule } from '../../shared/shared.module';
 import { MarkdownModule } from 'ngx-markdown';
+
+import { SharedModule } from '../../shared/shared.module';
+import { RatingRadarChartComponent } from './rating-radar-chart.component';
 
 describe('MarkdownRadarChartComponent', () => {
   let component: RatingRadarChartComponent;
@@ -24,4 +24,47 @@ describe('MarkdownRadarChartComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should change', () => {
+    component.onChange('aa');
+    component.onTouched();
+    expect(component.value).toEqual('aa');
+  });
+
+  it('should reg touch', () => {
+    const mockTouch = jasmine.createSpy('touch');
+    component.registerOnTouched(mockTouch);
+    component.onTouched();
+    expect(mockTouch).toHaveBeenCalled();
+  });
+
+  it('should reg change', () => {
+    const mockChange = jasmine.createSpy('change');
+    component.registerOnChange(mockChange);
+    component.onChange('a');
+    expect(mockChange).toHaveBeenCalled();
+  });
+
+  it('should change state', () => {
+    component.setDisabledState(true);
+    expect(component.disabled).toEqual(true);
+  });
+
+  it('should call change when update model', () => {
+    spyOn(component, 'onChange');
+    component.updateModel({});
+    expect(component.onChange).toHaveBeenCalled();
+  });
+  //
+  // it('should render when write value', () => {
+  //   const chartData = [{
+  //     text: 'hello',
+  //     children: [{
+  //       text: '',
+  //       children: []
+  //     }]
+  //   }];
+  //   component.writeValue(chartData);
+  //   expect(component.data).toEqual([]);
+  // });
 });
