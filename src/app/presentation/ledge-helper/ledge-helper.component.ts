@@ -2,8 +2,9 @@ import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { EMPTY, Subject, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
-import * as mdData from 'raw-loader!../../../assets/docs/help.md';
 import { SplitAreaDirective, SplitComponent } from 'angular-split';
+
+import * as mdData from 'raw-loader!../../../assets/docs/help.md';
 
 import 'brace/index';
 import 'brace/mode/markdown';
