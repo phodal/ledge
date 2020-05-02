@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { formToIssue, GITHUB_TOKEN, JobData } from './JobData';
+import { formToIssue, GITHUB_TOKEN, JobDataModel } from './job-data.model';
 
 @Component({
   selector: 'create-job-dialog',
@@ -15,7 +15,7 @@ export class CreateJobDialogComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<CreateJobDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: JobData,
+    @Inject(MAT_DIALOG_DATA) public data: JobDataModel,
     private fb: FormBuilder,
     private http: HttpClient
   ) {

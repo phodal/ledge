@@ -1,6 +1,6 @@
 export const GITHUB_TOKEN = 'github token';
 
-export interface JobData {
+export interface JobDataModel {
   jobTitle: string; // 岗位名称
   companyName: string;
   companyDescription: string;
@@ -14,7 +14,7 @@ export interface JobData {
 }
 
 export function issueToForm(info) {
-  const obj: JobData = {
+  const obj: JobDataModel = {
     jobTitle: '',
     companyName: '',
     companyDescription: '',
@@ -39,7 +39,7 @@ export function issueToForm(info) {
   return obj;
 }
 
-export function formToIssue(data: JobData) {
+export function formToIssue(data: JobDataModel) {
   const str =
     '岗位名称：' +
     data.jobTitle +

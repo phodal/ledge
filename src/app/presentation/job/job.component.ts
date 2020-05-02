@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Title } from '@angular/platform-browser';
 import { format } from 'date-fns';
 import { CreateJobDialogComponent } from './create-job-dialog/create-job-dialog.component';
-import { issueToForm, JobData } from './create-job-dialog/JobData';
+import { issueToForm, JobDataModel } from './create-job-dialog/job-data.model';
 
 @Component({
   selector: 'app-job',
@@ -13,7 +13,7 @@ import { issueToForm, JobData } from './create-job-dialog/JobData';
 })
 export class JobComponent implements OnInit {
   loading = false;
-  jobList: JobData[] = [];
+  jobList: JobDataModel[] = [];
 
   constructor(
     public dialog: MatDialog,
