@@ -10,7 +10,8 @@
 4. [探索可行方案](/manual#探索可行方案)。即 MVP 尝试
 5. [MVP](/manual#mvp)。一次快速的 DevOps 过程和结果的 showcase。
 6. [精细的 DevOps 实施](/manual#实施落地)
-7. [规模化 DevOps 落地](/manual#规模化)
+7. [回顾优化](/manual#回顾优化)
+8. [规模化 DevOps 落地](/manual#规模化)
 
 对应的在手册中，还包含了
 
@@ -999,7 +1000,9 @@ Kafka：[Kafka Quickstart](https://kafka.apache.org/quickstart)
 
 ## 输出
 
-# 规模化
+# 回顾总结
+
+# 规模化 DevOps 落地
 
 ## DevOps 能力中心
 
