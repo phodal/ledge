@@ -25,7 +25,7 @@ export class JobComponent implements OnInit {
     this.title.setTitle(
       `DevOps 工作 Ledge DevOps 招聘信息中心 - Ledge DevOps 知识平台`
     );
-    this.qryJobComments();
+    this.queryJobComments();
   }
 
   openDialog(): void {
@@ -35,12 +35,12 @@ export class JobComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        this.qryJobComments();
+        this.queryJobComments();
       }
     });
   }
 
-  qryJobComments() {
+  queryJobComments() {
     this.loading = true;
     this.http
       .get('https://api.github.com/repos/phodal/ledge/issues/140/comments')
@@ -60,9 +60,9 @@ export class JobComponent implements OnInit {
             jobInfo.date = format(new Date(job.updated_at), 'yyyy/MM/dd');
             jobList.push(jobInfo);
           }
-          this.loading = false;
           this.jobList = jobList;
         },
+        () => {},
         () => {
           this.loading = false;
         }
