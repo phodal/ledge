@@ -1,7 +1,7 @@
 ```checklist
 - API 安全性检查清单
   - 身份认证
-   - 不要使用 Basic Auth ，请使用标准的认证协议（如 JWT，OAuth）。
+   - 不要使用 `Basic Auth` 使用标准的认证协议 (如 JWT, OAuth)。
    - 不要重新实现 Authentication、token generating 和 password storing，请使用标准库。
    - 限制密码错误尝试次数，并且增加账号冻结功能。
    - 加密所有的敏感数据。

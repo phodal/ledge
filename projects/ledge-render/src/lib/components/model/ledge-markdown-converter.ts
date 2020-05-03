@@ -65,7 +65,7 @@ const LedgeMarkdownConverter = {
     const lists = [];
     let result = '{';
 
-    const tokens: marked.Token[] = marked.lexer(code);
+    const tokens: marked.Token[] | any = marked.lexer(code);
     for (const token of tokens) {
       switch (token.type) {
         case 'list_start': {
@@ -80,7 +80,8 @@ const LedgeMarkdownConverter = {
           break;
         }
         case 'text': {
-          result += `"name": ${JSON.stringify(token.text)},`;
+          const text = marked.inlineLexer(token.text, tokens.links);
+          result += `"name": ${JSON.stringify(text)},`;
           break;
         }
         case 'list_item_end': {
