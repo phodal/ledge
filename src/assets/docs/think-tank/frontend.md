@@ -178,15 +178,43 @@ JavaScript 的标准称之为 [ECMAScript](https://en.wikipedia.org/wiki/ECMAScr
 
 ### Webpack
 
+[Webpack](https://webpack.js.org/)
+
+> 本质上，webpack 是一个现代 JavaScript 应用程序的静态模块打包工具。当 webpack 处理应用程序时，它会在内部构建一个 依赖图(dependency graph)，此依赖图会映射项目所需的每个模块，并生成一个或多个 bundle。
+
 ### Rollup
+
+[Rollup](https://rollupjs.org/)
+
+> It uses the new standardized format for code modules included in the ES6 revision of JavaScript, instead of previous idiosyncratic solutions such as CommonJS and AMD.
+
+简单来说：Webpack 用来打包应用，Rollup 用来打包库。
 
 ### Parcel
 
+[Parcel](https://parceljs.org/)
+
+> 极速零配置 Web 应用打包工具
+
+### Bazel
+
+[Bazel](https://bazel.build/)
+
+Bazel 是 Google 基于内部的打包工具开源的多语言打包工具。
+
+Angular 官方有使用 Bazel 打包的[教程](https://angular.io/guide/bazel)。
+
 ## 包管理
 
-### NPM
+### npm
+
+[npm](https://www.npmjs.com/) 是 Node.js 默认的包管理工具。
 
 ### yarn
+
+[yarn](https://yarnpkg.com/) 是 Facebook 推出的 JavaScript 包管理工具。
+
+值得注意的是，[yarn 2](https://dev.to/arcanis/introducing-yarn-2-4eh1)，带有 [PNP (plug ’n’ play)](https://yarnpkg.com/features/pnp/) 支持，但是不支持 React Native。
 
 ## 测试
 
