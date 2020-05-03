@@ -378,7 +378,6 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
           data: mermaidData,
         });
         break;
-        break;
       default:
         this.markdownData.push(token);
         break;
