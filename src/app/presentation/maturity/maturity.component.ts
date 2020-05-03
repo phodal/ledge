@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { MatTabChangeEvent } from '@angular/material/tabs/tab-group';
+import * as owasp from 'raw-loader!../../../assets/docs/maturities/owasp.md';
 
 @Component({
   selector: 'app-maturity',
@@ -7,6 +9,8 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./maturity.component.scss'],
 })
 export class MaturityComponent {
+  selectedTabIndex = 0;
+
   list = [
     {
       name: '第一部分：敏捷开发管理',
@@ -59,11 +63,26 @@ export class MaturityComponent {
     },
   ];
 
+  item: any = { content: '' };
+  contentMap = [
+    { name: 'DevOps 成熟度模型', key: '' },
+    {
+      name: 'OWASP 安全成熟度模型',
+      key: 'new-project',
+      content: owasp.default,
+    },
+  ];
+
   maturity = {
     table: '',
   };
 
   constructor(title: Title) {
     title.setTitle('DevOps 成熟度评估 — Ledge DevOps 知识平台 ');
+  }
+
+  onTabChanged($event: MatTabChangeEvent) {
+    this.selectedTabIndex = $event.index;
+    this.item = this.contentMap[this.selectedTabIndex];
   }
 }
