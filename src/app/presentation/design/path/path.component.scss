@@ -1,4 +1,6 @@
 .app-path {
+  margin-top: 66px;
+
   #pipe {
     position: relative;
     float: right;
@@ -9,7 +11,7 @@
   }
 
   .header {
-    margin-top: 1em;
+    top: 1em;
 
     h3 {
       text-align: center;
@@ -18,20 +20,24 @@
 
   .path-container {
     padding: 0;
-    margin-right: 6px;
-    margin-top: 12px;
-    background-color: rgba(255, 255, 255, 0.2);
     max-width: 100%;
+    max-height: 180px;
     width: 100%;
     color: #fff;
     line-height: 1.3em;
     border: 1px dashed #fff;
     border-radius: 6px;
-    font-weight: normal;
+    display: flex;
 
-    div {
+    textarea {
+      resize: none;
       height: 150px;
       max-height: 150px;
+      display: block;
+      background-color: rgba(255, 255, 255, 0.3);
+      color: #fff;
+      border: none;
+      margin: 5px;
       width: 10%;
       max-width: 10%;
     }
@@ -41,35 +47,8 @@
     background-color: rgba(0, 0, 0, 0.2);
   }
 
-  /*
-   * note that styling gu-mirror directly is a bad practice because it's too generic.
-   * you're better off giving the draggable elements a unique class and styling that directly!
-   */
-  .path-container > div,
-  .gu-mirror {
-    margin: 10px;
-    padding: 5px;
-    background-color: rgba(0, 0, 0, 0.2);
-    transition: opacity 0.4s ease-in-out;
-  }
-
   .path-container > div.empty {
     background-color: rgba(0, 0, 0, 0.05);
-  }
-
-  .path-container > div {
-    display: inline-block;
-    overflow-y: auto;
-    cursor: move;
-    cursor: grab;
-    cursor: -moz-grab;
-    cursor: -webkit-grab;
-  }
-
-  .gu-mirror {
-    cursor: grabbing;
-    cursor: -moz-grabbing;
-    cursor: -webkit-grabbing;
   }
 
   #header {

@@ -5,17 +5,19 @@
 我们依据我们的实施经验将 DevOps 实施的过程分为了这么几个步骤：
 
 1. [建立愿景与方向](/manual#建立愿景与方向)
-2. [度量组织现状、系统现状](/manual#度量)
+2. [度量：组织、系统现状](/manual#度量)
 3. [准入条件](/manual#准入条件)。查看是否满足实施 DevOps 的准入条件。
 4. [探索可行方案](/manual#探索可行方案)。即 MVP 尝试
 5. [MVP](/manual#mvp)。一次快速的 DevOps 过程和结果的 showcase。
 6. [精细的 DevOps 实施](/manual#实施落地)
-7. [规模化 DevOps 落地](/manual#规模化)
+7. [回顾优化](/manual#回顾优化)
+8. [规模化 DevOps 落地](/manual#规模化)
 
 对应的在手册中，还包含了
 
 - 附录 1：移动应用的自动化测试
 - 附录 2：可信软件系统 10 要素
+- 附录 3：基本概念
 
 # 建立愿景与方向
 
@@ -169,7 +171,7 @@ DevOps 框架
 - 市场/客户驱动定制。如果一切的原则是为了生存下去，那么这一点难以避免。特别是那些生命周期长的行业应用来说，更是如此。
 - 销售驱动开发。
 
-常见的情况是，一个 10 来个的团队，一年可能要交付至少 20 个项目。更不用在电信行业中，需要针对于不同的国家或地区进行定制。
+常见的情况是，一个十来个人的团队，一年可能要交付至少 20 个项目。更不用说在电信行业中，需要针对于不同的国家或地区进行定制。
 
 #### 2C 模式
 
@@ -200,20 +202,21 @@ DevOps 框架
 
 ### 自动化性能测试
 
-- JMeter
+- [JMeter](https://jmeter.apache.org/)
 
 ### 代码质量分析工具
 
 - Java
-  - CheckStyle
-  - PMD/CPD
-  - FindBugs
-  - CodeNarc
+  - [CheckStyle](https://checkstyle.org/)
+  - [PMD/CPD](https://pmd.github.io/)
+  - [FindBugs](http://findbugs.sourceforge.net/)
+- Groovy
+  - [CodeNarc](https://codenarc.github.io/CodeNarc/)
 - JavaScript / TypeScript
-  - Codelyzer
-  - ESLint
+  - [Codelyzer](http://codelyzer.com/)
+  - [ESLint](https://eslint.org/)
 - 通用
-  - Sonar
+  - [Sonar](https://www.sonarqube.org/)
 
 ## 度量团队和组织
 
@@ -881,7 +884,7 @@ Docker 镜像：[StatsD + Graphite + Grafana 4 + Kamon Dashboards](https://githu
 
 #### Python
 
-[pystatsd](https://github.com/jsocol/pystatsd))
+[pystatsd](https://github.com/jsocol/pystatsd)
 
 ## 日志收集和存储
 
@@ -998,7 +1001,9 @@ Kafka：[Kafka Quickstart](https://kafka.apache.org/quickstart)
 
 ## 输出
 
-# 规模化
+# 回顾总结
+
+# 规模化 DevOps 落地
 
 ## DevOps 能力中心
 
@@ -1028,15 +1033,13 @@ Kafka：[Kafka Quickstart](https://kafka.apache.org/quickstart)
 
 ## DevOps 平台
 
-### 工具标准化
-
-### 流程标准化
-
-#### 提交信息门禁
+见：<a href="/practise/devops-platform" target="_blank">DevOps 平台</a>
 
 ## DevOps 知识平台
 
 ### Google DevOps 文档
+
+> DevOps 是一项组织和文化运动，旨在加快软件交付速度，提高服务可靠性，并在软件利益相关方之间建立共享所有权。了解如何提高软件交付的速度、稳定性、可用性和安全性。
 
 Google 示例：[Google DevOps](https://cloud.google.com/devops?hl=zh-cn)
 
@@ -1096,11 +1099,9 @@ BDD 在这一种上相当的迷人——能让非技术人员编写测试。而�
 对应的，开发人员需要编写实现：
 
 ```javascript
-...
-Given('当我在网站的首页', function() {
+Given('当我在网站的首页', function () {
   return this.driver.get('http://0.0.0.0:7272/');
 });
-..
 ```
 
 从上述的代码中，一眼就可以看出复杂的地方，实现一个领域特定（业务特定）的 DSL 语言。
@@ -1190,3 +1191,7 @@ Given('当我在网站的首页', function() {
   - 提升个人能力
   - 团队能力
   - 团队多样性
+
+# 附录 3：基本概念
+
+## 制品

@@ -64,21 +64,37 @@ function solutionPlugin(route, config) {
 function thinkTankPlugin(route, config) {
   return Promise.resolve([
     { route: '/think-tank/qa' },
+    { route: '/think-tank/ba' },
+    { route: '/think-tank/ops' },
     { route: '/think-tank/mobile-android' },
     { route: '/think-tank/frontend' },
+    { route: '/think-tank/backend' },
+    { route: '/think-tank/microservices' },
+    { route: '/think-tank/refactoring' },
   ]);
 }
 
 function checklistsPlugin(route, config) {
   return Promise.resolve([
-    { route: '/checklists/0' },
-    { route: '/checklists/1' },
-    { route: '/checklists/2' },
-    { route: '/checklists/3' },
-    { route: '/checklists/4' },
-    { route: '/checklists/5' },
-    { route: '/checklists/6' },
-    { route: '/checklists/7' },
+    { route: '/checklists/new-project' },
+    { route: '/checklists/agile-practise' },
+    { route: '/checklists/azure-devops' },
+    { route: '/checklists/aws-devops' },
+    { route: '/checklists/devsecops' },
+    { route: '/checklists/xp-practise' },
+    { route: '/checklists/code-review' },
+    { route: '/checklists/frontend' },
+    { route: '/checklists/api-security' },
+  ]);
+}
+
+function practisePlugin(route, config) {
+  return Promise.resolve([
+    { route: '/practise/agile-practise' },
+    { route: '/practise/devops-platform' },
+    { route: '/practise/devops-practise' },
+    { route: '/practise/test-practise' },
+    { route: '/practise/frontend-devops-practise' },
   ]);
 }
 
@@ -87,6 +103,7 @@ registerPlugin('router', 'case', casePlugin, validator);
 registerPlugin('router', 'solution', solutionPlugin, validator);
 registerPlugin('router', 'tank', thinkTankPlugin, validator);
 registerPlugin('router', 'checklists', checklistsPlugin, validator);
+registerPlugin('router', 'practise', practisePlugin, validator);
 
 exports.config = {
   projectRoot: './src',
@@ -106,6 +123,9 @@ exports.config = {
     },
     '/checklists/:selectedIndex': {
       type: 'checklists',
+    },
+    '/practise/:practise': {
+      type: 'practise',
     },
   },
 };

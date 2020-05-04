@@ -7,15 +7,16 @@
 @import "styles/markdown-render";
 @import "styles/dragula";
 @import "styles/behavior";
-@import "styles/mdstyles/graphviz";
 @import "styles/color";
 @import "styles/material-ui";
 @import "styles/mobile";
 
+@import "styles/mdstyles/graphviz";
+@import "styles/mdstyles/mermaid";
 @import "styles/mdstyles/process-table";
-@import "styles/mdstyles/circle";
 @import "styles/mdstyles/list-style";
 @import "styles/mdstyles/tech-radar";
+@import "styles/mdstyles/fish-bone";
 
 html, body {
   height: 100%;

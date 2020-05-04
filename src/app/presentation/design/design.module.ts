@@ -7,11 +7,13 @@ import { SharedModule } from '../../shared/shared.module';
 import { DesignComponent } from './design.component';
 import { PathComponent } from './path/path.component';
 import { CustomMaterialModule } from '../../shared/custom-material.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [DesignComponent, PathComponent],
   imports: [
     CommonModule,
+    FormsModule,
     SharedModule,
     CustomMaterialModule,
     DragulaModule.forRoot(),

@@ -4,13 +4,17 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 const modules = [
   MatSliderModule,
-  DragDropModule,
+  MatInputModule,
   MatListModule,
   MatCheckboxModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+
+  // CDK
+  DragDropModule,
 ];
 
 @NgModule({

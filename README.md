@@ -8,7 +8,7 @@
 
 国内服务器（不定期同步）：
 
-1. 腾讯云云开发： [https://ledge.wdsm.io/](https://ledge.wdsm.io/)
+1. 腾讯云-云开发服务器： [https://ledge.wdsm.io/](https://ledge.wdsm.io/)
 
 Ledge （from Know-Ledge，意指承载物）知识和工具平台，是我们基于在 ThoughtWorks 进行的一系列 DevOps 实践、敏捷实践、软件开发与测试、精益实践提炼出来的知识体系。它包含了各种最佳实践、原则与模式、实施手册、度量、工具，用于帮助您的企业在数字化时代更好地前进，还有 DevOps 转型。
 
@@ -85,57 +85,17 @@ todo: fix Angular elements bug
 
 ## 编写案例
 
-测试语法：[http://devops.phodal.com/helper](http://devops.phodal.com/helper)
+测试语法：[https://devops.phodal.com/helper](https://devops.phodal.com/helper)
+
+### 文档规范
+
+[Chinese Copywriting Guidelines](https://sparanoid.com/note/chinese-copywriting-guidelines/)
 
 ### Markdown 扩展语法
 
-通过语法高亮参数来扩展能力，如
+syntax see in [ledge render](projects/ledge-render)
 
-````
-```process-step
- - 第一阶段闭环：开发测试融合
-   - 看板
-   - 站会
-\`\`\`
-````
-
-- 图表
-  - echarts。直接渲染 Echarts 图表
-  - chart。 Echarts 的 bar 图表
-  - mindmap。Markdown List 转为思维导图
-  - radar。Markdown List 转为雷达图
-  - pie。饼图
-  - quadrant。四象限图
-  - pyramid。金字塔图形
-- graphviz。使用 Dot 渲染图片
-- 流程可视化
-  - process-table。带流程的图表
-  - process-step。带流程的图表 2
-  - process-card。卡片式流程
-  - dev-process。工具 Logo 可视化
-  - step-line。 多行带箭头 step 流程
-  - table-step。 多行带箭头卡式流程图表
-- checklist。检查清单
-- <del>mermaid。使用 mermaid 可视化</del>
-- <del>webcomponents。调用 WebComponents 组件</del>
-- 工具
-  - toolset。调用 Toolset 相关的组件
-    - slider。权衡滑块
-    - line-chart。表图
-
-### 权衡滑块示例
-
-````
-```toolset
- - 用户体验
- - 时间
- - 成本
- - 安全
- - 范围
-
-config: {"type": "slider"}
-\`\`\`
-````
+example see in [Ledge Editor](https://devops.phodal.com/helper)
 
 ## Todo
 
@@ -182,7 +142,7 @@ others see in the Code.
 ## License
 
 - Periodic based on:[https://stackblitz.com/edit/ng-periodic-table](https://stackblitz.com/edit/ng-periodic-table)
-- Tech Radar based on: [https://cofinpro.github.io/Tech-Radar/](https://cofinpro.github.io/Tech-Radar/))
+- Tech Radar based on: [https://cofinpro.github.io/Tech-Radar/](https://cofinpro.github.io/Tech-Radar/)
 - Kanban based on: https://github.com/Devstackr/kanban-angular-layout
 
 [![Phodal's Idea](http://brand.phodal.com/shields/idea-small.svg)](http://ideas.phodal.com/)

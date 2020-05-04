@@ -38,7 +38,7 @@ export class LedgeBarChartComponent implements OnInit, AfterViewInit {
     const colors = d3
       .scaleLinear()
       .domain([0, 8])
-      .range([d3.rgb('#ff4081'), d3.rgb('#66C2A5')] as any);
+      .range([d3.rgb('#7753df'), d3.rgb('#66C2A5')] as any);
 
     return colors(i);
   }

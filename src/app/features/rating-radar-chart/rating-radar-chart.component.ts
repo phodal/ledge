@@ -36,13 +36,15 @@ export class RatingRadarChartComponent
   items: any[];
   data: any[] = [];
   value: any;
-  private disabled: boolean;
+  disabled: boolean;
 
   constructor() {}
 
   ngOnInit() {}
 
-  onChange(value: any) {}
+  onChange(value: any) {
+    this.value = value;
+  }
 
   onTouched() {}
 

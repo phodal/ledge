@@ -1,5 +1,22 @@
 # Ledge 语法帮助
 
+```fishbone
+ - Path to Production
+   - Feat
+   - Design
+     - Pair Review
+   - Dev
+     - PrePush
+     - Code Review
+   - Test
+     - Desk Check
+   - Build
+   - Deploy
+   - Operatino
+
+config: {"height": 600, "width": 800}
+```
+
 ## 读书雷达
 
 ```tech-radar
@@ -66,7 +83,7 @@ config: {"hiddenLegend": true}
 ### checklist
 
 ```checklist
-- [ ] Eating
+- [x] Eating
   - [ ] Today
     - [x] breakfast
     - [ ] brunch
@@ -186,6 +203,32 @@ digraph {
   "绿" -> "重构"[label="让代码可以工作"];
   "重构" -> "红"[dir="back" label="重构"];
 }
+```
+
+### mermaid
+
+支持 [mermaid](https://mermaid-js.github.io/mermaid) 图表和流程图
+
+```mermaid
+graph LR
+    A[Hard edge] -->|Link text| B(Round edge)
+    B --> C{Decision}
+    C -->|One| D[Result one]
+    C -->|Two| E[Result two]
+```
+
+甘特图，语法描述见 [mermaid/gantt](https://mermaid-js.github.io/mermaid/#/gantt)
+
+```mermaid
+gantt
+    title A Gantt Diagram
+    dateFormat  YYYY-MM-DD
+    section Section
+    A task           :a1, 2014-01-01, 30d
+    Another task     :after a1  , 20d
+    section Another
+    Task in sec      :2014-01-12  , 12d
+    another task      : 24d
 ```
 
 ### toolset

@@ -12,6 +12,23 @@ function buildRadarChartOption(data) {
     legend = data.config.legend;
   }
 
+  function buildSeries(series: any[], valuesSplit: string[]) {
+    // tslint:disable-next-line:prefer-for-of
+    for (let j = 0; j < legend.length; j++) {
+      if (!series[j]) {
+        series[j] = {
+          name: '',
+          value: [],
+        };
+      }
+
+      series[j].name = legend[j];
+      if (valuesSplit[j]) {
+        series[j].value.push(valuesSplit[j]);
+      }
+    }
+  }
+
   function buildSeriesData() {
     // tslint:disable-next-line:no-shadowed-variable
     const seriesData = [];
@@ -29,20 +46,7 @@ function buildRadarChartOption(data) {
         });
         const values = nameValuesSplit[1];
         const valuesSplit = values.split(' -> ');
-        // tslint:disable-next-line:prefer-for-of
-        for (let j = 0; j < legend.length; j++) {
-          if (!seriesData[j]) {
-            seriesData[j] = {
-              name: '',
-              value: [],
-            };
-          }
-
-          seriesData[j].name = legend[j];
-          if (valuesSplit[j]) {
-            seriesData[j].value.push(valuesSplit[j]);
-          }
-        }
+        buildSeries(seriesData, valuesSplit);
       }
     }
     return seriesData;

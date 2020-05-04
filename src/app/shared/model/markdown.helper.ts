@@ -64,17 +64,17 @@ const MarkdownHelper = {
           break;
         }
         case 'text': {
-          if (
+          const isTaskItem =
             token.text.includes('[x] ') ||
             token.text.includes('[X] ') ||
-            token.text.includes('[ ] ')
-          ) {
+            token.text.includes('[ ] ');
+          if (isTaskItem) {
             checkString = '';
           }
-          result +=
-            JSON.stringify(
-              MarkdownHelper.todoCompiled(checkString + token.text)
-            ) + ',';
+          const compileTodo = JSON.stringify(
+            MarkdownHelper.todoCompiled(checkString + token.text)
+          );
+          result += compileTodo + ',';
           break;
         }
         case 'list_item_end': {

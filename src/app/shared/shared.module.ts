@@ -5,13 +5,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LedgeRenderModule } from '@ledge-framework/render';
 import { TranslateModule } from '@ngx-translate/core';
-import { AceEditorModule } from 'ngx-ace-tern';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 import { MarkdownRenderComponent } from '../features/markdown-render/markdown-render.component';
 import { MarkdownRatingItemComponent } from '../features/rating-radar-chart/markdown-rating-item/markdown-rating-item.component';
 import { MarkdownRatingComponent } from '../features/rating-radar-chart/markdown-rating/markdown-rating.component';
 import { RatingRadarChartComponent } from '../features/rating-radar-chart/rating-radar-chart.component';
 import { CustomMaterialModule } from './custom-material.module';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -39,7 +39,6 @@ import { CustomMaterialModule } from './custom-material.module';
         },
       },
     }),
-    AceEditorModule,
   ],
   declarations: [
     MarkdownRenderComponent,
@@ -53,7 +52,6 @@ import { CustomMaterialModule } from './custom-material.module';
     MarkdownRatingComponent,
     MarkdownRatingItemComponent,
     RatingRadarChartComponent,
-    AceEditorModule,
   ],
   entryComponents: [],
 })

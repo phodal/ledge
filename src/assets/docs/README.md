@@ -3,8 +3,8 @@
 对应的内容：
 
 - [模式与原则](pattern.md)
-- [最佳实践](practise.md)
-- [工具](tool.md)
+- [最佳实践](practises/)
+- [工具](toolset.md)
 - [相关资源](resources.md)
 - [实施手册](manual.md)
 

@@ -5,7 +5,7 @@
 </div>
 
 <div class="ledge-render" *ngIf="virtualScroll">
-  <virtual-scroller #scroll [items]="markdownData">
+  <virtual-scroller #scroll [items]="markdownData" (vsChange)="vsChange($event)">
     <div *ngFor="let item of scroll.viewPortItems" class="markdown render-item">
       <ng-template *ngTemplateOutlet="renderItem; context: {$implicit: item}"></ng-template>
     </div>
@@ -68,6 +68,14 @@
 
     <div *ngSwitchCase="'checklist'">
       <ledge-checklist [data]="item.data" [config]="item.config"></ledge-checklist>
+    </div>
+
+    <div *ngSwitchCase="'sunburst'">
+      <ledge-sunburst [data]="item.data" [config]="item.config"></ledge-sunburst>
+    </div>
+
+    <div *ngSwitchCase="'fishbone'">
+      <ledge-fish-bone [data]="item.data" [config]="item.config"></ledge-fish-bone>
     </div>
 
     <div *ngSwitchCase="'table'">
@@ -196,6 +204,10 @@
 
     <div class="table-step" *ngSwitchCase="'table-step'">
       <ledge-table-step [data]="item.data" [config]="item.config"></ledge-table-step>
+    </div>
+
+    <div *ngSwitchCase="'mermaid'">
+      <ledge-mermaid [data]="item.data"></ledge-mermaid>
     </div>
 
     <div *ngSwitchDefault>

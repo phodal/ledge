@@ -1,8 +1,8 @@
 <div *ngIf="checklists">
   <div *ngFor="let checklist of checklists;let i = index" class="component-checklist">
-    <mat-checkbox [checked]="checklist.complete" (change)="completeChange($event)" class="checklist-item">
-      <span class="title">{{checklist?.title}}</span>
-      <span *ngIf="checklist.description" class="description">  {{checklist.description}}</span>
+    <mat-checkbox [checked]="checklist.checked" (change)="completeChange($event)" class="checklist-item">
+      <span class="title" [innerHTML]="checklist?.title"></span>
+      <span *ngIf="checklist.description" class="description" [innerHTML]="checklist.description"></span>
     </mat-checkbox>
     <component-todo [disableInput]="true" [toDos]="checklist.subitems"></component-todo>
   </div>

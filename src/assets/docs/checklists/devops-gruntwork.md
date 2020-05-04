@@ -1,5 +1,5 @@
 ```checklist
-- DevOps 检查清单
+- DevOps 检查清单（AWS）
   - 服务端
    - 构建 AMI
    - 使用自动弹性组部署 AMI

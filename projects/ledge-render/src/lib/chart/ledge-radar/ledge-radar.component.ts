@@ -74,37 +74,42 @@ export class LedgeRadarComponent implements OnInit, AfterViewInit {
           name: nameValuesSplit[0],
           max: 5,
         });
-        const values = nameValuesSplit[1];
-        const valuesSplit = values.split(' -> ');
-        // tslint:disable-next-line:prefer-for-of
-        for (let j = 0; j < legend.length; j++) {
-          if (!seriesData[j]) {
-            seriesData[j] = {
-              name: '',
-              value: [],
-              areaStyle: {}
-            };
 
-            if (this.config.showValue) {
-              seriesData[j].label = {
-                show: true,
-                  formatter: params => params.value
-              };
-            }
-          }
-
-          seriesData[j].name = legend[j];
-          if (valuesSplit[j]) {
-            seriesData[j].value.push(parseInt(valuesSplit[j], 10));
-          }
-          if (this.config.areaColor) {
-            seriesData[j].areaStyle = this.config.areaColor[j];
-          }
-        }
+        this.buildSeriesData(nameValuesSplit, legend, seriesData);
       }
     }
 
     return {indicator, legend, seriesData};
+  }
+
+  private buildSeriesData(nameValuesSplit: string[], legend: any[], seriesData: any[]) {
+    const values = nameValuesSplit[1];
+    const valuesSplit = values.split(' -> ');
+    // tslint:disable-next-line:prefer-for-of
+    for (let j = 0; j < legend.length; j++) {
+      if (!seriesData[j]) {
+        seriesData[j] = {
+          name: '',
+          value: [],
+          areaStyle: {}
+        };
+
+        if (this.config.showValue) {
+          seriesData[j].label = {
+            show: true,
+            formatter: params => params.value
+          };
+        }
+      }
+
+      seriesData[j].name = legend[j];
+      if (valuesSplit[j]) {
+        seriesData[j].value.push(parseInt(valuesSplit[j], 10));
+      }
+      if (this.config.areaColor) {
+        seriesData[j].areaStyle = this.config.areaColor[j];
+      }
+    }
   }
 
   private hasRadarValue(data) {

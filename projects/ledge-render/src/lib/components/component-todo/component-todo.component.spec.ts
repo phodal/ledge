@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponentTodoComponent } from './component-todo.component';
 import { LedgeStorageService } from '../../services/ledge-storage.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CustomMaterialModule } from '../../custom-material.module';
 
 describe('TodoComponent', () => {
   let component: ComponentTodoComponent;
@@ -14,6 +15,7 @@ describe('TodoComponent', () => {
       imports: [
         BrowserAnimationsModule,
         FormsModule,
+        CustomMaterialModule,
         ReactiveFormsModule
       ],
       providers: [LedgeStorageService],

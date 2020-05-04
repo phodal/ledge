@@ -1,5 +1,18 @@
 import marked from 'marked/lib/marked';
 
+const renderer = new marked.Renderer();
+renderer.link = (href, title, text) => {
+  const link = marked.Renderer.prototype.link.call(renderer, href, title, text);
+  if (/^https:\/\//.test(href) || /^http:\/\//.test(href)) {
+    return link.replace('<a', '<a target="_blank"');
+  }
+  return link;
+};
+
+marked.setOptions({
+  renderer,
+});
+
 const LedgeMarkdownConverter = {
   // marked
   escapeTest: /[&<>"']/,
@@ -52,7 +65,7 @@ const LedgeMarkdownConverter = {
     const lists = [];
     let result = '{';
 
-    const tokens: marked.Token[] = marked.lexer(code);
+    const tokens: marked.Token[] | any = marked.lexer(code);
     for (const token of tokens) {
       switch (token.type) {
         case 'list_start': {
@@ -61,10 +74,14 @@ const LedgeMarkdownConverter = {
         }
         case 'list_item_start': {
           result += '{';
+          if (token.task) {
+            result += `"checked": ${token.checked}, `;
+          }
           break;
         }
         case 'text': {
-          result += `"name": ${JSON.stringify(token.text)},`;
+          const text = marked.inlineLexer(token.text, tokens.links);
+          result += `"name": ${JSON.stringify(text)},`;
           break;
         }
         case 'list_item_end': {

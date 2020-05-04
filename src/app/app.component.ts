@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { StorageMap } from '@ngx-pwa/local-storage';
-import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +19,7 @@ export class AppComponent implements OnInit {
     translate.use('zh-cn');
   }
 
-  // component-todo: refactor
+  // todo: refactor
   isHome() {
     return (
       this.route.url === '/home' ||

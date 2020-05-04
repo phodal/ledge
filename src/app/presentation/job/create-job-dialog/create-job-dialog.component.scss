@@ -1,0 +1,36 @@
+@import '../../../../styles/color';
+
+.reset-button {
+  margin-left: 15px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.half-width {
+  width: 48%;
+}
+
+.margin-left {
+  margin-left: 15px;
+}
+
+.operate {
+  float: right;
+}
+
+.error {
+  color: $error-color;
+}
+
+form {
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  cursor: pointer;
+}
