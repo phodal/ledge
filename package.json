@@ -36,7 +36,7 @@
     "@angular/platform-browser-dynamic": "^9.1.0",
     "@angular/router": "~9.0.3",
     "@angular/service-worker": "~9.0.3",
-    "@ledge-framework/render": "~0.3.1",
+    "@ledge-framework/render": "~0.3.2",
     "@ngx-pwa/local-storage": "^9.0.2",
     "@ngx-starter-kit/ngx-utils": "^0.0.8",
     "@ngx-translate/core": "^12.1.2",
