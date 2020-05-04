@@ -339,6 +339,10 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
           config: techRadarData.config,
         });
         break;
+      case 'pipeline':
+        const { data, config } = LedgeMarkdownConverter.safeToJson(codeBlock.text);
+        this.markdownData.push({ type: 'pipeline', data, config });
+        break;
       case 'kanban':
         const kanbanData = LedgeMarkdownConverter.toJson(codeBlock.text);
         this.markdownData.push({
