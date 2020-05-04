@@ -497,6 +497,57 @@ config: {"rowHeight": "340px" ,"colors": [{"bg":"#e55852","font":"#b71a09"},{"bg
 {"bg":"#387fd5","font":"#9ac9f5"},{"bg":"#7753df","font":"#cbb5f8"},{"bg":"#485cde","font":"#a0b1f3"}]}
 ```
 
+### Pipeline
+
+```yml
+# Syntax
+- Stage1 label
+  - Job1 label:Job1 state
+- Stage2 label
+  - Job1 label:Job1 state
+  - Job2 label:Job2 state
+```
+
+**Job State**
+
+- [x] success
+- [x] error
+- [x] untouched
+- [ ] processing [Unsupported]
+- [ ] current [Unsupported]
+- [ ] pending [Unsupported]
+
+```pipeline
+- Initialize
+  - Initialize:success
+- Build
+  - Pull code:success
+  - Test:error
+  - Build:current
+- Deploy
+  - QA:pending
+  - UAT:processing
+  - STAGING:processing
+  - PROD:untouched
+- Finish
+  - Finish:untouched
+
+config: {
+  "connectionStrokeWidth": 4,
+  "stateStrokeWidth": 4,
+  "stateRadius": 16,
+  "stageSpace": 60,
+  "stageLabelHeight": 30,
+  "stageLabelSize": "16px",
+  "jobHeight": 60,
+  "jobLabelSize": "12px",
+  "startNodeRadius": 12,
+  "startNodeSpace": 40,
+  "endNodeRadius": 12,
+  "endNodeSpace": 40
+}
+```
+
 ---
 
 ## 其他 Markdown 语法
