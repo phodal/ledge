@@ -58,6 +58,10 @@
       <ledge-tech-radar [data]="item.data" [config]="item.config"></ledge-tech-radar>
     </div>
 
+    <div *ngSwitchCase="'pipeline'">
+      <ledge-pipeline [data]="item.data" [config]="item.config"></ledge-pipeline>
+    </div>
+
     <div *ngSwitchCase="'kanban'">
       <ledge-kanban [data]="item.data" [config]="item.config"></ledge-kanban>
     </div>
@@ -69,14 +73,14 @@
     <div *ngSwitchCase="'table'">
       <table>
         <thead>
-        <tr>
-          <th *ngFor="let h of item.header">{{h}}</th>
-        </tr>
+          <tr>
+            <th *ngFor="let h of item.header">{{h}}</th>
+          </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let row of item.cells">
-          <td *ngFor="let cell of row" [innerHTML]="cell" ></td>
-        </tr>
+          <tr *ngFor="let row of item.cells">
+            <td *ngFor="let cell of row" [innerHTML]="cell"></td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -118,14 +122,14 @@
     <div *ngSwitchCase="'process-card'" class="flex-table row">
       <ng-container *ngFor="let header of item.data.header; let index = index">
         <ledge-card class="column card-column" [headerStyle]="item.config.colors && item.config.colors[index]"
-                    [data]="{ header: header, cells: item.data.cells[index], index:index }"></ledge-card>
+          [data]="{ header: header, cells: item.data.cells[index], index:index }"></ledge-card>
       </ng-container>
     </div>
 
     <div *ngSwitchCase="'list-style'">
       <div class="list-style list-style-{{item.config.type}}">
         <div *ngFor="let listItem of item.data;let index = index;" class="list-style-item"
-             [style.background-color]="colorsForIndex[index]">
+          [style.background-color]="colorsForIndex[index]">
           <div [innerHTML]="listItem.name"></div>
 
           <ng-template #recursiveList let-list>
@@ -151,7 +155,7 @@
     </div>
 
     <div *ngSwitchCase="'code'">
-        <pre class="language-{{item.lang}}">
+      <pre class="language-{{item.lang}}">
         <code class="language-{{item.lang}}">{{item.text}}</code>
       </pre>
     </div>
@@ -167,7 +171,7 @@
     <div *ngSwitchCase="'list'">
       <ng-template #recursiveList let-list>
         <li *ngFor="let item of list" class="sub-item" [ngClass]="item.task ? 'task-list-item' : ''">
-          <input type="checkbox" *ngIf="item.task" [checked]="item.checked"/>
+          <input type="checkbox" *ngIf="item.task" [checked]="item.checked" />
           <div [outerHTML]="item.body.name"></div>
           <ul *ngIf="!item.ordered && item.body.children && item.body.children.length > 0">
             <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.body.children }"></ng-container>

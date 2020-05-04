@@ -34,7 +34,7 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
 
   isPureParagraph = true;
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   ngOnChanges(changes: SimpleChanges): void {
     const { content } = changes;
@@ -304,6 +304,10 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
           data: techRadarData.lists[0].children,
           config: techRadarData.config,
         });
+        break;
+      case 'pipeline':
+        const { data, config } = LedgeMarkdownConverter.safeToJson(codeBlock.text);
+        this.markdownData.push({ type: 'pipeline', data, config });
         break;
       case 'kanban':
         const kanbanData = LedgeMarkdownConverter.toJson(codeBlock.text);
