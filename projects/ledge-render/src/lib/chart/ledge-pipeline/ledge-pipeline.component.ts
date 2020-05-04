@@ -8,6 +8,7 @@ import {
   Job,
   PipelineConfig,
   PolygonPoints,
+  defaultPipelineConfig,
 } from './ledge-pipeline.model';
 
 @Component({
@@ -20,24 +21,12 @@ export class LedgePipelineComponent implements AfterViewInit {
   data: any[] = [];
 
   @Input()
-  config: PipelineConfig = {
-    connectionStrokeWidth: 4,
-    stateStrokeWidth: 4,
-    stateRadius: 16,
-    stageSpace: 60,
-    stageLabelHeight: 30,
-    stageLabelSize: '16px',
-    jobHeight: 60,
-    jobLabelSize: '12px',
-    startNodeRadius: 12,
-    startNodeSpace: 40,
-    endNodeRadius: 12,
-    endNodeSpace: 40,
-  };
+  config: PipelineConfig;
 
   @ViewChild('pipeline', { static: false }) pipeline: ElementRef;
 
   ngAfterViewInit(): void {
+    this.config = { ...defaultPipelineConfig, ...this.config };
     const stages = this.buildStages();
     const svg = d3.select(this.pipeline.nativeElement)
       .append('svg')
