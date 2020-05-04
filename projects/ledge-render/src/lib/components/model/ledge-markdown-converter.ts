@@ -131,18 +131,6 @@ const LedgeMarkdownConverter = {
 
     return { tables, config, lists };
   },
-
-  safeToJson(jsonStr: string) {
-    try {
-      return JSON.parse(jsonStr);
-    } catch (error) {
-      console.error(error);
-      return {
-        data: null,
-        config: null,
-      };
-    }
-  },
 };
 
 export default LedgeMarkdownConverter;
