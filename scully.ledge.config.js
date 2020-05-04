@@ -84,6 +84,7 @@ function checklistsPlugin(route, config) {
     { route: '/checklists/xp-practise' },
     { route: '/checklists/code-review' },
     { route: '/checklists/frontend' },
+    { route: '/checklists/api-security' },
   ]);
 }
 
@@ -93,7 +94,7 @@ function practisePlugin(route, config) {
     { route: '/practise/devops-platform' },
     { route: '/practise/devops-practise' },
     { route: '/practise/test-practise' },
-    { route: '/practise/tech-practise' },
+    { route: '/practise/frontend-devops-practise' },
   ]);
 }
 
