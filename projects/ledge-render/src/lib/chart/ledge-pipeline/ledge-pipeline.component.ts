@@ -17,7 +17,7 @@ import {
 })
 export class LedgePipelineComponent implements AfterViewInit {
   @Input()
-  data: Stage[];
+  data: any[] = [];
 
   @Input()
   config: PipelineConfig = {
@@ -38,19 +38,38 @@ export class LedgePipelineComponent implements AfterViewInit {
   @ViewChild('pipeline', { static: false }) pipeline: ElementRef;
 
   ngAfterViewInit(): void {
-    const maxJobsCountInStage = d3.max(this.data.map(stage => stage.jobs.length));
-    const svgWidth =
-      2 * 2 * (this.config.startNodeRadius + this.config.startNodeSpace)
-      + this.data.length * 2 * (this.config.stageSpace + this.config.stateRadius + this.config.stateStrokeWidth);
-    const svgHeight =
-      this.config.stageLabelHeight
-      + maxJobsCountInStage * (this.config.stateRadius + this.config.jobHeight);
+    const stages = this.buildStages();
     const svg = d3.select(this.pipeline.nativeElement)
       .append('svg')
       .attr('width', '100%')
-      .attr('viewBox', `-20 0 ${svgWidth + 20} ${svgHeight + 20}`);
+      .attr('viewBox', this.calculateViewBox(stages));
 
-    this.renderPipeline(svg, this.data);
+    this.renderPipeline(svg, stages);
+  }
+
+  private calculateViewBox(stages: Stage[]): string {
+    const maxJobsCountInStage = d3.max(stages.map(stage => stage.jobs.length));
+    const startNodeWidth = 2 * (this.config.startNodeRadius + this.config.startNodeSpace);
+    const stageWidth = 2 * (this.config.stageSpace + this.config.stateRadius + this.config.stateStrokeWidth);
+    // Start/End node suppose to have same width
+    const svgWidth = 2 * startNodeWidth + stages.length * stageWidth;
+
+    const singleJobHeight = (2 * this.config.stateRadius + this.config.jobHeight);
+    // With stage label height
+    const svgHeight = this.config.stageLabelHeight + maxJobsCountInStage * singleJobHeight;
+
+    // -20 for Start label, otherwise it will be cut off
+    return `-20 0 ${svgWidth} ${svgHeight}`;
+  }
+
+  private buildStages(): Stage[] {
+    return this.data.map(({ name: stageName, children = [] }) => ({
+      label: stageName,
+      jobs: children.map(({ name: jobItem }) => {
+        const [label, state] = jobItem.split(':');
+        return { label, state };
+      })
+    }));
   }
 
   private renderPipeline(svg, stages: Stage[]) {

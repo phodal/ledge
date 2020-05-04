@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LedgePipelineComponent } from './ledge-pipeline.component';
-import { Stage } from './ledge-pipeline.model';
 
 describe('LedgePieComponent', () => {
   let component: LedgePipelineComponent;
@@ -19,32 +18,32 @@ describe('LedgePieComponent', () => {
     component = fixture.componentInstance;
     component.data = [
       {
-        label: 'Initialize',
-        jobs: [
-          { label: 'Initialize', state: 'success' }
+        name: 'Initialize',
+        children: [
+          { name: 'Initialize:success' }
         ]
-      }, {
-        label: 'Build',
-        jobs: [
-          { label: 'Pull code', state: 'success' },
-          { label: 'Test', state: 'error' },
-          { label: 'Build', state: 'current' }
+      },
+      {
+        name: 'Build', children: [
+          { name: 'Pull code:success' },
+          { name: 'Test:error' },
+          { name: 'Build:current' }
         ]
-      }, {
-        label: 'Deploy',
-        jobs: [
-          { label: 'QA', state: 'pending' },
-          { label: 'UAT', state: 'processing' },
-          { label: 'STAGING', state: 'processing' },
-          { label: 'PROD', state: 'untouched' }
+      },
+      {
+        name: 'Deploy', children: [
+          { name: 'QA:pending' },
+          { name: 'UAT:processing' },
+          { name: 'STAGING:processing' },
+          { name: 'PROD:untouched' }
         ]
-      }, {
-        label: 'Finish',
-        jobs: [
-          { label: 'Finish', state: 'untouched' }
+      },
+      {
+        name: 'Finish', children: [
+          { name: 'Finish:untouched' }
         ]
       }
-    ] as Stage[];
+    ];
     component.config = {
       connectionStrokeWidth: 4,
       stateStrokeWidth: 4,
