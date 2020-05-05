@@ -218,15 +218,15 @@ Angular 官方有使用 Bazel 打包的[教程](https://angular.io/guide/bazel)�
 
 ## 测试
 
-### Karma
+1. Karma
 
-### Jasmine
+2. Jasmine
 
-### Jest
+3. Jest
 
-### Cypress
+4. Cypress
 
-### Enzyme
+5. Enzyme
 
 ## 性能
 
@@ -258,35 +258,41 @@ Angular 官方有使用 Bazel 打包的[教程](https://angular.io/guide/bazel)�
 
 它可以在 Chrome、命令行和 Node 中使用。
 
-### Devtools
-
 ## 安全
-
-### CORS
 
 ### Content Security Policy
 
+> 内容安全策略 (CSP) 是一个额外的安全层，用于检测并削弱某些特定类型的攻击，包括跨站脚本 (XSS) 和数据注入攻击等。无论是数据盗取、网站内容污染还是散发恶意软件，这些攻击都是主要的手段。
+
 ### OWASP
+
+[OWASP](https://devops.phodal.com/maturity)
 
 ## 监控
 
+前端监控一般指监控用户的使用情况和系统的运行状态，例如 PV、UV、平均访问时长、bug 等等。
+
 ## 框架
 
-### Angular
+1. [Angular](https://angular.io)
 
-#### RxJS
+   - [RxJS](https://rxjs-dev.firebaseapp.com/)
 
-#### NGRX
+     > Reactive Extensions Library for JavaScript
 
-### React
+   - [NGRX](https://ngrx.io/)
 
-#### Redux
+     > Reactive State for Angular
 
-#### MobX
+2. [React](https://reactjs.org/)
 
-### Vue
+   - [Redux](https://redux.js.org/)
 
-#### VueX
+   - [MobX](https://mobx.js.org/)
+
+3. [Vue](https://vuejs.org/)
+
+   - [VueX](https://vuex.vuejs.org/)
 
 ## Server Side Rendering (SSR)
 
@@ -328,17 +334,21 @@ SSG 的概念本身并不新，但是基于现在三大前端框架（Angular, R
 
 ## Mobile APP
 
-### React Native
+1. [React Native](https://reactnative.dev/)
 
-### Flutter
+2. [Flutter](https://flutter.dev/)
 
-### NativeScript
+3. [NativeScript](https://www.nativescript.org/)
 
-### Ionic
+4. [Ionic](https://ionicframework.com/)
 
 ## Desktop APP
 
-### Electron
+1. [Electron](https://www.electronjs.org/)
+
+   > 使用 JavaScript，HTML 和 CSS 构建跨平台的桌面应用程序
+
+它使用 Chromium rendering engine 和 Node.js
 
 ## GraphQL
 
