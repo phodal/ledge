@@ -101,18 +101,11 @@ example see in [Ledge Editor](https://devops.phodal.com/helper)
 
 ### 1.0 It works
 
-- [x] 更多的度量内容
-  - [x] 监控等
-- [x] 更多的 DevOps 报告
-- [ ] 单元测试
-  - [x] 考虑一下 E2E 测试方案
-- [x] 完善 toolset
-  - [x] slider
-  - [x] line-chart
-- [x] 重构 markdown render
-- [x] I18N support
+see in [Roadmap 1.0](https://github.com/phodal/ledge/issues/30)
 
 ### 2.0 Toolset
+
+see in [Roadmap 2.0](https://github.com/phodal/ledge/issues/183)
 
 - [ ] Ledge Framework
 - [ ] workflow design: https://github.com/elsa-workflows/elsa-designer
