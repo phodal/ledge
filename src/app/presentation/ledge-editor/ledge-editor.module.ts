@@ -9,10 +9,10 @@ import { AceEditorModule } from 'ngx-ace-tern';
 
 import { CustomMaterialModule } from '../../shared/custom-material.module';
 import { SharedModule } from '../../shared/shared.module';
-import { LedgeHelperComponent } from './ledge-helper.component';
+import { LedgeEditorComponent } from './ledge-editor.component';
 
 @NgModule({
-  declarations: [LedgeHelperComponent],
+  declarations: [LedgeEditorComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -24,7 +24,7 @@ import { LedgeHelperComponent } from './ledge-helper.component';
       isolate: false,
     }),
     AngularSplitModule.forRoot(),
-    RouterModule.forChild([{ path: '', component: LedgeHelperComponent }]),
+    RouterModule.forChild([{ path: '', component: LedgeEditorComponent }]),
   ],
 })
-export class LedgeHelperModule {}
+export class LedgeEditorModule {}

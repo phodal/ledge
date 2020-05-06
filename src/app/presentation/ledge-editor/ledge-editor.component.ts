@@ -12,11 +12,11 @@ import 'brace/theme/github';
 import 'brace/theme/monokai';
 
 @Component({
-  selector: 'app-ledge-helper',
-  templateUrl: './ledge-helper.component.html',
-  styleUrls: ['./ledge-helper.component.scss'],
+  selector: 'ledge-editor',
+  templateUrl: './ledge-editor.component.html',
+  styleUrls: ['./ledge-editor.component.scss'],
 })
-export class LedgeHelperComponent implements OnInit, OnDestroy {
+export class LedgeEditorComponent implements OnInit, OnDestroy {
   content = mdData.default;
 
   @ViewChild('split', { static: false }) split: SplitComponent;
@@ -94,7 +94,6 @@ export class LedgeHelperComponent implements OnInit, OnDestroy {
   }
 
   onAceChange($event) {
-    // console.log('~~~编辑器内容变化~~~', $event);
     this.term$.next($event);
   }
 

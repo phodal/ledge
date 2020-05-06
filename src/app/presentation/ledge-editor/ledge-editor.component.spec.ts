@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LedgeHelperComponent } from './ledge-helper.component';
+import { LedgeEditorComponent } from './ledge-editor.component';
 import { SharedModule } from '../../shared/shared.module';
-import { LedgeHelperModule } from './ledge-helper.module';
+import { LedgeEditorModule } from './ledge-editor.module';
 
 import {
   TranslateFakeLoader,
@@ -13,14 +13,14 @@ import {
 import 'brace/index';
 
 describe('LedgeHelperComponent', () => {
-  let component: LedgeHelperComponent;
-  let fixture: ComponentFixture<LedgeHelperComponent>;
+  let component: LedgeEditorComponent;
+  let fixture: ComponentFixture<LedgeEditorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         SharedModule,
-        LedgeHelperModule,
+        LedgeEditorModule,
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,
@@ -28,12 +28,12 @@ describe('LedgeHelperComponent', () => {
           },
         }),
       ],
-      declarations: [LedgeHelperComponent],
+      declarations: [LedgeEditorComponent],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LedgeHelperComponent);
+    fixture = TestBed.createComponent(LedgeEditorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

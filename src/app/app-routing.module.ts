@@ -93,8 +93,8 @@ const routes: Routes = [
   {
     path: 'helper',
     loadChildren: () =>
-      import('./presentation/ledge-helper/ledge-helper.module').then(
-        (m) => m.LedgeHelperModule
+      import('./presentation/ledge-editor/ledge-editor.module').then(
+        (m) => m.LedgeEditorModule
       ),
   },
   {
