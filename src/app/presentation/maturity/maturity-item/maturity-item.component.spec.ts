@@ -1,7 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MaturityItemComponent } from './maturity-item.component';
 import { SharedModule } from '../../../shared/shared.module';
+import { BrowserModule } from '@angular/platform-browser';
 
 describe('MaturityComponent', () => {
   let component: MaturityItemComponent;
@@ -9,7 +11,7 @@ describe('MaturityComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [SharedModule],
+      imports: [BrowserModule, SharedModule, FormsModule, ReactiveFormsModule],
       declarations: [MaturityItemComponent],
     }).compileComponents();
   }));
