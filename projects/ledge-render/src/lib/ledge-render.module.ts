@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { TohtmlPipe } from './pipes/tohtml.pipe';
+
 import { LedgeBarChartComponent } from './chart/ledge-bar-chart/ledge-bar-chart.component';
 import { LedgeGraphvizComponent } from './chart/ledge-graphviz/ledge-graphviz.component';
 import { LedgeMindmapComponent } from './chart/ledge-mindmap/ledge-mindmap.component';
@@ -25,9 +28,9 @@ import { ComponentChecklistComponent } from './components/component-checklist/co
 import { LedgeStorageService } from './services/ledge-storage.service';
 import { LedgeChecklistComponent } from './components/ledge-checklist/ledge-checklist.component';
 import { LedgeMermaidComponent } from './components/ledge-mermaid/ledge-mermaid.component';
-import { TohtmlPipe } from './pipes/tohtml.pipe';
 import { LedgeSunburstComponent } from './chart/ledge-sunburst/ledge-sunburst.component';
 import { LedgeFishBoneComponent } from './chart/ledge-fish-bone/ledge-fish-bone.component';
+import { LedgeHeatmapComponent } from './chart/ledge-heatmap/ledge-heatmap.component';
 
 const LedgeComponents = [
   LedgeRenderComponent,
@@ -51,6 +54,7 @@ const LedgeComponents = [
   LedgeMermaidComponent,
   LedgeSunburstComponent,
   LedgeFishBoneComponent,
+  LedgeHeatmapComponent,
 
   ComponentTodoComponent,
   ComponentChecklistComponent,
@@ -59,7 +63,7 @@ const LedgeComponents = [
 const LedgePipes = [TohtmlPipe];
 
 @NgModule({
-    declarations: [...LedgePipes, ...LedgeComponents],
+  declarations: [...LedgePipes, ...LedgeComponents],
   imports: [
     CommonModule,
     FormsModule,
@@ -70,4 +74,5 @@ const LedgePipes = [TohtmlPipe];
   providers: [LedgeStorageService],
   exports: [LedgeRenderComponent, ComponentChecklistComponent, ...LedgePipes],
 })
-export class LedgeRenderModule {}
+export class LedgeRenderModule {
+}
