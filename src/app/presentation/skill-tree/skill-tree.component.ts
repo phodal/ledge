@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import * as mdData from 'raw-loader!../../../assets/docs/skilltree.md';
 import { Title } from '@angular/platform-browser';
+
+import * as mdData from 'raw-loader!../../../assets/docs/skilltree.md';
 
 @Component({
   selector: 'app-skill-tree',
