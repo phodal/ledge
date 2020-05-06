@@ -31,13 +31,21 @@ export class LedgeHeatmapComponent implements OnInit, AfterViewInit {
     const seriesData = this.buildSeriesData(JSON.parse(JSON.stringify(treeData)));
     return {
       title: {
+        top: 30,
         left: 'center',
         name: treeData.header[0]
       },
-      tooltip: {
-        position: 'top'
+      visualMap: {
+        min: 0,
+        max: 100,
+        calculable: true,
+        orient: 'vertical',
+        left: '90%',
+        top: '35%',
+        inRange: {
+          color: ['white', '#5b8e5b']
+        }
       },
-      animation: false,
       grid: {
         height: '50%',
         top: '10%'
@@ -60,13 +68,15 @@ export class LedgeHeatmapComponent implements OnInit, AfterViewInit {
         type: 'heatmap',
         data: seriesData,
         label: {
-          show: true
+          show: true,
+          color: '#000',
+          formatter: (data) => data.value[2] + '%',
         },
         emphasis: {
           itemStyle: {
-            shadowBlur: 10,
-            shadowColor: 'rgba(0, 0, 0, 0.5)'
-          }
+            shadowBlur: 5,
+            shadowColor: 'white'
+          },
         }
       }]
     };
