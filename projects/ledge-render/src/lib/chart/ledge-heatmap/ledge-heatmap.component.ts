@@ -2,7 +2,6 @@ import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '
 import echarts from 'echarts';
 
 import { LedgeTable } from '../../components/model/ledge-chart.model';
-import LedgeChartConverter from '../../components/model/ledge-chart-converter';
 
 @Component({
   selector: 'ledge-heatmap',
@@ -29,8 +28,12 @@ export class LedgeHeatmapComponent implements OnInit, AfterViewInit {
   }
 
   private buildOption(treeData: LedgeTable) {
-    console.log(treeData);
+    const seriesData = this.buildSeriesData(JSON.parse(JSON.stringify(treeData)));
     return {
+      title: {
+        left: 'center',
+        name: treeData.header[0]
+      },
       tooltip: {
         position: 'top'
       },
@@ -41,7 +44,7 @@ export class LedgeHeatmapComponent implements OnInit, AfterViewInit {
       },
       xAxis: {
         type: 'category',
-        data: treeData.header,
+        data: treeData.header.slice(1),
         splitArea: {
           show: true
         }
@@ -53,18 +56,9 @@ export class LedgeHeatmapComponent implements OnInit, AfterViewInit {
           show: true
         }
       },
-      visualMap: {
-        min: 0,
-        max: 10,
-        calculable: true,
-        orient: 'horizontal',
-        left: 'center',
-        bottom: '15%'
-      },
       series: [{
-        name: 'Punch Card',
         type: 'heatmap',
-        data: [[0, 0, 3], [0, 1, 2]],
+        data: seriesData,
         label: {
           show: true
         },
@@ -76,5 +70,26 @@ export class LedgeHeatmapComponent implements OnInit, AfterViewInit {
         }
       }]
     };
+  }
+
+  private buildSeriesData(data: LedgeTable) {
+    const seriesData: any[][] = [];
+    data.cells.shift();
+    const columnLenth = data.cells[0].length;
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < data.cells.length; i++) {
+      // tslint:disable-next-line:prefer-for-of
+      for (let j = 0; j < (data.cells)[i].length; j++) {
+        let value = (data.cells)[i][j];
+        if (typeof value === 'string') {
+          if (value.endsWith('%')) {
+            value = parseInt(value.slice(0, -1), 10);
+          }
+        }
+        seriesData.push([i, columnLenth - j - 1, value]);
+      }
+    }
+
+    return seriesData.reverse();
   }
 }
