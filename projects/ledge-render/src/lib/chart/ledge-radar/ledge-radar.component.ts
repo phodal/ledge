@@ -22,7 +22,7 @@ export class LedgeRadarComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     const myChart = echarts.init(this.chart.nativeElement);
-    const treeData = LedgeChartConverter.toTreeData(this.data.children);
+    const treeData = LedgeChartConverter.toTreeData(this.data);
     const option = this.buildOption(treeData);
     myChart.setOption(option as any);
   }

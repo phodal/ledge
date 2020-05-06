@@ -27,7 +27,7 @@ export class LedgePyramidComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     const myChart = echarts.init(this.reporter.nativeElement);
-    const treeData = LedgeChartConverter.toTreeData(this.data.children);
+    const treeData = LedgeChartConverter.toTreeData(this.data);
     const pyramidLength = treeData.children.length;
     const CHART_MAX_VALUE = 100;
     for (let i = 0; i < pyramidLength; i++) {

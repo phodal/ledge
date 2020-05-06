@@ -30,7 +30,7 @@ export class LedgeMindmapComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.chartData = LedgeChartConverter.toTreeData(this.data.children);
+    this.chartData = LedgeChartConverter.toTreeData(this.data);
 
     const dataStr = JSON.stringify(this.chartData);
     const childLength = (dataStr.match(/:/g) || []).length;

@@ -262,7 +262,7 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
         const stepData = LedgeMarkdownConverter.toJson(codeBlock.text);
         this.markdownData.push({
           type: 'process-step',
-          data: stepData.lists[0],
+          data: stepData.lists[0].children,
           config: stepData.config,
         });
         break;
@@ -270,7 +270,7 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
         const mindmapData = LedgeMarkdownConverter.toJson(codeBlock.text);
         this.markdownData.push({
           type: 'mindmap',
-          data: mindmapData.lists[0],
+          data: mindmapData.lists[0].children,
           config: mindmapData.config,
         });
         break;
@@ -278,7 +278,7 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
         const pyramidData = LedgeMarkdownConverter.toJson(codeBlock.text);
         this.markdownData.push({
           type: 'pyramid',
-          data: pyramidData.lists[0],
+          data: pyramidData.lists[0].children,
           config: pyramidData.config,
         });
         break;
@@ -286,7 +286,7 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
         const radarData = LedgeMarkdownConverter.toJson(codeBlock.text);
         this.markdownData.push({
           type: 'radar',
-          data: radarData.lists[0],
+          data: radarData.lists[0].children,
           config: radarData.config,
         });
         break;
@@ -294,7 +294,7 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
         const quadrantData = LedgeMarkdownConverter.toJson(codeBlock.text);
         this.markdownData.push({
           type: 'quadrant',
-          data: quadrantData.lists[0],
+          data: quadrantData.lists[0].children,
           config: quadrantData.config
         });
         break;
