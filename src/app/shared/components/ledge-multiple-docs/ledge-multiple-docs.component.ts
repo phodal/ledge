@@ -8,7 +8,6 @@ import {
 } from '@angular/core';
 import { MatDrawerContent } from '@angular/material/sidenav';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { DocRoute } from './doc-route.model';
