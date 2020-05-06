@@ -92,7 +92,7 @@ export class LedgeHeatmapComponent implements OnInit, AfterViewInit {
   private buildSeriesData(data: LedgeTable) {
     const seriesData: any[][] = [];
     data.cells.shift();
-    const columnLenth = data.cells[0].length;
+    const columnLength = data.cells[0].length;
     // tslint:disable-next-line:prefer-for-of
     for (let i = 0; i < data.cells.length; i++) {
       // tslint:disable-next-line:prefer-for-of
@@ -103,7 +103,7 @@ export class LedgeHeatmapComponent implements OnInit, AfterViewInit {
             value = parseInt(value.slice(0, -1), 10);
           }
         }
-        seriesData.push([i, columnLenth - j - 1, value]);
+        seriesData.push([i, columnLength - j - 1, value]);
       }
     }
 

@@ -19,8 +19,7 @@ import {
   styleUrls: ['./ledge-bar-chart.component.scss'],
 })
 export class LedgeBarChartComponent implements OnInit, AfterViewInit {
-  @Input()
-  data: LedgeTable;
+  @Input() data: LedgeTable;
 
   @ViewChild('chart', {}) reporter: ElementRef;
 

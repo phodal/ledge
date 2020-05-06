@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LedgeHeatmapComponent } from './ledge-heatmap.component';
+import { LedgeBarChartComponent } from './ledge-bar-chart.component';
 
 describe('LedgeHeatmapComponent', () => {
-  let component: LedgeHeatmapComponent;
-  let fixture: ComponentFixture<LedgeHeatmapComponent>;
+  let component: LedgeBarChartComponent;
+  let fixture: ComponentFixture<LedgeBarChartComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [LedgeHeatmapComponent]
+      declarations: [LedgeBarChartComponent]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LedgeHeatmapComponent);
+    fixture = TestBed.createComponent(LedgeBarChartComponent);
     component = fixture.componentInstance;
     component.data = {
       header: ['h1', 'h1'],
