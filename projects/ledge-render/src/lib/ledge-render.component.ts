@@ -259,123 +259,25 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
         break;
 
       case 'process-step':
-        const stepData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({
-          type: 'process-step',
-          data: stepData.lists[0].children,
-          config: stepData.config,
-        });
-        break;
       case 'mindmap':
-        const mindmapData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({
-          type: 'mindmap',
-          data: mindmapData.lists[0].children,
-          config: mindmapData.config,
-        });
-        break;
       case 'pyramid':
-        const pyramidData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({
-          type: 'pyramid',
-          data: pyramidData.lists[0].children,
-          config: pyramidData.config,
-        });
-        break;
       case 'radar':
-        const radarData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({
-          type: 'radar',
-          data: radarData.lists[0].children,
-          config: radarData.config,
-        });
-        break;
       case 'quadrant':
-        const quadrantData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({
-          type: 'quadrant',
-          data: quadrantData.lists[0].children,
-          config: quadrantData.config
-        });
-        break;
       case 'list-style':
-        const listData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({
-          type: 'list-style',
-          data: listData.lists[0].children,
-          config: listData.config,
-        });
-        break;
       case 'step-line':
-        const stepLineData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({
-          type: 'step-line',
-          data: stepLineData.lists[0].children,
-          config: stepLineData.config,
-        });
-        break;
       case 'pie':
-        const pieData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({
-          type: 'pie',
-          data: pieData.lists[0].children,
-          config: pieData.config,
-        });
-        break;
       case 'dev-process':
-        const devProcessData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({
-          type: 'dev-process',
-          data: devProcessData.lists[0].children,
-          config: devProcessData.config,
-        });
-        break;
       case 'tech-radar':
-        const techRadarData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({
-          type: 'tech-radar',
-          data: techRadarData.lists[0].children,
-          config: techRadarData.config,
-        });
-        break;
       case 'pipeline':
-        const pipelineData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({
-          type: 'pipeline',
-          data: pipelineData.lists[0].children,
-          config: pipelineData.config,
-        });
-        break;
       case 'kanban':
-        const kanbanData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({
-          type: 'kanban',
-          data: kanbanData.lists[0].children,
-          config: kanbanData.config,
-        });
-        break;
       case 'checklist':
-        const checklistData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({
-          type: 'checklist',
-          data: checklistData.lists[0].children,
-          config: checklistData.config,
-        });
-        break;
       case 'sunburst':
-        const sunburstData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({
-          type: 'sunburst',
-          data: sunburstData.lists[0].children,
-          config: sunburstData.config,
-        });
-        break;
       case 'fishbone':
-        const fishboneData = LedgeMarkdownConverter.toJson(codeBlock.text);
+        const {config, lists} = LedgeMarkdownConverter.toJson(codeBlock.text);
         this.markdownData.push({
-          type: 'fishbone',
-          data: fishboneData.lists[0].children,
-          config: fishboneData.config,
+          type: codeBlock.lang,
+          data: lists[0].children,
+          config,
         });
         break;
       default:
