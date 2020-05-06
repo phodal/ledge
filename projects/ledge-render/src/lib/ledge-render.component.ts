@@ -263,15 +263,24 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
         this.markdownData.push({
           type: 'process-step',
           data: stepData.lists[0],
+          config: stepData.config,
         });
         break;
       case 'mindmap':
         const mindmapData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({type: 'mindmap', data: mindmapData.lists[0]});
+        this.markdownData.push({
+          type: 'mindmap',
+          data: mindmapData.lists[0],
+          config: mindmapData.config,
+        });
         break;
       case 'pyramid':
         const pyramidData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({type: 'pyramid', data: pyramidData.lists[0]});
+        this.markdownData.push({
+          type: 'pyramid',
+          data: pyramidData.lists[0],
+          config: pyramidData.config,
+        });
         break;
       case 'radar':
         const radarData = LedgeMarkdownConverter.toJson(codeBlock.text);
