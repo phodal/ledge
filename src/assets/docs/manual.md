@@ -42,6 +42,7 @@
 
 在 Google ACCELERATE State of DevOps 2019 中有一个基于性能侧的 DevOps 转型策略热图（HEATMAP OF DEVOPS TRANSFORMATION STRATEGIES BY PERFORMANCE PROFILE）
 
+```heatmap
 | 类型                     | 低  | 中  | 高  | 精英 |
 | ------------------------ | --- | --- | --- | ---- |
 | 训练中心                 | 27% | 21% | 18% | 14%  |
@@ -53,6 +54,7 @@
 | 大爆炸式改革             | 19% | 19% | 11% | 9%   |
 | 由下而上，或者基层导入   | 29% | 39% | 46% | 46%  |
 | 混搭                     | 46% | 42% | 34% | 38%  |
+```
 
 ### 自行落地
 

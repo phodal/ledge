@@ -47,18 +47,25 @@ export class LedgeHeatmapComponent implements OnInit, AfterViewInit {
         }
       },
       grid: {
-        height: '50%',
-        top: '10%'
+        top: '10%',
+        left: '20%'
       },
       xAxis: {
         type: 'category',
+        position: 'top',
         data: treeData.header.slice(1),
+        axisLabel: {
+          fontSize: 14
+        },
         splitArea: {
-          show: true
+          show: false
         }
       },
       yAxis: {
         type: 'category',
+        axisLabel: {
+          fontSize: 14
+        },
         data: treeData.cells[0].reverse(),
         splitArea: {
           show: true
