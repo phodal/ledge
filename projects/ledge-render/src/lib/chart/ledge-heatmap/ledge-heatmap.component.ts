@@ -43,7 +43,7 @@ export class LedgeHeatmapComponent implements OnInit, AfterViewInit {
         left: '90%',
         top: '35%',
         inRange: {
-          color: ['white', '#5b8e5b']
+          color: ['white', 'rgb(166, 202, 102)']
         }
       },
       grid: {
