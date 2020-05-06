@@ -1,8 +1,4 @@
-export interface DocRoute {
-  displayName: string;
-  source: string;
-  default?: boolean;
-}
+import { DocRoute } from '../../shared/components/ledge-multiple-docs/doc-route.model';
 
 export type Cases = Array<DocRoute>;
 

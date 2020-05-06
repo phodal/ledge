@@ -19,7 +19,6 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { LedgeMultipleDocsComponent } from './shared/components/ledge-multiple-docs/ledge-multiple-docs.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -36,7 +35,6 @@ export function createTranslateLoader(http: HttpClient) {
 
     MaturityComponent,
     MaturityItemComponent,
-    LedgeMultipleDocsComponent,
   ],
   imports: [
     SharedModule,

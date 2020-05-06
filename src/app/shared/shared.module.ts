@@ -11,6 +11,7 @@ import { MarkdownRatingComponent } from '../features/rating-radar-chart/markdown
 import { RatingRadarChartComponent } from '../features/rating-radar-chart/rating-radar-chart.component';
 import { CustomMaterialModule } from './custom-material.module';
 import { LedgeMarkdownRenderComponent } from './components/ledge-markdown-render/ledge-markdown-render.component';
+import { LedgeMultipleDocsComponent } from './components/ledge-multiple-docs/ledge-multiple-docs.component';
 
 @NgModule({
   imports: [
@@ -42,6 +43,8 @@ import { LedgeMarkdownRenderComponent } from './components/ledge-markdown-render
   ],
   declarations: [
     LedgeMarkdownRenderComponent,
+    LedgeMultipleDocsComponent,
+
     MarkdownRatingComponent,
     MarkdownRatingItemComponent,
     RatingRadarChartComponent,
@@ -49,6 +52,8 @@ import { LedgeMarkdownRenderComponent } from './components/ledge-markdown-render
   providers: [],
   exports: [
     LedgeMarkdownRenderComponent,
+    LedgeMultipleDocsComponent,
+
     MarkdownRatingComponent,
     MarkdownRatingItemComponent,
     RatingRadarChartComponent,

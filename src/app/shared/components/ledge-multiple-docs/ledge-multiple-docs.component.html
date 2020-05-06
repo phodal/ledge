@@ -1,1 +1,15 @@
-<p>ledge-multiple-docs works!</p>
+<mat-drawer-container class="multiple-docs">
+  <mat-drawer mode="side" opened class="left-drawer">
+    <ul>
+      <li *ngFor="let item of items"
+          (click)="getItem(item.source)"
+          [routerLink]="[currentUrl, item.source]"
+          [ngClass]="item.source === source ? 'active' : '' ">
+        <span>{{item.displayName}}</span>
+      </li>
+    </ul>
+  </mat-drawer>
+  <mat-drawer-content #drawerContent>
+    <ledge-markdown-render [data]="content"></ledge-markdown-render>
+  </mat-drawer-content>
+</mat-drawer-container>

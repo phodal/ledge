@@ -1,15 +1,8 @@
-<mat-drawer-container class="case-study">
-  <mat-drawer mode="side" opened class="left-drawer">
-    <ul>
-      <li *ngFor="let item of items"
-          (click)="getItem(item.source)"
-          [routerLink]="[currentUrl, item.source]"
-          [ngClass]="item.source === currentSource ? 'active' : '' ">
-        <span>{{item.displayName}}</span>
-      </li>
-    </ul>
-  </mat-drawer>
-  <mat-drawer-content #drawerContent>
-    <ledge-markdown-render [data]="content"></ledge-markdown-render>
-  </mat-drawer-content>
-</mat-drawer-container>
+<ledge-multiple-docs
+  [items]="items"
+  [currentUrl]="currentUrl"
+  [urlPrefix]="urlPrefix"
+  [source]="currentSource"
+>
+
+</ledge-multiple-docs>
