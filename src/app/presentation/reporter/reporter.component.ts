@@ -1,6 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import * as mdData from 'raw-loader!../../../assets/docs/reporter.md';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { MatDrawerContent } from '@angular/material/sidenav';
+import { DocRoute } from '../../shared/components/ledge-multiple-docs/doc-route.model';
+import { ActivatedRoute } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { Cases } from '../case-study/cases';
+
+export const reports: Cases = [
+  { displayName: '2019 年', source: '2019', default: true },
+  { displayName: '2020 年', source: '2020' },
+];
 
 @Component({
   selector: 'app-reporter',
@@ -8,11 +17,31 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./reporter.component.scss'],
 })
 export class ReporterComponent implements OnInit {
-  content = mdData.default;
+  @ViewChild('drawerContent', { static: false })
+  drawerContent: MatDrawerContent;
 
-  constructor(title: Title) {
-    title.setTitle('DevOps 年度报告 - Ledge DevOps 知识平台');
+  currentSource: string;
+  src: string;
+  content: string;
+
+  items: DocRoute[] = reports;
+  currentUrl = '/report';
+  urlPrefix = `reports`;
+
+  constructor(
+    private title: Title,
+    private activatedRoute: ActivatedRoute,
+    private translate: TranslateService
+  ) {}
+
+  ngOnInit(): void {
+    this.activatedRoute.paramMap.subscribe((p) => {
+      const param = p.get('year');
+      const currentItem = this.items.find((item) => item.source === param);
+      this.title.setTitle(
+        `DevOps ${currentItem.displayName} 年度报告 - Ledge DevOps 知识平台`
+      );
+      this.currentSource = param;
+    });
   }
-
-  ngOnInit(): void {}
 }

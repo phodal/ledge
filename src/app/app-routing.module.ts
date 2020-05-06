@@ -4,7 +4,6 @@ import { ToolsetComponent } from './presentation/toolset/toolset.component';
 import { ManualComponent } from './presentation/manual/manual.component';
 import { MaturityComponent } from './presentation/maturity/maturity.component';
 import { PatternComponent } from './presentation/pattern/pattern.component';
-import { ReporterComponent } from './presentation/reporter/reporter.component';
 import { ResourcesComponent } from './presentation/resources/resources.component';
 
 const routes: Routes = [
@@ -68,10 +67,6 @@ const routes: Routes = [
     component: ResourcesComponent,
   },
   {
-    path: 'report',
-    component: ReporterComponent,
-  },
-  {
     path: 'tool',
     component: ToolsetComponent,
   },
@@ -102,6 +97,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./presentation/skill-tree/skill-tree.module').then(
         (m) => m.SkillTreeModule
+      ),
+  },
+  {
+    path: 'report',
+    loadChildren: () =>
+      import('./presentation/reporter/reporter.module').then(
+        (m) => m.ReporterModule
       ),
   },
 ];
