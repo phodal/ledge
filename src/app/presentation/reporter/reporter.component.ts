@@ -7,8 +7,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { Cases } from '../case-study/cases';
 
 export const reports: Cases = [
-  { displayName: '2019 年', source: '2019', default: true },
-  { displayName: '2020 年', source: '2020' },
+  { displayName: '2019', source: '2019', default: true },
+  { displayName: '2020', source: '2020' },
 ];
 
 @Component({
