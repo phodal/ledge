@@ -2,7 +2,7 @@
   <mat-drawer mode="side" opened class="left-drawer">
     <ul>
       <li *ngFor="let item of items"
-          (click)="getCase(item.source)"
+          (click)="getItem(item.source)"
           [routerLink]="[currentUrl, item.source]"
           [ngClass]="item.source === currentSource ? 'active' : '' ">
         <span>{{item.displayName}}</span>

@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MatDrawerContent } from '@angular/material/sidenav';
 import { TranslateService } from '@ngx-translate/core';
 
-import { Case, cases } from './cases';
+import { DocRoute, cases } from './cases';
 
 @Component({
   selector: 'app-case-study',
@@ -15,11 +15,14 @@ import { Case, cases } from './cases';
 export class CaseStudyComponent implements OnInit {
   @ViewChild('drawerContent', { static: false })
   drawerContent: MatDrawerContent;
+
   currentSource: string;
   src: string;
   content: string;
-  items: Case[] = cases;
+
+  items: DocRoute[] = cases;
   currentUrl = '/case-study';
+  urlPrefix = `casestudies`;
 
   constructor(
     private title: Title,
@@ -31,19 +34,19 @@ export class CaseStudyComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((p) => {
       const param = p.get('case');
-      const currentCase = this.items.find((ca) => ca.source === param);
+      const currentItem = this.items.find((item) => item.source === param);
       this.title.setTitle(
-        `${currentCase.displayName} DevOps 案例学习（互联网公司/传统公司） - Ledge DevOps 知识平台`
+        `${currentItem.displayName} DevOps 案例学习（互联网公司/传统公司） - Ledge DevOps 知识平台`
       );
       this.configSource(param);
     });
   }
 
   private configSource(value: string) {
-    this.getCase(value);
+    this.getItem(value);
   }
 
-  async getCase(source: string) {
+  async getItem(source: string) {
     this.src = this.buildSrc(source);
     this.currentSource = source;
 
@@ -68,6 +71,6 @@ export class CaseStudyComponent implements OnInit {
   }
 
   private buildSrc(source: string) {
-    return `assets/docs/casestudies/${source}.md`;
+    return `assets/docs/${this.urlPrefix}/${source}.md`;
   }
 }
