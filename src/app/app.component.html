@@ -43,6 +43,9 @@
     <button mat-menu-item routerLink="/practise/agile-practise" routerLinkActive="active">
       {{ 'practise-page.agile' | translate}}
     </button>
+    <button mat-menu-item routerLink="/practise/frontend-devops-practise" routerLinkActive="active">
+      {{ 'practise-page.frontend-devops-practise' | translate}}
+    </button>
     <button mat-menu-item routerLink="/practise/tech-practise" routerLinkActive="active">
       {{ 'practise-page.tech' | translate}}
     </button>
@@ -88,27 +91,27 @@
     <mat-icon>arrow_drop_down</mat-icon>
   </button>
 
-  <mat-menu #appMenu="matMenu" backdropClass="nav-menu-wrapper">
-    <button mat-menu-item routerLink="/maturity" routerLinkActive="active">{{ 'maturity' | translate}}</button>
-    <button mat-menu-item routerLink="/report" routerLinkActive="active">{{ 'report' | translate}}</button>
-    <button mat-menu-item routerLink="/resources" routerLinkActive="active">{{ 'resources' | translate}}</button>
-    <button mat-menu-item routerLink="/job" routerLinkActive="active">{{ 'job' | translate}}</button>
-    <button mat-menu-item routerLink="/skilltree" routerLinkActive="active">{{ 'skilltree' | translate}}</button>
-  </mat-menu>
-  <button mat-button [matMenuTriggerFor]="appMenu">
-    {{ 'resource' | translate}}
-    <mat-icon>arrow_drop_down</mat-icon>
-  </button>
-
   <mat-menu #toolsetMenu="matMenu" backdropClass="nav-menu-wrapper">
+    <button mat-menu-item routerLink="/maturity" routerLinkActive="active">{{ 'maturity' | translate}}</button>
     <button mat-menu-item routerLink="/tool" routerLinkActive="active">{{ 'toolsets' | translate}}</button>
     <button mat-menu-item routerLink="/design" routerLinkActive="active">{{ 'design-devops' | translate}}</button>
-    <button mat-menu-item routerLink="/helper" routerLinkActive="active">{{ 'ledge-editor' | translate}}</button>
     <button mat-menu-item routerLink="/checklists" routerLinkActive="active">{{ 'checklists' | translate}}</button>
+    <button mat-menu-item routerLink="/skilltree" routerLinkActive="active">{{ 'skilltree' | translate}}</button>
   </mat-menu>
 
   <button mat-button [matMenuTriggerFor]="toolsetMenu">
     {{ 'tool' | translate}}
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
+
+  <mat-menu #appMenu="matMenu" backdropClass="nav-menu-wrapper">
+    <button mat-menu-item routerLink="/report" routerLinkActive="active">{{ 'report' | translate}}</button>
+    <button mat-menu-item routerLink="/resources" routerLinkActive="active">{{ 'resources' | translate}}</button>
+    <button mat-menu-item routerLink="/job" routerLinkActive="active">{{ 'job' | translate}}</button>
+    <button mat-menu-item routerLink="/helper" routerLinkActive="active">{{ 'ledge-editor' | translate}}</button>
+  </mat-menu>
+  <button mat-button [matMenuTriggerFor]="appMenu">
+    {{ 'resource' | translate}}
     <mat-icon>arrow_drop_down</mat-icon>
   </button>
 

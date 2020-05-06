@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 
 import { ChecklistModel } from '../model/checklist.model';
@@ -12,6 +12,8 @@ export class ComponentChecklistComponent implements OnInit, OnChanges {
   @Input() checklists: ChecklistModel[] = [];
   @Input() name: string;
 
+  @Output() updateParent = new EventEmitter<any>();
+
   constructor() {
   }
 
@@ -20,7 +22,7 @@ export class ComponentChecklistComponent implements OnInit, OnChanges {
   }
 
   completeChange($event: MatCheckboxChange) {
-
+    this.updateParent.emit($event.checked);
   }
 
   ngOnChanges(changes: SimpleChanges): void {

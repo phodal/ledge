@@ -1,12 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { LedgeRenderModule } from '@ledge-framework/render';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { ToolsetComponent } from './toolset.component';
 import { SharedModule } from '../../shared/shared.module';
 import { CustomMaterialModule } from '../../shared/custom-material.module';
-import { LedgeRenderModule } from '@ledge-framework/render';
-import { RouterTestingModule } from '@angular/router/testing';
 
-describe('AwesomeToolComponent', () => {
+describe('ToolSetComponent', () => {
   let component: ToolsetComponent;
   let fixture: ComponentFixture<ToolsetComponent>;
 

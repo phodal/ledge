@@ -140,7 +140,7 @@ export class LedgeQuadrantComponent implements OnInit, AfterViewInit {
               },
             },
             {
-              color: ['#09c95e', '#7f195e', '#666666', '#008988'],
+              color: ['#7753df', '#7f195e', '#666666', '#008988'],
               colorMappingBy: 'id',
               itemStyle: {
                 gapWidth: 1,

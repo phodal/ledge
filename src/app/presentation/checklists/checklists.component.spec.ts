@@ -5,13 +5,16 @@ import { SharedModule } from '../../shared/shared.module';
 import { LedgeRenderModule } from '@ledge-framework/render';
 import { CustomMaterialModule } from '../../shared/custom-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ActivatedRoute, convertToParamMap } from '@angular/router';
+import { ActivatedRoute, convertToParamMap, Router } from '@angular/router';
 import { of } from 'rxjs';
 import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ChecklistsComponent', () => {
   let component: ChecklistsComponent;
   let fixture: ComponentFixture<ChecklistsComponent>;
+  const mockRouter = {
+    navigate: jasmine.createSpy('navigate'),
+  };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -24,6 +27,7 @@ describe('ChecklistsComponent', () => {
       ],
       declarations: [ChecklistsComponent],
       providers: [
+        { provide: Router, useValue: mockRouter },
         {
           provide: ActivatedRoute,
           useValue: {
@@ -48,6 +52,10 @@ describe('ChecklistsComponent', () => {
 
   it('should change table', () => {
     component.onTabChanged({ index: 1 } as any);
+    expect(mockRouter.navigate).toHaveBeenCalledWith([
+      '/checklists/',
+      'agile-practise',
+    ]);
     expect(component.selectedTabIndex).toEqual(1);
   });
 });

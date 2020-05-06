@@ -20,7 +20,7 @@ export class MarkdownRatingComponent implements OnInit, ControlValueAccessor {
   @Input() isParent = false;
   @Input() instanceKey: string;
 
-  private disabled = false;
+  disabled = false;
 
   onChange(_) {}
 

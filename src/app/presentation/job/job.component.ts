@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Title } from '@angular/platform-browser';
 import { format } from 'date-fns';
 import { CreateJobDialogComponent } from './create-job-dialog/create-job-dialog.component';
-import { JobData } from './create-job-dialog/JobData';
-import { Title } from '@angular/platform-browser';
+import { issueToForm, JobDataModel } from './create-job-dialog/job-data.model';
 
 @Component({
   selector: 'app-job',
@@ -13,7 +13,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class JobComponent implements OnInit {
   loading = false;
-  jobList: JobData[] = [];
+  jobList: JobDataModel[] = [];
 
   constructor(
     public dialog: MatDialog,
@@ -25,7 +25,7 @@ export class JobComponent implements OnInit {
     this.title.setTitle(
       `DevOps 工作 Ledge DevOps 招聘信息中心 - Ledge DevOps 知识平台`
     );
-    this.qryJobComments();
+    this.queryJobComments();
   }
 
   openDialog(): void {
@@ -34,11 +34,13 @@ export class JobComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      // console.log('The dialog was closed');
+      if (result) {
+        this.queryJobComments();
+      }
     });
   }
 
-  qryJobComments() {
+  queryJobComments() {
     this.loading = true;
     this.http
       .get('https://api.github.com/repos/phodal/ledge/issues/140/comments')
@@ -46,40 +48,21 @@ export class JobComponent implements OnInit {
         (res: any[]) => {
           const result: any[] = res || [];
           const jobList = [];
-          for (const job of result) {
+          for (const job of result.reverse()) {
             const arr = job.body.replace(/:/g, '：').split('\r\n');
-            const jobInfo: JobData = {
-              jobTitle: '',
-              companyName: '',
-              companyDescription: '',
-              jobDescription: '',
-              yearRequire: '',
-              workAddress: '',
-              salary: '',
-              contact: '',
-              date: '',
-              htmlUrl: '',
-            };
             const info = {};
             for (const str of arr) {
               const [key, value] = this.splitOnFirstColon(str);
               info[key] = value;
             }
-            jobInfo.date = format(new Date(job.updated_at), 'yyyy/MM/dd');
+            const jobInfo = issueToForm(info);
             jobInfo.htmlUrl = job.html_url;
-            /* tslint:disable : no-string-literal */
-            jobInfo.companyName = info['公司名称'];
-            jobInfo.companyDescription = info['公司一行简介'];
-            jobInfo.workAddress = info['工作地址'];
-            jobInfo.jobDescription = info['工作简介'];
-            jobInfo.yearRequire = info['年限要求'];
-            jobInfo.salary = info['待遇水平'];
-            jobInfo.contact = info['联系方式'];
+            jobInfo.date = format(new Date(job.updated_at), 'yyyy/MM/dd');
             jobList.push(jobInfo);
           }
-          this.loading = false;
           this.jobList = jobList;
         },
+        () => {},
         () => {
           this.loading = false;
         }

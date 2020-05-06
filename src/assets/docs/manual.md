@@ -5,17 +5,19 @@
 我们依据我们的实施经验将 DevOps 实施的过程分为了这么几个步骤：
 
 1. [建立愿景与方向](/manual#建立愿景与方向)
-2. [度量组织现状、系统现状](/manual#度量)
+2. [度量：组织、系统现状](/manual#度量)
 3. [准入条件](/manual#准入条件)。查看是否满足实施 DevOps 的准入条件。
 4. [探索可行方案](/manual#探索可行方案)。即 MVP 尝试
 5. [MVP](/manual#mvp)。一次快速的 DevOps 过程和结果的 showcase。
 6. [精细的 DevOps 实施](/manual#实施落地)
-7. [规模化 DevOps 落地](/manual#规模化)
+7. [回顾优化](/manual#回顾优化)
+8. [规模化 DevOps 落地](/manual#规模化)
 
 对应的在手册中，还包含了
 
 - 附录 1：移动应用的自动化测试
 - 附录 2：可信软件系统 10 要素
+- 附录 3：基本概念
 
 # 建立愿景与方向
 
@@ -35,6 +37,22 @@
 ## 识别目标和现状
 
 ## 落地策略
+
+### DevOps 转型策略
+
+在 Google ACCELERATE State of DevOps 2019 中有一个基于性能侧的 DevOps 转型策略热图（HEATMAP OF DEVOPS TRANSFORMATION STRATEGIES BY PERFORMANCE PROFILE）
+
+| 类型                     | 低  | 中  | 高  | 精英 |
+| ------------------------ | --- | --- | --- | ---- |
+| 训练中心                 | 27% | 21% | 18% | 14%  |
+| 卓越中心                 | 34% | 34% | 20% | 24%  |
+| 只有概念证明，没有下一步 | 41% | 32% | 20% | 16%  |
+| 把概念证明当种子         | 16% | 29% | 29% | 30%  |
+| 把概念证明当模板         | 21% | 24% | 29% | 30%  |
+| 实践社区                 | 24% | 51% | 47% | 57%  |
+| 大爆炸式改革             | 19% | 19% | 11% | 9%   |
+| 由下而上，或者基层导入   | 29% | 39% | 46% | 46%  |
+| 混搭                     | 46% | 42% | 34% | 38%  |
 
 ### 自行落地
 
@@ -999,7 +1017,9 @@ Kafka：[Kafka Quickstart](https://kafka.apache.org/quickstart)
 
 ## 输出
 
-# 规模化
+# 回顾总结
+
+# 规模化 DevOps 落地
 
 ## DevOps 能力中心
 
@@ -1029,15 +1049,13 @@ Kafka：[Kafka Quickstart](https://kafka.apache.org/quickstart)
 
 ## DevOps 平台
 
-### 工具标准化
-
-### 流程标准化
-
-#### 提交信息门禁
+见：<a href="/practise/devops-platform" target="_blank">DevOps 平台</a>
 
 ## DevOps 知识平台
 
 ### Google DevOps 文档
+
+> DevOps 是一项组织和文化运动，旨在加快软件交付速度，提高服务可靠性，并在软件利益相关方之间建立共享所有权。了解如何提高软件交付的速度、稳定性、可用性和安全性。
 
 Google 示例：[Google DevOps](https://cloud.google.com/devops?hl=zh-cn)
 
@@ -1071,6 +1089,10 @@ Google 示例：[Google DevOps](https://cloud.google.com/devops?hl=zh-cn)
        - 如何进行转型
 ```
 
+## 自下而上优化
+
+### 成熟度模型的模式
+
 # 附录 1：移动应用的自动化测试
 
 ## BDD 方式
@@ -1097,7 +1119,7 @@ BDD 在这一种上相当的迷人——能让非技术人员编写测试。而�
 对应的，开发人员需要编写实现：
 
 ```javascript
-Given('当我在网站的首页', function() {
+Given('当我在网站的首页', function () {
   return this.driver.get('http://0.0.0.0:7272/');
 });
 ```
@@ -1189,3 +1211,7 @@ Given('当我在网站的首页', function() {
   - 提升个人能力
   - 团队能力
   - 团队多样性
+
+# 附录 3：基本概念
+
+## 制品

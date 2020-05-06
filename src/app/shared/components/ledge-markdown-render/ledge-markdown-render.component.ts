@@ -18,11 +18,11 @@ import { MarkdownService } from 'ngx-markdown';
 import Tocify, { TocItem } from './tocify';
 
 @Component({
-  selector: 'component-markdown-render',
-  templateUrl: './markdown-render.component.html',
-  styleUrls: ['./markdown-render.component.scss'],
+  selector: 'ledge-markdown-render',
+  templateUrl: './ledge-markdown-render.component.html',
+  styleUrls: ['./ledge-markdown-render.component.scss'],
 })
-export class MarkdownRenderComponent
+export class LedgeMarkdownRenderComponent
   implements OnInit, OnChanges, AfterViewInit {
   @Input()
   showToc = false;
@@ -182,7 +182,7 @@ export class MarkdownRenderComponent
 
   private gotoHeading() {
     this.route.fragment.subscribe((fragment: string) => {
-      if (!!fragment) {
+      if (!!fragment && typeof fragment === 'string') {
         try {
           const element = this.myElement.nativeElement.querySelector(
             '#' + fragment

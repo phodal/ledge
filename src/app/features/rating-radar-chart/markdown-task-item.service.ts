@@ -6,7 +6,6 @@ import { Observable, Subject } from 'rxjs';
 })
 export class MarkdownTaskItemService {
   private taskList = [];
-  private tasks: any;
   private subject = new Subject<any>();
 
   update(tasks) {

@@ -1,6 +1,6 @@
 $medium-grey: #ddd;
 $fontColor: white;
-$bgColor: rgb(0, 121, 191);
+$bgColor: #7753df;
 $boardColor: rgba(white, 0.5);
 
 .root {
@@ -13,8 +13,6 @@ $boardColor: rgba(white, 0.5);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  // Override Automatic Minimum Size
-  // https://stackoverflow.com/questions/36247140/why-dont-flex-items-shrink-past-content-size
   min-width: 0;
   min-height: 0;
   background: $bgColor;

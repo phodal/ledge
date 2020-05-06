@@ -62,9 +62,21 @@ HTML5 是最新的 HTML 版本
 
 #### Float
 
-#### Positioning
+[Float](https://css-tricks.com/all-about-floats/)，是最常用的 CSS 布局方式。
+
+#### Position
+
+[Position](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
+
+1. static
+2. relative
+3. absolute
+4. fixed
+5. sticky
 
 #### Box Model
+
+[Box Model](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
 
 #### CSS Flex
 
@@ -76,7 +88,11 @@ HTML5 是最新的 HTML 版本
 
 ### SASS/LESS
 
+[SASS](https://sass-lang.com/) 和 [LESS](http://lesscss.org/) 是两种 [CSS 预处理器](https://developer.mozilla.org/en-US/docs/Glossary/CSS_preprocessor)
+
 ### 响应式设计
+
+> 自适应网页设计、回应式网页设计、对应式网页设计。 是一种网页设计的技术做法，该设计可使网站在不同的设备（从桌面电脑显示器到移动电话或其他移动产品设备）上浏览时对应不同分辨率皆有适合的呈现，减少用户进行缩放、平移和滚动等操作行为
 
 ### BEM
 
@@ -86,7 +102,9 @@ HTML5 是最新的 HTML 版本
 
 #### Bootstrap
 
-#### Material UI
+[Bootstrap](https://getbootstrap.com/)
+
+> Bootstrap 是一个用于 HTML、CSS 和 JS 开发的开源工具包。利用 Bootstrap 提供的 Sass 变量和混合（mixins）、响应式栅格系统、可扩展的预制组件以及强大的 jQuery 插件，能够让你快速地开发出产品原型或构建整个 app。
 
 #### Tailwind CSS
 
@@ -100,53 +118,115 @@ HTML5 是最新的 HTML 版本
 
 [CSS Modules](https://github.com/css-modules/css-modules)，是指同一个 CSS 文件中的所有 CSS class 等都默认本地作用域。由于不是 CSS 原生支持，所以一般需要配合 Webpack 的 CSS-loader 或者 PostCSS 使用。
 
-### Styled Components
+### CSS in JS
 
-### Emotion
+[CSS in JS](https://en.wikipedia.org/wiki/CSS-in-JS)
+
+> CSS-in-JS is a styling technique where JavaScript is used to style components. When this JavaScript is parsed, CSS is generated (usually as a style element) and attached into the DOM. It allows you to abstract CSS to the component level itself, using JavaScript to describe styles in a declarative and maintainable way.
+
+1. [Styled Components](https://styled-components.com/) 是一种在 React Component 应用 CSS 样式的库。
+
+2. [Emotion](https://emotion.sh/)，也是一种使用 JavaScript 来写 CSS 的库。
+
+由于 React 官方并没有一种推荐的方式，导致社区中有了众多的方法。
 
 ## JavaScript
 
 ### DOM 操作
 
+[DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
+
 ### Fetch/AJAX
+
+浏览器的两种原生网络请求方式：
+
+[AJAX](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX)
+
+[Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 
 ### ES6+
 
+JavaScript 的标准称之为 [ECMAScript](https://en.wikipedia.org/wiki/ECMAScript) 简称 ES，它有多个版本，普遍意义上讲已 2015 年以后发布的 ES6 （ES2015）为「现代的 JavaScript」。
+
 ### TypeScript
+
+[TypeScript](https://www.typescriptlang.org/) 是 JavaScript 类型的超集，他可以编译成 JavaScript。
 
 ## Web Component
 
+[Web Component](https://developer.mozilla.org/en-US/docs/Web/Web_Components)
+
+> Web Components 是一套不同的技术，允许您创建可重用的定制元素（它们的功能封装在您的代码之外）并且在您的 web 应用中使用它们。
+
 ### HTML Template
+
+[HTML Template](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/template)
+
+> HTML 内容模板元素是一种用于保存客户端内容机制，该内容在加载页面时不会呈现，但随后可以(原文为 may be)在运行时使用 JavaScript 实例化。
 
 ### Custom Element
 
+[Custom Element](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/Using_custom_elements)
+
+> Web Components 标准非常重要的一个特性是，它使开发者能够将 HTML 页面的功能封装为 custom elements（自定义标签），而往常，开发者不得不写一大堆冗长、深层嵌套的标签来实现同样的页面功能。
+
 ### Shadow DOM
+
+> Web components 的一个重要属性是封装——可以将标记结构、样式和行为隐藏起来，并与页面上的其他代码相隔离，保证不同的部分不会混在一起，可使代码更加干净、整洁。其中，Shadow DOM 接口是关键所在，它可以将一个隐藏的、独立的 DOM 附加到一个元素上。
 
 ## 构建
 
 ### Webpack
 
+[Webpack](https://webpack.js.org/)
+
+> 本质上，webpack 是一个现代 JavaScript 应用程序的静态模块打包工具。当 webpack 处理应用程序时，它会在内部构建一个 依赖图(dependency graph)，此依赖图会映射项目所需的每个模块，并生成一个或多个 bundle。
+
 ### Rollup
+
+[Rollup](https://rollupjs.org/)
+
+> It uses the new standardized format for code modules included in the ES6 revision of JavaScript, instead of previous idiosyncratic solutions such as CommonJS and AMD.
+
+简单来说：Webpack 用来打包应用，Rollup 用来打包库。
 
 ### Parcel
 
+[Parcel](https://parceljs.org/)
+
+> 极速零配置 Web 应用打包工具
+
+### Bazel
+
+[Bazel](https://bazel.build/)
+
+Bazel 是 Google 基于内部的打包工具开源的多语言打包工具。
+
+Angular 官方有使用 Bazel 打包的[教程](https://angular.io/guide/bazel)。
+
 ## 包管理
 
-### NPM
+### npm
+
+[npm](https://www.npmjs.com/) 是 Node.js 默认的包管理工具。
 
 ### yarn
 
+[yarn](https://yarnpkg.com/) 是 Facebook 推出的 JavaScript 包管理工具。
+
+值得注意的是，[yarn 2](https://dev.to/arcanis/introducing-yarn-2-4eh1)，带有 [PNP (plug ’n’ play)](https://yarnpkg.com/features/pnp/) 支持，但是不支持 React Native。
+
 ## 测试
 
-### Karma
+1. Karma
 
-### Jasmine
+2. Jasmine
 
-### Jest
+3. Jest
 
-### Cypress
+4. Cypress
 
-### Enzyme
+5. Enzyme
 
 ## 性能
 
@@ -178,35 +258,41 @@ HTML5 是最新的 HTML 版本
 
 它可以在 Chrome、命令行和 Node 中使用。
 
-### Devtools
-
 ## 安全
-
-### CORS
 
 ### Content Security Policy
 
+> 内容安全策略 (CSP) 是一个额外的安全层，用于检测并削弱某些特定类型的攻击，包括跨站脚本 (XSS) 和数据注入攻击等。无论是数据盗取、网站内容污染还是散发恶意软件，这些攻击都是主要的手段。
+
 ### OWASP
+
+[OWASP](https://devops.phodal.com/maturity)
 
 ## 监控
 
+前端监控一般指监控用户的使用情况和系统的运行状态，例如 PV、UV、平均访问时长、bug 等等。
+
 ## 框架
 
-### Angular
+1. [Angular](https://angular.io)
 
-#### RxJS
+   - [RxJS](https://rxjs-dev.firebaseapp.com/)
 
-#### NGRX
+     > Reactive Extensions Library for JavaScript
 
-### React
+   - [NGRX](https://ngrx.io/)
 
-#### Redux
+     > Reactive State for Angular
 
-#### MobX
+2. [React](https://reactjs.org/)
 
-### Vue
+   - [Redux](https://redux.js.org/)
 
-#### VueX
+   - [MobX](https://mobx.js.org/)
+
+3. [Vue](https://vuejs.org/)
+
+   - [VueX](https://vuex.vuejs.org/)
 
 ## Server Side Rendering (SSR)
 
@@ -248,17 +334,21 @@ SSG 的概念本身并不新，但是基于现在三大前端框架（Angular, R
 
 ## Mobile APP
 
-### React Native
+1. [React Native](https://reactnative.dev/)
 
-### Flutter
+2. [Flutter](https://flutter.dev/)
 
-### NativeScript
+3. [NativeScript](https://www.nativescript.org/)
 
-### Ionic
+4. [Ionic](https://ionicframework.com/)
 
 ## Desktop APP
 
-### Electron
+1. [Electron](https://www.electronjs.org/)
+
+   > 使用 JavaScript，HTML 和 CSS 构建跨平台的桌面应用程序
+
+它使用 Chromium rendering engine 和 Node.js
 
 ## GraphQL
 
