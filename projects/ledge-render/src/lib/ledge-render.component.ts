@@ -247,6 +247,7 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
 
       case 'chart':
       case 'process-table':
+      case 'process-card':
       case 'table-step':
       case 'heatmap':
         const tableData = LedgeMarkdownConverter.toJson(codeBlock.text);
@@ -262,14 +263,6 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
         this.markdownData.push({
           type: 'process-step',
           data: stepData.lists[0],
-        });
-        break;
-      case 'process-card':
-        const cardData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({
-          type: 'process-card',
-          data: cardData.tables[0],
-          config: cardData.config,
         });
         break;
       case 'mindmap':
