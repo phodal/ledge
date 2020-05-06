@@ -55,6 +55,6 @@ config: {"type": "line-model"}
 `;
     const json = LedgeMarkdownConverter.toJson(code);
     expect(json.lists.length).toEqual(1);
-    console.log(JSON.stringify(json.lists));
+    expect(json.lists[0].children[0].name).toEqual('Some & < > " title');
   });
 });

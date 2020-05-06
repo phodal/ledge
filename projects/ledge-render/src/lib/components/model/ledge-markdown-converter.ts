@@ -80,7 +80,14 @@ const LedgeMarkdownConverter = {
           break;
         }
         case 'text': {
-          const text = marked.inlineLexer(token.text, tokens.links);
+          let text = marked.inlineLexer(token.text, tokens.links);
+          text = text
+            .replace('&amp;', '&')
+            .replace('&gt;', '>')
+            .replace('&lt;', '<')
+            .replace('&quot;', '"')
+            .replace('&#39;', '\'');
+
           result += `"name": ${JSON.stringify(text)},`;
           break;
         }
