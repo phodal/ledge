@@ -28,11 +28,7 @@ export class ReporterComponent implements OnInit {
   currentUrl = '/report';
   urlPrefix = `reports`;
 
-  constructor(
-    private title: Title,
-    private activatedRoute: ActivatedRoute,
-    private translate: TranslateService
-  ) {}
+  constructor(private title: Title, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((p) => {
