@@ -72,23 +72,39 @@
 
 ```chart
 | 操作系统  |  2018 | 2019 |
-|-|-|-|   
-| Windows 2003/2003R2 | 12% | 6% | 
-| Windows 2008/2008R2 | 33% | 26% | 
+|-|-|-|
+| Windows 2003/2003R2 | 12% | 6% |
+| Windows 2008/2008R2 | 33% | 26% |
 | Windows 2012/2012R2 | 56% | 52% |
 | Other Windows      | 22% | 25% |
 | Linux Debian/Ubuntu variants  | 36% | 43% |
-| Linux Enterprise variants (RHEL, Oracle, CentOS) | 48% | 49% | 
+| Linux Enterprise variants (RHEL, Oracle, CentOS) | 48% | 49% |
 | Linux Fedora        | 5% | 4% |
 | SUSE Linux Enterprise Server  | 8% | 5% |
 | Linux OpenSUSE | 4% | 4% |
 | Linux Arch    | 2% | 2% |
 | Other Linux  |  13% | 11% |
 | Other UNIX  | 8% | 4% |
-| FreeBSD/NetBSD/OpenBSD   | 3% | 3% | 
+| FreeBSD/NetBSD/OpenBSD   | 3% | 3% |
 | AIX                | 10% | 7% |
 | Solaris OS         | 12% | 5% |
 | Other              | 12% | 8% |
 
 config: {"type": "bar", "multiset": true}
+```
+
+基于性能侧的 DevOps 转型策略热图
+
+```heatmap
+| 类型                     | 低  | 中  | 高  | 精英 |
+| ------------------------ | --- | --- | --- | ---- |
+| 训练中心                 | 27% | 21% | 18% | 14%  |
+| 卓越中心                 | 34% | 34% | 20% | 24%  |
+| 只有概念证明，没有下一步 | 41% | 32% | 20% | 16%  |
+| 把概念证明当种子         | 16% | 29% | 29% | 30%  |
+| 把概念证明当模板         | 21% | 24% | 29% | 30%  |
+| 实践社区                 | 24% | 51% | 47% | 57%  |
+| 大爆炸式改革             | 19% | 19% | 11% | 9%   |
+| 由下而上，或者基层导入   | 29% | 39% | 46% | 46%  |
+| 混搭                     | 46% | 42% | 34% | 38%  |
 ```

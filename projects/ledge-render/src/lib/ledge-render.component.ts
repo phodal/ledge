@@ -1,10 +1,13 @@
 import {
   ChangeDetectionStrategy,
-  Component, EventEmitter,
+  Component,
+  EventEmitter,
   Input,
   OnChanges,
-  OnInit, Output,
-  SimpleChanges, ViewChild,
+  OnInit,
+  Output,
+  SimpleChanges,
+  ViewChild,
 } from '@angular/core';
 import { Token, Tokens, TokensList } from 'marked';
 import marked, { Slugger } from 'marked/lib/marked';
@@ -52,7 +55,7 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    const { content, scrollToItem } = changes;
+    const {content, scrollToItem} = changes;
     if (content) {
       this.content = content.currentValue;
       this.renderContent(this.content);
@@ -135,7 +138,7 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
           body += this.tok();
         }
         this.isPureParagraph = true;
-        this.markdownData.push({ type: 'blockquote', text: body });
+        this.markdownData.push({type: 'blockquote', text: body});
         break;
       case 'paragraph':
         return this.handleParaGraph(token);
@@ -166,10 +169,10 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
 
         this.listQueue.pop();
         if (this.listQueue.length === 0) {
-          this.markdownData.push({ type: 'list', data: listBody, ordered });
+          this.markdownData.push({type: 'list', data: listBody, ordered});
         }
 
-        return { children: listBody, ordered, start };
+        return {children: listBody, ordered, start};
       }
       case 'list_item_start': {
         const itemBody = {
@@ -196,7 +199,7 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
           }
         }
 
-        return { body: itemBody, task, checked };
+        return {body: itemBody, task, checked};
       }
       case 'hr':
         this.markdownData.push(token);
@@ -224,22 +227,41 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
   private handleCode(token: marked.Tokens.Code) {
     const codeBlock = token as Tokens.Code;
     switch (codeBlock.lang) {
-      case 'chart':
-        const chartData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({ type: 'chart', data: chartData.tables[0] });
+      case 'toolset':
+        const json = LedgeMarkdownConverter.toJson(codeBlock.text);
+        if (json.config === undefined) {
+          return;
+        }
+        const toolType = json.config.type;
+        this.markdownData.push({
+          type: 'toolset',
+          data: {type: toolType, data: this.getDataByType(json, toolType)},
+        });
         break;
+
+      case 'mermaid':
+      case 'graphviz':
+      case 'echarts':
+        this.markdownData.push({type: codeBlock.lang, data: codeBlock.text});
+        break;
+
+      case 'chart':
+      case 'process-table':
+      case 'table-step':
+      case 'heatmap':
+        const tableData = LedgeMarkdownConverter.toJson(codeBlock.text);
+        this.markdownData.push({
+          type: codeBlock.lang,
+          data: tableData.tables[0],
+          config: tableData.config,
+        });
+        break;
+
       case 'process-step':
         const stepData = LedgeMarkdownConverter.toJson(codeBlock.text);
         this.markdownData.push({
           type: 'process-step',
           data: stepData.lists[0],
-        });
-        break;
-      case 'process-table':
-        const tableData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({
-          type: 'process-table',
-          data: tableData.tables[0],
         });
         break;
       case 'process-card':
@@ -252,11 +274,11 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
         break;
       case 'mindmap':
         const mindmapData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({ type: 'mindmap', data: mindmapData.lists[0] });
+        this.markdownData.push({type: 'mindmap', data: mindmapData.lists[0]});
         break;
       case 'pyramid':
         const pyramidData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({ type: 'pyramid', data: pyramidData.lists[0] });
+        this.markdownData.push({type: 'pyramid', data: pyramidData.lists[0]});
         break;
       case 'radar':
         const radarData = LedgeMarkdownConverter.toJson(codeBlock.text);
@@ -274,24 +296,6 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
           config: quadrantData.config
         });
         break;
-      case 'toolset':
-        const json = LedgeMarkdownConverter.toJson(codeBlock.text);
-        if (json.config === undefined) {
-          return;
-        }
-
-        const toolType = json.config.type;
-        this.markdownData.push({
-          type: 'toolset',
-          data: { type: toolType, data: this.getDataByType(json, toolType) },
-        });
-        break;
-      case 'graphviz':
-        this.markdownData.push({ type: 'graphviz', data: codeBlock.text });
-        break;
-      case 'echarts':
-        this.markdownData.push({ type: 'echarts', data: codeBlock.text });
-        break;
       case 'list-style':
         const listData = LedgeMarkdownConverter.toJson(codeBlock.text);
         this.markdownData.push({
@@ -304,15 +308,8 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
         const stepLineData = LedgeMarkdownConverter.toJson(codeBlock.text);
         this.markdownData.push({
           type: 'step-line',
-          data: stepLineData.lists[0].children
-        });
-        break;
-      case 'table-step':
-        const tableStepData = LedgeMarkdownConverter.toJson(codeBlock.text);
-        this.markdownData.push({
-          type: 'table-step',
-          data: tableStepData.tables[0],
-          config: tableStepData.config,
+          data: stepLineData.lists[0].children,
+          config: stepLineData.config,
         });
         break;
       case 'pie':
@@ -377,13 +374,6 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
           type: 'fishbone',
           data: fishboneData.lists[0].children,
           config: fishboneData.config,
-        });
-        break;
-      case 'mermaid':
-        const mermaidData = codeBlock.text;
-        this.markdownData.push({
-          type: 'mermaid',
-          data: mermaidData,
         });
         break;
       default:
