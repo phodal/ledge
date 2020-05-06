@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LedgeMarkdownRenderComponent } from './ledge-markdown-render.component';
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../shared.module';
 import { RouterTestingModule } from '@angular/router/testing';
 
 describe('MarkdownRenderComponent', () => {
