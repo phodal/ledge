@@ -3,8 +3,9 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MatDrawerContent } from '@angular/material/sidenav';
-import { Case, cases } from './cases';
 import { TranslateService } from '@ngx-translate/core';
+
+import { Case, cases } from './cases';
 
 @Component({
   selector: 'app-case-study',
@@ -17,7 +18,8 @@ export class CaseStudyComponent implements OnInit {
   currentSource: string;
   src: string;
   content: string;
-  cases: Case[] = cases;
+  items: Case[] = cases;
+  currentUrl = '/case-study';
 
   constructor(
     private title: Title,
@@ -29,7 +31,7 @@ export class CaseStudyComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((p) => {
       const param = p.get('case');
-      const currentCase = this.cases.find((ca) => ca.source === param);
+      const currentCase = this.items.find((ca) => ca.source === param);
       this.title.setTitle(
         `${currentCase.displayName} DevOps 案例学习（互联网公司/传统公司） - Ledge DevOps 知识平台`
       );
@@ -59,7 +61,6 @@ export class CaseStudyComponent implements OnInit {
 
   private resetScrollbar() {
     if (!!this.drawerContent) {
-      // on test drawerContent is different
       if (!this.drawerContent.hasOwnProperty('nativeElement')) {
         this.drawerContent.getElementRef().nativeElement.scrollTop = 0;
       }

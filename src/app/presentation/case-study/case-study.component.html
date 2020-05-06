@@ -1,11 +1,11 @@
 <mat-drawer-container class="case-study">
   <mat-drawer mode="side" opened class="left-drawer">
     <ul>
-      <li *ngFor="let casestudy of cases"
-          (click)="getCase(casestudy.source)"
-          [routerLink]="['/case-study', casestudy.source]"
-          [ngClass]="casestudy.source === currentSource ? 'active' : '' ">
-        <span>{{casestudy.displayName}}</span>
+      <li *ngFor="let item of items"
+          (click)="getCase(item.source)"
+          [routerLink]="[currentUrl, item.source]"
+          [ngClass]="item.source === currentSource ? 'active' : '' ">
+        <span>{{item.displayName}}</span>
       </li>
     </ul>
   </mat-drawer>
