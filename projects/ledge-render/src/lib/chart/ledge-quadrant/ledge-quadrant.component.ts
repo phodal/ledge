@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import * as echarts from 'echarts';
 import LedgeChartConverter from '../../components/model/ledge-chart-converter';
-import { LedgeList } from '../../components/model/ledge-chart.model';
+import { LedgeListItem } from '../../components/model/ledge-chart.model';
 
 @Component({
   selector: 'ledge-quadrant',
@@ -17,7 +17,7 @@ import { LedgeList } from '../../components/model/ledge-chart.model';
 })
 export class LedgeQuadrantComponent implements OnInit, AfterViewInit {
   @Input()
-  data: LedgeList;
+  data: LedgeListItem[];
 
   @Input()
   config: any;

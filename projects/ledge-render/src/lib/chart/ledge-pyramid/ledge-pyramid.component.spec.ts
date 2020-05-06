@@ -14,19 +14,17 @@ describe('LedgePyramidComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(LedgePyramidComponent);
     component = fixture.componentInstance;
-    component.data = {
-      children: [
-        {
-          children: [
-            {
-              children: [],
-              name: '',
-            },
-          ],
-          name: '',
-        },
-      ],
-    };
+    component.data = [
+      {
+        children: [
+          {
+            children: [],
+            name: '',
+          },
+        ],
+        name: '',
+      },
+    ];
     fixture.detectChanges();
   });
 

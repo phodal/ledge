@@ -15,19 +15,18 @@ describe('LedgeRadarComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(LedgeRadarComponent);
     component = fixture.componentInstance;
-    component.data = {
-      children: [
-        {
-          children: [
-            {
-              children: [],
-              name: '',
-            },
-          ],
-          name: '',
-        },
-      ],
-    };
+    component.data = [
+      {
+        children: [
+          {
+            children: [],
+            name: '',
+          },
+        ],
+        name: '',
+      },
+    ];
+
     fixture.detectChanges();
   });
 

@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import * as echarts from 'echarts';
 import LedgeChartConverter from '../../components/model/ledge-chart-converter';
-import { LedgeList } from '../../components/model/ledge-chart.model';
+import { LedgeListItem } from '../../components/model/ledge-chart.model';
 
 @Component({
   selector: 'ledge-radar',
@@ -10,7 +10,7 @@ import { LedgeList } from '../../components/model/ledge-chart.model';
 })
 export class LedgeRadarComponent implements OnInit, AfterViewInit {
   @Input()
-  data: LedgeList;
+  data: LedgeListItem[];
 
   @Input()
   config: any;

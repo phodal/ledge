@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import * as echarts from 'echarts';
 import LedgeChartConverter from '../../components/model/ledge-chart-converter';
-import { LedgeList } from '../../components/model/ledge-chart.model';
+import { LedgeListItem } from '../../components/model/ledge-chart.model';
 
 @Component({
   selector: 'ledge-mindmap',
@@ -17,7 +17,7 @@ import { LedgeList } from '../../components/model/ledge-chart.model';
 })
 export class LedgeMindmapComponent implements OnInit, AfterViewInit {
   @Input()
-  data: LedgeList;
+  data: LedgeListItem[];
 
   chartData: any;
   dataLevel = 1;

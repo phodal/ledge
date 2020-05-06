@@ -15,19 +15,18 @@ describe('LedgeQuadrantComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(LedgeQuadrantComponent);
     component = fixture.componentInstance;
-    component.data = {
-      children: [
-        {
-          name: 'parent',
-          children: [
-            { name: 'child', children: [{ name: '' }] },
-            { name: 'child', children: [{ name: '' }] },
-            { name: 'child', children: [{ name: '' }] },
-            { name: 'child', children: [{ name: '' }] },
-          ],
-        },
-      ],
-    };
+    component.data = [
+      {
+        name: 'parent',
+        children: [
+          {name: 'child', children: [{name: ''}]},
+          {name: 'child', children: [{name: ''}]},
+          {name: 'child', children: [{name: ''}]},
+          {name: 'child', children: [{name: ''}]},
+        ],
+      },
+    ];
+
     fixture.detectChanges();
   });
 
