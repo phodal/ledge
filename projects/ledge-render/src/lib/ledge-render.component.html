@@ -78,6 +78,10 @@
       <ledge-fish-bone [data]="item.data" [config]="item.config"></ledge-fish-bone>
     </div>
 
+    <div *ngSwitchCase="'heatmap'">
+      <ledge-heatmap [data]="item.data" [config]="item.config"></ledge-heatmap>
+    </div>
+
     <div *ngSwitchCase="'table'">
       <table>
         <thead>
