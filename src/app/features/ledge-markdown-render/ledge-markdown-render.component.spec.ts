@@ -1,22 +1,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MarkdownRenderComponent } from './markdown-render.component';
+import { LedgeMarkdownRenderComponent } from './ledge-markdown-render.component';
 import { SharedModule } from '../../shared/shared.module';
 import { RouterTestingModule } from '@angular/router/testing';
 
 describe('MarkdownRenderComponent', () => {
-  let component: MarkdownRenderComponent;
-  let fixture: ComponentFixture<MarkdownRenderComponent>;
+  let component: LedgeMarkdownRenderComponent;
+  let fixture: ComponentFixture<LedgeMarkdownRenderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [SharedModule, RouterTestingModule],
-      declarations: [MarkdownRenderComponent],
+      declarations: [LedgeMarkdownRenderComponent],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MarkdownRenderComponent);
+    fixture = TestBed.createComponent(LedgeMarkdownRenderComponent);
     component = fixture.componentInstance;
     component.data = `
 # h1
