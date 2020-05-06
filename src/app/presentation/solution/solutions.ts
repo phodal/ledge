@@ -1,10 +1,6 @@
-export interface Solution {
-  displayName: string;
-  source: string;
-  default?: boolean;
-}
+import { DocRoute } from '../../shared/components/ledge-multiple-docs/doc-route.model';
 
-export type Solutions = Array<Solution>;
+export type Solutions = Array<DocRoute>;
 
 export const solutions: Solutions = [
   { displayName: 'Coding', source: 'coding' },
