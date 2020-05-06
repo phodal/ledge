@@ -436,7 +436,7 @@ config: {"type": "bar", "multiset": true}
 ### pie
 
 ```pie
- - Some & title
+ - Some & < > " title
    - a: 4
    - b: 12
    - c: 21

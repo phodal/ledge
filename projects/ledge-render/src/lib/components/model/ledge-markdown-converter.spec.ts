@@ -44,4 +44,17 @@ config: {"type": "line-model"}
     expect(json.lists.length).toEqual(1);
     expect(json.lists[0].children[0].children.length).toEqual(1);
   });
+
+  it('should success build for pie chart', () => {
+    const code = `pie
+ - Some & < > " title
+   - a: 4
+   - b: 12
+   - c: 21
+   - d: 19
+`;
+    const json = LedgeMarkdownConverter.toJson(code);
+    expect(json.lists.length).toEqual(1);
+    console.log(JSON.stringify(json.lists));
+  });
 });
