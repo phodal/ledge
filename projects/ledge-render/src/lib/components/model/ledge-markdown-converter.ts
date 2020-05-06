@@ -59,6 +59,13 @@ const LedgeMarkdownConverter = {
     return html;
   },
 
+  unescaped: (text: string) => text
+    .replace('&amp;', '&')
+    .replace('&gt;', '>')
+    .replace('&lt;', '<')
+    .replace('&quot;', '"')
+    .replace('&#39;', '\''),
+
   toJson(code: any) {
     let config: any = {};
     const tables = [];
@@ -81,12 +88,7 @@ const LedgeMarkdownConverter = {
         }
         case 'text': {
           let text = marked.inlineLexer(token.text, tokens.links);
-          text = text
-            .replace('&amp;', '&')
-            .replace('&gt;', '>')
-            .replace('&lt;', '<')
-            .replace('&quot;', '"')
-            .replace('&#39;', '\'');
+          text = this.unescaped(text);
 
           result += `"name": ${JSON.stringify(text)},`;
           break;
