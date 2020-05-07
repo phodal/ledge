@@ -45,9 +45,15 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    setTimeout(() => {
-      this.startIntro();
-    }, 3000);
+    const introKey = 'home.hasIntro';
+    this.storage.get(introKey).subscribe((value: boolean) => {
+      if (!value) {
+        setTimeout(() => {
+          this.startIntro();
+          this.storage.set(introKey, true).subscribe(() => {});
+        }, 1000);
+      }
+    });
   }
 
   private startIntro() {
@@ -55,23 +61,33 @@ export class AppComponent implements OnInit, AfterViewInit {
       steps: [
         {
           element: '#step1',
-          intro: 'Welcome to your new app!',
+          intro:
+            '在『案例学习』里，你可以找到丰富的 DevOps 学习案例；你可以在 GitHub 上提交你的案例，加到入到示例中来。',
           position: 'bottom',
         },
         {
           element: '#step2',
-          intro: "Ok, wasn't that fun?",
-          position: 'right',
+          intro:
+            '在『模式与原则』中，我们将和你分享一些软件开发、DevOps 顶层的原则与模式，用于在更高的层级来指导设计。',
+          position: 'bottom',
         },
         {
           element: '#step3',
-          intro: "let's keep going",
-          position: 'top',
+          intro:
+            '在『最佳实践』里，我们收集了一系列的最优、最好的实践，来帮助你在实施的过程中，快速理解问题背后的原理。',
+          position: 'bottom',
+        },
+        {
+          element: '#step4',
+          intro:
+            '在『实施手册』里，我们将手把手教你，如何高效地在组织层级里实施 DevOps。',
+          position: 'bottom',
         },
         {
           element: '#step-period',
-          intro: 'More features, more fun.',
-          position: 'right',
+          intro:
+            '在『元素周期表』里，你可以通过了解流程的工具，来辅助你设计出 DevOps 流程所需要的工具。',
+          position: 'top',
         },
       ],
       showProgress: true,
