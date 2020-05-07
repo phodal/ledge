@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
 
   setLanguage(lang: string) {
     this.translate.use(lang);
-    this.storage.set('language', lang).subscribe();
+    this.storage.set('language', lang).subscribe(() => {});
   }
 
   ngOnInit(): void {

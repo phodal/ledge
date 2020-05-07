@@ -98,12 +98,20 @@ function practisePlugin(route, config) {
   ]);
 }
 
+function reportPlugin(route, config) {
+  return Promise.resolve([
+    { route: '/report/2019' },
+    { route: '/report/2020' },
+  ]);
+}
+
 const validator = async (conf) => [];
 registerPlugin('router', 'case', casePlugin, validator);
 registerPlugin('router', 'solution', solutionPlugin, validator);
 registerPlugin('router', 'tank', thinkTankPlugin, validator);
 registerPlugin('router', 'checklists', checklistsPlugin, validator);
 registerPlugin('router', 'practise', practisePlugin, validator);
+registerPlugin('router', 'report', reportPlugin, validator);
 
 exports.config = {
   projectRoot: './src',
@@ -128,10 +136,13 @@ exports.config = {
     '/think-tank/:tank': {
       type: 'tank',
     },
-    '/checklists/:selectedIndex': {
+    '/checklists/:name': {
       type: 'checklists',
     },
     '/practise/:practise': {
+      type: 'practise',
+    },
+    '/report/:year': {
       type: 'practise',
     },
   },
