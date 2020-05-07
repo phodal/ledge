@@ -1258,10 +1258,10 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@ledge-framework/render@~0.3.2":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@ledge-framework/render/-/render-0.3.2.tgz#5b71475a65f547ead649cf7b5c03e8dfb0563afc"
-  integrity sha512-98hCUZ04KbxL5PKfhmXxXHo3tKMsoKVuMQftUyAirx8c27h7BQS9zur85O0CA4H0Rl8m7N/l+tnhVI66vtr+IA==
+"@ledge-framework/render@~0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@ledge-framework/render/-/render-0.4.1.tgz#f1ec3711f57643972c8003221e2939f1f17d9a6f"
+  integrity sha512-fMo/YySsgyEh5vSeSTXgObPXtulXJ1v/NO/k5RI2OiB7SGNFDYT+JbnlKSt5b/QS7OnRRyZKIb+8MhnZFPu2BA==
 
 "@marionebl/sander@^0.6.0":
   version "0.6.1"
@@ -1746,6 +1746,11 @@
     "@types/events" "*"
     "@types/minimatch" "*"
     "@types/node" "*"
+
+"@types/intro.js@^2.4.6":
+  version "2.4.6"
+  resolved "https://registry.yarnpkg.com/@types/intro.js/-/intro.js-2.4.6.tgz#fbe29da59ea5e94900c76e2aa20a94cd40793f83"
+  integrity sha512-Ou5Em/p65ZXAjrAVO/QBlTF1E2cZf7voZkENqw1vVu2PdPmZ28gaKzHZg+p4FFQgTvJu2smLPQwMJ70EWQWm2Q==
 
 "@types/jasmine@*", "@types/jasmine@~3.5.0":
   version "3.5.8"
@@ -6601,6 +6606,11 @@ interpret@^1.0.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.2.0.tgz#d5061a6224be58e8083985f5014d844359576296"
   integrity sha512-mT34yGKMNceBQUoVn7iCDKDntA7SC6gycMAWzGx1z/CMCTV7b2AAtXlo3nRyHZ1FelRkQbQjprHSYGwzLtkVbw==
+
+intro.js@^2.9.3:
+  version "2.9.3"
+  resolved "https://registry.yarnpkg.com/intro.js/-/intro.js-2.9.3.tgz#001d9a7bca66d8f4d2d0253c9b3345e9ae4320c3"
+  integrity sha512-hC+EXWnEuJeA3CveGMat3XHePd2iaXNFJIVfvJh2E9IzBMGLTlhWvPIVHAgKlOpO4lNayCxEqzr4N02VmHFr9Q==
 
 invariant@^2.2.2:
   version "2.2.4"

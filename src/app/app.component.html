@@ -32,8 +32,8 @@
 
 <ng-template #navMenu>
   <button mat-button routerLink="/home" routerLinkActive="active">{{ 'home' | translate}}</button>
-  <button mat-button routerLink="/case-study" routerLinkActive="active">{{ 'case-study' | translate}}</button>
-  <button mat-button routerLink="/pattern" routerLinkActive="active">{{ 'patterns' | translate}}</button>
+  <button mat-button routerLink="/case-study" id="step1" routerLinkActive="active">{{ 'case-study' | translate}}</button>
+  <button mat-button routerLink="/pattern" id="step2"  routerLinkActive="active">{{ 'patterns' | translate}}</button>
 
   <mat-menu #practiseMenu="matMenu" backdropClass="nav-menu-wrapper">
     <button mat-menu-item routerLink="/practise/devops-practise" routerLinkActive="active">
@@ -54,7 +54,7 @@
     </button>
   </mat-menu>
 
-  <button mat-button [matMenuTriggerFor]="practiseMenu">
+  <button mat-button [matMenuTriggerFor]="practiseMenu" id="step3">
     {{ 'practises' | translate}}
     <mat-icon>arrow_drop_down</mat-icon>
   </button>
