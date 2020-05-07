@@ -1,6 +1,4 @@
-# 相关资源
-
-## DevOps 读书雷达
+# DevOps 读书雷达
 
 ```tech-radar
  - 文化
@@ -61,43 +59,42 @@
 config: {"hiddenLegend": true}
 ```
 
-### 实践
+## 实践
 
 《SRE：Google 运维解密》 这本书中，Google SRE 的关键成员解释了他们是如何对软件生命周期进行整体性关注的，以及为什么这样做能够帮助 Google 成功地构建、部署、监控和运维世界上现在的最大的软件系统。
 
-### 实施
+## 实施
 
 《Accelerate》 提出了 [加速：高效 DevOps 的技术/管理实践](/practise#加速：高效-devops-的技术管理实践)
 
 《DevOps 实践》 这本书我并不推荐，一个是时间太早：2016 年，内容不合时宜；另外一个是，大部分内容网上都有。不过呢，手法上差不多是这样的。
 
-## 大会 Presentation
+# 大会 Presentation
 
 [SRECon](https://www.usenix.org/srecon)
 
-## DevOps 厂商案例
+# DevOps 厂商案例
 
 - [AWS 客户成功案例](https://aws.amazon.com/cn/solutions/case-studies/)
 - [腾讯云云开发案例](https://mp.weixin.qq.com/s/jcKEYinsdyKef9xGbHLGiw)
 
+# 文章
 
-## 文章
-
-### 敏捷
+## 敏捷
 
 - 《[ThoughtWorks 敏捷实践关键清单 v0.1.1](https://cloud.tencent.com/developer/article/1558754)》
 
-### DevOps
+## DevOps
 
 - 《[大型银行敏捷 & DevOps 转型之快速启动](https://insights.thoughtworks.cn/quick-start-agile-devops-transformation/)》
 - 《[DevOps 团队之殇](http://insights.thoughtworkers.org/what-does-the-devops-team-has-delivered/)》
 - 《[DevOps 发展的 9 个趋势](http://insights.thoughtworkers.org/nine-trends-of-devops/)》
 
-## 图书
+# 图书
 
 - 《[DevOps 实践指南](https://book.douban.com/subject/30186150/)》
 
-## DevOps 技术栈知识图谱
+# DevOps 技术栈知识图谱
 
 ### DevOps
 

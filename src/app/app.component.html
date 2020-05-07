@@ -106,9 +106,9 @@
 
   <mat-menu #appMenu="matMenu" backdropClass="nav-menu-wrapper">
     <button mat-menu-item routerLink="/report" routerLinkActive="active">{{ 'report' | translate}}</button>
-    <button mat-menu-item routerLink="/resources" routerLinkActive="active">{{ 'resources' | translate}}</button>
     <button mat-menu-item routerLink="/job" routerLinkActive="active">{{ 'job' | translate}}</button>
     <button mat-menu-item routerLink="/helper" routerLinkActive="active">{{ 'ledge-editor' | translate}}</button>
+    <button mat-menu-item routerLink="/resources" routerLinkActive="active">{{ 'resources' | translate}}</button>
   </mat-menu>
   <button mat-button [matMenuTriggerFor]="appMenu">
     {{ 'resource' | translate}}
