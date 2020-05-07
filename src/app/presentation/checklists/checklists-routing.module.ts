@@ -7,7 +7,7 @@ const routes: Routes = [
     path: ':name',
     component: ChecklistsComponent,
   },
-  { path: '', pathMatch: 'full', redirectTo: '0' },
+  { path: '', pathMatch: 'full', redirectTo: 'new-project' },
 ];
 
 @NgModule({
