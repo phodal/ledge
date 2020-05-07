@@ -64,6 +64,7 @@
     "rxjs": "~6.5.4",
     "shortid": "^2.2.15",
     "tslib": "^1.10.0",
+    "turbolinks": "^5.2.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
@@ -80,6 +81,7 @@
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
+    "@types/turbolinks": "^5.2.0",
     "angular-cli-ghpages": "^0.6.2",
     "codelyzer": "^5.1.2",
     "cz-conventional-changelog": "3.1.0",

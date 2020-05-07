@@ -5,3 +5,12 @@
     width: 148px;
   }
 }
+
+.link {
+  text-decoration: none;
+  color: #7753df;
+
+  &:visited {
+    color: #7753df;
+  }
+}

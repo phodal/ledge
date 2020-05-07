@@ -32,14 +32,18 @@
 
 <ng-template #navMenu>
   <button mat-button routerLink="/home" routerLinkActive="active">{{ 'home' | translate}}</button>
-  <button mat-button routerLink="/case-study" class="intro-case" routerLinkActive="active"
-          matTooltip="{{ 'tips.case-study' | translate}}">
-    {{ 'case-study' | translate}}
-  </button>
-  <button mat-button routerLink="/pattern" class="intro-pattern" routerLinkActive="active"
-          matTooltip="{{ 'tips.patterns' | translate}}">
-    {{ 'patterns' | translate}}
-  </button>
+
+  <a class="link" href="/case-study/meituan">
+    <button mat-button class="intro-case" matTooltip="{{ 'tips.case-study' | translate}}" routerLinkActive="active">
+      {{ 'case-study' | translate}}
+    </button>
+  </a>
+
+  <a class="link" href="/pattern">
+    <button mat-button class="intro-pattern" matTooltip="{{ 'tips.patterns' | translate}}" routerLinkActive="active">
+      {{ 'patterns' | translate}}
+    </button>
+  </a>
 
   <mat-menu #practiseMenu="matMenu" backdropClass="nav-menu-wrapper">
     <button mat-menu-item routerLink="/practise/devops-practise" routerLinkActive="active">
@@ -65,8 +69,13 @@
     {{ 'practises' | translate}}<mat-icon>arrow_drop_down</mat-icon>
   </button>
 
-  <button mat-button routerLink="/manual" class="intro-manual" routerLinkActive="active"
-          matTooltip="{{ 'tips.manual' | translate}}" id="step4">{{ 'manual' | translate}}</button>
+  <a class="link" href="/manual">
+    <button mat-button class="intro-manual" matTooltip="{{ 'tips.manual' | translate}}" id="step4" routerLinkActive="active">
+      {{ 'manual' | translate}}
+    </button>
+  </a>
+
+
   <button mat-button routerLink="/solution" routerLinkActive="active" matTooltip="{{ 'tips.solution' | translate}}">
     {{ 'solution' | translate}}
   </button>
