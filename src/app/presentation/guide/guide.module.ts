@@ -15,7 +15,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [GuideComponent],
   imports: [
     CommonModule,
     CustomMaterialModule,

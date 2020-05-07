@@ -1,6 +1,16 @@
 {
   "home": "Home",
   "case-study": "Cases",
+  "tips": {
+    "case-study": "",
+    "patterns": "",
+    "practises": "",
+    "manual": "",
+    "solution": "",
+    "think-tank": "",
+    "tool": "",
+    "resources": ""
+  },
   "patterns": "Patterns",
   "practises": "Practises",
   "manual": "Manual",
