@@ -20,6 +20,7 @@ export class LedgeTechRadarComponent implements OnInit, OnChanges {
     name: string,
     items: any[],
   }[] = [];
+  currentLevel = 0;
 
   constructor() {
   }
@@ -42,6 +43,7 @@ export class LedgeTechRadarComponent implements OnInit, OnChanges {
     this.trData = [];
     for (const item of this.data.slice(0, 4)) {
       const items = [];
+      this.currentLevel = 0;
       for (const levelList of item.children) {
         const level = this.getLevelByName(levelList.name);
         if (levelList.children) {
@@ -62,25 +64,24 @@ export class LedgeTechRadarComponent implements OnInit, OnChanges {
   }
 
   getLevelByName(name: string) {
-    let level = 0;
     switch (name.toLowerCase()) {
       case 'adopt':
-        level = 1;
+        this.currentLevel = 1;
         break;
       case 'trail':
-        level = 2;
+        this.currentLevel = 2;
         break;
       case 'assess':
-        level = 3;
+        this.currentLevel = 3;
         break;
       case 'hold':
-        level = 4;
+        this.currentLevel = 4;
         break;
       default:
-        level = 0;
+        this.currentLevel++;
     }
 
-    return level;
+    return this.currentLevel;
   }
 
   private renderData(treeData) {
