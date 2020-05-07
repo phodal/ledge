@@ -97,7 +97,7 @@ export class LedgeTechRadarComponent implements OnInit, OnChanges {
       w: 600,				// Width of the circle
       h: 600,				// Height of the circle
       margin: {top: 10, right: 20, bottom: 10, left: 10}, // The margins of the SVG
-      levels: 5,				// How many levels or inner circles should there be drawn
+      levels: this.currentLevel + 1,				// How many levels or inner circles should there be drawn
       labelFactor: 1.1, 	// How much farther than the radius of the outer circle should the labels be placed
       dotRadius: 15, 			// The size of the colored circles of each blog
       color: d3.schemeCategory10	// Color function
