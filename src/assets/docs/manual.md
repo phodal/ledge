@@ -122,7 +122,7 @@ Path to Production，来源于精益，旨在通过可视化的方式来展示�
 
 DevOps 流程
 
-![DevOps 流程](/assets/docs/images/devops.png 'DevOps 流程')
+![DevOps 流程](/assets/images/devops-circle.svg 'DevOps 流程')
 
 - 规划
 - 编码
