@@ -106,6 +106,11 @@ const routes: Routes = [
         (m) => m.ReporterModule
       ),
   },
+  {
+    path: 'guide',
+    loadChildren: () =>
+      import('./presentation/guide/guide.module').then((m) => m.GuideModule),
+  },
 ];
 
 @NgModule({
