@@ -12,7 +12,7 @@
   "resource": "Resource",
   "resources": "DevOps Resources",
   "tool": "Tools",
-  "toolsets": "Toolsets",
+  "analysis-tools": "Analysis Tools",
   "design-devops": "Design DevOps",
   "ledge-editor": "Ledge Editor",
   "checklists": "Checklists",

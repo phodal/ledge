@@ -93,10 +93,10 @@
 
   <mat-menu #toolsetMenu="matMenu" backdropClass="nav-menu-wrapper">
     <button mat-menu-item routerLink="/maturity" routerLinkActive="active">{{ 'maturity' | translate}}</button>
-    <button mat-menu-item routerLink="/tool" routerLinkActive="active">{{ 'toolsets' | translate}}</button>
     <button mat-menu-item routerLink="/design" routerLinkActive="active">{{ 'design-devops' | translate}}</button>
     <button mat-menu-item routerLink="/checklists" routerLinkActive="active">{{ 'checklists' | translate}}</button>
     <button mat-menu-item routerLink="/skilltree" routerLinkActive="active">{{ 'skilltree' | translate}}</button>
+    <button mat-menu-item routerLink="/tool" routerLinkActive="active">{{ 'analysis-tools' | translate}}</button>
   </mat-menu>
 
   <button mat-button [matMenuTriggerFor]="toolsetMenu">
