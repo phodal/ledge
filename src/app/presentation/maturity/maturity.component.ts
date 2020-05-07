@@ -3,6 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { MatTabChangeEvent } from '@angular/material/tabs/tab-group';
 import * as owasp from 'raw-loader!../../../assets/docs/maturities/owasp.md';
 import * as amm from 'raw-loader!../../../assets/docs/maturities/amm.md';
+import * as arch from 'raw-loader!../../../assets/docs/maturities/arch.md';
 
 @Component({
   selector: 'app-maturity',
@@ -76,6 +77,11 @@ export class MaturityComponent {
       name: 'AMM 敏捷成熟度模型',
       key: 'amm',
       content: amm.default,
+    },
+    {
+      name: '架构成熟度模型',
+      key: 'arch',
+      content: arch.default,
     },
   ];
 
