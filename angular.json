@@ -32,12 +32,10 @@
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss",
-              "node_modules/prismjs/themes/prism-okaidia.css",
-              "node_modules/intro.js/introjs.css"
+              "node_modules/prismjs/themes/prism-okaidia.css"
             ],
             "scripts": [
               "node_modules/marked/lib/marked.js",
-              "node_modules/intro.js/intro.js",
               "node_modules/prismjs/prism.js",
               "node_modules/prismjs/components/prism-javascript.min.js",
               "node_modules/prismjs/components/prism-java.min.js",
