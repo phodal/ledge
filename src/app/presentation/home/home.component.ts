@@ -9,6 +9,7 @@ import * as mdData from 'raw-loader!../../../assets/docs/home.md';
 import { HighlightState } from '../../features/periodic-table/support';
 import { contributors } from './contributiors';
 import { ShepherdService } from 'angular-shepherd';
+import { StorageMap } from '@ngx-pwa/local-storage';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +17,17 @@ import { ShepherdService } from 'angular-shepherd';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit, AfterViewInit {
+  constructor(
+    title: Title,
+    private router: Router,
+    private http: HttpClient,
+    private storage: StorageMap,
+    private shepherdService: ShepherdService,
+    public translate: TranslateService
+  ) {
+    title.setTitle('DevOps 工具元素周期表 - Ledge DevOps 知识平台');
+  }
+
   highlightState: HighlightState;
   category: string;
   devOpsExample = `
@@ -57,15 +69,32 @@ config: {"rowHeight": "350px", "colors": [{"bg":"#e55852","font":"#b71a09"},{"bg
   allContributors$: Observable<any>;
   inViewport = false;
 
-  constructor(
-    title: Title,
-    private router: Router,
-    private http: HttpClient,
-    private shepherdService: ShepherdService,
-    public translate: TranslateService
-  ) {
-    title.setTitle('DevOps 工具元素周期表 - Ledge DevOps 知识平台');
-  }
+  private defaultButtons = [
+    {
+      action() {
+        return this.back();
+      },
+      classes: 'shepherd-button-secondary',
+      text: 'Back',
+    },
+    {
+      action() {
+        return this.next();
+      },
+      text: 'Next',
+    },
+  ];
+
+  private firstStep = {
+    title: '欢迎来到 Ledge 知识平台，开启你的提升之旅',
+    text: `Ledge （源于 Know-Ledge，意指承载物），它包含了各种最佳实践、原则与模式、实施手册、度量、工具，用于帮助您的企业在数字化时代更好地前进，还有 DevOps 转型。`,
+    attachTo: {
+      element: '.ledge-title',
+      on: 'bottom',
+    },
+    buttons: this.defaultButtons,
+    id: 'creating',
+  };
 
   setCurrentAtomCategory(category: string) {
     this.category = category;
@@ -85,43 +114,14 @@ config: {"rowHeight": "350px", "colors": [{"bg":"#e55852","font":"#b71a09"},{"bg
       .get('https://api.github.com/repos/phodal/ledge/contributors')
       .pipe();
 
-    // this.shepherdService.defaultStepOptions = defaultStepOptions;
     this.shepherdService.defaultStepOptions = {
-      classes: 'custom-class-name-1 custom-class-name-2',
-      scrollTo: false,
       cancelIcon: {
         enabled: true,
       },
     };
     this.shepherdService.modal = true;
     this.shepherdService.confirmCancel = false;
-    // this.shepherdService.addSteps(defaultSteps);
-    this.shepherdService.addSteps([
-      {
-        title: '欢迎来到 Ledge 知识平台，开启你的提升之旅',
-        text: `Ledge （源于 Know-Ledge，意指承载物），它包含了各种最佳实践、原则与模式、实施手册、度量、工具，用于帮助您的企业在数字化时代更好地前进，还有 DevOps 转型。`,
-        attachTo: {
-          element: '.ledge-title',
-          on: 'bottom',
-        },
-        buttons: [
-          {
-            action() {
-              return this.back();
-            },
-            classes: 'shepherd-button-secondary',
-            text: 'Back',
-          },
-          {
-            action() {
-              return this.next();
-            },
-            text: 'Next',
-          },
-        ],
-        id: 'creating',
-      },
-    ]);
+    this.shepherdService.addSteps([this.firstStep]);
     this.shepherdService.start();
   }
 
