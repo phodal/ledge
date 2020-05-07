@@ -21,6 +21,7 @@ export class LedgeTechRadarComponent implements OnInit, OnChanges {
     items: any[],
   }[] = [];
   currentLevel = 0;
+  private customAxisLabels: any[] = [];
 
   constructor() {
   }
@@ -44,6 +45,7 @@ export class LedgeTechRadarComponent implements OnInit, OnChanges {
     for (const item of this.data.slice(0, 4)) {
       const items = [];
       this.currentLevel = 0;
+      this.customAxisLabels = [];
       for (const levelList of item.children) {
         const level = this.getLevelByName(levelList.name);
         if (levelList.children) {
@@ -81,6 +83,7 @@ export class LedgeTechRadarComponent implements OnInit, OnChanges {
       default:
         this.currentLevel++;
     }
+    this.customAxisLabels.push(name);
 
     return this.currentLevel;
   }
@@ -89,7 +92,7 @@ export class LedgeTechRadarComponent implements OnInit, OnChanges {
     const chartElement = this.chartEl.nativeElement;
 
     // based on: https://cofinpro.github.io/Tech-Radar/
-    let axisLabels = ['', 'Adopt', 'Trail', 'Assess', 'Hold'].reverse();
+    let axisLabels = [''].concat(this.customAxisLabels).reverse();
     if (this.config && !!this.config.hiddenLegend) {
       axisLabels = ['', '', '', '', ''];
     }

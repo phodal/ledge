@@ -320,6 +320,4 @@ config: {"legend": ["当前", "未来"], "areaColor": ["#F37C20", "#E9BD1E"]}
     - 《测试驱动开发的艺术》
     - 《完美软件：对软件测试的各种幻想》
     - 《Fifty Quick Ideas on How to Improve Your Tests》
-
-config: {"hiddenLegend": true}
 ```
