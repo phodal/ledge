@@ -109,6 +109,13 @@ exports.config = {
   projectRoot: './src',
   projectName: 'ledge',
   outDir: './dist/static',
+  puppeteerLaunchOptions: {
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    defaultViewport: {
+      width: 1440,
+      height: 1080,
+    },
+  },
   sitemapOptions,
   defaultPostRenderers,
   routes: {
