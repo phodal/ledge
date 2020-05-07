@@ -8,6 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 import * as mdData from 'raw-loader!../../../assets/docs/home.md';
 import { HighlightState } from '../../features/periodic-table/support';
 import { contributors } from './contributiors';
+import { ShepherdService } from 'angular-shepherd';
 
 @Component({
   selector: 'app-home',
@@ -60,6 +61,7 @@ config: {"rowHeight": "350px", "colors": [{"bg":"#e55852","font":"#b71a09"},{"bg
     title: Title,
     private router: Router,
     private http: HttpClient,
+    private shepherdService: ShepherdService,
     public translate: TranslateService
   ) {
     title.setTitle('DevOps 工具元素周期表 - Ledge DevOps 知识平台');
@@ -82,6 +84,45 @@ config: {"rowHeight": "350px", "colors": [{"bg":"#e55852","font":"#b71a09"},{"bg
     this.allContributors$ = this.http
       .get('https://api.github.com/repos/phodal/ledge/contributors')
       .pipe();
+
+    // this.shepherdService.defaultStepOptions = defaultStepOptions;
+    this.shepherdService.defaultStepOptions = {
+      classes: 'custom-class-name-1 custom-class-name-2',
+      scrollTo: false,
+      cancelIcon: {
+        enabled: true,
+      },
+    };
+    this.shepherdService.modal = true;
+    this.shepherdService.confirmCancel = false;
+    // this.shepherdService.addSteps(defaultSteps);
+    this.shepherdService.addSteps([
+      {
+        title: '欢迎来到 Ledge 知识平台，开启你的提升之旅',
+        text: `Ledge （源于 Know-Ledge，意指承载物），它包含了各种最佳实践、原则与模式、实施手册、度量、工具，用于帮助您的企业在数字化时代更好地前进，还有 DevOps 转型。`,
+        attachTo: {
+          element: '.ledge-title',
+          on: 'bottom',
+        },
+        buttons: [
+          {
+            action() {
+              return this.back();
+            },
+            classes: 'shepherd-button-secondary',
+            text: 'Back',
+          },
+          {
+            action() {
+              return this.next();
+            },
+            text: 'Next',
+          },
+        ],
+        id: 'creating',
+      },
+    ]);
+    this.shepherdService.start();
   }
 
   show(event: Partial<IntersectionObserverEntry>) {

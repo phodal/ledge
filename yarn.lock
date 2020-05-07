@@ -1258,10 +1258,10 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@ledge-framework/render@~0.3.2":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@ledge-framework/render/-/render-0.3.2.tgz#5b71475a65f547ead649cf7b5c03e8dfb0563afc"
-  integrity sha512-98hCUZ04KbxL5PKfhmXxXHo3tKMsoKVuMQftUyAirx8c27h7BQS9zur85O0CA4H0Rl8m7N/l+tnhVI66vtr+IA==
+"@ledge-framework/render@~0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@ledge-framework/render/-/render-0.4.1.tgz#f1ec3711f57643972c8003221e2939f1f17d9a6f"
+  integrity sha512-fMo/YySsgyEh5vSeSTXgObPXtulXJ1v/NO/k5RI2OiB7SGNFDYT+JbnlKSt5b/QS7OnRRyZKIb+8MhnZFPu2BA==
 
 "@marionebl/sander@^0.6.0":
   version "0.6.1"
@@ -1326,6 +1326,11 @@
   dependencies:
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
+
+"@popperjs/core@^2.3.3":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.4.0.tgz#0e1bdf8d021e7ea58affade33d9d607e11365915"
+  integrity sha512-NMrDy6EWh9TPdSRiHmHH2ye1v5U0gBD7pRYwSwJvomx7Bm4GG04vu63dYiVzebLOx2obPpJugew06xVP0Nk7hA==
 
 "@rollup/plugin-commonjs@^11.0.2":
   version "11.0.2"
@@ -2186,6 +2191,13 @@ angular-cli-ghpages@^0.6.2:
     commander "^3.0.0-0"
     fs-extra "^8.1.0"
     gh-pages "^2.1.0"
+
+angular-shepherd@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/angular-shepherd/-/angular-shepherd-0.6.0.tgz#094aae706ffb22b01f807b020264a0fbea1725f2"
+  integrity sha512-qhdX8nprJX/dJogT0J9xTDcnTCt+obCv0HXUaTPaBWjkRE8k5lIlXvxwlNIuvMA4hyZSUjFA+Lj0Abpc8eeAgw==
+  dependencies:
+    shepherd.js "^7.0.2"
 
 angular-split@^3.0.3:
   version "3.0.3"
@@ -10968,6 +10980,14 @@ shelljs@0.7.6:
     interpret "^1.0.0"
     rechoir "^0.6.2"
 
+shepherd.js@^7.0.2:
+  version "7.1.5"
+  resolved "https://registry.yarnpkg.com/shepherd.js/-/shepherd.js-7.1.5.tgz#703965edff0c7e08f0048c9d335ecdfd735c1d91"
+  integrity sha512-Xs9thc5uAQcBdJEJYSOZnEbPia0tKfS89TyNHrqqBEsjWeYm0mMJsCvux9PJA4tfgDOE11NRmXZHA5SXtQkChQ==
+  dependencies:
+    "@popperjs/core" "^2.3.3"
+    smoothscroll-polyfill "^0.4.4"
+
 shortid@^2.2.15:
   version "2.2.15"
   resolved "https://registry.yarnpkg.com/shortid/-/shortid-2.2.15.tgz#2b902eaa93a69b11120373cd42a1f1fe4437c122"
@@ -11020,6 +11040,11 @@ smart-buffer@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/smart-buffer/-/smart-buffer-4.1.0.tgz#91605c25d91652f4661ea69ccf45f1b331ca21ba"
   integrity sha512-iVICrxOzCynf/SNaBQCw34eM9jROU/s5rzIhpOvzhzuYHfJR/DhZfDkXiZSgKXfgv26HT3Yni3AV/DGw0cGnnw==
+
+smoothscroll-polyfill@^0.4.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/smoothscroll-polyfill/-/smoothscroll-polyfill-0.4.4.tgz#3a259131dc6930e6ca80003e1cb03b603b69abf8"
+  integrity sha512-TK5ZA9U5RqCwMpfoMq/l1mrH0JAR7y7KRvOBx0n2869aLxch+gT9GhN3yUfjiw+d/DiF1mKo14+hd62JyMmoBg==
 
 snapdragon-node@^2.0.1:
   version "2.1.1"

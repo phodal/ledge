@@ -44,6 +44,7 @@
     "@scullyio/init": "^0.0.25",
     "@scullyio/ng-lib": "latest",
     "@scullyio/scully": "latest",
+    "angular-shepherd": "^0.6.0",
     "angular-split": "^3.0.3",
     "brace": "^0.11.1",
     "core-js": "^3.6.4",
