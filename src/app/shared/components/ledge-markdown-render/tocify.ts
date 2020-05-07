@@ -54,8 +54,8 @@ export default class Tocify {
     return anchor;
   }
 
-  reset = () => {
+  reset() {
     this.tocItems = [];
     this.anchors = [];
-  };
+  }
 }
