@@ -10,6 +10,7 @@ import { HighlightState } from '../../features/periodic-table/support';
 import { contributors } from './contributiors';
 import { ShepherdService } from 'angular-shepherd';
 import { StorageMap } from '@ngx-pwa/local-storage';
+import { isScullyRunning } from '@scullyio/ng-lib';
 
 @Component({
   selector: 'app-home',
@@ -195,12 +196,14 @@ config: {"rowHeight": "350px", "colors": [{"bg":"#e55852","font":"#b71a09"},{"bg
     this.shepherdService.confirmCancel = false;
     this.shepherdService.addSteps(this.steps);
 
-    this.storage.get('intro.hadDone').subscribe((value: boolean) => {
-      if (!value) {
-        this.shepherdService.start();
-        this.storage.set('intro.hadDone', true).subscribe(() => {});
-      }
-    });
+    if (!isScullyRunning()) {
+      this.storage.get('intro.hadDone').subscribe((value: boolean) => {
+        if (!value) {
+          this.shepherdService.start();
+          this.storage.set('intro.hadDone', true).subscribe(() => {});
+        }
+      });
+    }
   }
 
   show(event: Partial<IntersectionObserverEntry>) {
