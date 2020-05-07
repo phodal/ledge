@@ -70,7 +70,7 @@ config: {"rowHeight": "350px", "colors": [{"bg":"#e55852","font":"#b71a09"},{"bg
   allContributors$: Observable<any>;
   inViewport = false;
 
-  private defaultButtons = [
+  private defaultButtons: any = [
     {
       action() {
         return this.back();
@@ -86,6 +86,13 @@ config: {"rowHeight": "350px", "colors": [{"bg":"#e55852","font":"#b71a09"},{"bg
     },
   ];
 
+  private completeButton = {
+    classes: 'complete-button',
+    text: 'Finish',
+    action() {
+      return this.complete();
+    },
+  };
   steps = [
     {
       title: '欢迎来到 Ledge 知识平台，开启你的提升之旅',
@@ -164,7 +171,7 @@ config: {"rowHeight": "350px", "colors": [{"bg":"#e55852","font":"#b71a09"},{"bg
         element: '.home-link',
         on: 'bottom',
       },
-      buttons: this.defaultButtons,
+      buttons: [...this.defaultButtons, this.completeButton],
       id: 'github',
     },
   ];
@@ -195,12 +202,16 @@ config: {"rowHeight": "350px", "colors": [{"bg":"#e55852","font":"#b71a09"},{"bg
     this.shepherdService.modal = true;
     this.shepherdService.confirmCancel = false;
     this.shepherdService.addSteps(this.steps);
+    this.shepherdService.onTourFinish = (completeOrCancel) => {
+      if (completeOrCancel === 'complete') {
+        this.storage.set('intro.hadDone', true).subscribe(() => {});
+      }
+    };
 
     if (!isScullyRunning()) {
       this.storage.get('intro.hadDone').subscribe((value: boolean) => {
         if (!value) {
           this.shepherdService.start();
-          this.storage.set('intro.hadDone', true).subscribe(() => {});
         }
       });
     }
