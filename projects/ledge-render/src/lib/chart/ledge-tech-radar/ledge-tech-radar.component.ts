@@ -49,6 +49,7 @@ export class LedgeTechRadarComponent implements OnInit, OnChanges {
         if (levelList.children) {
           for (const finalItem of levelList.children) {
             items.push({
+              levelName: levelList.name,
               name: finalItem.name,
               circle: level
             });
@@ -256,7 +257,9 @@ export class LedgeTechRadarComponent implements OnInit, OnChanges {
 
       // append the list
       legendSection.append('ol')
-        .attr('start', (d: any) => d.items[0] ? d.items[0].number : 0)
+        .attr('start', (d: any) => {
+          return d.items[0] ? d.items[0].number : 0;
+        })
         .selectAll('li')
         .data((d: any) => d.items)
         .enter()
@@ -330,11 +333,6 @@ export class LedgeTechRadarComponent implements OnInit, OnChanges {
       d3.selectAll(`.legend li`)
         .filter((d: any) => d === technology)
         .classed('active', true);
-      //
-      // d3.text(encodeURI(`tech/${data.name.toLocaleLowerCase()}.html`))
-      //   .then(text => d3.select('#tech-info').html(text));
-
-      // follow the href
       return true;
     }
   }
