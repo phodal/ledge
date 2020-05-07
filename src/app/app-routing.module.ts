@@ -51,11 +51,11 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'pattern',
+    path: 'pattern/.',
     component: PatternComponent,
   },
   {
-    path: 'manual',
+    path: 'manual/.',
     component: ManualComponent,
   },
   {
