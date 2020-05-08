@@ -13,6 +13,7 @@ export class LedgeRadarComponent implements OnInit, OnChanges, AfterViewInit {
   @Input() data: LedgeListItem[];
   @Input() styles: NgStyle;
   @Input() config: any;
+  @Input() hiddenLegend = false;
 
   @ViewChild('chart', {static: false}) chart: ElementRef;
 
@@ -42,16 +43,11 @@ export class LedgeRadarComponent implements OnInit, OnChanges, AfterViewInit {
   private buildOption(data) {
     const {indicator, legend, seriesData} = this.buildIndicatorAndSeries(data);
 
-    return {
+    const defaultOption: any = {
       toolbox: {
         feature: {
           saveAsImage: {},
         }
-      },
-      tooltip: {},
-      legend: {
-        bottom: 5,
-        data: legend,
       },
       title: {
         text: data.name,
@@ -70,6 +66,15 @@ export class LedgeRadarComponent implements OnInit, OnChanges, AfterViewInit {
       },
       series: [{type: 'radar', data: seriesData}],
     };
+
+    if (!this.hiddenLegend) {
+      defaultOption.legend = {
+        bottom: 5,
+        data: legend,
+      };
+    }
+
+    return defaultOption;
   }
 
   private buildIndicatorAndSeries(data) {
