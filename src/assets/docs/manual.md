@@ -452,8 +452,6 @@ Bruck Tuckman 团队发展模型：
 
 ## 持续集成阶段设计
 
-### 流水线
-
 实施过程步骤：
 
 - 流水线 hello, world
@@ -462,6 +460,8 @@ Bruck Tuckman 团队发展模型：
 - 集成现有代码分析服务
 - 验收测试自动化
 - 发布自动化
+
+### 普通流水线模型
 
 来自《持续交付 2.0》的示例：
 
@@ -496,6 +496,60 @@ GoCD 示例：
    - 上传版本:success
  - 上传发布
    - 上传发布:success
+```
+
+### 双流水线模型
+
+CI + CD 分离
+
+#### 持续集成
+
+```pipeline
+ - 代码检出
+   - 代码检出:success
+ - 安装依赖
+   - 安装依赖:success
+ - 构建
+   - Lint:success
+   - Build:success
+ - 测试
+   - 单元测试:success
+ - 上传结果
+   - 上传测试覆盖率:success
+   - 上传构建结果:success
+```
+
+#### 持续交付
+
+```pipeline
+ - 代码检出
+   - 代码检出:success
+ - 安装依赖
+   - 安装依赖:success
+ - 构建
+   - 构建:success
+ - 构建服务端渲染
+   - 构建服务端渲染:success
+ - 部署
+   - 部署:success
+```
+
+### 开源三流水线模型
+
+#### PR 流水线
+
+PS：针对于外部开源请求代码
+
+```pipeline
+ - 代码检出
+   - 代码检出:success
+ - 安装依赖
+   - 安装依赖:success
+ - 构建
+   - Lint:success
+   - Build:success
+ - 测试
+   - 单元测试:success
 ```
 
 ## 技术实践设计
