@@ -9,7 +9,7 @@
 <mat-list>
   <mat-list-item *ngFor="let toDo of toDos" [class.complete]="toDo?.checked">
     <mat-checkbox [checked]="toDo.checked" (change)="completeChange($event, toDo)">
-      <span class="title" [innerHTML]="toDo?.title"></span>
+      <span class="title" [innerHTML]="toDo?.name"></span>
       <span *ngIf="toDo.description" class="description" [innerHTML]="toDo?.description"></span>
     </mat-checkbox>
   </mat-list-item>

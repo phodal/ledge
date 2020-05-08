@@ -29,7 +29,7 @@ export class LedgeChecklistComponent implements OnInit, OnChanges {
     const checklists: ChecklistModel[] = [];
     for (const item of items) {
       const checklist: ChecklistModel = {
-        title: item.name,
+        name: item.name,
         description: '',
         subitems: []
       };
@@ -40,7 +40,7 @@ export class LedgeChecklistComponent implements OnInit, OnChanges {
       for (const child of item.children) {
         const splitName = child.name.split('：');
         const subItem: CheckItem = {
-          title: splitName[0],
+          name: splitName[0],
           description: splitName.length > 1 ? splitName[1] : ''
         };
         if ((child as object).hasOwnProperty('checked')) {

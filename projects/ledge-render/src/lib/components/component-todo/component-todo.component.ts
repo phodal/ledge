@@ -54,7 +54,7 @@ export class ComponentTodoComponent implements OnInit, OnDestroy, ControlValueAc
     this.toDos.push({
       id: Math.random(),
       checked: false,
-      title: value
+      name: value
     });
   }
 

@@ -5,8 +5,7 @@
       (itemChange)="changeForm($event, task, i)">
     </component-rating-item>
 
-    <ol *ngIf="task.children">
-      <li *ngFor="let item of task.children">{{item.name}}</li>
-    </ol>
+
+    <component-todo [disableInput]="true" [toDos]="task.children"></component-todo>
   </li>
 </ul>

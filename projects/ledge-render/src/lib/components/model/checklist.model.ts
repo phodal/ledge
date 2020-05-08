@@ -1,5 +1,5 @@
 export interface ChecklistModel {
-  title: string;
+  name: string;
   priority?: string;
   description: string;
   tools?: string[];
@@ -10,7 +10,7 @@ export interface ChecklistModel {
 }
 
 export interface CheckItem {
-  title: string;
+  name: string;
   checked?: boolean;
   description: string;
 }
