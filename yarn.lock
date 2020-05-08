@@ -1258,10 +1258,10 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@ledge-framework/render@~0.4.1":
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/@ledge-framework/render/-/render-0.4.1.tgz#f1ec3711f57643972c8003221e2939f1f17d9a6f"
-  integrity sha512-fMo/YySsgyEh5vSeSTXgObPXtulXJ1v/NO/k5RI2OiB7SGNFDYT+JbnlKSt5b/QS7OnRRyZKIb+8MhnZFPu2BA==
+"@ledge-framework/render@~0.4.2":
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/@ledge-framework/render/-/render-0.4.2.tgz#a214987bb3802b5a3af85148b49163651699558c"
+  integrity sha512-pC3DDIVl/gVm1Q8GRFqAgV1IrSbjSjHAPxK/1TwCNRd7E0T9x7pHyXh5PXHbpPA8S6CfQmeaPxxXaw/7GP3zRQ==
 
 "@marionebl/sander@^0.6.0":
   version "0.6.1"
@@ -8068,10 +8068,10 @@ merge@^1.2.1:
   resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.1.tgz#38bebf80c3220a8a487b6fcfb3941bb11720c145"
   integrity sha512-VjFo4P5Whtj4vsLzsYBu5ayHhoHJ0UqNm7ibvShmbmoz7tGi0vXaoJbGdB+GmDMLUdg8DpQXEIeVDAe8MaABvQ==
 
-mermaid@^8.4.8:
-  version "8.4.8"
-  resolved "https://registry.yarnpkg.com/mermaid/-/mermaid-8.4.8.tgz#8adcfdbc505d6bca52df167cff690427c9727b60"
-  integrity sha512-sumTNBFwMX7oMQgogdr3NhgTeQOiwcEsm23rQ4KHGW7tpmvMwER1S+1gjCSSnqlmM/zw7Ga7oesYCYicKboRwQ==
+mermaid@^8.5.0:
+  version "8.5.0"
+  resolved "https://registry.yarnpkg.com/mermaid/-/mermaid-8.5.0.tgz#8ab141359e0ab2d20d00ff887f45648982b56158"
+  integrity sha512-fZf4GAzkqWuSwo5L+BmzaBwWPudHkxL3M/t1RmS9Dvc2mcnv6hdhMaeC7poARpHaSGwkpb74LL81qXj+vAsVBg==
   dependencies:
     "@braintree/sanitize-url" "^3.1.0"
     crypto-random-string "^3.0.1"

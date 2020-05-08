@@ -56,7 +56,7 @@
     "graphlib-dot": "^0.6.4",
     "marked": "^0.8.0",
     "material-design-icons": "^3.0.1",
-    "mermaid": "^8.4.8",
+    "mermaid": "^8.5.0",
     "ng2-dragula": "^2.1.1",
     "ngx-ace-tern": "^1.2.2",
     "ngx-markdown": "^9.0.0",
