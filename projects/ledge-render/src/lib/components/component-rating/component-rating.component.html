@@ -1,10 +1,10 @@
-<ul id="markdown-rating" *ngIf="data">
-  <li *ngFor="let task of data;let i = index;">
+<div id="markdown-rating" *ngIf="data">
+  <div *ngFor="let task of data;let i = index;">
     <component-rating-item
       [item]="task"
       (itemChange)="changeForm($event, task, i)">
     </component-rating-item>
 
-    <component-todo [disableInput]="true" [toDos]="task.children"></component-todo>
-  </li>
-</ul>
+    <component-todo *ngIf="task.children" [disableInput]="true" [toDos]="task.children"></component-todo>
+  </div>
+</div>
