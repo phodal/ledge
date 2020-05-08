@@ -59,10 +59,6 @@ const routes: Routes = [
     component: ManualComponent,
   },
   {
-    path: 'maturity',
-    component: MaturityComponent,
-  },
-  {
     path: 'resources',
     component: ResourcesComponent,
   },
@@ -110,6 +106,13 @@ const routes: Routes = [
     path: 'guide',
     loadChildren: () =>
       import('./presentation/guide/guide.module').then((m) => m.GuideModule),
+  },
+  {
+    path: 'maturity',
+    loadChildren: () =>
+      import('./presentation/maturity/maturity.module').then(
+        (m) => m.MaturityModule
+      ),
   },
 ];
 
