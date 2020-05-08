@@ -99,7 +99,9 @@ export class LedgeRadarComponent implements OnInit, OnChanges, AfterViewInit {
           max: 5,
         });
 
-        this.buildSeriesData(nameValuesSplit, legend, seriesData);
+        if (nameValuesSplit.length >= 2) {
+          this.buildSeriesData(nameValuesSplit, legend, seriesData);
+        }
       }
     }
 

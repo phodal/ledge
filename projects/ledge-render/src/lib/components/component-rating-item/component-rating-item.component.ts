@@ -37,8 +37,6 @@ export class ComponentRatingItemComponent implements OnInit {
     this.item.displayName = nameValuesSplit[0];
     if (nameValuesSplit.length > 1) {
       this.item.chartValue = parseInt(nameValuesSplit[1], 10);
-    } else {
-      this.item.chartValue = 3;
     }
   }
 
