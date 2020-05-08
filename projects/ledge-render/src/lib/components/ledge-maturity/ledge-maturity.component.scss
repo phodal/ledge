@@ -1,0 +1,11 @@
+.ledge-maturity {
+  display: flex;
+  flex-wrap:wrap;
+
+  .left {
+    width:60%;
+  }
+  .right {
+    width: 40%;
+  }
+}
