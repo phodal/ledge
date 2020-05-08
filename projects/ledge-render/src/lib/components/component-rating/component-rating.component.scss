@@ -1,0 +1,13 @@
+ul {
+  li {
+    font-size: 1.2em;
+  }
+
+  ul {
+    li {
+      font-size: 1em;
+      line-height: 1.2em !important;
+      margin-left: 2em;
+    }
+  }
+}

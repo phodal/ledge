@@ -3,7 +3,7 @@
     <ledge-radar [data]="data" [config]="config"></ledge-radar>
   </div>
 
-  <div class="right">
-    <ledge-checklist [data]="data" [config]="config"></ledge-checklist>
+  <div class="right" *ngIf="data">
+    <component-rating [data]="data[0].children"></component-rating>
   </div>
 </div>

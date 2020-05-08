@@ -32,6 +32,8 @@ import { LedgeSunburstComponent } from './chart/ledge-sunburst/ledge-sunburst.co
 import { LedgeFishBoneComponent } from './chart/ledge-fish-bone/ledge-fish-bone.component';
 import { LedgeHeatmapComponent } from './chart/ledge-heatmap/ledge-heatmap.component';
 import { LedgeMaturityComponent } from './components/ledge-maturity/ledge-maturity.component';
+import { ComponentRatingItemComponent } from './components/component-rating-item/component-rating-item.component';
+import { ComponentRatingComponent } from './components/component-rating/component-rating.component';
 
 const LedgeComponents = [
   LedgeRenderComponent,
@@ -60,6 +62,8 @@ const LedgeComponents = [
 
   ComponentTodoComponent,
   ComponentChecklistComponent,
+  ComponentRatingItemComponent,
+  ComponentRatingComponent,
 ];
 
 const LedgePipes = [TohtmlPipe];
