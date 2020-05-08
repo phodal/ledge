@@ -82,6 +82,10 @@
       <ledge-heatmap [data]="item.data" [config]="item.config"></ledge-heatmap>
     </div>
 
+    <div *ngSwitchCase="'maturiy'">
+      <ledge-maturity [data]="item.data" [config]="item.config"></ledge-maturity>
+    </div>
+
     <div *ngSwitchCase="'table'">
       <table>
         <thead>

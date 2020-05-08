@@ -31,6 +31,7 @@ import { LedgeMermaidComponent } from './components/ledge-mermaid/ledge-mermaid.
 import { LedgeSunburstComponent } from './chart/ledge-sunburst/ledge-sunburst.component';
 import { LedgeFishBoneComponent } from './chart/ledge-fish-bone/ledge-fish-bone.component';
 import { LedgeHeatmapComponent } from './chart/ledge-heatmap/ledge-heatmap.component';
+import { LedgeMaturityComponent } from './components/ledge-maturity/ledge-maturity.component';
 
 const LedgeComponents = [
   LedgeRenderComponent,
@@ -55,6 +56,7 @@ const LedgeComponents = [
   LedgeSunburstComponent,
   LedgeFishBoneComponent,
   LedgeHeatmapComponent,
+  LedgeMaturityComponent,
 
   ComponentTodoComponent,
   ComponentChecklistComponent,
