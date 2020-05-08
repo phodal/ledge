@@ -1,3 +1,5 @@
+基于：[AWS DevOps 检查清单](https://gruntwork.io/static/devops-checklist/)
+
 ```checklist
 - DevOps 检查清单（AWS）
   - 服务端

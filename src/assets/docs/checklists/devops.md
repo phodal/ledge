@@ -1,3 +1,5 @@
+基于：[Azure DevOps 检查清单](https://docs.microsoft.com/en-us/azure/architecture/checklist/dev-ops)
+
 ```checklist
 - DevOps 检查清单（Azure）
   - 文化

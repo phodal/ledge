@@ -1,3 +1,5 @@
+由 [@hylerrix](https://github.com/hylerrix)提供， 基于： [Front-End Checklist](https://github.com/thedaviddias/Front-End-Checklist)
+
 ```checklist
 - 前端项目检查清单
   - Head

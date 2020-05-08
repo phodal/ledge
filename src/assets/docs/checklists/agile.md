@@ -1,3 +1,5 @@
+来源：[ThoughtWorks 敏捷实践关键清单](https://cloud.tencent.com/developer/article/1558754)
+
 ```checklist
 - ThoughtWorks 敏捷实践关键清单
     - 时点 1：当获得原始需求时

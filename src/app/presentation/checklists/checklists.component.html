@@ -1,17 +1,17 @@
 <div class="checklists">
   <mat-tab-group [(selectedIndex)]="selectedTabIndex" (selectedTabChange)="onTabChanged($event);">
     <mat-tab label="新项目检查清单">
-      <ledge-render [content]="npConent"></ledge-render>
+      <div class="checklist-block">
+        <ledge-render [content]="npConent"></ledge-render>
+      </div>
     </mat-tab>
     <mat-tab label="敏捷实践检查清单">
       <div class="checklist-block">
-        <p>来源：<a href="https://cloud.tencent.com/developer/article/1558754" target="_blank">ThoughtWorks敏捷实践关键清单</a></p>
         <ledge-render [content]="agileContent"></ledge-render>
       </div>
     </mat-tab>
     <mat-tab label="DevOps 检查清单（Azure）">
       <div class="checklist-block">
-        <p>基于：<a href="https://docs.microsoft.com/en-us/azure/architecture/checklist/dev-ops" target="_blank">Azure DevOps 检查清单</a></p>
         <ledge-render [content]="devopsContent"></ledge-render>
       </div>
     </mat-tab>
@@ -23,9 +23,6 @@
     </mat-tab>
     <mat-tab label="DevSecOps 检查清单">
       <div class="checklist-block">
-        <p>由 <a href="https://github.com/hylerrix">@hylerrix</a>提供，基于：<a href="https://mp.weixin.qq.com/s/s6P7Ucv1V2oWknfkvucMOw" target="_blank">中文版</a>和
-          <a href="https://www.synopsys.com/blogs/software-security/devsecops-pipeline-checklist/">英文版</a>
-        </p>
         <ledge-render [content]="devSecOpsContent"></ledge-render>
       </div>
     </mat-tab>
@@ -36,25 +33,21 @@
     </mat-tab>
     <mat-tab label="代码回顾检查清单">
       <div class="checklist-block">
-        <p>基于：《Java 持续交付》</p>
         <ledge-render [content]="codeReviewContent"></ledge-render>
       </div>
     </mat-tab>
     <mat-tab label="API 安全性检查清单">
       <div class="checklist-block">
-        <p>由 <a href="https://github.com/hylerrix">@hylerrix</a>提供， 基于： <a href="https://github.com/shieldfy/API-Security-Checklist/">   API-Security-Checklist 中英文版   </a></p>
         <ledge-render [content]="apiSecurityContent"></ledge-render>
       </div>
     </mat-tab>
     <mat-tab label="前端项目检查清单">
       <div class="checklist-block">
-        <p>由 <a href="https://github.com/hylerrix">@hylerrix</a>提供， 基于： <a href="https://github.com/thedaviddias/Front-End-Checklist">   Front-End Checklist   </a></p>
         <ledge-render [content]="feContent"></ledge-render>
       </div>
     </mat-tab>
     <mat-tab label="微服务生产就绪检查清单">
       <div class="checklist-block">
-        <p>基于：《生产微服务》</p>
         <ledge-render [content]="msContent"></ledge-render>
       </div>
     </mat-tab>

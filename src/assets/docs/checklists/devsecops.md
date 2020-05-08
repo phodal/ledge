@@ -1,3 +1,5 @@
+由 [@hylerrix](https://github.com/hylerrix)提供，基于：[中文版](https://mp.weixin.qq.com/s/s6P7Ucv1V2oWknfkvucMOw)和 [英文版](https://www.synopsys.com/blogs/software-security/devsecops-pipeline-checklist/)
+
 ```checklist
 - DevSecOps 检查清单
   - 关键目标
