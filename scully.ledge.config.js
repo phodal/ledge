@@ -105,6 +105,15 @@ function reportPlugin(route, config) {
   ]);
 }
 
+function maturiyPlugin(route, config) {
+  return Promise.resolve([
+    { route: '/maturity/devops' },
+    { route: '/maturity/amm' },
+    { route: '/maturity/arch' },
+    { route: '/maturity/owasp' },
+  ]);
+}
+
 const validator = async (conf) => [];
 registerPlugin('router', 'case', casePlugin, validator);
 registerPlugin('router', 'solution', solutionPlugin, validator);
@@ -112,6 +121,7 @@ registerPlugin('router', 'tank', thinkTankPlugin, validator);
 registerPlugin('router', 'checklists', checklistsPlugin, validator);
 registerPlugin('router', 'practise', practisePlugin, validator);
 registerPlugin('router', 'report', reportPlugin, validator);
+registerPlugin('router', 'maturity', maturiyPlugin, validator);
 
 exports.config = {
   projectRoot: './src',
@@ -144,6 +154,9 @@ exports.config = {
     },
     '/report/:year': {
       type: 'practise',
+    },
+    '/maturity/:name': {
+      type: 'maturity',
     },
   },
 };
