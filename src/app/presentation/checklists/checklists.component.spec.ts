@@ -32,7 +32,7 @@ describe('ChecklistsComponent', () => {
           provide: ActivatedRoute,
           useValue: {
             fragment: of({}),
-            paramMap: of(convertToParamMap({ selectedTabIndex: '0' })),
+            paramMap: of(convertToParamMap({ name: 'new-project' })),
           },
         },
       ],
@@ -48,14 +48,5 @@ describe('ChecklistsComponent', () => {
   it('should create', () => {
     component.ngOnInit();
     expect(component).toBeTruthy();
-  });
-
-  it('should change table', () => {
-    component.onTabChanged({ index: 1 } as any);
-    expect(mockRouter.navigate).toHaveBeenCalledWith([
-      '/checklists/',
-      'agile-practise',
-    ]);
-    expect(component.selectedTabIndex).toEqual(1);
   });
 });
