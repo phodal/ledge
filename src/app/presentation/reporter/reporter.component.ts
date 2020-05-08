@@ -3,7 +3,6 @@ import { Title } from '@angular/platform-browser';
 import { MatDrawerContent } from '@angular/material/sidenav';
 import { DocRoute } from '../../shared/components/ledge-multiple-docs/doc-route.model';
 import { ActivatedRoute } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
 import { Cases } from '../case-study/cases';
 
 export const reports: Cases = [
