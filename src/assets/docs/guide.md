@@ -2,9 +2,9 @@
 
 # 入门指南
 
-1.  **了解 DevOps 所需的技能**。通过 『[技能图谱](/checklists)』了解相关的知识。
+1.  **了解 DevOps 所需的技能**。通过 『[技能图谱](/skilltree)』了解相关的知识。
 2.  **完善所需的 DevOps 知识**。结合 『[智库](/think-tank)』 完善
-3.  **了解 DevOps 如何实施**。通过 『[操作手册](/think-tank)』 提供的模式进行设计
+3.  **了解 DevOps 如何实施**。通过 『[操作手册](/manual)』 提供的模式进行设计
 4.  **寻找好的 『[DevOps 实践](/practise/devops-practise)』**。
 
 # 实施指南
