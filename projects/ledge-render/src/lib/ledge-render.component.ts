@@ -143,9 +143,9 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
       case 'paragraph':
         return this.handleParaGraph(token);
       case 'text':
-        return marked.inlineLexer(token.text, this.tokens.links);
+        return this.renderInline(token.text, this.tokens.links);
       case 'heading':
-        const inline = marked.inlineLexer(token.text, this.tokens.links);
+        const inline = this.renderInline(token.text, this.tokens.links);
         this.markdownData.push({
           type: 'heading',
           depth: token.depth,
@@ -185,10 +185,7 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
 
         while (this.next().type !== 'list_item_end') {
           if (!loose && this.token.type === 'text') {
-            itemBody.name += marked.inlineLexer(
-              this.parseText(),
-              this.tokens.links
-            );
+            itemBody.name += this.renderInline(this.parseText(), this.tokens.links);
           } else {
             const tok = this.tok();
             if (tok && tok.children) {
@@ -213,7 +210,7 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
   }
 
   private handleParaGraph(token: marked.Tokens.Paragraph) {
-    const inline = marked.inlineLexer(token.text, this.tokens.links);
+    const inline = this.renderInline(token.text, this.tokens.links);
     if (this.isPureParagraph) {
       this.markdownData.push({
         type: 'paragraph',
@@ -222,6 +219,17 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
     }
 
     return inline;
+  }
+
+  private renderInline(tokenText: string, links: any) {
+    const renderer = new marked.Renderer();
+    const linkRenderer = renderer.link;
+    renderer.link = (href, title, text) => {
+      const html = linkRenderer.call(renderer, href, title, text);
+      return html.replace(/^<a /, '<a target="_blank" ');
+    };
+
+    return marked.inlineLexer(tokenText, links, { renderer });
   }
 
   private handleCode(token: marked.Tokens.Code) {
