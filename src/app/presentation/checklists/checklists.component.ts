@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTabChangeEvent } from '@angular/material/tabs/tab-group';
 
-import TECH_CHECKLIST from './checklists/technology.json';
-import PROCESS_CHECKLIST from './checklists/process.json';
-import PEOPLE_CHECKLIST from './checklists/people.json';
-import DOMAIN_CHECKLIST from './checklists/domain.json';
 import { StorageMap } from '@ngx-pwa/local-storage';
 
 import * as newproject from 'raw-loader!../../../assets/docs/checklists/new-project.md';
