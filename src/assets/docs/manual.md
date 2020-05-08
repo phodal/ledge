@@ -465,15 +465,6 @@ Bruck Tuckman 团队发展模型：
 
 来自《持续交付 2.0》的示例：
 
-```process-table
-| 提交阶段 | 自动化验收测试 | 自动化容量测试 | 手工测试 | 发布 |
-|-|-|-|-|-|
-| 编译 | | | 演示 | |
-| 单元测试  | | | 探索性测试 | |
-| 检查分析 | | | | |
-| 构建安装包 | | | | |
-```
-
 GoCD 示例：
 
 ```pipeline
@@ -483,19 +474,42 @@ GoCD 示例：
    - 单元测试:success
    - 集成测试:success
  - 次级构建
+   - 次级构建:success
    - 端到端测试:success
  - 部署到 UAT 环境
+   - 部署到 UAT 环境:success
    - UAT 部署:success
  - UAT 结果
+   - UAT 结果:success
    - 标记版本:success
  - 性能测试
    - 性能测试:success
  - 内部体验
+   - 内部体验:success
    - 上传版本:success
  - 外部体验
+   - 外部体验:success
    - 上传版本:success
  - 上传发布
    - 上传发布:success
+```
+
+```pipeline
+ - 提交阶段
+   - 提交阶段:success
+   - 编译:success
+   - 单元测试:success
+   - 检查分析:success
+ - 自动化验收测试
+   - 自动化验收测试:success
+ - 自动化容量测试
+   - 自动化容量测试:success
+ - 手工测试
+   - 手工测试:success
+   - 演示:success
+   - 探索性测试:success
+ - 发布
+   - 发布:success
 ```
 
 ### 双流水线模型
@@ -534,7 +548,9 @@ CI + CD 分离
    - 部署:success
 ```
 
-### 开源三流水线模型
+### 多流水线模型
+
+#### 开源模式
 
 #### PR 流水线
 
