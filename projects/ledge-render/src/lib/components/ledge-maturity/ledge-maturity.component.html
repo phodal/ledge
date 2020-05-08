@@ -1,6 +1,6 @@
 <div class="ledge-maturity">
   <div class="left" *ngIf="chartData">
-    <ledge-radar [data]="chartData" [config]="config"></ledge-radar>
+    <ledge-radar [styles]="{width: '640px', height: '640px'}" [data]="chartData" [config]="config"></ledge-radar>
   </div>
 
   <div class="right" *ngIf="ratingData">

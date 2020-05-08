@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ElementRef, Input, OnChanges, OnInit, SimpleC
 import * as echarts from 'echarts';
 import LedgeChartConverter from '../../components/model/ledge-chart-converter';
 import { LedgeListItem } from '../../components/model/ledge-chart.model';
+import { NgStyle } from '@angular/common';
 
 @Component({
   selector: 'ledge-radar',
@@ -9,11 +10,9 @@ import { LedgeListItem } from '../../components/model/ledge-chart.model';
   styleUrls: ['./ledge-radar.component.scss'],
 })
 export class LedgeRadarComponent implements OnInit, OnChanges, AfterViewInit {
-  @Input()
-  data: LedgeListItem[];
-
-  @Input()
-  config: any;
+  @Input() data: LedgeListItem[];
+  @Input() styles: NgStyle;
+  @Input() config: any;
 
   @ViewChild('chart', {static: false}) chart: ElementRef;
 
