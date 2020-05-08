@@ -1,7 +1,6 @@
 import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { MarkdownTaskItemService } from '../markdown-task-item.service';
-import MarkdownHelper from '../../../shared/model/markdown.helper';
 
 @Component({
   selector: 'markdown-rating',
