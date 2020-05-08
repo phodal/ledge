@@ -1,22 +1,7 @@
 <div class="checklists">
   <mat-tab-group [(selectedIndex)]="selectedTabIndex" (selectedTabChange)="onTabChanged($event);">
     <mat-tab label="新项目检查清单">
-      <div class="checklist-block" id="checklist-tech">
-        <h2>技术</h2>
-        <component-checklist [checklists]="techChecklist" [name]="'tech'"></component-checklist>
-      </div>
-      <div class="checklist-block" id="checklist-people">
-        <h2>人</h2>
-        <component-checklist [checklists]="peopleChecklist" [name]="'people'"></component-checklist>
-      </div>
-      <div class="checklist-block" id="checklist-process">
-        <h2>流程</h2>
-        <component-checklist [checklists]="processChecklist" [name]="'process'"></component-checklist>
-      </div>
-      <div class="checklist-block" id="checklist-domain">
-        <h2>业务</h2>
-        <component-checklist [checklists]="domainChecklist" [name]="'domain'"></component-checklist>
-      </div>
+      <ledge-render [content]="npConent"></ledge-render>
     </mat-tab>
     <mat-tab label="敏捷实践检查清单">
       <div class="checklist-block">

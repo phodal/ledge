@@ -7,6 +7,7 @@ import PEOPLE_CHECKLIST from './checklists/people.json';
 import DOMAIN_CHECKLIST from './checklists/domain.json';
 import { StorageMap } from '@ngx-pwa/local-storage';
 
+import * as newproject from 'raw-loader!../../../assets/docs/checklists/new-project.md';
 import * as agileMD from 'raw-loader!../../../assets/docs/checklists/agile.md';
 import * as azureDevOps from 'raw-loader!../../../assets/docs/checklists/devops.md';
 import * as gruntworkDevOps from 'raw-loader!../../../assets/docs/checklists/devops-gruntwork.md';
@@ -26,11 +27,6 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./checklists.component.scss'],
 })
 export class ChecklistsComponent implements OnInit {
-  techChecklist: any = TECH_CHECKLIST;
-  processChecklist: any = PROCESS_CHECKLIST;
-  peopleChecklist: any = PEOPLE_CHECKLIST;
-  domainChecklist: any = DOMAIN_CHECKLIST;
-
   agileContent = agileMD.default;
   devopsContent = azureDevOps.default;
   gdevopsContent = gruntworkDevOps.default;
@@ -40,6 +36,7 @@ export class ChecklistsComponent implements OnInit {
   devSecOpsContent = devSecOps.default;
   apiSecurityContent = apiSecurity.default;
   msContent = microservices.default;
+  npConent = newproject.default;
 
   selectedTabIndex = 0;
 
