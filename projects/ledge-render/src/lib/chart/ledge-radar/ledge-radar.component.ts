@@ -64,7 +64,14 @@ export class LedgeRadarComponent implements OnInit, OnChanges, AfterViewInit {
         },
         indicator,
       },
-      series: [{type: 'radar', data: seriesData}],
+      series: [{
+        type: 'radar',
+        top: '12%',
+        left: '10%',
+        bottom: '12%',
+        right: '30%',
+        data: seriesData
+      }],
     };
 
     if (!this.hiddenLegend) {
