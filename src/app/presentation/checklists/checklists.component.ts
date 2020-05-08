@@ -15,6 +15,8 @@ import * as codeReview from 'raw-loader!../../../assets/docs/checklists/coderevi
 import * as fe from 'raw-loader!../../../assets/docs/checklists/front-end.md';
 import * as devSecOps from 'raw-loader!../../../assets/docs/checklists/devsecops.md';
 import * as apiSecurity from 'raw-loader!../../../assets/docs/checklists/api-security.md';
+import * as microservices from 'raw-loader!../../../assets/docs/checklists/microservices.md';
+
 import { ActivatedRoute, Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
@@ -37,6 +39,7 @@ export class ChecklistsComponent implements OnInit {
   feContent = fe.default;
   devSecOpsContent = devSecOps.default;
   apiSecurityContent = apiSecurity.default;
+  msContent = microservices.default;
 
   selectedTabIndex = 0;
 
@@ -50,6 +53,7 @@ export class ChecklistsComponent implements OnInit {
     { name: '代码回顾检查清单', route: 'code-review' },
     { name: 'API 安全性检查清单', route: 'api-security' },
     { name: '前端项目检查清单', route: 'frontend' },
+    { name: '微服务生产就绪检查清单', route: 'microservices' },
   ];
 
   constructor(
