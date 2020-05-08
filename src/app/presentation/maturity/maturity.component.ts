@@ -9,7 +9,7 @@ export const lists: DocRoute[] = [
   { displayName: 'DevOps 成熟度模型', source: 'devops' },
   { displayName: 'OWASP 安全成熟度模型', source: 'owasp' },
   { displayName: 'AMM 敏捷成熟度模型', source: 'amm' },
-  { displayName: '架构成熟度模型', source: 'arch' },
+  { displayName: '架构设计成熟度模型', source: 'arch' },
 ];
 
 @Component({
