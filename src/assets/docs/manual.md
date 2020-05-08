@@ -463,7 +463,7 @@ Bruck Tuckman 团队发展模型：
 - 验收测试自动化
 - 发布自动化
 
-来自《持续交付 2.0》的示例
+来自《持续交付 2.0》的示例：
 
 ```process-table
 | 提交阶段 | 自动化验收测试 | 自动化容量测试 | 手工测试 | 发布 |
@@ -472,6 +472,30 @@ Bruck Tuckman 团队发展模型：
 | 单元测试  | | | 探索性测试 | |
 | 检查分析 | | | | |
 | 构建安装包 | | | | |
+```
+
+GoCD 示例：
+
+```pipeline
+ - 提交构建
+   - 编译打包:success
+   - 代码扫描:success
+   - 单元测试:success
+   - 集成测试:success
+ - 次级构建
+   - 端到端测试:success
+ - 部署到 UAT 环境
+   - UAT 部署:success
+ - UAT 结果
+   - 标记版本:success
+ - 性能测试
+   - 性能测试:success
+ - 内部体验
+   - 上传版本:success
+ - 外部体验
+   - 上传版本:success
+ - 上传发布
+   - 上传发布:success
 ```
 
 ## 技术实践设计
