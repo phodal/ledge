@@ -1,5 +1,6 @@
-import { Component, forwardRef, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, forwardRef, Input, OnInit, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { RatingItemModel } from '../model/rating.model';
 
 @Component({
   selector: 'component-rating',
@@ -15,6 +16,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class ComponentRatingComponent implements OnInit, ControlValueAccessor {
   @Input() data: any[];
+  @Output() dataChange = new EventEmitter<any>();
+
   @Input() isParent = false;
   @Input() instanceKey: string;
 
@@ -47,7 +50,9 @@ export class ComponentRatingComponent implements OnInit, ControlValueAccessor {
     }
   }
 
-  changeForm($event: any, item: any) {
-    console.log($event, item);
+  changeForm($event: any, item: RatingItemModel, index: number) {
+    item.name = item.displayName + ': ' + item.chartValue;
+    this.data[index] = item;
+    this.dataChange.emit(this.data);
   }
 }

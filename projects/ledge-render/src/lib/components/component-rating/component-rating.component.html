@@ -1,8 +1,8 @@
-<ul id="markdown-rating">
-  <li *ngFor="let task of data">
+<ul id="markdown-rating" *ngIf="data">
+  <li *ngFor="let task of data;let i = index;">
     <component-rating-item
       [item]="task"
-      (itemChange)="changeForm($event, task)">
+      (itemChange)="changeForm($event, task, i)">
     </component-rating-item>
 
     <ol *ngIf="task.children">

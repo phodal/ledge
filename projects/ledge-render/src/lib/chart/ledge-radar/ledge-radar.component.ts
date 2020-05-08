@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import * as echarts from 'echarts';
 import LedgeChartConverter from '../../components/model/ledge-chart-converter';
 import { LedgeListItem } from '../../components/model/ledge-chart.model';
@@ -8,19 +8,32 @@ import { LedgeListItem } from '../../components/model/ledge-chart.model';
   templateUrl: './ledge-radar.component.html',
   styleUrls: ['./ledge-radar.component.scss'],
 })
-export class LedgeRadarComponent implements OnInit, AfterViewInit {
+export class LedgeRadarComponent implements OnInit, OnChanges, AfterViewInit {
   @Input()
   data: LedgeListItem[];
 
   @Input()
   config: any;
 
-  @ViewChild('chart', {}) chart: ElementRef;
+  @ViewChild('chart', {static: false}) chart: ElementRef;
 
   ngOnInit(): void {
   }
 
   ngAfterViewInit(): void {
+    this.render();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.data) {
+      this.data = changes.data.currentValue;
+      if (!!this.chart) {
+        this.render();
+      }
+    }
+  }
+
+  render() {
     const myChart = echarts.init(this.chart.nativeElement);
     const treeData = LedgeChartConverter.toTreeData(this.data);
     const option = this.buildOption(treeData);
