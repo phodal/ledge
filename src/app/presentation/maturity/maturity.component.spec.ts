@@ -3,7 +3,6 @@ import { LedgeRenderModule } from '@ledge-framework/render';
 import { RouterTestingModule } from '@angular/router/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MaturityItemComponent } from './maturity-item/maturity-item.component';
 import { MaturityComponent } from './maturity.component';
 import { SharedModule } from '../../shared/shared.module';
 import { CustomMaterialModule } from '../../shared/custom-material.module';
@@ -21,7 +20,7 @@ describe('MaturityComponent', () => {
         LedgeRenderModule,
         RouterTestingModule,
       ],
-      declarations: [MaturityComponent, MaturityItemComponent],
+      declarations: [MaturityComponent],
     }).compileComponents();
   }));
 
