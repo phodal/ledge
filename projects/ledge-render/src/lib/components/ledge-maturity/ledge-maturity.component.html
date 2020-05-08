@@ -1,9 +1,9 @@
 <div class="ledge-maturity">
-  <div class="left">
-    <ledge-radar [data]="data" [config]="config"></ledge-radar>
+  <div class="left" *ngIf="chartData">
+    <ledge-radar [data]="chartData" [config]="config"></ledge-radar>
   </div>
 
   <div class="right" *ngIf="data">
-    <component-rating [data]="data[0].children"></component-rating>
+    <component-rating [data]="ratingData"></component-rating>
   </div>
 </div>

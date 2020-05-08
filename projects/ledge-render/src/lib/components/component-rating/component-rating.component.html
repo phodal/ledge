@@ -1,7 +1,6 @@
 <ul id="markdown-rating">
   <li *ngFor="let task of data">
     <component-rating-item
-      [isParent]="isParent"
       [item]="task"
       (itemChange)="changeForm($event, task)">
     </component-rating-item>

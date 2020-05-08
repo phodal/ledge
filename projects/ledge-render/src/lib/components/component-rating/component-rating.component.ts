@@ -48,6 +48,6 @@ export class ComponentRatingComponent implements OnInit, ControlValueAccessor {
   }
 
   changeForm($event: any, item: any) {
-
+    console.log($event, item);
   }
 }

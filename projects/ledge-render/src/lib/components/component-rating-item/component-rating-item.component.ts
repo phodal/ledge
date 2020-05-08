@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { MatSliderChange } from '@angular/material/slider';
-import { RatingModel } from '../model/rating.model';
+import { RatingItemModel } from '../model/rating.model';
 
 @Component({
   selector: 'component-rating-item',
@@ -23,8 +23,7 @@ import { RatingModel } from '../model/rating.model';
   ],
 })
 export class ComponentRatingItemComponent implements OnInit {
-  @Input() item: RatingModel;
-  @Input() isParent: boolean;
+  @Input() item: RatingItemModel;
   @Output() itemChange = new EventEmitter();
 
   disabled = false;
@@ -34,7 +33,13 @@ export class ComponentRatingItemComponent implements OnInit {
   onTouched(_) {}
 
   ngOnInit() {
-
+    const nameValuesSplit = this.item.name.split(': ');
+    this.item.displayName = nameValuesSplit[0];
+    if (nameValuesSplit.length > 1) {
+      this.item.chartValue = parseInt(nameValuesSplit[1], 10);
+    } else {
+      this.item.chartValue = 3;
+    }
   }
 
   registerOnChange(fn: any): void {

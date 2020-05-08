@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { LedgeListItem } from '../model/ledge-chart.model';
+import { RatingItemModel, RatingListModel } from '../model/rating.model';
 
 @Component({
   selector: 'ledge-maturity',
@@ -9,6 +10,8 @@ import { LedgeListItem } from '../model/ledge-chart.model';
 export class LedgeMaturityComponent implements OnInit, OnChanges {
   @Input()
   data: LedgeListItem[];
+  chartData: LedgeListItem[];
+  ratingData: RatingListModel;
 
   @Input()
   config: any;
@@ -19,10 +22,10 @@ export class LedgeMaturityComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.renderData();
-  }
-
-  private renderData() {
-
+    if (changes.data) {
+      this.data = changes.data.currentValue;
+      this.chartData = this.data;
+      this.ratingData = this.data[0].children as any;
+    }
   }
 }
