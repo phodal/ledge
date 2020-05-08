@@ -1,5 +1,78 @@
 # Ledge DevOps 知识平台
 
+## 流水线设计
+
+### 本地阶段
+
+```pipeline
+ - 预本地提交阶段
+   - 提交信息检查:success
+   - Lint:success
+   - 自动 Lint 修复:success
+ - 本地提交
+   - 本地提交:success
+ - 预提交服务器阶段
+   - 预提交服务器阶段:success
+   - 单元测试:success
+ - 提交
+   - 提交:success
+```
+
+### CI + CD + PR 三流水线模型
+
+场景：
+
+1. 构建时间长，所以拆分了三个 job，以达到快速交付的目的
+2. GitHub Action 支持双流水线模式
+
+#### 持续集成
+
+```pipeline
+ - 代码检出
+   - 代码检出:success
+ - 安装依赖
+   - 安装依赖:success
+ - 构建
+   - Lint:success
+   - Build:success
+ - 测试
+   - 单元测试:success
+ - 上传结果
+   - 上传测试覆盖率:success
+   - 上传构建结果:success
+```
+
+#### 持续交付
+
+```pipeline
+ - 代码检出
+   - 代码检出:success
+ - 安装依赖
+   - 安装依赖:success
+ - 构建
+   - 构建:success
+ - 构建服务端渲染
+   - 构建服务端渲染:success
+ - 部署
+   - 部署:success
+```
+
+#### PR 流水线
+
+PS：针对于外部开源请求代码
+
+```pipeline
+ - 代码检出
+   - 代码检出:success
+ - 安装依赖
+   - 安装依赖:success
+ - 构建
+   - Lint:success
+   - Build:success
+ - 测试
+   - 单元测试:success
+```
+
 ## 流程
 
 ### 本地开发流程
