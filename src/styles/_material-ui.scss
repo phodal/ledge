@@ -8,6 +8,13 @@
   width: 100%;
 }
 
+.mat-tooltip-panel {
+  .mat-tooltip {
+    background-color: $tooltip-bg;
+    font-size: 14px;
+  }
+}
+
 .mat-toolbar {
   box-shadow: 0 1px 0 0 $lighter-gray;
 
