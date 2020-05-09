@@ -107,14 +107,13 @@ see in [Roadmap 1.0](https://github.com/phodal/ledge/issues/30)
 
 see in [Roadmap 2.0](https://github.com/phodal/ledge/issues/183)
 
+core:
+
 - [ ] Ledge Framework
 - [ ] workflow design: https://github.com/elsa-workflows/elsa-designer
 - [ ] Interactive DevOps Design
   - [ ] Fluent DevOps
   - [ ] [Health Radar](https://www.scaledagileframework.com/blog/assess-your-devops-health-with-the-safe-devops-radar/)
-- [ ] BizDevOps
-- [ ] I18N
-  - [ ] EN
 
 ### 3.0 Ledge
 
