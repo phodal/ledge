@@ -26,26 +26,13 @@ export class LedgeTreeComponent implements OnInit, OnChanges {
     if (changes.data) {
       this.data = changes.data.currentValue;
       setTimeout(() => {
-        this.render();
+        this.render(this.data[0]);
       });
     }
   }
 
-  private render() {
-    const treeData = {
-      name: 'Top Level',
-      children: [
-        {
-          name: 'Level 2: A',
-          children: [
-            {name: 'Son of A'},
-            {name: 'Daughter of A'}
-          ]
-        },
-        {name: 'Level 2: B'}
-      ]
-    };
-
+  private render(treeData) {
+    // MI: https://bl.ocks.org/d3noob/1a96af738c89b88723eb63456beb6510
     const chartElement = this.chartEl.nativeElement;
     // Set the dimensions and margins of the diagram
     const margin = {top: 20, right: 90, bottom: 30, left: 90};
