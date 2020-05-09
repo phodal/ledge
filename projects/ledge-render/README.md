@@ -84,6 +84,8 @@ Use [yarn link](https://classic.yarnpkg.com/en/docs/cli/link/) to avoid reinstal
 - toolset。use toolset components to extends
   - slider
   - line-chart
+- pipeline。ci pipeline
+- maturity。check, rating with radrar for maturity
 
 ### 权衡滑块示例
 
