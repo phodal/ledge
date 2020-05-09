@@ -1,7 +1,3 @@
-<ledge-multiple-docs
-  [items]="items"
-  [currentUrl]="currentUrl"
-  [urlPrefix]="urlPrefix"
-  [source]="currentSource"
->
-</ledge-multiple-docs>
+<div *ngIf="content">
+  <ledge-markdown-render [data]="content" showToc="true"></ledge-markdown-render>
+</div>

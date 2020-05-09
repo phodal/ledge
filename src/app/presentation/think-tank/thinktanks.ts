@@ -1,7 +1,13 @@
-// todo: 优先级根据内容的质量重新排序。现在的是后来的在后面  + 内容多的在前面，随机组合
-import { DocRoute } from '../../shared/components/ledge-multiple-docs/doc-route.model';
+export interface Thinktank {
+  displayName: string;
+  source: string;
+  default?: boolean;
+}
 
-export const thinktanks: DocRoute[] = [
+export type Thinktanks = Array<Thinktank>;
+
+// todo: 优先级根据内容的质量重新排序。现在的是后来的在后面  + 内容多的在前面，随机组合
+export const thinktanks: Thinktanks = [
   { displayName: '需求管理', source: 'ba' },
   { displayName: '质量管理', source: 'qa', default: true },
   { displayName: 'Android', source: 'mobile-android' },
