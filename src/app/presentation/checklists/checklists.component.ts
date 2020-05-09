@@ -16,6 +16,7 @@ export const lists: DocRoute[] = [
   { displayName: 'API 安全性检查清单', source: 'api-security' },
   { displayName: '前端项目检查清单', source: 'frontend' },
   { displayName: '微服务生产就绪检查清单', source: 'microservices' },
+  { displayName: '自组织团队建设检查清单', source: 'self-org' },
 ];
 
 @Component({

@@ -85,6 +85,8 @@ function checklistsPlugin(route, config) {
     { route: '/checklists/code-review' },
     { route: '/checklists/frontend' },
     { route: '/checklists/api-security' },
+    { route: '/checklists/microservices' },
+    { route: '/checklists/self-org' },
   ]);
 }
 
