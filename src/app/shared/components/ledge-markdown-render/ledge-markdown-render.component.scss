@@ -8,6 +8,17 @@
   margin: 1em auto 0;
 }
 
+.editit {
+  float: right;
+  top: 44px;
+  position: relative;
+  right: 30px;
+
+  :hover {
+    cursor: pointer;
+  }
+}
+
 .sticky {
   position: fixed;
   overflow-y: scroll;

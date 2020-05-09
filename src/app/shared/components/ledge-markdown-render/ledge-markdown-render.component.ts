@@ -24,14 +24,13 @@ import Tocify, { TocItem } from './tocify';
 })
 export class LedgeMarkdownRenderComponent
   implements OnInit, OnChanges, AfterViewInit {
-  @Input()
-  showToc = false;
-  @Input()
-  showScroll = true;
-  @Input()
-  data = '';
-  @Input()
-  virtualScroll = false;
+  @Input() showToc = false;
+  @Input() showScroll = true;
+  @Input() data = '';
+  @Input() virtualScroll = false;
+  @Input() sourceDir;
+  @Input() baseUrl =
+    'https://github.com/phodal/ledge/edit/master/src/assets/docs/';
 
   @ViewChild('toc', { static: false }) tocEl: ElementRef;
   @ViewChild('tocLeft', { static: false }) tocLeftEl: ElementRef;
@@ -246,5 +245,9 @@ export class LedgeMarkdownRenderComponent
     const headingId = `menu-${id}`;
     const menuElement = document.getElementById(headingId);
     this.scrollToMenu(menuElement, id);
+  }
+
+  openLink() {
+    window.open(this.baseUrl + this.sourceDir);
   }
 }
