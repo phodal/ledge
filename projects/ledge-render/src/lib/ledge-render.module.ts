@@ -34,6 +34,7 @@ import { LedgeHeatmapComponent } from './chart/ledge-heatmap/ledge-heatmap.compo
 import { LedgeMaturityComponent } from './components/ledge-maturity/ledge-maturity.component';
 import { ComponentRatingItemComponent } from './components/component-rating-item/component-rating-item.component';
 import { ComponentRatingComponent } from './components/component-rating/component-rating.component';
+import { LedgeTreeComponent } from './chart/ledge-tree/ledge-tree.component';
 
 const LedgeComponents = [
   LedgeRenderComponent,
@@ -59,6 +60,7 @@ const LedgeComponents = [
   LedgeFishBoneComponent,
   LedgeHeatmapComponent,
   LedgeMaturityComponent,
+  LedgeTreeComponent,
 
   ComponentTodoComponent,
   ComponentChecklistComponent,

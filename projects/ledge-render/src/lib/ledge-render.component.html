@@ -86,6 +86,10 @@
       <ledge-maturity [data]="item.data" [config]="item.config"></ledge-maturity>
     </div>
 
+    <div *ngSwitchCase="'tree'">
+      <ledge-tree [data]="item.data" [config]="item.config"></ledge-tree>
+    </div>
+
     <div *ngSwitchCase="'table'">
       <table>
         <thead>

@@ -282,6 +282,7 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
       case 'sunburst':
       case 'fishbone':
       case 'maturity':
+      case 'tree':
         const {config, lists} = LedgeMarkdownConverter.toJson(codeBlock.text);
         this.markdownData.push({
           type: codeBlock.lang,
