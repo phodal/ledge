@@ -1,7 +1,7 @@
 # 测试
 
 ```quadrant
- - 测试四象限 （Brain Marick）
+ - 测试四象限（Brain Marick）
      - 自动/手动
        - 用户故事测试
        - 端到端测试
