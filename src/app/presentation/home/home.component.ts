@@ -202,16 +202,13 @@ config: {"rowHeight": "350px", "colors": [{"bg":"#e55852","font":"#b71a09"},{"bg
     this.shepherdService.modal = true;
     this.shepherdService.confirmCancel = false;
     this.shepherdService.addSteps(this.steps);
-    this.shepherdService.onTourFinish = (completeOrCancel) => {
-      if (completeOrCancel === 'complete') {
-        this.storage.set('intro.hadDone', true).subscribe(() => {});
-      }
-    };
 
     if (!isScullyRunning()) {
-      this.storage.get('intro.hadDone').subscribe((value: boolean) => {
+      const doneKey = 'intro.hadDone';
+      this.storage.get(doneKey).subscribe((value: boolean) => {
         if (!value) {
           this.shepherdService.start();
+          this.storage.set(doneKey, true).subscribe(() => {});
         }
       });
     }
