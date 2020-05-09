@@ -10,6 +10,9 @@
     </ul>
   </mat-drawer>
   <mat-drawer-content #drawerContent>
-    <ledge-markdown-render [data]="content"></ledge-markdown-render>
+    <ledge-markdown-render
+      sourceDir="{{urlPrefix}}/{{source}}.md"
+      [data]="content">
+    </ledge-markdown-render>
   </mat-drawer-content>
 </mat-drawer-container>

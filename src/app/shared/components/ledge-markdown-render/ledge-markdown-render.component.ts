@@ -246,8 +246,4 @@ export class LedgeMarkdownRenderComponent
     const menuElement = document.getElementById(headingId);
     this.scrollToMenu(menuElement, id);
   }
-
-  openLink() {
-    window.open(this.baseUrl + this.sourceDir);
-  }
 }
