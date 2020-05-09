@@ -100,119 +100,122 @@ config: {"hiddenLegend": true}
 
 来源：[https://github.com/raycad/devops-roadmap](https://github.com/raycad/devops-roadmap)
 
-```mindmap
- - 源码管理
-   - 源码管理服务
-     - Gitlab
-     - Gitea
-     - Gogs
- - 前端
-   - 框架
-     - React
-     - Angular
-     - Vue
-   - 构建工具
-     - Webpack + Gulp
-   - 单元测试
-     - Jest
-     - Jasmine
-     - Karma
- - 后端
-   - 语言和框架
-     - Golang
-       - Gin
-       - Echo
-     - Java
-       - Spring Boot
-     - Node.js
-       - Express
-       - Koa
-       - Next.js
-     - Python
-       - Django
-       - Flask
-   - IAM
-     - OAuth
-     - JWT
-   - 消息代理
-     - Kafka
-     - RabbitMQ
-     - ZeroMQ
-   - Web 服务器
-     - Apache
-     - Nginx
-   - Mock API
-     - JSON Server
-     - Moco
-     - Mockoon
-   - API 文档
-     - Swagger
- - 数据库
-   - 关系型数据库
-     - PostreSQL
-     - MariaDB
-     - MySQL
-   - 非关系型数据库
-     - 文档存储
-       - MongoDB
-       - RethinkDB
-     - 键值存储
-       - Redis
-       - Memcached
-     - 搜索引擎
-       - ElasticSearch
-       - Solr
-     - 时序
-       - InfluxDB
-       - Graphite
-     - 图形数据库
-       - Neo4j
- - API 网关
-   - Traefik
-   - Kong
-   - Zuul
- - 云计算
-   - OpenStack
-   - CloudStack
- - 服务测试
-   - API 测试
-     - jMeter
-     - Postman
-   - 性能测试
-     - nGrinder
-     - jMeter
-     - wrk
-   - 自动化 E2E 测试
-     - Selenium
-     - Cucumber
- - 运维
-   - 容器化
-     - Docker
-   - 编排
-     - Kubernetes
-   - CI/CD
-     - Jenkins
-     - GoCD
-     - Drone
-   - 配置管理
-     - Ansible
-     - Chef
-   - 监控
-     - Grafana
-     - Nagios
-     - Icingga
-   - 日志管理
-     - ELK
-     - Fluentd
-     - Apache Flume
- - 大数据
-   - 数据流
-     - Apache Spark Streaming
-     - Flink
-   - 数据处理
-     - Apache Spark
-     - Apache Storm
-   - 数据集成（ETL)
-     - Apache NiFi
-     - Pentaho
+```tree
+ - 技术栈知识图谱
+   - 源码管理
+     - 源码管理服务
+       - Gitlab
+       - Gitea
+       - Gogs
+   - 前端
+     - 框架
+       - React
+       - Angular
+       - Vue
+     - 构建工具
+       - Webpack + Gulp
+     - 单元测试
+       - Jest
+       - Jasmine
+       - Karma
+   - 后端
+     - 语言和框架
+       - Golang
+         - Gin
+         - Echo
+       - Java
+         - Spring Boot
+       - Node.js
+         - Express
+         - Koa
+         - Next.js
+       - Python
+         - Django
+         - Flask
+     - IAM
+       - OAuth
+       - JWT
+     - 消息代理
+       - Kafka
+       - RabbitMQ
+       - ZeroMQ
+     - Web 服务器
+       - Apache
+       - Nginx
+     - Mock API
+       - JSON Server
+       - Moco
+       - Mockoon
+     - API 文档
+       - Swagger
+   - 数据库
+     - 关系型数据库
+       - PostreSQL
+       - MariaDB
+       - MySQL
+     - 非关系型数据库
+       - 文档存储
+         - MongoDB
+         - RethinkDB
+       - 键值存储
+         - Redis
+         - Memcached
+       - 搜索引擎
+         - ElasticSearch
+         - Solr
+       - 时序
+         - InfluxDB
+         - Graphite
+       - 图形数据库
+         - Neo4j
+   - API 网关
+     - Traefik
+     - Kong
+     - Zuul
+   - 云计算
+     - OpenStack
+     - CloudStack
+   - 服务测试
+     - API 测试
+       - jMeter
+       - Postman
+     - 性能测试
+       - nGrinder
+       - jMeter
+       - wrk
+     - 自动化 E2E 测试
+       - Selenium
+       - Cucumber
+   - 运维
+     - 容器化
+       - Docker
+     - 编排
+       - Kubernetes
+     - CI/CD
+       - Jenkins
+       - GoCD
+       - Drone
+     - 配置管理
+       - Ansible
+       - Chef
+     - 监控
+       - Grafana
+       - Nagios
+       - Icingga
+     - 日志管理
+       - ELK
+       - Fluentd
+       - Apache Flume
+   - 大数据
+     - 数据流
+       - Apache Spark Streaming
+       - Flink
+     - 数据处理
+       - Apache Spark
+       - Apache Storm
+     - 数据集成（ETL)
+       - Apache NiFi
+       - Pentaho
+
+config: {"height": 1200, "width": 1200}
 ```

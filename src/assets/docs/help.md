@@ -24,6 +24,8 @@
     - 分支合并
     - 外卖业务库合入 Aimeituan 提测分支
     - 全量提醒
+
+config: {"collapse": true, "height": 400, "width": 800}
 ```
 
 ```maturity
