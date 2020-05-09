@@ -114,6 +114,7 @@ function maturiyPlugin(route, config) {
     { route: '/maturity/arch' },
     { route: '/maturity/owasp' },
     { route: '/maturity/msmm' },
+    { route: '/maturity/smmm' },
   ]);
 }
 
