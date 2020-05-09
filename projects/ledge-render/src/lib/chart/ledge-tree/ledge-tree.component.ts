@@ -37,7 +37,7 @@ export class LedgeTreeComponent implements OnInit, OnChanges {
     // Set the dimensions and margins of the diagram
     const margin = {top: 20, right: 90, bottom: 30, left: 90};
     const width = 960 - margin.left - margin.right;
-    const height = 500 - margin.top - margin.bottom;
+    const height = 800 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
     // appends a 'group' element to 'svg'
@@ -62,7 +62,8 @@ export class LedgeTreeComponent implements OnInit, OnChanges {
     root.y0 = 0;
 
     // Collapse after the second level
-    root.children.forEach(collapse);
+    // todo: make as configurable
+    // root.children.forEach(collapse);
 
     update(root);
 
