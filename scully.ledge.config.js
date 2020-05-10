@@ -87,6 +87,7 @@ function checklistsPlugin(route, config) {
     { route: '/checklists/api-security' },
     { route: '/checklists/microservices' },
     { route: '/checklists/self-org' },
+    { route: '/checklists/semat-requirements' },
   ]);
 }
 
