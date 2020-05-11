@@ -26,7 +26,7 @@ export class SkillTreeComponent implements OnInit {
   content: string;
 
   items: DocRoute[] = trees;
-  currentUrl = '/skill-tree';
+  currentUrl = '/skilltree';
   urlPrefix = `skilltrees`;
 
   constructor(private title: Title, private activatedRoute: ActivatedRoute) {}

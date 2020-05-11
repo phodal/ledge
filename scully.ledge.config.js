@@ -121,9 +121,9 @@ function maturiyPlugin(route, config) {
 
 function skilltreePlugin(route, config) {
   return Promise.resolve([
-    { route: '/skill-tree/devops-skilltree' },
-    { route: '/skill-tree/arch-skilltree' },
-    { route: '/skill-tree/frontend-skilltree' },
+    { route: '/skilltree/devops-skilltree' },
+    { route: '/skilltree/arch-skilltree' },
+    { route: '/skilltree/frontend-skilltree' },
   ]);
 }
 
