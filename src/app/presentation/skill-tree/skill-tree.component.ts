@@ -9,6 +9,7 @@ import { Cases } from '../case-study/cases';
 export const trees: Cases = [
   { displayName: 'DevOps 技能图谱', source: 'devops-skilltree' },
   { displayName: '架构技能图谱', source: 'arch-skilltree' },
+  { displayName: '前端技能图谱', source: 'frontend-skilltree' },
 ];
 
 @Component({

@@ -123,6 +123,7 @@ function skilltreePlugin(route, config) {
   return Promise.resolve([
     { route: '/skill-tree/devops-skilltree' },
     { route: '/skill-tree/arch-skilltree' },
+    { route: '/skill-tree/frontend-skilltree' },
   ]);
 }
 
