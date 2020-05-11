@@ -119,6 +119,13 @@ function maturiyPlugin(route, config) {
   ]);
 }
 
+function skilltreePlugin(route, config) {
+  return Promise.resolve([
+    { route: '/skill-tree/devops-skilltree' },
+    { route: '/skill-tree/arch-skilltree' },
+  ]);
+}
+
 const validator = async (conf) => [];
 registerPlugin('router', 'case', casePlugin, validator);
 registerPlugin('router', 'solution', solutionPlugin, validator);
@@ -127,6 +134,7 @@ registerPlugin('router', 'checklists', checklistsPlugin, validator);
 registerPlugin('router', 'practise', practisePlugin, validator);
 registerPlugin('router', 'report', reportPlugin, validator);
 registerPlugin('router', 'maturity', maturiyPlugin, validator);
+registerPlugin('router', 'skilltree', skilltreePlugin, validator);
 
 exports.config = {
   projectRoot: './src',
@@ -162,6 +170,9 @@ exports.config = {
     },
     '/maturity/:name': {
       type: 'maturity',
+    },
+    '/skill-tree/:skill': {
+      type: 'skilltree',
     },
   },
 };

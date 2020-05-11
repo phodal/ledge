@@ -1,8 +1,7 @@
-<div>
-  <p>
-    based on <a href="https://github.com/kamranahmedse/developer-roadmap">Developer Roadmap</a>
-  </p>
-  <ledge-markdown-render
-    sourceDir="practises/skilltree.md"
-    class="ledge-skilltree" [data]="data"></ledge-markdown-render>
-</div>
+<ledge-multiple-docs
+  [items]="items"
+  [currentUrl]="currentUrl"
+  [urlPrefix]="urlPrefix"
+  [source]="currentSource"
+>
+</ledge-multiple-docs>

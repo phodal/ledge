@@ -1,7 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
-import * as mdData from 'raw-loader!../../../assets/docs/skilltree.md';
+import { MatDrawerContent } from '@angular/material/sidenav';
+import { DocRoute } from '../../shared/components/ledge-multiple-docs/doc-route.model';
+import { ActivatedRoute } from '@angular/router';
+import { Cases } from '../case-study/cases';
+
+export const trees: Cases = [
+  { displayName: 'DevOps 技能图谱', source: 'devops-skilltree' },
+  { displayName: '架构技能图谱', source: 'arch-skilltree' },
+];
 
 @Component({
   selector: 'app-skill-tree',
@@ -9,11 +17,27 @@ import * as mdData from 'raw-loader!../../../assets/docs/skilltree.md';
   styleUrls: ['./skill-tree.component.scss'],
 })
 export class SkillTreeComponent implements OnInit {
-  data: any = mdData.default;
+  @ViewChild('drawerContent', { static: false })
+  drawerContent: MatDrawerContent;
 
-  constructor(private title: Title) {}
+  currentSource: string;
+  src: string;
+  content: string;
+
+  items: DocRoute[] = trees;
+  currentUrl = '/skill-tree';
+  urlPrefix = `skilltrees`;
+
+  constructor(private title: Title, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.title.setTitle(`DevOps 技能图谱 - DevOps 知识平台`);
+    this.activatedRoute.paramMap.subscribe((p) => {
+      const param = p.get('skilltree');
+      const currentItem = this.items.find((item) => item.source === param);
+      this.title.setTitle(
+        `DevOps ${currentItem.displayName} 技能图谱 - Ledge DevOps 知识平台`
+      );
+      this.currentSource = param;
+    });
   }
 }
