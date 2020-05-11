@@ -27,7 +27,7 @@ describe('SkillTreeComponent', () => {
           provide: ActivatedRoute,
           useValue: {
             fragment: of({}),
-            paramMap: of(convertToParamMap({ year: '2019' })),
+            paramMap: of(convertToParamMap({ skilltree: 'devops-skilltree' })),
           },
         },
       ],
