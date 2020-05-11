@@ -1,0 +1,162 @@
+# 前端技能图谱
+
+```mindmap
+- 前端技能图谱
+  - 互联网
+    - 互联网是如何工作的？
+    - 什么是 HTTP？
+    - 浏览器及其运行机制？
+    - DNS 及其运行机制？
+    - 什么是域名？
+    - 什么是网络托管？
+  - HTML
+    - 学习 HTML 基础
+    - 书写语义化的 HTML
+    - 表单和验证
+    - 惯例和最佳实践
+    - 可访问性
+    - 搜索引擎优化基础
+  - CSS
+    - 学习 CSS 基础
+    - 制作布局
+      - 浮动
+      - 定位
+      - 显示
+      - 盒模型
+      - 网格布局
+      - 弹性布局
+    - 响应式设计和媒体查询
+  - JavaScript
+    - 语法和基本构造
+    - 学习 DOM 操作
+    - 学习 Fetch API / Ajax（XHR）
+    - ES6+ 和模块化 JavaScript
+    - 学习一些概念
+      - 变量提升
+      - 事件冒泡
+      - 作用域
+      - 原型
+      - Shadow DOM
+      - 严格模式
+  - 版本控制系统
+    - Git 的基本操作
+    - 仓库托管服务
+      - Github
+      - Gitlab
+      - Bitbucket
+  - Web 安全知识
+    - HTTPS
+    - 内容安全策略（CSP）
+    - 跨域资源共享（CORS）
+    - OWASP 安全风险
+  - 包管理器
+    - npm
+    - yarn
+  - CSS 架构
+    - BEM
+    - OOCSS
+    - SMACSS
+  - CSS 预处理器
+    - Sass
+    - PostCSS
+    - Less
+  - 构建工具
+    - 任务执行器
+      - npm scripts
+      - Gulp
+    - 模块打包
+      - Webpack
+      - Rollup
+      - Parcel
+    - 代码检查工具和格式化工具
+      - Prettier
+      - ESLint
+      - Standard JS
+  - 选择一个前端框架
+    - React.js
+      - Redux
+      - Mobx
+    - Angular
+      - RxJS
+      - NgRx
+    - Vue.js
+      - VueX
+  - 现代 CSS
+    - Styled Component
+    - CSS Modules
+    - Styled JSX
+    - Emotion
+    - Radium
+    - Glamorou
+  - Web 组件
+    - HTML 模板
+    - 自定义元素
+    - Shadow DOM
+  - CSS 框架
+    - 基于 JS 的 CSS 框架
+      - Reactstrap
+      - Material UI
+      - Tailwind CSS
+      - Chakra UI
+    - 原生 CSS 优先的框架
+      - Bootstrap
+      - Materialize CSS
+      - Bulma
+  - 测试你的应用
+    - Mocha
+    - Chai
+    - Ava
+    - Jasmine
+    - Jest
+    - react-testing-library
+    - cypress
+    - Enzyme
+  - 类型检查器
+    - TypeScript
+    - Flow
+  - 渐进式网页应用程序（PWA）
+    - 学习 PWA 使用到的不同 Web API
+      - Storage
+      - Web Sockets
+      - Service Workers
+      - 定位
+      - 通知
+      - 设备方向
+      - 支付
+      - 证书
+    - 计算、测量和提高性能
+      - PRPL 模式
+      - RAIL 模型
+      - 性能指标
+      - 使用 Lighthouse
+      - 使用 DevTools
+  - 服务端渲染（SSR）
+    - React.js
+      - Next.js
+      - After.js
+    - Angular
+      - Universal
+    - Vue.js
+      - Nuxt.js
+  - GraphQL
+    - Apollo
+    - Relay Modern
+  - 静态网站生成器
+    - Next.js
+    - GatsbyJS
+    - Nuxt.js
+    - Vuepress
+    - Jekyll
+    - Hugo
+  - 移动端应用开发
+    - React Native
+    - NativeScript
+    - Flutter
+    - Ionic
+  - 桌面应用开发
+    - Electron
+    - Carlo
+    - Proton Native
+  - Web Assembly
+  - 学无止境
+```
