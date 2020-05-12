@@ -66,10 +66,6 @@ export class LedgeRadarComponent implements OnInit, OnChanges, AfterViewInit {
       },
       series: [{
         type: 'radar',
-        top: '12%',
-        left: '10%',
-        bottom: '12%',
-        right: '30%',
         data: seriesData
       }],
     };
