@@ -172,7 +172,7 @@ exports.config = {
     '/maturity/:name': {
       type: 'maturity',
     },
-    '/skill-tree/:skill': {
+    '/skilltree/:skill': {
       type: 'skilltree',
     },
   },
