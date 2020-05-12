@@ -7,5 +7,10 @@
   }
   .right {
     width: 40%;
+
+    component-rating {
+      left: 50px;
+      position: relative;
+    }
   }
 }
