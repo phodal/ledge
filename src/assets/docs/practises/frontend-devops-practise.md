@@ -70,7 +70,7 @@ module.exports = {
 
 ### Puppeteer
 
-```
+```bash
 npm i puppeteer
 ```
 
