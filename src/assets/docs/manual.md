@@ -21,7 +21,11 @@
 
 # 建立愿景与方向
 
-## 业务关注点
+## 启动会议
+
+### 利益相关者会议
+
+### 业务关注点
 
 | 组成部分标题 | 内容                                                               |
 | ------------ | ------------------------------------------------------------------ |
@@ -160,6 +164,49 @@ DevOps 框架
 
 # 度量
 
+## 度量效能
+
+### DevOps 四个关键指标
+
+```tree
+ - 提升交付效能
+   - 部署频率
+     - 批量的大小
+     - 自动化程度
+     - 测试效率
+     - 部署效率
+     - 构建效率
+     - ……
+   - 交付前置时间
+     - 需求稳定性
+     - 任务交接
+     - 等待时间
+     - 团队速度
+     - 返工率
+     - ……
+   - 平均恢复时间
+      - 监测的效率
+      - 系统可配置性
+      - 系统可维护性
+      - 日志可用性
+      - 架构质量
+      - ……
+   - 变更失败率
+      - 自动化程度
+      - 架构质量
+      - 基础设施即代码
+      - 测试质量
+      - 测试代码质量
+      - 代码质量
+        - 编码规范
+        - 重复代码
+        - 测试覆盖率
+        - 扇入扇出度
+        - 圈复杂度
+        - ……
+
+```
+
 《持续交付 2.0》中提到了一种不错的软件产品的交付效能度量方式：
 
 ```mindmap
@@ -285,77 +332,6 @@ DevOps 框架
 - 或者记下如何解决技术债务。你可能会把它记在问题跟踪系统中，那么就把问题编号写在便利贴上。
 - 把便利贴贴在技术债务墙上。
 - 如果有人遇到同样的问题，添加更多的标记，用来表示他们付出的时间成本。
-
-### 可视化
-
-#### 技术债看板
-
-```kanban
- - 技术债看板
-   - Todo
-     -  Lodash 体积过大
-   - Doing
-   - Done
-     - Jasmine -> Jest
-```
-
-#### 技术债热力图
-
-服务级别热力图
-
-![技术债热力图](/assets/docs/images/heat-map-services.jpg '技术债热力图')
-
-代码热力图？
-
-```echarts
-{
-"series": [
-    {
-        "type": "treemap",
-        "breadcrumb": {"show": false},
-        "roam": "false",
-        "nodeClick": "false",
-        "data": [{
-            "name": "nodeA","value": 10,
-            "children": [
-              {"name": "HealthController.java", "value": 4 },
-              {"name": "HealthService.java", "value": 6}
-            ]},
-            {"name": "HealthModel.java", "value": 20}
-        ]
-    }
-]
-}
-```
-
-#### 技术债墙
-
-```quadrant
- - 技术债墙
-     - 快速解决
-       - ……
-       - ……
-       - ……
-     - 分解并计划
-       - ……
-       - ……
-       - ……
-     - 在可能的时候提升
-       - ……
-       - ……
-     - 暂时不管
-       - ……
-       - ……
-       - ……
-
-config: {"left": "简单", "right": "困难", "bottom": "不重要", "top": "重要"}
-```
-
-### 技术债务评估
-
-相关文章：
-
-- 《[Defects 的启示](https://insights.thoughtworks.cn/about-defects/)》
 
 # 准入条件
 
@@ -704,6 +680,79 @@ PS：针对于外部开源请求代码
 | 总要举措   |                        |                          | 调研：<br> 规划： <br> 协调：   |                          |
 | 产出物     |                        |                          |                                 |                          |
 | 资源及职责 |                        |                          |                                 |                          |
+
+## 技术债务可视化
+
+### 可视化
+
+#### 技术债看板
+
+```kanban
+ - 技术债看板
+   - Todo
+     -  Lodash 体积过大
+   - Doing
+   - Done
+     - Jasmine -> Jest
+```
+
+#### 技术债热力图
+
+服务级别热力图
+
+![技术债热力图](/assets/docs/images/heat-map-services.jpg '技术债热力图')
+
+代码热力图？
+
+```echarts
+{
+"series": [
+    {
+        "type": "treemap",
+        "breadcrumb": {"show": false},
+        "roam": "false",
+        "nodeClick": "false",
+        "data": [{
+            "name": "nodeA","value": 10,
+            "children": [
+              {"name": "HealthController.java", "value": 4 },
+              {"name": "HealthService.java", "value": 6}
+            ]},
+            {"name": "HealthModel.java", "value": 20}
+        ]
+    }
+]
+}
+```
+
+#### 技术债墙
+
+```quadrant
+ - 技术债墙
+     - 快速解决
+       - ……
+       - ……
+       - ……
+     - 分解并计划
+       - ……
+       - ……
+       - ……
+     - 在可能的时候提升
+       - ……
+       - ……
+     - 暂时不管
+       - ……
+       - ……
+       - ……
+
+config: {"left": "简单", "right": "困难", "bottom": "不重要", "top": "重要"}
+```
+
+### 技术债务评估
+
+相关文章：
+
+- 《[Defects 的启示](https://insights.thoughtworks.cn/about-defects/)》
 
 ## 审视架构
 
