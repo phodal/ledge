@@ -226,6 +226,8 @@ DevOps 框架
 - JavaScript
   - [Istanbul](https://istanbul.js.org/)
   - [Jest](https://jestjs.io/)
+  - [Mocha](https://mochajs.org)
+  - [Vue Test Utils](https://vue-test-utils.vuejs.org)
 - Go
 
 ### 自动化性能测试
