@@ -23,14 +23,15 @@
 
 > [Vue CLI](https://cli.vuejs.org/zh/) 拥有开箱即用的通过 [Jest](https://github.com/facebook/jest) 或 [Mocha](https://mochajs.org/) 进行单元测试的内置选项。我们还有官方的 [Vue Test Utils](https://vue-test-utils.vuejs.org/zh/) 提供更多详细的指引和自定义设置。
 
-### E2E 测试
+## E2E 测试
 
 - [TestCafe](https://devexpress.github.io/testcafe/)
 - [Cucumber.js](https://github.com/cucumber/cucumber-js)
 - [Nightwatch](https://nightwatchjs.org)
 - [Puppeteer](https://github.com/puppeteer/puppeteer)
+- [Cypress](https://www.cypress.io/)
 
-#### TestCafe
+### TestCafe
 
 ```bash
 npm install -g testcafe
@@ -46,7 +47,7 @@ test('My first test', async (t) => {
 });
 ```
 
-#### Nightwatch
+### Nightwatch
 
 Install -> [Installation](https://nightwatchjs.org/gettingstarted/installation/)
 
@@ -67,7 +68,7 @@ module.exports = {
 };
 ```
 
-#### Puppeteer
+### Puppeteer
 
 ```
 npm i puppeteer
@@ -86,7 +87,7 @@ const puppeteer = require('puppeteer');
 })();
 ```
 
-#### Cucumber.js
+### Cucumber.js
 
 ```bash
 yarn add -D chai@latest cucumber@latest
@@ -135,6 +136,27 @@ When('I increment the variable by {int}', function (number) {
 
 Then('the variable should contain {int}', function (number) {
   expect(this.variable).to.eql(number);
+});
+```
+
+### Cypress
+
+```bash
+npm install cypress
+```
+
+示例：
+
+```javascript
+describe('My First Test', () => {
+  it('clicking "type" navigates to a new url', () => {
+    cy.visit('https://example.cypress.io');
+
+    cy.contains('type').click();
+
+    // Should be on a new URL which includes '/commands/actions'
+    cy.url().should('include', '/commands/actions');
+  });
 });
 ```
 
