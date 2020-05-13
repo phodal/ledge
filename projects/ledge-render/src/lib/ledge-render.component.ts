@@ -14,6 +14,7 @@ import marked, { Slugger } from 'marked/lib/marked';
 import LedgeMarkdownConverter from './components/model/ledge-markdown-converter';
 import LedgeColors from './support/ledgeColors';
 import { IPageInfo, VirtualScrollerComponent } from 'ngx-virtual-scroller';
+import Prism from 'prismjs';
 
 @Component({
   selector: 'ledge-render',
@@ -291,6 +292,9 @@ export class LedgeRenderComponent implements OnInit, OnChanges {
         });
         break;
       default:
+        if (Prism.languages[token.lang]) {
+          token.text = Prism.highlight(token.text, Prism.languages[token.lang], token.lang);
+        }
         this.markdownData.push(token);
         break;
     }

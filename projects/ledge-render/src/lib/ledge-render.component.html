@@ -175,9 +175,7 @@
     </div>
 
     <div *ngSwitchCase="'code'">
-      <pre class="language-{{item.lang}}">
-        <code class="language-{{item.lang}}">{{item.text}}</code>
-      </pre>
+      <pre class="language-{{item.lang}}"><code class="language-{{item.lang}}" [innerHTML]="item.text"></code></pre>
     </div>
 
     <div *ngSwitchCase="'blockquote'">
