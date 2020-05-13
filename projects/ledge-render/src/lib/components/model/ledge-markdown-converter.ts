@@ -60,11 +60,11 @@ const LedgeMarkdownConverter = {
   },
 
   unescaped: (text: string) => text
-    .replace('&amp;', '&')
-    .replace('&gt;', '>')
-    .replace('&lt;', '<')
-    .replace('&quot;', '"')
-    .replace('&#39;', '\''),
+    .replace(/&amp;/g, '&')
+    .replace(/&gt;/g, '>')
+    .replace(/&lt;/g, '<')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, '\''),
 
   toJson(code: any) {
     let config: any = {};
