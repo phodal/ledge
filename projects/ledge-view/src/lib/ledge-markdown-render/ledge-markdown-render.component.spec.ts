@@ -2,6 +2,13 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LedgeMarkdownRenderComponent } from './ledge-markdown-render.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
+import { SecurityContext } from '@angular/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { LedgeRenderModule } from '@ledge-framework/render';
+
+import { CustomMaterialModule } from '../custom-material.module';
+
 
 describe('MarkdownRenderComponent', () => {
   let component: LedgeMarkdownRenderComponent;
@@ -9,7 +16,27 @@ describe('MarkdownRenderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      imports: [
+        HttpClientModule,
+        CustomMaterialModule,
+        LedgeRenderModule,
+        MarkdownModule.forRoot({
+        sanitize: SecurityContext.NONE,
+        loader: HttpClient,
+        markedOptions: {
+          provide: MarkedOptions,
+          useValue: {
+            gfm: true,
+            breaks: false,
+            pedantic: false,
+            smartLists: true,
+            smartypants: false,
+            langPrefix: 'language-',
+            headerPrefix: '',
+            headerIds: true,
+          },
+        },
+      }), RouterTestingModule],
       declarations: [LedgeMarkdownRenderComponent],
     }).compileComponents();
   }));
