@@ -73,7 +73,7 @@
 
 ## 腾讯安全应急响应中心：DevSecOps
 
-来源：《[ “安全需要每个工程师的参与”-DevSecOps 理念及思考 ](https://mp.weixin.qq.com/s/_jBmFdtyXY5D_YrrTUP1iQ)
+来源：《[“安全需要每个工程师的参与”-DevSecOps 理念及思考](https://mp.weixin.qq.com/s/_jBmFdtyXY5D_YrrTUP1iQ)》
 
 ### DevSecOps
 

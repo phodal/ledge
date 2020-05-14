@@ -185,6 +185,27 @@ ThoughtWorks Tech Lead 模型
 
 > DevSecOps 是糅合了开发、安全及运营理念以创建解决方案的全新方法，是 DevOps 与 SecOps 的结合。 DevSecOps 的作用和意义建立在 每个人都对安全负责 的理念之上，其目标是在不影响安全需求的情况下快速的执行安全决策，将决策传递至拥有最高级别环境信息的人员。
 
+### DevSecOps 相关概念
+
+原则：
+
+- 【安全左移（Shift Security Left）】
+- 【 默认安全（Secure by Default）】
+- 【运行时安全（Runtime Security）】
+- 【安全服务自动化/自助化（Security as Code/Pipeline）】
+- 【利用基础设施即代码（IaC）】
+- 【利用持续集成和交付】
+- 【需要组织和文化建设】
+
+### 专用安全工具
+
+来源：《[“安全需要每个工程师的参与”-DevSecOps 理念及思考](https://mp.weixin.qq.com/s/_jBmFdtyXY5D_YrrTUP1iQ)》
+
+- SAST。静态应用程序安全测试（StaticApplication Security Testing），是指针对源代码进行静态分析从中找到安全漏洞的测试方式，有些工具也会依赖于编译过程甚至是二进制文件，通过一些抽象语法树、控制流分析及污点追踪等技术手段来提升检测覆盖度和准确度。也被称为白盒测试（White-Box Testing）。常见的工具包括老牌的 Coverity、Checkmarx、FindBugs 等，比较新的 CodeQL 和 ShiftLeft inspect。
+- DAST。动态应用程序安全测试（DynamicApplication Security Testing），是指在测试或运行阶段分析应用程序的动态运行状态。在不需要系统源码的情况下，通过模拟黑客行为构造特定的输入给到应用程序，分析应用程序的行为和反应，从而确定该应用是否存在某些类型的安全漏洞。也被称为黑盒测试（Black-Box Testing）。常见的工具包括针对 Web 应用商业和开源的 AcunetixWVS，长亭科技 X-Ray、w3af 等，也包括一些针对电脑或终端 App 等的应用。
+- IAST。交互式应用程序安全测试（InteractiveApplication Security Testing），由 Gartner 公司在 2012 年提出的一种新的应用程序安全测试方案。它的出发点是比较容易理解的，上文提到的 SAST 通过分析源码、字节代码或二进制文件从“内部”测试应用程序来检测安全漏洞，而 DAST 从“外部”测试应用程序来检测安全漏洞，它们各有优劣。
+- SCA。软件成分分析（SoftwareComposition Analysis）。如前文所指出，越发快速的开发意味着开发者要大量的复用成熟的组件、库等代码。便捷的同时也引入了风险，如果引用一些存在已知漏洞的代码版本该怎么办？如何检查他们？这衍生出了 SCA 的概念和工具。
+
 ### DevSecOps 示例
 
 ```sunburst
