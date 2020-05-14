@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
-import { LedgeViewComponent } from './ledge-view.component';
-
 
 
 @NgModule({
-  declarations: [LedgeViewComponent],
+  declarations: [],
   imports: [
   ],
-  exports: [LedgeViewComponent]
+  exports: []
 })
 export class LedgeViewModule { }
