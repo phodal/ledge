@@ -1,25 +1,61 @@
-# LedgeView
+# Ledge Framework Render
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.5.
+> Ledge Framework Render goal is build pure angular's markdown render, it can convert markdown to chart, graph, customize-table & make it extendable.
 
-## Code scaffolding
+homepage: [https://github.com/phodal/ledge/tree/master/projects/ledge-render](https://github.com/phodal/ledge/tree/master/projects/ledge-render)
 
-Run `ng generate component component-name --project ledge-view` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ledge-view`.
+demo page: [https://devops.phodal.com/](https://devops.phodal.com/)
 
-> Note: Don't forget to add `--project ledge-view` or else it will be added to the default project in your `angular.json` file.
+## Usage
 
-## Build
+1.install: `yarn add @ledge-framework/view`
+2.import module
 
-Run `ng build ledge-view` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+import { LedgeViewModule } from '@ledge-framework/view';
 
-## Publishing
+@NgModule({
+  imports: [
+    ...
+    LedgeViewModule,
+  ]
+  ...
+})
+```
 
-After building your library with `ng build ledge-view`, go to the dist folder `cd dist/ledge-view` and run `npm publish`.
+3.
 
-## Running unit tests
+use single render:
 
-Run `ng test ledge-view` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```html
+<ledge-markdown-render sourceDir="{{urlPrefix}}/{{source}}.md" [data]="content">
+</ledge-markdown-render>
+```
 
-## Further help
+use multiple docs render
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```html
+<ledge-multiple-docs
+  [items]="items"
+  [currentUrl]="currentUrl"
+  [urlPrefix]="urlPrefix"
+  [source]="currentSource"
+>
+</ledge-multiple-docs>
+```
+
+## Development
+
+### Develop in Ledge website project
+
+Use [yarn link](https://classic.yarnpkg.com/en/docs/cli/link/) to avoid reinstalling the library on every build.
+
+1. `cd ./dist/ledge-view`
+2. `yarn link`
+3. in root dir, run `yarn link "@ledge-framework/view"`, it will use `./dist/ledge-render` instead.
+4. `yarn build ledge-render --watch`
+5. `yarn start`
+
+## LICENSE
+
+@ 2020 [LiuuY](https://github.com/LiuuY) && [Phodal Huang](https://github.com/phodal). This code is distributed under the MPL license. See `LICENSE` in this directory.
