@@ -16,9 +16,6 @@ import LedgeColors from './support/ledgeColors';
 import { IPageInfo, VirtualScrollerComponent } from 'ngx-virtual-scroller';
 import Prism from 'prismjs';
 
-import 'prismjs/components/prism-gherkin';
-import 'prismjs/components/prism-bash';
-
 @Component({
   selector: 'ledge-render',
   templateUrl: './ledge-render.component.html',

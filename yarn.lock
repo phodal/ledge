@@ -1258,10 +1258,10 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@ledge-framework/render@~0.4.2":
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/@ledge-framework/render/-/render-0.4.2.tgz#a214987bb3802b5a3af85148b49163651699558c"
-  integrity sha512-pC3DDIVl/gVm1Q8GRFqAgV1IrSbjSjHAPxK/1TwCNRd7E0T9x7pHyXh5PXHbpPA8S6CfQmeaPxxXaw/7GP3zRQ==
+"@ledge-framework/render@~0.6.3":
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/@ledge-framework/render/-/render-0.6.3.tgz#66e999b0c7c5ecbffcefbd54eb8c8caa4fc0290b"
+  integrity sha512-KMn0dYj5ClP1XJoZjHXB5i/hCwNE+icKtornIk3CFAErZelUsQAGL+4ulCmtM5lUxJ4gm0vYxWB4NPV9cvTPvQ==
 
 "@marionebl/sander@^0.6.0":
   version "0.6.1"
@@ -9836,6 +9836,13 @@ prismjs@^1.16.0:
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.19.0.tgz#713afbd45c3baca4b321569f2df39e17e729d4dc"
   integrity sha512-IVFtbW9mCWm9eOIaEkNyo2Vl4NnEifis2GQ7/MLRG5TQe6t+4Sj9J5QWI9i3v+SS43uZBlCAOn+zYTVYQcPXJw==
+  optionalDependencies:
+    clipboard "^2.0.0"
+
+prismjs@^1.20.0:
+  version "1.20.0"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.20.0.tgz#9b685fc480a3514ee7198eac6a3bf5024319ff03"
+  integrity sha512-AEDjSrVNkynnw6A+B1DsFkd6AVdTnp+/WoUixFRULlCLZVRZlVQMVWio/16jv7G1FscUxQxOQhWwApgbnxr6kQ==
   optionalDependencies:
     clipboard "^2.0.0"
 

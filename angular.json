@@ -41,7 +41,9 @@
               "node_modules/prismjs/components/prism-java.min.js",
               "node_modules/prismjs/components/prism-python.min.js",
               "node_modules/prismjs/components/prism-gherkin.min.js",
-              "node_modules/prismjs/components/prism-groovy.min.js"
+              "node_modules/prismjs/components/prism-groovy.min.js",
+              "node_modules/prismjs/components/prism-json.min.js",
+              "node_modules/prismjs/components/prism-makefile.min.js"
             ]
           },
           "configurations": {
