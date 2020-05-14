@@ -1,10 +1,9 @@
-import { DOCUMENT, Location } from '@angular/common';
+import { Location } from '@angular/common';
 import {
   AfterViewInit,
   Component,
   ElementRef,
   HostListener,
-  Inject,
   Input,
   OnChanges,
   OnInit,
@@ -57,7 +56,6 @@ export class LedgeMarkdownRenderComponent
     private location: Location,
     private route: ActivatedRoute,
     private renderer2: Renderer2,
-    @Inject(DOCUMENT) private document: Document,
     private myElement: ElementRef,
     private router: Router
   ) {}
