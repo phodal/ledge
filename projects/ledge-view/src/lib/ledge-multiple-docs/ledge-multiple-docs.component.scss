@@ -1,6 +1,6 @@
-@import '~@angular/material/theming';
-@import '../../../../styles/behavior';
-@import '../../../../styles/color';
+@import '../../../../../node_modules/@angular/material/theming';
+@import '../../../../../src/styles/behavior';
+@import '../../../../../src/styles/color';
 
 .multiple-docs {
   min-height: 600px;

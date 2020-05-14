@@ -3,13 +3,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule, SecurityContext } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { LedgeRenderModule } from '@ledge-framework/render';
 import { TranslateModule } from '@ngx-translate/core';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
+import { LedgeRenderModule } from '@ledge-framework/render';
+import { LedgeViewModule } from '@ledge-framework/view';
 
 import { CustomMaterialModule } from './custom-material.module';
-import { LedgeMarkdownRenderComponent } from './components/ledge-markdown-render/ledge-markdown-render.component';
-import { LedgeMultipleDocsComponent } from './components/ledge-multiple-docs/ledge-multiple-docs.component';
 
 @NgModule({
   imports: [
@@ -20,6 +19,7 @@ import { LedgeMultipleDocsComponent } from './components/ledge-multiple-docs/led
     HttpClientModule,
     CustomMaterialModule,
     LedgeRenderModule,
+    LedgeViewModule,
     TranslateModule,
     MarkdownModule.forRoot({
       sanitize: SecurityContext.NONE,
@@ -39,9 +39,9 @@ import { LedgeMultipleDocsComponent } from './components/ledge-multiple-docs/led
       },
     }),
   ],
-  declarations: [LedgeMarkdownRenderComponent, LedgeMultipleDocsComponent],
+  declarations: [],
   providers: [],
-  exports: [LedgeMarkdownRenderComponent, LedgeMultipleDocsComponent],
+  exports: [LedgeViewModule],
   entryComponents: [],
 })
 export class SharedModule {}

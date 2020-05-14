@@ -5,9 +5,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserTestingModule } from '@angular/platform-browser/testing';
 import { LedgeRenderModule } from '@ledge-framework/render';
 
-import { CustomMaterialModule } from '../../custom-material.module';
-import { SharedModule } from '../../shared.module';
 import { LedgeMultipleDocsComponent } from './ledge-multiple-docs.component';
+import { CustomMaterialModule } from '../custom-material.module';
 
 describe('LedgeMultipleDocsComponent', () => {
   let component: LedgeMultipleDocsComponent;
@@ -16,7 +15,6 @@ describe('LedgeMultipleDocsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        SharedModule,
         RouterTestingModule,
         LedgeRenderModule,
         CustomMaterialModule,

@@ -7,19 +7,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { LedgeRenderModule } from '@ledge-framework/render';
 import { CustomMaterialModule } from './custom-material.module';
+import { LedgeMultipleDocsComponent } from './ledge-multiple-docs/ledge-multiple-docs.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
-  declarations: [LedgeMarkdownRenderComponent],
+  declarations: [LedgeMarkdownRenderComponent, LedgeMultipleDocsComponent],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     CustomMaterialModule,
     VirtualScrollerModule,
-    BrowserAnimationsModule,
+    RouterModule,
     LedgeRenderModule
   ],
-  exports: [LedgeMarkdownRenderComponent]
+  exports: [LedgeMarkdownRenderComponent, LedgeMultipleDocsComponent]
 })
 export class LedgeViewModule { }

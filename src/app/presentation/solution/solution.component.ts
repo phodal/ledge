@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { MatDrawerContent } from '@angular/material/sidenav';
 import { solutions } from './solutions';
 import { TranslateService } from '@ngx-translate/core';
-import { DocRoute } from '../../shared/components/ledge-multiple-docs/doc-route.model';
+import { DocRoute } from '../../../../projects/ledge-view/src/lib/ledge-multiple-docs/doc-route.model';
 
 @Component({
   selector: 'app-solution',

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { MatDrawerContent } from '@angular/material/sidenav';
-import { DocRoute } from '../../shared/components/ledge-multiple-docs/doc-route.model';
+import { DocRoute } from '../../../../projects/ledge-view/src/lib/ledge-multiple-docs/doc-route.model';
 import { ActivatedRoute } from '@angular/router';
 import { Cases } from '../case-study/cases';
 

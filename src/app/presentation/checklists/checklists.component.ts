@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { MatDrawerContent } from '@angular/material/sidenav';
 
-import { DocRoute } from '../../shared/components/ledge-multiple-docs/doc-route.model';
+import { DocRoute } from '../../../../projects/ledge-view/src/lib/ledge-multiple-docs/doc-route.model';
 
 export const lists: DocRoute[] = [
   { displayName: '新项目检查清单', source: 'new-project' },
