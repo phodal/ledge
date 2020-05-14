@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { MatDrawerContent } from '@angular/material/sidenav';
-import { DocRoute } from '../../../../projects/ledge-view/src/lib/ledge-multiple-docs/doc-route.model';
 import { ActivatedRoute } from '@angular/router';
 import { Cases } from '../case-study/cases';
+import { DocRoute } from '@ledge-framework/view/lib/ledge-multiple-docs/doc-route.model';
 
 export const reports: Cases = [
   { displayName: '2019', source: '2019', default: true },

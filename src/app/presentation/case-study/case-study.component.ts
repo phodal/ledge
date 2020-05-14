@@ -5,7 +5,7 @@ import { MatDrawerContent } from '@angular/material/sidenav';
 import { TranslateService } from '@ngx-translate/core';
 
 import { cases } from './cases';
-import { DocRoute } from '../../../../projects/ledge-view/src/lib/ledge-multiple-docs/doc-route.model';
+import { DocRoute } from '@ledge-framework/view/lib/ledge-multiple-docs/doc-route.model';
 
 @Component({
   selector: 'app-case-study',

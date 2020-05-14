@@ -1,4 +1,4 @@
-import { DocRoute } from '../../../../projects/ledge-view/src/lib/ledge-multiple-docs/doc-route.model';
+import { DocRoute } from '@ledge-framework/view/lib/ledge-multiple-docs/doc-route.model';
 
 export type Cases = Array<DocRoute>;
 

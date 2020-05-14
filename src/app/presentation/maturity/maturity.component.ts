@@ -2,8 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { MatDrawerContent } from '@angular/material/sidenav';
 import { ActivatedRoute } from '@angular/router';
-
-import { DocRoute } from '../../../../projects/ledge-view/src/lib/ledge-multiple-docs/doc-route.model';
+import { DocRoute } from '@ledge-framework/view/lib/ledge-multiple-docs/doc-route.model';
 
 export const lists: DocRoute[] = [
   { displayName: 'DevOps 成熟度模型', source: 'devops' },
