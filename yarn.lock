@@ -1258,7 +1258,7 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@ledge-framework/render@~0.6.3":
+"@ledge-framework/render@^0.6.3":
   version "0.6.3"
   resolved "https://registry.yarnpkg.com/@ledge-framework/render/-/render-0.6.3.tgz#66e999b0c7c5ecbffcefbd54eb8c8caa4fc0290b"
   integrity sha512-KMn0dYj5ClP1XJoZjHXB5i/hCwNE+icKtornIk3CFAErZelUsQAGL+4ulCmtM5lUxJ4gm0vYxWB4NPV9cvTPvQ==
