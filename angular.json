@@ -165,38 +165,38 @@
         }
       }
     },
-    "ledge-render": {
+    "@ledge-framework/render": {
       "projectType": "library",
-      "root": "projects/ledge-render",
-      "sourceRoot": "projects/ledge-render/src",
+      "root": "projects/@ledge-framework/render",
+      "sourceRoot": "projects/@ledge-framework/render/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/ledge-render/tsconfig.lib.json",
-            "project": "projects/ledge-render/ng-package.json"
+            "tsConfig": "projects/@ledge-framework/render/tsconfig.lib.json",
+            "project": "projects/@ledge-framework/render/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ledge-render/tsconfig.lib.prod.json"
+              "tsConfig": "projects/@ledge-framework/render/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ledge-render/src/test.ts",
-            "tsConfig": "projects/ledge-render/tsconfig.spec.json",
-            "karmaConfig": "projects/ledge-render/karma.conf.js"
+            "main": "projects/@ledge-framework/render/src/test.ts",
+            "tsConfig": "projects/@ledge-framework/render/tsconfig.spec.json",
+            "karmaConfig": "projects/@ledge-framework/render/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ledge-render/tsconfig.lib.json",
-              "projects/ledge-render/tsconfig.spec.json"
+              "projects/@ledge-framework/render/tsconfig.lib.json",
+              "projects/@ledge-framework/render/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -205,38 +205,38 @@
         }
       }
     },
-    "ledge-view": {
+    "@ledge-framework/view": {
       "projectType": "library",
-      "root": "projects/ledge-view",
-      "sourceRoot": "projects/ledge-view/src",
+      "root": "projects/@ledge-framework/view",
+      "sourceRoot": "projects/@ledge-framework/view/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/ledge-view/tsconfig.lib.json",
-            "project": "projects/ledge-view/ng-package.json"
+            "tsConfig": "projects/@ledge-framework/view/tsconfig.lib.json",
+            "project": "projects/@ledge-framework/view/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ledge-view/tsconfig.lib.prod.json"
+              "tsConfig": "projects/@ledge-framework/view/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ledge-view/src/test.ts",
-            "tsConfig": "projects/ledge-view/tsconfig.spec.json",
-            "karmaConfig": "projects/ledge-view/karma.conf.js"
+            "main": "projects/@ledge-framework/view/src/test.ts",
+            "tsConfig": "projects/@ledge-framework/view/tsconfig.spec.json",
+            "karmaConfig": "projects/@ledge-framework/view/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ledge-view/tsconfig.lib.json",
-              "projects/ledge-view/tsconfig.spec.json"
+              "projects/@ledge-framework/view/tsconfig.lib.json",
+              "projects/@ledge-framework/view/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
