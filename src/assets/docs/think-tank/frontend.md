@@ -266,7 +266,7 @@ Angular 官方有使用 Bazel 打包的[教程](https://angular.io/guide/bazel)�
 
 ### OWASP
 
-[OWASP](https://devops.phodal.com/maturity)
+[OWASP](https://devops.phodal.com/maturity/owasp)
 
 ## 监控
 
