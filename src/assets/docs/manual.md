@@ -667,6 +667,29 @@ PS：针对于外部开源请求代码
 
 # MVP
 
+## 基础设施完善
+
+### 统一依赖管理
+
+- 制品管理。统一、专业的制品库工具（如 Nexus、Harbor 等）在项目中成熟运用
+- 单一可信数据源。单一可信数据源是一种信息数据模型和关联模式，保证每个数据元素只存储一份，确保数据的一致性。
+
+#### Nexus 私服
+
+> Nexus 是 Maven 仓库管理器，也可以叫 Maven 的私服。 Nexus 是一个强大的 Maven 仓库管理器，它极大地简化了自己内部仓库的维护和外部仓库的访问。
+
+- [Nexus Repository OSS Install](https://help.sonatype.com/repomanager3/installation))
+
+#### npm 源
+
+> Verdaccio is a simple, zero-config-required local private npm registry.
+
+[Verdaccio](https://github.com/verdaccio/verdaccio)
+
+### 标准的研发环境
+
+### 一键式安装
+
 ## 规划示例
 
 |            | 阶段 1：规范和标准制定 | 阶段 1.5：现状调研和评估 | 阶段 2.0： 一体化平台调研与规划 | 阶段 2.5：工程教程的赋能 |
