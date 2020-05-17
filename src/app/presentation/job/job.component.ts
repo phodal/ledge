@@ -47,26 +47,30 @@ export class JobComponent implements OnInit {
       .subscribe(
         (res: any[]) => {
           const result: any[] = res || [];
-          const jobList = [];
-          for (const job of result.reverse()) {
-            const arr = job.body.replace(/:/g, '：').split('\r\n');
-            const info = {};
-            for (const str of arr) {
-              const [key, value] = this.splitOnFirstColon(str);
-              info[key] = value;
-            }
-            const jobInfo = issueToForm(info);
-            jobInfo.htmlUrl = job.html_url;
-            jobInfo.date = format(new Date(job.updated_at), 'yyyy/MM/dd');
-            jobList.push(jobInfo);
-          }
-          this.jobList = jobList;
+          this.buildJobList(result);
         },
         () => {},
         () => {
           this.loading = false;
         }
       );
+  }
+
+  private buildJobList(result: any[]) {
+    const jobList = [];
+    for (const job of result.reverse()) {
+      const arr = job.body.replace(/:/g, '：').split('\r\n');
+      const info = {};
+      for (const str of arr) {
+        const [key, value] = this.splitOnFirstColon(str);
+        info[key] = value;
+      }
+      const jobInfo = issueToForm(info);
+      jobInfo.htmlUrl = job.html_url;
+      jobInfo.date = format(new Date(job.updated_at), 'yyyy/MM/dd');
+      jobList.push(jobInfo);
+    }
+    this.jobList = jobList;
   }
 
   splitOnFirstColon(str) {
