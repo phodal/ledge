@@ -35,10 +35,10 @@ import { LedgeRenderModule } from '@ledge-framework/render';
 
 Use [yarn link](https://classic.yarnpkg.com/en/docs/cli/link/) to avoid reinstalling the library on every build.
 
-1. `cd ./dist/ledge-render`
+1. `cd ./dist/@ledge-framework/render`
 2. `yarn link`
-3. in root dir, run `yarn link "@ledge-framework/render"`, it will use `./dist/ledge-render` instead.
-4. `yarn build ledge-render --watch`
+3. in root dir, run `yarn link "@ledge-framework/render"`, it will use `./@ledge-framework/render` instead.
+4. `yarn build @ledge-framework/render --watch`
 5. `yarn start`
 
 ### Develop in CodeSandbox

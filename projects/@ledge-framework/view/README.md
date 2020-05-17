@@ -1,8 +1,8 @@
-# Ledge Framework Render
+# Ledge Framework View
 
-> Ledge Framework Render goal is build pure angular's markdown render, it can convert markdown to chart, graph, customize-table & make it extendable.
+> Ledge Framework View is a @ledge-framework/render based markdown view.
 
-homepage: [https://github.com/phodal/ledge/tree/master/projects/ledge-render](https://github.com/phodal/ledge/tree/master/projects/ledge-render)
+homepage: [https://github.com/phodal/ledge/tree/master/projects/ledge-view](https://github.com/phodal/ledge/tree/master/projects/ledge-view)
 
 demo page: [https://devops.phodal.com/](https://devops.phodal.com/)
 
@@ -50,10 +50,10 @@ use multiple docs render
 
 Use [yarn link](https://classic.yarnpkg.com/en/docs/cli/link/) to avoid reinstalling the library on every build.
 
-1. `cd ./dist/ledge-view`
+1. `cd ./dist/@ledge-framework/view`
 2. `yarn link`
-3. in root dir, run `yarn link "@ledge-framework/view"`, it will use `./dist/ledge-render` instead.
-4. `yarn build ledge-render --watch`
+3. in root dir, run `yarn link "@ledge-framework/view"`, it will use `./dist/@ledge-framework/view` instead.
+4. `yarn build @ledge-framework/view --watch`
 5. `yarn start`
 
 ## LICENSE
