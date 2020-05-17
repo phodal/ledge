@@ -15,10 +15,6 @@
     "package": "yarn build:ci && rm -rf dist/static && yarn scully",
     "deploy": "yarn package && npx angular-cli-ghpages --repo=https://github.com/phodal/do.git --dir=dist/static --cname=devops.phodal.com",
     "publish:cloudbase": "cloudbase hosting:deploy dist/static -e ledge2-8daa6a",
-    "build:render": "node --max_old_space_size=4096 ./node_modules/.bin/ng build @ledge-framework/render --prod",
-    "build:view": "node --max_old_space_size=4096 ./node_modules/.bin/ng build @ledge-framework/view --prod",
-    "publish:render": "cd @ledge-framework/render && npm publish --access=public",
-    "publish:view": "cd @ledge-framework/view && npm publish --access=public",
     "scully": "scully --scanRoutes",
     "scully:serve": "scully serve",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
