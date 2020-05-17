@@ -1,3 +1,0 @@
-# Ledge Kanban
-
-based on:
