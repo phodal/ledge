@@ -318,6 +318,19 @@ ThoughtWorks Tech Lead 模型
       - Hygieia
 ```
 
+### DevSecOps 实施过程
+
+- 第一年：将安全整合到 DevOps 中
+  - 不要过早下结论
+  - 全面测试并建议仪表盘
+- 第二年：居安思危
+  - 避免重复的基础设施建设
+  - 自建或采购
+  - 随攻击
+- 第三年：推动变革
+  - 重新审视安全优先级
+  - 迭代前进
+
 ## BizDevOps
 
 > Business + Development + Operations = BizDevOps
