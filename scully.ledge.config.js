@@ -98,6 +98,7 @@ function practisePlugin(route, config) {
     { route: '/practise/devops-practise' },
     { route: '/practise/test-practise' },
     { route: '/practise/frontend-devops-practise' },
+    { route: '/practise/devsecops-practise' },
   ]);
 }
 

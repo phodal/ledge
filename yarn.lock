@@ -1263,6 +1263,11 @@
   resolved "https://registry.yarnpkg.com/@ledge-framework/render/-/render-0.6.3.tgz#66e999b0c7c5ecbffcefbd54eb8c8caa4fc0290b"
   integrity sha512-KMn0dYj5ClP1XJoZjHXB5i/hCwNE+icKtornIk3CFAErZelUsQAGL+4ulCmtM5lUxJ4gm0vYxWB4NPV9cvTPvQ==
 
+"@ledge-framework/view@^0.6.2":
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/@ledge-framework/view/-/view-0.6.2.tgz#2bccebff5a45cfc35c9c5588f8d273dd3e29634d"
+  integrity sha512-O/8PO9uRsmKOM+iyhE2uUfmvtpg+Tdm/uL9s45t/IYkXxXkendmOIJeCzil7JPm/4NcPNKdMCay/uc8l8CDf+w==
+
 "@marionebl/sander@^0.6.0":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@marionebl/sander/-/sander-0.6.1.tgz#1958965874f24bc51be48875feb50d642fc41f7b"

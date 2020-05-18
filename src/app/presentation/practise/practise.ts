@@ -13,4 +13,5 @@ export const practises: Practises = [
   { displayName: '敏捷实践', source: 'agile-practise' },
   { displayName: '前端 DevOps 实践', source: 'frontend-devops-practise' },
   { displayName: '测试实践', source: 'test-practise', default: true },
+  { displayName: 'DevSecOps 实践', source: 'devsecops-practise' },
 ];
