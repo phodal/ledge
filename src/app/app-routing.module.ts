@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ToolsetComponent } from './presentation/toolset/toolset.component';
 import { ManualComponent } from './presentation/manual/manual.component';
-import { MaturityComponent } from './presentation/maturity/maturity.component';
 import { PatternComponent } from './presentation/pattern/pattern.component';
 import { ResourcesComponent } from './presentation/resources/resources.component';
 
