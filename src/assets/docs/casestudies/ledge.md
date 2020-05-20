@@ -18,6 +18,11 @@
    - 提交:success
 ```
 
+配置示例：[https://github.com/phodal/ledge/blob/master/package.json](https://github.com/phodal/ledge/blob/master/package.json)
+
+示例文章：[eslint+husky+prettier+lint-staged提升前端应用质量](https://juejin.im/post/5c67fcaae51d457fcb4078c9)
+
+
 ### CI + CD + PR 三流水线模型
 
 场景：
