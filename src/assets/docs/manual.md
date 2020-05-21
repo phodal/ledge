@@ -454,7 +454,11 @@ Bruck Tuckman 团队发展模型：
   - 建立种类丰富的测试类型文档中心
   - 收集业内的测试种类和测试策略
 
+### 测试可视化
 
+#### JMeter + Grafana + influxDB 
+
+#### Robot + Jenkins
 
 ### 测试策略工具
 
@@ -624,6 +628,8 @@ PS：针对于外部开源请求代码
 - Angular Lint。`ng lint --fix`
 
 ### 代码回顾
+
+
 
 ## 多团队探索
 
