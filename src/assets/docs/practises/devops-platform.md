@@ -190,3 +190,20 @@
 - 数据可视化服务
 - 分布式跟踪服务
 - 大数据分析服务
+
+# 测试平台
+
+## 自动化测试环境
+
+ - [Zalenium](https://github.com/zalando/zalenium)
+ - [Selenium Docker](https://github.com/seleniumhq/docker-selenium/)
+ 
+## 测试即服务
+
+### Test as a Service
+
+
+
+
+
+
