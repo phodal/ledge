@@ -424,13 +424,18 @@ Bruck Tuckman 团队发展模型：
 
 出处：《[Legacy System Modernization: How to Transform the Enterprise for Digital Future](https://www.altexsoft.com/whitepapers/legacy-system-modernization-how-to-transform-the-enterprise-for-digital-future/)》
 
-## 可测试
+## 测试策略
 
-选择测试框架并不是算太困难，只是我们需要知道是否需要：测试即文档。
+### 总体方案
 
-### 测试策略
+1. 先前期调研，看看自动化可行性，定位自动化测试的测试目的
+2. 做策略，定自动化测试目标比例
+3. 框架选型、准备环境、准备demo
+4. 框架搭建、跑通、集成CI，大家一起补测试
+5. 管理数据和用例
+6. 持续更新
 
-#### 测试策略工具
+### 测试策略工具
 
 常见的测试策略组合：
 
