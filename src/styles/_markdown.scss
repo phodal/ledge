@@ -12,10 +12,9 @@ $markdown-color-red: #f53d3d;
 $markdown-color-yellow: #ffff3a;
 $markdown-light-grey: #fdfdfd;
 $markdown-mid-grey: #666;
+$line-height: 1.5em;
 
 .markdown {
-
-
   .row {
     display: flex;
     flex-direction: column;
@@ -183,7 +182,8 @@ $markdown-mid-grey: #666;
     border-left: 0.3rem solid $markdown-green;
     margin-left: 0;
     margin-right: 0;
-    padding: 1rem 1.5rem
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
   }
 
   blockquote *:last-child {
@@ -507,7 +507,7 @@ $markdown-mid-grey: #666;
   }
 
   p {
-    line-height: 1.5em;
+    line-height: $line-height;
     margin-bottom: 0;
   }
 
@@ -517,6 +517,7 @@ $markdown-mid-grey: #666;
 
     li {
       color: $markdown-list-color;
+      line-height: $line-height;
     }
   }
 
