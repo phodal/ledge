@@ -730,6 +730,23 @@ GitHub 解释版：
 - TDD
 - 测试
 
+# DevOps 人员能力模型
+
+维度：
+
+ - 可信源
+ - 可追溯
+ - 测试
+ - 敏捷实践
+
+## 可信源
+
+## 可追溯
+
+## 测试
+
+## 敏捷实践
+
 # 云研发
 
 ## 研发即代码
@@ -776,3 +793,5 @@ GitHub 解释版：
 出自：《[架构金字塔](https://www.phodal.com/blog/architecture-pyramid/)》
 
 ## Architecture Dashboard
+
+
