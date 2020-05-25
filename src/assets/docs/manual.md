@@ -489,12 +489,12 @@ Bruck Tuckman 团队发展模型：
 | | | | | 集成测试 | | |
 | | | | | 端到端测试 | | |
 
-config: {"colors": [{"bg":"#e55852","font":"#b71a09"},{"bg":"#e98832","font":"#c85113"},{"bg":"#f0d668","font":"#b88d0f"},{"bg":"#a4c9cf","font":"#598893"},{"bg":"#47c0af","font":"#175a54"},{"bg":"#387fd5","font":"#9ac9f5"},{"bg":"#7753df","font"
+config: {"colors": [{"bg":"#e55852","font":"#b71a09"},{"bg":"#e98832","font":"#c85113"},{"bg":"#f0d668","font":"#b88d0f"},{"bg":"#a4c9cf","font":"#598893"},{"bg":"#47c0af","font":"#175a54"},{"bg":"#387fd5","font":"#9ac9f5"},{"bg":"#7753df","font":"#cbb5f8"}]}
 ```
 
 #### 软件质量评估模型
 
-```
+```tree
  - 软件质量评估模型
    - 测试覆盖度评估
      - 需求覆盖度评估
@@ -560,9 +560,9 @@ config: {"colors": [{"bg":"#e55852","font":"#b71a09"},{"bg":"#e98832","font":"#c
 
 #### 兼容性测试
 
-腾讯移动分析：https://mta.qq.com/mta/data/device/resolution
+腾讯移动分析：[https://mta.qq.com/mta/data/device/resolution](https://mta.qq.com/mta/data/device/resolution)
 
-设备分辨率：https://viewportsizer.com/devices/
+设备分辨率：[https://viewportsizer.com/devices/](https://viewportsizer.com/devices/)
 
 ### 常见测试工具
 
