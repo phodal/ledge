@@ -528,6 +528,36 @@ config: {"colors": [{"bg":"#e55852","font":"#b71a09"},{"bg":"#e98832","font":"#c
 | 性能测试   | 测试产品提供某项功能时的时间和资源使用情况                                          | 效率           |
 | 安装测试   | 测试产品能否被正确安装并运行                                                        | 可移植性       |
 
+#### APP 测试类型
+
+《[移动应用的测试策略与测试架构](https://insights.thoughtworks.cn/test-strategy-and-test-architecture/)》
+
+```tree
+ - 测试类型
+   - 基础测试
+     - 功能测试 (Function Test)
+     - 集成测试（Integration Test ）
+     - 单元测试（Unit Test）
+     - 契约测试（Contract Test）
+   - 进阶测试
+     - 兼容测试（Compatibility Test）
+     - UI视觉测试（UI Visual Test）
+     - 性能轮廓（Profiling）
+     - 安全测试（Security Test）
+     - 异常测试（Exception Test）[3]
+     - 猴子测试（Monkey Test）
+     - 安装、升级和卸载测试（Install、Upgrade and Uninstall Test）
+     - 耐久测试（Endurance Test）
+     - 耗电测试（Power Consumption Test）
+     - 流量测试（Network Traffic Test）
+     - 其他硬件功能专项测试
+   - 产品测试
+     - 易用性测试（Usability Test）
+     - A/B测试（A/B Test）
+     - 产品在线测试（Product Verification Test or Product Online Test）
+     - 用户测试（Customer Test
+```
+
 #### 兼容性测试
 
 腾讯移动分析：https://mta.qq.com/mta/data/device/resolution
