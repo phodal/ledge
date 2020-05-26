@@ -1,5 +1,7 @@
 # Ledge 知识和工具平台
 
+powered by [@ledge-framework/engine](https://github.com/ledge-framework/engine)
+
 <p align="center"> 
   <img src="src/assets/images/logo.svg" width="288" height="74">
 </p>
