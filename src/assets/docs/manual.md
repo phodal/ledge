@@ -1093,6 +1093,35 @@ changelog:
 
 见：[Pipeline](https://jenkins.io/doc/book/pipeline/)
 
+示例：
+
+```jenkins
+pipeline {
+    agent any
+    options {
+        skipStagesAfterUnstable()
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'make'
+            }
+        }
+        stage('Test'){
+            steps {
+                sh 'make check'
+                junit 'reports/**/*.xml'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'make publish'
+            }
+        }
+    }
+}
+```
+
 #### GoCD
 
 见：[GoCD](https://docs.gocd.org/current/advanced_usage/pipelines_as_code.html)
