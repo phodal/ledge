@@ -427,11 +427,14 @@ DevOps 实施看板
    - Todo
      - 搭建标准化测试环境
      - 搭建端到端自动化测试环境
+     - 引入 DevSecOps 工具：Anchore
    - Doing
      - 集成 TypeScript 测试覆盖率
+     - 引入 DevSecOps 工具：Dependency-Check
    - Check
      - 集成 Java 测试覆盖率
      - 制定提交信息规范
+     - 设计 DevSecOps 流程
    - Done
      - 搭建 Jenkins
      - 搭建 SonarQube
