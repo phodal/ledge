@@ -600,6 +600,19 @@ config: {"colors": [{"bg":"#e55852","font":"#b71a09"},{"bg":"#e98832","font":"#c
      - 用户测试（Customer Test
 ```
 
+#### 定义测试类型
+
+| 类型     | 说明 |
+| -------- | ---- |
+| 测试类型 |      |
+| 测试说明 |      |
+| 测试范围 |      |
+| 技术     |      |
+| 准入标准 |      |
+| 准出标准 |      |
+| 特殊事项 |      |
+| 环境     |      |
+
 #### 兼容性测试
 
 腾讯移动分析：[https://mta.qq.com/mta/data/device/resolution](https://mta.qq.com/mta/data/device/resolution)
