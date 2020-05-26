@@ -544,7 +544,7 @@ config: {"colors": [{"bg":"#e55852","font":"#b71a09"},{"bg":"#e98832","font":"#c
      - UI视觉测试（UI Visual Test）
      - 性能轮廓（Profiling）
      - 安全测试（Security Test）
-     - 异常测试（Exception Test）[3]
+     - 异常测试（Exception Test）
      - 猴子测试（Monkey Test）
      - 安装、升级和卸载测试（Install、Upgrade and Uninstall Test）
      - 耐久测试（Endurance Test）
