@@ -1103,7 +1103,7 @@ changelog:
 
 示例：
 
-```jenkins
+```groovy
 pipeline {
     agent any
     options {
