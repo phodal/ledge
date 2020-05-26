@@ -395,16 +395,47 @@ Bruck Tuckman 团队发展模型：
 
 ### 可视化现状
 
+DevOps 实施看板
+
+- 团队实施看板
+- 组织实施看板
+
 ```kanban
- - DevOps 实施看板
+ - DevOps 团队实施看板
    - Todo
-     - 可视化后端测试覆盖率
+     - 讨论 E2E 测试方案
+     - 引入 SonarQube 质量门禁
+     - 本地代码预提交
+     - 工具化提交信息规范
+     - 单元测试培训
    - Doing
+     - 流水线集成自动化测试
+     - 可视化测试覆盖率
      - 引入后端测试框架
      - 引入前端测试框架
-   - Done
+   - Check
      - 制定测试实施计划
      - 制定测试策略
+   - Done
+     - 测试策略分享
+```
+
+组织实施看板
+
+```kanban
+ - DevOps 组织实施看板
+   - Todo
+     - 搭建标准化测试环境
+     - 搭建端到端自动化测试环境
+   - Doing
+     - 集成 TypeScript 测试覆盖率
+   - Check
+     - 集成 Java 测试覆盖率
+     - 制定提交信息规范
+   - Done
+     - 搭建 Jenkins
+     - 搭建 SonarQube
+     - 搭建 Nexus
 ```
 
 # 探索可行方案
