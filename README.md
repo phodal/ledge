@@ -1,6 +1,5 @@
 # Ledge 知识和工具平台
 
-powered by [@ledge-framework/engine](https://github.com/ledge-framework/engine)
 ![Badge](https://img.shields.io/badge/Poweredby-%40ledge--framework%2Fengine-brightgreen)
 
 <p align="center"> 
