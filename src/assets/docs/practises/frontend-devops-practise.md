@@ -23,6 +23,26 @@
 
 > [Vue CLI](https://cli.vuejs.org/zh/) 拥有开箱即用的通过 [Jest](https://github.com/facebook/jest) 或 [Mocha](https://mochajs.org/) 进行单元测试的内置选项。我们还有官方的 [Vue Test Utils](https://vue-test-utils.vuejs.org/zh/) 提供更多详细的指引和自定义设置。
 
+## 快照测试
+
+Jest: [https://jestjs.io/docs/zh-Hans/next/snapshot-testing](https://jestjs.io/docs/zh-Hans/next/snapshot-testing)
+
+```
+describe('TodoItem snapshot test', () => {
+    it('first render', () => {
+        const wrapper = shallowMount(TodoItem, {
+            propsData: {
+                item: {
+                    finished: true,
+                    content: 'test TodoItem'
+                }
+            }
+        })
+        expect(wrapper.html()).toMatchSnapshot()
+    })
+});
+```
+
 ## E2E 测试
 
 - [TestCafe](https://devexpress.github.io/testcafe/)
