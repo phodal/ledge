@@ -43,6 +43,23 @@ describe('TodoItem snapshot test', () => {
 });
 ```
 
+示例结果：
+
+```bash
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<a
+  className="normal"
+  href="http://www.facebook.com"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  Facebook
+</a>
+`;
+```
+
 ## E2E 测试
 
 - [TestCafe](https://devexpress.github.io/testcafe/)
