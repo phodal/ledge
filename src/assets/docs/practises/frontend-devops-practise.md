@@ -17,8 +17,8 @@
 
 自带
 
- - Unit: Jasmine
- - E2E: Protractor 
+- Unit: Jasmine
+- E2E: Protractor
 
 ## Vue
 
@@ -32,21 +32,23 @@ vue add @vue/unit-jest
 
 ## 快照测试
 
+### DOM Snapshots
+
 Jest: [https://jestjs.io/docs/zh-Hans/next/snapshot-testing](https://jestjs.io/docs/zh-Hans/next/snapshot-testing)
 
 ```javascript
 describe('TodoItem snapshot test', () => {
-    it('first render', () => {
-        const wrapper = shallowMount(TodoItem, {
-            propsData: {
-                item: {
-                    finished: true,
-                    content: 'test TodoItem'
-                }
-            }
-        })
-        expect(wrapper.html()).toMatchSnapshot()
-    })
+  it('first render', () => {
+    const wrapper = shallowMount(TodoItem, {
+      propsData: {
+        item: {
+          finished: true,
+          content: 'test TodoItem',
+        },
+      },
+    });
+    expect(wrapper.html()).toMatchSnapshot();
+  });
 });
 ```
 
@@ -66,6 +68,12 @@ exports[`renders correctly 1`] = `
 </a>
 `;
 ```
+
+### 图片 Snapshots
+
+- [Wraith](https://github.com/BBC-News/wraith) is a screenshot comparison tool, created by developers at BBC News.
+- [Hermione](https://github.com/gemini-testing/hermione) is a utility for integration testing of web pages using WebdriverIO v4 and Mocha.
+- [Differencify](https://github.com/NimaSoroush/differencify) is a library for visual regression testing via comparing your local changes with reference screenshots of your website.
 
 ## E2E 测试
 
@@ -208,13 +216,13 @@ describe('My First Test', () => {
 
 方式：
 
- - 微应用化
- - 微前端：
+- 微应用化
+- 微前端：
 
 ## 微前端
 
 > 微前端架构是一种类似于微服务的架构，它将微服务的理念应用于浏览器端，即将 Web 应用由单一的单体应用转变为多个小型前端应用聚合为一的应用。
-由此带来的变化是，这些前端应用可以独立运行、独立开发、独立部署。以及，它们应该可以在共享组件的同时进行并行开发——这些组件可以通过 NPM 或者 Git Tag、Git Submodule 来管理。
+> 由此带来的变化是，这些前端应用可以独立运行、独立开发、独立部署。以及，它们应该可以在共享组件的同时进行并行开发——这些组件可以通过 NPM 或者 Git Tag、Git Submodule 来管理。
 
 详细：[微前端如何落地](https://www.infoq.cn/article/xm_AaiOTXmLpPgWvX9y9)
 
