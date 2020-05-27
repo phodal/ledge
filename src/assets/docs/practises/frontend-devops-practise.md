@@ -69,11 +69,13 @@ exports[`renders correctly 1`] = `
 `;
 ```
 
-### 图片 Snapshots
+### Visual Snapshots
 
 - [Wraith](https://github.com/BBC-News/wraith) is a screenshot comparison tool, created by developers at BBC News.
 - [Hermione](https://github.com/gemini-testing/hermione) is a utility for integration testing of web pages using WebdriverIO v4 and Mocha.
 - [Differencify](https://github.com/NimaSoroush/differencify) is a library for visual regression testing via comparing your local changes with reference screenshots of your website.
+
+更多工具：[关于前端测试](https://juejin.im/post/5daac11fe51d45252a3df4db#heading-39)
 
 ## E2E 测试
 
