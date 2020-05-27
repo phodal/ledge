@@ -269,10 +269,6 @@ DevOps 框架
   - [Vue Test Utils](https://vue-test-utils.vuejs.org)
 - Go
 
-### 自动化性能测试
-
-- [JMeter](https://jmeter.apache.org/)
-
 ### 代码质量分析工具
 
 - Java
