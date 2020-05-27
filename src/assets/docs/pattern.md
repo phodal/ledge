@@ -440,7 +440,7 @@ ThoughtWorks Tech Lead 模型
 
 来源《精益软件度量：实践者的观察与思考》。
 
-```mindmap
+```tree
  - 持续改进
   - 价值
     - 价值命中率
