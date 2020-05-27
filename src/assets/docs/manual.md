@@ -619,6 +619,33 @@ config: {"colors": [{"bg":"#e55852","font":"#b71a09"},{"bg":"#e98832","font":"#c
 
 设备分辨率：[https://viewportsizer.com/devices/](https://viewportsizer.com/devices/)
 
+#### 测试流程设计
+
+示例：
+
+```pipeline
+ - 开发前
+   - :success
+   - 测试用例设计:success
+   - 测试计划:success
+ - 开发
+   - :success
+   - 单元测试:success
+   - 组件测试:success
+ - 开发完成
+   - :success
+   - 用户故事验收:success
+   - 底层测试评审:success
+ - 测试
+   - :success
+   - 接口测试:success
+   - 集成测试:success
+   - 探索性测试:success
+ - 特性稳定
+   - :success
+   - 编写端到端测试:success
+```
+
 ### 常见测试工具
 
 常见的测试策略组合：
