@@ -10,6 +10,9 @@ import 'brace/index';
 import 'brace/mode/markdown';
 import 'brace/theme/github';
 import 'brace/theme/monokai';
+import { StorageMap } from '@ngx-pwa/local-storage';
+
+const storyKey = 'editor.content';
 
 @Component({
   selector: 'ledge-editor',
@@ -60,20 +63,27 @@ export class LedgeEditorComponent implements OnInit, OnDestroy {
   term$ = new Subject<string>();
   private searchSubscription: Subscription;
 
-  constructor(public translate: TranslateService) {
+  constructor(public translate: TranslateService, private storage: StorageMap) {
     this.searchSubscription = this.term$
       .pipe(
         debounceTime(500),
         distinctUntilChanged(),
         switchMap((term) => {
           this.content = term;
+          this.storage.set(storyKey, term).subscribe();
           return EMPTY;
         })
       )
       .subscribe();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.storage.get(storyKey).subscribe((value: string) => {
+      if (value) {
+        this.content = value;
+      }
+    });
+  }
 
   ngOnDestroy(): void {
     if (this.searchSubscription) {
