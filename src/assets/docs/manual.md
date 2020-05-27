@@ -639,6 +639,30 @@ config: {"colors": [{"bg":"#e55852","font":"#b71a09"},{"bg":"#e98832","font":"#c
 - Selenium。Web 浏览器，支持主流语言
 - Puppeteer。Node.js API 操作 Chrome 浏览器
 
+#### API 测试
+
+工具
+
+| 工具          | 项目地址                                                                                                 |
+| ------------- | -------------------------------------------------------------------------------------------------------- |
+| ApacheBench   | [https://httpd.apache.org/docs/2.4/programs/ab.html](https://httpd.apache.org/docs/2.4/programs/ab.html) |
+| wrk           | [https://github.com/wg/wrk](https://github.com/wg/wrk)                                                   |
+| Apache JMeter | [https://jmeter.apache.org/](https://jmeter.apache.org/)                                                 |
+| Locust        | [https://locust.io/](https://locust.io/)                                                                 |
+| K6            | [https://k6.io/](https://k6.io/)                                                                         |
+| Artillery     | [https://artillery.io/](https://artillery.io/)                                                           |
+| Vegeta        | [https://github.com/tsenart/vegeta](https://github.com/tsenart/vegeta)                                   |
+
+对比
+
+| 工具 | wrk | ab | locust | jmeter |
+| 安装 | 简单 | 简单 | 依赖 python | 依赖 jdk |
+| 场景压测 | 不支持 | 不支持 | 支持 | 支持 |
+| UI 界面 | 无 | 无 | 有 | 有 |
+| 脚本录制 | 无 | 无 | 无 | 利用本地 ProxyServer 或 badboy |
+| 资源监控 | 无 | 无 | 无 | 通过 JMeterPlugins 插件和 ServerAgent 实现 |
+| 报告分析 | 无 | 无 | 无 | 生成 HTML 报告 |
+
 ### 测试可视化
 
 #### JMeter + Grafana + influxDB
