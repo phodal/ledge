@@ -74,9 +74,9 @@ config: {"left": "支持团队", "right": "评价产品", "bottom": "面向技�
 
 自动化测试框架组成：
 
- - 测试框架。主要是用于管理测试用例，运行测试用例，断言，测试报告等， 比如 Cucumber，RF 等。
- - 测试控制与逻辑。主要是用于粘连测试框架层和测试驱动层，使用各种编程技术比 如 PageObject， DesignPattern 等实现各种测试逻辑和断言等。
- - 测试驱动。主要是用于驱动被测软件和设备 等，比如 Selenium， UiAutomator 等
+- 测试框架。主要是用于管理测试用例，运行测试用例，断言，测试报告等， 比如 Cucumber，RF 等。
+- 测试控制与逻辑。主要是用于粘连测试框架层和测试驱动层，使用各种编程技术比 如 PageObject， DesignPattern 等实现各种测试逻辑和断言等。
+- 测试驱动。主要是用于驱动被测软件和设备 等，比如 Selenium， UiAutomator 等
 
 ```pyramid
  - 自动化测试框架选型金字塔
@@ -175,27 +175,31 @@ Given-When-Then 表达方式可以称之为一个公式一个模板，这种方�
 E2E 定义示例：
 
 ```javascript
-defineSupportCode(function ({ Given, When, Then }) {
-  Given('当我在网站的首页', function () {
-    return this.driver.get('http://0.0.0.0:7272/');
-  });
+Given('当我在网站的首页', function () {
+  return this.driver.get('http://0.0.0.0:7272/');
+});
 
-  When('输入用户名 {string}', function (text) {
-    return this.driver.findElement(By.id('username_field')).sendKeys(text);
-  });
+When('输入用户名 {string}', function (text) {
+  return this.driver.findElement(By.id('username_field')).sendKeys(text);
+});
 
-  When('输入密码 {string}', function (text) {
-    return this.driver.findElement(By.id('password_field')).sendKeys(text);
-  });
+When('输入密码 {string}', function (text) {
+  return this.driver.findElement(By.id('password_field')).sendKeys(text);
+});
 
-  When('提交登录信息', function () {
-    return this.driver.findElement(By.id('login_button')).click();
-  });
+When('提交登录信息', function () {
+  return this.driver.findElement(By.id('login_button')).click();
+});
 
-  Then('页面应该返回 {string}', function (string) {
-    this.driver.getTitle().then(function (title) {
-      expect(title).to.equal(string);
-    });
+Then('用户应该跳转到欢迎页', function () {
+  this.driver.getTitle().then(function (title) {
+    expect(title).to.equal('Welcome Page');
+  });
+});
+
+Then('页面应该返回 {string}', function (string) {
+  this.driver.getTitle().then(function (title) {
+    expect(title).to.equal(string);
   });
 });
 ```
