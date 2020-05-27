@@ -1,6 +1,9 @@
 # Ledge 知识和工具平台
 
 ![Badge](https://img.shields.io/badge/Poweredby-%40ledge--framework%2Fengine-brightgreen)
+![CI](https://github.com/phodal/ledge/workflows/CI/badge.svg)
+[![Maintainability](https://api.codeclimate.com/v1/badges/64e2ddc705fbeba4435e/maintainability)](https://codeclimate.com/github/phodal/ledge/maintainability)
+[![codecov](https://codecov.io/gh/phodal/ledge/branch/master/graph/badge.svg)](https://codecov.io/gh/phodal/ledge)
 
 <p align="center"> 
   <img src="src/assets/images/logo.svg" width="288" height="74">
@@ -13,10 +16,6 @@
 1. 腾讯云-云开发服务器： [https://ledge.wdsm.io/](https://ledge.wdsm.io/)
 
 Ledge （from Know-Ledge，意指承载物）知识和工具平台，是我们基于在 ThoughtWorks 进行的一系列 DevOps 实践、敏捷实践、软件开发与测试、精益实践提炼出来的知识体系。它包含了各种最佳实践、原则与模式、实施手册、度量、工具，用于帮助您的企业在数字化时代更好地前进，还有 DevOps 转型。
-
-![CI](https://github.com/phodal/ledge/workflows/CI/badge.svg)
-[![Maintainability](https://api.codeclimate.com/v1/badges/64e2ddc705fbeba4435e/maintainability)](https://codeclimate.com/github/phodal/ledge/maintainability)
-[![codecov](https://codecov.io/gh/phodal/ledge/branch/master/graph/badge.svg)](https://codecov.io/gh/phodal/ledge)
 
 ![Screenshots](docs/images/ledge-ss.png 'Ledge 首页截图')
 
