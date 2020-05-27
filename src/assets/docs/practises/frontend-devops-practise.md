@@ -17,7 +17,14 @@
 
 自带
 
+ - Unit: Jasmine
+ - E2E: Protractor 
+
 ## Vue
+
+```bash
+vue add @vue/unit-jest
+```
 
 ### 单元测试（UT）
 
@@ -27,7 +34,7 @@
 
 Jest: [https://jestjs.io/docs/zh-Hans/next/snapshot-testing](https://jestjs.io/docs/zh-Hans/next/snapshot-testing)
 
-```
+```javascript
 describe('TodoItem snapshot test', () => {
     it('first render', () => {
         const wrapper = shallowMount(TodoItem, {
@@ -45,7 +52,7 @@ describe('TodoItem snapshot test', () => {
 
 示例结果：
 
-```bash
+```javascript
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
