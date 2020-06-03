@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~material-design-icons/iconfont/material-icons.css';
+@import "~@ledge-framework/render/prebuild-theme/index.css";
 
 @import "styles/periodic-variables";
 
@@ -11,15 +12,6 @@
 @import "styles/material-ui";
 @import "styles/mobile";
 @import "styles/intro";
-
-@import "styles/mdstyles/graphviz";
-@import "styles/mdstyles/mermaid";
-@import "styles/mdstyles/process-table";
-@import "styles/mdstyles/list-style";
-@import "styles/mdstyles/tech-radar";
-@import "styles/mdstyles/fish-bone";
-@import "styles/mdstyles/maturity";
-@import "styles/mdstyles/tree";
 
 html, body {
   height: 100%;
