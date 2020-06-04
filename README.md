@@ -4,6 +4,7 @@
 ![CI](https://github.com/phodal/ledge/workflows/CI/badge.svg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/64e2ddc705fbeba4435e/maintainability)](https://codeclimate.com/github/phodal/ledge/maintainability)
 [![codecov](https://codecov.io/gh/phodal/ledge/branch/master/graph/badge.svg)](https://codecov.io/gh/phodal/ledge)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fphodal%2Fledge.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fphodal%2Fledge?ref=badge_shield)
 
 <p align="center"> 
   <img src="src/assets/images/logo.svg" width="288" height="74">
@@ -140,3 +141,6 @@ others see in the Code.
 [![Phodal's Idea](http://brand.phodal.com/shields/idea-small.svg)](http://ideas.phodal.com/)
 
 @ 2020 A [Phodal Huang](https://www.phodal.com)'s [Idea](http://github.com/phodal/ideas). This code is distributed under the MPL license. See `LICENSE` in this directory.
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fphodal%2Fledge.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fphodal%2Fledge?ref=badge_large)
