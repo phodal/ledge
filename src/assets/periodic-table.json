@@ -65,7 +65,7 @@
     "number": 37,
     "pay": "Os",
     "symbol": "Gt",
-    "description": "Git 是一个分散式版本控制软件，最初由林纳斯·托瓦兹创作，于 2005 年以 GPL 释出。最初目的是为更好地管理Linux核心开发而设计。应注意的是，这与 GNU Interactive Tools[5]（一个类似 Norton Commander 界面的文件管理器）不同。Git 最初的开发动力来自于 BitKeeper 和Monotone。",
+    "description": "Git 是一个分散式版本控制软件，最初由林纳斯·托瓦兹创作。最初目的是为更好地管理Linux核心开发而设计。应注意的是，这与 GNU Interactive Tools[5]（一个类似 Norton Commander 界面的文件管理器）不同。Git 最初的开发动力来自于 BitKeeper 和Monotone。",
     "homepage": "https://git-scm.com/",
     "books": [{
       "name": "《Git 版本控制管理》",
@@ -227,7 +227,7 @@
     "pay": "Os",
     "symbol": "Na",
     "homepage": "https://www.nagios.org/",
-    "description": "Nagios（IPA: /ˈnɑːɡioʊs/）是电脑系统和网络监控程序，用于检测主机和服务，当异常发生和解除时能提醒用户；是基于GPLv2开发的开源软件，可免费获得及使用。",
+    "description": "Nagios（IPA: /ˈnɑːɡioʊs/）是电脑系统和网络监控程序，用于检测主机和服务，当异常发生和解除时能提醒用户。",
     "resources": [{
       "name": "Nagios在线帮助中文版",
       "link": "http://nagios-cn.sourceforge.net/nagios-cn/",
