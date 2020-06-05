@@ -1,0 +1,163 @@
+```mindmap
+- 后端技能图谱
+  - 互联网
+    - 互联网是如何工作的？
+    - 什么是 HTTP？
+    - 浏览器及其运行机制？
+    - DNS 及其运行机制？
+    - 什么是域名？
+    - 什么是网络托管？
+  - 基本的前端知识
+    - HTML
+    - CSS
+    - JavaScript
+  - 操作系统和通用知识
+    - 终端用法
+    - 操作系统通常如何工作
+    - 进程管理
+    - 线程与并发
+    - 基本的终端命令
+     - grep
+     - awk
+     - sed
+     - lsof
+     - curl
+     - wget
+     - tail
+     - head
+     - less
+     - find
+     - ssh
+     - kill
+    - 内存管理
+    - 进程间通信
+    - I/O 管理
+    - POSIX 基础
+     - stdin
+     - stdout
+     - stderr
+     - pipes
+    - 基本的网络概念
+  - 学习一门编程语言
+    - Rust
+    - Java
+    - C#
+    - PHP
+    - Go
+    — JavaScript
+    - Python
+    - Ruby
+  - 版本控制系统
+    - Git 基本用法
+    - 仓库托管服务
+      - Github
+      - Gitlab
+      - Bitbucket
+  - 关系型数据库
+    - PostgreSQL
+    - MySQL
+    - MariaDB
+    - MY SQL
+    - Oracle
+  - 更多数据库
+    - ORMs
+    - ACID
+    - N+1 问题
+    - 数据库规范化
+    - 索引及其工作机制
+    - 数据复写
+    - 分片策略
+    - CAP 定理
+    - NoSQL 数据库
+      - MongoDB
+      - RethinkDB
+      - CouchDB
+      - DynamoDB
+  - 学习 API
+    - HATEOAS
+    - Open API 说明和 Swagger
+    - 身份验证
+      - 基于 Cookie
+      - OAuth
+      - 基本验证
+      - Token 验证
+      - JWT
+      - OpenID
+      - SAML
+    - REST
+    - JSON APIs
+    - SOAP
+  - 缓存
+    - CDN
+    - 服务端
+      - Redis
+      - Memcached
+    - 客户端
+  - 网页安全知识
+    - 哈希算法
+      - MD5 及为什么不使用它
+      - SHA 族
+      - scrypt
+      - bcrypt
+    - HTTPS
+    - CORS
+    - 内容安全政策
+    - SSL/TLS
+    - OWASP 安全风险
+  - 测试
+    - 集成测试
+    - 单元测试
+    - 功能测试
+  - CI/CD
+  - 设计和开发与原则
+    - GOF 设计模式
+    - 领域驱动设计
+    - 测试驱动设计
+    - SOLID
+    - KISS
+    - YAGNI
+    - DRY
+  - 架构模式
+    - 单片应用
+    - 微服务
+    - SOA
+    - CQRS 和事件溯源
+    - 无服务化
+  - 搜索引擎
+    - Elasticsearch
+    - Solr
+  - 消息代理
+    - RabbitMQ
+    - Kafaka
+  - 容器化 vs 可视化
+    - Docker
+    - rkt
+    - LXC
+  - GraphQL
+    - Apollo
+    - Relay Modern
+  - 图数据库
+    - Neo4j
+  - WebSockets
+  - 网页服务器
+    - Nginx
+    - Apache
+    - Goddy
+    - MS IIS
+  - 为伸缩性而构建
+    - 缓解策略
+      - Graceful
+      - Degradation
+      - Throttling
+      - Backpressure
+      - Loadshifting
+      - Circuit Breaker
+    - 理解它们的不同
+      - 仪器仪表
+      - 监控
+      - 遥测
+    - 缓存策略
+    - 水平 vs 垂直伸缩
+    - 脑中保持可观测性而构建
+  - 学无止境
+```
