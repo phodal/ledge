@@ -6,7 +6,7 @@ const defaultPostRenderers = [Sitemap];
 const sitemapOptions = {
   urlPrefix: 'https://devops.phodal.com/',
   sitemapFilename: 'sitemap.xml',
-  changeFreq: 'hourly',
+  changeFreq: 'weekly',
   priority: [
     '1.0',
     '0.9',
