@@ -125,6 +125,7 @@ function skilltreePlugin(route, config) {
     { route: '/skilltree/devops-skilltree' },
     { route: '/skilltree/arch-skilltree' },
     { route: '/skilltree/frontend-skilltree' },
+    { route: '/skilltree/backend-skilltree' },
   ]);
 }
 
