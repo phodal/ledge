@@ -256,7 +256,7 @@
     "name": "Icinga",
     "category": "monitoring",
     "number": 61,
-    "description": "Sensu 是由 Sonian 公司开发的一种监控框架，主要用于拥有大规模节点的云计算平台的检查与监控。",
+    "description": "Icinga 是一个开源计算机系统和网络监视应用程序。它最初是在2009年作为Nagios系统监视应用程序的分支而创建的。",
     "homepage": "https://icinga.com/",
     "pay": "Os",
     "symbol": "Ic"
