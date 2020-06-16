@@ -40,7 +40,7 @@ Ledge （from Know-Ledge，意指承载物）知识和工具平台，是我们�
 
 ![Wechat Group](docs/images/wechat-group.jpg)
 
-（PS：如果群满了，请添加我的微信 `growth-ren` ）
+（PS：如果群满了，请添加我的微信 `phodal02` ）
 
 欢迎您在这个项目的 Issue 中留下您的宝贵意见，以帮助其他/她人更好地学习 DevOps 相关的知识。它可以是：
 
