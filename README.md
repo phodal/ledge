@@ -6,15 +6,21 @@
 [![codecov](https://codecov.io/gh/phodal/ledge/branch/master/graph/badge.svg)](https://codecov.io/gh/phodal/ledge)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fphodal%2Fledge.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fphodal%2Fledge?ref=badge_shield)
 
+[![CODING 持续集成](https://coding-public.coding.net/badges/ledge/job/236475/master/build.svg)](https://coding-public.coding.net/p/ledge/d/ledge/git)
+[![腾讯云 IPv6 解决方案](https://img.shields.io/badge/IPv6-Ready-brightgreen)](https://cloud.tencent.com/solution/ipv6)
+[![SSL 评级](https://img.shields.io/badge/MySSL-A%2B-brightgreen)](https://myssl.com/ledge.devops.host)
+[![HTTP/2](https://img.shields.io/badge/HTTP%2F2-enabled-brightgreen)](https://http2.pro/check?url=https%3A//ledge.devops.host/)
+
 <p align="center"> 
   <img src="src/assets/images/logo.svg" width="288" height="74">
 </p>
 
 在线使用：[https://devops.phodal.com/](https://devops.phodal.com/)
 
-国内服务器（不定期同步）：
+国内服务器：
 
-1. 腾讯云-云开发服务器： [https://ledge.wdsm.io/](https://ledge.wdsm.io/)
+1. CODING（每小时同步）：[https://ledge.devops.host/](https://ledge.devops.host/)
+2. 腾讯云-云开发服务器（不定期同步）： [https://ledge.wdsm.io/](https://ledge.wdsm.io/)
 
 Ledge （from Know-Ledge，意指承载物）知识和工具平台，是我们基于在 ThoughtWorks 进行的一系列 DevOps 实践、敏捷实践、软件开发与测试、精益实践提炼出来的知识体系。它包含了各种最佳实践、原则与模式、实施手册、度量、工具，用于帮助您的企业在数字化时代更好地前进，还有 DevOps 转型。
 
@@ -141,6 +147,5 @@ others see in the Code.
 [![Phodal's Idea](http://brand.phodal.com/shields/idea-small.svg)](http://ideas.phodal.com/)
 
 @ 2020 A [Phodal Huang](https://www.phodal.com)'s [Idea](http://github.com/phodal/ideas). This code is distributed under the MPL license. See `LICENSE` in this directory.
-
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fphodal%2Fledge.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fphodal%2Fledge?ref=badge_large)
