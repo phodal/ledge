@@ -1,5 +1,33 @@
 # 前端 DevOps 实施
 
+# 前端代码规范
+
+
+## StyleLint 相关
+
+封装示例：
+
+https://github.com/MoresecFE/stylelint-config-moresec
+
+相关的库：
+
+## ESLint 示例
+
+封装示例：
+
+https://github.com/MoresecFE/eslint-config-moresec
+
+相关的库：
+
+ - https://eslint.org/
+ - https://github.com/ElemeFE/eslint-config-elemefe
+ - https://github.com/AlloyTeam/eslint-config-alloy
+ - https://github.com/vuejs/eslint-plugin-vue
+ - https://github.com/yannickcr/eslint-plugin-react
+ - https://github.com/typescript-eslint/typescript-eslint
+ 
+ 
+
 # 前端测试
 
 ## 通用 BDD
