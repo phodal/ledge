@@ -6,6 +6,10 @@ Google JavaScript 规范：[Google JavaScript Style Guide](https://google.github
 
 Airbnb JavaScript 规范：[Airbnb JavaScript Style Guide() {](https://github.com/airbnb/javascript)
 
+JavaScript Standard 规范：[JavaScript 代码规范，自带 linter & 代码自动修正](https://github.com/standard/standard/blob/master/docs/README-zhcn.md)
+
+
+
 ## 整合 Sonar
 
  - https://github.com/SonarSource/eslint-plugin-sonarjs
@@ -23,6 +27,9 @@ https://github.com/MoresecFE/stylelint-config-moresec
 推荐：[https://github.com/stylelint/stylelint-config-recommended](https://github.com/stylelint/stylelint-config-recommended) ， 继承于 recommend，包含了一些常见的css书写标准，启用其他规则以强制执行一些 CSS 样式指南中的通用样式约定，包括：The Idiomatic CSS Principles，Google 的 CSS 样式指南，Airbnb 的样式指南和 @mdo 的代码指南。
 
 ## ESLint 示例
+
+ - eslint:recommended
+ - eslint:all
 
 封装示例：
 
