@@ -2,6 +2,10 @@
 
 # 前端代码规范
 
+Google JavaScript 规范：[Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html) ， 中文翻译：[Google JavaScript 代码风格指南](https://juejin.im/post/5bd01d4a518825781e647e90)
+
+Airbnb JavaScript 规范：[Airbnb JavaScript Style Guide() {](https://github.com/airbnb/javascript)
+
 ## 整合 Sonar
 
  - https://github.com/SonarSource/eslint-plugin-sonarjs
