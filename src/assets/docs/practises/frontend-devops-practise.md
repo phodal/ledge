@@ -15,6 +15,9 @@ https://github.com/MoresecFE/stylelint-config-moresec
 
 相关的库：
 
+标准：[https://github.com/stylelint/stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard) ，包含可能报错的 rule，code format 的 css 标准
+推荐：[https://github.com/stylelint/stylelint-config-recommended](https://github.com/stylelint/stylelint-config-recommended) ， 继承于 recommend，包含了一些常见的css书写标准，启用其他规则以强制执行一些 CSS 样式指南中的通用样式约定，包括：The Idiomatic CSS Principles，Google 的 CSS 样式指南，Airbnb 的样式指南和 @mdo 的代码指南。
+
 ## ESLint 示例
 
 封装示例：
