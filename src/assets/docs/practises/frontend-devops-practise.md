@@ -2,6 +2,10 @@
 
 # 前端代码规范
 
+## 整合 Sonar
+
+ - https://github.com/SonarSource/eslint-plugin-sonarjs
+ - https://github.com/racodond/sonar-css-plugin
 
 ## StyleLint 相关
 
