@@ -26,6 +26,220 @@ https://github.com/MoresecFE/eslint-config-moresec
  - https://github.com/yannickcr/eslint-plugin-react
  - https://github.com/typescript-eslint/typescript-eslint
  
+ ### React 示例
+ 
+ ```javascript
+ module.exports = {
+  parser: 'babel-eslint',
+  extends: ['airbnb', 'prettier', 'plugin:compat/recommended'],
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
+    mocha: true,
+    jest: true,
+    jasmine: true,
+  },
+  globals: {
+    ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION: true, // preview.pro.ant.design only do not use in your production ; preview.pro.ant.design 专用环境变量，请不要在你的项目中使用它。
+    page: true,
+  },
+  rules: {
+    'react/jsx-filename-extension': [1, { extensions: ['.js'] }],
+    'react/jsx-wrap-multilines': 0,
+    'react/prop-types': 0,
+    'react/forbid-prop-types': 0,
+    'react/jsx-one-expression-per-line': 0,
+    'import/no-unresolved': [2, { ignore: ['^@/', '^umi/'] }],
+    'import/no-extraneous-dependencies': [
+      2,
+      {
+        optionalDependencies: true,
+        devDependencies: ['**/tests/**.js', '/mock/**/**.js', '**/**.test.js'],
+      },
+    ],
+    'import/no-cycle': 0,
+    'jsx-a11y/no-noninteractive-element-interactions': 0,
+    'jsx-a11y/click-events-have-key-events': 0,
+    'jsx-a11y/no-static-element-interactions': 0,
+    'jsx-a11y/anchor-is-valid': 0,
+    'linebreak-style': 0,
+    'jsx-a11y/media-has-caption': 0,
+    'react/no-array-index-key': 0,
+  },
+  settings: {
+    polyfills: ['fetch', 'Promise', 'Number.isNaN', 'Object.assign', 'Object.entries', 'URL'],
+  },
+}
+```
+
+### Vue 示例
+
+```javascript
+module.exports = {
+  root: true,
+  env: {
+    browser: true,
+    node: true,
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:vue/recommended',
+    'plugin:import/recommended',
+    process.env.CI ? '' : 'plugin:prettier/recommended',
+    'prettier',
+    'prettier/vue',
+  ],
+  rules: {
+    eqeqeq: [
+      'error',
+      'always',
+      {
+        null: 'ignore',
+      },
+    ],
+    'consistent-return': "error",
+    'import/no-unresolved': 'off',
+    'import/first': 'error',
+    'import/order': [
+      'error',
+      {
+        'newlines-between': 'always-and-inside-groups',
+      },
+    ],
+    'import/newline-after-import': 'error',
+    'import/no-duplicates': 'error',
+  },
+  parserOptions: {
+    parser: 'babel-eslint',
+    ecmaVersion: 2018,
+    sourceType: 'module',
+  },
+  overrides: [
+    {
+      files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/unit/**/*.{j,t}s?(x)'],
+      env: {
+        jest: true,
+      },
+    },
+  ],
+  globals: {
+    QC: false,
+  },
+  noInlineConfig: true,
+}
+```
+
+### TypeScript 示例
+
+```javascript
+module.exports = {
+  root: true,
+
+  env: {
+    browser: true,
+    node: true,
+  },
+
+  extends: [
+    'eslint:recommended',
+    'plugin:vue/recommended',
+    // 'plugin:import/recommended',
+    '@vue/typescript/recommended',
+    // '@vue/prettier',
+    // '@vue/prettier/@typescript-eslint',
+  ],
+
+  rules: {
+    'eqeqeq': [
+      'error',
+      'always',
+      {
+        null: 'ignore',
+      },
+    ],
+    // Best Practices
+    // 'array-callback-return': 'error',
+    // 'class-methods-use-this': 'error',
+    'complexity': ['error', 50],
+    'curly': 'error',
+    'consistent-return': 'error',
+    'eqeqeq': ['error', 'always', { null: 'ignore' }],
+    'no-else-return': 'error',
+    'no-extend-native': 'error',
+    'no-implicit-coercion': 'error',
+    'no-sequences': 'error',
+    'no-throw-literal': 'error',
+    'no-useless-return': 'error',
+    'no-void': 'error',
+    'prefer-promise-reject-errors': 'error',
+    // 'radix': 'error',
+    'yoda': 'error',
+    // End of 'Best Practices'
+
+    // Stylistic
+    'array-bracket-newline': ['error', 'consistent'],
+    'array-bracket-spacing': 'error',
+    'comma-dangle': ["error", {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "always-multiline",
+      "exports": "always-multiline",
+      "functions": "never"
+    }],
+    'eol-last': 'error',
+    // End of 'Stylistic'
+    // 'import/no-unresolved': 'off',
+    // 'import/first': 'error',
+    // 'import/order': [
+    //   'error',
+    //   {
+    //     'newlines-between': 'always-and-inside-groups',
+    //   },
+    // ],
+    // 'import/newline-after-import': 'error',
+    // 'import/no-duplicates': 'error',
+    'vue/no-v-html': 'off',
+    '@typescript-eslint/camelcase': 'off',
+    '@typescript-eslint/no-use-before-define': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
+    '@typescript-eslint/no-this-alias': 'off',
+    '@typescript-eslint/no-explicit-any': 'warn',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    'indent': 'off',
+    '@typescript-eslint/indent': ['error', 2],
+    'semi': 'off',
+    '@typescript-eslint/semi': ['error', 'never'],
+    'quotes': 'off',
+    '@typescript-eslint/quotes': ['error', 'single'],
+  },
+
+  parserOptions: {
+    parser: '@typescript-eslint/parser',
+  },
+
+  overrides: [
+    {
+      files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/unit/**/*.{j,t}s?(x)'],
+      env: {
+        jest: true,
+      },
+    },
+    {
+      files: ['vue.config.js'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off',
+      },
+    },
+  ],
+
+  globals: {
+    QC: false,
+  },
+
+  noInlineConfig: true,
+}
+```
  
 
 # 前端测试
