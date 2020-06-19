@@ -7,9 +7,6 @@
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fphodal%2Fledge.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fphodal%2Fledge?ref=badge_shield)
 
 [![CODING 持续集成](https://coding-public.coding.net/badges/ledge/job/236475/master/build.svg)](https://coding-public.coding.net/p/ledge/d/ledge/git)
-[![腾讯云 IPv6 解决方案](https://img.shields.io/badge/IPv6-Ready-brightgreen)](https://cloud.tencent.com/solution/ipv6)
-[![SSL 评级](https://img.shields.io/badge/MySSL-A%2B-brightgreen)](https://myssl.com/ledge.devops.host)
-[![HTTP/2](https://img.shields.io/badge/HTTP%2F2-enabled-brightgreen)](https://http2.pro/check?url=https%3A//ledge.devops.host/)
 
 <p align="center"> 
   <img src="src/assets/images/logo.svg" width="288" height="74">
