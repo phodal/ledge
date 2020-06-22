@@ -44,7 +44,7 @@
     - C#
     - PHP
     - Go
-    — JavaScript
+    - JavaScript
     - Python
     - Ruby
   - 版本控制系统
