@@ -94,6 +94,19 @@ config: {"hiddenLegend": true}
 
 - 《[DevOps 实践指南](https://book.douban.com/subject/30186150/)》
 
+# 工具
+
+## 测试数据管理 
+
+### 数据脱敏
+
+> 差分隐私（英语：differential privacy）是密码学中的一种手段，旨在提供一种当从统计数据库查询时，最大化数据查询的准确性，同时最大限度减少识别其记录的机会。
+
+[Google Differential Privacy](https://github.com/google/differential-privacy)
+
+[Open Differential Privacy](https://github.com/opendifferentialprivacy/)
+
+
 # DevOps 技术栈知识图谱
 
 ### DevOps
