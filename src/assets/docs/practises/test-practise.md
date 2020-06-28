@@ -363,7 +363,41 @@ Resources: [Qixi's presentations](https://github.com/macdao/presentations)
 
 ## 测试数据生成
 
+### 测试数据抓取
+
+#### [GoReplay](https://github.com/buger/goreplay) 
+
+> GoReplay is an open-source network monitoring tool which can record your live traffic, and use it for shadowing, load testing, monitoring and detailed analysis.
+
+```
+# Run on servers where you want to catch traffic. You can run it on every `web` machine.
+sudo gor --input-raw :80 --output-http http://staging.com
+```
+
 ### 测试数据生成工具
+
+#### [Faker](https://github.com/joke2k/faker)
+
+> Faker is a Python package that generates fake data for you. Whether you need to bootstrap your database, create good-looking XML documents, fill-in your persistence to stress test it, or anonymize data taken from a production service, Faker is for you.
+
+```python
+from faker import Faker
+fake = Faker()
+
+fake.name()
+# 'Lucy Cechtelar'
+
+fake.address()
+# '426 Jordy Lodge
+#  Cartwrightshire, SC 88120-6700'
+
+fake.text()
+# 'Sint velit eveniet. Rerum atque repellat voluptatem quia rerum. Numquam excepturi
+#  beatae sint laudantium consequatur. Magni occaecati itaque sint et sit tempore. Nesciunt
+#  amet quidem. Iusto deleniti cum autem ad quia aperiam.
+```
+
+#### Datafaker
 
 [Datafaker](https://github.com/gangly/datafaker) 是一个大批量测试数据和流测试数据生成工具，兼容 Python2.7 和 Python3.4+。
 
