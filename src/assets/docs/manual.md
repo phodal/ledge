@@ -1339,6 +1339,27 @@ Spring Boot Actuator：[Spring Boot Actuator](https://docs.spring.io/spring-boot
 
 > 监控，观察并记录系统状态变化和数据流的过程。
 
+### Ganglia + Nagios
+
+> Ganglia是由UC Berkeley发起的一个开源监控项目，设计用于监控数以千几的节点。 每台服务器都运行一个收集和发送监控数据名为gmond的守护进程。 它将从操作系统和指定主机中收集。 接收所有监控数据的主机可以显示这些数据并且可以将这些数据的精简表单传递到层次结构中。
+
+> Nagios是电脑系统和网络监控程序，用于检测主机和服务，当异常发生和解除时能提醒用户；是基于GPLv2开发的开源软件，可免费获得及使用。 Nagios原名NetSaint，由Ethan Galstad开发并维护至今。
+
+> Cacti是一种基于Web的开源网络监视和绘图工具，设计为开源的，行业标准的数据记录工具RRDtool的前端应用程序。Cacti允许用户以预定的间隔轮询服务，并绘制结果数据的图形。它通常用于绘制CPU负载和网络带宽利用率等指标的时间序列数据。通常的用法是通过简单网络管理协议轮询网络交换机或路由器接口来监视网络流量。
+
+### Prometheus
+
+> Prometheus受启发于Google的Brogmon监控系统（相似的Kubernetes是从Google的Brog系统演变而来），从2012年开始由前Google工程师在Soundcloud以开源软件的形式进行研发，并且于2015年早期对外发布早期版本。2016年5月继Kubernetes之后成为第二个正式加入CNCF基金会的项目，同年6月正式发布1.0版本。2017年底发布了基于全新存储层的2.0版本，能更好地与容器平台、云平台配合。
+
+Prometheus 生态圈中包含了多个组件，其中许多组件是可选的：
+
+ - Prometheus Server: 用于收集和存储时间序列数据。
+ - Client Library: 客户端库，为需要监控的服务生成相应的 metrics 并暴露给 Prometheus server。当 Prometheus server 来 pull 时，直接返回实时状态的 metrics。
+ - Push Gateway: 主要用于短期的 jobs。由于这类 jobs 存在时间较短，可能在 Prometheus 来 pull 之前就消失了。为此，这次 jobs 可以直接向 Prometheus server 端推送它们的 metrics。这种方式主要用于服务层面的 metrics，对于机器层面的 metrices，需要使用 node exporter。
+ - Exporters: 用于暴露已有的第三方服务的 metrics 给 Prometheus。
+ - Alertmanager: 从 Prometheus server 端接收到 alerts 后，会进行去除重复数据，分组，并路由到对收的接受方式，发出报警。常见的接收方式有：电子邮件，pagerduty，OpsGenie, webhook 等。
+    一些其他的工具。
+    
 ### StatsD + Graphite + Grafana
 
 ```graphviz
