@@ -359,6 +359,13 @@ Resources: [Qixi's presentations](https://github.com/macdao/presentations)
 }
 ```
 
+# 测试具
+
+> Taurus是一个用于测试自动化的开源框架。 这个免费工具运行来自其他开源工具的脚本的性能测试，包括JMeter，Gatling，Locust和Selenium。 通过扩展他们的能力并掩盖复杂性，Taurus提供了一种创建，运行和分析负载测试的简单方法。 Taurus使用YAML或JSON，它们更容易管理。
+
+官网：https://gettaurus.org/
+
+
 # 测试策略
 
 1. 识别梳理
