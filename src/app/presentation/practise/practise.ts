@@ -14,4 +14,5 @@ export const practises: Practises = [
   { displayName: '前端 DevOps 实践', source: 'frontend-devops-practise' },
   { displayName: '测试实践', source: 'test-practise', default: true },
   { displayName: 'DevSecOps 实践', source: 'devsecops-practise' },
+  { displayName: '持续集成', source: 'ci-practise' },
 ];

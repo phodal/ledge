@@ -53,7 +53,8 @@
     "agile": "Agile Best Practise",
     "tech": "Development Practise",
     "platform": "DevOps Platform",
-    "frontend-devops-practise": "Frontend DevOps Practise"
+    "frontend-devops-practise": "Frontend DevOps Practise",
+    "ci": "CI"
   },
   "helper": {
     "theme": "Theme"
