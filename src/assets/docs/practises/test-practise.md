@@ -376,10 +376,23 @@ Ant + JUnit + Jacoco 示例：[model-ant-project](https://github.com/jenkinsci/m
   
 > TCPCopy是用来做TCP重放的，常用的场景是把线上流量复制到测试环境，用来排查线下不容易重现的问题，或者对测试环境做压力测试。
 
-tcpcopy运行在线上服务器，intercept并不是运行在用来测试的服务器上，而是运行在一台辅助的服务器上
-
 ![TCPCopy](https://camo.githubusercontent.com/df0c7d58574a4d492b45ae450bbe6f34101d66a4/68747470733a2f2f7261772e6769746875622e636f6d2f77616e6762696e3537392f617578696c696172792f6d61737465722f696d616765732f746370636f70792e474946)
-  
+
+功能：
+
+ - 分布式压力测试工具，利用在线数据，可以测试系统能够承受的压力大小（远比ab压力测试工具真实地多）,也可以提前发现一些bug
+ - 普通上线测试，可以发现新系统是否稳定，提前发现上线过程中会出现的诸多问题，让开发者有信心上线
+ - 对比试验，同样请求，针对不同或不同版本程序，可以做性能对比等试验
+ - 流量放大功能，可以利用多种手段构造无限在线压力，满足中小网站压力测试要求
+ - 利用TCPCopy转发传统压力测试工具发出的请求，可以增加网络延迟，使其压力测试更加真实
+ - 热备份
+
+3.组成部分
+
+  1. TCPCopy Server(tcpcopy)：部署在 测试服务器 ，用于接收复制的线上请求，github地址：https://github.com/session-replay-tools/tcpburn
+
+  2. TCPCopy Client(intercept)：部署在 线上服务器 ，用于捕获线上请求，通过修改TCP/IP数据包，发送到TCPCopy Server进行稳定性测试，截获响应包，并传递响应包头信息给TCPCopy client,以完成TCP交互。Github地址：https://github.com/session-replay-tools/intercept
+
 ### GoReplay
 
 [GoReply](https://github.com/buger/goreplay)
@@ -391,6 +404,18 @@ tcpcopy运行在线上服务器，intercept并不是运行在用来测试的服�
 GoReplay 工作方式：listener server 捕获流量，并将其发送至 replay server 或者保存至文件。replay server 会将流量转移至配置的地址。
 
 最简单的使用模式是：listener server捕获流量，并将其发送至kafka，然后解析kafka的消息并存入mysql,处理起来还是比较方便的.
+
+### Proxy
+
+[go-tcp-proxy](https://github.com/jpillora/go-tcp-proxy) A small TCP proxy written in Go. This project was intended for debugging text-based protocols. The next version will address binary protocols.
+
+#### 自制
+
+
+Go：[https://github.com/jpillora/go-tcp-proxy](https://github.com/jpillora/go-tcp-proxy), A small TCP proxy written in Go
+
+对应的客户端救命：Java + Spring: [SpringBoot TCP client/server Integration Example](https://github.com/lapozzo/springboot-tpc-integration-example)
+
 
 ## 自动化测试
 
