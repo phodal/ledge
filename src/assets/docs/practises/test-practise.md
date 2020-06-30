@@ -370,6 +370,14 @@ Ant + JUnit + Jacoco 示例：[model-ant-project](https://github.com/jenkinsci/m
 
 ## 数据捕捉
 
+### Polly.JS
+
+> Polly.JS 是一个独立于框架且与框架无关的J avaScript 库，可用于记录，重放和中断HTTP交互。 通过在Node和浏览器上利用多个请求 API，Polly.JS 能够在几乎没有配置的情况下模拟请求和响应，同时使您能够通过简单，强大且直观的 API 来完全控制每个请求。
+
+[Polly.JS](https://github.com/Netflix/pollyjs)
+
+
+
 ### TCPCopy
  
 [TCPCopy](https://github.com/session-replay-tools/tcpcopy)
@@ -414,7 +422,7 @@ GoReplay 工作方式：listener server 捕获流量，并将其发送至 replay
 
 Go：[https://github.com/jpillora/go-tcp-proxy](https://github.com/jpillora/go-tcp-proxy), A small TCP proxy written in Go
 
-对应的客户端救命：Java + Spring: [SpringBoot TCP client/server Integration Example](https://github.com/lapozzo/springboot-tpc-integration-example)
+对应的客户端示例：Java + Spring: [SpringBoot TCP client/server Integration Example](https://github.com/lapozzo/springboot-tpc-integration-example)
 
 
 ## 自动化测试
