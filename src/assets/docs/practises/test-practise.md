@@ -368,11 +368,39 @@ Ant + JUnit + Jacoco 示例：[model-ant-project](https://github.com/jenkinsci/m
 
 # 测试工具
 
+## 数据捕捉
+
+### TCPCopy
+ 
+[TCPCopy](https://github.com/session-replay-tools/tcpcopy)
+  
+> TCPCopy是用来做TCP重放的，常用的场景是把线上流量复制到测试环境，用来排查线下不容易重现的问题，或者对测试环境做压力测试。
+
+tcpcopy运行在线上服务器，intercept并不是运行在用来测试的服务器上，而是运行在一台辅助的服务器上
+
+![TCPCopy](https://camo.githubusercontent.com/df0c7d58574a4d492b45ae450bbe6f34101d66a4/68747470733a2f2f7261772e6769746875622e636f6d2f77616e6762696e3537392f617578696c696172792f6d61737465722f696d616765732f746370636f70792e474946)
+  
+### GoReplay
+
+[GoReply](https://github.com/buger/goreplay)
+
+> goreplay是一款从生产环境copy流量到测试环境的工具，且不会影响生产环境的业务响应，又能很简单的达到复用http请求来做稳定性测试的目的。
+
+![GoReplay](https://camo.githubusercontent.com/1c65a684aeb1d16343d59c3ab6d3f9d41c77c36f/68747470733a2f2f692e696d6775722e636f6d2f494e327866446d2e706e67)
+
+GoReplay 工作方式：listener server 捕获流量，并将其发送至 replay server 或者保存至文件。replay server 会将流量转移至配置的地址。
+
+最简单的使用模式是：listener server捕获流量，并将其发送至kafka，然后解析kafka的消息并存入mysql,处理起来还是比较方便的.
+
+## 自动化测试
+
+### Taurus
+
 > Taurus是一个用于测试自动化的开源框架。 这个免费工具运行来自其他开源工具的脚本的性能测试，包括JMeter，Gatling，Locust和Selenium。 通过扩展他们的能力并掩盖复杂性，Taurus提供了一种创建，运行和分析负载测试的简单方法。 Taurus使用YAML或JSON，它们更容易管理。
 
 官网：https://gettaurus.org/
 
-## BlazeMeter
+### BlazeMeter
 
 ```bash
 ┌───── 1 73 users, 2 ~73 active ─────┐┌──────────────────── Latest Interval Stats at 18:03:47 ────────────────────┐ ┌─┬─┐
