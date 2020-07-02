@@ -368,6 +368,36 @@ Ant + JUnit + Jacoco 示例：[model-ant-project](https://github.com/jenkinsci/m
 
 # 测试工具
 
+## 兼容性测试
+
+### UI Recorder
+
+UI Recorder是一款零成本的整体自动化测试解决方案，一次自测等于多次测试，测一个浏览器等于测多个浏览器！
+
+*   支持所有用户行为: 键盘事件, 鼠标事件, alert, 文件上传, 拖放, svg, shadow dom
+*   支持无线native app录制, 基于macaca实现: [https://macacajs.com/](https://macacajs.com/)
+*   无干扰录制: 和正常测试无任何区别，无需任何交互
+*   录制用例存储在本地
+*   支持丰富的断言类型: val,text,displayed,enabled,selected,attr,css,url,title,cookie,localStorage,sessionStorage
+*   支持数据mock: fake.js
+*   支持公共测试用例: 允许用例中动态调用另外一个
+*   支持并发测试
+*   支持多国语言: 英文, 简体中文, 繁体中文
+*   支持HTML报告和JUnit报告
+*   全系统支持: windows, mac, linux
+*   支持多运行时测试, 例如：开发测试、预发测试
+*   基于Nodejs的测试用例: jWebDriver
+
+简单来说就是把你每次自测的流程录制下来，而且是全可视化的，然后在各种浏览器上自动回放。
+
+### F2etest
+
+[F2etest](https://github.com/alibaba/f2etest) 是一个面向前端、测试、产品等岗位的多浏览器兼容性测试整体解决方案。
+
+### 图片比对
+
+[Resemble.js](https://github.com/rsmbl/Resemble.js)
+
 ## 数据捕捉
 
 ### Polly.JS
