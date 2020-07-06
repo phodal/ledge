@@ -238,6 +238,12 @@ DevOps 框架
 
 简单来说就，就是我们应该从软件的发布模型，倒推出软件的分支策略。
 
+#### 查询分支情况
+
+```bash
+git for-each-ref --format='%(committerdate) %09 %(authorname) %09 %(refname)'
+```
+
 ### 度量构建
 
 是否拥有构建？
