@@ -629,6 +629,12 @@ V 模型开创性地提出 测试 的重要性，并且明确表明在不同的�
 sudo gor --input-raw :80 --output-http http://staging.com
 ```
 
+#### [Flowgger](https://github.com/awslabs/flowgger)
+
+> Flowgger is a fast, simple and lightweight data collector written in Rust.
+
+Flowgger supports common input types: stdin, UDP, TCP, TLS and Redis, as well as multiple input formats: JSON (GELF), LTSV, Cap'n Proto and RFC5424. Normalized messages can be sent to Kafka, Graylog, to downstream Flowgger servers, or to other log collectors for further processing.
+
 ### 测试数据生成工具
 
 #### [Faker](https://github.com/joke2k/faker)
