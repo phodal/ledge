@@ -184,7 +184,9 @@
 
 ## 设计
 
-### 监控平台示例 1
+### 监控平台案例
+
+#### 监控平台示例 1
 
 Riemann + InfluxDB + Ganglia + Graphite
 
@@ -195,6 +197,18 @@ InfluxDB 提供一个线协议来收集测量数据，而 Ganglia 和 Graphite �
 最后，是图形化显示测量数据，推荐使用 Grafana, 它非常流行强大，可配置界面，能很好支持 InfluxDB 和 Elasticsearch 。
 
 现在，我们有了一个集中化监控服务器系统， Riemann 能发送各种我们需要收集的信息，使用 Riemann 工具发送 cpu, 磁盘disk, 内存memory 和 网络状态等。
+
+#### 监控平台示例 2
+
+来源：[Robinhood 工程团队是如何实现度量的收集和监控的](https://www.infoq.cn/article/2017/05/metrics-monitoring-robinhood)
+
+架构基于 OpenTSDB + Grafana + Kafka + Riemann，其中 Kafka 作为代理层，实现将度量流数据推送给 Riemann 处理，并推送到 OpenTSDB 存储。
+
+度量汇集数据库 OpenTSDB 是实现度量收集的主要手段，它不仅针对各类软件栈分别提供了多种标准度量收集器（称为 tcollectors ），而且还支持自定义的收集器。自定义收集器可使用 OpenTSDB 的 telnet 或 HTTP 访问接口收集度量，并将收集到的数据推送到 OpenTSDB 中。对于 Robinhood 应用，度量数据首先被发送到 Kafka 代理。
+
+对于各个服务器，可以使用标准的或自定义的 tcolloctor 发送度量数据给 Kafka。对于应用的性能监测，使用了 statsd 库。应用度量发送到在各服务器本地运行的 statsd 进程。statsd 服务器的实现采用了 C 语言编写的 statsite 。在转化 statsd 度量为本地 tcollector 度量时，采用了自定义的适配器。此后，本地 tcollector 度量由 Kafka 发送给 OpenTSDB。tcollector 进程将度量输出在标准输出上，并调用一个 Python 脚本将输出推送给 Kafka。
+
+Grafana 是一个可视化的度量查看工具，它支持 Graphite、InfluxDB 和 OpenTSDB 后端。还可以在仪表盘中插入 CloudWatch 度量。
 
 ### 工具
 
@@ -208,7 +222,7 @@ InfluxDB 提供一个线协议来收集测量数据，而 Ganglia 和 Graphite �
  - Diamond
  - Fullerite
  - PCP + Vector。Vector 是美国 netflix 公司用来监控性能的工具，这个工具主要是解决工程师需要登录到各个服务器器上来执行各种命令来查看系统的一些信息。
- - 
+ - Fluentd 是一个完全免费且开源的日志收集系统，性能敏感的部分用 C 语言编写，插件部分用 Ruby 编写，500 多种插件，只需很少的系统资源即可轻松实现 ”Log Everything”。一般叫 Fluentd 为 td-agent。
  
 
 # 度量分析平台
