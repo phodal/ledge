@@ -182,6 +182,35 @@
 - 服务级监控服务
 - 用户侧监控服务
 
+## 设计
+
+### 监控平台示例 1
+
+Riemann + InfluxDB + Ganglia + Graphite
+
+来源：[如何使用开源建立一个分布式系统监控系统？](https://www.jdon.com/soa/monitoring-stack-for-distributed-system.html)
+
+InfluxDB 提供一个线协议来收集测量数据，而 Ganglia 和 Graphite 则正好适合作为它的测量数据输入，下一步还需要一个将各个节点数据以最小耗费资源的方式收集到一起，使用 Riemann, 它是一个从各个安装Riemann 客户端节点聚合事件的工具，它是基于 TCP 和 UDP 的 Protocol Buffer 协议，因此轻量且快速。
+
+最后，是图形化显示测量数据，推荐使用 Grafana, 它非常流行强大，可配置界面，能很好支持 InfluxDB 和 Elasticsearch 。
+
+现在，我们有了一个集中化监控服务器系统， Riemann 能发送各种我们需要收集的信息，使用 Riemann 工具发送 cpu, 磁盘disk, 内存memory 和 网络状态等。
+
+### 工具
+
+#### 收集相关
+
+ - collectd 是 Unix 守护程序，它收集，传输和存储计算机和网络设备的性能数据。
+ - Cube + Cubism.js。Cubism.js 是时间序列化的一个 D3 插件，使用 Cubism 能构建更好的实时指示板，它可以从 Graphite,Cube 和其他的资源中拉拉取数据。
+ - Ganglia
+ - Munin 是一款类似RRD tool 的优秀系统监控工具，它能提供给你多方面的系统性能信息，例如磁盘、网络、进程、系统和用户。
+ - StatsD
+ - Diamond
+ - Fullerite
+ - PCP + Vector。Vector 是美国 netflix 公司用来监控性能的工具，这个工具主要是解决工程师需要登录到各个服务器器上来执行各种命令来查看系统的一些信息。
+ - 
+ 
+
 # 度量分析平台
 
 通用能力：
