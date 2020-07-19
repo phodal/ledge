@@ -2,7 +2,7 @@
 
 ### 构建
 
-来源：《[How We Build Code at Netflix](https://netflixtechblog.com/how-we-build-code-at-netflix-c5d9bd727f15)
+来源：《[How We Build Code at Netflix](https://netflixtechblog.com/how-we-build-code-at-netflix-c5d9bd727f15)》
 
 | 代码检入                    | 持续集成                    | Bake                        | 部署      | 预部署测试 | 热修复    | 金丝雀    | 上线      |
 | --------------------------- | --------------------------- | --------------------------- | --------- | ---------- | --------- | --------- | --------- |
