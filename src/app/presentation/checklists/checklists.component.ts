@@ -14,6 +14,7 @@ export const lists: DocRoute[] = [
   { displayName: '代码回顾检查清单', source: 'code-review' },
   { displayName: 'API 安全性检查清单', source: 'api-security' },
   { displayName: '前端项目检查清单', source: 'frontend' },
+  { displayName: 'Node.js项目检查清单', source: 'nodejs-practices' },
   { displayName: '微服务生产就绪检查清单', source: 'microservices' },
   { displayName: '自组织团队建设检查清单', source: 'self-org' },
   { displayName: '需求阿尔法检查清单', source: 'semat-requirements' },
