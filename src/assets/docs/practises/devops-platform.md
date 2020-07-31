@@ -238,9 +238,21 @@ Grafana 是一个可视化的度量查看工具，它支持 Graphite、InfluxDB 
 
 ## 自动化测试环境
 
- - [Zalenium](https://github.com/zalando/zalenium)
- - [Selenium Docker](https://github.com/seleniumhq/docker-selenium/)
- 
+### [Zalenium](https://github.com/zalando/zalenium)
+
+### [Selenium Docker](https://github.com/seleniumhq/docker-selenium/)
+
+### MeterSphere
+
+MeterSphere 是一站式的开源企业级持续测试平台，涵盖测试跟踪、接口测试、性能测试、团队协作等功能，兼容JMeter 等开源标准，有效助力开发和测试团队充分利用云弹性进行高度可扩展的自动化测试，加速高质量软件的交付。
+
+ - 测试跟踪: 远超 TestLink 的使用体验；
+ - 接口测试: 类似 Postman 的体验；
+ - 性能测试: 兼容 JMeter，支持 Kubernetes 和云环境，轻松支持高并发、分布式的性能测试；
+ - 团队协作: 两级租户体系，天然支持团队协作。
+
+[https://github.com/metersphere/metersphere](https://github.com/metersphere/metersphere) 
+  
 ## 测试即服务
 
 ### Test as a Service
