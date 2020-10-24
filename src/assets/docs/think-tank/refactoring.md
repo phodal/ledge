@@ -65,6 +65,10 @@
 | 依赖关系  | 74.4% | 69.9% |
 | 代码覆盖率 | 83.8% | 54.4% |
 
+工具：
+
+ - [http://metrics.sourceforge.net/](http://metrics.sourceforge.net/)
+
 # 为什么重构？
 
 ## 重构的动机
