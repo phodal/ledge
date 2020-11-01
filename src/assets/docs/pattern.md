@@ -467,6 +467,7 @@ ThoughtWorks Tech Lead 模型
 | 满足客户  |   | x |   |   | 
 | 简单性    | x | x |   |   |
   
+Demo App: [https://github.com/cwhd/measurementor](https://github.com/cwhd/measurementor)
 
 ### 度量框架
 
