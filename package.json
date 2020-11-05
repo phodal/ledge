@@ -1,6 +1,6 @@
 {
   "name": "ledge",
-  "version": "0.0.0",
+  "version": "1.1.0",
   "scripts": {
     "ng": "./node_modules/.bin/ng",
     "start": "yarn ng serve",
@@ -17,7 +17,7 @@
     "publish:cloudbase": "cloudbase hosting:deploy dist/static -e ledge2-8daa6a",
     "scully": "scully --scanRoutes",
     "scully:serve": "scully serve",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "private": false,
   "dependencies": {
