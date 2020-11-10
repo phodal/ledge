@@ -6,6 +6,7 @@
  - Airbnb JavaScript 规范：[Airbnb JavaScript Style Guide() {](https://github.com/airbnb/javascript)
  - JavaScript Standard 规范：[JavaScript 代码规范，自带 linter & 代码自动修正](https://github.com/standard/standard/blob/master/docs/README-zhcn.md)
 
+
 ## 规范自动化
 
  - editorconfig，帮助开发人员定义和维护跨编辑器（或IDE）的统一的代码风格
@@ -17,8 +18,19 @@
  - styleLint，对 CSS 进行 Lint 的工具。
  - remark-lint，使用 Remark 对 Markdown 进行 Lint
 
+### 基于 Husky + LintStaged
 
-## StyleLint 相关
+流程：
+
+1. 待提交的代码 `git add` 添加到暂存区；
+2. 执行 `git commit`；
+3. 注册到 git 钩子函数的 husky `pre-commit`  脚本被调用，执行 `lint-staged`；
+4. 修改的文件依次执行 lint-staged 定义的任务；
+5. lint 失败，则需要等待修复；
+6. lint 成功，而执行 commit
+7. 同理，对于 `pre-push` 也是如此。
+
+### StyleLint 相关
 
 封装示例：
 
@@ -29,7 +41,7 @@ https://github.com/MoresecFE/stylelint-config-moresec
  - 标准：[https://github.com/stylelint/stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard) ，包含可能报错的 rule，code format 的 css 标准
  - 推荐：[https://github.com/stylelint/stylelint-config-recommended](https://github.com/stylelint/stylelint-config-recommended) ， 继承于 recommend，包含了一些常见的css书写标准，启用其他规则以强制执行一些 CSS 样式指南中的通用样式约定，包括：The Idiomatic CSS Principles，Google 的 CSS 样式指南，Airbnb 的样式指南和 @mdo 的代码指南。
 
-## ESLint 示例
+### ESLint 示例
 
  - eslint:recommended
  - eslint:all
