@@ -6,12 +6,17 @@
  - Airbnb JavaScript 规范：[Airbnb JavaScript Style Guide() {](https://github.com/airbnb/javascript)
  - JavaScript Standard 规范：[JavaScript 代码规范，自带 linter & 代码自动修正](https://github.com/standard/standard/blob/master/docs/README-zhcn.md)
 
+## 规范自动化
 
+ - editorconfig，帮助开发人员定义和维护跨编辑器（或IDE）的统一的代码风格
+ - prettier，一个强势武断的代码格式化工具。
+ - husky，一个用于 Node.js 项目的快速安装 git hooks 的工具。
+ - lint-staged，在 git staged 阶段，执行各种 Linter 的工具。
+ - converntional-changelog，根据 Git 提交历史生成 CHANGELOG 的工具。
+ - commitLint， 对提交信息进行 Lint 的工具。
+ - styleLint，对 CSS 进行 Lint 的工具。
+ - remark-lint，使用 Remark 对 Markdown 进行 Lint
 
-## 整合 Sonar
-
- - https://github.com/SonarSource/eslint-plugin-sonarjs
- - https://github.com/racodond/sonar-css-plugin
 
 ## StyleLint 相关
 
@@ -42,6 +47,11 @@ https://github.com/MoresecFE/eslint-config-moresec
  - https://github.com/yannickcr/eslint-plugin-react
  - https://github.com/typescript-eslint/typescript-eslint
  
+ ### 整合 Sonar
+
+ - https://github.com/SonarSource/eslint-plugin-sonarjs
+ - https://github.com/racodond/sonar-css-plugin
+
  ### React 示例
  
  ```javascript
