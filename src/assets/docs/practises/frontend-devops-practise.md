@@ -1,10 +1,7 @@
 # 前端 DevOps 实施
 
-# 前端代码规范
 
- - Google JavaScript 规范：[Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html) ， 中文翻译：[Google JavaScript 代码风格指南](https://juejin.im/post/5bd01d4a518825781e647e90)
- - Airbnb JavaScript 规范：[Airbnb JavaScript Style Guide() {](https://github.com/airbnb/javascript)
- - JavaScript Standard 规范：[JavaScript 代码规范，自带 linter & 代码自动修正](https://github.com/standard/standard/blob/master/docs/README-zhcn.md)
+# 流程和规范
 
 
 ## 规范自动化
@@ -29,6 +26,12 @@
 5. lint 失败，则需要等待修复；
 6. lint 成功，而执行 commit
 7. 同理，对于 `pre-push` 也是如此。
+
+## 代码规范
+
+ - Google JavaScript 规范：[Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html) ， 中文翻译：[Google JavaScript 代码风格指南](https://juejin.im/post/5bd01d4a518825781e647e90)
+ - Airbnb JavaScript 规范：[Airbnb JavaScript Style Guide() {](https://github.com/airbnb/javascript)
+ - JavaScript Standard 规范：[JavaScript 代码规范，自带 linter & 代码自动修正](https://github.com/standard/standard/blob/master/docs/README-zhcn.md)
 
 ### 自定义 Lint
 
