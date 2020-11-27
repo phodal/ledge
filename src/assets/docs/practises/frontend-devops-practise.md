@@ -3,6 +3,29 @@
 
 # 流程和规范
 
+## 构建流程
+
+## 发布规范
+
+使用：[https://github.com/conventional-changelog/standard-version](https://github.com/conventional-changelog/standard-version)
+
+`standard-version` will then do the following:
+
+1.  Retrieve the current version of your repository by looking at `packageFiles`, falling back to the last `git tag`.
+2.  `bump` the version in `bumpFiles` based on your commits.
+3.  Generates a `changelog` based on your commits (uses [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog) under the hood).
+4.  Creates a new `commit` including your `bumpFiles` and updated CHANGELOG.
+5.  Creates a new `tag` with the new version number.
+
+### CHANGELOG
+
+https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli
+
+```bash
+$ npm install -g conventional-changelog-cli
+$ cd my-project
+$ conventional-changelog -p angular -i CHANGELOG.md -s
+```
 
 ## 规范自动化
 
