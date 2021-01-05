@@ -14,6 +14,8 @@
 
 在线使用：[https://devops.phodal.com/](https://devops.phodal.com/)
 
+Gitee (MVP) : https://gitee.com/phodal/ledge
+
 国内服务器：
 
 1. CODING（每小时同步）：[https://ledge.devops.host/](https://ledge.devops.host/)
