@@ -98,7 +98,7 @@ todo: fix Angular elements bug
 
 ### Markdown 扩展语法
 
-syntax see in [ledge render](projects/@ledge-framework/render)
+syntax see in [ledge render](https://github.com/ledge-framework/engine/tree/master/projects/%40ledge-framework/render)
 
 example see in [Ledge Editor](https://devops.phodal.com/helper)
 
