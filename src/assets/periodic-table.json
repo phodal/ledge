@@ -643,6 +643,7 @@
   {
     "name": "Pulumi",
     "category": "deployment",
+    "description": "Pulumi是一个基础架构即代码的自动化工具，用于配置和管理云基础架构和资源，构建在Terraform工具基础上的。它与Terraform的重要区别在于：您可以用熟悉的编程语言来编写声明式配置，而不需要额外学习厂商特定的模板语言来写配置。Pulumi是个可扩展的工具，通过 Provider 来支持新的基础架构。Pulumi提供了客户端，能够让您轻松定义、预览和部署云基础结构。您可以使用Pulumi来创建、修改、删除ECS、VPC、RDS、SLB等多种资源。Pulumi还提供一个可视化的控制台，通过控制台您可以方便的查看每个堆栈的配置版本历史、活动、关联资源和设置。",
     "number": 47,
     "pay": "Os",
     "symbol": "Pl"
