@@ -348,7 +348,56 @@ ThoughtWorks Tech Lead 模型
 > ChatOps 是指由对话驱动的开发。 将工具植入到对话当中，使用被关键插件和脚本改良过的聊天机器人，团队能够自动执行任务和协作，效果更好、成本更低、速度更快。
 
 相关案例: 
-- [基于 Go 的 ChatOps 实践](https://lawrenceli.me/blog/chat-ops): 利用钉钉的企业内部机器人的回调机制，可以部署一套 HTTP 服务端来接收消息请求，根据用户定制的特定消息内容执行相应的 Git 工作流或 CI/CD 流水线。
+
+[基于 Go 的 ChatOps 实践](https://lawrenceli.me/blog/chat-ops): 利用钉钉的企业内部机器人的回调机制，可以部署一套 HTTP 服务端来接收消息请求，根据用户定制的特定消息内容执行相应的 Git 工作流或 CI/CD 流水线。
+
+Chat samples:
+
+```bash
+Users 命令: /pr
+Robot 回复: 当前仓库的 PullRequest 列表...
+          [#709] fix: typo
+          [author] username
+
+Users 命令: /jenkins test micro-server 709
+Robot 回复: 开始测试 PullRequest 709
+CIBot 回复: 
+          [jenkins] micro-server ci
+          -------------------------
+          任务：#666
+          状态：开始
+          持续时间：0 分 1 秒
+          执行人：Host 76.76.21.21
+
+Users 命令: /approve 709
+Robot 回复: 审核通过 PullRequest #709
+
+Users 命令: /merge 709
+Robot 回复: 合并 PullRequest #709
+Gitee 回复: User 接受了 Owner/repo 的 Pull Request !709 fix: typo
+
+Users 命令: /deploy micro-server
+Robot 回复: 生产发布 micro-server
+CDBot 回复:
+          [jenkins] micro-server cd
+          -------------------------
+          任务：#233
+          状态：开始
+          持续时间：0 分 1 秒
+          执行人：Host 76.76.21.21
+
+# 友好地提供帮助
+Users 命令: /help
+Robot 回复: 当前支持指令列表, 带 * 需要特定人员发起
+          /pr - 展示仓库发起中的 PR
+          /jenkins <action> <servername> <pr-number> - 在指定 PR 下发起后端测试
+          /pass <pr-number> - * 测试通过指定 PR
+          /approve <pr-number> - * 审核通过指定 PR  
+          /merge <pr-number> - * 合并指定 PR
+          /test <servername> - 在仅有一个 PR 的状态下发起后端服务测试
+          /deploy <servername> - * 发布服务至生产环境
+          /help - 显示此帮助内容
+```
 
 ## DesignOps
 
