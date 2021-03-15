@@ -347,6 +347,9 @@ ThoughtWorks Tech Lead 模型
 
 > ChatOps 是指由对话驱动的开发。 将工具植入到对话当中，使用被关键插件和脚本改良过的聊天机器人，团队能够自动执行任务和协作，效果更好、成本更低、速度更快。
 
+相关案例: 
+- [基于 Go 的 ChatOps 实践](https://lawrenceli.me/blog/chat-ops): 利用钉钉的企业内部机器人的回调机制，可以部署一套 HTTP 服务端来接收消息请求，根据用户定制的特定消息内容执行相应的 Git 工作流或 CI/CD 流水线。
+
 ## DesignOps
 
 > DesignOps 是对人员、流程以及工艺的编排和优化，以扩大设计的价值和规模影响。
