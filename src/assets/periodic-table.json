@@ -7,11 +7,13 @@
     "number": 1,
     "pay": "Os",
     "symbol": "Gl",
-    "resources": [{
-      "name": "Gitlab 文档（英文）",
-      "link": "https://docs.gitlab.com/",
-      "description": ""
-    }]
+    "resources": [
+      {
+        "name": "Gitlab 文档（英文）",
+        "link": "https://docs.gitlab.com/",
+        "description": ""
+      }
+    ]
   },
   {
     "name": "Gitea",
@@ -21,11 +23,13 @@
     "number": 3,
     "pay": "Fm",
     "symbol": "Ge",
-    "resources": [{
-      "name": "Gitea 文档（中文）",
-      "link": "https://docs.gitea.io/zh-cn/",
-      "description": ""
-    }]
+    "resources": [
+      {
+        "name": "Gitea 文档（中文）",
+        "link": "https://docs.gitea.io/zh-cn/",
+        "description": ""
+      }
+    ]
   },
   {
     "name": "GitHub",
@@ -35,15 +39,18 @@
     "number": 11,
     "pay": "Fm",
     "symbol": "Gh",
-    "books": [{
-      "name": "《GitHub 漫游指南》",
-      "link": "https://github.com/phodal/github",
-      "description": "一本有关如何在 Github 上构建一个好的项目的中文电子书。 探索用户的行为。 找到一些有趣的东西。"
-    }, {
-      "name": "GitHub vs. GitLab",
-      "link": "https://about.gitlab.com/devops-tools/github-vs-gitlab.html",
-      "description": "Gitlab 和 Github比较"
-    }]
+    "books": [
+      {
+        "name": "《GitHub 漫游指南》",
+        "link": "https://github.com/phodal/github",
+        "description": "一本有关如何在 Github 上构建一个好的项目的中文电子书。 探索用户的行为。 找到一些有趣的东西。"
+      },
+      {
+        "name": "GitHub vs. GitLab",
+        "link": "https://about.gitlab.com/devops-tools/github-vs-gitlab.html",
+        "description": "Gitlab 和 Github比较"
+      }
+    ]
   },
   {
     "name": "SubVersion",
@@ -53,11 +60,13 @@
     "symbol": "Sv",
     "homepage": "https://subversion.apache.org/",
     "description": "Apache Subversion（简称SVN，svn），一个开放源代码的版本控制系统，相较于RCS、CVS，它采用了分支管理系统，它的设计目标就是取代CVS。互联网上很多版本控制服务已从CVS转移到Subversion。",
-    "resources": [{
-      "name": "Github",
-      "link": "https://github.com/apache/subversion",
-      "description":""
-    }]
+    "resources": [
+      {
+        "name": "Github",
+        "link": "https://github.com/apache/subversion",
+        "description": ""
+      }
+    ]
   },
   {
     "name": "Git",
@@ -67,16 +76,18 @@
     "symbol": "Gt",
     "description": "Git 是一个分散式版本控制软件，最初由林纳斯·托瓦兹创作。最初目的是为更好地管理Linux核心开发而设计。应注意的是，这与 GNU Interactive Tools[5]（一个类似 Norton Commander 界面的文件管理器）不同。Git 最初的开发动力来自于 BitKeeper 和Monotone。",
     "homepage": "https://git-scm.com/",
-    "books": [{
-      "name": "《Git 版本控制管理》",
-      "link": "https://book.douban.com/subject/26341974//",
-      "description": "是学习掌握 Git 的最佳教程，总共分为 21 章，其内容涵盖了如何在多种真实开发环境中使用 Git ；洞察 Git 的常用案例、初始任务和基本功能；如何在集中和分布式版本控制中使用 Git 等内容。"
-    },
-    {
-      "name": "《Pro Git》(第二版)",
-      "link": "https://git-scm.com/book/en/v2",
-      "description": "作为 Git 官方推荐书籍，《Pro Git》值得 Git 初学者和爱好者认真阅读一遍。"
-    }]
+    "books": [
+      {
+        "name": "《Git 版本控制管理》",
+        "link": "https://book.douban.com/subject/26341974//",
+        "description": "是学习掌握 Git 的最佳教程，总共分为 21 章，其内容涵盖了如何在多种真实开发环境中使用 Git ；洞察 Git 的常用案例、初始任务和基本功能；如何在集中和分布式版本控制中使用 Git 等内容。"
+      },
+      {
+        "name": "《Pro Git》(第二版)",
+        "link": "https://git-scm.com/book/en/v2",
+        "description": "作为 Git 官方推荐书籍，《Pro Git》值得 Git 初学者和爱好者认真阅读一遍。"
+      }
+    ]
   },
   {
     "name": "Gerrit",
@@ -86,10 +97,12 @@
     "symbol": "Ge",
     "description": "Gerrit，一种开放源代码的代码审查软件，使用网页界面。利用网页浏览器，同一个团队的软件开发者，可以相互审阅彼此修改后的代码，决定是否能够提交，回退或是继续修改。它使用版本控制系统Git作为底层。",
     "homepage": "https://www.gerritcodereview.com/",
-    "books":[{
-        "name":"《Learning Gerrit Code Review》",
-        "link":"https://www.oreilly.com/library/view/learning-gerrit-code/9781783289479/"
-    }]
+    "books": [
+      {
+        "name": "《Learning Gerrit Code Review》",
+        "link": "https://www.oreilly.com/library/view/learning-gerrit-code/9781783289479/"
+      }
+    ]
   },
 
   {
@@ -100,28 +113,34 @@
     "symbol": "Af",
     "description": "Artifactory 是 Jfrog 的一款Maven仓库服务端软件，可以用来在内网搭建maven仓库，供公司内部公共库的上传和发布，以提高公共代码使用的便利性。",
     "homepage": "https://jfrog.com/artifactory/",
-    "books":[{
-      "name":"《Jenkins and Artifactory》",
-      "link":"https://www.oreilly.com/library/view/mastering-jenkins/9781784390891/ch09s03.html"
-    }],
-    "resources": [{
-      "name": "JFrog Artifactory 文档（英文）",
-      "link": "https://www.jfrog.com/confluence/display/JFROG/JFrog+Artifactory"
-    }]
+    "books": [
+      {
+        "name": "《Jenkins and Artifactory》",
+        "link": "https://www.oreilly.com/library/view/mastering-jenkins/9781784390891/ch09s03.html"
+      }
+    ],
+    "resources": [
+      {
+        "name": "JFrog Artifactory 文档（英文）",
+        "link": "https://www.jfrog.com/confluence/display/JFROG/JFrog+Artifactory"
+      }
+    ]
   },
   {
     "name": "Nexus",
     "description": "Nexus是一个强大的Maven仓库管理器，它极大地简化了本地内部仓库的维护和外部仓库的访问。 如果使用了公共的Maven仓库服务器，可以从Maven中央仓库下载所需要的构件（Artifact），但这通常不是一个好的做法。 正常做法是在本地架设一个本地Maven仓库服务器，利用Nexus私服可以只在一个地方就能够完全控制访问和部署在你所维护仓库中的每个Artifact。",
-    "homepage" : "https://www.sonatype.com/",
+    "homepage": "https://www.sonatype.com/",
     "category": "packageManage",
     "number": 56,
     "pay": "Os",
     "symbol": "Nx",
-    "resources": [{
-      "name": "Nexus 文档（英文）",
-      "link": "https://help.sonatype.com/repomanager3",
-      "description": ""
-    }]
+    "resources": [
+      {
+        "name": "Nexus 文档（英文）",
+        "link": "https://help.sonatype.com/repomanager3",
+        "description": ""
+      }
+    ]
   },
   {
     "name": "Archiva",
@@ -131,14 +150,17 @@
     "symbol": "Ah",
     "description": "Archiva，私服是架设在局域网的一种特殊的远程仓库，目的是代理远程仓库及部署第三方构件。有了私服之后，当 Maven 需要下载构件时，直接请求私服，私服上存在则下载到本地仓库；否则，私服请求外部的远程仓库，将构件下载到私服，再提供给本地仓库下载。",
     "homepage": "https://archiva.apache.org/",
-    "resources": [{
-      "name": "Github",
-      "link": "https://github.com/apache/archiva",
-      "description":"Apache Archiva"
-    },{
-      "name":"Installing and Configuring the Archiva Maven Repository Manager",
-      "link": "https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.3/maven/installing-and-configuring-archiva-maven-repository-manager.html#GUID-9B488F70-D592-41B8-8E1C-047AABB6B87B"
-    }]
+    "resources": [
+      {
+        "name": "Github",
+        "link": "https://github.com/apache/archiva",
+        "description": "Apache Archiva"
+      },
+      {
+        "name": "Installing and Configuring the Archiva Maven Repository Manager",
+        "link": "https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.3/maven/installing-and-configuring-archiva-maven-repository-manager.html#GUID-9B488F70-D592-41B8-8E1C-047AABB6B87B"
+      }
+    ]
   },
 
   {
@@ -205,20 +227,21 @@
     "description": "Travis CI 是在软件开发领域中的一个在线的，分布式的持续集成服务，用来构建及测试在GitHub托管的代码。"
   },
 
-
   {
     "name": "Zabbix",
     "category": "monitoring",
     "number": 57,
     "pay": "Os",
     "symbol": "Zb",
-    "homepage" : "https://www.zabbix.com/",
+    "homepage": "https://www.zabbix.com/",
     "description": "Zabbix 是由 Alexei Vladishev 开发的一种网络监视、管理系统，基于 Server-Client 架构。可用于监视各种网络服务、服务器和网络机器等状态。",
-    "resources": [{
-      "name": "Zabbix 产品手册 (中文)",
-      "link": "https://www.zabbix.com/documentation/4.0/zh/manual",
-      "description": ""
-    }]
+    "resources": [
+      {
+        "name": "Zabbix 产品手册 (中文)",
+        "link": "https://www.zabbix.com/documentation/4.0/zh/manual",
+        "description": ""
+      }
+    ]
   },
   {
     "name": "Nagios",
@@ -228,11 +251,13 @@
     "symbol": "Na",
     "homepage": "https://www.nagios.org/",
     "description": "Nagios（IPA: /ˈnɑːɡioʊs/）是电脑系统和网络监控程序，用于检测主机和服务，当异常发生和解除时能提醒用户。",
-    "resources": [{
-      "name": "Nagios在线帮助中文版",
-      "link": "http://nagios-cn.sourceforge.net/nagios-cn/",
-      "description": ""
-    }]
+    "resources": [
+      {
+        "name": "Nagios在线帮助中文版",
+        "link": "http://nagios-cn.sourceforge.net/nagios-cn/",
+        "description": ""
+      }
+    ]
   },
   {
     "name": "Ganglia",
@@ -268,11 +293,13 @@
     "pay": "Os",
     "symbol": "Sd",
     "description": "StatsD 是一个简单的网络守护进程，基于 Node.js 平台，通过 UDP 或者 TCP 方式侦听各种统计信息，包括计数器和定时器，并发送聚合信息到后端服务，例如  Graphite.",
-    "resources": [{
-      "name": "Github",
-      "link": "https://github.com/statsd/statsd",
-      "description": ""
-    }]
+    "resources": [
+      {
+        "name": "Github",
+        "link": "https://github.com/statsd/statsd",
+        "description": ""
+      }
+    ]
   },
   {
     "name": "Graphite",
@@ -298,15 +325,18 @@
     "symbol": "Kk",
     "homepage": "https://kafka.apache.org/",
     "description": "Kafka是由Apache软件基金会开发的一个开源流处理平台，由Scala和Java编写。该项目的目标是为处理实时数据提供一个统一、高吞吐、低延迟的平台。其持久化层本质上是一个“按照分布式事务日志架构的大规模发布/订阅消息队列”，这使它作为企业级基础设施来处理流式数据非常有价值。此外，Kafka可以通过Kafka Connect连接到外部系统（用于数据输入/输出），并提供了Kafka Streams——一个Java流式处理库。",
-    "resources": [{
-      "name": "Github",
-      "link": "https://github.com/apache/kafka",
-      "description": ""
-    }, {
-      "name": "Kafka文档(中文)",
-      "link": "http://kafka.apachecn.org/",
-      "description": ""
-    }]
+    "resources": [
+      {
+        "name": "Github",
+        "link": "https://github.com/apache/kafka",
+        "description": ""
+      },
+      {
+        "name": "Kafka文档(中文)",
+        "link": "http://kafka.apachecn.org/",
+        "description": ""
+      }
+    ]
   },
 
   {
@@ -326,15 +356,18 @@
     "symbol": "Se",
     "homepage": "https://www.selenium.dev/",
     "description": "Selenium 是支持 web 浏览器自动化的一系列工具和库的综合项目。",
-    "resources": [{
-      "name": "Selenium 浏览器自动化项目",
-      "link": "https://www.selenium.dev/documentation/zh-cn/",
-      "description": ""
-    }, {
-      "name": "Selenium with Python中文翻译文档",
-      "link": "https://selenium-python-zh.readthedocs.io/en/latest/",
-      "description" : ""
-    }]
+    "resources": [
+      {
+        "name": "Selenium 浏览器自动化项目",
+        "link": "https://www.selenium.dev/documentation/zh-cn/",
+        "description": ""
+      },
+      {
+        "name": "Selenium with Python中文翻译文档",
+        "link": "https://selenium-python-zh.readthedocs.io/en/latest/",
+        "description": ""
+      }
+    ]
   },
   {
     "name": "Cucumber",
@@ -372,11 +405,13 @@
     "symbol": "Mc",
     "homepage": "https://mochajs.org/",
     "description": "mocha是一个功能丰富的javascript测试框架，运行在node.js和浏览器中，使异步测试变得简单有趣。Mocha测试连续运行，允许灵活和准确的报告，同时将未捕获的异常映射到正确的测试用例。",
-    "resources": [{
-      "name": "mochajs文档(中文)",
-      "link": "https://mochajs.cn/",
-      "description": ""
-    }]
+    "resources": [
+      {
+        "name": "mochajs文档(中文)",
+        "link": "https://mochajs.cn/",
+        "description": ""
+      }
+    ]
   },
   {
     "name": "JMeter",
@@ -386,15 +421,18 @@
     "symbol": "Jm",
     "homepage": "https://jmeter.apache.org/",
     "description": "",
-    "resources":[{
-      "name": "Github",
-      "link": "https://github.com/apache/jmeter",
-      "description": ""
-    }, {
-      "name": "JMeter 文档(英文)",
-      "link": "https://jmeter.apache.org/usermanual/index.html",
-      "description": ""
-    }]
+    "resources": [
+      {
+        "name": "Github",
+        "link": "https://github.com/apache/jmeter",
+        "description": ""
+      },
+      {
+        "name": "JMeter 文档(英文)",
+        "link": "https://jmeter.apache.org/usermanual/index.html",
+        "description": ""
+      }
+    ]
   },
   {
     "name": "Jasmine",
@@ -634,11 +672,13 @@
     "number": 30,
     "pay": "Os",
     "symbol": "Go",
-    "resources": [{
-      "name": "GitHub",
-      "link": "https://github.com/gocd/gocd",
-      "description": "This is the main repository for GoCD - a continuous delivery server. GoCD helps you automate and streamline the build-test-release cycle for worry-free, continuous delivery of your product."
-    }]
+    "resources": [
+      {
+        "name": "GitHub",
+        "link": "https://github.com/gocd/gocd",
+        "description": "This is the main repository for GoCD - a continuous delivery server. GoCD helps you automate and streamline the build-test-release cycle for worry-free, continuous delivery of your product."
+      }
+    ]
   },
   {
     "name": "Pulumi",
@@ -697,11 +737,13 @@
     "pay": "Os",
     "symbol": "Rc",
     "homepage": "https://rancher.com/",
-    "resources": [{
-      "name": "Rancher文档(中文)",
-      "link": "https://rancher.com/docs/rancher/latest/zh/",
-      "description": ""
-    }]
+    "resources": [
+      {
+        "name": "Rancher文档(中文)",
+        "link": "https://rancher.com/docs/rancher/latest/zh/",
+        "description": ""
+      }
+    ]
   },
   {
     "name": "Helm",
@@ -729,6 +771,22 @@
     "description": "Rocket （也叫 rkt）是 CoreOS 推出的一款容器引擎，和 Docker 类似，帮助开发者打包应用和依赖包到可移植容器中，简化搭环境等部署工作。Rocket 和 Docker 不同的地方在于，Rocket 没有 Docker 那些为企业用户提供的“友好功能”，比如云服务加速工具、集群系统等。反过来说，Rocket 想做的，是一个更纯粹的业界标准。"
   },
   {
+    "name": "KubeSphere",
+    "category": "containers",
+    "number": 114,
+    "pay": "Os",
+    "symbol": "Ks",
+    "homepage": "https://kubesphere.io/",
+    "resources": [
+      {
+        "name": "kubesphere",
+        "link": "https://github.com/kubesphere/kubesphere",
+        "description": "源码开源"
+      }
+    ],
+    "description": "KubeSphere 是在 Kubernetes 之上构建的以应用为中心的多租户容器平台，提供全栈的 IT 自动化运维的能力，简化企业的 DevOps 工作流。KubeSphere 提供了运维友好的向导式操作界面，帮助企业快速构建一个强大和功能丰富的容器云平台。"
+  },
+  {
     "name": "K3s",
     "category": "containers",
     "number": 112,
@@ -737,7 +795,6 @@
     "homepage": "https://k3s.io/",
     "description": "轻量级Kubernetes发行版。"
   },
-
 
   {
     "name": "OpenMake",
@@ -776,7 +833,6 @@
     "symbol": "Xl",
     "homepage": "https://xebialabs.com/products/xl-deploy/"
   },
-
 
   {
     "name": "Cloud Foundry",
@@ -849,10 +905,10 @@
   {
     "name": "IBM Cloud",
     "category": "publicCloud",
-    "number": 114,
+    "number": 117,
     "pay": "Pd",
     "symbol": "Ic",
-    "homepage":"https://www.ibm.com/cn-zh/cloud",
+    "homepage": "https://www.ibm.com/cn-zh/cloud",
     "description": ""
   },
   {
@@ -890,16 +946,18 @@
     "symbol": "Sp",
     "homepage": "https://www.splunk.com/zh-hans_cn",
     "description": "",
-    "resources": [{
-      "name": "Splunk中文手册",
-      "link": "https://docs.splunk.com/Documentation/Splunk/8.0.3/Translated/SimplifiedChinesemanuals",
-      "description": ""
-    }]
+    "resources": [
+      {
+        "name": "Splunk中文手册",
+        "link": "https://docs.splunk.com/Documentation/Splunk/8.0.3/Translated/SimplifiedChinesemanuals",
+        "description": ""
+      }
+    ]
   },
   {
     "name": "Logstash",
     "category": "aiops",
-    "number":17,
+    "number": 17,
     "pay": "Os",
     "symbol": "Ls",
     "homepage": "https://www.elastic.co/cn/logstash",
@@ -908,14 +966,14 @@
   {
     "name": "Fluent",
     "category": "aiops",
-    "number":35,
+    "number": 35,
     "pay": "Os",
     "symbol": "Fe"
   },
   {
     "name": "Prometheus",
     "category": "aiops",
-    "number":53,
+    "number": 53,
     "pay": "Os",
     "symbol": "Pt",
     "homepage": "https://prometheus.io/",
@@ -967,15 +1025,18 @@
     "number": 54,
     "pay": "Os",
     "symbol": "Gr",
-    "resources": [{
-      "name": "GitHub",
-      "link": "https://github.com/grafana/grafana",
-      "description": "This is the main repository for Grafana - The tool for beautiful monitoring and metric analytics & dashboards for Graphite, InfluxDB & Prometheus & More."
-    }, {
-      "name": "tutorials",
-      "link": "https://grafana.com/tutorials/",
-      "description": "This is the tutorials for Grafana - Grafana Tutorials are step-by-step guides that help you make the most of Grafana."
-    }]
+    "resources": [
+      {
+        "name": "GitHub",
+        "link": "https://github.com/grafana/grafana",
+        "description": "This is the main repository for Grafana - The tool for beautiful monitoring and metric analytics & dashboards for Graphite, InfluxDB & Prometheus & More."
+      },
+      {
+        "name": "tutorials",
+        "link": "https://grafana.com/tutorials/",
+        "description": "This is the tutorials for Grafana - Grafana Tutorials are step-by-step guides that help you make the most of Grafana."
+      }
+    ]
   },
   {
     "name": "Piwik",
@@ -1061,7 +1122,7 @@
     "description": "CODING DevOps 提供从需求提交到产品迭代，从代码管理到持续集成，制品管理直至最终持续部署的全套流程。流水线标准化作业，自动化版本记录，降低企业研发管理难度，提升研发效率。",
     "homepage": "https://coding.net/",
     "category": "platform",
-    "number": 117,
+    "number": 118,
     "pay": "Pd",
     "symbol": "Co"
   },
@@ -1074,29 +1135,22 @@
     "description": "云开发（Tencent CloudBase，TCB）是云端一体化的后端云服务 ，采用 serverless 架构，免去了移动应用构建中繁琐的服务器搭建和运维。同时云开发提供的静态托管、命令行工具（CLI）、Flutter SDK 等能力极大的降低了应用开发的门槛。使用云开发可以快速构建完整的小程序/小游戏、H5、Web、移动 App 等应用。 ",
     "homepage": "https://cloud.tencent.com/product/tcb?from=12334",
     "resources": [
-        {
+      {
         "name": "GitHub",
         "link": "https://github.com/tencentcloudbase/",
         "description": "云开发官方团队的 Github，其中包含了使用云开发开发项目的各种 SDK"
-        },
-        {
+      },
+      {
         "name": "Documents",
         "link": "http://docs.cloudbase.net/",
         "description": "云开发官方文档，可以在文档中查询云开发的使用方法"
-        },
-       {
+      },
+      {
         "name": "零基础入门教程",
         "link": "https://club.cloudbase.net/handbook/tcb01.html",
         "description": "云开发提供的零基础入门教程，可以帮助开发者快速掌握云开发的使用方式"
-        }
-      ]
-    },
-  {
-    "name": "TBD",
-    "category": "atom-placeholder",
-    "number": 118,
-    "pay": "",
-    "symbol": ""
+      }
+    ]
   },
   {
     "name": "TBD",
