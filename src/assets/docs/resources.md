@@ -78,6 +78,11 @@ config: {"hiddenLegend": true}
 - [AWS 客户成功案例](https://aws.amazon.com/cn/solutions/case-studies/)
 - [腾讯云云开发案例](https://mp.weixin.qq.com/s/jcKEYinsdyKef9xGbHLGiw)
 
+Google DevOps Tools:
+
+ - https://github.com/jhuangtw/xg2xg
+ - https://github.com/google/startup-os
+
 # 文章
 
 ## 敏捷
