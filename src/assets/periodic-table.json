@@ -168,7 +168,16 @@
     "category": "database",
     "number": 4,
     "pay": "Os",
-    "symbol": "lq"
+    "symbol": "lq",
+    "description": "Liquibase, 是一个开源工具库，用于追踪、管理和应用数据库的变化，即数据库版本管理工具。Liquibase支持各种主流的数据库，如MySQL、PostgreSQL、Oracle、H2等。",
+    "homepage": "https://www.liquibase.org/",
+    "resources": [
+      {
+        "name": "Liquibase 文档（英文）",
+        "link": "https://docs.liquibase.com/workflows/database-setup-tutorials/home.html",
+        "description": ""
+      }
+    ]
   },
   {
     "name": "Flyway",
