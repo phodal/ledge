@@ -537,77 +537,88 @@
     "category": "security",
     "number": 98,
     "pay": "Os",
-    "symbol": "Bd"
+    "symbol": "Bd",
+    "description":"Black Duck 软件组件分析(SCA) 提供了一种解决方案，用于管理使用开源和第三方代码所带来的开源安全、质量和许可证合规性风险，Black Duck分别由protex、Codecenter和Export三个产品组成。"
   },
   {
     "name": "SonarQube",
     "category": "security",
     "number": 70,
     "pay": "Os",
-    "symbol": "Sq"
+    "symbol": "Sq",
+    "description":"sonarqube是一个开源代码质量管理平台，可通过安装不同的插件sonar可以集成测试工具、代码质量分析工具、持续集成等多种功能。sonarqube架构主要由：sonarqube服务器、sonar数据库、插件、sonarqube scanners四部分组成。"
   },
   {
     "name": "Nessus",
     "category": "security",
     "number": 69,
     "pay": "Os",
-    "symbol": "Ns"
+    "symbol": "Ns",
+    "description":"Nessus号称是世界上最流行的漏洞扫描程序，全世界有超过75000个组织在使用它。该工具提供完整的电脑漏洞扫描服务，并随时更新其漏洞数据库。Nessus不同于传统的漏洞扫描软件，Nessus可同时在本机或远端上遥控，进行系统的漏洞分析扫描。Nessus也是渗透测试重要工具之一。"
   },
   {
-    "name": "OWASP",
+    "name": "OWASP Zap",
     "category": "security",
     "number": 103,
     "pay": "Os",
-    "symbol": "Ow"
+    "symbol": "Oz",
+    "description":" OWASP ZAP，全称：OWASP Zed Attack Proxy攻击代理服务器是世界上最受欢迎的免费安全工具之一。ZAP可以帮助我们在开发和测试应用程序过程中，自动发现 Web应用程序中的安全漏洞。另外，它也是一款提供给具备丰富经验的渗透测试人员进行人工安全测试的优秀工具。"
   },
   {
     "name": "Hashicorp Vault",
     "category": "security",
     "number": 102,
     "pay": "Os",
-    "symbol": "Hv"
+    "symbol": "Hv",
+    "description":"Vault 是 hashicorp 推出的密钥管理、加密即服务与权限管理工具，在应用开发中，特别是微服务开发中，用来更好的保护诸如数据库密码，api权限密码，第三方一些账号密码等，以避免在配置文件或者代码中明文硬编码，造成泄露，其在spring-cloud中也有很好的应用。"
   },
   {
     "name": "Veracode",
     "category": "security",
     "number": 101,
     "pay": "Pd",
-    "symbol": "Vr"
+    "symbol": "Vr",
+    "description":"Veracode提供一个基于云的应用程序安全测试平台，用户无需购买硬件或安装软件，另外Veracode提供自动化的静态和动态应用程序安全测试和服务。产品主要有Veracode Static静态分析，Veracode Dynamic动态分析，Veracode DynamicMP动态多处理器，Veracode Analytics应用程序只能分析，Veracode Policy网络安全策略管理器，Veracode Apls应用程序接口测试工具等。"
   },
   {
     "name": "PMD",
     "category": "security",
     "number": 100,
     "pay": "Os",
-    "symbol": "Pd"
+    "symbol": "Pd",
+    "description":"PMD是一款静态代码分析工具，它能够自动检测各种潜在缺陷以及不安全或未优化的代码。Checkstyle之类的其它工具可以检查代码是否遵循了约定和标准,而PMD功能则更多地是集中在预先检测缺陷上，它提供了高度可配置的丰富规则集，用户可以方便配置对待特定项目使用特定规则。 "
   },
   {
-    "name": "Ettercap",
+    "name": "Dependency track",
     "category": "security",
     "number": 68,
-    "pay": "Pd",
-    "symbol": "Et"
+    "pay": "Os",
+    "symbol": "Dt",
+    "description": "Dependency-Track是一个软件组合分析（SCA）平台，用于跟踪组织创建或使用的所有应用程序中使用的所有第三方组件。它集成了多个漏洞数据库，包括国家漏洞数据库（NVD），NPM公众公告， Sonatype的OSS指数，并VulnDB从基于风险的安全性。Dependency-Track监控其产品组合中的所有应用程序，以便主动识别使你的应用程序面临风险的组件中的漏洞。"
   },
   {
     "name": "Lynis",
     "category": "security",
     "number": 67,
     "pay": "Os",
-    "symbol": "Ly"
+    "symbol": "Ly",
+    "description":"Lynis是Unix/Linux等操作系统的一款安全审计工具，它可以发现Linux系统中的恶意软件和安全漏洞。Lynis会扫描系统信息，脆弱软件包以及潜在的错误配置，审计完成后，生成相应报告，报告包括扫描的结果、威胁警告和漏洞修复建议，我们可以使用lynis制定我们的安全策略。"
   },
   {
     "name": "Cuckoo sandbox",
     "category": "security",
     "number": 66,
     "pay": "Os",
-    "symbol": "Cs"
+    "symbol": "Cs",
+    "description":"Cockoo Sandbox是开源安全沙箱，基于GPLv3，目的是恶意软件（malware analysis）分析。使用的时候将待分析文件丢到沙箱内，分析结束后输出报告。很多安全设备提供商所谓云沙箱是同类技术，一些所谓Anti-APT产品也是这个概念。和传统AV软件的静态分析相比，Cuckoo动态检测，扔到沙箱的可执行文件会被执行，文档会被打开，运行中检测安全风险。"
   },
   {
     "name": "Spacewalk",
     "category": "security",
     "number": 99,
     "pay": "Os",
-    "symbol": "Sw"
+    "symbol": "Sw",
+    "description":"Linux管理工具Spacewalk是红帽大力支持的一个开源项目，红帽也是该发起人之一。Spacewalk可管理Fedora、红帽、CentOS、SUSE与Debian Linux服务器。当你的数据中心拥有多台Linux服务器时，手动管理将不再是一个好的选择。Spacewalk就可以管理补丁、登录、更新。"
   },
 
   {
