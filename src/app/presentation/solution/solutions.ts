@@ -8,5 +8,5 @@ export const solutions: Solutions = [
   { displayName: 'fir.im', source: 'firim' },
   { displayName: '禅道', source: 'zentao' },
   { displayName: 'Worktile', source: 'worktile' },
-  { displayName: 'Thoughtworks', source: 'thoughtworks' },
+  { displayName: 'DeliFlow', source: 'deliflow' },
 ];

@@ -58,7 +58,7 @@ function solutionPlugin(route, config) {
     { route: '/solution/worktile' },
     { route: '/solution/firim' },
     { route: '/solution/zentao' },
-    { route: '/solution/thoughtworks' },
+    { route: '/solution/deliflow' },
   ]);
 }
 
