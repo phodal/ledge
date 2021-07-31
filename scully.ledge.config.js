@@ -114,6 +114,7 @@ function reportPlugin(route, config) {
 
 function maturiyPlugin(route, config) {
   return Promise.resolve([
+    { route: '/maturity/large-devops' },
     { route: '/maturity/devops' },
     { route: '/maturity/amm' },
     { route: '/maturity/arch' },
