@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { DocRoute } from '@ledge-framework/view/lib/ledge-multiple-docs/doc-route.model';
 
 export const lists: DocRoute[] = [
-  { displayName: '大规划 DevOps 成熟度模型', source: 'large-devops' },
+  { displayName: '大规模 DevOps 成熟度模型', source: 'large-devops' },
   { displayName: 'DevOps 成熟度模型', source: 'devops' },
   { displayName: 'OWASP 安全成熟度模型', source: 'owasp' },
   { displayName: 'AMM 敏捷成熟度模型', source: 'amm' },
