@@ -28,7 +28,7 @@
 config: {"left": "支持团队", "right": "评价产品", "bottom": "面向技术", "top": "面向业务"}
 ```
 
-## 敏捷测试原则：
+## 敏捷测试原则
 
 —— 出处：《[ThoughtWorks 的敏捷测试](https://insights.thoughtworks.cn/thoughtworks-agile-testing/)》
 
