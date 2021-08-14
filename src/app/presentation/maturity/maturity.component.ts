@@ -12,6 +12,7 @@ export const lists: DocRoute[] = [
   { displayName: '架构设计成熟度模型', source: 'arch' },
   { displayName: '微服务成熟度模型', source: 'msmm' },
   { displayName: '软件维护成熟度模型', source: 'smmm' },
+  { displayName: '团队拓扑角色模型', source: 'team-topologies' },
 ];
 
 @Component({

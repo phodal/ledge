@@ -121,6 +121,7 @@ function maturiyPlugin(route, config) {
     { route: '/maturity/owasp' },
     { route: '/maturity/msmm' },
     { route: '/maturity/smmm' },
+    { route: '/maturity/team-topologies' },
   ]);
 }
 
