@@ -629,9 +629,9 @@
     "pay": "Os",
     "symbol": "Sw",
     "homepage": "https://spacewalkproject.github.io/",
-    "description":"Linux管理工具Spacewalk是红帽大力支持的一个开源项目，红帽也是该发起人之一。Spacewalk可管理Fedora、红帽、CentOS、SUSE与Debian Linux服务器。当你的数据中心拥有多台Linux服务器时，手动管理将不再是一个好的选择。Spacewalk就可以管理补丁、登录、更新。"
+    "description":"(discontinued on May 31 2020) Linux管理工具Spacewalk是红帽大力支持的一个开源项目，红帽也是该发起人之一。Spacewalk可管理Fedora、红帽、CentOS、SUSE与Debian Linux服务器。当你的数据中心拥有多台Linux服务器时，手动管理将不再是一个好的选择。Spacewalk就可以管理补丁、登录、更新。",
+    "discontinued":"2020-05-31"
   },
-
   {
     "name": "Ansible",
     "category": "config",

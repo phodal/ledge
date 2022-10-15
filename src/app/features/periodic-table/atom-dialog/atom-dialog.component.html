@@ -1,4 +1,8 @@
 <h2 mat-dialog-title>{{data.name}}</h2>
+<span class="discontinued" *ngIf="data.discontinued">
+  discontinued on {{data.discontinued}}
+</span>
+
 <mat-dialog-content class="mat-typography">
   <p *ngIf="data.homepage">首页：<a href="{{data.homepage}}" target="_blank">{{data.homepage}}</a></p>
   <p>简介：</p>
@@ -30,3 +34,4 @@
 
   <p>找不到满意的内容？有错误？欢迎来 Pull Request ->  <a href="https://github.com/phodal/ledge/blob/master/src/assets/periodic-table.json" target="_blank">Ledge GitHub</a></p>
 </mat-dialog-content>
+

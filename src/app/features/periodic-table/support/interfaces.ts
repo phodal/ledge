@@ -26,4 +26,5 @@ export interface Atom {
   pd: string;
   resources?: AtomResources[];
   books?: AtomResources[];
+  discontinued?: string;
 }
