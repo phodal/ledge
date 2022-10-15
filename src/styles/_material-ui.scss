@@ -1,4 +1,4 @@
-@import "./color";
+@import './color';
 
 // Navigation Bar
 .app-header {
@@ -14,6 +14,15 @@
     font-size: 14px;
   }
 }
+.mat-drawer:not(.mat-drawer-side) {
+  box-shadow: 0px 8px 10px -5px rgba(255, 255, 255, 0.2),
+    0px 16px 24px 2px rgba(0, 0, 0, 0.14),
+    0px 6px 30px 5px rgba(255, 255, 255, 0.12);
+}
+.mat-drawer.mat-sidenav {
+  margin-top: 56px;
+  position: fixed;
+}
 
 .mat-toolbar {
   box-shadow: 0 1px 0 0 $lighter-gray;
@@ -27,6 +36,9 @@
 
   .mat-toolbar-row {
     align-items: stretch;
+    @media screen and (max-width: 640px) {
+      padding: 0px 0px;
+    }
   }
 
   .mat-button {
@@ -62,7 +74,7 @@
 
             &:hover {
               color: $purple;
-              background-color: rgba($purple, .2);
+              background-color: rgba($purple, 0.2);
             }
           }
         }

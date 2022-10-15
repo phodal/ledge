@@ -1,8 +1,15 @@
 .ledge-side-menu {
   button {
+    font-size: 1rem;
+    border-radius: 0px;
     padding: 0.5em;
-    width: 8em;
+    width: 100%;
+    &.active {
+      color: $white;
+      background-color: $purple;
+    }
   }
+  width: 200px;
 }
 @media screen and (max-width: 1366px) {
   .button-logo {
@@ -16,7 +23,7 @@
   }
 
   body {
-    min-width: auto!important;
+    min-width: auto !important;
   }
 
   .markdown-toc .right-content {
@@ -24,4 +31,3 @@
     width: 100%;
   }
 }
-
