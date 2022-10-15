@@ -63,3 +63,22 @@ $selected-color: #fff;
     opacity: 0.5;
   }
 }
+
+.discontinued-dot {
+  &::after {
+    width: 8px;
+    height: 8px;
+    content: '';
+    display: inline-block;
+    margin-left: 80%;
+    margin-top: 15%;
+    border-radius: 50%;
+    background-color: rgba(86, 86, 86, 0.549);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .discontinued-dot::after {
+    margin-top: 0;
+  }
+}
