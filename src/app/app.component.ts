@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  OnDestroy,
+  AfterViewInit,
+} from '@angular/core';
+import { Router, RouterEvent } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { StorageMap } from '@ngx-pwa/local-storage';
+import { MatSidenav } from '@angular/material/sidenav';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
   title = 'ledge';
+
+  @ViewChild('sidenav') SideNavRef: MatSidenav;
+  routeEvSub: Subscription;
 
   constructor(
     private route: Router,
@@ -42,7 +53,19 @@ export class AppComponent implements OnInit {
     });
   }
 
+  ngAfterViewInit(): void {
+    this.routeEvSub = this.route.events.subscribe(() => {
+      if (this.SideNavRef.opened) {
+        this.SideNavRef.close();
+      }
+    });
+  }
+
   openLink(link: string) {
     window.open(link, '_blank');
+  }
+
+  ngOnDestroy(): void {
+    this.routeEvSub.unsubscribe();
   }
 }

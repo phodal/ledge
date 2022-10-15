@@ -16,3 +16,11 @@ p {
     color: $black;
   }
 }
+
+.discontinued {
+  display: block;
+  margin-top: -1.8em;
+  font-size: 0.8em;
+  text-indent: 0.1em;
+  color: gray;
+}

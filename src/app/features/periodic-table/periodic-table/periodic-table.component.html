@@ -23,6 +23,7 @@
         [selectedCategory]="selectCategory"
         [metalSelected]="metalClass"
         (hoverAtom)="showAtomDetails($event)"
+        [class.discontinued]="atom.discontinued"
       ></app-atom>
     </ng-container>
     <app-atom class="periodic-atom-57-71 atom-placeholder" [data]="lantAtomGroup"></app-atom>
